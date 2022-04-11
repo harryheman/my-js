@@ -1,6 +1,10 @@
+---
+sidebar_position: 17
+---
+
 # Docker
 
-[Пример приложения](https://github.com/harryheman/docker-test)
+[Пример "контейнеризованного" React/Vue/Express/Postgres приложения](https://github.com/harryheman/docker-test)&nbsp;&nbsp;👀
 
 # Введение, Docker CLI и Dockerfile
 

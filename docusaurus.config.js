@@ -1,14 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- */
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My JavaScript',
@@ -57,9 +46,15 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'guide/intro-guide',
             position: 'left',
-            label: 'Материалы'
+            label: 'Руководства'
+          },
+          {
+            type: 'doc',
+            docId: 'cheatsheet/intro-cheatsheet',
+            position: 'left',
+            label: 'Шпаргалки'
           },
           { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.
