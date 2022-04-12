@@ -56,6 +56,12 @@ const config = {
             position: 'left',
             label: 'Шпаргалки'
           },
+          {
+            type: 'doc',
+            docId: 'other/intro-other',
+            position: 'left',
+            label: 'Другое'
+          },
           { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.
           {

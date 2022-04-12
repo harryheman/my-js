@@ -1,0 +1,16 @@
+{
+  "name": "json-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "json-server": "^0.16.3",
+    "open-cli": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "concurrently \"json-server -w db.json -s /\"  \"open-cli http://localhost:3000\"",
+    "start": "json-server db.json"
+  }
+}
