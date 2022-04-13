@@ -12,7 +12,6 @@ _Обратите внимание_: вопросы по `React` немного 
 - :memo:&nbsp;&nbsp;[Шпаргалки по React, Jest, Redux и лучшие практики по React](./bestpractice)
 - :page_with_curl:&nbsp;&nbsp;[Размышления о React](./react-philosophies)
 - :memo:&nbsp;&nbsp;[Вопросы по JavaScript](./js-questions)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритмы и структуры данных, реализованные на JavaScript](./js-algorithms)
 - :floppy_disk:&nbsp;&nbsp;[Сниппеты CSS и SASS](./snippets-css)
 - :floppy_disk:&nbsp;&nbsp;[Сниппеты Node.js](./snippets-node)
 - :floppy_disk:&nbsp;&nbsp;[Сниппеты JavaScript](./snippets-js)

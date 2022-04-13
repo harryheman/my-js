@@ -17,6 +17,11 @@ __Паттерны проектирования__
 - ["Learning JavaScript Design Patterns". Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 - ["Паттерны объектно-ориентированного проектирования". Банда четырех](./assets/design_patterns.pdf)
 
+__Алгоритмы и структуры данных__
+
+- [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) - алгоритмы и структуры данных, реализованные на JavaScript с объяснениями и ссылками для дальнейшего изучения
+- ["Грокаем алгоритмы". Адитья Бхаргава](./assets/grokking_algorithms.pdf)
+
 __Вопросы и задачи__
 
 - [JavaScript Interview Questions & Answers](https://github.com/sudheerj/javascript-interview-questions)
