@@ -66,7 +66,7 @@ const config = {
             type: 'doc',
             docId: 'links/intro-links',
             position: 'left',
-            label: 'Полезные ссылки'
+            label: 'Cсылки'
           },
           { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.

@@ -1,8 +1,9 @@
 ---
 id: intro-links
+hide_title: true
 ---
 
-# Полезные ссылки
+# Полезные и проверенные ссылки
 
 ## JavaScript
 
