@@ -1,25 +1,8 @@
-# `CSS & SASS` Cheatsheet :metal:
+---
+sidebar_position: 7
+---
 
-[На главную](../README.md)
-
-### Содержание
-
-- [CSS](#css)
-  - [Bootstrap Colors & Breakpoints](#bootstrap-colors--breakpoints)
-  - [Custom Checkbox & Radio](#custom-checkbox--radio)
-  - [Custom Scrollbar](#custom-scrollbar)
-  - [Custom Placeholder](#custom-placeholder)
-  - [Visually Hidden](#visually-hidden)
-- [SASS](#sass)
-  - [Bootstrap Colors & Breakpoints](#bootstrap-colors--breakpoints-1)
-  - [Strip Unit Function](#strip-unit-function)
-  - [Rem Function](#rem-function)
-  - [Reset Mixin](#reset-mixin)
-  - [Flex Center Mixin](#flex-center-mixin)
-  - [Placeholder Mixin](#placeholder-mixin)
-  - [Fluid Font Mixin](#fluid-font-mixin)
-  - [Arrow Mixin](#arrow-mixin)
-  - [Respond Above Mixin](#respond-above-mixin)
+# CSS & SASS Snippets
 
 ## CSS
 

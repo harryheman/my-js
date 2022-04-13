@@ -1,5 +1,5 @@
 ---
-label: Next.js
+hide_title: true
 ---
 
 # Next.js

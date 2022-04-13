@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # JavaScript Algorithms & Data Structures
 
 > Данный раздел находится в разработке
