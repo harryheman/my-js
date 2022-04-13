@@ -15,7 +15,7 @@ __Паттерны проектирования__
 
 - ["Паттерны проектирования". Refactoring Guru](https://refactoring.guru/ru/design-patterns)
 - ["Learning JavaScript Design Patterns". Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- ["Паттерны объектно-ориентированного проектирования". Банда четырех](./assets/books/design_patterns.pdf)
+- ["Паттерны объектно-ориентированного проектирования". Банда четырех](./assets/design_patterns.pdf)
 
 __Вопросы и задачи__
 
