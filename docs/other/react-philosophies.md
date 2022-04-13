@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# React Philosophies
+# Размышления о React
 
 [Источник](https://github.com/mithi/react-philosophies)&nbsp;&nbsp;👀
 

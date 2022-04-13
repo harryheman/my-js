@@ -2,11 +2,11 @@
 sidebar_position: 5
 ---
 
-# JavaScript Questions
+# Вопросы по JavaScript
 
-## Каким будет вывод?
+Каким будет вывод?
 
-### Вопрос № 1
+## Вопрос № 1
 
 ```js
 function sayHi() {
@@ -28,13 +28,13 @@ sayHi()
 <summary>Ответ</summary>
 <div>
 <h4>Правильный ответ: D</h4>
-<p>
-В функции мы сначала определяем переменную "name" с помощью ключевого слова "var". Это означает, что "name" поднимается в начало функции. "name" будет иметь значение undefined до тех пор, пока выполнение кода не дойдет до строки, где ей присваивается значение "John". Мы не определили значение "name", когда пытаемся вывести ее в консоль, поэтому получаем undefined. Переменные, объявленные с помощью ключевого слова "let" (и "const"), также поднимаются, но в отличие от переменных, объявленных с помощью ключевого слова "var", не инициализируются, т.е. такие переменные поднимаются в начало своей области видимости без присвоенного им значения. Доступ к ним до инициализации невозможен. Это называется "временной мертвой зоной". Когда мы пытаемся обратиться к переменным до их определения, JavaScript выбрасывает исключение "ReferenceError".
-</p>
+
+В функции мы сначала определяем переменную `name` с помощью ключевого слова `var`. Это означает, что `name` поднимается в начало функции. `name` будет иметь значение undefined до тех пор, пока выполнение кода не дойдет до строки, где ей присваивается значение `John`. Мы не определили значение `name`, когда пытаемся вывести ее в консоль, поэтому получаем undefined. Переменные, объявленные с помощью ключевого слова `let` (и `const`), также поднимаются, но в отличие от переменных, объявленных с помощью ключевого слова `var`, не инициализируются, т.е. такие переменные поднимаются в начало своей области видимости без присвоенного им значения. Доступ к ним до инициализации невозможен. Это называется `временной мертвой зоной`. Когда мы пытаемся обратиться к переменным до их определения, JavaScript выбрасывает исключение `ReferenceError`.
+
 </div>
 </details>
 
-### Вопрос № 2
+## Вопрос № 2
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -61,7 +61,7 @@ for (let i = 0; i < 3; i++) {
 </div>
 </details>
 
-### Вопрос № 3
+## Вопрос № 3
 
 ```js
 const shape = {
@@ -91,7 +91,7 @@ console.log(shape.perimeter())
 </div>
 </details>
 
-### Вопрос № 4
+## Вопрос № 4
 
 ```js
 console.log(+true)
@@ -113,7 +113,7 @@ console.log(!"John")
 </div>
 </details>
 
-### Вопрос № 5
+## Вопрос № 5
 
 ```js
 let c = { greeting: "Hey!" }
@@ -139,7 +139,7 @@ console.log(d.greeting)
 </div>
 </details>
 
-### Вопрос № 6
+## Вопрос № 6
 
 ```js
 let a = 3
@@ -166,7 +166,7 @@ new Number() - это встроенная функция-конструктор
 </div>
 </details>
 
-### Вопрос № 7
+## Вопрос № 7
 
 ```js
 class Chameleon {
@@ -199,7 +199,7 @@ freddie.colorChange("orange")
 </div>
 </details>
 
-### Вопрос № 8
+## Вопрос № 8
 
 ```js
 // код выполняется в нестрогом режиме
@@ -223,7 +223,7 @@ console.log(greetign)
 </div>
 </details>
 
-### Вопрос № 9
+## Вопрос № 9
 
 ```js
 function bark() {
@@ -250,7 +250,7 @@ console.log(bark.animal)
 </div>
 </details>
 
-### Вопрос № 10
+## Вопрос № 10
 
 ```js
 function Person(firstName, lastName) {
@@ -281,7 +281,7 @@ console.log(person.getFullName())
 </div>
 </details>
 
-### Вопрос № 11
+## Вопрос № 11
 
 ```js
 function Person(firstName, lastName) {
@@ -311,7 +311,7 @@ console.log(jane)
 </div>
 </details>
 
-### Вопрос № 12
+## Вопрос № 12
 
 ```js
 function sum(a, b) {
@@ -336,7 +336,7 @@ JavaScript - это динамически типизированный язык
 </div>
 </details>
 
-### Вопрос № 13
+## Вопрос № 13
 
 ```js
 let number = 0
@@ -366,7 +366,7 @@ console.log(number)
 </div>
 </details>
 
-### Вопрос № 14
+## Вопрос № 14
 
 ```js
 function getPersonInfo(one, two, three) {
@@ -396,7 +396,7 @@ getPersonInfo`${person} is ${age} years old`
 </div>
 </details>
 
-### Вопрос № 15
+## Вопрос № 15
 
 ```js
 function checkAge(data) {
@@ -427,7 +427,7 @@ checkAge({ age: 18 })
 </div>
 </details>
 
-### Вопрос № 16
+## Вопрос № 16
 
 ```js
 function getAge(...args) {
@@ -452,7 +452,7 @@ getAge(30)
 </div>
 </details>
 
-### Вопрос № 17
+## Вопрос № 17
 
 ```js
 function getAge() {
@@ -479,7 +479,7 @@ getAge()
 </div>
 </details>
 
-### Вопрос № 18
+## Вопрос № 18
 
 ```js
 const sum = eval("10*10+5")
@@ -502,7 +502,7 @@ console.log(sum)
 </div>
 </details>
 
-### Вопрос № 19
+## Вопрос № 19
 
 ```js
 var num = 8
@@ -526,7 +526,7 @@ console.log(num)
 </div>
 </details>
 
-### Вопрос № 20
+## Вопрос № 20
 
 ```js
 const obj = { 1: "a", 2: "b", 3: "c" }
@@ -553,7 +553,7 @@ console.log(set.has(1))
 </div>
 </details>
 
-### Вопрос № 21
+## Вопрос № 21
 
 ```js
 const obj = { a: "one", b: "two", a: "three" }
@@ -575,7 +575,7 @@ console.log(obj)
 </div>
 </details>
 
-### Вопрос № 22
+## Вопрос № 22
 
 ```js
 for (let i = 1; i < 5; i++) {
@@ -599,7 +599,7 @@ for (let i = 1; i < 5; i++) {
 </div>
 </details>
 
-### Вопрос № 23
+## Вопрос № 23
 
 ```js
 String.prototype.giveMePizza = () => {
@@ -626,7 +626,7 @@ console.log(name.giveMePizza())
 </div>
 </details>
 
-### Вопрос № 24
+## Вопрос № 24
 
 ```js
 const a = {}
@@ -654,7 +654,7 @@ console.log(a[b])
 </div>
 </details>
 
-### Вопрос № 25
+## Вопрос № 25
 
 ```js
 const foo = () => console.log("first")
@@ -681,7 +681,7 @@ baz()
 </div>
 </details>
 
-### Вопрос № 26
+## Вопрос № 26
 
 ```js
 <div onclick="console.log('div')">
@@ -706,7 +706,7 @@ baz()
 </div>
 </details>
 
-### Вопрос № 27
+## Вопрос № 27
 
 ```js
 const person = { name: "John" }
@@ -734,7 +734,7 @@ sayHi.bind(person, 30)
 </div>
 </details>
 
-### Вопрос № 28
+## Вопрос № 28
 
 ```js
 function sayHi() {
@@ -759,7 +759,7 @@ console.log(typeof sayHi())
 </div>
 </details>
 
-### Вопрос № 29
+## Вопрос № 29
 
 ```js
 console.log(typeof typeof 1)
@@ -780,7 +780,7 @@ console.log(typeof typeof 1)
 </div>
 </details>
 
-### Вопрос № 30
+## Вопрос № 30
 
 ```js
 const numbers = [1, 2, 3]
@@ -803,7 +803,7 @@ console.log(numbers)
 </div>
 </details>
 
-### Вопрос № 31
+## Вопрос № 31
 
 ```js
 (() => {
@@ -834,7 +834,7 @@ console.log(numbers)
 </div>
 </details>
 
-### Вопрос № 32
+## Вопрос № 32
 
 ```js
 const result =
@@ -863,7 +863,7 @@ console.log(result)
 </div>
 </details>
 
-### Вопрос № 33
+## Вопрос № 33
 
 ```js
 console.log(!!null)
@@ -888,7 +888,7 @@ null - false. !null возвращает true. !true возвращает false.
 </div>
 </details>
 
-### Вопрос № 34
+## Вопрос № 34
 
 ```js
 console.log([..."John"])
@@ -909,7 +909,7 @@ console.log([..."John"])
 </div>
 </details>
 
-### Вопрос № 35
+## Вопрос № 35
 
 ```js
 function* generator(i) {
@@ -939,7 +939,7 @@ console.log(gen.next().value)
 </details>
 
 
-### Вопрос № 36
+## Вопрос № 36
 
 ```js
 const firstPromise = new Promise((res, rej) => {
@@ -969,7 +969,7 @@ Promise.race([firstPromise, secondPromise]).then(res => console.log(res))
 </details>
 
 
-### Вопрос № 37
+## Вопрос № 37
 
 ```js
 let person = { name: "John" }
@@ -995,7 +995,7 @@ console.log(members)
 </details>
 
 
-### Вопрос № 38
+## Вопрос № 38
 
 ```js
 const person = {
@@ -1024,7 +1024,7 @@ for (const item in person) {
 </details>
 
 
-### Вопрос № 39
+## Вопрос № 39
 
 ```js
 console.log(3 + 4 + "5")
@@ -1046,7 +1046,7 @@ console.log(3 + 4 + "5")
 </details>
 
 
-### Вопрос № 40
+## Вопрос № 40
 
 ```js
 const num = parseInt("7*6", 10)
@@ -1070,7 +1070,7 @@ console.log(num)
 </details>
 
 
-### Вопрос № 41
+## Вопрос № 41
 
 ```js
 const result =
@@ -1098,7 +1098,7 @@ console.log(result)
 </details>
 
 
-### Вопрос № 42
+## Вопрос № 42
 
 ```js
 function greeting() {
@@ -1133,7 +1133,7 @@ sayHi()
 </details>
 
 
-### Вопрос № 43
+## Вопрос № 43
 
 ```js
 function Car() {
@@ -1161,7 +1161,7 @@ console.log(myCar.make)
 </details>
 
 
-### Вопрос № 44
+## Вопрос № 44
 
 ```js
 (() => {
@@ -1188,7 +1188,7 @@ console.log(typeof y)
 </details>
 
 
-### Вопрос № 45
+## Вопрос № 45
 
 ```js
 class Dog {
@@ -1226,7 +1226,7 @@ pet.bark()
 </details>
 
 
-### Вопрос № 46
+## Вопрос № 46
 
 ```js
 const set = new Set([1, 1, 2, 3, 4])
@@ -1250,7 +1250,7 @@ console.log(set)
 </details>
 
 
-### Вопрос № 47
+## Вопрос № 47
 
 ```js
 // counter.js
@@ -1281,7 +1281,7 @@ console.log(myCounter)
 </details>
 
 
-### Вопрос № 48
+## Вопрос № 48
 
 ```js
 const name = "John"
@@ -1307,7 +1307,7 @@ console.log(delete age)
 </details>
 
 
-### Вопрос № 49
+## Вопрос № 49
 
 ```js
 const numbers = [1, 2, 3, 4, 5]
@@ -1336,7 +1336,7 @@ console.log(y)
 </details>
 
 
-### Вопрос № 50
+## Вопрос № 50
 
 ```js
 const user = { name: "John", age: 30 }
@@ -1360,7 +1360,7 @@ console.log(admin)
 </div>
 </details>
 
-### Вопрос № 51
+## Вопрос № 51
 
 ```js
 const person = { name: "John" }
@@ -1387,7 +1387,7 @@ console.log(Object.keys(person))
 </details>
 
 
-### Вопрос № 52
+## Вопрос № 52
 
 ```js
 const settings = {
@@ -1416,7 +1416,7 @@ console.log(data)
 </details>
 
 
-### Вопрос № 53
+## Вопрос № 53
 
 ```js
 let num = 10
@@ -1447,7 +1447,7 @@ console.log(num2)
 </details>
 
 
-### Вопрос № 54
+## Вопрос № 54
 
 ```js
 const value = { number: 10 }
@@ -1478,7 +1478,7 @@ multiply(value)
 </details>
 
 
-### Вопрос № 55
+## Вопрос № 55
 
 ```js
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y))
@@ -1500,7 +1500,7 @@ multiply(value)
 </details>
 
 
-### Вопрос № 56
+## Вопрос № 56
 
 ```js
 // index.js
@@ -1529,7 +1529,7 @@ export const sum = (a, b) => a + b
 </details>
 
 
-### Вопрос № 57
+## Вопрос № 57
 
 ```js
 console.log(Number(2) === Number(2))
@@ -1553,7 +1553,7 @@ console.log(Symbol('foo') === Symbol('foo'))
 </details>
 
 
-### Вопрос № 58
+## Вопрос № 58
 
 ```js
 const name = "John Smith"
@@ -1577,7 +1577,7 @@ console.log(name.padStart(2))
 </details>
 
 
-### Вопрос № 59
+## Вопрос № 59
 
 ```js
 console.log("📱" + "💻")
@@ -1599,7 +1599,7 @@ console.log("📱" + "💻")
 </details>
 
 
-### Вопрос № 60
+## Вопрос № 60
 
 ```js
 function* startGame() {
@@ -1631,7 +1631,7 @@ console.log(/* 2 */) // JavaScript тоже тебя любит ❤️
 </details>
 
 
-### Вопрос № 61
+## Вопрос № 61
 
 ```js
 console.log(String.raw`Hello\nWorld!`)
@@ -1658,7 +1658,7 @@ const path = `C:\Documents\Projects\table.html`
 </details>
 
 
-### Вопрос № 62
+## Вопрос № 62
 
 ```js
 async function getData() {
@@ -1685,7 +1685,7 @@ console.log(data)
 </details>
 
 
-### Вопрос № 63
+## Вопрос № 63
 
 ```js
 function addToList(item, list) {
@@ -1712,7 +1712,7 @@ console.log(result)
 </details>
 
 
-### Вопрос № 64
+## Вопрос № 64
 
 ```js
 const box = { x: 10, y: 20 }
@@ -1741,7 +1741,7 @@ console.log(shape)
 </details>
 
 
-### Вопрос № 65
+## Вопрос № 65
 
 ```js
 const { name: myName } = { name: "John" }
@@ -1764,7 +1764,7 @@ console.log(name)
 </div>
 </details>
 
-### Вопрос № 66
+## Вопрос № 66
 
 ```js
 const add = () => {
@@ -1801,7 +1801,7 @@ console.log(addFunction(5 * 2))
 </div>
 </details>
 
-### Вопрос № 67
+## Вопрос № 67
 
 ```js
 const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
@@ -1832,7 +1832,7 @@ for (let item of myLifeSummedUp) {
 </div>
 </details>
 
-### Вопрос № 68
+## Вопрос № 68
 
 ```js
 const list = [1 + 2, 1 * 2, 1 / 2]
@@ -1855,7 +1855,7 @@ console.log(list)
 </details>
 
 
-### Вопрос № 69
+## Вопрос № 69
 
 ```js
 function sayHi(name) {
@@ -1883,7 +1883,7 @@ console.log(sayHi())
 </details>
 
 
-### Вопрос № 70
+## Вопрос № 70
 
 ```js
 var status = "😎"
@@ -1919,7 +1919,7 @@ setTimeout(() => {
 </details>
 
 
-### Вопрос № 71
+## Вопрос № 71
 
 ```js
 const person = {
@@ -1949,7 +1949,7 @@ console.log(person)
 </details>
 
 
-### Вопрос № 72
+## Вопрос № 72
 
 ```js
 function checkAge(age) {
@@ -1980,7 +1980,7 @@ console.log(checkAge(30))
 </details>
 
 
-### Вопрос № 73
+## Вопрос № 73
 
 ```js
 function getName(name) {
@@ -2004,7 +2004,7 @@ function getName(name) {
 </details>
 
 
-### Вопрос № 74
+## Вопрос № 74
 
 ```js
 console.log("Я хочу пиццу!"[0])
@@ -2026,7 +2026,7 @@ console.log("Я хочу пиццу!"[0])
 </details>
 
 
-### Вопрос № 75
+## Вопрос № 75
 
 ```js
 function sum(num1, num2 = num1) {
@@ -2052,7 +2052,7 @@ sum(10)
 </details>
 
 
-### Вопрос № 76
+## Вопрос № 76
 
 ```js
 // module.js
@@ -2081,7 +2081,7 @@ console.log(data)
 </details>
 
 
-### Вопрос № 77
+## Вопрос № 77
 
 ```js
 class Person {
@@ -2111,7 +2111,7 @@ console.log(typeof member)
 </div>
 </details>
 
-### Вопрос № 78
+## Вопрос № 78
 
 ```js
 let newList = [1, 2, 3].push(4)
@@ -2135,7 +2135,7 @@ console.log(newList.push(5))
 </details>
 
 
-### Вопрос № 79
+## Вопрос № 79
 
 ```js
 function giveMePizza() {
@@ -2164,7 +2164,7 @@ console.log(giveMeChocolate.prototype)
 </details>
 
 
-### Вопрос № 80
+## Вопрос № 80
 
 ```js
 const person = {
@@ -2194,7 +2194,7 @@ Object.entries(person) возвращает массив вложенных ма
 </div>
 </details>
 
-### Вопрос № 81
+## Вопрос № 81
 
 ```js
 function getItems(fruitList, ...args, favoriteFruit) {
@@ -2227,7 +2227,7 @@ getItems(["banana", "apple"], "pear", "orange")
 </details>
 
 
-### Вопрос № 82
+## Вопрос № 82
 
 ```js
 function nums(a, b) {
@@ -2262,7 +2262,7 @@ console.log(nums(1, 2))
 </details>
 
 
-### Вопрос № 83
+## Вопрос № 83
 
 ```js
 class Person {
@@ -2297,7 +2297,7 @@ console.log(member.name)
 </details>
 
 
-### Вопрос № 84
+## Вопрос № 84
 
 ```js
 const info = {
@@ -2324,7 +2324,7 @@ Symbol не является перечисляемым. Метод "keys" во�
 </details>
 
 
-### Вопрос № 85
+## Вопрос № 85
 
 ```js
 const getList = ([x, ...y]) => [x, y]
@@ -2357,7 +2357,7 @@ console.log(getUser(user))
 </details>
 
 
-### Вопрос № 86
+## Вопрос № 86
 
 ```js
 const name = "John"
@@ -2381,7 +2381,7 @@ console.log(name())
 </details>
 
 
-### Вопрос № 87
+## Вопрос № 87
 
 ```js
 const one = (false || {} || null)
@@ -2407,7 +2407,7 @@ console.log(one, two, three)
 </details>
 
 
-### Вопрос № 88
+## Вопрос № 88
 
 ```js
 const myPromise = () => Promise.resolve('I have resolved!')
@@ -2442,7 +2442,7 @@ secondFunction()
 </details>
 
 
-### Вопрос № 89
+## Вопрос № 89
 
 ```js
 const set = new Set()
@@ -2472,7 +2472,7 @@ for (let item of set) {
 </details>
 
 
-### Вопрос № 90
+## Вопрос № 90
 
 ```js
 console.log(Promise.resolve(5))
@@ -2494,7 +2494,7 @@ console.log(Promise.resolve(5))
 </details>
 
 
-### Вопрос № 91
+## Вопрос № 91
 
 ```js
 function compareMembers(person1, person2 = person) {
@@ -2526,7 +2526,7 @@ compareMembers(person)
 </details>
 
 
-### Вопрос № 92
+## Вопрос № 92
 
 ```js
 const colorConfig = {
@@ -2558,7 +2558,7 @@ console.log(colorConfig.colors[1])
 </details>
 
 
-### Вопрос № 93
+## Вопрос № 93
 
 ```js
 console.log('❤️' === '❤️')
@@ -2580,7 +2580,7 @@ console.log('❤️' === '❤️')
 </details>
 
 
-### Вопрос № 94
+## Вопрос № 94
 
 ```js
 const food = ['🍕', '🍫', '🍳', '🍔']
@@ -2607,7 +2607,7 @@ console.log(food)
 </details>
 
 
-### Вопрос № 95
+## Вопрос № 95
 
 ```js
 let name = 'John'
@@ -2636,7 +2636,7 @@ getName()
 </details>
 
 
-### Вопрос № 96
+## Вопрос № 96
 
 ```js
 function* generatorOne() {
@@ -2677,7 +2677,7 @@ console.log(two.next().value) // undefined
 </details>
 
 
-### Вопрос № 97
+## Вопрос № 97
 
 ```js
 console.log(`${(x => x)('Я люблю')} писать код`)
@@ -2699,7 +2699,7 @@ console.log(`${(x => x)('Я люблю')} писать код`)
 </details>
 
 
-### Вопрос № 98
+## Вопрос № 98
 
 ```js
 const person = {
@@ -2735,7 +2735,7 @@ console.log(person)
 </details>
 
 
-### Вопрос № 99
+## Вопрос № 99
 
 ```js
 function sumValues(x, y, z) {
@@ -2759,7 +2759,7 @@ function sumValues(x, y, z) {
 </details>
 
 
-### Вопрос № 100
+## Вопрос № 100
 
 ```js
 let num = 1
@@ -2784,7 +2784,7 @@ console.log(list[(num += 1)])
 </details>
 
 
-### Вопрос № 101
+## Вопрос № 101
 
 ```js
 const person = {
@@ -2820,7 +2820,7 @@ console.log(member.getLastName?.())
 </details>
 
 
-### Вопрос № 102
+## Вопрос № 102
 
 ```js
 const groceries = ['банан', 'яблоко', 'апельсин']
@@ -2848,7 +2848,7 @@ if (groceries.indexOf('банан')) {
 </details>
 
 
-### Вопрос № 103
+## Вопрос № 103
 
 ```js
 const config = {
@@ -2877,7 +2877,7 @@ console.log(config.language)
 </details>
 
 
-### Вопрос № 104
+## Вопрос № 104
 
 ```js
 const name = 'John Smith'
@@ -2902,7 +2902,7 @@ console.log(!typeof name === 'string')
 </details>
 
 
-### Вопрос № 105
+## Вопрос № 105
 
 ```js
 const add = x => y => z => {
@@ -2929,7 +2929,7 @@ add(4)(5)(6)
 </details>
 
 
-### Вопрос № 106
+## Вопрос № 106
 
 ```js
 async function* range(start, end) {
@@ -2962,7 +2962,7 @@ async function* range(start, end) {
 </details>
 
 
-### Вопрос № 107
+## Вопрос № 107
 
 ```js
 const myFunc = ({ x, y, z }) => {
@@ -2988,7 +2988,7 @@ myFunc(1, 2, 3)
 </details>
 
 
-### Вопрос № 108
+## Вопрос № 108
 
 ```js
 const spookyItems = ['👻', '🎃', '👿']
@@ -3013,7 +3013,7 @@ console.log(spookyItems)
 </details>
 
 
-### Вопрос № 109
+## Вопрос № 109
 
 ```js
 const name = 'John Smith'
@@ -3042,7 +3042,7 @@ console.log(isNaN(age))
 </details>
 
 
-### Вопрос № 110
+## Вопрос № 110
 
 ```js
 const randomValue = 30
@@ -3071,7 +3071,7 @@ getInfo()
 </details>
 
 
-### Вопрос № 111
+## Вопрос № 111
 
 ```js
 const myPromise = Promise.resolve('Woah some cool data')
@@ -3103,7 +3103,7 @@ const myPromise = Promise.resolve('Woah some cool data')
 </details>
 
 
-### Вопрос № 112
+## Вопрос № 112
 
 ```js
 const emojis = ['💫', ['✨', '✨', ['🍕', '🍕']]]
@@ -3127,7 +3127,7 @@ console.log(emojis.flat(1))
 </details>
 
 
-### Вопрос № 113
+## Вопрос № 113
 
 ```js
 class Counter {
@@ -3166,7 +3166,7 @@ console.log(counterOne.count)
 </details>
 
 
-### Вопрос № 114
+## Вопрос № 114
 
 ```js
 const myPromise = Promise.resolve(
@@ -3208,7 +3208,7 @@ funcTwo()
 </details>
 
 
-### Вопрос № 115
+## Вопрос № 115
 
 ```js
 // sum.js
@@ -3256,7 +3256,7 @@ console.log(info)
 </details>
 
 
-### Вопрос № 116
+## Вопрос № 116
 
 ```js
 const handler = {
@@ -3286,7 +3286,7 @@ person.name
 </details>
 
 
-### Вопрос № 117
+## Вопрос № 117
 
 ```js
 const person = {
@@ -3317,7 +3317,7 @@ Object.freeze() "замораживает" объект. В такой объе�
 </details>
 
 
-### Вопрос № 118
+## Вопрос № 118
 
 ```js
 const add = x => x + x
@@ -3346,7 +3346,7 @@ myFunc(3)
 </details>
 
 
-### Вопрос № 119
+## Вопрос № 119
 
 ```js
 class Counter {
@@ -3383,7 +3383,7 @@ console.log(counter.#number)
 </details>
 
 
-### Вопрос № 120
+## Вопрос № 120
 
 ```js
 const teams = [
@@ -3424,7 +3424,7 @@ obj.next() // { value: "Jane", done: false }
 </details>
 
 
-### Вопрос № 121
+## Вопрос № 121
 
 ```js
 const person = {
@@ -3460,7 +3460,7 @@ console.log(person.hobbies)
 </details>
 
 
-### Вопрос № 122
+## Вопрос № 122
 
 ```js
 class Bird {
@@ -3495,7 +3495,7 @@ const pet = new Flamingo()
 </details>
 
 
-### Вопрос № 123
+## Вопрос № 123
 
 ```js
 const person = {
@@ -3522,7 +3522,7 @@ const person = {
 </details>
 
 
-### Вопрос № 124
+## Вопрос № 124
 
 ```js
 let count = 0
@@ -3551,7 +3551,7 @@ console.log(count)
 </details>
 
 
-### Вопрос № 125
+## Вопрос № 125
 
 ```js
 function getFruit(fruits) {
@@ -3579,7 +3579,7 @@ getFruit([['🍍'], ['🍊', '🍌']])
 </details>
 
 
-### Вопрос № 126
+## Вопрос № 126
 
 ```js
 class Calc {
@@ -3614,7 +3614,7 @@ console.log(calc.count)
 </details>
 
 
-### Вопрос № 127
+## Вопрос № 127
 
 ```js
 const user = {
@@ -3655,7 +3655,7 @@ console.log(updatedUser === user)
 </details>
 
 
-### Вопрос № 128
+## Вопрос № 128
 
 ```js
 const fruits = ['🍌', '🍊', '🍎']
@@ -3683,7 +3683,7 @@ console.log(fruits)
 </details>
 
 
-### Вопрос № 129
+## Вопрос № 129
 
 ```js
 const animals = {}
@@ -3712,7 +3712,7 @@ console.log(animals[dog])
 </details>
 
 
-### Вопрос № 130
+## Вопрос № 130
 
 ```js
 const user = {
@@ -3742,7 +3742,7 @@ console.log(user.email)
 </details>
 
 
-### Вопрос № 131
+## Вопрос № 131
 
 ```js
 const promise1 = Promise.resolve('First')
@@ -3777,7 +3777,7 @@ runPromises()
 </details>
 
 
-### Вопрос № 132
+## Вопрос № 132
 
 ```js
 const keys = ["name", "age"]
@@ -3805,7 +3805,7 @@ Object[method](keys.map((_, i) => {
 </div>
 </details>
 
-### Вопрос № 133
+## Вопрос № 133
 
 ```js
 const createMember = ({ email, address = {}}) => {
@@ -3838,7 +3838,7 @@ console.log(member)
 </details>
 
 
-### Вопрос № 134
+## Вопрос № 134
 
 ```js
 let randomValue = { name: "John" }
@@ -3867,7 +3867,7 @@ if (!typeof randomValue === "string") {
 </details>
 
 
-### Вопрос № 135
+## Вопрос № 135
 
 ```js
 var car = new Vehicle("Honda", "white", "2010", "UK")
@@ -3897,7 +3897,7 @@ function Vehicle(model, color, year, country) {
 </details>
 
 
-### Вопрос № 136
+## Вопрос № 136
 
 ```js
 function foo() {
@@ -3930,7 +3930,7 @@ x = window.y
 </details>
 
 
-### Вопрос № 137
+## Вопрос № 137
 
 ```js
 function main() {
@@ -3968,7 +3968,7 @@ main()
 </details>
 
 
-### Вопрос № 138
+## Вопрос № 138
 
 ```js
 console.log(0.1 + 0.2 === 0.3)
@@ -3990,7 +3990,7 @@ console.log(0.1 + 0.2 === 0.3)
 </details>
 
 
-### Вопрос № 139
+## Вопрос № 139
 
 ```js
 var y = 1
@@ -4016,7 +4016,7 @@ console.log(y)
 </details>
 
 
-### Вопрос № 140
+## Вопрос № 140
 
 ```js
 function foo() {
@@ -4047,7 +4047,7 @@ console.log(foo()) // { message: 'Hello World' }
 </details>
 
 
-### Вопрос № 141
+## Вопрос № 141
 
 ```js
 var myChars = ['a', 'b', 'c', 'd']
@@ -4073,7 +4073,7 @@ console.log(myChars.length)
 </details>
 
 
-### Вопрос № 142
+## Вопрос № 142
 
 ```js
 const obj = {
@@ -4103,7 +4103,7 @@ ES6, среди прочего, представил новые способы �
 </details>
 
 
-### Вопрос № 143
+## Вопрос № 143
 
 ```js
 console.log(1 < 2 < 3)
@@ -4137,7 +4137,7 @@ console.log(1 > 1) // false
 </details>
 
 
-### Вопрос № 144
+## Вопрос № 144
 
 ```js
 // код выполняется в нестрогом режиме
@@ -4163,7 +4163,7 @@ printNumbers(1, 2, 3)
 </details>
 
 
-### Вопрос № 145
+## Вопрос № 145
 
 ```js
 // код выполняется в нестрогом режиме
@@ -4189,7 +4189,7 @@ printNumbersArrow(1, 2, 3)
 </details>
 
 
-### Вопрос № 146
+## Вопрос № 146
 
 ```js
 const f = () => arguments.length
@@ -4222,7 +4222,7 @@ console.log(f(1, 2, 3)) // 3
 </details>
 
 
-### Вопрос № 147
+## Вопрос № 147
 
 ```js
 console.log( String.prototype.trimLeft.name === 'trimLeft' )
@@ -4245,7 +4245,7 @@ console.log( String.prototype.trimLeft.name === 'trimStart' )
 </details>
 
 
-### Вопрос № 148
+## Вопрос № 148
 
 ```js
 console.log(Math.max())
@@ -4267,7 +4267,7 @@ console.log(Math.max())
 </details>
 
 
-### Вопрос № 149
+## Вопрос № 149
 
 ```js
 console.log(10 == [10])
@@ -4293,7 +4293,7 @@ console.log(10 == [[[[[[[10]]]]]]])
 </div>
 </details>
 
-### Вопрос № 150
+## Вопрос № 150
 
 ```js
 console.log(10 + '10')
@@ -4316,7 +4316,7 @@ console.log(10 - '10')
 </details>
 
 
-### Вопрос № 151
+## Вопрос № 151
 
 ```js
 console.log([1, 2] + [3, 4])
@@ -4338,7 +4338,7 @@ console.log([1, 2] + [3, 4])
 </details>
 
 
-### Вопрос № 152
+## Вопрос № 152
 
 ```js
 const numbers = new Set([1, 1, 2, 3, 4])
@@ -4364,7 +4364,7 @@ Set - это объект, представляющий собой коллек�
 </details>
 
 
-### Вопрос № 153
+## Вопрос № 153
 
 ```js
 console.log(NaN === NaN)
@@ -4386,7 +4386,7 @@ NaN согласно стандарту IEEE 754 не равен никаком�
 </details>
 
 
-### Вопрос № 154
+## Вопрос № 154
 
 ```js
 const numbers = [1, 2, 3, 4, NaN]
@@ -4413,7 +4413,7 @@ console.log(numbers.includes(Number.isNaN)) // true
 </div>
 </details>
 
-### Вопрос № 155
+## Вопрос № 155
 
 ```js
 const [a, ...b,] = [1, 2, 3, 4, 5]
@@ -4439,7 +4439,7 @@ console.log(a, b) // 1, [2, 3, 4, 5]
 </div>
 </details>
 
-### Вопрос № 156
+## Вопрос № 156
 
 ```js
 async function func() {
@@ -4466,7 +4466,7 @@ function func() { return Promise.resolve(10) }
 </div>
 </details>
 
-### Вопрос № 157
+## Вопрос № 157
 
 ```js
 async function func() {
@@ -4493,7 +4493,7 @@ function func () { return Promise.resolve(10).then(() => undefined) }
 </div>
 </details>
 
-### Вопрос № 158
+## Вопрос № 158
 
 ```js
 function delay() {
@@ -4530,7 +4530,7 @@ processArray([1, 2, 3, 4])
 </details>
 
 
-### Вопрос № 159
+## Вопрос № 159
 
 ```js
 function delay() {
@@ -4575,7 +4575,7 @@ async function processArray(array) {
 </div>
 </details>
 
-### Вопрос № 160
+## Вопрос № 160
 
 ```js
 var set = new Set()
@@ -4604,7 +4604,7 @@ console.log(set)
 </details>
 
 
-### Вопрос № 161
+## Вопрос № 161
 
 ```js
 const sym1 = Symbol('one')
@@ -4634,7 +4634,7 @@ console.log(sym1 === sym2, sym3 === sym4)
 </details>
 
 
-### Вопрос № 162
+## Вопрос № 162
 
 ```js
 const sym1 = new Symbol('one')
@@ -4657,7 +4657,7 @@ console.log(sym1)
 </details>
 
 
-### Вопрос № 163
+## Вопрос № 163
 
 ```js
 let myNumber = 100
@@ -4692,7 +4692,7 @@ if (!typeof myString === "number"){
 </details>
 
 
-### Вопрос № 164
+## Вопрос № 164
 
 ```js
 console.log(JSON.stringify({ myArray: ['one', undefined, function() {}, Symbol('')] }))
@@ -4715,7 +4715,7 @@ undefined, функции и символы не являются валидны
 </details>
 
 
-### Вопрос № 165
+## Вопрос № 165
 
 ```js
 class A {
@@ -4746,7 +4746,7 @@ new B()
 </details>
 
 
-### Вопрос № 166
+## Вопрос № 166
 
 ```js
 const { a: x = 10, b: y = 20 } = { a: 30 }
@@ -4773,7 +4773,7 @@ console.log(y)
 </details>
 
 
-### Вопрос № 167
+## Вопрос № 167
 
 ```js
 function area({ length = 10, width = 20 }) {
@@ -4808,7 +4808,7 @@ area() // 200
 </div>
 </details>
 
-### Вопрос № 168
+## Вопрос № 168
 
 ```js
 const props = [
@@ -4837,7 +4837,7 @@ console.log(name)
 </details>
 
 
-### Вопрос № 169
+## Вопрос № 169
 
 ```js
 function checkType(num = 1) {
@@ -4867,7 +4867,7 @@ checkType(null)
 </div>
 </details>
 
-### Вопрос № 170
+## Вопрос № 170
 
 ```js
 function add(item, items = []) {
@@ -4895,7 +4895,7 @@ console.log(add('Apple'))
 </details>
 
 
-### Вопрос № 171
+## Вопрос № 171
 
 ```js
 function greet(greeting, name, message = greeting + ' ' + name) {
@@ -4922,7 +4922,7 @@ greet('Hello', 'John', 'Good morning!')
 </details>
 
 
-### Вопрос № 172
+## Вопрос № 172
 
 ```js
 function outer(f = inner()) {
@@ -4956,7 +4956,7 @@ console.log(outer('Outer')) // Outer
 </details>
 
 
-### Вопрос № 173
+## Вопрос № 173
 
 ```js
 function myFun(x, y, ...args) {
@@ -4983,7 +4983,7 @@ myFun(1, 2)
 </details>
 
 
-### Вопрос № 174
+## Вопрос № 174
 
 ```js
 const obj = {'key': 'value'}
@@ -5007,7 +5007,7 @@ console.log(array)
 </details>
 
 
-### Вопрос № 175
+## Вопрос № 175
 
 ```js
 function* myGenFunc() {
@@ -5035,7 +5035,7 @@ console.log(myGenObj.next().value)
 </details>
 
 
-### Вопрос № 176
+## Вопрос № 176
 
 ```js
 function* yieldAndReturn() {
@@ -5065,7 +5065,7 @@ console.log(myGenObj.next())
 </div>
 </details>
 
-### Вопрос № 177
+## Вопрос № 177
 
 ```js
 const myGenerator = (function *(){
@@ -5100,7 +5100,7 @@ for (const value of myGenerator) {
 </details>
 
 
-### Вопрос № 178
+## Вопрос № 178
 
 ```js
 const squareObj = new Square(10)
@@ -5137,7 +5137,7 @@ class Square {
 </details>
 
 
-### Вопрос № 179
+## Вопрос № 179
 
 ```js
 function Person() { }
@@ -5174,7 +5174,7 @@ console.log(run())
 </details>
 
 
-### Вопрос № 180
+## Вопрос № 180
 
 ```js
 class Vehicle {
@@ -5214,7 +5214,7 @@ console.log(car.start())
 </details>
 
 
-### Вопрос № 181
+## Вопрос № 181
 
 ```js
 const user = {'age': 30}
@@ -5238,7 +5238,7 @@ console.log(user.age)
 </details>
 
 
-### Вопрос № 182
+## Вопрос № 182
 
 ```js
 function a(x) {
@@ -5274,8 +5274,7 @@ x()
 </div>
 </details>
 
-
-### Вопрос № 183
+## Вопрос № 183
 
 ```js
 function Name(a, b) {
@@ -5304,7 +5303,7 @@ console.log(!(a.length - window.a.length))
 </details>
 
 
-### Вопрос № 184
+## Вопрос № 184
 
 ```js
 const x = function (...x) {
@@ -5334,7 +5333,7 @@ spread-оператор "...x" позволяет получить параме�
 </details>
 
 
-### Вопрос № 185
+## Вопрос № 185
 
 ```js
 (function js(x) {
@@ -5368,7 +5367,7 @@ spread-оператор "...x" позволяет получить параме�
 </details>
 
 
-### Вопрос № 186
+## Вопрос № 186
 
 ```js
 var tip = 100
@@ -5404,7 +5403,7 @@ var tip = 100
 </details>
 
 
-### Вопрос № 187
+## Вопрос № 187
 
 ```js
 const js = { language: "loosely type", label: "difficult" }
@@ -5434,7 +5433,7 @@ console.log(Object.keys(newbie).length)
 </details>
 
 
-### Вопрос № 188
+## Вопрос № 188
 
 ```js
 var candidate = {
@@ -5477,7 +5476,7 @@ console.log(Combine.count())
 </details>
 
 
-### Вопрос № 189
+## Вопрос № 189
 
 ```js
 var x = 1
@@ -5515,7 +5514,7 @@ console.log(x)
 </details>
 
 
-### Вопрос № 190
+## Вопрос № 190
 
 ```js
 let x = {}
@@ -5544,7 +5543,7 @@ console.log(x === z)
 </details>
 
 
-### Вопрос № 191
+## Вопрос № 191
 
 ```js
 console.log("hello")
@@ -5572,7 +5571,7 @@ console.log("hi")
 </details>
 
 
-### Вопрос № 192
+## Вопрос № 192
 
 ```js
 String.prototype.lengthy = () => {
@@ -5602,7 +5601,7 @@ x.name.lengthy()
 </details>
 
 
-### Вопрос № 193
+## Вопрос № 193
 
 ```js
 let x = {}
@@ -5630,7 +5629,7 @@ console.log(x.hi + Object.keys(x).length)
 </details>
 
 
-### Вопрос № 194
+## Вопрос № 194
 
 ```js
 const array = (a) => {
@@ -5678,7 +5677,7 @@ console.log(setPropNull({ 1: 2, 2: 3, 3: 4, 4: 5 }))
 </details>
 
 
-### Вопрос № 195
+## Вопрос № 195
 
 ```js
 var a = [1, 2, 3]
@@ -5711,7 +5710,7 @@ console.log(e === f)
 </details>
 
 
-### Вопрос № 196
+## Вопрос № 196
 
 ```js
 var languages = {
@@ -5754,7 +5753,7 @@ let flag = languages.hasOwnProperty(
 </details>
 
 
-### Вопрос № 197
+## Вопрос № 197
 
 ```js
 var person = {}
@@ -5807,7 +5806,7 @@ console.log(flag.length)
 </details>
 
 
-### Вопрос № 198
+## Вопрос № 198
 
 ```js
 const id = 10
@@ -5839,7 +5838,7 @@ getID(id)
 </details>
 
 
-### Вопрос № 199
+## Вопрос № 199
 
 ```js
 var book1 = {
@@ -5874,7 +5873,7 @@ bookCollection.getName()
 </details>
 
 
-### Вопрос № 200
+## Вопрос № 200
 
 ```js
 (() => {
@@ -5909,7 +5908,7 @@ bookCollection.getName()
 </details>
 
 
-### Вопрос № 201
+## Вопрос № 201
 
 ```js
 let promise = new Promise((rs, rj) => {
@@ -5944,7 +5943,7 @@ promise
 </details>
 
 
-### Вопрос № 202
+## Вопрос № 202
 
 ```js
 async function f() {
@@ -5978,7 +5977,7 @@ f(setTimeout(() => console.log("timer"), 0))
 </details>
 
 
-### Вопрос № 203
+## Вопрос № 203
 
 ```js
 class MySort {
@@ -6018,7 +6017,7 @@ console.log(sortMe.getSort())
 </details>
 
 
-### Вопрос № 204
+## Вопрос № 204
 
 ```js
 const flag = [] !== !!!!![]
@@ -6044,7 +6043,7 @@ console.log((typeof f()).length + flag.toString().length)
 </details>
 
 
-### Вопрос № 205
+## Вопрос № 205
 
 ```js
 (function (a, b, c) {
@@ -6069,7 +6068,7 @@ console.log((typeof f()).length + flag.toString().length)
 </details>
 
 
-### Вопрос № 206
+## Вопрос № 206
 
 ```js
 class Calculator {
@@ -6108,7 +6107,7 @@ console.log(me.getValue())
 </details>
 
 
-### Вопрос № 207
+## Вопрос № 207
 
 ```js
 var name = "John"
@@ -6139,14 +6138,14 @@ console.log(result)
 <summary>Ответ</summary>
 <div>
 <h4>Правильный ответ: D</h4>
-<p>
+
 Данный вопрос посвящен ключевому слову "this". У нас есть простой объект, содержащий один метод и одно свойство. Во-первых, важно понимать, что "let me = obj.callMe" и последующий вызов "me()" существенно отличаются от прямого вызова "obj.callMe()". Если мы присваиваем переменной метод, объявленный внутри объекта, "this" в этом объекте будет вести себя по-разному (когда мы вызываем переменную как метод и когда мы вызываем сам метод). В частности, в первом случае, "this" - это объект "window", в то время как во втором случае "this" внутри функции по-прежнему ссылается на свойство "name" объекта "obj". Это означает, что "me()" возвращает "John", а "obj.callMe" - "Jane". Затем "result" возвращает false, и мы получаем ${me()} ${she()}. Почему "she()" отличается от "me()"? Потому что "she()" привязана к объекту "obj", а "me()" нет.
-</p>
+
 </div>
 </details>
 
 
-### Вопрос № 208
+## Вопрос № 208
 
 ```js
 ((...a) => {
@@ -6174,7 +6173,7 @@ console.log(result)
 </details>
 
 
-### Вопрос № 209
+## Вопрос № 209
 
 ```js
 function F(name, ...career) {
@@ -6204,7 +6203,7 @@ console.log(student.name)
 </details>
 
 
-### Вопрос № 210
+## Вопрос № 210
 
 ```js
 class Filter {
@@ -6250,7 +6249,7 @@ console.log(x.filter().length + filter[0].name.length)
 </details>
 
 
-### Вопрос № 211
+## Вопрос № 211
 
 ```js
 async function abc() {
@@ -6302,7 +6301,7 @@ console.log(6)
 </details>
 
 
-### Вопрос № 212
+## Вопрос № 212
 
 ```js
 const username = {
@@ -6336,7 +6335,7 @@ username.getMe()
 </div>
 </details>
 
-### Вопрос № 213
+## Вопрос № 213
 
 ```js
 function* userName() {
@@ -6370,7 +6369,7 @@ console.log((typeof data).length + data.next().value.length)
 </details>
 
 
-### Вопрос № 214
+## Вопрос № 214
 
 ```js
 const a = [1, 2, "one", 3, 1, "one", "two", 3]
@@ -6398,7 +6397,7 @@ console.log(b)
 </details>
 
 
-### Вопрос № 215
+## Вопрос № 215
 
 ```js
 const one = function (p) {
@@ -6433,7 +6432,7 @@ console.log(typeof a !== "object" ? a[0] : a[1])
 </details>
 
 
-### Вопрос № 216
+## Вопрос № 216
 
 ```js
 class Component {
@@ -6476,7 +6475,7 @@ console.log(a.getAge())
 </div>
 </details>
 
-### Вопрос № 217
+## Вопрос № 217
 
 ```js
 class RemoveFalse {
@@ -6516,7 +6515,7 @@ console.log(a.length)
 </div>
 </details>
 
-### Вопрос № 218
+## Вопрос № 218
 
 ```js
 const coderfarm = [1, [], {}, [], 2, 3]
@@ -6544,7 +6543,7 @@ console.log(result)
 </details>
 
 
-### Вопрос № 219
+## Вопрос № 219
 
 ```js
 const converter = (arrayInput) => {
@@ -6580,7 +6579,7 @@ console.log(checking ? (result ? (typeof converter).length : false) : false)
 </details>
 
 
-### Вопрос № 220
+## Вопрос № 220
 
 ```js
 function* js(length) {
@@ -6612,7 +6611,7 @@ console.log(result + getJS.next().value)
 </details>
 
 
-### Вопрос № 221
+## Вопрос № 221
 
 ```js
 var ages = [10, 15, 20, 25]
@@ -6652,7 +6651,7 @@ console.log(response)
 </details>
 
 
-### Вопрос № 222
+## Вопрос № 222
 
 ```js
 const getString = (string, method = false) => {
@@ -6684,7 +6683,7 @@ console.log(getString("hello", true) + getString("hello"))
 </details>
 
 
-### Вопрос № 223
+## Вопрос № 223
 
 ```js
 class UserName {
@@ -6727,7 +6726,7 @@ console.log(a.split("").length)
 </div>
 </details>
 
-### Вопрос № 224
+## Вопрос № 224
 
 ```js
 function javaScript(node) {
@@ -6763,7 +6762,7 @@ console.log(javaScript("I love you")()())
 </details>
 
 
-### Вопрос № 225
+## Вопрос № 225
 
 ```js
 (function (flag) {
@@ -6791,7 +6790,7 @@ console.log(javaScript("I love you")()())
 </details>
 
 
-### Вопрос № 226
+## Вопрос № 226
 
 ```js
 console.log(Boolean([]))
@@ -6825,7 +6824,7 @@ console.log(Boolean(new Boolean(false)))
 </details>
 
 
-### Вопрос № 227
+## Вопрос № 227
 
 ```js
 const myYoutube = {
@@ -6857,7 +6856,7 @@ console.log(myYoutube.content().name)
 </div>
 </details>
 
-### Вопрос № 228
+## Вопрос № 228
 
 ```js
 const myArray = [1, 2, 3]
@@ -6901,7 +6900,7 @@ console.log(result.length)
 </details>
 
 
-### Вопрос № 229
+## Вопрос № 229
 
 ```js
 const coderfarm = [1, 2, 3, 4, 5]
@@ -6937,7 +6936,7 @@ console.log(top.length + bottom.length)
 </details>
 
 
-### Вопрос № 230
+## Вопрос № 230
 
 ```js
 let age = { number: 10 }
@@ -6973,7 +6972,7 @@ console.log(age.number)
 </div>
 </details>
 
-### Вопрос № 231
+## Вопрос № 231
 
 ```js
 const f = function() {
@@ -7008,8 +7007,8 @@ obj.m.call(f);
 <summary>Ответ</summary>
 <div>
 <h4>Правильный ответ: A</h4>
-<p>
-При вызове функции `f` ее контекст (значение `this`) равняется `window`. Контекст самовызывающей функции также равняется `window`, поэтому значением `window.x` становится 3. Когда функцию вызывают с ключевым словом `new` - создается новый объект, который становится контекстом функции (конструктора), но самовызывающая функция этот контекст не получает, поэтому второй раз в консоль выводится 5. Дальше мы имеем дело с методом `m` объекта `obj`. Контекстом метода является объект, которому данный метод принадлежит. Значением свойства `obj.x` является 4, что и выводится в консоль. Однако, если вызвать тот же метод с помощью `new`, то для `m` будет создан новый контекст, в этом новом контексте `x` будет иметь значение `undefined`. Вызывая функцию `f` с помощью `call(f)`, мы определяем, что контекст данной функции равен самой функции, т.е. `this === f`. Функция - это специальный вид объекта, которому, как и любому другому объекту, можно добавлять свойства. `f.x` равняется 5, что и выводится в консоль. Наконец, мы вызываем метод `m` с помощью `call(f)`, т.е. `this === f`. После предыдущего вызова свойство `f.x` равняется 5, поэтому вместо `undefined` в консоль снова выводится 5.
-</p>
+
+При вызове функции `f` ее контекст (значение `this`) равняется `window`. Контекст самовызывающей функции также равняется `window`, поэтому значением `window.x` становится 3. Когда функцию вызывают с ключевым словом `new` - создается новый объект, который становится контекстом функции (конструктора), но самовызывающая функция этот контекст не получает, поэтому второй раз в консоль выводится `5`. Дальше мы имеем дело с методом `m` объекта `obj`. Контекстом метода является объект, которому данный метод принадлежит. Значением свойства `obj.x` является `4`, что и выводится в консоль. Однако, если вызвать тот же метод с помощью `new`, то для `m` будет создан новый контекст, в этом новом контексте `x` будет иметь значение `undefined`. Вызывая функцию `f` с помощью `call(f)`, мы определяем, что контекст данной функции равен самой функции, т.е. `this === f`. Функция - это специальный вид объекта, которому, как и любому другому объекту, можно добавлять свойства. `f.x` равняется `5`, что и выводится в консоль. Наконец, мы вызываем метод `m` с помощью `call(f)`, т.е. `this === f`. После предыдущего вызова свойство `f.x` равняется `5`, поэтому вместо `undefined` в консоль снова выводится `5`.
+
 </div>
 </details>

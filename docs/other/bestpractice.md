@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# React, Jest, Redux и лучшие практики
+# React, Jest, Redux и лучшие практики по React
 
 [Источник](https://github.com/learning-zone/react-interview-questions)&nbsp;&nbsp;👀
 

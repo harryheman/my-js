@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+hide_title: true
 ---
 
-# Node.js Snippets
+# Сниппеты Node.js
 
 ## Модуль `http`
 

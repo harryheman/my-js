@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# CSS & SASS Snippets
+# Сниппеты CSS & SASS
 
 ## CSS
 
