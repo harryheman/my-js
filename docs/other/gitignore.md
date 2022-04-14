@@ -1,5 +1,7 @@
 ---
 sidebar_position: 11
+title: .gitignore
+description: Пример файла .gitignore
 ---
 
 # .gitignore

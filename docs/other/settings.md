@@ -1,5 +1,7 @@
 ---
 sidebar_position: 12
+title: settings.json
+description: Пример файла settings.json
 ---
 
 # settings.json

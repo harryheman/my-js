@@ -1,5 +1,7 @@
 ---
 sidebar_position: 10
+title: .gitconfig
+description: Пример файла .gitconfig
 ---
 
 # .gitconfig

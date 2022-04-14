@@ -1,5 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
+title: Вопросы по React. Версия 1
+description: Вопросы по React для подготовки к собеседованию
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questions', 'question', 'собеседование', 'интервью', 'вопросы', 'вопрос']
 ---
 
 # Вопросы по React. Версия 1
@@ -45,7 +48,7 @@ class App extends React.Component {
 
 Объектное представление React-элемента выглядит так:
 
-```javascript
+```jsx
 const element = React.createElement(
   'div',
   {id: 'login-btn'},
@@ -73,14 +76,14 @@ const element = React.createElement(
 
 В отличие от элемента, *компонент* может определяться по-разному. Он может быть классом с методом `render()` (классовый компонент). Или же он может быть простой функцией (функциональный компонент). В любом случае, *компонент* принимает свойства (пропы, props от properties) на вход и возвращает JSX:
 
-```javascript
+```jsx
 const Button = ({ onLogin }) =>
   <div id={'login-btn'} onClick={onLogin}>Войти</div>
 ```
 
 JSX транспилируется (преобразуется) в функцию `React.createElement()`:
 
-```javascript
+```jsx
 const Button = ({ onLogin }) => React.createElement(
   'div',
   { id: 'login-btn', onClick: onLogin },
@@ -199,7 +202,7 @@ this.setState({ message: 'Привет, народ' })
 
 Коллбек вызывается после выполнения `setState()` и рендеринга компонента. Поскольку метод `setState()` является *асинхронным*, колбек используется для выполнения любых "последующих" операций.
 
-```javascript
+```jsx
 setState({ name: 'Иван' }, () => console.log(`Свойство "name" обновлено и компонент повторно отрисован`))
 ```
 
@@ -229,7 +232,7 @@ setState({ name: 'Иван' }, () => console.log(`Свойство "name" обн
 
 В React необходимо явно вызывать метод `preventDefault()`:
 
-```javascript
+```jsx
 function handleClick(event) {
   event.preventDefault()
   console.log('Ссылка была нажата')
@@ -246,7 +249,7 @@ function handleClick(event) {
 
 1. **Привязка в конструкторе:** в классах JavaScript методы не связаны с экземплярами по умолчанию. Тоже самое справедливо для обработчиков событий в React. Обычно, мы делаем привязку в конструкторе:
 
-```javascript
+```jsx
 class Component extends React.Component {
   constructor(props) {
     super(props)
@@ -384,15 +387,15 @@ class MyComponent extends React.Component {
 ```jsx
 class SearchBar extends Component {
   constructor(props) {
-    super(props);
-    this.txtSearch = null;
-    this.state = { term: '' };
+    super(props)
+    this.txtSearch = null
+    this.state = { term: '' }
     this.setInputSearchRef = e => {
-        this.txtSearch = e;
+        this.txtSearch = e
     }
   }
   onInputChange(event) {
-    this.setState({ term: this.txtSearch.value });
+    this.setState({ term: this.txtSearch.value })
   }
   render() {
     return (
@@ -400,7 +403,7 @@ class SearchBar extends Component {
           value={this.state.term}
           onChange={this.onInputChange.bind(this)}
           ref={this.setInputSearchRef} />
-    );
+    )
   }
 }
 ```
@@ -418,10 +421,10 @@ const ButtonElement = React.forwardRef((props, ref) => (
   <button ref={ref} className="CustomButton">
     {props.children}
   </button>
-));
+))
 
 // Создаем ссылку на кнопку
-const ref = React.createRef();
+const ref = React.createRef()
 <ButtonElement ref={ref}>Передать ссылку</ButtonElement>
 ```
 
@@ -431,7 +434,7 @@ const ref = React.createRef();
 
 *Типичный* пример использования `findDOMNode()`:
 
-```javascript
+```jsx
 class MyComponent extends Component {
   componentDidMount() {
     findDOMNode(this).scrollIntoView()
@@ -445,14 +448,14 @@ class MyComponent extends Component {
 
 Рекомендуемый подход:
 
-```javascript
+```jsx
 class MyComponent extends Component {
   constructor(props){
-    super(props);
-    this.node = createRef();
+    super(props)
+    this.node = createRef()
   }
   componentDidMount() {
-    this.node.current.scrollIntoView();
+    this.node.current.scrollIntoView()
   }
 
   render() {
@@ -499,7 +502,7 @@ class MyComponent extends Component {
 
 Например, для того, чтобы значение было представлено прописными буквами (в *верхнем регистре*), мы используем такой обработчик:
 
-```javascript
+```jsx
 handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()})
 }
@@ -533,7 +536,7 @@ class UserProfile extends React.Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
-    );
+    )
   }
 }
 ```
@@ -601,7 +604,7 @@ React 16.3+:
 
 Мы называем такие компоненты *чистыми*, поскольку они могут принимать и динамически предоставлять дочерние компоненты, но не меняют и не копируют их поведение.
 
-```javascript
+```jsx
 const EnhancedComponent = higherOrderComponent(WrappedComponent)
 ```
 
@@ -639,7 +642,7 @@ function HOC(WrappedComponent) {
 
 Например, статус аутентификации пользователя, языковые предпочтения или цветовая схема могут использоваться многими компонентами приложения:
 
-```javascript
+```jsx
 const { Provider, Consumer } = React.createContext(defaultValue)
 ```
 
@@ -696,7 +699,7 @@ ReactDOM.render(
 
 **Передача пропов:**
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -708,7 +711,7 @@ class MyComponent extends React.Component {
 
 **Без пропов:**
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super()
@@ -734,7 +737,7 @@ class MyComponent extends React.Component {
 
 При использовании ES6 или транспилятора Babel для преобразования JSX-кода вы можете применять *вычисляемые названия свойств*:
 
-```javascript
+```jsx
 handleInputChange(event) {
   this.setState({ [event.target.id]: event.target.value })
 }
@@ -766,24 +769,24 @@ render() {
 
 Рассмотрим файл компонента, в котором по имени импортируется несколько компонентов:
 
-```javascript
+```jsx
 // MoreComponents.js
-export const SomeComponent = /* ... */;
-export const UnusedComponent = /* ... */;
+export const SomeComponent = /* ... */
+export const UnusedComponent = /* ... */
 ```
 
 Затем компоненты из `MoreComponents.js` повторно экспортируются в промежуточном файле `IntermediateComponent.js`:
 
-```javascript
+```jsx
 // IntermediateComponent.js
-export { SomeComponent as default } from "./MoreComponents.js";
+export { SomeComponent as default } from "./MoreComponents.js"
 ```
 
 После этого, компоненты могут импортироваться с помощью "ленивой" функции:
 
-```javascript
-import React, { lazy } from 'react';
-const SomeComponent = lazy(() => import("./IntermediateComponent.js"));
+```jsx
+import React, { lazy } from 'react'
+const SomeComponent = lazy(() => import("./IntermediateComponent.js"))
 ```
 
 ### Почему в React используется `className` вместо атрибута `class`?
@@ -838,7 +841,7 @@ render() {
 
 *Portal* - рекомендуемый способ рендеринга потомков в DOM-узле, который находится за пределами родительского компонента:
 
-```javascript
+```jsx
 ReactDOM.createPortal(child, container)
 ```
 
@@ -852,7 +855,7 @@ ReactDOM.createPortal(child, container)
 
 Если поведение компонента зависит от состояния, такой компонент считается имеющим состояние. Раньше компоненты с состоянием можно было создавать только с помощью классов. Сейчас хуки предоставляют возможность создавать функциональные компоненты с состоянием. В классах состояние инициализируется в `constructor()` с помощью `this.state = initialValue`, в функции, как правило, в начале с помощью `const [state, setState] = useState(initialValue)`.
 
-```javascript
+```jsx
 class App extends Component {
   constructor(props) {
     super(props)
@@ -868,11 +871,11 @@ class App extends Component {
 
 *Эквивалентный функциональный компонент*
 
-```javascript
-import React, { useState } from 'react';
+```jsx
+import React, { useState } from 'react'
 
 const App = (props) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     // ...
@@ -962,7 +965,7 @@ class ErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
       // Обновляем состояние, чтобы при следующем рендеринге использовался запасной UI
-      return { hasError: true };
+      return { hasError: true }
     }
 
   render() {
@@ -1020,7 +1023,7 @@ ReactDOM.render(element, container[, callback])
 
 Например, вы запускаете основанный на Node веб-сервер, такой как Express, Koa или Happi, и вызываете `renderToString()` для рендеринга корневого элемента в виде строки, которую сервер отправляет в ответ на запрос:
 
-```javascript
+```jsx
 // используем Express
 import { renderToString } from 'react-dom/server'
 import MyPage from './MyPage'
@@ -1058,7 +1061,7 @@ function MyComponent() {
 const divStyle = {
   color: 'blue',
   backgroundImage: 'url(' + imgUrl + ')'
-};
+}
 
 function HelloWorldComponent() {
   return <div style={divStyle}>Привет, народ!</div>
@@ -1131,7 +1134,7 @@ class MyComponent extends React.Component {
     this.state = {
       records: [],
       inputValue: this.props.inputValue
-    };
+    }
   }
 
   render() {
@@ -1254,12 +1257,12 @@ const Consumer = () => {
 
 Начиная с React 16.6.0, у нас имеется `React.memo()`. Это компонент высшего порядка, который сохраняет компонент неизменным до обновления его пропов. Для этого достаточно обернуть в него мемоизируемый компонент перед использованием последнего:
 
-```js
+```jsx
   const MemoComponent = React.memo(function MemoComponent(props) {
     /* рендеринг с помощью пропов */
-  });
+  })
   // или
-  export default React.memo(MyFunctionComponent);
+  export default React.memo(MyFunctionComponent)
 ```
 
 Также следует отметить, что похожий функционал предоставляет хук `useMemo`.
@@ -1339,7 +1342,7 @@ $ yarn start
 
 Новый статический метод жизненного цикла `getDerivedStateFromProps()` вызывается после инстанцирования элемента перед его повторным рендерингом. Он может возвращать объект для обновления состояния или `null` как индикатор того, что новые пропы не требуют обновления состояния.
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   static getDerivedStateFromProps(props, state) {
     // ...
@@ -1353,7 +1356,7 @@ class MyComponent extends React.Component {
 
 Новый метод жизненного цикла `getSnapshotBeforeUpdate()` вызывается сразу после обновления DOM. Значение, возвращенное этим методом, передается в качестве третьего аргумента `componentDidUpdate()`.
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   getSnapshotBeforeUpdate(prevProps, prevState) {
     // ...
@@ -1373,7 +1376,7 @@ class MyComponent extends React.Component {
 
 Использование `displayName`:
 
-```javascript
+```jsx
 export default React.createClass({
   displayName: 'TodoApp',
   // ...
@@ -1382,7 +1385,7 @@ export default React.createClass({
 
 *Рекомендуемый* подход:
 
-```javascript
+```jsx
 export default class TodoApp extends React.Component {
   // ...
 }
@@ -1444,7 +1447,7 @@ Page.propTypes = {
 
 Допустим, начальным значением count является 0. Несмотря на три последовательных вызова операции по увеличению значения, count равняется 1:
 
-```javascript
+```jsx
 // предположим, что this.state.count === 0
 this.setState({ count: this.state.count + 1 })
 this.setState({ count: this.state.count + 1 })
@@ -1454,7 +1457,7 @@ this.setState({ count: this.state.count + 1 })
 
 Если мы передадим функцию в `setState()` значение count увеличится корректно:
 
-```javascript
+```jsx
 this.setState((prevState, props) => ({
 count: prevState.count + props.increment
 }))
@@ -1469,7 +1472,7 @@ React может объединять несколько вызовов `setStat
 
 Приведенный ниже пример счетчика работает неправильно:
 
-```javascript
+```jsx
 // Неправильно
 this.setState({
   counter: this.state.counter + this.props.increment,
@@ -1478,7 +1481,7 @@ this.setState({
 
 Рекомендуемый подход заключается в вызове `setState()` с функцией в качестве аргумента. Эта функция принимает предыдущее состояние в качестве первого параметра и обновленные пропы в качестве второго параметра:
 
-```javascript
+```jsx
 // Correct
 this.setState((prevState, props) => ({
   counter: prevState.counter + props.increment
@@ -1516,7 +1519,7 @@ function ExampleApplication() {
 
 Одним из самых распространенных случаев использования примесей является `PureRenderMixin`. Вы можете использовать его в некоторых компонентах для предотвращения повторного рендеринга, когда пропы и состояние поверхностно равны предыдущим:
 
-```javascript
+```jsx
 const PureRenderMixin = require('react-addons-pure-render-mixin')
 
 const Button = React.createClass({
@@ -1531,7 +1534,7 @@ const Button = React.createClass({
 
 Основная цель использования `isMounted()` заключается в предотвращении вызова `setState()` после размонтирования компонента, поскольку это приводит к выводу в консоль предупреждения.
 
-```javascript
+```jsx
 if (this.isMounted()) {
   this.setState({...})
 }
@@ -1592,7 +1595,7 @@ import MyComponent from './MyComponent'
 
 Например, следующий тег будет скомпилирован в валидный компонент:
 
-```javascript
+```jsx
 render(){
   return (
       <obj.component /> // `React.createElement(obj.component)`
@@ -1630,7 +1633,7 @@ render(){
 
 **ES6-классы:**
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -1641,7 +1644,7 @@ class MyComponent extends React.Component {
 
 **React.createClass():**
 
-```javascript
+```jsx
 const MyComponent = React.createClass({
   getInitialState() {
     return { /* начальное состояние */ }
@@ -1655,7 +1658,7 @@ const MyComponent = React.createClass({
 
 По умолчанию компонент перерисовывается при изменении его состояния или пропов. Если метод `render()` зависит от других данных, вы можете сообщить React о том, что компонент нуждается в повторном рендеринге, вызвав `forceUpdate()`.
 
-```javascript
+```jsx
 component.forceUpdate(callback)
 ```
 
@@ -1667,7 +1670,7 @@ component.forceUpdate(callback)
 
 **super(props):**
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -1678,7 +1681,7 @@ class MyComponent extends React.Component {
 
 **super():**
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super()
@@ -1737,7 +1740,7 @@ React (или JSX) не поддерживает интерполяцию пер
 
 Если вы хотите передать массив объектов в компонент с определенной формой, тогда используйте `React.PropTypes.shape()` в качестве аргумента `React.PropTypes.arrayOf()`:
 
-```javascript
+```jsx
 ReactComponent.propTypes = {
   arrayWithShape: React.PropTypes.arrayOf(React.PropTypes.shape({
     color: React.PropTypes.string.isRequired,
@@ -1810,11 +1813,11 @@ ReactComponent.propTypes = {
 
 Для этого можно прослушивать событие `resize` в методе `componentDidMount()` и обновлять направления (`width` и `height`). Не забудьте удалить обработчик в методе `componentWillUnmount()`.
 
-```javascript
+```jsx
 class WindowDimensions extends React.Component {
   constructor(props){
-    super(props);
-    this.updateDimensions = this.updateDimensions.bind(this);
+    super(props)
+    this.updateDimensions = this.updateDimensions.bind(this)
   }
 
   componentWillMount() {
@@ -1841,7 +1844,7 @@ class WindowDimensions extends React.Component {
 
 Вот аналогичный функциональный компонент:
 
-```javascript
+```jsx
 function WindowDimensions() {
   const [state, setState] = useState({
     width: window.innerWidth,
@@ -1886,7 +1889,7 @@ componentDidUpdate(object prevProps, object prevState)
 
 Создадим метод `removeItem()` для обновления состояния:
 
-```javascript
+```jsx
 removeItem(index) {
   this.setState({
     data: this.state.data.filter((item, i) => i !== index)
@@ -1988,21 +1991,21 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 * Использование `Object.assign()` для создания копии объекта:
 
- ```javascript
+ ```jsx
  const user = Object.assign({}, this.state.user, { age: 42 })
  this.setState({ user })
  ```
 
 * Использование *spread-оператора*:
 
- ```javascript
+ ```jsx
  const user = { ...this.state.user, age: 42 }
  this.setState({ user })
  ```
 
 2. **Вызов `setState()` с функцией:**
 
-```javascript
+```jsx
 this.setState(prevState => ({
   user: {
     ...prevState.user,
@@ -2013,7 +2016,7 @@ this.setState(prevState => ({
 
 3. **Вызов сеттера, возвращенного `useState()`:**
 
-```javascript
+```jsx
 const [user, setUser] = useState({name: 'Иван'})
 setUser({...user, age: 42})
 ```
@@ -2037,7 +2040,7 @@ ReactDOM.render(
 
 Создаем файл, например, `polyfills.js` и импортируем его в корневой файл `index.js`. Выполняем `npm install core-js` или `yarn add core-js` и импортируем необходимый функционал:
 
-```javascript
+```jsx
 import 'core-js/fn/array/find'
 import 'core-js/fn/array/includes'
 import 'core-js/fn/number/is-nan'
@@ -2090,7 +2093,7 @@ NODE_PATH=src/app
 
 В последнем случае импорт файлов будет начинаться с src:
 
-```javascript
+```jsx
 // вместо '../app', например
 import Component from 'app/Component.js'
 ```
@@ -2099,7 +2102,7 @@ import Component from 'app/Component.js'
 
 Добавьте обработчик к объекту `history` для записи каждого отображения страницы:
 
-```javascript
+```jsx
 history.listen(function (location) {
   window.ga('set', 'page', location.pathname + location.search)
   window.ga('send', 'pageview', location.pathname + location.search)
@@ -2110,7 +2113,7 @@ history.listen(function (location) {
 
   Для этого нужно использовать `setInterval()`, изменяющий состояние. Не забудьте отключить таймер при размонтировании компонента во избежание ошибок и утечек памяти:
 
-  ```javascript
+  ```jsx
   componentDidMount() {
     this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000)
   }
@@ -2122,7 +2125,7 @@ history.listen(function (location) {
 
 Аналогичный функциональный компонент:
 
-```javascript
+```jsx
 const [time, setTime] = useState(Date.now)
 
 useEffect(() => {
@@ -2170,7 +2173,7 @@ export default class MyProfile extends React.Component {
 
 **Обратите внимание:** при агрегации экспортируемых компонентов в файле `index.js`, удобнее использовать именованный экспорт, в противном случае, придется делать так:
 
-```javascript
+```jsx
 export { default as Component } from './Component'
 ```
 
@@ -2182,7 +2185,7 @@ export { default as Component } from './Component'
 
 Для определения константы можно использовать синтаксис *статических полей класса*:
 
-```javascript
+```jsx
 class MyComponent extends React.Component {
   static DEFAULT_PAGINATION = 10
 }
@@ -2204,7 +2207,7 @@ class MyComponent extends React.Component {
 
 2. Вызываем событие клика в обработчике:
 
-```javascript
+```jsx
 this.inputElement.click()
 ```
 
@@ -2271,7 +2274,7 @@ components/
 
 Например, эти стили могут быть извлечены в разные компоненты:
 
-```javascript
+```jsx
 export const colors = {
   white,
   black,
@@ -2289,7 +2292,7 @@ export const space = [
 
 И затем импортироваться в компоненты по необходимости:
 
-```javascript
+```jsx
 import { space, colors } from './styles'
 ```
 
@@ -2333,7 +2336,7 @@ class MyComponent extends React.Component {
   render() {
     const { error, employees } = this.state
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else {
       return (
         <ul>
@@ -2459,14 +2462,14 @@ Button.contextTypes = {
 
 Возможность разбирать строку запроса была удалена из React Router 4, поскольку разработчики на протяжении нескольких лет просили добавить другую реализацию. Поэтому разработчикам была предоставлена возможность самостоятельного выбора реализации. Рекомендуемым подходом является использование библиотеки `query-srting`:
 
-```javascript
-const queryString = require('query-string');
-const parsed = queryString.parse(props.location.search);
+```jsx
+const queryString = require('query-string')
+const parsed = queryString.parse(props.location.search)
 ```
 
 Если вы предпочитаете нативные решения, то можете использовать `URLSearchParams()`:
 
-```javascript
+```jsx
 const params = new URLSearchParams(props.location.search)
 const foo = params.get('name')
 ```
@@ -2477,7 +2480,7 @@ const foo = params.get('name')
 
 Прежде всего, необходимо импортировать `Switch`:
 
-```javascript
+```jsx
 import { Switch, Router, Route } from 'react-router'
 ```
 
@@ -2496,7 +2499,7 @@ import { Switch, Router, Route } from 'react-router'
 
 В процессе навигации вы можете передавать объекту `history` некоторые пропы:
 
-```javascript
+```jsx
 this.props.history.push({
   pathname: '/template',
   search: '?name=sudheer',
@@ -2526,7 +2529,7 @@ this.props.history.push({
 
 Создаем файл `history.js`:
 
-```javascript
+```jsx
 import { createBrowserHistory } from 'history'
 
 export default createBrowserHistory({
@@ -2550,7 +2553,7 @@ ReactDOM.render((
 
 3. Вы также можете использовать метод `push()` объекта `history` по аналогии со встроенным объектом истории:
 
-```javascript
+```jsx
 // some-other-file.js
 import history from './history'
 
@@ -2561,7 +2564,7 @@ history.push('/go-here')
 
 Пакет `react-router` предоставляет компонент `Redirect`. Рендеринг данного компонента приводит к перемещению в новую локацию. Как и в случае с серверными перенаправлениями, новая локация перезапишет текущую в стеке истории:
 
-```javascript
+```jsx
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 
@@ -2609,7 +2612,7 @@ React Intl предоставляет следующие возможности:
 
 2. **С помощью API:**
 
-```javascript
+```jsx
 const messages = defineMessages({
   accountMessage: {
     id: 'account',
@@ -2690,7 +2693,7 @@ export default injectIntl(MyComponent)
 
 Например, если у нас имеется такой компонент:
 
-```javascript
+```jsx
 function MyComponent() {
   return (
     <div>
@@ -2762,7 +2765,7 @@ console.log(testRenderer.toJSON())
 
 Создадим тест для функции, возвращающей сумму двух чисел, находящейся в файле `sum.js`:
 
-```javascript
+```jsx
 const sum = (a, b) => a + b
 
 export default sum
@@ -2770,7 +2773,7 @@ export default sum
 
 Создаем файл `sum.test.js`, содержащий код теста:
 
-```javascript
+```jsx
 import sum from './sum'
 
 test('сумма 1 и 2 равняется 3', () => {
@@ -2800,3087 +2803,2908 @@ PASS ./sum.test.js
 
 ### Что такое Flux?
 
-     *Flux* - это *парадигма проектирования приложений*, являющаяся альтернативой более традиционному паттерну MVC. Это не фреймворк или библиотека, а новый вид архитектуры, разработанный специально для React с учетом концепции однонаправленного потока данных. Facebook использует данный паттерн в своих внутренних проектах.
+*Flux* - это *парадигма проектирования приложений*, являющаяся альтернативой более традиционному паттерну MVC. Это не фреймворк или библиотека, а новый вид архитектуры, разработанный специально для React с учетом концепции однонаправленного потока данных. Facebook использует данный паттерн в своих внутренних проектах.
 
-     Рабочий процесс или взаимодействие компонентов диспетчера (dispatcher), хранилища (store) и представления (view) с учетом каналов ввода-вывода выглядит так:
+Рабочий процесс или взаимодействие компонентов диспетчера (dispatcher), хранилища (store) и представления (view) с учетом каналов ввода-вывода выглядит так:
 
-     ![flux](./assets/img/flux.png)
-
+![flux](./assets/img/flux.png)
 
 ### Что такое Redux?
 
-     *Redux* - это стабильный (предсказуемый) контейнер для хранения состояния JavaScript-приложений, основанный на паттерне проектирования *Flux*. Redux может использоваться с React и любой другой библиотекой. Он легкий (около 2 Кб) и не имеет зависимостей.
-
+*Redux* - это стабильный (предсказуемый) контейнер для хранения состояния JavaScript-приложений, основанный на паттерне проектирования *Flux*. Redux может использоваться с React и любой другой библиотекой. Он легкий (около 2 Кб) и не имеет зависимостей.
 
 ### Назовите ключевые принципы Redux
 
-     Redux следует трем фундаментальным принципам:
+Redux следует трем фундаментальным принципам:
 
-     1. **Единственный источник истины:** состояние всего приложения хранится в древовидном объекта - в одном хранилище. Единственное состояние-дерево облегчает наблюдение за изменениями и отладку или инспектирование приложения
-     2. **Состояние доступно только для чтения:** единственный способ изменить состояние заключается в запуске операции - объекте, описывающем произошедшее. Это позволяет гарантировать, что ни представления, ни сетевые колбеки не буду иметь возможности изменять состояние напрямую
-     3. **Изменения производятся с помощью "чистых" функций:** для определения того, как изменяется состояние в зависимости от операции, создаются редукторы (reducers). Редукторы - это "чистые" функции, принимающие предыдущее состояние в качестве аргумента и возвращающие новое
-
+1. **Единственный источник истины:** состояние всего приложения хранится в древовидном объекта - в одном хранилище. Единственное состояние-дерево облегчает наблюдение за изменениями и отладку или инспектирование приложения
+2. **Состояние доступно только для чтения:** единственный способ изменить состояние заключается в запуске операции - объекте, описывающем произошедшее. Это позволяет гарантировать, что ни представления, ни сетевые колбеки не буду иметь возможности изменять состояние напрямую
+3. **Изменения производятся с помощью "чистых" функций:** для определения того, как изменяется состояние в зависимости от операции, создаются редукторы (reducers). Редукторы - это "чистые" функции, принимающие предыдущее состояние в качестве аргумента и возвращающие новое
 
 ### Проведите сравнение Redux и Flux
 
-     Отличия между Redux и Flux можно свести к следующему:
+Отличия между Redux и Flux можно свести к следующему:
 
-     1. **Недопустимость мутаций:** во Flux состояние может быть изменяемым, а Redux требует, чтобы состояние было иммутабельным, и многие библиотеки для Redux исходят из предположения, что вы никогда не будете менять состояние напрямую. Вы можете обеспечить иммутабельность состояния с помощью таких пакетов, как `redux-immutable-state-invariant`, `Immutable.js` или условившись с другими членами команды о написании иммутабельного кода
-     2. **Осторожность в выборе библиотек:** Flux не пытается решать такие проблемы, как повторное выполнение/отмена выполнения, стабильность (постоянство) кода или проблемы, связанные с обработкой форм, явно, а Redux имеет возможность к расширению с помощью промежуточного программного обеспечения (middleware) и предохранителей хранилища, что породило богатую экосистему
-     3. **Отсутствие интеграции с Flow:** Flux позволяет осуществлять очень выразительную статическую проверку типов, а Redux пока не поддерживает такой возможности
-
+1. **Недопустимость мутаций:** во Flux состояние может быть изменяемым, а Redux требует, чтобы состояние было иммутабельным, и многие библиотеки для Redux исходят из предположения, что вы никогда не будете менять состояние напрямую. Вы можете обеспечить иммутабельность состояния с помощью таких пакетов, как `redux-immutable-state-invariant`, `Immutable.js` или условившись с другими членами команды о написании иммутабельного кода
+2. **Осторожность в выборе библиотек:** Flux не пытается решать такие проблемы, как повторное выполнение/отмена выполнения, стабильность (постоянство) кода или проблемы, связанные с обработкой форм, явно, а Redux имеет возможность к расширению с помощью промежуточного программного обеспечения (middleware) и предохранителей хранилища, что породило богатую экосистему
+3. **Отсутствие интеграции с Flow:** Flux позволяет осуществлять очень выразительную статическую проверку типов, а Redux пока не поддерживает такой возможности
 
 ### В чем разница между `mapStateToProps()` и `mapDispatchToProps()`?
 
-     `mapStateToProps()` - это утилита, помогающая компонентам получать обновленное состояние (которое было обновлено другим компонентом):
+`mapStateToProps()` - это утилита, помогающая компонентам получать обновленное состояние (которое было обновлено другим компонентом):
 
-     ```javascript
-     const mapStateToProps = (state) => {
-       return {
-         todos: getVisibleTodos(state.todos, state.visibilityFilter)
-       }
-     }
-     ```
+```jsx
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+```
 
-     `mapDispatchToProps()` - утилита, помогающая компонентам вызывать операции (которые могут привести к обновлению состояния приложения):
+`mapDispatchToProps()` - утилита, помогающая компонентам вызывать операции (которые могут привести к обновлению состояния приложения):
 
-     ```javascript
-     const mapDispatchToProps = (dispatch) => {
-       return {
-         onTodoClick: (id) => {
-           dispatch(toggleTodo(id))
-         }
-       }
-     }
-     ```
+```jsx
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+```
 
-     Для `mapDispatchToProps()` рекомендуется всегда использовать короткую форму записи объекта.
+Для `mapDispatchToProps()` рекомендуется всегда использовать короткую форму записи объекта.
 
-     Redux оборачивает ее в другую функцию, которая выглядит как `(…args) => dispatch(onTodoClick(…args))`, и передает эту обертку в качестве пропа в компонент:
+Redux оборачивает ее в другую функцию, которая выглядит как `(…args) => dispatch(onTodoClick(…args))`, и передает эту обертку в качестве пропа в компонент:
 
-      ```javascript
-       const mapDispatchToProps = ({
-         onTodoClick
-       })
-      ```
-
+```jsx
+const mapDispatchToProps = ({
+  onTodoClick
+})
+```
 
 ### Можно ли запускать операцию в редукторе?
 
-     Запуск операции в редукторе является *антипаттерном*. Редуктор не должен вызывать *побочных эффектов*, он должен принимать объект с названием операции и полезной нагрузкой (payload) и возвращать объект с новым состоянием. Добавление обработчиков и запуск операций в редукторе могут привести к цепной реакции и другим негативным последствиям.
-
+Запуск операции в редукторе является *антипаттерном*. Редуктор не должен вызывать *побочных эффектов*, он должен принимать объект с названием операции и полезной нагрузкой (payload) и возвращать объект с новым состоянием. Добавление обработчиков и запуск операций в редукторе могут привести к цепной реакции и другим негативным последствиям.
 
 ### Как получить доступ к хранилищу Redux за пределами компонента?
 
-     Для этого нужно экспортировать хранилище из модуля, в котором оно создано с помощью `createStore()`. Имейте ввиду, что оно не должно загрязнять глобальное пространство имен:
+Для этого нужно экспортировать хранилище из модуля, в котором оно создано с помощью `createStore()`. Имейте ввиду, что оно не должно загрязнять глобальное пространство имен:
 
-     ```javascript
-     store = createStore(myReducer)
+```jsx
+store = createStore(myReducer)
 
-     export default store
-     ```
-
+export default store
+```
 
 ### Назовите недостатки паттерна MVW (Model-View-Whatever: MVC, MVP, MVVM и т.д.)
 
-     1. Манипуляции с DOM являются очень дорогостоящими, что делает приложение медленным и неэффективным
-     2. Для обеспечения возможности использования обратных зависимостей была разработана очень сложная модель вокруг моделей и представлений
-     3. Происходит изменение большого количества данных в приложениях для совместной работы (таких как Google Docs)
-     4. Не существует простого способа отменять действия без добавления большого количества дополнительного кода
-
+1. Манипуляции с DOM являются очень дорогостоящими, что делает приложение медленным и неэффективным
+2. Для обеспечения возможности использования обратных зависимостей была разработана очень сложная модель вокруг моделей и представлений
+3. Происходит изменение большого количества данных в приложениях для совместной работы (таких как Google Docs)
+4. Не существует простого способа отменять действия без добавления большого количества дополнительного кода
 
 ### Существует ли что-либо общее между Redux и RxJS?
 
-     Названные библиотеки созданы для разных целей. Однако, между ними есть кое-что общее.
+Названные библиотеки созданы для разных целей. Однако, между ними есть кое-что общее.
 
-     Redux - это инструмент для управления состоянием приложения. Как правило, он используется в качестве архитектурного решения для пользовательского интерфейса. Думайте о нем как об альтернативе (наполовину) Angular. RxJS - это библиотека реактивного программирования. Обычно, она используется для выполнения асинхронных задач в JavaScript. Думайте о ней как об альтернативе промисам. Redux использует реактивную парадигму, поскольку хранилище является реактивным. Хранилище наблюдает за операциями с расстояния и изменяет себя. RxJS следует той же парадигме, но вместо того, чтобы выступать в роли архитектуры, он предоставляет основные строительные блоки, наблюдаемые объекты (observables), для реализации указанного паттерна.
-
+Redux - это инструмент для управления состоянием приложения. Как правило, он используется в качестве архитектурного решения для пользовательского интерфейса. Думайте о нем как об альтернативе (наполовину) Angular. RxJS - это библиотека реактивного программирования. Обычно, она используется для выполнения асинхронных задач в JavaScript. Думайте о ней как об альтернативе промисам. Redux использует реактивную парадигму, поскольку хранилище является реактивным. Хранилище наблюдает за операциями с расстояния и изменяет себя. RxJS следует той же парадигме, но вместо того, чтобы выступать в роли архитектуры, он предоставляет основные строительные блоки, наблюдаемые объекты (observables), для реализации указанного паттерна.
 
 ### Как запустить операцию при загрузке?
 
-     Вы можете запускать операцию в методе `componentDidMount()` и проверять данные в методе `render()`:
+Вы можете запускать операцию в методе `componentDidMount()` и проверять данные в методе `render()`:
 
-     ```javascript
-     class App extends Component {
-       componentDidMount() {
-         this.props.fetchData()
-       }
+```jsx
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchData()
+  }
 
-       render() {
-         return this.props.isLoaded
-           ? <div>Загружено</div>
-           : <div>Не загружено</div>
-       }
-     }
+  render() {
+    return this.props.isLoaded
+      ? <div>Загружено</div>
+      : <div>Не загружено</div>
+  }
+}
 
-     const mapStateToProps = (state) => ({
-       isLoaded: state.isLoaded
-     })
+const mapStateToProps = (state) => ({
+  isLoaded: state.isLoaded
+})
 
-     const mapDispatchToProps = { fetchData }
+const mapDispatchToProps = { fetchData }
 
-     export default connect(mapStateToProps, mapDispatchToProps)(App)
-     ```
-
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+```
 
 ### Как использовать метод `connect()` в Redux?
 
-     Для того, чтобы иметь возможность использовать хранилище в контейнере, необходимо выполнить следующие шаги:
+Для того, чтобы иметь возможность использовать хранилище в контейнере, необходимо выполнить следующие шаги:
 
-     1. **Использовать метод `mapStateToProps()`:** он передает переменные состояния из хранилища в определенные вами пропы
-     2. **Подключить пропы к контейнеру:** объект, возвращенный `mapStateToProps()` подключается к контейнеру. Вы можете импортировать `connect()` из `react-redux`:
+1. **Использовать метод `mapStateToProps()`:** он передает переменные состояния из хранилища в определенные вами пропы
+2. **Подключить пропы к контейнеру:** объект, возвращенный `mapStateToProps()` подключается к контейнеру. Вы можете импортировать `connect()` из `react-redux`:
 
-         ```jsx
-         import React from 'react'
-         import { connect } from 'react-redux'
+```jsx
+import React from 'react'
+import { connect } from 'react-redux'
 
-         class App extends React.Component {
-           render() {
-             return <div>{this.props.containerData}</div>
-           }
-         }
+class App extends React.Component {
+  render() {
+    return <div>{this.props.containerData}</div>
+  }
+}
 
-         function mapStateToProps(state) {
-           return { containerData: state.data }
-         }
+function mapStateToProps(state) {
+  return { containerData: state.data }
+}
 
-         export default connect(mapStateToProps)(App)
-         ```
-
+export default connect(mapStateToProps)(App)
+```
 
 ### Как обнулить состояние в Redux?
 
-     Для этого необходимо создать *корневой редуктор* (root reducer), делегирующий обработку операций редуктору, генерируемому методом `combineReducers()`.
+Для этого необходимо создать *корневой редуктор* (root reducer), делегирующий обработку операций редуктору, генерируемому методом `combineReducers()`.
 
-     Создадим `rootReducer()`, возвращающий начальное состояние после операции `USER_LOGOUT`. Как мы знаем, редукторы возвращают начальное состояние при вызове с `undefined` в качестве первого аргумента, независимо от операции:
+Создадим `rootReducer()`, возвращающий начальное состояние после операции `USER_LOGOUT`. Как мы знаем, редукторы возвращают начальное состояние при вызове с `undefined` в качестве первого аргумента, независимо от операции:
 
-     ```javascript
-     const appReducer = combineReducers({
-       /* редукторы верхнего уровня приложения */
-     })
+```jsx
+const appReducer = combineReducers({
+  /* редукторы верхнего уровня приложения */
+})
 
-     const rootReducer = (state, action) => {
-       if (action.type === 'USER_LOGOUT') {
-         state = undefined
-       }
+const rootReducer = (state, action) => {
+  if (action.type === 'USER_LOGOUT') {
+    state = undefined
+  }
 
-       return appReducer(state, action)
-     }
-     ```
+  return appReducer(state, action)
+}
+```
 
-     В случае использования `redux-persist`, вам, возможно, также потребуется очистить хранилище. `redux-persist` сохраняет копию состояния в движке хранилища. Поэтому сначала нужно импортировать соответствующий движок, затем разобрать состояние перед установкой его значение в `undefined` и, наконец, очистить каждый ключ состояния хранилища:
+В случае использования `redux-persist`, вам, возможно, также потребуется очистить хранилище. `redux-persist` сохраняет копию состояния в движке хранилища. Поэтому сначала нужно импортировать соответствующий движок, затем разобрать состояние перед установкой его значение в `undefined` и, наконец, очистить каждый ключ состояния хранилища:
 
-     ```javascript
-     const appReducer = combineReducers({
-       /* редукторы верхнего уровня приложения */
-     })
+```jsx
+const appReducer = combineReducers({
+  /* редукторы верхнего уровня приложения */
+})
 
-     const rootReducer = (state, action) => {
-       if (action.type === 'USER_LOGOUT') {
-         Object.keys(state).forEach(key => {
-           storage.removeItem(`persist: ${key}`)
-         })
+const rootReducer = (state, action) => {
+  if (action.type === 'USER_LOGOUT') {
+    Object.keys(state).forEach(key => {
+      storage.removeItem(`persist: ${key}`)
+    })
 
-         state = undefined
-       }
+    state = undefined
+  }
 
-       return appReducer(state, action)
-     }
-     ```
-
+  return appReducer(state, action)
+}
+```
 
 ### Для чего используется символ *@* в декораторе `connect` Redux?
 
-     Символ *@* указывает на то, что мы имеем дело с декоратором JavaScript. *Decorators* делают возможным аннотирование и модификацию классов, их полей и методов во время определения класса.
+Символ *@* указывает на то, что мы имеем дело с декоратором JavaScript. *Decorators* делают возможным аннотирование и модификацию классов, их полей и методов во время определения класса.
 
-     Рассмотрим примеры настройки Redux без и с использованием декоратора:
+Рассмотрим примеры настройки Redux без и с использованием декоратора:
 
-     * **Без декоратора:**
+* **Без декоратора:**
 
-         ```javascript
-         import React from 'react'
-         import * as actionCreators from './actionCreators'
-         import { bindActionCreators } from 'redux'
-         import { connect } from 'react-redux'
+```jsx
+import React from 'react'
+import * as actionCreators from './actionCreators'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-         function mapStateToProps(state) {
-           return { todos: state.todos }
-         }
+function mapStateToProps(state) {
+  return { todos: state.todos }
+}
 
-         function mapDispatchToProps(dispatch) {
-           return { actions: bindActionCreators(actionCreators, dispatch) }
-         }
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actionCreators, dispatch) }
+}
 
-         class MyApp extends React.Component {
-           // ...
-         }
+class MyApp extends React.Component {
+  // ...
+}
 
-         export default connect(mapStateToProps, mapDispatchToProps)(MyApp)
-         ```
+export default connect(mapStateToProps, mapDispatchToProps)(MyApp)
+```
 
-     * **C декоратором:**
+* **C декоратором:**
 
-         ```javascript
-         import React from 'react'
-         import * as actionCreators from './actionCreators'
-         import { bindActionCreators } from 'redux'
-         import { connect } from 'react-redux'
+```jsx
+import React from 'react'
+import * as actionCreators from './actionCreators'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-         function mapStateToProps(state) {
-           return { todos: state.todos }
-         }
+function mapStateToProps(state) {
+ return { todos: state.todos }
+}
 
-         function mapDispatchToProps(dispatch) {
-           return { actions: bindActionCreators(actionCreators, dispatch) }
-         }
+function mapDispatchToProps(dispatch) {
+ return { actions: bindActionCreators(actionCreators, dispatch) }
+}
 
-         @connect(mapStateToProps, mapDispatchToProps)
-         export default class MyApp extends React.Component {
-           // ...
-         }
-         ```
+@connect(mapStateToProps, mapDispatchToProps)
+export default class MyApp extends React.Component {
+ // ...
+}
+```
 
-     Приведенные примеры почти идентичны, за исключением использования декоратора. Синтаксис декораторов пока не стандартизирован, является экспериментальным и может измениться в будущем (данное предложение находится на *3 стадии рассмотрения*). Для поддержки декораторов можно использовать *Babel*.
-
+Приведенные примеры почти идентичны, за исключением использования декоратора. Синтаксис декораторов пока не стандартизирован, является экспериментальным и может измениться в будущем (данное предложение находится на *3 стадии рассмотрения*). Для поддержки декораторов можно использовать *Babel*.
 
 ### В чем разница между контекстом React и React Redux?
 
-     Вы можете использовать *Context* напрямую, он отлично подходит для передачи данных глубоко вложенным компонентам - в этом состоит его основное назначение.
+Вы можете использовать *Context* напрямую, он отлично подходит для передачи данных глубоко вложенным компонентам - в этом состоит его основное назначение.
 
-     *Redux* - гораздо более мощный инструмент, предоставляющий большое количество возможностей, которыми не обладает API контекста. На самом деле, Redux использует контекст в своих внутренних механизмах, но не экстраполирует его в открытый интерфейс.
-
+*Redux* - гораздо более мощный инструмент, предоставляющий большое количество возможностей, которыми не обладает API контекста. На самом деле, Redux использует контекст в своих внутренних механизмах, но не экстраполирует его в открытый интерфейс.
 
 ### Почему функции, изменяющие состояние, в Redux называются редукторами?
 
-     Редукторы всегда возвращают аккумулированное состояние (основанное на всех предыдущих и текущей операциях). Они действуют подобно "редукторам состояния". При каждом вызове редуктора, ему в качестве аргументов передаются состояние и операция. Переданное состояние обновляется (аккумулируется с предыдущим) на основе операции, и возвращается новое состояние. Вы можете "редуцировать" несколько операций и начальное состояние (хранилища), применить эти операции к состоянию для получения результирующего состояния.
-
+Редукторы всегда возвращают аккумулированное состояние (основанное на всех предыдущих и текущей операциях). Они действуют подобно "редукторам состояния". При каждом вызове редуктора, ему в качестве аргументов передаются состояние и операция. Переданное состояние обновляется (аккумулируется с предыдущим) на основе операции, и возвращается новое состояние. Вы можете "редуцировать" несколько операций и начальное состояние (хранилища), применить эти операции к состоянию для получения результирующего состояния.
 
 ### Как сделать AJAX-запрос в Redux?
 
-     Для этого можно использовать промежуточное программное обеспечение `redux-thunk`, позволяющее определять асинхронные операции.
+Для этого можно использовать промежуточное программное обеспечение `redux-thunk`, позволяющее определять асинхронные операции.
 
-     Рассмотрим пример запроса определенного аккаунта с помощью `fetch API`:
+Рассмотрим пример запроса определенного аккаунта с помощью `fetch API`:
 
-     ```javascript
-     export function fetchAccount(id) {
-       return dispatch => {
-         dispatch(setLoadingAccountState()) // показываем индикатор загрузки
-         fetch(`/account/${id}`, (response) => {
-           dispatch(doneFetchingAccount()) // скрываем индикатор
-           if (response.status === 200) {
-             dispatch(setAccount(response.json())) // обновляем состояние полученными данными
-           } else {
-             dispatch(someError)
-           }
-         })
-       }
-     }
+```jsx
+export function fetchAccount(id) {
+  return dispatch => {
+    dispatch(setLoadingAccountState()) // показываем индикатор загрузки
+    fetch(`/account/${id}`, (response) => {
+      dispatch(doneFetchingAccount()) // скрываем индикатор
+      if (response.status === 200) {
+        dispatch(setAccount(response.json())) // обновляем состояние полученными данными
+      } else {
+        dispatch(someError)
+      }
+    })
+  }
+}
 
-     function setAccount(data) {
-      return { type: 'SET_ACCOUNT', data }
-     }
-     ```
-
+function setAccount(data) {
+return { type: 'SET_ACCOUNT', data }
+}
+```
 
 ### Обязательно ли хранить состояние всех компонентов в хранилище Redux?
 
-      Данные приложения следует хранить в хранилище Redux, а состояние компонентов пользовательского интерфейса в соответствующих компонентах. У создателя Redux Дэна Абрамова по этому поводу есть статья под названием "Следует ли вам использовать Redux?"
-
+Данные приложения следует хранить в хранилище Redux, а состояние компонентов пользовательского интерфейса в соответствующих компонентах. У создателя Redux Дэна Абрамова по этому поводу есть статья под названием "Следует ли вам использовать Redux?"
 
 ### Как рекомендуется получать доступ к хранилищу Redux?
 
-     Лучшим способом получить хранилище в компоненте является использование функции `connect()`, которая создает новый компонент, оборачивающий существующий. Этот паттерн называется *компоненты высшего порядка*, он является предпочтительным способом расширения функциональности компонента в React. Это позволяет передавать в компонент состояние и "создателей операций" (action creators), в том числе, при обновлении хранилища.
+Лучшим способом получить хранилище в компоненте является использование функции `connect()`, которая создает новый компонент, оборачивающий существующий. Этот паттерн называется *компоненты высшего порядка*, он является предпочтительным способом расширения функциональности компонента в React. Это позволяет передавать в компонент состояние и "создателей операций" (action creators), в том числе, при обновлении хранилища.
 
-     Создадим компонент `FilterLink` с помощью `connect()`:
+Создадим компонент `FilterLink` с помощью `connect()`:
 
-     ```javascript
-     import { connect } from 'react-redux'
-     import { setVisibilityFilter } from '../actions'
-     import Link from '../components/Link'
+```jsx
+import { connect } from 'react-redux'
+import { setVisibilityFilter } from '../actions'
+import Link from '../components/Link'
 
-     const mapStateToProps = (state, ownProps) => ({
-       active: ownProps.filter === state.visibilityFilter
-     })
+const mapStateToProps = (state, ownProps) => ({
+  active: ownProps.filter === state.visibilityFilter
+})
 
-     const mapDispatchToProps = (dispatch, ownProps) => ({
-       onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
-     })
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
+})
 
-     const FilterLink = connect(
-       mapStateToProps,
-       mapDispatchToProps
-     )(Link)
+const FilterLink = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Link)
 
-     export default FilterLink
-     ```
+export default FilterLink
+```
 
-     Поскольку такой вариант имеет несколько оптимизаций производительности и, как правило, меньше подвержен "багам", разработчики Redux почти всегда рекомендуют использовать `connect()` вместо прямого доступа к хранилищу (с помощью API контекста).
+Поскольку такой вариант имеет несколько оптимизаций производительности и, как правило, меньше подвержен "багам", разработчики Redux почти всегда рекомендуют использовать `connect()` вместо прямого доступа к хранилищу (с помощью API контекста).
 
-     ```javascript
-     class MyComponent {
-       someMethod() {
-         doSomethingWith(this.context.store)
-       }
-     }
-     ```
-
+```jsx
+class MyComponent {
+  someMethod() {
+    doSomethingWith(this.context.store)
+  }
+}
+```
 
 ### В чем разница между компонентом и контейнером в React Redux?
 
-     *Component* - это классовый или функциональный компонент, описывающий визуальное представление приложения.
+*Component* - это классовый или функциональный компонент, описывающий визуальное представление приложения.
 
-     *Container* - это неофициальный термин для описания компонента, подключенного к хранилищу Redux. Контейнеры "подписываются" на обновление состояния Redux и "запускают" (dispatch) операции, они, как правило, не рендерят DOM-элементы: они делегируют рендеринг дочерним компонентам, отвечающим за визуализацию.
-
+*Container* - это неофициальный термин для описания компонента, подключенного к хранилищу Redux. Контейнеры "подписываются" на обновление состояния Redux и "запускают" (dispatch) операции, они, как правило, не рендерят DOM-элементы: они делегируют рендеринг дочерним компонентам, отвечающим за визуализацию.
 
 ### Для чего в Redux нужны константы?
 
-     Константы позволяют легко обнаруживать все случаи их применения в проекте при использовании IDE. Они также позволяют избегать глупых ошибок, связанных с типами - немедленно выбрасывается исключение `ReferenceError`.
+Константы позволяют легко обнаруживать все случаи их применения в проекте при использовании IDE. Они также позволяют избегать глупых ошибок, связанных с типами - немедленно выбрасывается исключение `ReferenceError`.
 
-     Обычно, мы сохраняем константы в отдельном файле  (`constants.js` или `actionTypes.js`).
+Обычно, мы сохраняем константы в отдельном файле  (`constants.js` или `actionTypes.js`).
 
-     ```javascript
-     export const ADD_TODO = 'ADD_TODO'
-     export const DELETE_TODO = 'DELETE_TODO'
-     export const EDIT_TODO = 'EDIT_TODO'
-     export const COMPLETE_TODO = 'COMPLETE_TODO'
-     export const COMPLETE_ALL = 'COMPLETE_ALL'
-     export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
-     ```
+```jsx
+export const ADD_TODO = 'ADD_TODO'
+export const DELETE_TODO = 'DELETE_TODO'
+export const EDIT_TODO = 'EDIT_TODO'
+export const COMPLETE_TODO = 'COMPLETE_TODO'
+export const COMPLETE_ALL = 'COMPLETE_ALL'
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED'
+```
 
-     В Redux мы используем их в двух местах:
+В Redux мы используем их в двух местах:
 
-     1. **Во время создания операции:**
+1. **Во время создания операции:**
 
-         `actions.js`:
+`actions.js`:
 
-         ```javascript
-         import { ADD_TODO } from './actionTypes';
+```jsx
+import { ADD_TODO } from './actionTypes'
 
-         export function addTodo(text) {
-           return { type: ADD_TODO, text }
-         }
-         ```
+export function addTodo(text) {
+  return { type: ADD_TODO, text }
+}
+```
 
-     2. **В редукторах:**
+2. **В редукторах:**
 
-         `reducer.js`:
+`reducer.js`:
 
-         ```javascript
-         import { ADD_TODO } from './actionTypes'
+```jsx
+import { ADD_TODO } from './actionTypes'
 
-         export default (state = [], action) => {
-           switch (action.type) {
-             case ADD_TODO:
-               return [
-                 ...state,
-                 {
-                   text: action.text,
-                   completed: false
-                 }
-               ];
-             default:
-               return state
-           }
-         }
-         ```
-
+export default (state = [], action) => {
+  switch (action.type) {
+    case ADD_TODO:
+      return [
+        ...state,
+        {
+          text: action.text,
+          completed: false
+        }
+      ];
+    default:
+      return state
+  }
+}
+```
 
 ### Какие способы существуют для написания `mapDispatchToProps()`?
 
-     Существует несколько способов привязать "создателей операций" к методу `dispatch()` в `mapDispatchToProps()`.
+Существует несколько способов привязать "создателей операций" к методу `dispatch()` в `mapDispatchToProps()`.
 
-     Ниже представлены возможные варианты:
+Ниже представлены возможные варианты:
 
-     ```javascript
-     const mapDispatchToProps = (dispatch) => ({
-      action: () => dispatch(action())
-     })
-     ```
+```jsx
+const mapDispatchToProps = (dispatch) => ({
+action: () => dispatch(action())
+})
+```
 
-     ```javascript
-     const mapDispatchToProps = (dispatch) => ({
-      action: bindActionCreators(action, dispatch)
-     })
-     ```
+```jsx
+const mapDispatchToProps = (dispatch) => ({
+action: bindActionCreators(action, dispatch)
+})
+```
 
-     ```javascript
-     const mapDispatchToProps = { action }
-     ```
+```jsx
+const mapDispatchToProps = { action }
+```
 
-     Третий вариант является сокращением первого.
-
+Третий вариант является сокращением первого.
 
 ### Для чего используется параметр `ownProps` в методах `mapStateToProps()` и `mapDispatchToProps()`?
 
-     При определении параметра `ownProps` React Redux передает пропы в компонент в функциях "подключения". Поэтому, если вы используете подключенный компонент:
+При определении параметра `ownProps` React Redux передает пропы в компонент в функциях "подключения". Поэтому, если вы используете подключенный компонент:
 
-     ```jsx
-     import ConnectedComponent from './containers/ConnectedComponent';
+```jsx
+import ConnectedComponent from './containers/ConnectedComponent'
 
-     <ConnectedComponent user='Иван' />
-     ```
+<ConnectedComponent user='Иван' />
+```
 
-     `ownProps` внутри функций `mapStateToProps()` и `mapDispatchToProps()` будет объектом:
+`ownProps` внутри функций `mapStateToProps()` и `mapDispatchToProps()` будет объектом:
 
-     ```javascript
-     { user: 'Иван' }
-     ```
+```jsx
+{ user: 'Иван' }
+```
 
-     Вы можете использовать этот объект для определения значения, возвращаемого указанными функциями.
-
+Вы можете использовать этот объект для определения значения, возвращаемого указанными функциями.
 
 ### Как структурировать директории верхнего уровня в Redux?
 
-     Большинство приложений имеют несколько "топовых" директорий:
+Большинство приложений имеют несколько "топовых" директорий:
 
-     1. **components**: используется для "тупых" компонентов, не знающих о Redux
-     2. **containers**: используется для "умных" компонентов, подключенных к Redux
-     3. **actions**: используется для всех создателей операций - названия файлов указывают на соответствующие части приложения
-     4. **reducers**: используется для всех редукторов - названия коррелируют с ключами состояния
-     5. **store**: используется для инициализации хранилища
+1. **components**: используется для "тупых" компонентов, не знающих о Redux
+2. **containers**: используется для "умных" компонентов, подключенных к Redux
+3. **actions**: используется для всех создателей операций - названия файлов указывают на соответствующие части приложения
+4. **reducers**: используется для всех редукторов - названия коррелируют с ключами состояния
+5. **store**: используется для инициализации хранилища
 
-     Такая структура прекрасно подходит для небольших и средних приложений.
-
+Такая структура прекрасно подходит для небольших и средних приложений.
 
 ### Что такое `redux-saga`?
 
-     `redux-saga` - это библиотека, позволяющая легче и быстрее выполнять побочные эффекты (асинхронную логику, вроде получения данных и доступа к кэшу браузера) в React/Redux-приложениях.
+`redux-saga` - это библиотека, позволяющая легче и быстрее выполнять побочные эффекты (асинхронную логику, вроде получения данных и доступа к кэшу браузера) в React/Redux-приложениях.
 
-     Она доступна в NPM:
+Она доступна в NPM:
 
-     ```console
-     $ yarn add redux-saga
-     // или
-     $ npm i redux-saga
-     ```
-
+```bash
+$ yarn add redux-saga
+// или
+$ npm i redux-saga
+```
 
 ### Определите ментальную модель redux-saga
 
-     *Saga* - своего рода отдельный поток (выполнения кода) в приложении, отвечающий исключительно за побочные эффекты. `redux-saga` - это *middleware* для Redux, это означает, что данный "тред" может запускаться, приостанавливаться и отменяться из основного приложения с помощью обычных операций Redux. Он имеет доступ к состоянию приложения и может инициировать запуск операций.
-
+*Saga* - своего рода отдельный поток (выполнения кода) в приложении, отвечающий исключительно за побочные эффекты. `redux-saga` - это *middleware* для Redux, это означает, что данный "тред" может запускаться, приостанавливаться и отменяться из основного приложения с помощью обычных операций Redux. Он имеет доступ к состоянию приложения и может инициировать запуск операций.
 
 ### В чем разница между методами `call()` и `put()` в redux-saga?
 
-     `call()` и `put()` являются функциями создания эффектов. `call()` используется для создания эффекта описания, указывающего *middleware* вызвать промис. `put()` создает эффект, указывающий *middleware* запустить операцию.
+`call()` и `put()` являются функциями создания эффектов. `call()` используется для создания эффекта описания, указывающего *middleware* вызвать промис. `put()` создает эффект, указывающий *middleware* запустить операцию.
 
-     Рассмотрим, как эти эффекты работают применительно к запросу пользовательских данных:
+Рассмотрим, как эти эффекты работают применительно к запросу пользовательских данных:
 
-     ```javascript
-     function* fetchUserSaga(action) {
-       // функция `call()` получает аргументы, которые передаются функции `api.fetchUser()`,
-       // указываем middleware вызвать промис, после чего разрешенное значение присваивается переменной userData
-       const userData = yield call(api.fetchUser, action.userId)
+```jsx
+function* fetchUserSaga(action) {
+  // функция `call()` получает аргументы, которые передаются функции `api.fetchUser()`,
+  // указываем middleware вызвать промис, после чего разрешенное значение присваивается переменной userData
+  const userData = yield call(api.fetchUser, action.userId)
 
-       // указываем middleware запустить соответствующую операцию
-       yield put({
-         type: 'FETCH_USER_SUCCESS',
-         userData
-       })
-     }
-     ```
-
+  // указываем middleware запустить соответствующую операцию
+  yield put({
+    type: 'FETCH_USER_SUCCESS',
+    userData
+  })
+}
+```
 
 ### Что такое Redux Thunk?
 
-     *Redux Thunk* - это промежуточное программное обеспечение, которое позволяет писать "создателей операций", возвращающих функции вместо операций. Thunk может использоваться для отложенного или условного запуска операции. Внутренняя функция в качестве параметров принимает методы хранилища `dispatch()` и `getState()`.
-
+*Redux Thunk* - это промежуточное программное обеспечение, которое позволяет писать "создателей операций", возвращающих функции вместо операций. Thunk может использоваться для отложенного или условного запуска операции. Внутренняя функция в качестве параметров принимает методы хранилища `dispatch()` и `getState()`.
 
 ### В чем разница между `redux-saga` и `redux-thunk`?
 
-     *Redux Thunk* и *Redux Saga* предназначены для работы с побочными эффектами. В большинстве сценариев, Thunk для этого пользуется *промисами*, а Saga - *генераторами*. Thunk проще в использовании и промисы лучше знакомы большинству разработчиков, Saga предоставляет больше возможностей, но требуется хорошо разбираться в генераторах. Названные *middlewares* могут использоваться совместно: можно начать с использования Thunk и, при необходимости, перейти на Saga.
-
+*Redux Thunk* и *Redux Saga* предназначены для работы с побочными эффектами. В большинстве сценариев, Thunk для этого пользуется *промисами*, а Saga - *генераторами*. Thunk проще в использовании и промисы лучше знакомы большинству разработчиков, Saga предоставляет больше возможностей, но требуется хорошо разбираться в генераторах. Названные *middlewares* могут использоваться совместно: можно начать с использования Thunk и, при необходимости, перейти на Saga.
 
 ### Что такое Redux DevTools?
 
-     *Redux DevTools* - это Redux-окружение для "путешествий во времени" и "живого" редактирования кода с возможностью "горячей" перезагрузки, повторения операций и "кастомизируемым" интерфейсом. Если вы не хотите возиться с установкой Redux DevTools и его интеграцией в свой проект, присмотритесь к соответствующим расширениям для Chrome и Firefox.
-
+*Redux DevTools* - это Redux-окружение для "путешествий во времени" и "живого" редактирования кода с возможностью "горячей" перезагрузки, повторения операций и "кастомизируемым" интерфейсом. Если вы не хотите возиться с установкой Redux DevTools и его интеграцией в свой проект, присмотритесь к соответствующим расширениям для Chrome и Firefox.
 
 ### Назовите основные возможности Redux DevTools
 
-     Вот некоторые из основных возможностей Redux DevTools:
+Вот некоторые из основных возможностей Redux DevTools:
 
-      1. Позволяют инспектировать каждое состояние и полезную нагрузку операции
-      2. Позволяют возвращаться назад, "отменяя" выполнение операций
-      3. При изменении кода редуктора осуществляется повторное вычисление каждой "зафиксированной" операции
-      4. Если редуктор выбросил исключение, вы сможете увидеть, в процессе выполнения какой операции это произошло, и в чем заключается ошибка
-      5. С помощью метода `persistState()` можно сохранить сессию отладки между перезагрузками страницы
-
+1. Позволяют инспектировать каждое состояние и полезную нагрузку операции
+2. Позволяют возвращаться назад, "отменяя" выполнение операций
+3. При изменении кода редуктора осуществляется повторное вычисление каждой "зафиксированной" операции
+4. Если редуктор выбросил исключение, вы сможете увидеть, в процессе выполнения какой операции это произошло, и в чем заключается ошибка
+5. С помощью метода `persistState()` можно сохранить сессию отладки между перезагрузками страницы
 
 ### Что такое селекторы (selectors) Redux и зачем их использовать?
 
-     *Selectors* - это функции, принимающие состояние Redux в качестве аргумента и возвращающие некоторые данные для передачи компоненту.
+*Selectors* - это функции, принимающие состояние Redux в качестве аргумента и возвращающие некоторые данные для передачи компоненту.
 
-     Например, так можно извлечь данные пользователя из состояния:
+Например, так можно извлечь данные пользователя из состояния:
 
-     ```javascript
-     const getUserData = state => state.user.data
-     ```
+```jsx
+const getUserData = state => state.user.data
+```
 
-     Селекторы имеют два главных преимущества:
+Селекторы имеют два главных преимущества:
 
-     1. Селектор может вычислять производные данные, позволяя Redux записывать в хранилище минимально возможное состояние
-     2. Селектор не выполняет повторных вычислений до тех пор, пока не изменится один из его аргументов
-
+1. Селектор может вычислять производные данные, позволяя Redux записывать в хранилище минимально возможное состояние
+2. Селектор не выполняет повторных вычислений до тех пор, пока не изменится один из его аргументов
 
 ### Что такое Redux Form?
 
-     *Redux Form* работает с React и Redux, позволяя формам в React хранить состояние в Redux. Redux Form может использоваться с обычными HTML5-инпутами, а также с популярными UI-фреймворками, такими как Material UI, React Widgets и React Bootstrap.
-
+*Redux Form* работает с React и Redux, позволяя формам в React хранить состояние в Redux. Redux Form может использоваться с обычными HTML5-инпутами, а также с популярными UI-фреймворками, такими как Material UI, React Widgets и React Bootstrap.
 
 ### Назовите основные возможности, предоставляемые Redux Form?
 
-     Вот некоторые из основных особенностей Redux Form:
+Вот некоторые из основных особенностей Redux Form:
 
-       1. Значения полей записываются в хранилище Redux
-       2. Синхронная/асинхронная валидация полей и отправка формы
-       3. Форматирование, разбор и нормализация значений полей
-
+1. Значения полей записываются в хранилище Redux
+2. Синхронная/асинхронная валидация полей и отправка формы
+3. Форматирование, разбор и нормализация значений полей
 
 ### Как добавить несколько middleware в Redux?
 
-     Для этого можно использовать метод `applyMiddleware()`.
+Для этого можно использовать метод `applyMiddleware()`.
 
-     Например, можно добавить `redux-thunk` и `logger`, передав их в качестве аргументов в `applyMiddleware()`:
+Например, можно добавить `redux-thunk` и `logger`, передав их в качестве аргументов в `applyMiddleware()`:
 
-     ```javascript
-     import { createStore, applyMiddleware } from 'redux'
-     const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
-     ```
-
+```jsx
+import { createStore, applyMiddleware } from 'redux'
+const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore)
+```
 
 ### Как установить начальное значение в Redux?
 
-     Для этого необходимо передать начальное состояние как второй аргумент в метод `createStore()`:
+Для этого необходимо передать начальное состояние как второй аргумент в метод `createStore()`:
 
-     ```javascript
-     const rootReducer = combineReducers({
-       todos: todos,
-       visibilityFilter: visibilityFilter
-     })
+```jsx
+const rootReducer = combineReducers({
+  todos: todos,
+  visibilityFilter: visibilityFilter
+})
 
-     const initialState = {
-       todos: [{ id: 123, name: 'пример', completed: false }]
-     }
+const initialState = {
+  todos: [{ id: 123, name: 'пример', completed: false }]
+}
 
-     const store = createStore(
-       rootReducer,
-       initialState
-     )
-     ```
-
+const store = createStore(
+  rootReducer,
+  initialState
+)
+```
 
 ### Чем Relay отличается от Redux?
 
-     *Relay* похож на *Redux* тем, что оба используют единственное хранилище. Основное отличие состоит в том, что Relay управляет состоянием через сервер, доступ к состоянию (чтение данных) и его изменение осуществляется через *GraphQL-запросы*. Relay кэширует данные в целях оптимизации их получения, запрашивая только изменившиеся данные и ничего более.
+*Relay* похож на *Redux* тем, что оба используют единственное хранилище. Основное отличие состоит в том, что Relay управляет состоянием через сервер, доступ к состоянию (чтение данных) и его изменение осуществляется через *GraphQL-запросы*. Relay кэширует данные в целях оптимизации их получения, запрашивая только изменившиеся данные и ничего более.
 
 ### Что такое операция (action) в Redux?
 
-     *Actions* - это обычные JavaScript-объекты, содержащие данные приложения, которые отправляются в хранилище. Операции должны иметь свойство `type`, указывающее какой тип операции необходимо выполнить. Операции также могут содержать полезную нагрузку (payload) - данные для обновления состояния.
+*Actions* - это обычные JavaScript-объекты, содержащие данные приложения, которые отправляются в хранилище. Операции должны иметь свойство `type`, указывающее какой тип операции необходимо выполнить. Операции также могут содержать полезную нагрузку (payload) - данные для обновления состояния.
 
-     Вот как может выглядеть операция по добавлению новой задачи в список:
+Вот как может выглядеть операция по добавлению новой задачи в список:
 
-     ```
-     // здесь используется константа
-     {
-       type: ADD_TODO,
-       text: 'Добавление задачи в список'
-     }
-     ```
-
-
+```jsx
+// здесь используется константа
+{
+  type: ADD_TODO,
+  text: 'Добавление задачи в список'
+}
+```
 
 ## React Native
 
-
 ### В чем разница между React Native и React?
 
-     **React** - это JavaScript-библиотека для построения пользовательских интерфейсов и полноценных веб-приложений, работающая как в клиентском, так и в серверном окружении.
+**React** - это JavaScript-библиотека для построения пользовательских интерфейсов и полноценных веб-приложений, работающая как в клиентском, так и в серверном окружении.
 
-     **React Native** - это фреймворк для разработки мобильных (нативных) приложений (iOS, Android и Windows), позволяющий использовать React для создания компонентов и сам использующий его под капотом.
-
+**React Native** - это фреймворк для разработки мобильных (нативных) приложений (iOS, Android и Windows), позволяющий использовать React для создания компонентов и сам использующий его под капотом.
 
 ### Как тестируются приложения React Native?
 
-     React Native может тестироваться только в симуляторах мобильного окружения. Для запуска приложения можно использовать приложение Expo (https://expo.io). При синхронизации с помощью QR-кода, ваш телефон и компьютер должны быть подключены к одной сети.
-
+React Native может тестироваться только в симуляторах мобильного окружения. Для запуска приложения можно использовать приложение Expo (https://expo.io). При синхронизации с помощью QR-кода, ваш телефон и компьютер должны быть подключены к одной сети.
 
 ### Как реализовать логгирование в React Native?
 
-     Вы можете использовать функции `console.log()`, `console.warn()` и т.д. Начиная с React Native 0.29, для вывода сообщений в консоль также можно использовать следующие команды:
+Вы можете использовать функции `console.log()`, `console.warn()` и т.д. Начиная с React Native 0.29, для вывода сообщений в консоль также можно использовать следующие команды:
 
-     ```
-     $ react-native log-ios
-     $ react-native log-android
-     ```
-
+```bash
+$ react-native log-ios
+$ react-native log-android
+```
 
 ### Как производить отладку в React Native?
 
-     Для отладки приложений React Native необходимо выполнить следующие шаги:
+Для отладки приложений React Native необходимо выполнить следующие шаги:
 
-     1. Запустить приложение в симуляторе iOS, например
-     2. Нажать `Command/Ctrl + D`. После этого должна открыться страница по адресу: `http://localhost:8081/debugger-ui`
-     3. Разрешите *Pause On Caught Exceptions* для улучшения опыта отладки
-     4. Нажмите `Command + Option + I`/`Ctrl + Shift + I` или `F12` для того, чтобы открыть инструменты разработчика Chrome
-     5. После этого у вас появится возможность отлаживать приложение в обычном режиме
-
+1. Запустить приложение в симуляторе iOS, например
+2. Нажать `Command/Ctrl + D`. После этого должна открыться страница по адресу: `http://localhost:8081/debugger-ui`
+3. Разрешите *Pause On Caught Exceptions* для улучшения опыта отладки
+4. Нажмите `Command + Option + I`/`Ctrl + Shift + I` или `F12` для того, чтобы открыть инструменты разработчика Chrome
+5. После этого у вас появится возможность отлаживать приложение в обычном режиме
 
 ## Библиотеки для React
 
-
 ### Что такое reselect и как он работает?
 
-     *Reselect* - это *библиотека селекторов* (для Redux), которая использует концепцию *мемоизации*. Изначально она создавалась для вычисления производных данных из состояния Redux-подобных приложений, но может применяться и к другой архитектуре или библиотеке.
+*Reselect* - это *библиотека селекторов* (для Redux), которая использует концепцию *мемоизации*. Изначально она создавалась для вычисления производных данных из состояния Redux-подобных приложений, но может применяться и к другой архитектуре или библиотеке.
 
-     *Reselect* сохраняет копию входных/выходных данных последнего вызова и производит повторные вычисления только при изменении этих данных. Если передаются одни и те же данные, reselect возвращает результат из кэша. Мемоизация и кэширование являются полностью настраиваемыми.
-
+*Reselect* сохраняет копию входных/выходных данных последнего вызова и производит повторные вычисления только при изменении этих данных. Если передаются одни и те же данные, reselect возвращает результат из кэша. Мемоизация и кэширование являются полностью настраиваемыми.
 
 ### Что такое Flow?
 
-     *Flow* - это инструмент для *статической проверки типов*, специально разработанный для обнаружения ошибок в типах JavaScript. Типы Flow делают более мелкие различия, чем традиционная система типов. Например, Flow, в отличие от большинства других систем типов, помогает перехватывать ошибки, связанные с `null`.
-
+*Flow* - это инструмент для *статической проверки типов*, специально разработанный для обнаружения ошибок в типах JavaScript. Типы Flow делают более мелкие различия, чем традиционная система типов. Например, Flow, в отличие от большинства других систем типов, помогает перехватывать ошибки, связанные с `null`.
 
 ### В чем разница между Flow и PropTypes?
 
-     *Flow* - это *инструмент статического анализа*, который используется надмножество языка, позволяющее добавлять аннотации типов для всего кода и осуществлять проверку во время компиляции.
+*Flow* - это *инструмент статического анализа*, который используется надмножество языка, позволяющее добавлять аннотации типов для всего кода и осуществлять проверку во время компиляции.
 
-     *PropTypes* - это *инструмент базовой проверки типов*, встроенный в React. Он может проверять только типы пропов, переданных компоненту. Если вам нужна большая гибкость с точки зрения проверки типов, то лучшим выбором будет использование Flow/TypeScript.
-
+*PropTypes* - это *инструмент базовой проверки типов*, встроенный в React. Он может проверять только типы пропов, переданных компоненту. Если вам нужна большая гибкость с точки зрения проверки типов, то лучшим выбором будет использование Flow/TypeScript.
 
 ### Как использовать иконки font-awesome в React?
 
-     Для того, чтобы включить Font Awesome в React-проект, необходимо выполнить следующие шаги:
+Для того, чтобы включить Font Awesome в React-проект, необходимо выполнить следующие шаги:
 
-     1. Установить `font-awesome`:
+1. Установить `font-awesome`:
 
-         ```console
-         $ yarn add font-awesome
-         // или
-         $ npm i font-awesome
-         ```
+```bash
+$ yarn add font-awesome
+# или
+$ npm i font-awesome
+```
 
-     2. Импортировать `font-awesome` в файл `index.js`:
+2. Импортировать `font-awesome` в файл `index.js`:
 
-         ```javascript
-         import 'font-awesome/css/font-awesome.min.css'
-         ```
+```jsx
+import 'font-awesome/css/font-awesome.min.css'
+```
 
-     3. Добавить класс Font Awesome в атрибут `className`:
+3. Добавить класс Font Awesome в атрибут `className`:
 
-         ```javascript
-         render() {
-           return <div><i className={'fa fa-spinner'} /></div>
-         }
-         ```
-
+```jsx
+render() {
+  return <div><i className={'fa fa-spinner'} /></div>
+}
+```
 
 ### Что такое React DevTools?
 
-     *React Developer Tools* позволяют инспектировать иерархию компонентов, включая их состояние и пропы. Они существуют как в виде расширения для браузера (Chrome и Firefox), так и в виде самостоятельного приложения (работают с другими окружениями, такими как Safari, IE и React Native).
-
+*React Developer Tools* позволяют инспектировать иерархию компонентов, включая их состояние и пропы. Они существуют как в виде расширения для браузера (Chrome и Firefox), так и в виде самостоятельного приложения (работают с другими окружениями, такими как Safari, IE и React Native).
 
 ### Почему DevTools не загружаются в Chrome для локальных файлов?
 
-     Если вы открыли локальный HTML-файл в браузере (`file://...`), тогда вам необходимо открыть *Расширения Chrome* и выбрать *Allow access to file URLs* (разрешить доступ к путям файлов).
-
+Если вы открыли локальный HTML-файл в браузере (`file://...`), тогда вам необходимо открыть *Расширения Chrome* и выбрать *Allow access to file URLs* (разрешить доступ к путям файлов).
 
 ### Как использовать Polymer в React?
 
-     Для того, чтобы использовать Polymer в React, необходимо сделать следующее:
+Для того, чтобы использовать Polymer в React, необходимо сделать следующее:
 
-     1. Создать элемент Polymer:
+1. Создать элемент Polymer:
 
-         ```jsx
-         <link rel='import' href='../../bower_components/polymer/polymer.html' />
-         Polymer({
-           is: 'calender-element',
-           ready: function() {
-             this.textContent = 'Это календарь'
-           }
-         })
-         ```
+```jsx
+<link rel='import' href='../../bower_components/polymer/polymer.html' />
+Polymer({
+  is: 'calender-element',
+  ready: function() {
+    this.textContent = 'Это календарь'
+  }
+})
+```
 
-     2. Создать компонент Polymer, импортировав его в `index.html`:
+2. Создать компонент Polymer, импортировав его в `index.html`:
 
-         ```html
-         <link rel='import' href='./src/polymer-components/calender-element.html'>
-         ```
+```html
+<link rel='import' href='./src/polymer-components/calender-element.html'>
+```
 
-     3. Использовать этот компонент в JSX:
+3. Использовать этот компонент в JSX:
 
-         ```javascript
-         import React from 'react'
+```jsx
+import React from 'react'
 
-         class MyComponent extends React.Component {
-           render() {
-             return (
-               <calender-element />
-             )
-           }
-         }
+class MyComponent extends React.Component {
+  render() {
+    return (
+      <calender-element />
+    )
+  }
+}
 
-         export default MyComponent
-         ```
-
+export default MyComponent
+```
 
 ### В чем заключаются преимущества React перед Vue?
 
-     React имеет следующие преимущества перед Vue:
+React имеет следующие преимущества перед Vue:
 
-     1. Предоставляет большую гибкость при разработке больших приложений
-     2. Его легче тестировать
-     3. Подходит для разработки мобильных приложений
-     4. Доступно больше информации и готовых решений
+1. Предоставляет большую гибкость при разработке больших приложений
+2. Его легче тестировать
+3. Подходит для разработки мобильных приложений
+4. Доступно больше информации и готовых решений
 
-   **Обратите внимание:** приведенные выше преимущества являются субъективными и сильно зависят от опыта разработки.
-
+**Обратите внимание:** приведенные выше преимущества являются субъективными и сильно зависят от опыта разработки.
 
 ### В чем разница между React и Angular?
 
-     Отличия между React и Angular в табличной форме:
+Отличия между React и Angular в табличной форме:
 
-     | React | Angular |
-     | ----- | ------- |
-     | React - это библиотека, которая имеет только слой представления | Angular - это фреймворк, в котором реализован весь функционал MVC |
-     | React выполняет рендеринг на стороне сервера | Angular раньше осуществлял рендеринг на стороне клиента, но, начиная с Angular 2, он также делегировал эти полномочия серверу |
-     | React использует JSX, который выглядит как HTML в JS, что может сбивать с толку | Angular следует "шаблонному" подходу к HTML, что делает код более коротким и понятным |
-     | React Native, позволяющий разрабатывать мобильные приложения быстрее и стабильнее | Ionic, соответственно, менее стабильный и более медленный |
-     | В React поток данных является однонаправленным, что существенно облегчает отладку | В Angular поток данных двунаправленный, данные связывают дочерний и родительский компоненты, что часто затрудняет отладку |
+| React | Angular |
+| ----- | ------- |
+| React - это библиотека, которая имеет только слой представления | Angular - это фреймворк, в котором реализован весь функционал MVC |
+| React выполняет рендеринг на стороне сервера | Angular раньше осуществлял рендеринг на стороне клиента, но, начиная с Angular 2, он также делегировал эти полномочия серверу |
+| React использует JSX, который выглядит как HTML в JS, что может сбивать с толку | Angular следует "шаблонному" подходу к HTML, что делает код более коротким и понятным |
+| React Native, позволяющий разрабатывать мобильные приложения быстрее и стабильнее | Ionic, соответственно, менее стабильный и более медленный |
+| В React поток данных является однонаправленным, что существенно облегчает отладку | В Angular поток данных двунаправленный, данные связывают дочерний и родительский компоненты, что часто затрудняет отладку |
 
-   **Обратите внимание:** приведенные отличия является субъективными и сильно зависят от профессионального опыта.
-
+**Обратите внимание:** приведенные отличия является субъективными и сильно зависят от профессионального опыта.
 
 ### Почему в DevTools не отображается вкладка React?
 
-     При загрузке страницы *React DevTools* устанавливает глобальную переменную `__REACT_DEVTOOLS_GLOBAL_HOOK__`, после чего React активирует этот хук в процессе инициализации и использует его для взаимодействия с инструментами разработчика. Если сайт не использует React или React больше не может взаимодействовать с DevTools, соответствующая вкладка не будет отображаться.
-
+При загрузке страницы *React DevTools* устанавливает глобальную переменную `__REACT_DEVTOOLS_GLOBAL_HOOK__`, после чего React активирует этот хук в процессе инициализации и использует его для взаимодействия с инструментами разработчика. Если сайт не использует React или React больше не может взаимодействовать с DevTools, соответствующая вкладка не будет отображаться.
 
 ### Что такое Styled Components?
 
-     `styled-components` - это JavaScript-библиотека для стилизации React-приложений. Она исключает необходимость интеграции между стилями и компонентами и позволяет писать стили, дополняемые JavaScript.
-
+`styled-components` - это JavaScript-библиотека для стилизации React-приложений. Она исключает необходимость интеграции между стилями и компонентами и позволяет писать стили, дополняемые JavaScript.
 
 ### Приведите пример использования Styled Components
 
-     Создадим компоненты `Title` и `Wrapper` с определенными стилями для каждого:
+Создадим компоненты `Title` и `Wrapper` с определенными стилями для каждого:
 
-     ```javascript
-     import React from 'react'
-     import styled from 'styled-components'
+```jsx
+import React from 'react'
+import styled from 'styled-components'
 
-     const Title = styled.h1`
-       font-size: 1.5em;
-       text-align: center;
-       color: palevioletred;
-     `
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`
 
-     const Wrapper = styled.section`
-       padding: 4em;
-       background: papayawhip;
-     `
-     ```
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`
+```
 
-     Переменные `Title` и `Wrapper` являются компонентами, которые можно рендерить как любые другие компоненты:
+Переменные `Title` и `Wrapper` являются компонентами, которые можно рендерить как любые другие компоненты:
 
-     ```jsx
-     <Wrapper>
-       <Title>{'Давайте создадим наш первый стилизованный компонент!'}</Title>
-     </Wrapper>
-     ```
-
+```jsx
+<Wrapper>
+  <Title>{'Давайте создадим наш первый стилизованный компонент!'}</Title>
+</Wrapper>
+```
 
 ### Что такое Relay?
 
-     *Relay* - это фреймворк JavaScript, предоставляющий слой данных и возможность клиент-серверной коммуникации для веб-приложений, в которых используется слой представления React.
-
+*Relay* - это фреймворк JavaScript, предоставляющий слой данных и возможность клиент-серверной коммуникации для веб-приложений, в которых используется слой представления React.
 
 ### Как создать TypeScript-проект с помощью `create-react-app`?
 
-     Начиная с react-scripts@2.1.0, в `create-react-app` встроена возможность автоматического создания React/TypeScript-проектов. Для этого достаточно указать `--template typescript` или просто `--typescript` после названия приложения:
+Начиная с react-scripts@2.1.0, в `create-react-app` встроена возможность автоматического создания React/TypeScript-проектов. Для этого достаточно указать `--template typescript` или просто `--typescript` после названия приложения:
 
-     ```bash
-     npx create-react-app my-app --template typescript
+```bash
+npx create-react-app my-app --template typescript
 
-     # или
+# или
 
-     yarn create react-app my-app --typescript
-     ```
-
+yarn create react-app my-app --typescript
+```
 
 ## Разное
 
-
 ### Назовите основные возможности библиотеки Reselect?
 
-     Вот основные возможности этой библиотеки:
+Вот основные возможности этой библиотеки:
 
-       1. Селекторы могут вычислять производные данные, позволяя Redux сохранять минимально возможное состояние
-       2. Селекторы являются эффективными. Они не выполняют повторных вычислений до тех пор, пока не изменится один из переданных им аргументов
-       3. Допустима композиция селекторов. Они могут передаваться другим селекторам
+1. Селекторы могут вычислять производные данные, позволяя Redux сохранять минимально возможное состояние
+2. Селекторы являются эффективными. Они не выполняют повторных вычислений до тех пор, пока не изменится один из переданных им аргументов
+3. Допустима композиция селекторов. Они могут передаваться другим селекторам
 
 ### Приведите пример использования Reselect
 
-     Выполним некоторые вычисления, связанные с заказом товара, с помощью Reselect:
+Выполним некоторые вычисления, связанные с заказом товара, с помощью Reselect:
 
-     ```javascript
-     import { createSelector } from 'reselect'
+```jsx
+import { createSelector } from 'reselect'
 
-     const shopItemsSelector = state => state.shop.items
-     const taxPercentSelector = state => state.shop.taxPercent
+const shopItemsSelector = state => state.shop.items
+const taxPercentSelector = state => state.shop.taxPercent
 
-     const subtotalSelector = createSelector(
-       shopItemsSelector,
-       items => items.reduce((acc, item) => acc + item.value, 0)
-     )
+const subtotalSelector = createSelector(
+  shopItemsSelector,
+  items => items.reduce((acc, item) => acc + item.value, 0)
+)
 
-     const taxSelector = createSelector(
-       subtotalSelector,
-       taxPercentSelector,
-       (subtotal, taxPercent) => subtotal * (taxPercent / 100)
-     )
+const taxSelector = createSelector(
+  subtotalSelector,
+  taxPercentSelector,
+  (subtotal, taxPercent) => subtotal * (taxPercent / 100)
+)
 
-     export const totalSelector = createSelector(
-       subtotalSelector,
-       taxSelector,
-       (subtotal, tax) => ({ total: subtotal + tax })
-     )
+export const totalSelector = createSelector(
+  subtotalSelector,
+  taxSelector,
+  (subtotal, tax) => ({ total: subtotal + tax })
+)
 
-     const exampleState = {
-       shop: {
-         taxPercent: 8,
-         items: [
-           { name: 'яблоко', value: 1.20 },
-           { name: 'апельсин', value: 0.95 },
-         ]
-       }
-     }
+const exampleState = {
+  shop: {
+    taxPercent: 8,
+    items: [
+      { name: 'яблоко', value: 1.20 },
+      { name: 'апельсин', value: 0.95 },
+    ]
+  }
+}
 
-     console.log(subtotalSelector(exampleState)) // 2.15
-     console.log(taxSelector(exampleState))      // 0.172
-     console.log(totalSelector(exampleState))    // { total: 2.322 }
-     ```
-
+console.log(subtotalSelector(exampleState)) // 2.15
+console.log(taxSelector(exampleState))      // 0.172
+console.log(totalSelector(exampleState))    // { total: 2.322 }
+```
 
 ### Можно ли использовать статические объекты в классовых компонентах React?
 
-     Нет, `statics` работает только в `React.createClass()`:
+Нет, `statics` работает только в `React.createClass()`:
 
-     ```javascript
-     someComponent= React.createClass({
-       statics: {
-         someMethod: function() {
-           // ...
-         }
-       }
-     })
-     ```
+```jsx
+someComponent= React.createClass({
+  statics: {
+    someMethod: function() {
+      // ...
+    }
+  }
+})
+```
 
-     Однако, вы можете создавать статические элементы внутри классов с помощью *синтаксиса статических полей класса*:
+Однако, вы можете создавать статические элементы внутри классов с помощью *синтаксиса статических полей класса*:
 
-     ```javascript
-     class Component extends React.Component {
-       static propTypes = {
-         // ...
-       }
+```jsx
+class Component extends React.Component {
+  static propTypes = {
+    // ...
+  }
 
-       static someMethod() {
-         // ...
-       }
-     }
-     ```
+  static someMethod() {
+    // ...
+  }
+}
+```
 
-     Или снаружи класса:
+Или снаружи класса:
 
-     ```javascript
-     class Component extends React.Component {
-        // ...
-     }
+```jsx
+class Component extends React.Component {
+  // ...
+}
 
-     Component.propTypes = {...}
-     Component.someMethod = function(){....}
-     ```
-
+Component.propTypes = {...}
+Component.someMethod = function(){....}
+```
 
 ### Redux может использоваться только с React?
 
-     Redux может использоваться в качестве хранилища данных для любого пользовательского интерфейса. Чаще всего, он используется вместе с React и React Native, но существует возможность его интеграции с Angular, Angular 2, Vue, Mithril и т.д. Redux просто предоставляет механизм подписки, который может использоваться в любом коде.
-
+Redux может использоваться в качестве хранилища данных для любого пользовательского интерфейса. Чаще всего, он используется вместе с React и React Native, но существует возможность его интеграции с Angular, Angular 2, Vue, Mithril и т.д. Redux просто предоставляет механизм подписки, который может использоваться в любом коде.
 
 ### Требуются ли какие-либо дополнительные инструменты для работы с Redux?
 
-     Redux написан на синтаксисе ES6 и транспилируется в ES5 при сборке для продакшна с помощью Webpack и Babel. Вам не требуются какие-либо дополнительные инструменты. Redux также предоставляется в виде UMD-модуля, что позволяет использовать его напрямую, минуя стадию сборки.
-
+Redux написан на синтаксисе ES6 и транспилируется в ES5 при сборке для продакшна с помощью Webpack и Babel. Вам не требуются какие-либо дополнительные инструменты. Redux также предоставляется в виде UMD-модуля, что позволяет использовать его напрямую, минуя стадию сборки.
 
 ### Как обновить Redux Form `initialValues` с помощью состояния?
 
-     Для этого необходимо добавить настройку `enableReinitialize : true`.
+Для этого необходимо добавить настройку `enableReinitialize : true`.
 
-     ```javascript
-     const InitializeFromStateForm = reduxForm({
-       form: 'initializeFromState',
-       enableReinitialize : true
-     })(UserEdit)
-     ```
+```jsx
+const InitializeFromStateForm = reduxForm({
+  form: 'initializeFromState',
+  enableReinitialize : true
+})(UserEdit)
+```
 
-     **Обратите внимание:** обновление начальных значений повлечет за собой обновление формы.
-
+**Обратите внимание:** обновление начальных значений повлечет за собой обновление формы.
 
 ### Как с помощью React PropTypes разрешить использование разных типов одним пропом?
 
-     Для этого можно использовать метод `oneOfType()`.
+Для этого можно использовать метод `oneOfType`.
 
-     Например, значение свойства `height` может быть указано с помощью типа `string` или `number`:
+Например, значение свойства `height` может быть указано с помощью типа `string` или `number`:
 
-     ```javascript
-     Component.PropTypes = {
-       height: PropTypes.oneOfType([
-         PropTypes.string,
-         PropTypes.number
-       ])
-     }
-     ```
-
+```jsx
+Component.PropTypes = {
+  height: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
+}
+```
 
 ### Можно ли импортировать SVG-файл как компонент React?
 
-     Вы можете импортировать SVG в компонент вместо его загрузки в виде файла. Эта возможность доступна, начиная с `react-scripts@2.0.0`.
+Вы можете импортировать SVG в компонент вместо его загрузки в виде файла. Эта возможность доступна, начиная с `react-scripts@2.0.0`.
 
-     ```jsx
-     import { ReactComponent as Logo } from './logo.svg'
+```jsx
+import { ReactComponent as Logo } from './logo.svg'
 
-     const App = () => (
-       <div>
-         {/* Logo - это обычный React-компонент */}
-         <Logo />
-       </div>
-     )
-     ```
+const App = () => (
+  <div>
+    {/* Logo - это обычный React-компонент */}
+    <Logo />
+  </div>
+)
+```
 
-     **Обратите внимание**: не забудьте использовать фигурные скобки при импорте.
-
+**Обратите внимание**: не забудьте использовать фигурные скобки при импорте.
 
 ### Почему не рекомендуется использовать встроенные "реф-колбеки" или функции?
 
-     Если колбек ссылки определен как встроенная функция, он будет вызван дважды в процессе обновления, в первый раз с нулевым значением, второй - с DOM-элементом. Это объясняется тем, что новый экземпляр функции создается при каждом рендеринге, поэтому React необходимо удалить старую ссылку и установить новую:
+Если колбек ссылки определен как встроенная функция, он будет вызван дважды в процессе обновления, в первый раз с нулевым значением, второй - с DOM-элементом. Это объясняется тем, что новый экземпляр функции создается при каждом рендеринге, поэтому React необходимо удалить старую ссылку и установить новую:
 
-     ```jsx
-     class UserForm extends Component {
-       handleSubmit = () => {
-         console.log("Значением поля является: ", this.input.value)
-       }
+```jsx
+class UserForm extends Component {
+  handleSubmit = () => {
+    console.log("Значением поля является: ", this.input.value)
+  }
 
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type='text'
+          ref={(input) => this.input = input} /> // это позволяет получить доступ к значению input в обработчике submit
+        <button type='submit'>Отправить</button>
+      </form>
+    )
+  }
+}
+```
 
-       render () {
-        return (
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type='text'
-              ref={(input) => this.input = input} /> // это позволяет получить доступ к значению input в обработчике submit
-            <button type='submit'>Отправить</button>
-          </form>
-        )
-      }
-     }
-     ```
+Однако, нам нужно, чтобы колбек вызывался один раз при монтировании компонента. Быстрым решением является использование синтаксиса *полей класса* для определения функции:
 
-     Однако, нам нужно, чтобы колбек вызывался один раз при монтировании компонента. Быстрым решением является использование синтаксиса *полей класса* для определения функции:
+```jsx
+class UserForm extends Component {
+  handleSubmit = () => {
+    console.log("Значением поля является: ", this.input.value)
+  }
 
-     ```jsx
-     class UserForm extends Component {
-      handleSubmit = () => {
-        console.log("Значением поля является: ", this.input.value)
-      }
+  setSearchInput = (input) => {
+    this.input = input
+  }
 
-      setSearchInput = (input) => {
-        this.input = input
-      }
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type='text'
+          ref={this.setSearchInput} />
+        <button type='submit'>Отправить</button>
+      </form>
+    )
+  }
+}
+```
 
-      render () {
-        return (
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type='text'
-              ref={this.setSearchInput} />
-            <button type='submit'>Отправить</button>
-          </form>
-        )
-      }
-     }
-     ```
-
-     **Обратите внимание:** при использовании хука `useRef()` в функциональных компонентах таких проблем не возникает.
-
+**Обратите внимание:** при использовании хука `useRef()` в функциональных компонентах таких проблем не возникает.
 
 ### Что такое Render Hijacking в React?
 
-     Концепция *перехвата рендеринга* - это возможность контролировать, что получит один компонент от другого. Это означает, что вы декорируете компонент, оборачивая его в HOC. Это позволяет внедрять дополнительные пропы или осуществлять другие изменения, которые меняют логику рендеринга. В действительности, не происходит никакого перехвата, но использование HOC заставляет компонент вести себя по-другому.
-
+Концепция *перехвата рендеринга* - это возможность контролировать, что получит один компонент от другого. Это означает, что вы декорируете компонент, оборачивая его в HOC. Это позволяет внедрять дополнительные пропы или осуществлять другие изменения, которые меняют логику рендеринга. В действительности, не происходит никакого перехвата, но использование HOC заставляет компонент вести себя по-другому.
 
 ### Как реализовать HOC-фабрику?
 
-     Для реализации HOC в React существует два способа.
+Для реализации HOC в React существует два способа.
 
-     1. Проксирование пропов (Props Proxy - PP) и
-     2. Инверсия наследования (Inheritance Inversion - II).
+1. Проксирование пропов (Props Proxy - PP) и
+2. Инверсия наследования (Inheritance Inversion - II).
 
-     Они используют разные подходы к управлению *WrappedComponent* (обернутым компонентом).
+Они используют разные подходы к управлению *WrappedComponent* (обернутым компонентом).
 
-     **Проксирование пропов**
+**Проксирование пропов**
 
-     При использовании данного подхода метод `render()` возвращает React-элемент с типом `WrappedComponent`. Мы также передаем пропы, полученные HOC, поэтому данный подход называется *Props Proxy*:
+При использовании данного подхода метод `render()` возвращает React-элемент с типом `WrappedComponent`. Мы также передаем пропы, полученные HOC, поэтому данный подход называется *Props Proxy*:
 
-     ```jsx
-     function ppHOC(WrappedComponent) {
-      return class PP extends React.Component {
-        render() {
-          return <WrappedComponent {...this.props}/>
-        }
-      }
-     }
-     ```
+```jsx
+function ppHOC(WrappedComponent) {
+  return class PP extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props}/>
+    }
+  }
+}
+```
 
-     **Инверсия наследования**
+**Инверсия наследования**
 
-     При использовании данного подхода возвращаемый HOC класс (Enhancer - усилитель) расширяет `WrappedComponent`. Он называется *Inheritance Inversion* потому, что вместо того, чтобы `WrappedComponent` расширял некоторый класс `Enhancer`, он сам пассивно расширяется "усилителем". Отношения между ними напоминают инверсию.
+При использовании данного подхода возвращаемый HOC класс (Enhancer - усилитель) расширяет `WrappedComponent`. Он называется *Inheritance Inversion* потому, что вместо того, чтобы `WrappedComponent` расширял некоторый класс `Enhancer`, он сам пассивно расширяется "усилителем". Отношения между ними напоминают инверсию.
 
-     ```jsx
-     function iiHOC(WrappedComponent) {
-      return class Enhancer extends WrappedComponent {
-        render() {
-          return super.render()
-        }
-      }
-     }
-     ```
-
+```jsx
+function iiHOC(WrappedComponent) {
+  return class Enhancer extends WrappedComponent {
+    render() {
+      return super.render()
+    }
+  }
+}
+```
 
 ### Как передать число в React-компонент?
 
-     Числа просто заключаются в фигурные скобки ({}), а строки дополнительно закавычиваются:
+Числа просто заключаются в фигурные скобки ({}), а строки дополнительно закавычиваются:
 
-     ```jsx
-        React.render(<User age={30} department={"IT"} />, document.getElementById('container'));
-     ```
-
+```jsx
+React.render(<User age={30} department={"IT"} />, document.getElementById('container'))
+```
 
 ### Обязательно ли хранить все состояние в Redux? Можно ли использовать внутреннее состояние компонентов?
 
-     Вы сами принимаете решение, что использовать. В этом заключается работа разработчика - определить, какое состояние требуется  приложению и где должна храниться каждая часть этого состояния. Одни разработчики предпочитают хранить все состояние в Redux, что обеспечивает полную сериализацию и управляемость приложения. Другие предпочитают хранить некритичное состояние UI, такое как "открыт ли выпадающий список" внутри компонента.
+Вы сами принимаете решение, что использовать. В этом заключается работа разработчика - определить, какое состояние требуется  приложению и где должна храниться каждая часть этого состояния. Одни разработчики предпочитают хранить все состояние в Redux, что обеспечивает полную сериализацию и управляемость приложения. Другие предпочитают хранить некритичное состояние UI, такое как "открыт ли выпадающий список" внутри компонента.
 
-     Ниже представлены основные правила определения того, какие типы данных следует хранить в Redux:
+Ниже представлены основные правила определения того, какие типы данных следует хранить в Redux:
 
-     1. Нуждаются ли другие части приложения в этих данных?
-     2. Требуется ли создавать производные данные на основе оригинальных?
-     3. Используются ли эти данные несколькими компонентами?
-     4. Существует ли вероятность того, что потребуется восстанавливать прошлое состояние?
-     5. Собираетесь ли вы кэшировать данные (для использования версии из кэша вместо повторного запроса)?
-
+1. Нуждаются ли другие части приложения в этих данных?
+2. Требуется ли создавать производные данные на основе оригинальных?
+3. Используются ли эти данные несколькими компонентами?
+4. Существует ли вероятность того, что потребуется восстанавливать прошлое состояние?
+5. Собираетесь ли вы кэшировать данные (для использования версии из кэша вместо повторного запроса)?
 
 ### Для чего предназначен метод `registerServiceWorker()` в React?
 
-     React создает сервис-воркера без настройки по умолчанию. Сервис-воркер - это веб-API, позволяющее записывать файлы приложения в кэш и возвращать их из него при отсутствии подключения к сети или медленном соединении, что сильно улучшает пользовательский опыт. Сервис-воркер - это своего рода прокси для HTTP-запросов.
+React создает сервис-воркера без настройки по умолчанию. Сервис-воркер - это веб-API, позволяющее записывать файлы приложения в кэш и возвращать их из него при отсутствии подключения к сети или медленном соединении, что сильно улучшает пользовательский опыт. Сервис-воркер - это своего рода прокси для HTTP-запросов.
 
-     ```jsx
-        import React from 'react';
-        import ReactDOM from 'react-dom';
-        import App from './App';
-        import registerServiceWorker from './registerServiceWorker';
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 
-        ReactDOM.render(<App />, document.getElementById('root'));
-        registerServiceWorker();
-     ```
-
+ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()
+```
 
 ### Что такое `React.memo()`?
 
-     Классовым компонентам можно запретить повторный рендеринг, если их пропы остались прежними, с помощью *PureComponent* или `shouldComponentUpdate()`. Теперь и у функциональных компонентов имеется такая возможность благодаря функции-обертке `React.memo()`:
+Классовым компонентам можно запретить повторный рендеринг, если их пропы остались прежними, с помощью *PureComponent* или `shouldComponentUpdate()`. Теперь и у функциональных компонентов имеется такая возможность благодаря функции-обертке `React.memo()`:
 
-     ```jsx
-     const MyComponent = React.memo(function MyComponent(props) {
-      /* повторный рендеринг выполняется только при изменении пропов */
-     });
-     ```
+```jsx
+const MyComponent = React.memo(function MyComponent(props) {
+/* повторный рендеринг выполняется только при изменении пропов */
+})
+```
 
-     Похожий функционал предоставляет хук `useMemo()`.
-
+Похожий функционал предоставляет хук `useMemo`.
 
 ### Что такое `React.lazy()`?
 
-     Функция `React.lazy()` позволяет рендерить результаты динамического импорта как обычные компоненты. Она автоматически загружает "бандл", содержащий `OtherComponent` (см. пример ниже), когда данный компонент будет отрендерен. Функция возвращает промис, который разрешается модулем с экспортом по умолчанию, содержащим React-компонент. `OtherComponent` должен быть обернут в компонент `Suspense`:
+Функция `React.lazy()` позволяет рендерить результаты динамического импорта как обычные компоненты. Она автоматически загружает "бандл", содержащий `OtherComponent` (см. пример ниже), когда данный компонент будет отрендерен. Функция возвращает промис, который разрешается модулем с экспортом по умолчанию, содержащим React-компонент. `OtherComponent` должен быть обернут в компонент `Suspense`:
 
-     ```jsx
-     import React, { Suspense } from 'react
-     const OtherComponent = React.lazy(() => import('./OtherComponent'));
+```jsx
+import React, { Suspense } from 'react
+const OtherComponent = React.lazy(() => import('./OtherComponent'))
 
-     function MyComponent() {
-      return (
-        <Suspense>
-          <OtherComponent />
-        </Suspense>
-      );
-     }
-     ```
+function MyComponent() {
+  return (
+    <Suspense>
+      <OtherComponent />
+    </Suspense>
+  )
+}
+```
 
-     **Обратите внимание:** `React.lazy()` и `Suspense` пока не доступны для рендеринга на стороне сервера. Если вам требуется разделение кода в приложении, которое рендерится на сервере, используйте библиотеку React Loadable.
-
+**Обратите внимание:** `React.lazy()` и `Suspense` пока не доступны для рендеринга на стороне сервера. Если вам требуется разделение кода в приложении, которое рендерится на сервере, используйте библиотеку React Loadable.
 
 ### Как предотвратить лишние обновления с помощью `setState()`?
 
-     Вы можете провести сравнение текущего состояния с существующим и решить, следует повторно рендерить страницу или нет. Если значения одинаковые, для предотвращения повторного рендеринга возвращаем `null`, иначе, возвращаем последнее значение состояния.
+Вы можете провести сравнение текущего состояния с существующим и решить, следует повторно рендерить страницу или нет. Если значения одинаковые, для предотвращения повторного рендеринга возвращаем `null`, иначе, возвращаем последнее значение состояния.
 
-     Вот пример условного рендеринга профиля пользователя:
+Вот пример условного рендеринга профиля пользователя:
 
-     ```jsx
-     getUserProfile = user => {
-       const latestAddress = user.address;
-       this.setState(state => {
-         if (state.address === latestAddress) {
-           return null;
-         } else {
-           return { title: latestAddress };
-         }
-       });
-     };
-     ```
-
+```jsx
+getUserProfile = user => {
+  const latestAddress = user.address
+  this.setState(state => {
+    if (state.address === latestAddress) {
+      return null
+    } else {
+      return { title: latestAddress }
+    }
+  })
+}
+```
 
 ### Как рендерить числа, строки и массивы в React 16?
 
-     **Массивы**: в отличие от предыдущих версий, метод `render()` не обязательно должен возвращать единственный элемент. Он вполне может возвращать несколько дочерних элементов без обертки.
+**Массивы**: в отличие от предыдущих версий, метод `render()` не обязательно должен возвращать единственный элемент. Он вполне может возвращать несколько дочерних элементов без обертки.
 
-     Например, вот список разработчиков:
+Например, вот список разработчиков:
 
-     ```jsx
-     const ReactJSDevs = () => {
-       return [
-         <li key="1">John</li>,
-         <li key="2">Jane</li>
-       ];
-     }
-     ```
+```jsx
+const ReactJSDevs = () => {
+  return [
+    <li key="1">John</li>,
+    <li key="2">Jane</li>
+  ]
+}
+```
 
-     Вы можете объединить этот массив элементов с другим компонентом:
+Вы можете объединить этот массив элементов с другим компонентом:
 
-     ```jsx
-     const JSDevs = () => {
-       return (
-         <ul>
-           <li>Bob</li>
-           <ReactJSDevs/>
-           <li>Alice</li>
-         </ul>
-       );
-     }
-     ```
+```jsx
+const JSDevs = () => {
+  return (
+    <ul>
+      <li>Bob</li>
+      <ReactJSDevs/>
+      <li>Alice</li>
+    </ul>
+  )
+}
+```
 
-     **Строки и числа:** вы также можете возвращать строку или число из метода `render()`:
+**Строки и числа:** вы также можете возвращать строку или число из метода `render()`:
 
-     ```jsx
-     render() {
-      return 'Добро пожаловать в список вопросов по React';
-     }
+```jsx
+render() {
+  return 'Добро пожаловать в список вопросов по React'
+}
 
-     // число
-     render() {
-      return 2021;
-     }
-     ```
-
+// число
+render() {
+  return 2021
+}
+```
 
 ### Как использовать синтаксис "определения полей классов" в классовых компонентах?
 
-     Синтаксис классовых компонентов может быть сильно сокращен с помощью определения полей классов. Вы можете инициализировать локальное состояние без конструктора и определить методы класса с помощью стрелочных функций без их привязки к экземпляру.
+Синтаксис классовых компонентов может быть сильно сокращен с помощью определения полей классов. Вы можете инициализировать локальное состояние без конструктора и определить методы класса с помощью стрелочных функций без их привязки к экземпляру.
 
-     Рассмотрим пример счетчика, в котором используется названный синтаксис:
+Рассмотрим пример счетчика, в котором используется названный синтаксис:
 
-     ```jsx
-     class Counter extends Component {
-       state = { value: 0 };
+```jsx
+class Counter extends Component {
+  state = { value: 0 }
 
-       handleIncrement = () => {
-         this.setState(prevState => ({
-           value: prevState.value + 1
-         }));
-       };
+  handleIncrement = () => {
+    this.setState(prevState => ({
+      value: prevState.value + 1
+    }))
+  }
 
-       handleDecrement = () => {
-         this.setState(prevState => ({
-           value: prevState.value - 1
-         }));
-       };
+  handleDecrement = () => {
+    this.setState(prevState => ({
+      value: prevState.value - 1
+    }))
+  }
 
-       render() {
-         return (
-           <div>
-             {this.state.value}
+  render() {
+    return (
+      <div>
+        {this.state.value}
 
-             <button onClick={this.handleIncrement}>+</button>
-             <button onClick={this.handleDecrement}>-</button>
-           </div>
-         )
-       }
-     }
-     ```
-
+        <button onClick={this.handleIncrement}>+</button>
+        <button onClick={this.handleDecrement}>-</button>
+      </div>
+    )
+  }
+}
+```
 
 ### Что такое хуки?
 
-     Хуки - это относительно новая возможность, представленная в React 16.8, позволяющая использовать состояние и другие "реактивные" возможности без написания классов.
+Хуки - это относительно новая возможность, представленная в React 16.8, позволяющая использовать состояние и другие "реактивные" возможности без написания классов.
 
-     Вот пример использования хука `useState()`:
+Вот пример использования хука `useState()`:
 
-     ```jsx
-     import { useState } from 'react';
+```jsx
+import { useState } from 'react'
 
-     function Example() {
-       // переменная count содержит значение состояния компонента
-       // setCount - функция для обновления этого значения
-       // вы можете думать об этом, как о паре геттер/сеттер
-       const [count, setCount] = useState(0);
+function Example() {
+  // переменная count содержит значение состояния компонента
+  // setCount - функция для обновления этого значения
+  // вы можете думать об этом, как о паре геттер/сеттер
+  const [count, setCount] = useState(0)
 
-       return (
-         <div>
-           <p>Вы кликнули {count} раз</p>
-           <button onClick={() => setCount(count + 1)}>
-             Нажми на меня
-           </button>
-         </div>
-       );
-     }
-     ```
-
+  return (
+    <div>
+      <p>Вы кликнули {count} раз</p>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
+    </div>
+  )
+}
+```
 
 ### Назовите правила использования хуков?
 
-     При использовании хуков необходимо соблюдать два правила:
+При использовании хуков необходимо соблюдать два правила:
 
-     1. Хуки не должны вызываться внутри циклов, условий или вложенных функций. Это позволяет обеспечить одинаковый порядок вызова хуков при повторном рендеринге и сохранять состояние хуков между несколькими вызовами `useState()` и `useEffect()`
-     2. Хуки можно вызывать только внутри функциональных компонентов React и других хуков, вы не должны вызывать их внутри обычных функций
-
+1. Хуки не должны вызываться внутри циклов, условий или вложенных функций. Это позволяет обеспечить одинаковый порядок вызова хуков при повторном рендеринге и сохранять состояние хуков между несколькими вызовами `useState()` и `useEffect()`
+2. Хуки можно вызывать только внутри функциональных компонентов React и других хуков, вы не должны вызывать их внутри обычных функций
 
 ### Как обеспечить соблюдение правил использования хуков?
 
-     Команда React разработала специальный ESLint-плагин, который следит за соблюдением правил использования хуков. Вы можете добавить этот плагин в существующий проект, выполнив команду **eslint-plugin-react-hooks**:
+Команда React разработала специальный ESLint-плагин, который следит за соблюдением правил использования хуков. Вы можете добавить этот плагин в существующий проект, выполнив команду **eslint-plugin-react-hooks**:
 
-     ```javascript
-     yarn add eslint-plugin-react-hooks@next
-     // или
-     npm i eslint-plugin-react-hooks@next
-     ```
+```jsx
+yarn add eslint-plugin-react-hooks@next
+// или
+npm i eslint-plugin-react-hooks@next
+```
 
-     И добавив в настройки ESLint следующее:
+И добавив в настройки ESLint следующее:
 
-     ```javascript
-     // настройки линтера
-     {
-       "plugins": [
-         // ...
-         "react-hooks"
-       ],
-       "rules": {
-         // ...
-         "react-hooks/rules-of-hooks": "error"
-       }
-     }
-     ```
+```jsx
+// настройки линтера
+{
+  "plugins": [
+    // ...
+    "react-hooks"
+  ],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error"
+  }
+}
+```
 
-     **Обратите внимание:** данный плагин применяется по умолчанию при использовании Create React App для создания проекта.
-
+**Обратите внимание:** данный плагин применяется по умолчанию при использовании Create React App для создания проекта.
 
 ### В чем разница между Flux и Redux?
 
-     Ниже представлены основные отличия между Flux и Redux:
+Ниже представлены основные отличия между Flux и Redux:
 
-     | Flux | Redux |
-     | ----- | ------- |
-     | Состояние мутабельно | Состояние иммутабельно |
-     | Хранилище содержит как состояние, так и логику его изменения | Хранилище содержит только состояние |
-     | Существует несколько хранилищ | Существует только одно хранилище |
-     | Все хранилища являются самостоятельными и "плоскими" | Одно хранилище, содержащее иерархию редукторов |
-     | Имеется диспетчер-одиночка ("синглтон") | Концепция диспетчера как таковая отсутствует |
-     | React-компоненты подписываются на хранилище | Компоненты-контейнеры используют функцию `connect()` |
-
+| Flux | Redux |
+| ----- | ------- |
+| Состояние мутабельно | Состояние иммутабельно |
+| Хранилище содержит как состояние, так и логику его изменения | Хранилище содержит только состояние |
+| Существует несколько хранилищ | Существует только одно хранилище |
+| Все хранилища являются самостоятельными и "плоскими" | Одно хранилище, содержащее иерархию редукторов |
+| Имеется диспетчер-одиночка ("синглтон") | Концепция диспетчера как таковая отсутствует |
+| React-компоненты подписываются на хранилище | Компоненты-контейнеры используют функцию `connect()` |
 
 ### В чем заключаются преимущества использования React Router 4?
 
-     Ниже представлены основные преимущества использования новой версии React Router:
+Ниже представлены основные преимущества использования новой версии React Router:
 
-     1. API реализует компонентный подход. Роутер представлен в виде обычного компонента (`BrowserRouter`, например), который оборачивает дочерние компоненты (`Route` и др.)
-     2. Нет необходимости работать с историей напрямую. Роутер сам об этом позаботится - главное, не забудьте обернуть маршруты в `Router`
-     3. Размер приложения уменьшается за счет использования только определенных модулей (модули ядра, веб или нативные модули)
-
+1. API реализует компонентный подход. Роутер представлен в виде обычного компонента (`BrowserRouter`, например), который оборачивает дочерние компоненты (`Route` и др.)
+2. Нет необходимости работать с историей напрямую. Роутер сам об этом позаботится - главное, не забудьте обернуть маршруты в `Router`
+3. Размер приложения уменьшается за счет использования только определенных модулей (модули ядра, веб или нативные модули)
 
 ### Опишите сигнатуру метода жизненного цикла `componentDidCatch()`
 
-     Метод `componentDidCatch()` вызывается после того, как в любом из его потомков выбрасывается исключение. Метод принимает два параметра:
+Метод `componentDidCatch()` вызывается после того, как в любом из его потомков выбрасывается исключение. Метод принимает два параметра:
 
-     1. *error* - объект выброшенного исключения
-     2. *info* - объект с ключом `componentStack`, содержащим информацию о том, какой компонент выбросил исключение
+1. *error* - объект выброшенного исключения
+2. *info* - объект с ключом `componentStack`, содержащим информацию о том, какой компонент выбросил исключение
 
-     Структура метода:
+Структура метода:
 
-     ```javascript
-     componentDidCatch(error, info)
-     ```
-
+```jsx
+componentDidCatch(error, info)
+```
 
 ### В каких случаях предохранители не перехватывают ошибки?
 
-     Предохранители не срабатывают в следующих случаях:
+Предохранители не срабатывают в следующих случаях:
 
-     1. Внутри обработчиков событий
-     2. В асинхронном коде, использующем колбеки `setTimeout()` или `requestAnimationFrame()`
-     3. В процессе рендеринга на стороне сервера
-     4. Когда исключение выбрасывается в самом предохранителе
-
+1. Внутри обработчиков событий
+2. В асинхронном коде, использующем колбеки `setTimeout()` или `requestAnimationFrame()`
+3. В процессе рендеринга на стороне сервера
+4. Когда исключение выбрасывается в самом предохранителе
 
 ### Почему в обработчиках событий предохранители не нужны?
 
-     Предохранители не перехватывают ошибки внутри обработчиков событий. Обработчики не вызываются во время рендеринга, в отличие от метода `render()` или методов жизненного цикла. Поэтому React знает, как справиться с ошибками в обработчиках. Если вам все же требуется "перехватчик" ошибок за пределами обработчика, используйте блок `try/catch`.
+Предохранители не перехватывают ошибки внутри обработчиков событий. Обработчики не вызываются во время рендеринга, в отличие от метода `render()` или методов жизненного цикла. Поэтому React знает, как справиться с ошибками в обработчиках. Если вам все же требуется "перехватчик" ошибок за пределами обработчика, используйте блок `try/catch`.
 
-     ```javascript
-     class MyComponent extends React.Component {
-       constructor(props) {
-         super(props);
-         this.state = { error: null };
-       }
+```jsx
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { error: null }
+  }
 
-       handleClick = () => {
-         try {
-           // ...
-         } catch (error) {
-           this.setState({ error });
-         }
-       }
+  handleClick = () => {
+    try {
+      // ...
+    } catch (error) {
+      this.setState({ error })
+    }
+  }
 
-       render() {
-         if (this.state.error) {
-           return <h1>Caught an error.</h1>
-         }
-         return <div onClick={this.handleClick}>Click Me</div>
-       }
-     }
-     ```
+  render() {
+    if (this.state.error) {
+      return <h1>Caught an error.</h1>
+    }
+    return <div onClick={this.handleClick}>Click Me</div>
+  }
+}
+```
 
-     В примере ошибка перехватывается с помощью `try/catch` вместо предохранителя.
-
+В примере ошибка перехватывается с помощью `try/catch` вместо предохранителя.
 
 ### В чем разница между блоком `try/catch` и предохранителями?
 
-     `try/catch` предназначен для работы с императивным кодом, а предохранители - с декларативным, результаты которого отображаются на экране.
+`try/catch` предназначен для работы с императивным кодом, а предохранители - с декларативным, результаты которого отображаются на экране.
 
-     Пример использования `try/catch`:
+Пример использования `try/catch`:
 
-     ```javascript
-     try {
-       showButton();
-     } catch (error) {
-       // ...
-     }
-     ```
+```jsx
+try {
+  showButton()
+} catch (error) {
+  // ...
+}
+```
 
-     Пример использования предохранителя:
+Пример использования предохранителя:
 
-     ```javascript
-     <ErrorBoundary>
-       <MyComponent />
-     </ErrorBoundary>
-     ```
+```jsx
+<ErrorBoundary>
+  <MyComponent />
+</ErrorBoundary>
+```
 
-     Если где-то глубоко в дереве компонента возникнет ошибка, она будет обработана ближайшим предохранителем.
+Если где-то глубоко в дереве компонента возникнет ошибка, она будет обработана ближайшим предохранителем.
 
+### Что происходит с необработанными ошибками в React 16?
 
-### Как обрабатываются неперехваченные ошибки в React 16?
-
-     В React 16 ошибки, которые не были перехвачены предохранителем, приведут к размонтированию всего дерева компонента. Причина такого решения состоит в том, что лучше полностью удалить интерфейс, чем отобразить его неправильную версию. Например, лучше ничего не отобразить, чем отобразить неправильную сумму в приложении для оплаты.
-
+В React 16 ошибки, которые не были перехвачены предохранителем, приведут к размонтированию всего дерева компонента. Причина такого решения состоит в том, что лучше полностью удалить интерфейс, чем отобразить его неправильную версию. Например, лучше ничего не отобразить, чем отобразить неправильную сумму в приложении для оплаты.
 
 ### Куда следует помещать предохранители?
 
-     Это зависит от потребностей приложения. Вы можете использовать один из следующих подходов:
+Это зависит от потребностей приложения. Вы можете использовать один из следующих подходов:
 
-     1. Обернуть в предохранитель маршрутизаторы верхнего уровня для отображения общего сообщения об ошибке для всего приложения
-     2. Либо оборачивать отдельные компоненты во избежание "падения" всего приложения
-
+1. Обернуть в предохранитель маршрутизаторы верхнего уровня для отображения общего сообщения об ошибке для всего приложения
+2. Либо оборачивать отдельные компоненты во избежание "падения" всего приложения
 
 ### В чем заключается преимущество трассировки стека компонента перед предохранителями?
 
-     Кроме сообщений об ошибках и обычной трассировки стека, React отображает трассировку стека компонента с названиями компонентов и пронумерованными строками с помощью концепции предохранителей.
+Кроме сообщений об ошибках и обычной трассировки стека, React отображает трассировку стека компонента с названиями компонентов и пронумерованными строками с помощью концепции предохранителей.
 
-     Пример отображения трассировки стека компонента `BuggyCounter`:
+Пример отображения трассировки стека компонента `BuggyCounter`:
 
-     ![stacktrace](./assets/img/error_boundary.png)
-
+![stacktrace](./assets/img/error_boundary.png)
 
 ### Какой метод является обязательным для классового компонента?
 
-     Единственный обязательным методом классового компонента React является метод `render()`, остальные методы являются опциональными.
-
+Единственный обязательным методом классового компонента React является метод `render()`, остальные методы являются опциональными.
 
 ### Какие типы может возвращать метод `render()`?
 
-     Метод `render()` может возвращать следующие типы:
+Метод `render()` может возвращать следующие типы:
 
-     1. **React-элементы:** элементы, преобразуемые в узлы DOM. Они включают в себя HTML-элементы, такие как `<div>` и пользовательские элементы
-     2. **Массивы и фрагменты:** элементы, представляющие собой обертку для нескольких дочерних элементов
-     3. **Порталы:** позволяют рендерить дочерние элементы в другом поддереве DOM
-     4. **Строки и числа:** встраиваются в DOM в виде текстовых узлов
-     5. **Логические значения и null:** не отображаются на экране, используются для условного рендеринга
-     6. **Некоторые другие**
-
+1. **React-элементы:** элементы, преобразуемые в узлы DOM. Они включают в себя HTML-элементы, такие как `<div>` и пользовательские элементы
+2. **Массивы и фрагменты:** элементы, представляющие собой обертку для нескольких дочерних элементов
+3. **Порталы:** позволяют рендерить дочерние элементы в другом поддереве DOM
+4. **Строки и числа:** встраиваются в DOM в виде текстовых узлов
+5. **Логические значения и null:** не отображаются на экране, используются для условного рендеринга
+6. **Некоторые другие**
 
 ### В чем заключается основное назначение конструктора?
 
-     Конструктор предназначен для:
+Конструктор предназначен для:
 
-     1. Инициализации локального состояния посредством присваивания `this.state` какого-либо объекта
-     2. Для привязки методов обработчиков событий к экземпляру
+1. Инициализации локального состояния посредством присваивания `this.state` какого-либо объекта
+2. Для привязки методов обработчиков событий к экземпляру
 
-     Пример обоих случаев:
+Пример обоих случаев:
 
-     ```javascript
-     constructor(props) {
-       super(props);
-       // вызывать this.setState() здесь нельзя!
-       this.state = { counter: 0 };
-       this.handleClick = this.handleClick.bind(this);
-     }
-     ```
-
+```jsx
+constructor(props) {
+  super(props)
+  // вызывать `this.setState()` здесь нельзя
+  this.state = { counter: 0 }
+  this.handleClick = this.handleClick.bind(this)
+}
+```
 
 ### Обязательно ли определять конструктор в компоненте React?
 
-     Нет, это не является обязательным. Если вам не нужно инициализировать состояние или определять контекст методов, тогда можно реализовать компонент без конструктора. Инициализировать состояние экземпляра также можно с помощью синтаксиса *определения полей класса*.
+Нет, это не является обязательным. Если вам не нужно инициализировать состояние или определять контекст методов, тогда можно реализовать компонент без конструктора. Инициализировать состояние экземпляра также можно с помощью синтаксиса *определения полей класса*.
 
+### Что такое пропы по умолчанию?
 
-### Что такое пропы по умолчанию (default props)?
+Свойство `defaultProps` определяет пропы, которые устанавливаются классу по умолчанию. Значения данного объекта используются для неопределенных или "нулевых" пропов.
 
-     Свойство `defaultProps` определяет пропы, которые устанавливаются классу по умолчанию. Значения данного объекта используются для неопределенных или "нулевых" пропов.
+Создадим дефолтный проп для цвета компонента кнопки:
 
-     Создадим дефолтный проп для цвета компонента кнопки:
+```jsx
+class MyButton extends React.Component {
+  // ...
+}
 
-     ```javascript
-     class MyButton extends React.Component {
-       // ...
-     }
+MyButton.defaultProps = {
+  color: 'red'
+}
 
-     MyButton.defaultProps = {
-       color: 'red'
-     };
+```
 
-     ```
+Если при использовании компонента `MyButton` ему не будет передан проп `color`, значением этого пропа станет значение по умолчанию, т.е. `red`.
 
-     Если при использовании компонента `MyButton` ему не будет передан проп `color`, значением этого пропа станет значение по умолчанию, т.е. `red`.
+```jsx
+render() {
+  return <MyButton />  // значением props.color будет red
+}
+```
 
-     ```javascript
-     render() {
-        return <MyButton /> ; // значением props.color будет red
-      }
-     ```
-
-     **Обратите внимание:** если вы передадите `null`, значением пропа будет `null`.
-
+**Обратите внимание:** если вы передадите `null`, значением пропа будет `null`.
 
 ### Почему не следует вызывать `setState()` в `componentWillUnmount()`?
 
-     `setState()` не следует вызывать в `componentWillUnmount()`, поскольку после размонтирования компонент больше не монтируется, а, значит, состояние компонента никогда не обновится.
-
+`setState()` не следует вызывать в `componentWillUnmount()`, поскольку после размонтирования компонент больше не монтируется, а, значит, состояние компонента никогда не обновится.
 
 ### Для чего используется `getDerivedStateFromError()`?
 
-     Данный метод вызывается после того, как один из дочерних компонентов выбросил исключение. Он получает ошибку в качестве аргумента и должен вернуть значение для обновления состояния.
+Данный метод вызывается после того, как один из дочерних компонентов выбросил исключение. Он получает ошибку в качестве аргумента и должен вернуть значение для обновления состояния.
 
-     Сигнатура этого метода выглядит так:
+Сигнатура этого метода выглядит так:
 
-     ```javascript
-     static getDerivedStateFromError(error)
-     ```
+```jsx
+static getDerivedStateFromError(error)
+```
 
-     Рассмотрим случай использования предохранителя:
+Рассмотрим случай использования предохранителя:
 
-     ```javascript
-     class ErrorBoundary extends React.Component {
-       constructor(props) {
-         super(props);
-         this.state = { hasError: false };
-       }
+```jsx
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
 
-       static getDerivedStateFromError(error) {
-         // обновляем состояние для отображения запасного контента при следующем рендеринге
-         return { hasError: true };
-       }
+  static getDerivedStateFromError(error) {
+    // обновляем состояние для отображения запасного контента при следующем рендеринге
+    return { hasError: true }
+  }
 
-       render() {
-         if (this.state.hasError) {
-           // вы можете рендерить любой резервный интерфейс
-           return <h1>Что-то пошло не так.</h1>;
-         }
+  render() {
+    if (this.state.hasError) {
+      // вы можете рендерить любой резервный интерфейс
+      return <h1>Что-то пошло не так.</h1>
+    }
 
-         return this.props.children;
-       }
-     }
-     ```
-
+    return this.props.children
+  }
+}
+```
 
 ### В каком порядке вызываются методы при повторном рендеринге компонента?
 
-     Обновление может быть вызвано изменением пропов или состояния. При повторном рендеринге методы вызываются в следующим порядке:
+Обновление может быть вызвано изменением пропов или состояния. При повторном рендеринге методы вызываются в следующим порядке:
 
-     1. `static getDerivedStateFromProps()`
-     2. `shouldComponentUpdate()`
-     3. `render()`
-     4. `getSnapshotBeforeUpdate()`
-     5. `componentDidUpdate()`
-
+1. `static getDerivedStateFromProps()`
+2. `shouldComponentUpdate()`
+3. `render()`
+4. `getSnapshotBeforeUpdate()`
+5. `componentDidUpdate()`
 
 ### Какие методы вызываются при обработке ошибок?
 
-     При возникновении ошибки в процессе рендеринга, в методе жизненного цикла, в конструкторе или любом потомке, вызываются следующие методы:
+При возникновении ошибки в процессе рендеринга, в методе жизненного цикла, в конструкторе или любом потомке, вызываются следующие методы:
 
-     1. `static getDerivedStateFromError()`
-     2. `componentDidCatch()`
-
+1. `static getDerivedStateFromError()`
+2. `componentDidCatch()`
 
 ### Для чего используется поле класса `displayName`?
 
-     `displayName` используется для отладки. Обычно, вам не нужно определять его явно, оно ссылается на название функции или класса, определяющего компонент. Явное обозначение может потребоваться для отображения другого названия в целях отладки или при создании компонента высшего порядка.
+`displayName` используется для отладки. Обычно, вам не нужно определять его явно, оно ссылается на название функции или класса, определяющего компонент. Явное обозначение может потребоваться для отображения другого названия в целях отладки или при создании компонента высшего порядка.
 
-     В следующем примере `displayName` используется для указания на то, что мы имеем дело с результатом HOC `withSubscription`:
+В следующем примере `displayName` используется для указания на то, что мы имеем дело с результатом HOC `withSubscription`:
 
-     ```javascript
-     function withSubscription(WrappedComponent) {
-       class WithSubscription extends React.Component {/* ... */}
-       WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`;
-       return WithSubscription;
-     }
-     function getDisplayName(WrappedComponent) {
-       return WrappedComponent.displayName || WrappedComponent.name || 'Component';
-     }
-     ```
-
+```jsx
+function withSubscription(WrappedComponent) {
+  class WithSubscription extends React.Component {/* ... */}
+  WithSubscription.displayName = `WithSubscription(${getDisplayName(WrappedComponent)})`
+  return WithSubscription
+}
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+}
+```
 
 ### Хорошо ли React-приложения поддерживаются браузерами?
 
-     React поддерживается всеми популярными браузерами, включая Internet Explorer 9 и выше. Для более старых браузеров требуются полифилы.
-
+React поддерживается всеми популярными браузерами, включая Internet Explorer 9 и выше. Для более старых браузеров требуются полифилы.
 
 ### Для чего используется метод жизненного цикла `unmountComponentAtNode()`?
 
-     Данный метод из пакета `react-dom` используется для удаления смонтированного React-компонента из DOM, очистки его обработчиков и состояния. Если целевой компонент отсутствует, этот метод ничего не делает. Возвращает `true` при размонтировании компонента и `false` в противном случае.
+Данный метод из пакета `react-dom` используется для удаления смонтированного React-компонента из DOM, очистки его обработчиков и состояния. Если целевой компонент отсутствует, этот метод ничего не делает. Возвращает `true` при размонтировании компонента и `false` в противном случае.
 
-     Названный метод имеет следующую сигнатуру:
+Названный метод имеет следующую сигнатуру:
 
-     ```javascript
-     ReactDOM.unmountComponentAtNode(container)
-     ```
-
+```jsx
+ReactDOM.unmountComponentAtNode(container)
+```
 
 ### Что такое разделение кода (code splitting)?
 
-     Разделение кода - это техника, используемая сборщиками модулей, такими как Webpack и Browserify, когда создается несколько "бандлов", подгружаемых по необходимости. React поддерживает разделение кода с помощью динамического импорта.
+Разделение кода - это техника, используемая сборщиками модулей, такими как Webpack и Browserify, когда создается несколько "бандлов", подгружаемых по необходимости. React поддерживает разделение кода с помощью динамического импорта.
 
-     В приведенном ниже сниппете `moduleA.js` выделяется в отдельный "чанк" (chunk - часть, кусок), который загружается только после того, как пользователь нажал кнопку "Загрузить":
+В приведенном ниже сниппете `moduleA.js` выделяется в отдельный "чанк" (chunk - часть, кусок), который загружается только после того, как пользователь нажал кнопку "Загрузить":
 
-     **moduleA.js**
-     ```javascript
-     const moduleA = 'Привет';
+**moduleA.js**
+```jsx
+const moduleA = 'Привет'
 
-     export { moduleA };
-     ```
-     **App.js**
-     ```javascript
-     import React, { Component } from 'react';
+export { moduleA }
+```
+**App.js**
+```jsx
+import React, { Component } from 'react'
 
-     class App extends Component {
-       handleClick = () => {
-         import('./moduleA')
-           .then(({ moduleA }) => {
-             // использование модуля
-           })
-           .catch(err => {
-             // обработка провала
-           });
-       };
+class App extends Component {
+  handleClick = () => {
+    import('./moduleA')
+      .then(({ moduleA }) => {
+        // использование модуля
+      })
+      .catch(err => {
+        // обработка провала
+      })
+  }
 
-       render() {
-         return (
-           <div>
-             <button onClick={this.handleClick}>Загрузить</button>
-           </div>
-         );
-       }
-     }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Загрузить</button>
+      </div>
+    )
+  }
+}
 
-     export default App;
-     ```
+export default App
+```
 
-     Данная техника также используется для отложенной ("ленивой") загрузки модулей с помощью функции `React.lazy()` и компонента `Suspense`.
-
+Данная техника также используется для отложенной ("ленивой") загрузки модулей с помощью функции `React.lazy()` и компонента `Suspense`.
 
 ### В чем заключаются преимущества использования строгого режима?
 
-     `StrictMode` может быть полезен в следующих случаях:
+`StrictMode` может быть полезен в следующих случаях:
 
-     1. Идентификация компонентов с *небезопасными методами жизненного цикла*
-     2. Вывод предупреждений об использовании *устаревших строковых ссылок*
-     3. Определение неожиданных *побочных эффектов*
-     4. Определение использования *устаревшего API контекста*
-     5. Вывод предупреждений об использовании *устаревшего метода `findDOMNode()`*
-
+1. Идентификация компонентов с *небезопасными методами жизненного цикла*
+2. Вывод предупреждений об использовании *устаревших строковых ссылок*
+3. Определение неожиданных *побочных эффектов*
+4. Определение использования *устаревшего API контекста*
+5. Вывод предупреждений об использовании *устаревшего метода `findDOMNode()`*
 
 ### Что такое фрагменты с ключами?
 
-     Фрагменты, определяемые с помощью `React.Fragment`, могут иметь ключи. Типичным примером такого использования является создание коллекции фрагментов:
+Фрагменты, определяемые с помощью `React.Fragment`, могут иметь ключи. Типичным примером такого использования является создание коллекции фрагментов:
 
-     ```javascript
-     function Glossary(props) {
-       return (
-         <dl>
-           {props.items.map(item => (
-             // без `key` React выведет предупреждение в консоль
-             <React.Fragment key={item.id}>
-               <dt>{item.term}</dt>
-               <dd>{item.description}</dd>
-             </React.Fragment>
-           ))}
-         </dl>
-       );
-     }
-     ```
+```jsx
+function Glossary(props) {
+  return (
+    <dl>
+      {props.items.map(item => (
+        // без `key` React выведет предупреждение в консоль
+        <React.Fragment key={item.id}>
+          <dt>{item.term}</dt>
+          <dd>{item.description}</dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  )
+}
+```
 
-     **Обратите внимание:** `key` - это единственный атрибут, который можно добавлять фрагменту. В будущем появится возможность добавлять другие атрибуты, такие как обработчики событий.
-
+**Обратите внимание:** `key` - это единственный атрибут, который можно добавлять фрагменту. В будущем появится возможность добавлять другие атрибуты, такие как обработчики событий.
 
 ### Все ли HTML-атрибуты поддерживаются React?
 
-     Начиная с React 16, полностью поддерживаются все стандартные и пользовательские DOM-атрибуты. Поскольку в React-компонентах используются как "кастомные", так и связанные с DOM пропы, в React используется *camelCase*, как и в DOM API.
+Начиная с React 16, полностью поддерживаются все стандартные и пользовательские DOM-атрибуты. Поскольку в React-компонентах используются как "кастомные", так и связанные с DOM пропы, в React используется *camelCase*, как и в DOM API.
 
-     Примеры использования стандартных HTML-атрибутов:
+Примеры использования стандартных HTML-атрибутов:
 
-     ```javascript
-     <div tabIndex="-1" />      // node.tabIndex DOM API
-     <div className="Button" /> // node.className DOM API
-     <input readOnly={true} />  // node.readOnly DOM API
-     ```
+```jsx
+<div tabIndex="-1" />      // node.tabIndex DOM API
+<div className="Button" /> // node.className DOM API
+<input readOnly={true} />  // node.readOnly DOM API
+```
 
-     Данные пропы работают по аналогии с соответствующими HTML-атрибутами, за исключением некоторых особых случаев. Также поддерживаются все SVG-атрибуты.
-
+Данные пропы работают по аналогии с соответствующими HTML-атрибутами, за исключением некоторых особых случаев. Также поддерживаются все SVG-атрибуты.
 
 ### Какие ограничения имеют HOC?
 
-     Компоненты, кроме очевидных преимуществ, имеют некоторые ограничения:
+Компоненты, кроме очевидных преимуществ, имеют некоторые ограничения:
 
-     1. **HOC не рекомендуется использовать внутри метода `render()`:**
+1. **HOC не рекомендуется использовать внутри метода `render()`:**
 
-        ```javascript
-        render() {
-          // при каждом рендере создается новая версия EnhancedComponent
-          // EnhancedComponent1 !== EnhancedComponent2
-          const EnhancedComponent = enhance(MyComponent);
-          // это приводит к тому, что внутреннее поддерево каждый раз размонтируется/монтируется
-          return <EnhancedComponent />;
-        }
-        ```
+```jsx
+render() {
+  // при каждом рендере создается новая версия EnhancedComponent
+  // EnhancedComponent1 !== EnhancedComponent2
+  const EnhancedComponent = enhance(MyComponent)
+  // это приводит к тому, что внутреннее поддерево каждый раз размонтируется/монтируется
+  return <EnhancedComponent />
+}
+```
 
-        Приведенный код ухудшает производительность за счет повторного монтирования компонента, что также приводит к потере состояния компонента и всех его потомков. В данном случае HOC следует переместить за пределы компонента: это приведет к однократному монтированию результирующего компонента.
+Приведенный код ухудшает производительность за счет повторного монтирования компонента, что также приводит к потере состояния компонента и всех его потомков. В данном случае HOC следует переместить за пределы компонента: это приведет к однократному монтированию результирующего компонента.
 
-     2. **Статические методы не копируются автоматически:**
+2. **Статические методы не копируются автоматически:**
 
-        При применении HOC к компоненту, новый компонент не будет иметь статических методов оригинального компонента:
+При применении HOC к компоненту, новый компонент не будет иметь статических методов оригинального компонента:
 
-        ```javascript
-        // определяем статический метод
-        WrappedComponent.staticMethod = function() {/*...*/}
-        // применяем HOC
-        const EnhancedComponent = enhance(WrappedComponent);
+```jsx
+// определяем статический метод
+WrappedComponent.staticMethod = function() {/*...*/}
+// применяем HOC
+const EnhancedComponent = enhance(WrappedComponent)
 
-        // "усиленный" компонент не имеет статического метода
-        typeof EnhancedComponent.staticMethod === 'undefined' // true
-        ```
+// "усиленный" компонент не имеет статического метода
+typeof EnhancedComponent.staticMethod === 'undefined' // true
+```
 
-        Эту проблему можно решать посредством копирования методов в контейнер перед его возращением:
+Эту проблему можно решать посредством копирования методов в контейнер перед его возращением:
 
-        ```javascript
-        function enhance(WrappedComponent) {
-          class Enhance extends React.Component {/*...*/}
-          // необходимо точно знать, какие методы копировать
-          Enhance.staticMethod = WrappedComponent.staticMethod;
-          return Enhance;
-        }
-        ```
+```jsx
+function enhance(WrappedComponent) {
+  class Enhance extends React.Component {/*...*/}
+  // необходимо точно знать, какие методы копировать
+  Enhance.staticMethod = WrappedComponent.staticMethod
+  return Enhance
+}
+```
 
-     3. **Рефы не передаются:**
+3. **Рефы не передаются:**
 
-        В случае с HOC приходится передавать все пропы оборачиваемому компоненту, но это не работает со ссылками. Это объясняется тем, что ссылка - это не совсем обычный проп, такой как ключ, например. Для передачи рефов следует использовать `React.forwardRef()`.
-
+В случае с HOC приходится передавать все пропы оборачиваемому компоненту, но это не работает со ссылками. Это объясняется тем, что ссылка - это не совсем обычный проп, такой как ключ, например. Для передачи рефов следует использовать `React.forwardRef()`.
 
 ### Как отлаживать `forwardRefs` в DevTools?
 
-     `React.forwardRef()` принимает рендер-функцию в качестве параметра и DevTools используют эту функцию для определения того, что следует отображать для компонента, передаваемого по ссылке.
+`React.forwardRef()` принимает рендер-функцию в качестве параметра и DevTools используют эту функцию для определения того, что следует отображать для компонента, передаваемого по ссылке.
 
-     Например, если вы не укажете имя функции рендеринга или не используете свойство `displayName`, тогда в DevTools функция отобразится как `ForwardRef`:
+Например, если вы не укажете имя функции рендеринга или не используете свойство `displayName`, тогда в DevTools функция отобразится как `ForwardRef`:
 
-     ```javascript
-     const WrappedComponent = React.forwardRef((props, ref) => {
-       return <LogProps {...props} forwardedRef={ref} />;
-     });
-     ```
+```jsx
+const WrappedComponent = React.forwardRef((props, ref) => {
+  return <LogProps {...props} forwardedRef={ref} />
+})
+```
 
-     Если же вы именуете рендер-функцию, тогда она отобразится как *ForwardRef(myFunction)*:
+Если же вы именуете рендер-функцию, тогда она отобразится как *ForwardRef(myFunction)*:
 
-     ```javascript
-     const WrappedComponent = React.forwardRef(
-       function myFunction(props, ref) {
-         return <LogProps {...props} forwardedRef={ref} />;
-       }
-     );
-     ```
+```jsx
+const WrappedComponent = React.forwardRef(
+  function myFunction(props, ref) {
+    return <LogProps {...props} forwardedRef={ref} />
+  }
+)
+```
 
-     В качестве альтернативы вы можете установить свойство `displayName` для функции `forwardRef()`:
+В качестве альтернативы вы можете установить свойство `displayName` для функции `forwardRef()`:
 
-     ```javascript
-     function logProps(Component) {
-       class LogProps extends React.Component {
-         // ...
-       }
+```jsx
+function logProps(Component) {
+  class LogProps extends React.Component {
+    // ...
+  }
 
-       function forwardRef(props, ref) {
-         return <LogProps {...props} forwardedRef={ref} />;
-       }
+  function forwardRef(props, ref) {
+    return <LogProps {...props} forwardedRef={ref} />
+  }
 
-       // определяем отображаемое название компонента
-       // например, "ForwardRef(logProps(MyComponent))"
-       const name = Component.displayName || Component.name;
-       forwardRef.displayName = `logProps(${name})`;
+  // определяем отображаемое название компонента
+  // например, "ForwardRef(logProps(MyComponent))"
+  const name = Component.displayName || Component.name
+  forwardRef.displayName = `logProps(${name})`
 
-       return React.forwardRef(forwardRef);
-     }
-     ```
-
+  return React.forwardRef(forwardRef)
+}
+```
 
 ### В каких случаях пропы компонента по умолчанию имеют значение `true`?
 
-     Если вы не передаете значение для пропа, его значением становится `true`. Такое поведение соответствует поведению HTML.
+Если вы не передаете значение для пропа, его значением становится `true`. Такое поведение соответствует поведению HTML.
 
-     Приведенные ниже выражения эквиваленты:
+Приведенные ниже выражения эквиваленты:
 
-     ```javascript
-     <MyInput autocomplete />
+```jsx
+<MyInput autocomplete />
 
-     <MyInput autocomplete={true} />
-     ```
+<MyInput autocomplete={true} />
+```
 
-     **Обратите внимание:** данный подход использовать не рекомендуется, поскольку он может конфликтовать с сокращенной формой записи объектов в JavaScript (например, `{ name }` является сокращением для `{ name: name }`).
+**Обратите внимание:** данный подход использовать не рекомендуется, поскольку он может конфликтовать с сокращенной формой записи объектов в JavaScript (например, `{ name }` является сокращением для `{ name: name }`).
 
+### Что такое Next.js? Назовите его основные возможности
 
-### Что таколе NextJS? Назовите его основные возможности
+*Next.js* - это популярный и легковесный фреймворк для статических приложений и приложений с серверным рендерингом, построенных с помощью React. Он также предоставляет решения для стилизации и маршрутизации. Ниже представлены основные возможности данного фреймворка:
 
-     *Next.js* - это популярный и легковесный фреймворк для статических приложений и приложений с серверным рендерингом, построенных с помощью React. Он также предоставляет решения для стилизации и маршрутизации. Ниже представлены основные возможности данного фреймворка:
-
-     1. Рендеринг на стороне сервера по умолчанию
-     2. Автоматическое разделение кода для ускорения загрузки страниц
-     3. Простая клиентская маршрутизация (основанная на страницах (pages))
-     4. Среда для разработки, основанная на Webpack, с поддержкой "горячей" перезагрузки модулей (Hot Module Replacement, HMR)
-     5. Возможность реализации сервера на Express или любом другом фреймворке для Node.js
-     6. Возможность самостоятельной настройки Babel и Webpack
-
+1. Рендеринг на стороне сервера по умолчанию
+2. Автоматическое разделение кода для ускорения загрузки страниц
+3. Простая клиентская маршрутизация (основанная на страницах (pages))
+4. Среда для разработки, основанная на Webpack, с поддержкой "горячей" перезагрузки модулей (Hot Module Replacement, HMR)
+5. Возможность реализации сервера на Express или любом другом фреймворке для Node.js
+6. Возможность самостоятельной настройки Babel и Webpack
 
 ### Как передать обработчик события компоненту?
 
-     Вы можете передавать обработчики событий и другие функции дочерним компонентам как пропы. Они затем могут быть использованы следующим образом:
+Вы можете передавать обработчики событий и другие функции дочерним компонентам как пропы. Они затем могут быть использованы следующим образом:
 
-     ```html
-     <button onClick={this.handleClick}>
-     ```
-
+```html
+<button onClick={this.handleClick}>
+```
 
 ### Является ли использование стрелочных функций в методе `render()` хорошей практикой?
 
-     Да, вы вполне можете их использовать. Часто, самым легким способом является передача аргументов в функцию обратного вызова. Но при таком подходе необходимо внимательно следить за производительностью:
+Да, вы вполне можете их использовать. Часто, самым легким способом является передача аргументов в функцию обратного вызова. Но при таком подходе необходимо внимательно следить за производительностью:
 
-     ```javascript
-     class Foo extends Component {
-       handleClick() {
-         console.log('Произошло нажатие на кнопку');
-       }
-       render() {
-         return <button onClick={() => this.handleClick()}>Нажми на меня</button>;
-       }
-     }
-     ```
+```jsx
+class Foo extends Component {
+  handleClick() {
+    console.log('Произошло нажатие на кнопку')
+  }
+  render() {
+    return <button onClick={() => this.handleClick()}>Нажми на меня</button>
+  }
+}
+```
 
-     **Обратите внимание:** использование стрелочной функции в методе `render()` приводит к созданию функции при каждом рендеринге, что может повлечь проблемы с производительностью.
-
+**Обратите внимание:** использование стрелочной функции в методе `render()` приводит к созданию функции при каждом рендеринге, что может повлечь проблемы с производительностью.
 
 ### Как предотвратить множественный вызов функции?
 
-     Если вы используете обработчик событий, такой как `onClick()` или `onScroll()`, и хотите предотвратить слишком ранний вызов этого обработчика, тогда вы можете ограничить количество вызовов колбека. Для этого можно применить одну из следующих техник:
+Если вы используете обработчик событий, такой как `onClick()` или `onScroll()`, и хотите предотвратить слишком ранний вызов этого обработчика, тогда вы можете ограничить количество вызовов колбека. Для этого можно применить одну из следующих техник:
 
-     1. **Throttling:** за единицу времени можно выполнить только один вызов. Данную технику можно реализовать с помощью функции `_.throttle()` библиотеки *Lodash*
-     2. **Debouncing:** вызов будет выполнен по истечении определенного времени. Данную технику можно реализовать с помощью функции `_.debounce()`
-     3. **RequestAnimationFrame throttling:** вызовы основаны на `requestAnimationFrame()`. Данную технику можно реализовать с помощью функции `_.raf-schd()`
-
+1. **Throttling:** за единицу времени можно выполнить только один вызов. Данную технику можно реализовать с помощью функции `_.throttle()` библиотеки *Lodash*
+2. **Debouncing:** вызов будет выполнен по истечении определенного времени. Данную технику можно реализовать с помощью функции `_.debounce()`
+3. **RequestAnimationFrame throttling:** вызовы основаны на `requestAnimationFrame()`. Данную технику можно реализовать с помощью функции `_.raf-schd()`
 
 ### Как JSX предотвращает атаки, связанные с инъекцией вредоносного кода?
 
-     React DOM "обезвреживает" все значение, содержащиеся в JSX, перед их рендерингом. Это исключает возможность внедрения постороннего кода в приложение. Все значение конвертируются в строку перед отрисовкой.
+React DOM "обезвреживает" все значение, содержащиеся в JSX, перед их рендерингом. Это исключает возможность внедрения постороннего кода в приложение. Все значение конвертируются в строку перед отрисовкой.
 
-     Вот как используются данные, введенные пользователем:
+Вот как используются данные, введенные пользователем:
 
-     ```javascript
-     const name = response.potentiallyMaliciousInput;
-     const element = <h1>{name}</h1>;
-     ```
+```jsx
+const name = response.potentiallyMaliciousInput
+const element = <h1>{name}</h1>
+```
 
-     Это также позволяет предотвратить межсайтовый скриптинг (XSS).
-
+Это также позволяет предотвратить межсайтовый скриптинг (XSS).
 
 ### Как обновить отрендеренный элемент?
 
-     Вы можете обновить UI (представленный отрисованным элементом), передав методу `render()` ReactDOM новый элемент.
+Вы можете обновить UI (представленный отрисованным элементом), передав методу `render()` ReactDOM новый элемент.
 
-     Пример часов, которые обновляются каждую секунду посредством вызова метода рендеринга:
+Пример часов, которые обновляются каждую секунду посредством вызова метода рендеринга:
 
-     ```javascript
-     function tick() {
-       const element = (
-         <div>
-           <h1>Привет, народ!</h1>
-           <h2>Сейчас {new Date().toLocaleTimeString()}.</h2>
-         </div>
-       );
-       ReactDOM.render(element, document.getElementById('root'));
-     }
+```jsx
+function tick() {
+  const element = (
+    <div>
+      <h1>Привет, народ!</h1>
+      <h2>Сейчас {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById('root'))
+}
 
-     setInterval(tick, 1000);
-     ```
-
+setInterval(tick, 1000)
+```
 
 ### Почему пропы доступны только для чтения?
 
-     Компонент в виде функции или класса никогда не должен модифицировать собственные пропы.
+Компонент в виде функции или класса никогда не должен модифицировать собственные пропы.
 
-     ```javascript
-     function capital(amount, interest) {
-        return amount + interest;
-     }
-     ```
+```jsx
+function capital(amount, interest) {
+  return amount + interest
+}
+```
 
-     Приведенная функция называется "чистой", потому что она не изменяет передаваемые ей значения и всегда возвращает одинаковый результат для одних и тех же аргументов. React следует концепции "Все компоненты должны действовать подобно "чистым" функциям по отношению к пропам".
-
+Приведенная функция называется "чистой", потому что она не изменяет передаваемые ей значения и всегда возвращает одинаковый результат для одних и тех же аргументов. React следует концепции "Все компоненты должны действовать подобно "чистым" функциям по отношению к пропам".
 
 ### Почему состояние обновляется путем объединения?
 
-     При вызове `setState()` в компоненте React объединяет переданный объект с текущим состоянием.
+При вызове `setState()` в компоненте React объединяет переданный объект с текущим состоянием.
 
-     Здесь у нас имеется пользователь с состоянием в виде массивов для постов и комментариев:
+Здесь у нас имеется пользователь с состоянием в виде массивов для постов и комментариев:
 
-     ```javascript
-       constructor(props) {
-         super(props);
-         this.state = {
-           posts: [],
-           comments: []
-         };
-       }
-     ```
+```jsx
+constructor(props) {
+  super(props)
+  this.state = {
+    posts: [],
+    comments: []
+  }
+}
+```
 
-     Вы можете обновлять эти массивы по отдельности:
+Вы можете обновлять эти массивы по отдельности:
 
-     ```javascript
-      componentDidMount() {
-         fetchPosts().then(response => {
-           this.setState({
-             posts: response.posts
-           });
-         });
+```jsx
+componentDidMount() {
+  fetchPosts().then(response => {
+    this.setState({
+      posts: response.posts
+    })
+  })
 
-         fetchComments().then(response => {
-           this.setState({
-             comments: response.comments
-           });
-         });
-       }
-     ```
+  fetchComments().then(response => {
+    this.setState({
+      comments: response.comments
+    })
+  })
+}
+```
 
-     В приведенном примере `this.setState({ comments })` обновляет только массив с комментариями, не затрагивая массив с постами.
+В приведенном примере `this.setState({ comments })` обновляет только массив с комментариями, не затрагивая массив с постами.
 
-     **Обратите внимание:** при использовании хука `useState()` состояния не объединяются автоматически. При вызове `setState()` необходимо сливать состояния вручную:
+**Обратите внимание:** при использовании хука `useState()` состояния не объединяются автоматически. При вызове `setState()` необходимо сливать состояния вручную:
 
-     ```javascript
-       const [state, setState] = useState({
-         posts: [],
-         comments: []
-       })
+```jsx
+const [state, setState] = useState({
+  posts: [],
+  comments: []
+})
 
-       useEffect(() => {
-         fetchPosts().then(({ posts }) => {
-           setState({
-             ...state,
-             posts
-           })
-         })
-       }, [])
+useEffect(() => {
+  fetchPosts().then(({ posts }) => {
+    setState({
+      ...state,
+      posts
+    })
+  })
+}, [])
 
-       useEffect(() => {
-         fetchPosts().then(({ comments }) => {
-           setState({
-             ...state,
-             comments
-           })
-         })
-       }, [])
-     ```
-
+useEffect(() => {
+  fetchPosts().then(({ comments }) => {
+    setState({
+      ...state,
+      comments
+    })
+  })
+}, [])
+```
 
 ### Как передать аргумент в обработчик событий?
 
-     При выполнении итераций или циклов обычной практикой является передача дополнительного параметра обработчику событий. Это может быть реализовано с помощью стрелочной функции или метода `bind()`.
+При выполнении итераций или циклов обычной практикой является передача дополнительного параметра обработчику событий. Это может быть реализовано с помощью стрелочной функции или метода `bind()`.
 
-     Пример обновления таблицы пользователей:
+Пример обновления таблицы пользователей:
 
-     ```javascript
-     <button onClick={(e) => this.updateUser(userId, e)}>Обновить данные пользователя</button>
-     <button onClick={this.updateUser.bind(this, userId)}>Обновить данные пользователя</button>
-     ```
+```jsx
+<button onClick={(e) => this.updateUser(userId, e)}>Обновить данные пользователя</button>
+<button onClick={this.updateUser.bind(this, userId)}>Обновить данные пользователя</button>
+```
 
-     В обоих случаях "синтетический" аргумент передается в качестве второго аргумента. При использовании стрелочных функций, его необходимо передавать явно, при использовании `bind()`, он передается автоматически.
-
+В обоих случаях "синтетический" аргумент передается в качестве второго аргумента. При использовании стрелочных функций, его необходимо передавать явно, при использовании `bind()`, он передается автоматически.
 
 ### Как предотвратить рендеринг компонента?
 
-     Это можно сделать, вернув `null` из компонента. Таким способом можно реализовать условный рендеринг компонента:
+Это можно сделать, вернув `null` из компонента. Таким способом можно реализовать условный рендеринг компонента:
 
-     ```javascript
-     function Greeting(props) {
-       if (!props.loggedIn) {
-         return null;
-       }
+```jsx
+function Greeting(props) {
+  if (!props.loggedIn) {
+    return null
+  }
 
-       return (
-         <div className="greeting">
-           Добро пожаловать, {props.name}!
-         </div>
-       );
-     }
-     ```
+  return (
+    <div className="greeting">
+      Добро пожаловать, {props.name}!
+    </div>
+  )
+}
+```
 
-     ```javascript
-     class User extends React.Component {
-       constructor(props) {
-         super(props);
-         this.state = {loggedIn: false, name: 'Иван'};
-       }
+```jsx
+class User extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {loggedIn: false, name: 'Иван'}
+  }
 
-       render() {
-        return (
-            <div>
-              // предотвращаем рендеринг компонента, если не выполнен вход в систему
-              <Greeting loggedIn={this.state.loggedIn} />
-              <UserDetails name={this.state.name}>
-            </div>
-        );
-       }
-     ```
+  render() {
+    return (
+        <div>
+          // предотвращаем рендеринг компонента, если не выполнен вход в систему
+          <Greeting loggedIn={this.state.loggedIn} />
+          <UserDetails name={this.state.name}>
+        </div>
+    )
+  }
+}
+```
 
-     В приведенном примере компонент `Greeting` не отображается на экране и возвращает нулевое значение.
-
+В приведенном примере компонент `Greeting` не отображается на экране и возвращает нулевое значение.
 
 ### Назовите условия для безопасного использования индексов в качестве ключей
 
-     Для безопасного использования индексов в качестве ключей требуется соблюдение трех условий:
+Для безопасного использования индексов в качестве ключей требуется соблюдение трех условий:
 
-     1. Список и его элементы является статическими - они не вычисляются и не изменяются
-     2. Элементы списка не имеют идентификаторов
-     3. Список не фильтруется, порядок его элементов не меняется
-
+1. Список и его элементы является статическими - они не вычисляются и не изменяются
+2. Элементы списка не имеют идентификаторов
+3. Список не фильтруется, порядок его элементов не меняется
 
 ### Должны ли ключи быть уникальными в глобальном контексте?
 
-     Ключи должны быть уникальными среди соседних элементов, но не в глобальном контексте. Это означает, что одни и те же ключи можно использовать в разных массивах.
+Ключи должны быть уникальными среди соседних элементов, но не в глобальном контексте. Это означает, что одни и те же ключи можно использовать в разных массивах.
 
-     Пример использования одинаковых ключей в разных блоках:
+Пример использования одинаковых ключей в разных блоках:
 
-     ```javascript
-     function Book(props) {
-       const index = (
-         <ul>
-           {props.pages.map((page) =>
-             <li key={page.id}>
-               {page.title}
-             </li>
-           )}
-         </ul>
-       );
-       const content = props.pages.map((page) =>
-         <div key={page.id}>
-           <h3>{page.title}</h3>
-           <p>{page.content}</p>
-           <p>{page.pageNumber}</p>
-         </div>
-       );
-       return (
-         <div>
-           {index}
-           <hr />
-           {content}
-         </div>
-       );
-     }
-     ```
-
+```jsx
+function Book(props) {
+  const index = (
+    <ul>
+      {props.pages.map((page) =>
+        <li key={page.id}>
+          {page.title}
+        </li>
+      )}
+    </ul>
+  )
+  const content = props.pages.map((page) =>
+    <div key={page.id}>
+      <h3>{page.title}</h3>
+      <p>{page.content}</p>
+      <p>{page.pageNumber}</p>
+    </div>
+  )
+  return (
+    <div>
+      {index}
+      <hr />
+      {content}
+    </div>
+  )
+}
+```
 
 ### Назовите популярное решение для обработки форм в React
 
-     `Formik` - это один из наиболее популярных инструментов для работы с формами в React. Эта библиотека предоставляет готовые решения для валидации, отслеживания заполненных полей и реализации отправки формы.
+`Formik` - это один из наиболее популярных инструментов для работы с формами в React. Эта библиотека предоставляет готовые решения для валидации, отслеживания заполненных полей и реализации отправки формы.
 
-     Возможности названной библиотеки можно разделить на следующие категории:
+Возможности названной библиотеки можно разделить на следующие категории:
 
-     1. Запись и получение значений из состояния формы
-     2. Валидация и сообщения об ошибках
-     3. Обработка отправки формы
+1. Запись и получение значений из состояния формы
+2. Валидация и сообщения об ошибках
+3. Обработка отправки формы
 
-     Она используется для создания масштабируемых, производительных обработчиков форм минимальными усилиями.
-
+Она используется для создания масштабируемых, производительных обработчиков форм минимальными усилиями.
 
 ### В чем заключаются преимущества Formik перед Redux Form?
 
-     Ниже представлены основные причины, по которым следует предпочесть Formik вместо Redux Form:
+Ниже представлены основные причины, по которым следует предпочесть Formik вместо Redux Form:
 
-     1. Состояние формы является кратковременным и локальным, так что отсутствует необходимость в его фиксировании с помощью Redux (или любой другой Flux-библиотеки)
-     2. Redux Form вызывает "топовый" редуктор при нажатии каждой клавиши. Это может привести к "торможению" ввода в больших приложениях
-     3. Размер минифицированной и сжатой Redux Form составляет 22.5 Кб, а Formik всего 12.7 Кб
-
+1. Состояние формы является кратковременным и локальным, так что отсутствует необходимость в его фиксировании с помощью Redux (или любой другой Flux-библиотеки)
+2. Redux Form вызывает "топовый" редуктор при нажатии каждой клавиши. Это может привести к "торможению" ввода в больших приложениях
+3. Размер минифицированной и сжатой Redux Form составляет 22.5 Кб, а Formik всего 12.7 Кб
 
 ### Почему вам не требуется работать с наследованием?
 
-     В React вместо наследования рекомендуется использовать композицию для обеспечения возможности как совместного использования кода несколькими компонентами, так и повторного использования самих компонентов. Композиция вместе с пропами предоставляют все необходимое для кастомизации внешнего вида и поведения компонента явным и безопасным способом.
+В React вместо наследования рекомендуется использовать композицию для обеспечения возможности как совместного использования кода несколькими компонентами, так и повторного использования самих компонентов. Композиция вместе с пропами предоставляют все необходимое для кастомизации внешнего вида и поведения компонента явным и безопасным способом.
 
-     Если вам требуется совместное использование функционала, не связанного с UI, тогда следует вынести соответствующий код в отдельный модуль. Компоненты смогут импортировать этот модуль и использовать функцию, объект или класс без необходимости их расширения.
-
+Если вам требуется совместное использование функционала, не связанного с UI, тогда следует вынести соответствующий код в отдельный модуль. Компоненты смогут импортировать этот модуль и использовать функцию, объект или класс без необходимости их расширения.
 
 ### Можно ли использовать веб-компоненты в React-приложении?
 
-     Да, вы вполне можете использовать веб-компоненты в React-приложении. Даже несмотря на то, что многим разработчикам не нравится такое сочетание, это может потребоваться при использовании сторонних библиотек компонентов пользовательского интерфейса, написанных с помощью веб-компонентов.
+Да, вы вполне можете использовать веб-компоненты в React-приложении. Даже несмотря на то, что многим разработчикам не нравится такое сочетание, это может потребоваться при использовании сторонних библиотек компонентов пользовательского интерфейса, написанных с помощью веб-компонентов.
 
-     Пример использования веб-компонента для выбора даты `Vaadin`:
+Пример использования веб-компонента для выбора даты `Vaadin`:
 
-     ```javascript
-     import React, { Component } from 'react';
-     import './App.css';
-     import '@vaadin/vaadin-date-picker';
+```jsx
+import React, { Component } from 'react'
+import './App.css'
+import '@vaadin/vaadin-date-picker'
 
-     class App extends Component {
-       render() {
-         return (
-           <div className="App">
-             <vaadin-date-picker label="Когда вы родились?"></vaadin-date-picker>
-           </div>
-         );
-       }
-     }
-     export default App;
-     ```
-
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <vaadin-date-picker label="Когда вы родились?"></vaadin-date-picker>
+      </div>
+    )
+  }
+}
+export default App
+```
 
 ### Что такое динамической импорт?
 
-     Динамический импорт - это синтаксис, позволяющий реализовать разделение кода, т.е. загрузку модулей по необходимости:
+Динамический импорт - это синтаксис, позволяющий реализовать разделение кода, т.е. загрузку модулей по необходимости:
 
-     1. **Обычный импорт:**
+1. **Обычный импорт:**
 
-     ```javascript
-     import { add } from './math';
-     console.log(add(10, 20));
+```jsx
+import { add } from './math'
+console.log(add(10, 20))
 
-     ```
-     2. **Динамический импорт:**
+```
+2. **Динамический импорт:**
 
-     ```javascript
-     import("./math").then(math => {
-       console.log(math.add(10, 20));
-     });
-     ```
-
+```jsx
+import("./math").then(math => {
+  console.log(math.add(10, 20))
+})
+```
 
 ### Что такое загружаемые (loadable) компоненты?
 
-     Если вам требуется разделение кода в приложении с серверным рендерингом, рекомендуемым способом является использование загружаемых компонентов, поскольку `React.lazy()` и `Suspense` недоступны на стороне сервера. Loadable позволяет рендерить результаты динамического импорта в виде обычных компонентов:
+Если вам требуется разделение кода в приложении с серверным рендерингом, рекомендуемым способом является использование загружаемых компонентов, поскольку `React.lazy()` и `Suspense` недоступны на стороне сервера. Loadable позволяет рендерить результаты динамического импорта в виде обычных компонентов:
 
-     Пример:
+Пример:
 
-     ```javascript
-     import loadable from '@loadable/component'
+```jsx
+import loadable from '@loadable/component'
 
-     const OtherComponent = loadable(() => import('./OtherComponent'))
+const OtherComponent = loadable(() => import('./OtherComponent'))
 
-     function MyComponent() {
-       return (
-         <div>
-           <OtherComponent />
-         </div>
-       )
-     }
-     ```
+function MyComponent() {
+  return (
+    <div>
+      <OtherComponent />
+    </div>
+  )
+}
+```
 
-     После этого `OtherComponent` будет загружаться как отдельный "бандл".
-
+После этого `OtherComponent` будет загружаться как отдельный "бандл".
 
 ### Что такое компонент `Suspense`?
 
-     Если модуль содержит динамический импорт, который не успел загрузиться к моменту рендеринга родительского компонента, необходимо отобразить некоторый запасной контент, например, в виде индикатора загрузки. Это можно реализовать с помощью компонента `Suspense`.
+Если модуль содержит динамический импорт, который не успел загрузиться к моменту рендеринга родительского компонента, необходимо отобразить некоторый запасной контент, например, в виде индикатора загрузки. Это можно реализовать с помощью компонента `Suspense`.
 
-     Пример использования названного компонента:
+Пример использования названного компонента:
 
-     ```javascript
-     const OtherComponent = React.lazy(() => import('./OtherComponent'));
+```jsx
+const OtherComponent = React.lazy(() => import('./OtherComponent'))
 
-     function MyComponent() {
-       return (
-         <div>
-           <Suspense fallback={<div>Загрузка...</div>}>
-             <OtherComponent />
-           </Suspense>
-         </div>
-       );
-     }
-     ```
+function MyComponent() {
+  return (
+    <div>
+      <Suspense fallback={<div>Загрузка...</div>}>
+        <OtherComponent />
+      </Suspense>
+    </div>
+  )
+}
+```
 
-     `Suspense` оборачивает "ленивый" (отложеннозагружаемый) компонент.
-
+`Suspense` оборачивает "ленивый" (отложеннозагружаемый) компонент.
 
 ### Что такое основанное на роутинге разделение кода?
 
-     Одним из лучших мест для разделения кода являются маршруты (routes). Текущая страница полностью обновляется, так что пользователь не сможет взаимодействовать с элементами предыдущей и текущей страницы одновременно. Таким образом, пользовательский опыт не будет испорчен.
+Одним из лучших мест для разделения кода являются маршруты (routes). Текущая страница полностью обновляется, так что пользователь не сможет взаимодействовать с элементами предыдущей и текущей страницы одновременно. Таким образом, пользовательский опыт не будет испорчен.
 
-     Пример разделения кода с помощью библиотеки `react-router` и функции `React.lazy()`:
+Пример разделения кода с помощью библиотеки `react-router` и функции `React.lazy()`:
 
-     ```javascript
-     import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-     import React, { Suspense, lazy } from 'react';
+```jsx
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React, { Suspense, lazy } from 'react'
 
-     const Home = lazy(() => import('./routes/Home'));
-     const About = lazy(() => import('./routes/About'));
+const Home = lazy(() => import('./routes/Home'))
+const About = lazy(() => import('./routes/About'))
 
-     const App = () => (
-       <Router>
-         <Suspense fallback={<div>Загрузка...</div>}>
-           <Switch>
-             <Route exact path="/" component={Home}/>
-             <Route path="/about" component={About}/>
-           </Switch>
-         </Suspense>
-       </Router>
-     );
-     ```
+const App = () => (
+  <Router>
+    <Suspense fallback={<div>Загрузка...</div>}>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </Switch>
+    </Suspense>
+  </Router>
+)
+```
 
-     В приведенном примере разделение кода происходит на уровне маршрутов.
-
+В приведенном примере разделение кода происходит на уровне маршрутов.
 
 ### Приведите пример использования контекста
 
-     *Context* - спроектирован для распределения данных, которые можно назвать *глобальными*, между несколькими React-компонентами, независимо от уровня вложенности этих компонентов.
+*Context* - спроектирован для распределения данных, которые можно назвать *глобальными*, между несколькими React-компонентами, независимо от уровня вложенности этих компонентов.
 
-     Пример прямого доступа к пропу `theme` для стилизации компонента кнопки:
+Пример прямого доступа к пропу `theme` для стилизации компонента кнопки:
 
-     ```javascript
-     // создаем контекст со значением "light" по умолчанию
-     const ThemeContext = React.createContext('light');
-     // создаем компонент App, передающий значение темы всем потомкам
-     class App extends React.Component {
-       render() {
-         return (
-           <ThemeContext.Provider value="dark">
-             <Toolbar />
-           </ThemeContext.Provider>
-         );
-       }
-     }
-     // промежуточным компонентам не требуется передавать проп `theme` дальше (ниже)
-     function Toolbar(props) {
-       return (
-         <div>
-           <ThemedButton />
-         </div>
-       );
-     }
-     // получаем значение темы в компоненте кнопки
-     class ThemedButton extends React.Component {
-       static contextType = ThemeContext;
-       render() {
-         return <Button theme={this.context} />;
-       }
-     }
-     ```
+```jsx
+// создаем контекст со значением "light" по умолчанию
+const ThemeContext = React.createContext('light')
+// создаем компонент App, передающий значение темы всем потомкам
+class App extends React.Component {
+  render() {
+    return (
+      <ThemeContext.Provider value="dark">
+        <Toolbar />
+      </ThemeContext.Provider>
+    )
+  }
+}
+// промежуточным компонентам не требуется передавать проп `theme` дальше (ниже)
+function Toolbar(props) {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  )
+}
+// получаем значение темы в компоненте кнопки
+class ThemedButton extends React.Component {
+  static contextType = ThemeContext
+  render() {
+    return <Button theme={this.context} />
+  }
+}
+```
 
-     В функциональном компоненте значение контекста можно получить с помощью хука `useContext()`.
-
+В функциональном компоненте значение контекста можно получить с помощью хука `useContext`.
 
 ### Для чего используется "дефолтное" значение контекста?
 
-     Аргумент `defaultValue` используется в случаях, когда в дереве компонента не найден подходящий провайдер (provider). Это может быть полезным для тестирования компонентов в изоляции без необходимости их оборачивания в `Provider`:
+Аргумент `defaultValue` используется в случаях, когда в дереве компонента не найден подходящий провайдер (provider). Это может быть полезным для тестирования компонентов в изоляции без необходимости их оборачивания в `Provider`:
 
-     ```javascript
-     const MyContext = React.createContext(defaultValue);
-     ```
-
+```jsx
+const MyContext = React.createContext(defaultValue)
+```
 
 ### Как использовать `contextType`?
 
-     `contextType` используется для потребления (consume) объекта контекста. Данное свойство может использоваться двумя способами:
+`contextType` используется для потребления (consume) объекта контекста. Данное свойство может использоваться двумя способами:
 
-     1. **Свойство класса:**
+1. **Свойство класса:**
 
-         Свойству `contextType` класса можно присвоить объект контекста, созданный с помощью метода `React.createContext()`. После этого можно потреблять ближайшее значение контекста посредством `this.context` в любом методе жизненного цикла, включая метод `render()`:
+Свойству `contextType` класса можно присвоить объект контекста, созданный с помощью метода `React.createContext()`. После этого можно потреблять ближайшее значение контекста посредством `this.context` в любом методе жизненного цикла, включая метод `render()`:
 
-         ```javascript
-         class MyClass extends React.Component {
-           componentDidMount() {
-             let value = this.context;
-             /* выполняем побочные эффекты при монтировании, используя значение MyContext */
-           }
-           componentDidUpdate() {
-             let value = this.context;
-             /* ... */
-           }
-           componentWillUnmount() {
-             let value = this.context;
-             /* ... */
-           }
-           render() {
-             let value = this.context;
-             /* выполняем рендерит, используя значение MyContext */
-           }
-         }
-         MyClass.contextType = MyContext;
-         ```
+```jsx
+class MyClass extends React.Component {
+  componentDidMount() {
+    let value = this.context
+    /* выполняем побочные эффекты при монтировании, используя значение MyContext */
+  }
+  componentDidUpdate() {
+    let value = this.context
+    /* ... */
+  }
+  componentWillUnmount() {
+    let value = this.context
+    /* ... */
+  }
+  render() {
+    let value = this.context
+    /* выполняем рендерит, используя значение MyContext */
+  }
+}
+MyClass.contextType = MyContext
+```
 
-     2. **Статическое поле:**
+2. **Статическое поле:**
 
-         `contextType` можно инициализировать c помощью синтаксиса статических полей класса:
+`contextType` можно инициализировать c помощью синтаксиса статических полей класса:
 
-         ```javascript
-         class MyClass extends React.Component {
-           static contextType = MyContext;
-           render() {
-             let value = this.context;
-             /* выполняем рендерит, используя значение MyContext */
-           }
-         }
-         ```
+```jsx
+class MyClass extends React.Component {
+  static contextType = MyContext
+  render() {
+    let value = this.context
+    /* выполняем рендеринг, используя значение MyContext */
+  }
+}
+```
 
+### Что такое потребитель (consumer)?
 
-### Что такое потребитель (Consumer)?
+*Потребитель* - это компонент, подписанный (реагирующий) на изменения контекста. Ему требуется функция в качестве дочернего элемента, получающая текущее значение контекста и возвращающая узел React. Аргумент `value` равняется пропу `value` ближайшего провайдера для данного контекста:
 
-     *Потребитель* - это компонент, подписанный (реагирующий) на изменения контекста. Ему требуется функция в качестве дочернего элемента, получающая текущее значение контекста и возвращающая узел React. Аргумент `value` равняется пропу `value` ближайшего провайдера для данного контекста:
-
-     ```javascript
-     <MyContext.Consumer>
-       {value => /* выполняем рендеринг на основе значения контекста */}
-     </MyContext.Consumer>
-     ```
-
+```jsx
+<MyContext.Consumer>
+  {value => /* выполняем рендеринг на основе значения контекста */}
+</MyContext.Consumer>
+```
 
 ### Как решать проблемы производительности при использовании контекста?
 
-     Контекст использует идентификацию ссылок для определения необходимости в повторном рендеринге. Существуют некоторые ошибки, которые могу привести к непреднамеренному рендерингу в потребителях при повторном рендеринге родительского компонента.
+Контекст использует идентификацию ссылок для определения необходимости в повторном рендеринге. Существуют некоторые ошибки, которые могу привести к непреднамеренному рендерингу в потребителях при повторном рендеринге родительского компонента.
 
-     Например, в представленном ниже примере все потребители будут перерисовываться при каждом рендеринге провайдера, поскольку каждый раз создается новый объект-значение пропа `value`:
+Например, в представленном ниже примере все потребители будут перерисовываться при каждом рендеринге провайдера, поскольку каждый раз создается новый объект-значение пропа `value`:
 
-     ```javascript
-     class App extends React.Component {
-       render() {
-         return (
-           <Provider value={{something: 'нечто'}}>
-             <Toolbar />
-           </Provider>
-         );
-       }
-     }
-     ```
+```jsx
+class App extends React.Component {
+  render() {
+    return (
+      <Provider value={{something: 'нечто'}}>
+        <Toolbar />
+      </Provider>
+    )
+  }
+}
+```
 
-     Данная проблема может быть решена путем сохранения состояния в конструкторе родительского компонента:
+Данная проблема может быть решена путем сохранения состояния в конструкторе родительского компонента:
 
-     ```javascript
-     class App extends React.Component {
-       constructor(props) {
-         super(props);
-         this.state = {
-           value: { something: 'нечто' },
-         };
-       }
+```jsx
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: { something: 'нечто' },
+    }
+  }
 
-       render() {
-         return (
-           <Provider value={this.state.value}>
-             <Toolbar />
-           </Provider>
-         );
-       }
-     }
-     ```
-
+  render() {
+    return (
+      <Provider value={this.state.value}>
+        <Toolbar />
+      </Provider>
+    )
+  }
+}
+```
 
 ### Для чего используются `forwardRefs` в HOC?
 
-     Ссылки не могут передаваться потомкам, поскольку они не являются пропами. Они обрабатываются React особым образом, также как *ключи*. Если вы добавили ссылку к HOC, она будет указывать на самый внешний компонент, а не на оборачиваемый. В этом случае вы можете использовать технику под названием "перенаправление (передача) ссылок".
+Ссылки не могут передаваться потомкам, поскольку они не являются пропами. Они обрабатываются React особым образом, также как *ключи*. Если вы добавили ссылку к HOC, она будет указывать на самый внешний компонент, а не на оборачиваемый. В этом случае вы можете использовать технику под названием "перенаправление (передача) ссылок".
 
-     С помощью API `React.forwardRef` мы можем передать ссылку внутреннему компоненту:
+С помощью API `React.forwardRef` мы можем передать ссылку внутреннему компоненту:
 
-         ```javascript
-         function logProps(Component) {
-           class LogProps extends React.Component {
-             componentDidUpdate(prevProps) {
-               console.log('старые пропы:', prevProps);
-               console.log('новые пропы:', this.props);
-             }
+```jsx
+function logProps(Component) {
+  class LogProps extends React.Component {
+    componentDidUpdate(prevProps) {
+      console.log('старые пропы:', prevProps)
+      console.log('новые пропы:', this.props)
+    }
 
-             render() {
-               const {forwardedRef, ...rest} = this.props;
+    render() {
+      const {forwardedRef, ...rest} = this.props
 
-               // присваиваем кастомный проп "forwardedRef" в качестве ссылки
-               return <Component ref={forwardedRef} {...rest} />;
-             }
-           }
+      // присваиваем кастомный проп "forwardedRef" в качестве ссылки
+      return <Component ref={forwardedRef} {...rest} />
+    }
+  }
 
-           return React.forwardRef((props, ref) => {
-             return <LogProps {...props} forwardedRef={ref} />;
-           });
-         }
-         ```
+  return React.forwardRef((props, ref) => {
+    return <LogProps {...props} forwardedRef={ref} />
+  })
+}
+```
 
-     Используем данный HOC для вывода в консоль всех пропов компонента `FancyButton`:
+Используем данный HOC для вывода в консоль всех пропов компонента `FancyButton`:
 
-         ```javascript
-         class FancyButton extends React.Component {
-           focus() {
-             // ...
-           }
+```jsx
+class FancyButton extends React.Component {
+  focus() {
+    // ...
+  }
 
-           // ...
-         }
-         export default logProps(FancyButton);
-         ```
+  // ...
+}
+export default logProps(FancyButton)
+```
 
-     Теперь создадим ссылку и передадим ее компоненту. Это позволить установить фокус на кнопку:
+Теперь создадим ссылку и передадим ее компоненту. Это позволить установить фокус на кнопку:
 
-         ```javascript
-         import FancyButton from './FancyButton';
+```jsx
+import FancyButton from './FancyButton'
 
-         const ref = React.createRef();
-         ref.current.focus();
-         <FancyButton
-           label="Click Me"
-           handleClick={handleClick}
-           ref={ref}
-         />;
-         ```
-
+const ref = React.createRef()
+ref.current.focus()
+<FancyButton
+  label="Click Me"
+  handleClick={handleClick}
+  ref={ref}
+/>
+```
 
 ### Почему следует проявлять осторожность при использовании `forwardRefs` в библиотеке компонентов?
 
-     Когда вы начинаете использовать `forwardRef` в библиотеке компонентов, это, чаще всего, означает несовместимые изменения и релиз новой мажорной версии. Это объясняется изменением поведения библиотеки за счет присвоения ссылок и экспортируемых типов. Такие изменения могут сломать приложение и другие библиотеки.
-
+Когда вы начинаете использовать `forwardRef` в библиотеке компонентов, это, чаще всего, означает несовместимые изменения и релиз новой мажорной версии. Это объясняется изменением поведения библиотеки за счет присвоения ссылок и экспортируемых типов. Такие изменения могут сломать приложение и другие библиотеки.
 
 ### Как создать классовый компонент без использования синтаксиса ES6?
 
-     Это можно сделать с помощью модуля `create-react-class`. Для пропов по умолчанию необходимо определить функцию `getDefaultProps()` в передаваемом объекте. Также требуется реализовать отдельный метод `getInitialState()`, возвращающий начальное значение:
+Это можно сделать с помощью модуля `create-react-class`. Для пропов по умолчанию необходимо определить функцию `getDefaultProps()` в передаваемом объекте. Также требуется реализовать отдельный метод `getInitialState()`, возвращающий начальное значение:
 
-     ```javascript
-     var Greeting = createReactClass({
-       getDefaultProps: function() {
-           return {
-             name: 'Иван'
-           };
-         },
-       getInitialState: function() {
-           return {message: this.props.message};
-         },
-       handleClick: function() {
-          console.log(this.state.message);
-       },
-       render: function() {
-         return <h1>Привет, {this.props.name}</h1>;
-       }
-     });
-     ```
+```jsx
+var Greeting = createReactClass({
+  getDefaultProps: function() {
+      return {
+        name: 'Иван'
+      }
+    },
+  getInitialState: function() {
+      return {message: this.props.message}
+    },
+  handleClick: function() {
+    console.log(this.state.message)
+  },
+  render: function() {
+    return <h1>Привет, {this.props.name}</h1>
+  }
+})
+```
 
-     **Обратите внимание:** при использовании `createReactClass()` для всех методов доступно автоматическое связывание, т.е. вам не нужно использовать `bind(this)` в конструкторе для обработчиков событий.
-
+**Обратите внимание:** при использовании `createReactClass()` для всех методов доступно автоматическое связывание, т.е. вам не нужно использовать `bind(this)` в конструкторе для обработчиков событий.
 
 ### Можно ли использовать React без JSX?
 
-     Да, JSX не является обязательным условием использования React. На самом деле, JSX используется для того, чтобы избежать настройки компиляции в среде разработки. Каждый JSX-элемент - всего лишь синтаксический сахар для `React.createElement(component, props, ...children)`.
+Да, JSX не является обязательным условием использования React. На самом деле, JSX используется для того, чтобы избежать настройки компиляции в среде разработки. Каждый JSX-элемент - всего лишь синтаксический сахар для `React.createElement(component, props, ...children)`.
 
-     Пример с JSX:
+Пример с JSX:
 
-     ```javascript
-     class Greeting extends React.Component {
-       render() {
-         return <div>Привет, {this.props.message}!</div>;
-       }
-     }
+```jsx
+class Greeting extends React.Component {
+  render() {
+    return <div>Привет, {this.props.message}!</div>
+  }
+}
 
-     ReactDOM.render(
-       <Greeting message="World" />,
-       document.getElementById('root')
-     );
-     ```
+ReactDOM.render(
+  <Greeting message="World" />,
+  document.getElementById('root')
+)
+```
 
-     Тоже самое без JSX:
+Тоже самое без `JSX`:
 
-     ```javascript
-     class Greeting extends React.Component {
-       render() {
-         return React.createElement('div', null, `Привет, ${this.props.message}!`);
-       }
-     }
+```jsx
+class Greeting extends React.Component {
+  render() {
+    return React.createElement('div', null, `Привет, ${this.props.message}!`)
+  }
+}
 
-     ReactDOM.render(
-       React.createElement(Greeting, {message: 'народ'}, null),
-       document.getElementById('root')
-     );
-     ```
-
+ReactDOM.render(
+  React.createElement(Greeting, {message: 'народ'}, null),
+  document.getElementById('root')
+)
+```
 
 ### Что такое алгоритм определения различий?
 
-     React нуждается в использовании алгоритма определения эффективного обновления UI для совпадения с последним деревом. Алгоритм определения различий требует выполнения минимального количества операций для преобразования одного дерева в другое. Тем не менее, сложность данного алгоритма составляет порядка O(n3), где n - это количество элементов в дереве.
+React нуждается в использовании алгоритма определения эффективного обновления UI для совпадения с последним деревом. Алгоритм определения различий требует выполнения минимального количества операций для преобразования одного дерева в другое. Тем не менее, сложность данного алгоритма составляет порядка O(n3), где n - это количество элементов в дереве.
 
-     В этом случае для отображения 1000 элементов потребуется около миллиарда сравнений. Это очень много. Вместо этого, React реализует эвристический алгоритм со сложностью O(n), основываясь на двух предположениях:
+В этом случае для отображения 1000 элементов потребуется около миллиарда сравнений. Это очень много. Вместо этого, React реализует эвристический алгоритм со сложностью O(n), основываясь на двух предположениях:
 
-     1. Два элемента разных типов приводят к возникновению разных деревьев
-     2. Разработчик может пометить стабильные элементы с помощью пропа `key`
-
+1. Два элемента разных типов приводят к возникновению разных деревьев
+2. Разработчик может пометить стабильные элементы с помощью пропа `key`
 
 ### Каким правилам следует алгоритм определения различий?
 
-     При сравнении двух деревьев, React начинает с сравнения двух корневых элементов каждого поддерева. Поведение различается в зависимости от типов этих элементов. Алгоритм согласования следует таким правилам:
+При сравнении двух деревьев, React начинает с сравнения двух корневых элементов каждого поддерева. Поведение различается в зависимости от типов этих элементов. Алгоритм согласования следует таким правилам:
 
-     1. **Элементы разных типов:**
-        Если корневые элементы имеют разные типы, React уничтожает старое дерево и строит новое с нуля. Например, изменение элемента с `<a>` на `<img>` или с `<Article>` на `<Comment>` разных типов приводит к полной перестройке
-     2. **DOM-элементы одного типа:**
-        При сравнении двух DOM-элементов одинакового типа, React "смотрит" на атрибуты обоих, сохраняет нижележащие DOM-узлы, и обновляет только изменившиеся атрибуты. Вот пример изменения значения атрибута `className`:
+1. **Элементы разных типов:**
+  Если корневые элементы имеют разные типы, React уничтожает старое дерево и строит новое с нуля. Например, изменение элемента с `<a>` на `<img>` или с `<Article>` на `<Comment>` разных типов приводит к полной перестройке
+2. **DOM-элементы одного типа:**
+  При сравнении двух DOM-элементов одинакового типа, React "смотрит" на атрибуты обоих, сохраняет нижележащие DOM-узлы, и обновляет только изменившиеся атрибуты. Вот пример изменения значения атрибута `className`:
 
-        ```javascript
-        <div className="show" title="React" />
+  ```jsx
+  <div className="show" title="React" />
 
-        <div className="hide" title="React" />
-        ```
+  <div className="hide" title="React" />
+  ```
 
-     3. **Компоненты одного типа:**
-        При обновлении компонента, экземпляр остается прежним, поэтому состояние сохраняется между рендерами. React обновляет пропы нижележащего экземпляра компонента для совпадения с новым элементом и вызывает методы `componentWillReceiveProps()` и `componentWillUpdate()` экземпляра. После этого вызывается метод `render()` и алгоритм определения различий рекурсивно сравнивает предыдущий результат с новым
-     4. **Рекурсивное сравнение потомков:**
-        При рекурсивном сравнении потомков узла DOM, React просто одновременно перебирает оба списка и отмечает различия. Например, добавление нового элемента в конец списка обрабатывается быстро, а в середину медленно, поскольку все элементы после нового будут помечены как новые и перерисованы
+3. **Компоненты одного типа:**
+  При обновлении компонента, экземпляр остается прежним, поэтому состояние сохраняется между рендерами. React обновляет пропы нижележащего экземпляра компонента для совпадения с новым элементом и вызывает методы `componentWillReceiveProps()` и `componentWillUpdate()` экземпляра. После этого вызывается метод `render()` и алгоритм определения различий рекурсивно сравнивает предыдущий результат с новым
+4. **Рекурсивное сравнение потомков:**
+  При рекурсивном сравнении потомков узла DOM, React просто одновременно перебирает оба списка и отмечает различия. Например, добавление нового элемента в конец списка обрабатывается быстро, а в середину медленно, поскольку все элементы после нового будут помечены как новые и перерисованы
 
-        ```javascript
-        <ul>
-          <li>first</li>
-          <li>second</li>
-        </ul>
+  ```jsx
+  <ul>
+    <li>first</li>
+    <li>second</li>
+  </ul>
 
-        <ul>
-          <li>first</li>
-          <li>second</li>
-          <li>third</li>
-        </ul>
+  <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+  </ul>
 
-        ```
-     5. **Обработка ключей:**
-     React поддерживает атрибут `key`. Когда потомки имеют ключи, React использует их для сравнения потомков оригинального дерева с потомками нового дерева. Поэтому использование ключей существенно повышает эффективность согласования деревьев:
+  ```
+5. **Обработка ключей:**
+React поддерживает атрибут `key`. Когда потомки имеют ключи, React использует их для сравнения потомков оригинального дерева с потомками нового дерева. Поэтому использование ключей существенно повышает эффективность согласования деревьев:
 
-     ```javascript
-     <ul>
-       <li key="2015">John</li>
-       <li key="2016">Jane</li>
-     </ul>
+```jsx
+<ul>
+  <li key="2015">John</li>
+  <li key="2016">Jane</li>
+</ul>
 
-     <ul>
-       <li key="2014">Bob</li>
-       <li key="2015">John</li>
-       <li key="2016">Jane</li>
-     </ul>
-     ```
+<ul>
+  <li key="2014">Bob</li>
+  <li key="2015">John</li>
+  <li key="2016">Jane</li>
+</ul>
+```
 
+### Когда может потребоваться использовать рефы?
 
-### Когда может потребоваться использовать ссылки?
+Рефы используются в следующих случаях:
 
-     Ссылки используются в следующих случаях:
-
-     1. Управление фокусом, выделением текста или воспроизведением медиа
-     2. Запуск императивной анимации
-     3. Интеграция со сторонними библиотеками DOM
-
+1. Управление фокусом, выделением текста или воспроизведением медиа.
+2. Запуск анимации.
+3. Интеграция со сторонними библиотеками для работы с `DOM`.
 
 ### Обязательно ли проп должен называться "render" при использовании рендер-пропов?
 
-     Несмотря на название паттерна, использовать "render" в качестве названия пропа необязательно. Любой проп, который является функцией, указывающей компоненту, что следует рендерить, технически является "рендер-пропом".
+Несмотря на название паттерна, использовать "render" в качестве названия пропа необязательно. Любой проп, который является функцией, указывающей компоненту, что следует рендерить, технически является "рендер-пропом".
 
-     Пример использования `children` как пропа для рендера:
+Пример использования `children` как пропа для рендера:
 
-     ```javascript
-     <Mouse children={mouse => (
-       <p>Позиция курсора мыши: {mouse.x}, {mouse.y}</p>
-     )}/>
-     ```
+```jsx
+<Mouse children={mouse => (
+  <p>Позиция курсора мыши: {mouse.x}, {mouse.y}</p>
+)}/>
+```
 
-     На самом деле, проп `children` не нуждается в имени в списке "атрибутов" JSX-элемента. Вместо этого, его можно поместить снаружи элемента:
+На самом деле, проп `children` не нуждается в имени в списке "атрибутов" JSX-элемента. Вместо этого, его можно поместить снаружи элемента:
 
-     ```javascript
-     <Mouse>
-       {mouse => (
-         <p>Позиция курсора мыши: {mouse.x}, {mouse.y}</p>
-       )}
-     </Mouse>
-     ```
+```jsx
+<Mouse>
+  {mouse => (
+    <p>Позиция курсора мыши: {mouse.x}, {mouse.y}</p>
+  )}
+</Mouse>
+```
 
-     При использовании данной техники (без названия), не забудьте явно указать `propTypes`, что состояние этого потомка должно быть функцией:
+При использовании данной техники (без названия), не забудьте явно указать `propTypes`, что состояние этого потомка должно быть функцией:
 
-     ```javascript
-     Mouse.propTypes = {
-       children: PropTypes.func.isRequired
-     };
-     ```
-
+```jsx
+Mouse.propTypes = {
+  children: PropTypes.func.isRequired
+}
+```
 
 ### В чем заключается проблема использования рендер-пропов в "чистых" компонентах?
 
-     Создание функции внутри метода `render()` противоречит назначению "чистого" компонента. Поскольку поверхностное сравнение пропов будет всегда возвращать `false` для новых пропов, каждый рендер будут генерировать новое значение для рендер-пропа. Эту проблему можно решить путем определения функции рендеринга в качестве метода экземпляра.
-
+Создание функции внутри метода `render()` противоречит назначению "чистого" компонента. Поскольку поверхностное сравнение пропов будет всегда возвращать `false` для новых пропов, каждый рендер будут генерировать новое значение для рендер-пропа. Эту проблему можно решить путем определения функции рендеринга в качестве метода экземпляра.
 
 ### Как создать HOC с помощью рендер-пропов?
 
-     Вы можете реализовать компонент высшего порядка с помощью обычного компонента с рендер-пропом. Например, если вы хотите получить HOC `withMouse` вместо компонента `Mouse`, вы можете создать его с помощью `Mouse` с пропом для рендерига:
+Вы можете реализовать компонент высшего порядка с помощью обычного компонента с рендер-пропом. Например, если вы хотите получить HOC `withMouse` вместо компонента `Mouse`, вы можете создать его с помощью `Mouse` с пропом для рендерига:
 
-     ```javascript
-     function withMouse(Component) {
-       return class extends React.Component {
-         render() {
-           return (
-             <Mouse render={mouse => (
-               <Component {...this.props} mouse={mouse} />
-             )}/>
-           );
-         }
-       }
-     }
-     ```
+```jsx
+function withMouse(Component) {
+  return class extends React.Component {
+    render() {
+      return (
+        <Mouse render={mouse => (
+          <Component {...this.props} mouse={mouse} />
+        )}/>
+      )
+    }
+  }
+}
+```
 
-     В этом случае рендер-пропы получают возможность использовать другие паттерны.
-
+В этом случае рендер-пропы получают возможность использовать другие паттерны.
 
 ### Что такое Windowing?
 
-     Windowing - это техника, позволяющая рендерить небольшой набор строк в определенный момент, что может существенно уменьшить время повторного рендеринга компонентов, а также число создаваемых DOM-узлов. Если ваше приложение рендерит длинный список данных, тогда рекомендуется использовать эту технику. Популярными решениями в этой сфере являются `react-window` и `react-virtualized`. Они предоставляют несколько переиспользуемых компонентов для работы со списками, "гридами" (grids) и табличными данными.
-
+`Windowing` - это техника, позволяющая рендерить небольшой набор строк в определенный момент, что может существенно уменьшить время повторного рендеринга компонентов, а также число создаваемых DOM-узлов. Если ваше приложение рендерит длинный список данных, тогда рекомендуется использовать эту технику. Популярными решениями в этой сфере являются `react-window` и `react-virtualized`. Они предоставляют несколько переиспользуемых компонентов для работы со списками, "гридами" (grids) и табличными данными.
 
 ### Как отображать ложные значения в JSX?
 
-     Ложные значения, такие как `false, null, undefined`, как и `true` являются валидными потомками, но они ничего не рендерят. Для их отображения требуется предварительная конвертация в строку.
+Ложные значения, такие как `false, null, undefined`, как и `true` являются валидными потомками, но они ничего не рендерят. Для их отображения требуется предварительная конвертация в строку.
 
-     Пример:
+Пример:
 
-     ```javascript
-     <div>
-       Моя JavaScript переменная - это {String(myVariable)}.
-     </div>
-     ```
-
+```jsx
+<div>
+  Моя JavaScript-переменная - это {String(myVariable)}.
+</div>
+```
 
 ### Назовите типичные случаи использования порталов
 
-     Порталы в React используются в случае переполнения (overflow) родительского компонента: скрытые элементы или элементы, которые "вырваны" из контекста стека (стили `z-index, position, opacity` и т.д.). Данная техника используется для визуализации "независимости" таких элементов от родительских контейнеров.
+Порталы в React используются в случае переполнения (overflow) родительского компонента: скрытые элементы или элементы, которые "вырваны" из контекста стека (стили `z-index, position, opacity` и т.д.). Данная техника используется для визуализации "независимости" таких элементов от родительских контейнеров.
 
-     Примерами подобных элементов могут служить диалоговые или модульные окна, глобальные уведомления, всплывающие подсказки и т.д.
-
+Примерами подобных элементов могут служить диалоговые или модульные окна, глобальные уведомления, всплывающие подсказки и т.д.
 
 ### Как установить значение по умолчанию для неуправляемого компонента?
 
-     В React значение атрибута элемента формы перезаписывает соответствующее значение в DOM. В случае использования неуправляемых компонентов вам может потребоваться установить начальное значение, но оставить его неуправляемым при последующих обновлениях. Для решения этой задачи используется атрибут `defaultValue` вместо `value`:
+В React значение атрибута элемента формы перезаписывает соответствующее значение в DOM. В случае использования неуправляемых компонентов вам может потребоваться установить начальное значение, но оставить его неуправляемым при последующих обновлениях. Для решения этой задачи используется атрибут `defaultValue` вместо `value`:
 
-     ```javascript
-     render() {
-       return (
-         <form onSubmit={this.handleSubmit}>
-           <label>
-             User Name:
-             <input
-               defaultValue="Иван"
-               type="text"
-               ref={this.input} />
-           </label>
-           <input type="submit" value="Отправить" />
-         </form>
-       );
-     }
-     ```
+```jsx
+render() {
+  return (
+    <form onSubmit={this.handleSubmit}>
+      <label>
+        User Name:
+        <input
+          defaultValue="Иван"
+          type="text"
+          ref={this.input} />
+      </label>
+      <input type="submit" value="Отправить" />
+    </form>
+  )
+}
+```
 
-     Тоже самое справедливо в отношении полей `select` и `textarea`. Однако, для полей  `checkbox` и `radio` следует использовать атрибут `defaultChecked`.
-
+Тоже самое справедливо в отношении полей `select` и `textarea`. Однако, для полей  `checkbox` и `radio` следует использовать атрибут `defaultChecked`.
 
 ### Назовите ваш любимый стек для разработки приложений на React
 
-     Несмотря на то, что технический стек различается от разработчика к разработчику, существуют некоторые популярные решения, которые используются повсеместно. Они включают в себя `redux`, `redux-thunk` и `redux-saga` для управления состоянием и работы с асинхронным кодом, `react-router` для маршрутизации, `styled-components` для стилизации, `axios` или `fetch` для работы с REST API и другие инструменты, такие как Webpack, Babel, `reselect` и т.д. Если вас интересует данная тема, взгляните на этот проект: https://github.com/react-boilerplate/react-boilerplate.
-
+Несмотря на то, что технический стек различается от разработчика к разработчику, существуют некоторые популярные решения, которые используются повсеместно. Они включают в себя `redux`, `redux-thunk` и `redux-saga` для управления состоянием и работы с асинхронным кодом, `react-router` для маршрутизации, `styled-components` для стилизации, `axios` или `fetch` для работы с REST API и другие инструменты, такие как Webpack, Babel, `reselect` и т.д. Если вас интересует данная тема, взгляните на этот проект: https://github.com/react-boilerplate/react-boilerplate.
 
 ### В чем разница между настоящим и виртуальным DOM?
 
-     Ниже представлены основные отличие между реальным и виртуальным DOM:
+Ниже представлены основные отличие между реальным и виртуальным DOM:
 
-     | Реальный DOM | Виртуальный DOM |
-     | ----- | ------- |
-     | Обновления медленные | Обновления быстрые |
-     | Манипуляции с DOM очень дорогостоящие | Манипуляции с DOM не очень дорогие |
-     | Вы можете обновлять HTML напрямую | Вы не можете обновлять HTML напрямую |
-     | Активная работа с DOM часто приводит к утечкам памяти | Утечки памяти практически полностью исключены |
-     | При обновлении элемента создается новая DOM | При изменении элемента обновляется только JSX |
-
+| Реальный DOM | Виртуальный DOM |
+| ----- | ------- |
+| Обновления медленные | Обновления быстрые |
+| Манипуляции с DOM очень дорогостоящие | Манипуляции с DOM не очень дорогие |
+| Вы можете обновлять HTML напрямую | Вы не можете обновлять HTML напрямую |
+| Активная работа с DOM часто приводит к утечкам памяти | Утечки памяти практически полностью исключены |
+| При обновлении элемента создается новая DOM | При изменении элемента обновляется только JSX |
 
 ### Как добавить Bootstrap в React-приложение?
 
-     Bootstrap может быть добавлен в React-приложение тремя способами:
+`Bootstrap` может быть добавлен в `React-приложение` 3 способами:
 
-     1. С помощью Bootstrap CDN:
-        Это простейший способ. Просто добавляем соответствующие теги (стили и скрипт) в `head`
-     2. Bootstrap как зависимость:
-        Если вы используете инструмент для сборки, такой как Webpack, тогда предпочтительной является установка Bootstrap в качестве зависимости:
+1. С помощью `Bootstrap CDN`: это простейший способ. Просто добавляем соответствующие теги (стили и скрипт) в `head`.
+2. `Bootstrap` как зависимость: при использовании сборщика модулей, такого как `Webpack`, предпочтительной является установка `Bootstrap` в качестве зависимости:
 
-        ```javascript
-        yarn add bootstrap
-        // или
-        npm i bootstrap
-        ```
-     3. Пакет React Bootstrap:
-        В этом случае можно использовать "компонентную" версию Bootstrap. Для этого существует два популярных решения:
+```bash
+yarn add bootstrap
+// или
+npm i bootstrap
+```
 
-        1. `react-bootstrap`
-        2. `reactstrap`
+1. Пакет `React Bootstrap`: в этом случае можно использовать "компонентную" версию `Bootstrap`. Существует 2 популярных решения:
+   1. `react-bootstrap`
+   2. `reactstrap`
 
 
 ### Можете ли вы назвать популярные сайты или приложения, использующие React в качестве фреймворка для фронтенда?
 
-     Ниже представлен *топ-10 сайтов*, использующих React как библиотеку для фронтенда:
+Ниже представлен *топ-10 сайтов*, использующих React как библиотеку для фронтенда:
 
-     1. Facebook
-     2. Uber
-     3. Instagram
-     4. WhatsApp
-     5. Khan Academy
-     6. Airbnb
-     7. Dropbox
-     8. Flipboard
-     9. Netflix
-     10. PayPal
-
+1. Facebook
+2. Uber
+3. Instagram
+4. WhatsApp
+5. Khan Academy
+6. Airbnb
+7. Dropbox
+8. Flipboard
+9. Netflix
+10. PayPal
 
 ### Рекомендуется ли использовать технику "CSS в JS" в React?
 
-     React не предоставляет инструмента для работы со стилями. Если вы новичок, тогда хорошей отправной точкой может быть определение стилей в отдельном CSS-файле и ссылка на него через атрибуты `className`. Функционал по использованию техники *CSS-в-JS* предоставляется сторонними библиотеками, такими как `styled-components`.
-
+React не предоставляет инструмента для работы со стилями. Если вы новичок, тогда хорошей отправной точкой может быть определение стилей в отдельном CSS-файле и ссылка на него через атрибуты `className`. Функционал по использованию техники *CSS-в-JS* предоставляется сторонними библиотеками, такими как `styled-components`.
 
 ### Нужно ли мне переписывать все классовые компоненты с помощью хуков?
 
-     Нет, не нужно. Вы можете попробовать хуки, переписав с их помощью несколько существующих компонентов (или создав новые), без переписывания всего существующего кода. Команда React не планирует удалять классы (прекращать их поддержку).
-
+Нет, не нужно. Вы можете попробовать хуки, переписав с их помощью несколько существующих компонентов (или создав новые), без переписывания всего существующего кода. Команда React не планирует удалять классы (прекращать их поддержку).
 
 ### Как запрашивать данные с помощью хуков?
 
-     Хук, отвечающий за побочные эффекты, называется `useEffect()`. Именно этот хук используется для запроса данных с помощью библиотеки `axios` или встроенного `fetch` и записи полученных данных в локальное состояние компонента с помощью функции обновления состояния (сеттера), возвращаемой хуком `useState()`.
+Хук, отвечающий за побочные эффекты, называется `useEffect()`. Именно этот хук используется для запроса данных с помощью библиотеки `axios` или встроенного `fetch` и записи полученных данных в локальное состояние компонента с помощью функции обновления состояния (сеттера), возвращаемой хуком `useState()`.
 
-     Пример получения списка статей:
+Пример получения списка статей:
 
-     ```javascript
-     import React, { useState, useEffect } from 'react';
-     import axios from 'axios';
+```jsx
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
-     function App() {
-       const [data, setData] = useState({ hits: [] });
+function App() {
+  const [data, setData] = useState({ hits: [] })
 
-       useEffect(async () => {
-         const result = await axios(
-           'http://hn.algolia.com/api/v1/search?query=react',
-         );
+  useEffect(async () => {
+    const result = await axios(
+      'http://hn.algolia.com/api/v1/search?query=react',
+    )
 
-         setData(result.data);
-       }, []);
+    setData(result.data)
+  }, [])
 
-       return (
-         <ul>
-           {data.hits.map(item => (
-             <li key={item.objectID}>
-               <a href={item.url}>{item.title}</a>
-             </li>
-           ))}
-         </ul>
-       );
-     }
+  return (
+    <ul>
+      {data.hits.map(item => (
+        <li key={item.objectID}>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
-     export default App;
-     ```
+export default App
+```
 
-     **Обратите внимание:** мы указываем пустой массив в качестве второго аргумента хука во избежание его активации при обновлении компонента. Поэтому хук запускает эффект только один раз во время монтирования компонента.
-
+**Обратите внимание:** мы указываем пустой массив в качестве второго аргумента хука во избежание его активации при обновлении компонента. Поэтому хук запускает эффект только один раз во время монтирования компонента.
 
 ### Охватывают ли хуки все случаи использования классовых компонентов?
 
-     Хуки пока охватывают не все случаи использования классовых компонентов, однако такие планы имеются. В настоящее время не существует хуков, эквивалентых методам жизненного цикла `getSnapshotBeforeUpdate()` и `componentDidCatch()`.
-
+Хуки пока охватывают не все случаи использования классовых компонентов, однако такие планы имеются. В настоящее время не существует хуков, эквивалентых методам жизненного цикла `getSnapshotBeforeUpdate()` и `componentDidCatch()`.
 
 ### Почему мы используем деструктуризацию массива в `useState()`?
 
-     При определении переменной состояния с помощью хука `useState()`, возвращается массив с двумя элементами. Первым элементом является текущее значение состояния, а вторым - функция для обновления этого значения. Использование [0] и [1] для доступа к указанным элементам массива нецелесообразно, поскольку они имеют вполне определенный смысл. Поэтому мы используем деструктуризацию массива.
+При определении переменной состояния с помощью хука `useState()`, возвращается массив с двумя элементами. Первым элементом является текущее значение состояния, а вторым - функция для обновления этого значения. Использование [0] и [1] для доступа к указанным элементам массива нецелесообразно, поскольку они имеют вполне определенный смысл. Поэтому мы используем деструктуризацию массива.
 
-     Пример получения элемента массива по индексу:
+Пример получения элемента массива по индексу:
 
-     ```javascript
-      const userStateVariable = useState('userProfile'); // возвращается пара элементов
-      const user = userStateVariable[0]; // получаем первый элемент
-      const setUser = userStateVariable[1]; // получаем второй элемент
-     ```
+```jsx
+const userStateVariable = useState('userProfile') // возвращается пара элементов
+const user = userStateVariable[0] // получаем первый элемент
+const setUser = userStateVariable[1] // получаем второй элемент
+```
 
-     Пример получения элементов массива с помощью деструктуризации:
+Пример получения элементов массива с помощью деструктуризации:
 
-     ```javascript
-     const [user, setUser] = useState('userProfile');
-     ```
-
+```jsx
+const [user, setUser] = useState('userProfile')
+```
 
 ### Что послужило источниками для разработки хуков?
 
-     Вот некоторые из таких источников:
+Вот некоторые из таких источников:
 
-     1. Эксперименты с функциональным API в репозитории `react-future`
-     2. Эксперименты сообщества с API рендер-пропов, такие как компонент `Reactions`
-     3. Переменные и ячейки состояния в `DisplayScript`
-     4. Подписки в `Rx`
-     5. Компоненты-редукторы в `ReasonReact`
-
+1. Эксперименты с функциональным API в репозитории `react-future`
+2. Эксперименты сообщества с API рендер-пропов, такие как компонент `Reactions`
+3. Переменные и ячейки состояния в `DisplayScript`
+4. Подписки в `Rx`
+5. Компоненты-редукторы в `ReasonReact`
 
 ### Как получить доступ к императивному интерфейсу веб-компонентов?
 
-     Веб-компоненты часто предоставляют императивный API для реализации их функциональности. Для прямого взаимодействия с узлами DOM можно использовать "рефы". Однако, при использовании сторонних библиотек веб-компонентов, лучшим решением является создание React-компонента, оборачивающего веб-компонент.
-
+Веб-компоненты часто предоставляют императивный API для реализации их функциональности. Для прямого взаимодействия с узлами DOM можно использовать "рефы". Однако, при использовании сторонних библиотек веб-компонентов, лучшим решением является создание React-компонента, оборачивающего веб-компонент.
 
 ### Что такое Formik?
 
-     *Formik* - это небольшая библиотека для React, помогающая решать три главные проблемы:
+*Formik* - это небольшая библиотека для React, помогающая решать три главные проблемы:
 
-     1. Запись значений и их получение из состояния формы
-     2. Валидация и сообщения об ошибках
-     3. Обработка отправки формы
-
+1. Запись значений и их получение из состояния формы
+2. Валидация и сообщения об ошибках
+3. Обработка отправки формы
 
 ### Назовите популярные решения для работы с асинхронным кодом в Redux?
 
-     Среди популярных решений (промежуточных программных обеспечений, middlewares) для работы с асинхронным кодом в экосистеме Redux можно назвать `Redux Thunk`, `Redux Promise`, `Redux Saga` и др.
+Среди популярных решений (промежуточных программных обеспечений, middlewares) для работы с асинхронным кодом в экосистеме Redux можно назвать `Redux Thunk`, `Redux Promise`, `Redux Saga` и др.
 
+### Понимают ли браузеры JSX?
 
-### Понимают ли браузеры JSX-код?
-
-     Нет, браузеры его не понимают. Для преобразования JSX в обычный JavaScript нужен транспилятор. Чаще всего в этой роли выступает Babel.
-
+Нет, браузеры его не понимают. Для преобразования `JSX` в обычный `JavaScript` нужен транспилятор. Чаще всего в этой роли выступает `Babel`.
 
 ### Опишите поток данных в React?
 
-     React реализует однонаправленный реактивный поток данных с помощью пропов, что ускоряет рендеринг и легче в изучении, нежели традиционное двустороннее связывание данных.
-
+`React` реализует однонаправленный реактивный поток данных с помощью пропов, что ускоряет рендеринг и легче в изучении, нежели традиционное двустороннее связывание данных.
 
 ### Что такое `react-scripts`?
 
-     `react-scripts` - это набор скриптов из инструмента командной строки (CLI) `create-react-app`, который позволяет быстро начать разработку React-приложения без необходимости предварительной настройки вспомогательных инструментов. Команда `react-scripts start`, например, запускает сервер для разработки с возможностью "горячей" перезагрузки модулей.
-
+`react-scripts` - это набор скриптов из инструмента командной строки (CLI) `create-react-app`, который позволяет быстро начать разработку React-приложения без необходимости предварительной настройки вспомогательных инструментов. Команда `react-scripts start`, например, запускает сервер для разработки с возможностью "горячей" перезагрузки модулей.
 
 ### Назовите основные возможности `create-react-app`?
 
-     Ниже представлен список некоторых возможностей, предоставляемых CRA:
+Ниже представлен список некоторых возможностей, предоставляемых CRA:
 
-     1. Поддержка синтаксиса ES6, React, JSX, TypeScript и Flow
-     2. Автоматическое добавление CSS-префиксов
-     3. Сброс/нормализация стилей
-     4. "Живой" сервер для разработки
-     5. Быстрый интерактивный запуск юнит-тестов со встроенной поддержкой отчетов о покрытии кода тестами
-     6. Встроенный скрипт для сборки JS, CSS, изображений и других статических ресурсов для продакшна с хэшами и картами ресурсов
-     7. Сервис-воркер и файл манифеста (manifest), полностью отвечающие критериям прогрессивных веб-приложений
-
+1. Поддержка синтаксиса ES6, React, JSX, TypeScript и Flow
+2. Автоматическое добавление CSS-префиксов
+3. Сброс/нормализация стилей
+4. "Живой" сервер для разработки
+5. Быстрый интерактивный запуск юнит-тестов со встроенной поддержкой отчетов о покрытии кода тестами
+6. Встроенный скрипт для сборки JS, CSS, изображений и других статических ресурсов для продакшна с хэшами и картами ресурсов
+7. Сервис-воркер и файл манифеста (manifest), полностью отвечающие критериям прогрессивных веб-приложений
 
 ### Для чего используется метод `renderToNodeStream()`?
 
-     `ReactDOMServer.renderToNodeStream()` используется для генерации HTML на сервере и отправки разметки в ответ на запрос для ускорения загрузки страницы. Он также способствует улучшению SEO, поскольку поисковики могут индексировать только статические страницы.
+`ReactDOMServer.renderToNodeStream()` используется для генерации HTML на сервере и отправки разметки в ответ на запрос для ускорения загрузки страницы. Он также способствует улучшению SEO, поскольку поисковики могут индексировать только статические страницы.
 
-     **Обратите внимание:** данный метод доступен только на сервере.
-
+**Обратите внимание:** данный метод доступен только на сервере.
 
 ### Что такое MobX?
 
-     MobX - это простое, легко масштабируемое и "проверенное в боях" решение для управления состоянием, позволяющее использовать реактивное функциональное программирование (TFRP). Для React-приложений требуется установка двух библиотек:
+MobX - это простое, легко масштабируемое и "проверенное в боях" решение для управления состоянием, позволяющее использовать реактивное функциональное программирование (TFRP). Для React-приложений требуется установка двух библиотек:
 
-     ```bash
-     yarn add mobx
-     yarn add mobx-react
-     // или
-     npm i mobx
-     npm i mobx-react
-     ```
-
+```bash
+yarn add mobx
+yarn add mobx-react
+// или
+npm i mobx
+npm i mobx-react
+```
 
 ### В чем разница между Redux и MobX?
 
-     Основные различия между Redux и MobX состоят в следующем:
+Основные различия между Redux и MobX состоят в следующем:
 
-     | Критерий | Redux | MobX |
-     | ----- | ------- | -------
-     | Определение| Это JavaScript-библиотека для управления состоянием приложения | Это библиотека для реактивного управления состоянием приложения |
-     | Программирование | В основном написана с помощью синтаксиса ES6 | Написана на JavaScript (ES5) |
-     | Хранилище данных | Единственное большое хранилище для всех данных | Возможно использование более одного хранилища |
-     | Использование | В основном, используется для больших и сложных приложений | Используется для небольших и средних приложений |
-     | Производительность | Нуждается в улучшении | Обеспечивает лучшую производительность |
-     | Хранение данных | Используются обычные объекты | Используются наблюдаемые (observable) объекты |
-
+| Критерий | Redux | MobX |
+| ----- | ------- | -------
+| Определение| Это JavaScript-библиотека для управления состоянием приложения | Это библиотека для реактивного управления состоянием приложения |
+| Программирование | В основном написана с помощью синтаксиса ES6 | Написана на JavaScript (ES5) |
+| Хранилище данных | Единственное большое хранилище для всех данных | Возможно использование более одного хранилища |
+| Использование | В основном, используется для больших и сложных приложений | Используется для небольших и средних приложений |
+| Производительность | Нуждается в улучшении | Обеспечивает лучшую производительность |
+| Хранение данных | Используются обычные объекты | Используются наблюдаемые (observable) объекты |
 
 ### Обязательно ли изучать ES6 перед изучением React?
 
-     Нет, это не обязательно. Однако, многие ресурсы, посвященные React, активно используют синтаксис ES6. Вот парочка примеров:
+Нет, это не обязательно. Однако, многие ресурсы, посвященные React, активно используют синтаксис ES6. Вот парочка примеров:
 
-     1. **Деструктуризация:** для получения пропов и их использования в компоненте
+1. **Деструктуризация:** для получения пропов и их использования в компоненте
 
-         ```javascript
-         // ES5
-          var someData = this.props.someData
-          var dispatch = this.props.dispatch
+```jsx
+// ES5
+var someData = this.props.someData
+var dispatch = this.props.dispatch
 
-         // ES6
-         const { someData, dispatch } = this.props
-         ```
+// ES6
+const { someData, dispatch } = this.props
+```
 
-     2. **Spread-оператор**: помогает передавать пропы компоненту
+2. **Spread-оператор**: помогает передавать пропы компоненту
 
-         ```javascript
-         // ES5
-         <SomeComponent someData={this.props.someData} dispatch={this.props.dispatch} />
+```jsx
+// ES5
+<SomeComponent someData={this.props.someData} dispatch={this.props.dispatch} />
 
-         // ES6
-         <SomeComponent {...this.props} />
-         ```
+// ES6
+<SomeComponent {...this.props} />
+```
 
-     3. **Стрелочные функции**: делают синтаксис более компактным
+3. **Стрелочные функции**: делают синтаксис более компактным
 
-         ```javascript
-         // ES5
-         var users = usersList.map(function (user) {
-          return <li>{user.name}</li>
-         })
+```jsx
+// ES5
+var users = usersList.map(function (user) {
+  return <li>{user.name}</li>
+})
 
-         // ES6
-         const users = usersList.map(user => <li>{user.name}</li>);
-         ```
-
+// ES6
+const users = usersList.map(user => <li>{user.name}</li>)
+```
 
 ### Что такое конкурентный рендеринг (Concurrent Rendering)?
 
-     Конкурентный рендеринг делает React-приложения более отзывчивыми за счет рендеринга дерева компонентов без блокировки основного пользовательского интерфейса. Он позволяет React откладывать длительный рендеринг для обработки приоритетных событий. При включении данного режима React начинает следить за появлением задач с более высоким приоритетом и при появлении таких задач приостанавливает текущий рендеринг, позволяя этим задачам выполниться в первоочередном порядке. Конкурентный режим можно включить двумя способами:
+Конкурентный рендеринг делает React-приложения более отзывчивыми за счет рендеринга дерева компонентов без блокировки основного пользовательского интерфейса. Он позволяет React откладывать длительный рендеринг для обработки приоритетных событий. При включении данного режима React начинает следить за появлением задач с более высоким приоритетом и при появлении таких задач приостанавливает текущий рендеринг, позволяя этим задачам выполниться в первоочередном порядке. Конкурентный режим можно включить двумя способами:
 
-     ```javascript
-     // 1. Часть приложения
-     <React.unstable_ConcurrentMode>
-       <Something />
-     </React.unstable_ConcurrentMode>
+```jsx
+// 1. Часть приложения
+<React.unstable_ConcurrentMode>
+  <Something />
+</React.unstable_ConcurrentMode>
 
-     // 2. Приложение целиком
-     ReactDOM.unstable_createRoot(domNode).render(<App />);
-     ```
-
+// 2. Приложение целиком
+ReactDOM.unstable_createRoot(domNode).render(<App />)
+```
 
 ### В чем разница между асинхронным и конкурентным режимами?
 
-     По сути, они делают одно и тоже. Раньше "конкурентный" режим назывался "асинхронным". Название было изменено, чтобы подчеркнуть возможность React выполнять работу на разных "приоритетных" уровнях. Также это позволяет не путать его с другими подходами к реализации асинхронного рендеринга.
-
+По сути, они делают одно и тоже. Раньше "конкурентный" режим назывался "асинхронным". Название было изменено, чтобы подчеркнуть возможность React выполнять работу на разных "приоритетных" уровнях. Также это позволяет не путать его с другими подходами к реализации асинхронного рендеринга.
 
 ### Можно ли использовать встроенный JavaScript в React?
 
-     Да, вы можете использовать встроенный JavaScript, но будьте готовы получить предупреждение в консоли. Дело в том, что URL, начинающиеся с `javascript:`, представляют опасность включение необезвреженных строк в такие теги как `a`, тем самым создавая дыру в безопасности:
+Да, вы можете использовать встроенный JavaScript, но будьте готовы получить предупреждение в консоли. Дело в том, что URL, начинающиеся с `javascript:`, представляют опасность включение необезвреженных строк в такие теги как `a`, тем самым создавая дыру в безопасности:
 
-     ```javascript
-     const companyProfile = {
-       website: "javascript: alert('Ваш сайт взломан')",
-     };
-     // в консоль будет выведено предупреждение
-     <a href={companyProfile.website}>Подробнее</a>
-     ```
+```jsx
+const companyProfile = {
+  website: "javascript: alert('Ваш сайт взломан')",
+}
+// в консоль будет выведено предупреждение
+<a href={companyProfile.website}>Подробнее</a>
+```
 
-     В будущем при использовании встроенного JavaScript будет выбрасываться исключение.
-
+В будущем при использовании встроенного JavaScript будет выбрасываться исключение.
 
 ### Для чего предназначен плагин ESlint для хуков?
 
-     Данный плагин следит за соблюдением правил использования хуков. Он исходит из предположения, что любая функция, начинающаяся с *use* и следующей за ней большой буквы, является хуком. Эти правила следующие:
+Данный плагин следит за соблюдением правил использования хуков. Он исходит из предположения, что любая функция, начинающаяся с *use* и следующей за ней большой буквы, является хуком. Эти правила следующие:
 
-     1. Хуки можно вызывать только внутри компонентов или других хуков (в том числе, пользовательских)
-     2. При каждом рендере хуки вызываются в том порядке, в котором они были определены
-
+1. Хуки можно вызывать только внутри компонентов или других хуков (в том числе, пользовательских)
+2. При каждом рендере хуки вызываются в том порядке, в котором они были определены
 
 ### В чем разница между императивным и декларативным кодом в React?
 
-     Представьте простой UI-компонент, такой как кнопка "Нравится". При нажатии этой кнопки цвет ее фона меняется с серого на голубой, и наоборот.
+Представьте простой UI-компонент, такой как кнопка "Нравится". При нажатии этой кнопки цвет ее фона меняется с серого на голубой, и наоборот.
 
-     Императивный способ реализации такой кнопки выглядит следующим образом:
+Императивный способ реализации такой кнопки выглядит следующим образом:
 
-     ```javascript
-     if (user.likes() ) {
-         if ( hasBlue() ) {
-             removeBlue();
-             addGrey();
-         } else {
-             removeGrey();
-             addBlue();
-         }
-     }
-     ```
+```jsx
+if (user.likes() ) {
+  if ( hasBlue() ) {
+    removeBlue()
+    addGrey()
+  } else {
+    removeGrey()
+    addBlue()
+  }
+}
+```
 
-     Требуется проверить, что отображается на экране в данный момент, выполнить все необходимые операции по перерисовке элемента на основе текущего состояния, включая отмену изменений, вызванных предыдущим состоянием. Представьте, каким сложным это может быть в реальном приложении.
+Требуется проверить, что отображается на экране в данный момент, выполнить все необходимые операции по перерисовке элемента на основе текущего состояния, включая отмену изменений, вызванных предыдущим состоянием. Представьте, каким сложным это может быть в реальном приложении.
 
-     Декларативный подход выглядит так:
+Декларативный подход выглядит так:
 
-     ```javascript
-     if ( this.state.liked ) {
-         return <blueLike />;
-     } else {
-         return <greyLike />;
-     }
-     ```
+```jsx
+if ( this.state.liked ) {
+  return <blueLike />
+} else {
+  return <greyLike />
+}
+```
 
-     Таким образом, декларативный подход разделяет ответственность. Требуется всего лишь определить, как должен выглядеть интерфейс на основе текущего состояния. Кроме того, такой синтаксис гораздо легче читать и поддерживать.
-
+Таким образом, декларативный подход разделяет ответственность. Требуется всего лишь определить, как должен выглядеть интерфейс на основе текущего состояния. Кроме того, такой синтаксис гораздо легче читать и поддерживать.
 
 ### В чем заключаются преимущества использования TypeScript в React-проектах?
 
-     Вот некоторые из преимуществ, предоставляемых использованием TypeScript в React-приложениях:
+Вот некоторые из преимуществ, предоставляемых использованием TypeScript в React-приложениях:
 
-     1. Возможность использования самых последних "фич" JavaScript
-     2. Возможность использования интерфейсов для определения сложных типов
-     3. IDE, такие как VSCode, "заточены" под TypeScript
-     4. Возможность устранять ошибки на ранней стадии разработки
-
+1. Возможность использования самых последних "фич" JavaScript
+2. Возможность использования интерфейсов для определения сложных типов
+3. IDE, такие как VSCode, "заточены" под TypeScript
+4. Возможность устранять ошибки на ранней стадии разработки
 
 ### Как обеспечить сохранение информации об аутентификации пользователя между перезагрузками страницы с помощью API управления состоянием контекста (Context API State Management)?
 
-      Когда пользователь входит в систему, и затем перезагружает страницу, для сохранения состояния мы обычно используем операцию по загрузке данных пользователя в хуке `useEffect()` в главном файле (App.js). Это легко реализовать с помощью Redux:
+Когда пользователь входит в систему, и затем перезагружает страницу, для сохранения состояния мы обычно используем операцию по загрузке данных пользователя в хуке `useEffect()` в главном файле (App.js). Это легко реализовать с помощью Redux:
 
-      **App.js**
+**App.js**
 
-      ```js
-      import { loadUser }  from '../actions/auth';
-      store.dispatch(loadUser());
-      ```
+```jsx
+import { loadUser }  from '../actions/auth'
+store.dispatch(loadUser())
+```
 
-      Для того, чтобы получить доступ к контексту в App.js, необходимо обернуть компонент `App` в компонент `AuthState` в index.js. После этого при перезагрузке страницы независимо от того, где мы находимся, пользователь останется аутентифицированным (авторизованным), поскольку операция `loadUser()` будет запускаться при каждом рендеринге:
+Для того, чтобы получить доступ к контексту в App.js, необходимо обернуть компонент `App` в компонент `AuthState` в index.js. После этого при перезагрузке страницы независимо от того, где мы находимся, пользователь останется аутентифицированным (авторизованным), поскольку операция `loadUser()` будет запускаться при каждом рендеринге:
 
-      **index.js**
+**index.js**
 
-      ```js
-      import React from 'react';
-      import ReactDOM from 'react-dom';
-      import App from './App';
-      import AuthState from './context/auth/AuthState'
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import AuthState from './context/auth/AuthState'
 
-      ReactDOM.render(
-        <React.StrictMode>
-          <AuthState>
-            <App />
-          </AuthState>
-        </React.StrictMode>,
-        document.getElementById('root')
-      );
-      ```
-      **App.js**
+ReactDOM.render(
+  <React.StrictMode>
+    <AuthState>
+      <App />
+    </AuthState>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+```
 
-      ```js
-      const authContext = useContext(AuthContext);
+**App.js**
 
-      const { loadUser } = authContext;
+```jsx
+const authContext = useContext(AuthContext)
 
-      useEffect(() => {
-        loadUser();
-      },[])
-      ```
+const { loadUser } = authContext
 
-      **loadUser**
+useEffect(() => {
+  loadUser()
+},[])
+```
 
-      ```js
-      const loadUser = async () => {
-          const token = sessionStorage.getItem('token');
+**loadUser**
 
-          if(!token){
-              dispatch({
-                  type: ERROR
-              })
-          }
-          setAuthToken(token);
+```jsx
+const loadUser = async () => {
+    const token = sessionStorage.getItem('token')
 
-          try {
-              const res = await axios('/api/auth');
+    if(!token){
+      dispatch({
+          type: ERROR
+      })
+    }
+    setAuthToken(token)
 
-              dispatch({
-                  type: USER_LOADED,
-                  payload: res.data.data
-              })
+    try {
+      const res = await axios('/api/auth')
 
-          } catch (err) {
-            console.error(err);
-          }
-      }
-      ```
-
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data.data
+      })
+    } catch (err) {
+      console.error(err)
+    }
+}
+```
 
 ### В чем заключаются преимущества нового способа преобразования JSX?
 
-     Тремя главными преимуществами этого являются:
+Тремя главными преимуществами этого являются:
 
-     1. Возможность использования JSX без импорта React
-     2. Немного уменьшается размер "бандла"
-     3. Будущие реализации приведут к уменьшению количества концепций, знание которых требуется для овладения React
-
+1. Возможность использования JSX без импорта React
+2. Немного уменьшается размер "бандла"
+3. Будущие реализации приведут к уменьшению количества концепций, знание которых требуется для овладения React
 
 ### Чем новый способ преобразования JSX отличается от старого?
 
-     Новый способ не требует присутствия React в области видимости, т.е. в простых случаях вам не требуется импортировать React.
+Новый способ не требует присутствия React в области видимости, т.е. в простых случаях вам не требуется импортировать React.
 
-     **Старый способ:**
+**Старый способ:**
 
-     ```js
-     import React from 'react';
+```jsx
+import React from 'react'
 
-     function App() {
-       return <h1>Доброе утро!</h1>;
-     }
-     ```
+function App() {
+  return <h1>Доброе утро!</h1>
+}
+```
 
-     Данный JSX будет преобразован в JavaScript следующим образом:
+Данный JSX будет преобразован в JavaScript следующим образом:
 
-     ```js
-     import React from 'react';
+```jsx
+import React from 'react'
 
-     function App() {
-       return React.createElement('h1', null, 'Доброе утро!');
-     }
-     ```
+function App() {
+  return React.createElement('h1', null, 'Доброе утро!')
+}
+```
 
-     **Новый способ:**
+**Новый способ:**
 
-     ```js
-     function App() {
-       return <h1>Доброе утро!</h1>;
-     }
-     ```
+```jsx
+function App() {
+  return <h1>Доброе утро!</h1>
+}
+```
 
-     Под капотом JSX трансформируется в такой код:
+Под капотом JSX трансформируется в такой код:
 
-     ```js
-     import {jsx as _jsx} from 'react/jsx-runtime';
+```jsx
+import {jsx as _jsx} from 'react/jsx-runtime'
 
-     function App() {
-       return _jsx('h1', { children: 'Доброе утро!' });
-     }
-     ```
-
-     **Обратите внимание:** вам все еще необходимо импортировать React для обеспечения возможности использования хуков.
+function App() {
+  return _jsx('h1', { children: 'Доброе утро!' })
+}
+```
