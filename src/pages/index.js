@@ -1,12 +1,3 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- */
-
 import React from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
@@ -16,16 +7,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
 
 const features = [
-  {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    )
-  }
+  // {
+  //   title: 'Easy to Use',
+  //   imageUrl: 'img/undraw_docusaurus_mountain.svg',
+  //   description: (
+  //     <>
+  //       Docusaurus was designed from the ground up to be easily installed and
+  //       used to get your website up and running quickly.
+  //     </>
+  //   )
+  // }
 ]
 
 function Feature({ imageUrl, title, description }) {
@@ -61,9 +52,9 @@ export default function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted
               )}
-              to={useBaseUrl('docs/intro')}
+              to={useBaseUrl('docs/guide/intro-guide')}
             >
-              Get Started
+              Поехали!
             </Link>
           </div>
         </div>
