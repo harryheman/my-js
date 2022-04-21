@@ -1,10 +1,15 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
+title: Сниппеты JavaScript. Часть 2
+description: Примеры кода на JavaScript
+keywords: ['javascript', 'js', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
 ---
 
 # Сниппеты JavaScript. Часть 2
 
-## Сумма чисел из последовательности Фибоначчи
+> WIP
+
+## Сумма чисел последовательности Фибоначчи
 
 ```js
 const fib = (n) => {
@@ -506,7 +511,7 @@ flatBy([1, [2], 3, 4]) // [1, 2, 3, 4]
 flatBy([1, [2, [3, [4, 5], 6], 7], 8], 2) // [1, 2, 3, [4, 5], 6, 7, 8]
 ```
 
-## Проверка уникальности элементов с помощью условия - функции
+## Проверка уникальности элементов с помощью условия-функции
 
 ```js
 const uniqueBy = (arr, fn) => arr.length === new Set(arr.map(fn)).size
@@ -585,7 +590,7 @@ unflatObj({ 'a.b.c': 1, d: 2 }) // { a: { b: { c: 1 } }, d: 2 }
 unflatObj({ 'a.b': 1, 'a.c': 2, d: 3 }) // { a: { b: 1, c: 2 }, d: 3 }
 ```
 
-## Группировка свойств объекта по условию - функции
+## Группировка свойств объекта по условию-функции
 
 ```js
 // { значение: [ свойства ]  }
@@ -692,4 +697,585 @@ juxt(
   (s) => s.split(' ').join('-')
 )('JavaScript is cool')
 // [ [21], ['JavaScript-is-cool'] ]
+```
+
+### Разбор и подсветка синтаксиса `JS` или `JSON-объекта`
+
+```js
+const parseAndHighlightObj = (obj) => {
+  const inner = (_obj) =>
+    Object.entries(_obj).map(([key, value]) => {
+      let type = typeof value
+
+      const isSimpleValue =
+        ['string', 'number', 'boolean'].includes(type) || !value
+
+      if (isSimpleValue && type === 'object') {
+        type = 'null'
+      }
+
+      return `
+        <div class="line">
+          <span class="key">${key}:</span>
+          ${
+            isSimpleValue
+              ? `<span class="${type}">${value}</span>`
+              : inner(value)
+          }
+        </div>
+      `
+    }).join('')
+
+  return `<div class="obj">${inner(obj)}</div>`
+}
+
+const result = parseAndHighlightObj({
+  a: 1,
+  b: {
+    c: {
+      d: 'foo'
+    }
+  },
+  2: {
+    3: true
+  }
+})
+
+document.body.innerHTML = result
+```
+
+```css
+.obj {
+  padding: 1rem;
+  background-color: #3c3c3c;
+  border-radius: 4px;
+  color: #f0f0f0;
+}
+
+.line {
+  margin-left: 1rem;
+}
+
+.line > .line {
+  margin-left: 1rem;
+}
+
+.key {
+  font-style: italic;
+}
+
+.number {
+  color: lightblue;
+}
+
+.string {
+  color: lightcoral;
+}
+
+.boolean {
+  color: lightgreen;
+}
+```
+
+### Получение, разбор и преобразование в таблицу данных из `CSV-файла`
+
+```js
+const parseCsv = (csvStr) => {
+  const arr = csvStr.split('\n')
+
+  const headers = arr.splice(0, 1)[0].split(',')
+
+  const rows = arr.map((item) =>
+    item.split(',').reduce((a, c, i) => {
+      a[headers[i]] = c
+      return a
+    }, {})
+  )
+
+  return { headers, rows }
+}
+
+const createTable = ({ headers, rows }) => {
+  headers = [...headers, 'Color']
+
+  return /*html*/ `
+  <table>
+    <thead>
+      <tr>
+        ${headers.map((h) => /*html*/ `<th>${h}</th>`).join('')}
+      </tr>
+    </thead>
+    <tbody>
+      ${rows
+        .map((v) => {
+          const { Specification, Keyword, 'RGB hex value': hex } = v
+          return /*html*/ `
+            <tr>
+              <td>${Specification}</td>
+              <td>${Keyword}</td>
+              <td>${hex}</td>
+              <td style="background-color: ${hex};"></td>
+            </tr>
+          `
+        })
+        .join('')}
+    </tbody>
+  </table>
+  `
+}
+
+const fetchCsv = async (url) => {
+  let csvData = { headers: [], rows: [] }
+  try {
+    const response = await fetch(url)
+    if (response.ok) {
+      const csvStr = await response.text()
+      csvData = parseCsv(csvStr)
+    }
+  } catch (e) {
+    console.error(e)
+  } finally {
+    return csvData
+  }
+}
+
+const CSSColorNamesCsvUrl =
+  'https://gist.githubusercontent.com/curran/b236990081a24761f7000567094914e0/raw/cssNamedColors.csv'
+
+fetchCsv(CSSColorNamesCsvUrl).then((csvData) => {
+  const tableTemplate = createTable(csvData)
+
+  document.body.insertAdjacentHTML('beforeend', tableTemplate)
+})
+```
+
+### Рендеринг шаблонных строк и получение `DOM-дерева`
+
+```js
+// components
+const Form = () => /*html*/ `
+  <form class="form">
+    <input type="text" class="input" />
+    <button class="btn btn-add">Add</button>
+  </form>
+`
+
+const List = (todos) => /*html */ `
+  <ul class="list">
+    ${todos.map(Item).join('')}
+  </ul>
+`
+
+const Item = (todo) => /*html*/ `
+  <li class="item">
+    <input type="checkbox" ${todo.done ? 'checked' : ''} class="checkbox" />
+    <span class="text" style="${
+      todo.done ? 'text-decoration: line-through' : ''
+    }">${todo.text}</span>
+    <button class="btn remove">Remove</button>
+  </li>
+`
+
+// data
+const todos = [
+  {
+    id: '1',
+    text: 'Eat',
+    done: true,
+    edit: false
+  },
+  {
+    id: '2',
+    text: 'Code',
+    done: true,
+    edit: true
+  },
+  {
+    id: '3',
+    text: 'Sleep',
+    done: false,
+    edit: false
+  },
+  {
+    id: '4',
+    text: 'Repeat',
+    done: false,
+    edit: true
+  }
+]
+
+// root
+const App = () => /*html */ `
+  <div class="app">
+    ${Form()}
+    ${List(todos)}
+  </div>
+`
+
+const createElFromStr = (str) => new Range().createContextualFragment(str)
+
+const render = (root, fn) => {
+  root.append(createElFromStr(fn()))
+}
+
+render(document.body, App)
+
+const getDOMTree = (root) =>
+  [...root.children].reduce((obj, el) => {
+    const key = el.localName
+    obj[key] = { el }
+
+    if (el.hasAttributes()) {
+      const attributes = el.getAttributeNames()
+      obj[key]['attributes'] = attributes.reduce((obj, attr) => {
+        obj[attr] = el.getAttribute(attr)
+        return obj
+      }, {})
+    }
+
+    if (el.children.length > 0) {
+      obj[key]['children'] = getDOMTree(el)
+    }
+    return obj
+  }, {})
+
+const DOMTree = getDOMTree(document.querySelector('.app'))
+console.log(DOMTree)
+```
+
+## UUID
+
+```js
+const getId = (max = 10) =>
+  Math.random()
+    .toString(36)
+    .slice(2, max + 2)
+
+function createUuidGenerator() {
+  const ids = []
+  return function inner() {
+    // 8-4-4-4-12
+    const id = `${getId(8)}-${getId(4)}-${getId(4)}-${getId(4)}-${getId()}${getId(2)}`
+    if (ids.includes(id)) return inner()
+    ids.push(id)
+    return id
+  }
+}
+
+const generateUuid = createUuidGenerator()
+const id = generateUuid()
+console.log(id)
+```
+
+## Handmade jQuery
+
+```js
+function get$(selector, parent = document) {
+  if (typeof selector !== 'string' || !selector.trim()) return
+
+  if (parent !== document && !(parent instanceof HTMLElement)) return
+
+  return parent.querySelector(selector)
+}
+
+function get$$(selector, parent = document) {
+  if (typeof selector !== 'string' || !selector.trim()) null
+
+  if (parent !== document && !(parent instanceof HTMLElement)) return
+
+  const arr$ = [...parent.querySelectorAll(selector)]
+
+  return arr$.length ? arr$ : null
+}
+
+function create$(template) {
+  if (typeof template !== 'string' || !template.trim()) return
+
+  const arr$ = [...new Range().createContextualFragment(template).children]
+
+  return !arr$.length ? null : arr$.length === 1 ? arr$[0] : arr$
+}
+
+const siblingDirections = ['next', 'prev']
+const classActions = ['h', 'a', 'd', 't', 'r']
+const insertPositionMap = {
+  bb: 'beforebegin',
+  ab: 'afterbegin',
+  be: 'beforeend',
+  ae: 'afterend'
+}
+
+const htmlElementExtension = {
+  on(type, listener, options) {
+    if (
+      typeof type !== 'string' ||
+      !type.trim() ||
+      typeof listener !== 'function' ||
+      (options && (typeof options !== 'object' || typeof options !== 'boolean'))
+    )
+      return
+
+    this.addEventListener(type, listener, options)
+
+    return this
+  },
+  off(type, listener, options) {
+    if (
+      typeof type !== 'string' ||
+      !type.trim() ||
+      typeof listener !== 'function' ||
+      (options && (typeof options !== 'object' || typeof options !== 'boolean'))
+    )
+      return
+
+    this.removeEventListener(type, listener, options)
+
+    return this
+  },
+  parent(n = 1) {
+    let $ = this
+
+    if (Number.isNaN(n) || n < 1) return $
+
+    n = parseInt(n, 10)
+
+    while (n) {
+      if (!$.parentElement) return $
+      $ = $.parentElement
+      n--
+    }
+
+    return $
+  },
+
+  sibling(direction = 'next', n = 1) {
+    let $ = this
+
+    if (
+      typeof direction !== 'string' ||
+      !siblingDirections.includes(direction) ||
+      Number.isNaN(n) ||
+      n < 1
+    )
+      return $
+
+    n = parseInt(n, 10)
+
+    while (n) {
+      if (direction === siblingDirections[0]) {
+        if (!$.nextElementSibling) return $
+        $ = $.nextElementSibling
+      } else {
+        if (!$.previousElementSibling) return $
+        $ = $.previousElementSibling
+      }
+      n--
+    }
+
+    return $
+  },
+  // next(n)
+  // prev(n)
+  attr(actionOrName, nameOrValue, value) {
+    const $ = this
+
+    if (
+      typeof actionOrName !== 'string' ||
+      !actionOrName.trim() ||
+      typeof nameOrValue !== 'string' ||
+      !nameOrValue.trim()
+    )
+      return
+
+    switch (actionOrName) {
+      case 'g':
+        return $.getAttribute(nameOrValue)
+      case 'h':
+        return $.hasAttribute(nameOrValue)
+      case 'r':
+        $.removeAttribute(nameOrValue)
+        break
+      case 't':
+        $.toggleAttribute(nameOrValue)
+        break
+      case 's':
+        if (typeof value !== 'string' || !value.trim()) return
+        $.setAttribute(nameOrValue, value)
+        break
+      default:
+        $.setAttribute(actionOrName, nameOrValue)
+    }
+
+    return $
+  },
+  // dataset
+  data(key, value) {
+    const $ = this
+
+    if (
+      typeof key !== 'string' ||
+      !key.trim() ||
+      (value.trim() && typeof value !== 'string')
+    )
+      return
+
+    if (!value) return $.dataset[key]
+
+    if (!value.trim()) return
+
+    $.dataset[key] = value
+
+    return $
+  },
+  class(actionOrName, existingOrNewClass, newClass) {
+    const $ = this
+
+    if (!actionOrName) return $.className
+
+    if (typeof actionOrName !== 'string' || !actionOrName.trim()) return
+
+    if (!classActions.includes(actionOrName)) {
+      $.className = actionOrName
+      return
+    }
+
+    if (typeof existingOrNewClass !== 'string' || !existingOrNewClass.trim())
+      return
+
+    switch (actionOrName) {
+      case 'h':
+        return $.classList.contains(existingOrNewClass)
+      case 'a':
+        $.classList.add(existingOrNewClass)
+        break
+      case 'd':
+        $.classList.remove(existingOrNewClass)
+        break
+      case 't':
+        $.classList.toggle(existingOrNewClass)
+        break
+      default:
+        if (typeof newClass !== 'string' || !newClass.trim()) return
+        $.classList.replace(existingOrNewClass, newClass)
+    }
+
+    return $
+  },
+
+  insert(stringOrElements, position = 'be') {
+    const $ = this
+    // `stringOrElements` must be HTMLElement, array of HTMLElements or non-empty string
+    // `position` must be non-empty string and one of insert positions from `insertPositionMap`
+    if (
+      (!Array.isArray(stringOrElements) &&
+        !stringOrElements instanceof HTMLElement &&
+        typeof stringOrElements !== 'string') ||
+      (!Array.isArray(stringOrElements) &&
+        !stringOrElements instanceof HTMLElement &&
+        !stringOrElements.trim()) ||
+      typeof position !== 'string' ||
+      !Object.keys(insertPositionMap).includes(position)
+    )
+      return
+
+    // create HTMLElement from string
+    if (typeof stringOrElements === 'string') {
+      stringOrElements = create$(stringOrElements)
+    }
+
+    // if we have array of elements
+    if (Array.isArray(stringOrElements)) {
+      for (const element of stringOrElements) {
+        // skip element if it's not HTMLElement
+        if (!(element instanceof HTMLElement)) continue
+
+        $.insertAdjacentElement(insertPositionMap[position], element)
+      }
+      // otherwise
+    } else {
+      $.insertAdjacentElement(insertPositionMap[position], stringOrElements)
+    }
+
+    return $
+  }
+}
+
+const eventExtension = {
+  pd() {
+    this.preventDefault()
+  },
+  sp() {
+    this.stopPropagation()
+  },
+  sip() {
+    this.stopImmediatePropagation()
+  }
+}
+
+Object.assign(HTMLElement.prototype, htmlElementExtension)
+Object.assign(Event.prototype, eventExtension)
+Object.defineProperties(Event.prototype, {
+  t: {
+    get() {
+      return this.target
+    }
+  },
+  ct: {
+    get() {
+      return this.currentTarget
+    }
+  },
+  rt: {
+    get() {
+      return this.relatedTarget
+    }
+  }
+})
+```
+
+## DND
+
+```js
+// drag
+// draggable="true"
+const onDragStart = (e) => {
+  console.log('@Drag start')
+  if (!(e.target instanceof HTMLLIElement)) return
+  e.dataTransfer.setData('text/html', e.target.outerHTML)
+  e.dataTransfer.effectAllowed = 'move'
+}
+
+const onDrag = (e) => {
+  console.log('@Drag')
+}
+
+const onDragEnd = (e) => {
+  console.log('@Drag end')
+  if (e.dataTransfer.dropEffect === 'move') {
+    e.target.remove()
+  }
+}
+
+// drop
+const onDragEnter = (e) => {
+  console.log('@Drag enter')
+  e.preventDefault()
+}
+
+const onDragLeave = (e) => {
+  console.log('@Drag leave')
+}
+
+const onDragOver = (e) => {
+  console.log('@Drag over')
+  e.preventDefault()
+  e.dataTransfer.dropEffect = 'move'
+}
+
+const onDrop = (e) => {
+  console.log('@Drop')
+  const listItemTemplate = e.dataTransfer.getData('text/html')
+  const listItem$ = create$(listItemTemplate)[0]
+  e.currentTarget.append(listItem$)
+}
 ```

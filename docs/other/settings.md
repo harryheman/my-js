@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 16
 title: settings.json
 description: Пример файла settings.json
 ---

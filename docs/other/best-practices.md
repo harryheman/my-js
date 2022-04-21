@@ -1,13 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 title: Шпаргалки по React, Jest, Redux и лучшие практики по React
 description: Шпаргалки по React, Jest, Redux и лучшие практики по React
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'cheatsheet', 'шпаргалка', 'best practics', 'лучшие практики']
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'cheatsheet', 'шпаргалка', 'best practices', 'лучшие практики']
 ---
 
 # Шпаргалки по React, Jest, Redux и лучшие практики по React
 
-[Источник](https://github.com/learning-zone/react-interview-questions)&nbsp;&nbsp;👀
+> [Источник](https://github.com/learning-zone/react-interview-questions)&nbsp;&nbsp;👀
 
 ## Шпаргалка по React
 

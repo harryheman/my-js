@@ -1,13 +1,17 @@
 ---
 hide_title: true
+title: Сниппеты Node.js
+description: Примеры кода на Node.js
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
 ---
 
 # Сниппеты Node.js
 
+> WIP
+
 ## Модуль `http`
 
 ```js
-// Простой сервер
 import http from 'http'
 
 const server = http.createServer((req, res) => {

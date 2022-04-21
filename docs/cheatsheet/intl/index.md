@@ -4,11 +4,9 @@ hide_title: true
 
 # Internationalization API
 
-[Песочница](https://codepen.io/harryheman/pen/QWgKGry)&nbsp;&nbsp;👀
-
-[Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl)
-
-[Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry)
+- [Песочница](https://codepen.io/harryheman/pen/QWgKGry)&nbsp;&nbsp;👀
+- [Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl)
+- [Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry)
 
 `Internationalization API` предоставляет следующие возможности:
 
