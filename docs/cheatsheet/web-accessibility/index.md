@@ -1,5 +1,8 @@
 ---
-sidebar_position: 16
+sidebar_position: 6
+title: Шпаргалка по доступности веб-приложений
+description: Шпаргалка по доступности веб-приложений
+keywords: ['javascript', 'js', 'web accessibility', 'accessibility', 'wai-aria', 'aria', 'cheatsheet', 'шпаргалка', 'доступность веба', 'доступность']
 ---
 
 # Web Accessibility

@@ -1,14 +1,16 @@
 ---
 hide_title: true
+title: Шпаргалка по Internationalization API
+description: Шпаргалка по Internationalization API
+keywords: ['javascript', 'js', 'internationalization api', 'internationalization', 'intl', 'translation', 'cheatsheet', 'шпаргалка', 'интернационализация', 'перевод']
 ---
 
 # Internationalization API
 
-- [Песочница](https://codepen.io/harryheman/pen/QWgKGry)&nbsp;&nbsp;👀
-- [Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl)
-- [Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry)
+- [Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl)&nbsp;&nbsp;👀
+- [Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry)&nbsp;&nbsp;👀
 
-`Internationalization API` предоставляет следующие возможности:
+[`Internationalization API`](https://tc39.es/ecma402/) предоставляет следующие возможности:
 
 - локализованное (далее предполагается) сравнение строк
 - форматирование чисел, включая валюту, различные единицы измерения и проценты
@@ -53,7 +55,7 @@ hide_title: true
 
 _Пример получения текущей даты и времени в дефолтной локали_
 
-```javascript
+```js
 // [] означает текущую локаль (локаль по умолчанию)
 const currentDateAndTime = new Intl.DateTimeFormat([], {
   dateStyle: 'short',
@@ -76,13 +78,13 @@ console.log(currentDateAndTime) // 03.08.2021, 15:57
 
 В большинстве случаев достаточно указать код языка или код языка и код страны через дефис:
 
-```javascript
+```js
 const ru = new Intl.Locale('ru-RU')
 ```
 
 Вторым опциональным аргументом `Locale` является объект с настройками:
 
-```javascript
+```js
 const ru = new Intl.Locale(
   'ru',
   { region: 'RU', hourCycle: 'h24', calendar: 'gregory' }
@@ -91,7 +93,7 @@ const ru = new Intl.Locale(
 
 Локаль может быть строкой или объектом. Пустой массив означает использование текущей локали пользователя:
 
-```javascript
+```js
 const now = new Intl.DateTimeFormat([], { timeStyle: 'short' }).format()
 ```
 
@@ -101,7 +103,7 @@ const now = new Intl.DateTimeFormat([], { timeStyle: 'short' }).format()
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.DateTimeFormat(locale: object | string | [], options: object).format(date)
 // [] - локаль по умолчанию
 // date - дата, время или дата и время
@@ -137,7 +139,7 @@ timeZoneName | название часового пояса (UTC, PTC): `long`, 
 
 _Примеры_
 
-```javascript
+```js
 const formatDateTime = ({ locale = [], date = Date.now(), ...options } = {}) =>
   new Intl.DateTimeFormat(locale, options).format(date)
 
@@ -183,7 +185,7 @@ _Другие методы_
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.RelativeTimeFormat(locale, options).format(amount, unit)
 // amount - количество единиц времени
 // unit - единица времени: `day`, `month`, `year` и т.д.
@@ -202,7 +204,7 @@ style | `long` (дефолтное значение), `short`, `narrow`
 
 _Примеры_
 
-```javascript
+```js
 const formatRelativeTime = ({
   locale = [],
   value = '1 day',
@@ -239,7 +241,7 @@ console.log(
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.NumberFormat(locale, options).format(number)
 ```
 
@@ -266,7 +268,7 @@ unitDisplay | формат отображения единицы измерен�
 
 _Примеры_
 
-```javascript
+```js
 const formatNumber = ({ locale = [], number = 1234.56, ...options } = {}) =>
   new Intl.NumberFormat(locale, options).format(number)
 
@@ -296,7 +298,7 @@ console.log(
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.DisplayNames(locale, options).of(localeOf)
 ```
 
@@ -312,7 +314,7 @@ _Обратите внимание_: настройка `type` является 
 
 __Примеры__
 
-```javascript
+```js
 const formatNames = ({
   locale = [],
   localeOf = 'en-US',
@@ -351,7 +353,7 @@ console.log(
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.ListFormat(locale, options).format(list)
 ```
 
@@ -364,7 +366,7 @@ style | стиль форматирования: `long`, `short`, `narrow`
 
 _Примеры_
 
-```javascript
+```js
 const browsers = ['Chrome', 'Firefox', 'Safari']
 
 const formatList = ({
@@ -390,7 +392,7 @@ console.log(
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.Collator(locale, options).compare(str1, str2)
 ```
 
@@ -413,7 +415,7 @@ _Результат_
 
 _Примеры_
 
-```javascript
+```js
 const compareValues = ({ locale = [], values = [], ...options } = {}) =>
   new Intl.Collator(locale, options).compare(...values)
 
@@ -434,7 +436,7 @@ console.log(
 
 _Сигнатура_
 
-```javascript
+```js
 new Intl.PluralRules(locale, options).select(number)
 ```
 
@@ -446,7 +448,7 @@ type | `cardinal` - количество элементов (дефолтное 
 
 _Примеры_
 
-```javascript
+```js
 const pluralize = ({ locale = [], number = 1, ...options } = {}) =>
   new Intl.PluralRules(locale, options).select(number)
 
@@ -459,4 +461,4 @@ console.log(
 )
 ```
 
-В настоящее время поддерживается только локаль `en-US`.
+Как видите, в настоящее время данный метод поддерживает только локаль `en-US`.

@@ -1,5 +1,8 @@
 ---
-sidebar_position: 14
+sidebar_position: 3
+title: Шпаргалка по методам JavaScript для работы с DOM
+description: Шпаргалка по методам JavaScript для работы с DOM
+keywords: ['javascript', 'js', 'document object model', 'dom', 'methods', 'method', 'cheatsheet', 'шпаргалка', 'объектная модель документа', 'методы', 'метод']
 ---
 
 # JavaScript DOM
@@ -41,7 +44,7 @@ sidebar_position: 14
 const log = console.log
 ```
 
-## Миксин NonElementParentNode
+## Миксин `NonElementParentNode`
 
 Данный миксин предназначен для обработки (браузером) родительских узлов, которые не являются элементами.
 
@@ -204,7 +207,7 @@ const allItems = getEl('.item', list, false)
 log(allItems) // [li#item0.item, li#item4.item]
 ```
 
-## Миксин NonDocumentTypeChildNode
+## Миксин `NonDocumentTypeChildNode`
 
 Данный миксин предназначен для обработки дочерних узлов, которые не являются документом, т.е. всех узлов, кроме `document`.
 
@@ -216,7 +219,7 @@ log(itemWithId0.previousElementSibling) // null
 log(itemWithId0.nextElementSibling) // #item4
 ```
 
-## Миксин ChildNode
+## Миксин `ChildNode`
 
 Данный миксин предназначен для обработки дочерних элементов, т.е. элементов, являющихся потомками других элементов.
 
@@ -252,7 +255,7 @@ itemWithId0.replaceWith(newItem5)
 itemWithId4.remove()
 ```
 
-## Интерфейс Node
+## Интерфейс `Node`
 
 Данный интерфейс предназначен для обработки узлов.
 
@@ -417,7 +420,7 @@ const itemWithId2 = getEl('#item2', list)
 list.removeChild(itemWithId2)
 ```
 
-## Интерфейс Document
+## Интерфейс `Document`
 
 Данный интерфейс предназначен для обработки объекта `Document`.
 
@@ -487,7 +490,7 @@ newList3.remove()
 
 - `createAttribute(attr)` - создает указанный атрибут
 
-## Интерфейсы NodeIterator и TreeWalker
+## Интерфейсы `NodeIterator` и `TreeWalker`
 
 Интерфейсы <a href="https://dom.spec.whatwg.org/#interface-nodeiterator">`NodeIterator`</a> и <a href="https://dom.spec.whatwg.org/#interface-treewalker">`TreeWalker`</a> предназначены для обхода (traverse) деревьев узлов. Я не сталкивался с примерами их практического использования, поэтому ограничусь парочкой примеров:
 
@@ -514,7 +517,7 @@ log(walker.nextNode()) // #item3
 log(walker.previousNode()) // #item_b
 ```
 
-## Интерфейс Element
+## Интерфейс `Element`
 
 Данный интерфейс предназначен для обработки элементов.
 
@@ -548,7 +551,7 @@ DOMTokenList(2)
 */
 ```
 
-### Работа с classList
+### Работа с `classList`
 
 - `classList.add(newClass)` - добавляет новый класс к существующим
 - `classList.remove(existingClass)` - удаляет указанный класс
@@ -636,7 +639,7 @@ const comment = new Comment('TODO')
 log(comment) // <!--TODO-->
 ```
 
-## Объект Document
+## Объект `Document`
 
 - `location` - объект с информацией о текущей локации документа
 
@@ -713,7 +716,7 @@ log(document.forms[0]) // .my_form
 - `designMode` - управление режимом редактирования документа. Возможные значения: `on` и `off`. Наберите `document.designMode = 'on'` в консоли `DevTools` и нажмите `Enter`. Вуаля, страница стала редактируемой: можно удалять/добавлять текст, перетаскивать изображения и т.д.
 - `execCommand()` - выполняет переданные команды. Со списоком доступных команд можно ознакомиться <a href="https://developer.mozilla.org/ru/docs/Web/API/Document/execCommand">здесь</a>. Раньше этот метод активно использовался для записи/извлечения данных из буфера обмена (команды `copy` и `paste`). Сейчас для этого используются методы `navigator.clipboard.writeText()`, `navigator.clipboard.readText()` и др.
 
-## Миксин InnerHTML
+## Миксин `InnerHTML`
 
 Геттер/сеттер `innerHTML` позволяет извлекать/записывать разметку в элемент. Для подготовки разметки удобно пользоваться шаблонными литералами:
 
@@ -732,7 +735,7 @@ log(LIST.innerHTML)
 */
 ```
 
-## Расширения интерфейса Element
+## Расширения интерфейса `Element`
 
 - `outerHTML` - геттер/сеттер для извлечения/записи внешней разметки элемента: то, что возвращает `innerHTML` + разметка самого элемента
 

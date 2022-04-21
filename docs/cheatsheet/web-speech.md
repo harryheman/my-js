@@ -1,10 +1,13 @@
 ---
-sidebar_position: 18
+sidebar_position: 7
+title: Шпаргалка по Web Speech API
+description: Шпаргалка по Web Speech API
+keywords: ['javascript', 'js', 'web speech api', 'speech to text', 'text to speech', 'cheatsheet', 'шпаргалка', 'речь в текст', 'текст в речь']
 ---
 
 # Web Speech API
 
-В данном туториале мы создадим 4 небольших приложения, в которых используются почти все возможности, предоставляемые [Web Speech API](https://wicg.github.io/speech-api/) - по два приложения на каждый из входящих в состав `Web Speech API` интерфейса: `SpeechRecognition` и `SpeechSynthesis`.
+В данном туториале мы создадим 4 небольших приложения, в которых используются почти все возможности, предоставляемые [Web Speech API](https://wicg.github.io/speech-api/) - по 2 приложения на каждый из входящих в состав `Web Speech API` интерфейса: `SpeechRecognition` и `SpeechSynthesis`.
 
 ## Приложение для озвучивания текста (перевода текста в речь)
 
