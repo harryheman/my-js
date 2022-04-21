@@ -1,10 +1,13 @@
 ---
 sidebar_position: 29
+title: Шпаргалка по Vite
+description: Шпаргалка по Vite
+keywords: ['javascript', 'js', 'vite', 'bundler', 'cheatsheet', 'шпаргалка', 'сборщик модулей']
 ---
 
 # Vite
 
-> [Vite](https://vitejs.dev/) - это продвинутый сборщик модулей (bundler) для `JavaScript`.
+> [Vite](https://vitejs.dev/) - это современный сборщик модулей (bundler) для `JavaScript-приложений`, менее кастомизируемый, чем `Webpack`, но гораздо более быстрый.
 
 __Создание шаблона__
 
@@ -158,7 +161,7 @@ VITE_SOME_KEY=some-public-value
 
 __Настройки__
 
-_Пример синонимов путей для React-приложения_
+_Пример синонимов путей для `React-приложения`_
 
 ```js
 import { defineConfig } from 'vite'

@@ -1,20 +1,20 @@
 ---
-sidebar_position: 26
+sidebar_position: 27
+title: Шпаргалка по SQL
+description: Шпаргалка по SQL
+keywords: ['sql', 'structured query language', 'cheatsheet', 'шпаргалка', 'язык структурированных запросов']
 ---
 
 # SQL
 
 _Обратите внимание_: изучение данной шпаргалки не сделает вас мастером `SQL`, но позволит получить общее представление об этом языке и возможностях, которые он предоставляет. Рассматриваемые в шпаргалке возможности являются общими для всех или большинства диалектов `SQL`.
 
-Для более полного погружения в `SQL` рекомендую изучить эти руководства по <a href="https://metanit.com/sql/mysql/">`MySQL`</a> и <a href="https://metanit.com/sql/postgresql/">`PostreSQL`</a> от Метанита. Они хороши тем, что просты в изучении и позволяют быстро начать работу с названными СУБД.
+Для более полного погружения в `SQL` рекомендую изучить эти руководства по <a href="https://metanit.com/sql/mysql/">`MySQL`</a> и <a href="https://metanit.com/sql/postgresql/">`PostgreSQL`</a> от Метанита. Они хороши тем, что просты в изучении и позволяют быстро начать работу с названными СУБД.
 
-<a href="https://dev.mysql.com/doc/refman/8.0/en/">Официальная документация по MySQL</a>.
-
-<a href="https://postgrespro.ru/docs/postgresql/13/index">Официальная документация по PostreSQL</a> (на русском языке).
-
-<a href="https://www.youtube.com/watch?app=desktop&v=HXV3zeQKqGY">Свежий туториал по SQL</a> от Codecamp.
-
-<a href="https://websitesetup.org/wp-content/uploads/2020/08/SQL-Cheat-Sheet-Summary-Full.png">Свежая шпаргалка по SQL в формате PDF</a>.
+- <a href="https://dev.mysql.com/doc/refman/8.0/en/">Официальная документация по MySQL</a>.
+- <a href="https://postgrespro.ru/docs/postgresql/13/index">Официальная документация по PostgreSQL</a> (на русском языке).
+- <a href="https://www.youtube.com/watch?app=desktop&v=HXV3zeQKqGY">Свежий туториал по SQL от Codecamp</a>.
+- <a href="https://websitesetup.org/wp-content/uploads/2020/08/SQL-Cheat-Sheet-Summary-Full.png">Свежая шпаргалка по SQL в формате PDF</a>.
 
 ## Что такое SQL?
 

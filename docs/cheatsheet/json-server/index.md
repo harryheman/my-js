@@ -1,5 +1,5 @@
 ---
-sidebar_position: 21
+sidebar_position: 20
 title: Шпаргалка по JSON Server
 description: Шпаргалка по JSON Server
 keywords: ['javascript', 'js', 'json server', 'json-server', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет']
@@ -7,7 +7,7 @@ keywords: ['javascript', 'js', 'json server', 'json-server', 'npm', 'registry', 
 
 # JSON Server
 
-> [json-server](https://github.com/typicode/json-server) - это библиотека, позволяющая "получить полный фейковый `REST API` без предварительной настройки менее чем за 30 секунд". Также имеется возможность создания полноценного сервера.  Данная библиотека реализована с помощью [lowdb](https://github.com/typicode/lowdb) и [express](https://expressjs.com/). Наиболее известным примером ее использования является [JSON Placeholder](https://jsonplaceholder.typicode.com/).
+> [JSON Server](https://github.com/typicode/json-server) - это библиотека, позволяющая "получить полный фейковый `REST API` без предварительной настройки менее чем за 30 секунд". Также имеется возможность создания полноценного сервера.  Данная библиотека реализована с помощью [lowdb](https://github.com/typicode/lowdb) и [express](https://expressjs.com/). Наиболее известным примером ее использования является [JSON Placeholder](https://jsonplaceholder.typicode.com/).
 
 ## Установка
 

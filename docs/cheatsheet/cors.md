@@ -1,10 +1,13 @@
 ---
-sidebar_position: 24
+sidebar_position: 22
+title: Шпаргалка по Cors
+description: Шпаргалка по Cors
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'cors', 'cross-origin resource sharing', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет', 'распределение ресурсов между источниками']
 ---
 
 # Cors
 
-> [Cors](https://www.npmjs.com/package/cors) - это посредник (middleware) для `Express-приложений`, предназначенный для настройки `HTTP-заголовков`, связанных с [CORS](https://developer.mozilla.org/ru/docs/Web/HTTP/CORS).
+> [Cors](https://www.npmjs.com/package/cors) - это посредник (middleware) для `Express-приложений`, предназначенный для настройки `HTTP-заголовков`, связанных с [CORS](https://developer.mozilla.org/ru/docs/Web/HTTP/CORS) (Cross-Origin Resource Sharing - возможность использования ресурсов из другого источника).
 
 _Установка_
 
@@ -38,7 +41,7 @@ app.get('/users/:id', cors(), (_, res) => {
   res.json({ msg: 'CORS включен только для этого маршрута!' })
 })
 
-// настраиваем CORS
+// настраиваем `CORS`
 const corsOptions = {
   origin: 'https://example.com',
   optionSuccessStatus: 200, // для старых браузеров и SmartTV

@@ -1,19 +1,26 @@
 ---
-sidebar_position: 20
+sidebar_position: 19
+title: Шпаргалка по Axios
+description: Шпаргалка по Axios
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'axios', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет']
 ---
 
 # Axios
 
+> [`Axios`](https://github.com/axios/axios) - популярная клиент-серверная библиотека для выполнения `HTTP-запросов`.
+
 ## Возможности
 
-- Отправка [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) из браузера
-- Отправка `HTTP-запросов` из [Node.js]https://nodejs.org/en/()
-- Поддержка [Promise API](https://learn.javascript.ru/promise-basics)
-- Перехват запросов и ответов
-- Преобразование данных запросов и ответов
-- Отмена/прерывание запроса
-- Автоматический разбор/парсинг данных в формате `JSON`
-- Автоматическая защита от [XSRF](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D0%BB%D0%BA%D0%B0_%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0)
+`Axios` предоставляет следующие возможности:
+
+- отправка [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) из браузера
+- отправка `HTTP-запросов` из [Node.js]https://nodejs.org/en/()
+- поддержка [Promise API](https://learn.javascript.ru/promise-basics)
+- перехват запросов и ответов
+- преобразование данных запросов и ответов
+- отмена/прерывание запроса
+- автоматический разбор/парсинг данных в формате `JSON`
+- автоматическая защита от [XSRF](https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D0%BB%D0%BA%D0%B0_%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0)
 
 ## Установка
 

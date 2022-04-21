@@ -1,5 +1,8 @@
 ---
-sidebar_position: 27
+sidebar_position: 30
+title: Шпаргалка по Markdown
+description: Шпаргалка по Markdown
+keywords: ['markdown', 'md', 'cheatsheet', 'шпаргалка']
 ---
 
 # Markdown

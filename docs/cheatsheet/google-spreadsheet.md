@@ -1,8 +1,13 @@
 ---
-sidebar_position: 28
+sidebar_position: 26
+title: Шпаргалка по Google Spreadsheet
+description: Шпаргалка по Google Spreadsheet
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'google spreadsheet', 'spreadsheet', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет', 'гугл-таблицы', 'таблица']
 ---
 
 # Google Spreadsheet
+
+> [Google Spreadsheet](https://www.npmjs.com/package/google-spreadsheet) - это библиотека для работы с таблицами `Google`.
 
 ## Инициализация
 
@@ -11,7 +16,7 @@ require('dotenv').config()
 
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
-const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID) // извлекаем из адресной строки
+const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID) // берем из адресной строки
 // загружаем информацию о таблице
 await doc.loadInfo()
 

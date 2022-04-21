@@ -5,8 +5,9 @@ id: intro-guide
 
 # Содержание
 
-- :page_with_curl:&nbsp;&nbsp;[Карманная книга по `TypeScript`](./ts)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Next.js`](./next)
+- :page_with_curl:&nbsp;&nbsp;[Карманная книга по `TypeScript`](./ts)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по `Docker`](./guide/docker)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Redux Toolkit`](./redux-toolkit)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Recoil`](./recoil)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `React Query`](./react-query)
@@ -21,5 +22,4 @@ id: intro-guide
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Prisma`](./prisma)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Sequelize`](./sequelize)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Socket.IO`](./socket/index)
-- :page_with_curl:&nbsp;&nbsp;[Руководство по `Docker`](./guide/docker)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по `Supabase`](./supabase)

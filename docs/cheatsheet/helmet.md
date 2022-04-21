@@ -1,10 +1,13 @@
 ---
-sidebar_position: 23
+sidebar_position: 25
+title: Шпаргалка по Helmet
+description: Шпаргалка по Helmet
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'helmet', 'http headers', 'security headers', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет', 'http-заголовки', 'заголовки безопасности']
 ---
 
 # Helmet
 
-> [Helmet](https://helmetjs.github.io/) помогает защитить `Express-приложения` посредством установки различных `HTTP-заголовков`, связанных с безопасностью. "Это не серебрянная пуля, но может помочь!"
+> [Helmet](https://helmetjs.github.io/) помогает защитить `Express-приложения` посредством установки `HTTP-заголовков`, связанных с безопасностью. "Это не серебряная пуля, но может помочь!"
 
 ## Быстрый старт
 
@@ -29,7 +32,7 @@ app.use(helmet())
 
 ## Как это работает?
 
-`Helmet` - это посредник (промежуточное программное обеспечение, middleware) для Express-приложений.
+`Helmet` - это посредник (middleware) для `Express-приложений`.
 
 Функция высшего уровня `helmet` - это обертка для 15 небольших посредников, 11 из которых включены по умолчанию:
 
@@ -71,7 +74,7 @@ app.use(
 )
 ```
 
-## `API`
+## API
 
 **helmet(options)**
 
