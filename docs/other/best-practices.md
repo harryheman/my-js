@@ -723,7 +723,7 @@ test('Асинхронный тест', () => {
 })
 ```
 
-#### Коллбек `done()`
+#### колбек `done()`
 
 Утверждение должно быть обернуто в блок `try/catch`, иначе Jest будет игнорировать ошибки:
 
@@ -748,7 +748,7 @@ test('Асинхронный тест', done => {
 #### Функции для создания фикций
 
 ```jsx
-test('Вызов коллбека', () => {
+test('Вызов колбека', () => {
   const callback = jest.fn()
   fn(callback)
   expect(callback).toBeCalled()
@@ -761,7 +761,7 @@ test('Вызов коллбека', () => {
 Вы также можете использовать снимки:
 
 ```jsx
-test('Вызов коллбека', () => {
+test('Вызов колбека', () => {
   const callback = jest.fn().mockName('Единорог')
   fn(callback)
   expect(callback).toMatchSnapshot()

@@ -1,5 +1,8 @@
 ---
-sidebar_position: 8
+sidebar_position: 16
+title: Примеры кастомных компонентов React
+description: Примеры кастомных компонентов React
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom components', 'components', 'component', 'cheatsheet', 'шпаргалка', 'кастомные компоненты', 'пользовательские компоненты', 'компоненты', 'компонент']
 ---
 
 # React Custom Components
@@ -22,7 +25,7 @@ export const Accordion = ({ defaultIndex = 1, onClick, children }) => {
   const [index, setIndex] = useState(defaultIndex)
 
   const changeItem = (e, i) => {
-    // disable details default click handle
+    // disable details default click handling
     e.preventDefault()
     if (typeof onClick === 'function') onClick(i)
     if (i !== index) setIndex(i)
@@ -150,8 +153,8 @@ export const FileDrop = ({ onDrop, onChange }) => {
           drag
             ? `${styles.file} ${styles.drag}`
             : filename
-            ? `${styles.file} ${styles.ready}`
-            : styles.file
+              ? `${styles.file} ${styles.ready}`
+              : styles.file
         }
         onClick={handleClick}
       >

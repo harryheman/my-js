@@ -24,7 +24,7 @@ yarn add @supabase/supabase-js
 
 _Импорт_
 
-```javascript
+```js
 import supabase from '@supabase/supabase-js'
 ```
 
@@ -32,7 +32,7 @@ import supabase from '@supabase/supabase-js'
 
 _Инициализация_
 
-```javascript
+```js
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(url, key, options)
@@ -42,7 +42,7 @@ const supabase = createClient(url, key, options)
 - `key` - ключ, предоставляемый после создания проекта, доступный в настройках панели управления проектом;
 - `options` - дополнительные настройки.
 
-```javascript
+```js
 const options = {
  // дефолтная схема
  schema: 'public',
@@ -56,7 +56,7 @@ const supabase = createClient('https://my-app.supabase.co', 'public-anon-key', o
 
 По умолчанию для выполнения HTTP-запросов `supabase-js` использует библиотеку [`cross-fetch`](https://www.npmjs.com/package/cross-fetch). Это можно изменить следующим образом:
 
-```javascript
+```js
 const supabase = createClient('https://my-app.supabase.co', 'public-anon-key', {
  fetch: fetch.bind(globalThis)
 })
@@ -68,7 +68,7 @@ __Регистрация__
 
 Для регистрации нового пользователя используется метод `signUp`:
 
-```javascript
+```js
 async function registerUser({ email, password, first_name, last_name, age }) {
  try {
    const { user, session, error } = await supabase.auth.signUp({
@@ -97,7 +97,7 @@ async function registerUser({ email, password, first_name, last_name, age }) {
 
 Такая сигнатура позволяет вызывать данный метод следующим образом (на примере `React-приложения`):
 
-```javascript
+```js
 // предположим, что `registerUser` возвращает только пользователя
 const onSubmit = (e) => {
  e.preventDefault()
@@ -116,7 +116,7 @@ const onSubmit = (e) => {
 
 В `TypeScript` можно использовать такую сигнатуру:
 
-```javascript
+```js
 async function registerUser({ first_name, last_name, age, email, password }: UserData): ResponseData {
  let data = { user: null, error: null }
  try {
@@ -149,7 +149,7 @@ __Авторизация__
 
 Для авторизации, в том числе с помощью сторонних провайдеров, используется метод `signIn`:
 
-```javascript
+```js
 async function loginUser({ email, password }) {
  try {
    const { user, session, error } = await supabase.auth.singIn({
@@ -172,7 +172,7 @@ async function loginUser({ email, password }) {
 
 Пример авторизации с помощью аккаунта `GitHub`:
 
-```javascript
+```js
 async function loginWithGitHub() {
  try {
    const { user, session, error } = await supabase.auth.signIn({
@@ -194,7 +194,7 @@ __Выход из системы__
 
 Для выхода из системы используется метод `signOut`:
 
-```javascript
+```js
 async function logoutUser() {
  try {
    const { error } = await supabase.auth.signOut()
@@ -211,7 +211,7 @@ __Сессия__
 
 Метод `session` используется для получения данных активной сессии:
 
-```javascript
+```js
 const session = supabase.auth.session()
 ```
 
@@ -219,7 +219,7 @@ __Пользователь__
 
 Метод `user` возвращает данные авторизованного пользователя:
 
-```javascript
+```js
 const user = supabase.auth.user()
 ```
 
@@ -233,7 +233,7 @@ __Обновление данных пользователя__
 
 Для обновления данных пользователя используется метод `update`:
 
-```javascript
+```js
 async function updateUser({ age }) {
  try {
    const { user, error } = await supabase.auth.update({
@@ -253,7 +253,7 @@ _Обратите внимание_: можно обновлять либо ос
 
 __Регистрация изменения состояния авторизации__
 
-```javascript
+```js
 supabase.auth.onAuthStateChange((event, session) => {
  console.log(event, session)
 })
@@ -261,13 +261,13 @@ supabase.auth.onAuthStateChange((event, session) => {
 
 __Сброс пароля__
 
-```javascript
+```js
 const { data, error } = supabase.auth.api.resetPasswordForEmail(email, { redirectTo: window.location.origin })
 ```
 
 После вызова этого метода на email пользователя отправляется ссылка для сброса пароля. Когда пользователь кликает по ссылке, он переходит по адресу: `SITE_URL/#access_token=X&refresh_token=Y&expires_in=Z&token_type=bearer&type=recovery`. Мы регистрируем `type=recovery` и отображаем форму для сброса пароля. Затем используем `access_token` из `URL` и новый пароль для обновления пользовательских данных:
 
-```javascript
+```js
 async function resetPassword(access_token, new_password) {
  try {
    const { data, error } = await supabase.auth.api.updateUser(access_token, { password: new_password })
@@ -285,7 +285,7 @@ __Извлечение (выборка) данных__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .select(column_names, options)
@@ -299,7 +299,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function getUsers() {
  try {
    const { data, error } = await supabase
@@ -319,7 +319,7 @@ async function getUsers() {
 
 _Получение данных из связанных таблиц_
 
-```javascript
+```js
 async function getUsersAndPosts() {
  try {
    const { data, error } = await supabase
@@ -348,7 +348,7 @@ _Фильтрация данных с помощью внутреннего со
 
 Предположим, что мы хотим извлечь сообщения (messages), принадлежащие пользователю с определенным именем (username):
 
-```javascript
+```js
 async function getMessagesByUsername(username) {
  try {
    const { data, error } = await supabase
@@ -366,7 +366,7 @@ async function getMessagesByUsername(username) {
 
 _Получение количества строк_
 
-```javascript
+```js
 async function getUsersAndUserCount() {
  try {
    const { data, error, count } = await supabase
@@ -383,7 +383,7 @@ async function getUsersAndUserCount() {
 
 _Получение данных из `JSONB-столбцов`_
 
-```javascript
+```js
 async function getUsersWithTheirCitiesByCountry(country) {
  try {
    const { data, error } = await supabase
@@ -403,7 +403,7 @@ async function getUsersWithTheirCitiesByCountry(country) {
 
 _Получение данных в формате `CSV`_
 
-```javascript
+```js
 async function getUsersInCSV() {
  try {
    const { data, error } = await supabase
@@ -422,7 +422,7 @@ __Запись (добавление, вставка) данных__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .insert(data_array, options)
@@ -436,7 +436,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function createPost({ title, body, author_id }) {
  try {
    const { data, error } = await supabase
@@ -455,7 +455,7 @@ async function createPost({ title, body, author_id }) {
 
 Разумеется, можно создавать несколько записей одновременно:
 
-```javascript
+```js
 // предположим, что `messages` - массив объектов `{ title, body, user_id, room_id }`
 async function saveMessagesForRoom(messages) {
  try {
@@ -476,7 +476,7 @@ __Модификация данных__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .update({ column_name: 'column_value' }, options)
@@ -492,7 +492,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function updateUser({ changes, user_id }) {
  try {
    const { data, error } = await supabase
@@ -511,7 +511,7 @@ _Обратите внимание_: метод `update` должен всегд
 
 _Пример обновления `JSON-колонки`_
 
-```javascript
+```js
 async function updateUsersCity({ address, user_id }) {
  try {
    const { error } = await supabase
@@ -531,7 +531,7 @@ _Модификация или запись данных_
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .upsert({ primary_key_name: 'primary_key_value', column_name: 'column_value' }, options)
@@ -545,7 +545,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function updateOrCreatePost({ id, title, body, author_id }) {
  try {
    const { data, error } = await supabase
@@ -570,7 +570,7 @@ __Удаление данных__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .delete(options)
@@ -583,7 +583,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function removeUser(user_id) {
  try {
    const { error } = await supabase
@@ -601,7 +601,7 @@ __Вызов функций Postgres__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .rpc(fn, params, options)
 ```
@@ -631,7 +631,7 @@ LANGUAGE plpgsql
 
 Данную функцию можно вызвать следующим образом:
 
-```javascript
+```js
 async function checkPassword(username_or_email, password) {
  let password_hash
  try {
@@ -653,7 +653,7 @@ async function checkPassword(username_or_email, password) {
 
 Метод `rpc` может использоваться совместно с модификаторами и фильтрами, например:
 
-```javascript
+```js
 const { data, error } = await supabase
  .rpc('get_all_cities')
  .select('city_name', 'population')
@@ -670,7 +670,7 @@ __`limit()`__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .select(column_names)
@@ -683,7 +683,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function getTop10Users() {
  try {
    const { data, error } = await supabase
@@ -700,7 +700,7 @@ async function getTop10Users() {
 
 Пример с внешней таблицей:
 
-```javascript
+```js
 async function getTop10CitiesByCountry(country_name) {
  try {
    const { data, error } = await supabase
@@ -722,7 +722,7 @@ __`order()`__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .select(column_names)
@@ -737,7 +737,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function getMostLikedPosts(limit) {
  try {
    const { data, error } = await supabase
@@ -759,7 +759,7 @@ __`range()`__
 
 Сигнатура:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from(table_name)
  .select(column_names)
@@ -773,7 +773,7 @@ const { data, error } = await supabase
 
 Пример:
 
-```javascript
+```js
 async function getPostSlice(from, to) {
  try {
    const { data, error } = await supabase
@@ -794,7 +794,7 @@ __`single()`__
 
 Пример:
 
-```javascript
+```js
 async function getUserById(user_id) {
  try {
    // в данном случае мы получим объект вместо массива
@@ -821,7 +821,7 @@ async function getUserById(user_id) {
 
 Примеры:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from('cities')
  .select()
@@ -865,7 +865,7 @@ const { data, error } = await query
 - `overlaps(column_name, column_value[])` - `overlaps('hobby', ['code', 'guitar'])`;
 - `textSearch(column_name, query, options)` - возвращает все строки, значения указанной колонки которой соответствуют запросу `to_tsquery`, например:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from('quotes')
  .select('catchphrase')
@@ -878,7 +878,7 @@ const { data, error } = await supabase
 
 - `filter(column_name, operator, value)` - значение колонки должно удовлетворять фильтру. `filter` должен использоваться в последнюю очередь, когда других фильтров оказалось недостаточно:
 
-```javascript
+```js
 const { data, error } = await supabase
  .from('cities')
  .select('city_name, countries(city_name)')
@@ -891,7 +891,7 @@ const { data, error } = await supabase
 
 Для _создания_ файлового хранилища используется метод `createBucket`:
 
-```javascript
+```js
 async function createAvatarBucket() {
  try {
    const { data, error } = await supabase
@@ -915,7 +915,7 @@ async function createAvatarBucket() {
 
 Для _получения данных_ о хранилище используется метод `getBucket`:
 
-```javascript
+```js
 const { data, error } = await supabase
  .storage
  // getBucket(id)
@@ -929,7 +929,7 @@ const { data, error } = await supabase
 
 Для _получения списка_ хранилищ используется метод `listBuckets`:
 
-```javascript
+```js
 const { data, error } = await supabase
  .storage
  .listBuckets()
@@ -947,7 +947,7 @@ __Загрузка файлов__
 
 _Сигнатура_
 
-```javascript
+```js
 await supabase
  .storage
  .from(bucket_name)
@@ -969,7 +969,7 @@ await supabase
 
 _Пример_
 
-```javascript
+```js
 async function uploadAvatar({ userId, file }) {
  // получаем расширение файла
  const fileExt = file.name.split('.')[1]
@@ -993,7 +993,7 @@ __Скачивание файлов__
 
 Для скачивания файлов используется метод `download`:
 
-```javascript
+```js
 async function downloadFile({ bucketName, filePath }) {
  try {
    const { data, error } = await supabase
@@ -1019,7 +1019,7 @@ __Получение списка файлов__
 
 _Сигнатура_
 
-```javascript
+```js
 list(dir_name, options, parameters)
 ```
 
@@ -1035,7 +1035,7 @@ list(dir_name, options, parameters)
 
 _Пример_
 
-```javascript
+```js
 async function getAvatars({ limit = 100, offset = 0, sortBy = { column: 'name', order: 'asc' } }) {
  try {
    const { data, error } = await supabase
@@ -1065,7 +1065,7 @@ __Обновление файлов__
 
 _Сигнатура_
 
-```javascript
+```js
 update(path, file, options)
 ```
 
@@ -1073,7 +1073,7 @@ update(path, file, options)
 
 _Пример_
 
-```javascript
+```js
 const defaultUpdateAvatarOptions = { cacheControl: '3600', upsert: false }
 async function updateAvatar({ filePath, file, options = defaultUpdateAvatarOptions }) {
  try {
@@ -1096,7 +1096,7 @@ async function updateAvatar({ filePath, file, options = defaultUpdateAvatarOptio
 
 Для перемещения файла с его опциональным переименованием используется метод `move`:
 
-```javascript
+```js
 const { data, error } = await supabase
  .storage
  .from('avatars')
@@ -1112,7 +1112,7 @@ __Удаление файлов__
 
 Для удаления файлов используется метод `remove`:
 
-```javascript
+```js
 // список удаляемых файлов - массив `filePathArr`
 async function removeFile({ bucketName, filePathArr }) {
  try {
@@ -1137,13 +1137,13 @@ __Формирование пути к файлу__
 
 Для формирования пути к файлу без разрешения используется метод `createSignedUrl`:
 
-```javascript
+```js
 createSignedUrl(path, expiresIn)
 ```
 
 - `expiresIn` - количество секунд, в течение которых ссылка считается валидной.
 
-```javascript
+```js
 async function getSignedUrl({ bucketName, filePath, expiresIn = 60 }) {
  try {
    const { signedUrl, error } = await supabase
@@ -1165,7 +1165,7 @@ async function getSignedUrl({ bucketName, filePath, expiresIn = 60 }) {
 
 Для формирования пути к файлу, находящемуся в публичной директории, используется метод `getPublicUrl`:
 
-```javascript
+```js
 async function getFileUrl({ bucketName, filePath }) {
  try {
    const { publicUrl, error } = supabase
@@ -1190,7 +1190,7 @@ __Подписка на изменения__
 
 _Сигнатура_
 
-```javascript
+```js
 const subscription = supabase
  .from(table_name)
  .on(event, callback)
@@ -1208,7 +1208,7 @@ _Примеры_
 
 Регистрация всех изменений всех таблиц:
 
-```javascript
+```js
 const subscription = supabase
  .from('*')
  .on('*', payload => {
@@ -1219,7 +1219,7 @@ const subscription = supabase
 
 Регистрация изменений определенной таблицы:
 
-```javascript
+```js
 const subscription = supabase
  .from('posts')
  .on('*', payload => {
@@ -1230,7 +1230,7 @@ const subscription = supabase
 
 Регистрация записи данных в определенную таблицу:
 
-```javascript
+```js
 const subscription = supabase
  .from('posts')
  // INSERT | UPDATE | DELETE
@@ -1242,7 +1242,7 @@ const subscription = supabase
 
 Обработчики можно объединять в цепочки:
 
-```javascript
+```js
 const subscription = supabase
  .from('posts')
  .on('INSERT', insertHandler)
@@ -1260,7 +1260,7 @@ table_name:column_name=eq.value
 - `column_name`: название колонки;
 - `value`: значение, которое должна содержать колонка.
 
-```javascript
+```js
 const subscription = supabase
  .from('countries.id=eq.123')
  .on('UPDATE', onUpdate)
@@ -1271,7 +1271,7 @@ __Отписка от изменений__
 
 Метод `removeSubscription` удаляет активную подписку и возвращает количество открытых соединений.
 
-```javascript
+```js
 supabase.removeSubscription(subscription_name)
 ```
 
@@ -1283,7 +1283,7 @@ __Получение списка подписок__
 
 Для получения списка подписок используется метод `getSubscriptions`.
 
-```javascript
+```js
 const allSubscriptions = supabase.getSubscriptions()
 ```
 

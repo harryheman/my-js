@@ -9,7 +9,7 @@ keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'snippets', 'snip
 
 > WIP
 
-# Инпут с динамической шириной
+## Инпут с динамической шириной
 
 ```js
 import { useState, useEffect, useRef } from 'react'
@@ -172,7 +172,7 @@ export function createStore(store) {
 }
 ```
 
-# Простой слайдер
+## Слайдер
 
 ```js
 import { Children, useEffect, useState, useRef } from 'react'

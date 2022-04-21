@@ -1,10 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 11
+title: Шпаргалка по Create React App
+description: Шпаргалка по Create React App
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'create react app', 'cra', 'cli', 'cheatsheet', 'интерфейс командной строки']
 ---
 
 # Create React App
 
-> [Create React App](https://create-react-app.dev/) - это [CLI](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8), позволяющий создавать предварительно настроенные React-проекты. Предварительная настройка включает в себя, но не исчерпывается, настройкой `Webpack` и `Babel`.
+> [Create React App](https://create-react-app.dev/) - это [интерфейс командной строки](https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8) (Command Line Interface, CLI), позволяющий создавать предварительно настроенные `React-проекты`. Предварительная настройка включает в себя, но не исчерпывается, настройкой сборщика модулей `Webpack` и транспилятора `Babel`.
 
 ## Создание и запуск проекта
 
@@ -67,7 +70,7 @@ my-app
     └── setupTests.js
 ```
 
-Самыми важными файлами являются следущие:
+Самыми важными файлами являются следующие:
 
 - `public/index.html` - шаблон страницы (приложения)
 - `src/index.js` - "входная точка" JavaScript в терминологии "бандлеров"

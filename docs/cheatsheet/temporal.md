@@ -1,8 +1,11 @@
 ---
-sidebar_position: 25
+sidebar_position: 9
+title: Шпаргалка по Temporal API и Dayjs
+description: Шпаргалка по Temporal API и Dayjs
+keywords: ['javascript', 'js', 'temporal api', 'day.js', 'dayjs', 'date', 'time', 'cheatsheet', 'шпаргалка', 'дата', 'время']
 ---
 
-# Temporal & Dayjs
+# Temporal API & Dayjs
 
 `Temporal` - новый `API` для работы с датой и временем в `JS`.
 
@@ -25,7 +28,7 @@ _Обратите внимание_: предложение находится �
 - разбор строк в даты подвержен ошибкам;
 - объекты `Date` являются мутабельными, т.е. изменяемыми, например:
 
-```javascript
+```js
 const today = new Date()
 const tomorrow = new Date(today.setDate(today.getDate() + 1))
 
@@ -39,7 +42,7 @@ console.log(today) // тоже завтрашняя дата!
 
 Подробнее о нем и, в целом, об объекте `Intl` можно почитать [здесь](https://github.com/harryheman/React-Total/blob/main/md/intl.md).
 
-## `Temporal`
+## Temporal
 
 <img src="https://habrastorage.org/webt/qb/zo/mu/qbzomud4-dtkojb1j7fje7qtqpi.png" />
 <br />
@@ -74,7 +77,7 @@ npm i @js-temporal/polyfill
 
 - импортируем объекты и расширяем прототип `Date` в `index.js`:
 
-```javascript
+```js
 import { Temporal, Intl, toTemporalInstant } from '@js-temporal/polyfill'
 Date.prototype.toTemporalInstant = toTemporalInstant
 ```
@@ -85,7 +88,7 @@ __Текущие дата и время__
 
 Объект [`Temporal.Now`](https://tc39.es/proposal-temporal/#sec-temporal-now-object) возвращает текущие дату и время:
 
-```javascript
+```js
 // время (UTC) с начала эпохи, т.е. с 00:00:00 1 января 1970 года
 // в секундах
 Temporal.Now.instant().epochSeconds
@@ -122,7 +125,7 @@ __"Мгновенные" дата и время__
 <img src="https://habrastorage.org/webt/f-/pm/7p/f-pm7p1ixll80mt-nqucx_dpmgg.png" />
 <br />
 
-```javascript
+```js
 Temporal.Instant.from('2022-03-04T05:06+07:00')
 // 2022-03-03T22:06:00Z
 
@@ -135,7 +138,7 @@ __"Зонированные" дата и время__
 
 Объект [`Temporal.ZonedDateTime`](https://tc39.es/proposal-temporal/#sec-temporal-zoneddatetime-objects) возвращает объект, представляющий фиксированную позицию во времени с точностью до наносекунд с учетом временной зоны и календарной системы:
 
-```javascript
+```js
 new Temporal.ZonedDateTime(
  123456789000000000n, // наносекунды с начала эпохи (bigint)
  Temporal.TimeZone.from('Asia/Yekaterinburg'), // временная зона
@@ -165,7 +168,7 @@ __"Обычные" дата и время__
 
 - [`Temporal.PlainDate`](https://tc39.es/proposal-temporal/#sec-temporal-plaindate-objects) - дата:
 
-```javascript
+```js
 // 2022-01-31
 new Temporal.PlainDate(2022, 1, 31)
 Temporal.PlainDate.from('2022-01-31')
@@ -173,7 +176,7 @@ Temporal.PlainDate.from('2022-01-31')
 
 - [`Temporal.PlainTime`](https://tc39.es/proposal-temporal/#sec-temporal-plaintime-objects) - время:
 
-```javascript
+```js
 // 12:00:00
 new Temporal.PlainTime(12, 0, 0)
 Temporal.PlainTime.from('12:00:00')
@@ -181,7 +184,7 @@ Temporal.PlainTime.from('12:00:00')
 
 - [`Temporal.PlainDateTime`](https://tc39.es/proposal-temporal/#sec-temporal-plaindatetime-objects) - дата и время:
 
-```javascript
+```js
 // 2022-01-31T12:00:00
 new Temporal.PlainDateTime(2022, 1, 31, 12, 0, 0)
 Temporal.PlainDateTime.from('2022-01-31T12:00:00')
@@ -189,7 +192,7 @@ Temporal.PlainDateTime.from('2022-01-31T12:00:00')
 
 - [`Temporal.PlainYearMonth`](https://tc39.es/proposal-temporal/#sec-temporal-plainyearmonth-objects) - месяц и год:
 
-```javascript
+```js
 // июнь 2022 года
 // 2022-06
 new Temporal.PlainYearMonth(2022, 6)
@@ -198,7 +201,7 @@ Temporal.PlainYearMonth.from('2022-06')
 
 - [`Temporal.PlainMonthDay`](https://tc39.es/proposal-temporal/#sec-temporal-plainmonthday-objects) - месяц и день:
 
-```javascript
+```js
 // 4 мая
 // 05-04
 new Temporal.PlainMonthDay(5, 4)
@@ -209,7 +212,7 @@ __Значение даты и времени__
 
 Объект `Temporal` содержит ряд полезных свойств/геттеров:
 
-```javascript
+```js
 const date = Temporal.ZonedDateTime.from(
  '2022-01-31T12:13:14+05:00[Asia/Yekaterinburg]'
 )
@@ -241,7 +244,7 @@ __Сравнение и сортировка даты и времени__
 - `1`, когда `date1` "больше" (наступит или наступила позже), чем `date2`;
 - `-1`, когда `date1` "меньше" (наступит или наступила раньше), чем `date2`.
 
-```javascript
+```js
 const date1 = Temporal.Now.plainDateISO()
 const date2 = Temporal.PlainDate.from('2022-04-05')
 
@@ -250,7 +253,7 @@ Temporal.PlainDateTime.compare(date1, date2) // -1
 
 Разумеется, данный метод можно использовать для сортировки:
 
-```javascript
+```js
 const sortedDates = [
  '2022-01-01T00:00:00[Europe/London]',
  '2022-01-01T00:00:00[Asia/Yekaterinburg]',
@@ -275,7 +278,7 @@ __Вычисление даты и времени__
 
 Продолжительность можно определить с помощью объекта [`Temporal.Duration`](https://tc39.es/proposal-temporal/#sec-temporal-duration-objects), передав ему `years, months, weeks, days, hours, minutes, seconds, milliseconds, microseconds, nanoseconds`, а также знак (sign) `-1` для отрицательной и `1` для положительной продолжительности. Вместе с тем, стоит отметить, что указанные методы принимают любые подобные продолжительности (duration-like) значения без необходимости создания специального объекта.
 
-```javascript
+```js
 // 2022-01-06
 const today = new Temporal.PlainDate(2022, 1, 6)
 
@@ -310,7 +313,7 @@ console.log(durationInDays) // P3D
 
 Вот как можно установить "недельное" ограничение на выбор даты с помощью `Temporal` и отформатировать вывод с помощью `Intl.DateTimeFormat`:
 
-```javascript
+```js
 const today = Temporal.Now.plainDateISO()
 const afterWeek = today.add({ days: 7 })
 
@@ -333,7 +336,7 @@ calendarInput.onchange = ({ target: { value } }) => {
 
 Методы `until` и `since` возвращают объект `Temporal.Duration`, описывающий время до или после указанных даты и времени на основе текущей даты/времени:
 
-```javascript
+```js
 // количество месяцев, оставшихся до d1
 d1.until().months
 
@@ -346,7 +349,7 @@ d3.since().weeks
 
 Метод `equals` предназначен для определения идентичности (равенства) даты/времени:
 
-```javascript
+```js
 const d1 = Temporal.PlainDate.from('2022-01-31')
 const d2 = d1.add({ days: 1 }).subtract({ hours: 24 })
 
@@ -363,7 +366,7 @@ __Строковые значения даты и времени__
 
 Все объекты `Temporal` содержат метод `toString`, который возвращает строковое представление даты/времени:
 
-```javascript
+```js
 Temporal.Now.zonedDateTimeISO().toString()
 // 2022-01-06T16:30:51.380651378+05:00[Asia/Yekaterinburg]
 
@@ -376,7 +379,7 @@ Temporal.Now.plainDateISO().toString()
 
 Для форматирования даты/времени можно использовать объекты `Intl` или `Date`:
 
-```javascript
+```js
 // объект `Temporal`, не строка
 const d1 = Temporal.Now.plainDateISO()
 
@@ -400,7 +403,7 @@ new Intl.DateTimeFormat().format(new Date(d2)) // ok
 
 Для преобразования объекта `Date` в объект `Temporal.Instant` предназначен метод `toTemporalInstant` объекта `Date`. Для обратного преобразования используется свойство `epochMilliseconds` объектов `Temporal.Instant` и `Temporal.ZonedDateTime`:
 
-```javascript
+```js
 // туда
 const legacyDate1 = new Date()
 const temporalInstant = legacyDate1.toTemporalInstant()
@@ -421,9 +424,9 @@ __Вместо заключения__
 
 - если в приложении ведется или планируется активная работа с датой/временем, используйте библиотеку;
 
-_Шпаргалка по dayjs_
+## Dayjs
 
-```javascript
+```js
 // yarn add dayjs
 import dayjs from 'dayjs' // 6.8K!
 

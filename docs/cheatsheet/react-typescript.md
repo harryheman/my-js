@@ -1,5 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 13
+title: Шпаргалка по React + Typescript
+description: Шпаргалка по React + Typescript
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
 ---
 
 # React + Typescript
@@ -8,14 +11,14 @@ sidebar_position: 5
 
 ## Импорт React
 
-```ts
+```tsx
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 ```
 
 Если использовать флаг `--allowSyntheticDefaultImports` или добавить `"allowSyntheticImports": true` в `tsconfig.json`, тогда можно использовать более привычный импорт:
 
-```ts
+```tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 ```
@@ -24,7 +27,7 @@ import ReactDOM from 'react-dom'
 
 Функциональные компоненты - это функции, принимающие параметр `props` и возвращающие JSX.
 
-```ts
+```tsx
 type AppProps = { message: string }
 const App = ({ message }: AppProps) => <p>{message}</p>
 ```
@@ -37,7 +40,7 @@ const App = ({ message }: AppProps) => <p>{message}</p>
 
 Вывод `TypeScript` относительно типов значений, возвращаемых `useState`, в большинстве случаев работает правильно:
 
-```ts
+```tsx
 const [state, setState] = useState(false)
 // Типом `state` является логическое значение,
 // `setState` принимает только такие значения
@@ -45,7 +48,7 @@ const [state, setState] = useState(false)
 
 В случае инициализации хука нулевым значением, следует явно определить тип с помощью альтернативных типов (union types):
 
-```ts
+```tsx
 const [user, setUser] = useState<IUser | null>(null)
 
 // позже
@@ -56,7 +59,7 @@ setUser(newUser)
 
 Для определения типов операций редуктора можно использовать исключающие альтернативные типы (discriminated union types). Также необходимо определить тип возвращаемого редуктора:
 
-```ts
+```tsx
 const initialState = { count: 0 }
 
 type ACTION_TYPE =
@@ -93,7 +96,7 @@ function Counter() {
 
 `Redux` предоставляет утилиту для определения типа редуктора:
 
-```ts
+```tsx
 import { Reducer } from 'redux'
 
 export function reducer: Reducer<S, A>{}
@@ -103,7 +106,7 @@ export function reducer: Reducer<S, A>{}
 
 Хук `useEffect` всегда должен возвращать функцию очистки (cleanup function) или `undefined`. Об этом легко забыть, используя стрелочные функции:
 
-```ts
+```tsx
 function DelayedEffect(props: { ms: number }) {
   const { ms } = props
 
@@ -125,7 +128,7 @@ function DelayedEffect(props: { ms: number }) {
 
 Для создании переменной для хранения ссылки (ref) без начального значения (null) существует три варианта:
 
-```ts
+```tsx
 const ref1 = useRef<HTMLElement>(null!)
 const ref2 = useRef<HTMLElement>(null)
 const ref3 = useRef<HTMLElement | null>(null)
@@ -135,7 +138,7 @@ const ref3 = useRef<HTMLElement | null>(null)
 
 `!` - это оператор ненулевого утверждения (non-null assertion operator). Он утверждает, что любое выражение перед ним не является `null` или `undefined`. `useRef<HTMLElement>(null!)` означает, что мы инициализируем ссылку значением `null`, но сообщаем `TypeScript`, что оно не является нулевым:
 
-```ts
+```tsx
 function MyComponent() {
   const ref1 = useRef<HTMLDivElement>(null!)
   useEffect(() => {
@@ -150,7 +153,7 @@ function MyComponent() {
 
 В третьем случае `ref3.current` будет изменяемым, что можно использовать для создания "переменных экземпляра" (instance variables). Такими переменными мы управляем самостоятельно:
 
-```ts
+```tsx
 function TextInputWithFocusButton() {
   // инициализируем с помощью `null`, но сообщаем `TypeScript`, что ищем HTMLInputElement
   const inputRef = useRef<HTMLInputElement>(null)
@@ -178,7 +181,7 @@ function TextInputWithFocusButton() {
 
 В случае, когда пользовательский хук возвращает массив, мы вряд ли захотим, чтобы `TypeScript` делал вывод относительно типов возвращаемых значений, поскольку таким выводом будут альтернативные типы (union) (мы же, скорее всего, хотим, чтобы каждое из значений имело собственный тип). Поэтому следует использовать фиксацию типов в виде константы (const assetion):
 
-```ts
+```tsx
 export function useLoading() {
   const [isLoading, setState] = useState(false)
   const load = (aPromise: Promise<any>) => {
@@ -193,7 +196,7 @@ export function useLoading() {
 
 В качестве альтернативы можно вручную определить типы, возвращаемые функцией:
 
-```ts
+```tsx
 export function useLoading() {
   const [isLoading, setState] = useState(false)
   const load = (aPromise: Promise<any>) => {
@@ -209,7 +212,7 @@ export function useLoading() {
 
 Утилита для создания кортежей (tuples) для типов:
 
-```ts
+```tsx
 function tuplify<T extends any[]>(...elements: T) {
   return elements
 }
@@ -233,7 +236,7 @@ function useTuple() {
 
 Список типов, часто используемых в `React+TS` приложениях:
 
-```ts
+```tsx
 type AppProps = {
   message: string
   count: number
@@ -276,7 +279,7 @@ type AppProps = {
 
 Применяются в отношении компонентов, принимающих другие компоненты в качестве пропов:
 
-```ts
+```tsx
 export declare interface AppProps {
   children1: JSX.Element // плохо, не подходит для массивов
   children2: JSX.Element | JSX.Element[] // средне, не подходит для строк
@@ -295,7 +298,7 @@ export declare interface AppProps {
 
 Выполнение данного кода завершится ошибкой:
 
-```ts
+```tsx
 type Props = {
   children: React.ReactNode
 }
@@ -350,7 +353,7 @@ function App() {
 
 Если производительность не является проблемой, а, обычно, так и есть, то самым легким способом определить тип события формы является автоматическое предположение типа (type inference) и определение типа на основе контекста (contextual typing):
 
-```ts
+```tsx
 <button
   onClick={(e) => {
     /* `e` будет иметь правильный тип */
@@ -362,7 +365,7 @@ function App() {
 
 Отдельное определение обработчика `onChange`:
 
-```ts
+```tsx
 const onChange = (e: React.FormEvent<HTMLInputElement>): void => {
   setState({ text: e.target.value })
 }
@@ -377,7 +380,7 @@ const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 
 Если нам не важен тип `event`, можно использовать `React.SyntheticEvent`. Если нам нужен доступ к именованным полям для ввода, можно использовать расширение (widening) типов:
 
-```ts
+```tsx
 <form
   ref={formRef}
   onSubmit={(e: React.SyntheticEvent) => {
@@ -415,7 +418,7 @@ const onChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 
 ### Общий пример
 
-```ts
+```tsx
 import { createContext, useState, useContext } from 'react'
 
 interface IAppContext {
@@ -463,7 +466,7 @@ export const Post = () => {
 
 Использование `React.createContext` с пустым объектом в качестве начального значения:
 
-```ts
+```tsx
 interface IAppContext {
   // установка типа состояния для обработки
   name: string | null
@@ -475,7 +478,7 @@ const AppContext = createContext({} as IAppContext)
 
 Использование `React.createContext` и геттеров контекста для создания `createCtx` без `defaultValue`, что отключает проверку на `undefined`:
 
-```ts
+```tsx
 import { createContext, useContext } from 'react'
 
 const currentUserContext = createContext<string | undefined>(undefined)
@@ -498,7 +501,7 @@ const App = () => (
 
 1. Можно присвоить ненулевое значение:
 
-```ts
+```tsx
 const currentUserContext = createContext<string>(undefined!)
 ```
 
@@ -506,7 +509,7 @@ const currentUserContext = createContext<string>(undefined!)
 
 2. Можно реализовать вспомогательную функцию `createCtx`, защищающую от доступа к контексту, не имеющему значения. В этом случае, нам не нужно передавать начальное значение и осуществлять проверку на `undefined`:
 
-```ts
+```tsx
 import { createContext, useContext } from 'react'
 
 /**
@@ -542,7 +545,7 @@ const App = () => (
 
 3. Можно пойти еще дальше и использовать геттеры контекста:
 
-```ts
+```tsx
 /**
  * Вспомогательная функция для создания контекста, которому не требуется начальное значение
  * и проверка на `undefined`
@@ -577,7 +580,7 @@ export function MyComponent() {
 
 4. Использование `createContext` и `useContext` для создания `createCtx` с сеттерами контекста:
 
-```ts
+```tsx
 export function createCtx<A>(defaultValue: A) {
   type UpdateType = React.Dispatch<
     React.SetStateAction<typeof defaultValue>
@@ -615,7 +618,7 @@ export function MyComponent() {
 
 5. Версия на основе `useReducer`:
 
-```ts
+```tsx
 export function createCtx<StateType, ActionType>(
   reducer: React.Reducer<StateType, ActionType>,
   initialState: StateType,
@@ -683,7 +686,7 @@ function Counter() {
 
 Использование `ReactDOM.createPortal`:
 
-```ts
+```tsx
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -706,7 +709,7 @@ export const Modal: React.FC<{}> = ({ children }) => {
 
 Пример использования данного компонента:
 
-```ts
+```tsx
 function App() {
   const [showModal, setShowModal] = useState(false)
 
@@ -752,7 +755,7 @@ function App() {
 
 Разумеется, всегда можно реализовать собственный предохранитель:
 
-```ts
+```tsx
 import React, { Component, ErrorInfo, ReactNode } from "react"
 
 interface Props {
@@ -795,7 +798,7 @@ export default ErrorBoundary
 
 Альтернативные типы решают одни проблемы (`count: number | null`), но создают другие. Если `A` и `B` - объекты, тогда `A | B` означает не `ни A, ни B`, но `A или B, или оба`. Данную задачу можно решить так:
 
-```ts
+```tsx
 interface Admin {
   role: string
 }
@@ -828,13 +831,13 @@ function isAdmin(user: Admin | User): user is Admin {
 
 Следует избегать использования перечислений, если это возможно, поскольку они имеют несколько задокументированных проблем, с которыми согласна команда `TypeScript`. Лучше использовать объединение типов:
 
-```ts
+```tsx
 export declare type Position = 'left' | 'right' | 'top' | 'bottom'
 ```
 
 Если вы все же хотите использовать перечисления, помните, что их типом по умолчанию является число. Пример создания и использования перечисления строк:
 
-```ts
+```tsx
 export enum ButtonSizes {
   default = 'default'
   small = 'small'
@@ -855,7 +858,7 @@ export const PrimaryButton = (
 
 Также можно утвердить ненулевой тип при доступе к свойству:
 
-```ts
+```tsx
 element.parentNode!.removeChild(element)
 myFunction(document.getElementById(dialog.id!))
 const userId!: string
@@ -867,7 +870,7 @@ const userId!: string
 
 Структурная проверка типов `TypeScript` является очень полезной до тех пор, пока не становится неудобной. Мы можем имитировать номинальные типы с помощью брендирования типов (type branding):
 
-```ts
+```tsx
 type OrderId = string & { readonly brand: unique symbol }
 type UserId = string & { readonly brand: unique symbol }
 type ID = OrderId | UserId
@@ -875,7 +878,7 @@ type ID = OrderId | UserId
 
 Также можно воспользоваться паттерном парных объектов:
 
-```ts
+```tsx
 function OrderId(id: string) {
   return id as OrderId
 }
@@ -886,7 +889,7 @@ function UserId(id: string) {
 
 После этого `TS` не позволит использовать неправильный ID в неподходящем для этого месте:
 
-```ts
+```tsx
 function queryForUser(id: UserId) {
   // ...
 }
@@ -899,7 +902,7 @@ queryForUSer(OrderId('123')) // Error: Argument of type 'OrderId' is not assigna
 
 Добавление двух типов может быть полезным, например, в случае, когда компонент отражает пропы нативного элемента вроде `button`:
 
-```ts
+```tsx
 export interface PrimaryButtonProps {
   label: string
 }
@@ -913,7 +916,7 @@ export const PrimaryButton = (
 
 Для создания переиспользуемого набора пропов для одинаковых компонентов также можно использовать пересечение типов:
 
-```ts
+```tsx
 type BaseProps = {
   className?: string
   style?: React.CSSProperties
@@ -935,13 +938,13 @@ export const Dog: React.FC<BaseProps & DogProps> = // ...
 
 Когда дело касается функций, часто требуется перегрузка вместо альтернативы. Обычно, функции реализуются так:
 
-```ts
+```tsx
 type FunctionType1 = (x: string, y: number) => number
 ```
 
 Однако, это не позволяет сделать перегрузку. Для перегрузки определения типов функции помещаются друг за другом:
 
-```ts
+```tsx
 function pickCard(x: { suit: string, card: number }[]: number)
 function pickCard(x: number): { suit: string, card: number }
 function pickCard(x): any {
@@ -951,7 +954,7 @@ function pickCard(x): any {
 
 Но, если реализация функции отсутствует, и мы просто пишем файл определений `.d.ts`, то нам это не поможет. В этом случае можно ограничиться обычным определением типа функции. Помните, что для `TypeScript` функция - это `вызываемый объект без ключей`:
 
-```ts
+```tsx
 type pickCard = {
   (x: { suit: string; card: number }[]): number
   (x: number): { suit: string; card: number }
@@ -965,7 +968,7 @@ type pickCard = {
 
 К счастью, `typeof` позволяет этого избежать:
 
-```ts
+```tsx
 const [state, setState] = useState({
   foo: 1,
   bar: 2
@@ -980,7 +983,7 @@ const someMethod = (obj: typeof state) => {
 
 Работа с частью состояния и пропов является обычным делом в `React`. Использование общего типа `Partial` также позволяет избежать явного определения типов:
 
-```ts
+```tsx
 const [state, setState] = useState({
   foo: 1,
   bar: 2
@@ -1000,7 +1003,7 @@ partialStateUpdate({ foo: 2 }) // работает
 
 - Захватываем (grabbing) типы пропов компонента: используем `React.ComponentProps` и `typeof`, и, опционально, `Omit` (опускаем) пересекающиеся (overlapping) типы:
 
-```ts
+```tsx
 import { Button } from 'lib' // ButtonProps не были экспортированы!
 type ButtonProps = React.ComponentProps<typeof Button>
 type AlertButtonProps = Omit<ButtonProps, 'onClick'> // модифицируем
@@ -1011,7 +1014,7 @@ const AlertButton: React.FC<AlertButtonProps> = (props) => (
 
 - Захватываем возвращаемый тип функции: используем `ReturnType`:
 
-```ts
+```tsx
 // внутри какой-то библиотеки - возвращаемый тип { baz: number } предполагается, но не экспортируется
 function foo(bar: string) {
   return { baz: 1 }
@@ -1023,7 +1026,7 @@ type FooReturn = ReturnType<typeof foo> // { baz: number }
 
 В действительности, можно захватывать все, что является публичным:
 
-```ts
+```tsx
 function foo() {
   return {
     a: 1,
@@ -1068,7 +1071,7 @@ let baz2: SubIsntType2 = {
 
 Способ для ленивых заключается в создании файла с определениями типов, например, `typedec.d.ts`. Убедитесь, что он доступен для `TS`, т.е. указан в свойстве `include` файла `tsconfig.json`:
 
-```ts
+```tsx
 {
   "include": [
     "src" // файл src/typedec.d.ts разрешается автоматически
@@ -1078,7 +1081,7 @@ let baz2: SubIsntType2 = {
 
 Внутри этого файла добавляем `declare` и название модуля без типов, например, `my-untyped-module`:
 
-```ts
+```tsx
 declare module 'my-untyped-module'
 ```
 
@@ -1108,7 +1111,7 @@ dts-gen -m <module-name>
 - У нас имеется файл с определениями типов
 - У нас есть доступ к исходному коду - особенно к коду, экспортирующему функцию, которую мы собираемся использовать. В большинстве случаев речь идет о файле `index.js`. Обычно, нам требуется минимум два определения типов (один для входящих пропов (input prop) и один для возвращаемого значения (return prop)) для полноценного определения хука. Предположим, что типизируемый хук имеет такую сигнатуру:
 
-```ts
+```tsx
 const useUntypedHook = (props) => {
   // здесь происходит что-то интересное
   return {
@@ -1119,7 +1122,7 @@ const useUntypedHook = (props) => {
 
 Тогда определение типа будет иметь следующий синтаксис:
 
-```ts
+```tsx
 declare module 'use-untyped-hook' {
   export interface InputProps {} // определение типов для пропов
   export interface ReturnProps {} // определение типов для возвращаемых пропов
@@ -1162,7 +1165,7 @@ export default useDarkMode
 
 Определение типов:
 
-```ts
+```tsx
 declare module 'use-dark-mode' {
   /**
   * Объект с настройками позволяет определять различные аспекты `useDarkMode`
@@ -1229,7 +1232,7 @@ declare module 'use-dark-mode' {
 
 [Опции компилятора](https://www.typescriptlang.org/docs/handbook/compiler-options.html). [Полный список настроек](https://www.typescriptlang.org/tsconfig). Пример настроек для приложений (не подходит для библиотек):
 
-```ts
+```tsx
 {
   "compilerOptions": {
     "incremental": true,
@@ -1283,7 +1286,7 @@ declare module 'use-dark-mode' {
 
 Если вам нужно добавить интерфейс или отсутствующего члена в существующий интерфейс, копировать весь пакет с типами не нужно. Достаточно использовать объединение определений:
 
-```ts
+```tsx
 my-typings.ts
 declare module 'plotly.js' {
   interface PlotlyHTMLElement {
@@ -1301,7 +1304,7 @@ const f = (e: PlotlyHTMLElement) => {
 
 Для быстрого старта можно импортировать модуль как `any`:
 
-```ts
+```tsx
 // my-typings.ts
 declare module 'plotly.js'
 ```
@@ -1310,7 +1313,7 @@ declare module 'plotly.js'
 
 Также можно определять внешние переменные и внешние определения типов:
 
-```ts
+```tsx
 // тип внешней утилиты
 type ToArray<T> = T extends unknown[] ? T : T[]
 // внешняя переменная

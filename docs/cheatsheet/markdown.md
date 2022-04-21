@@ -216,7 +216,7 @@ http://example.com
 </body>
 ```
 
-```javascript
+```js
 // javascript вместо json...
 const user = {
   name: 'John',

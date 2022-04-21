@@ -106,7 +106,7 @@ _Настройки_
   - `string` - включает `CORS` для определенного источника
   - `regexp` - включает `CORS` для источников, совпадающих с регулярным выражением
   - `array` - включает `CORS`для источников, указанных в массиве. Каждый источник может быть строкой или регуляркой
-  - `function` - функция для определения логики включения `CORS`. Данная функция в качестве первого аргумента принимает источник запроса, в качестве второго - колбэк в виде `(error: object, allow: boolean) => void`
+  - `function` - функция для определения логики включения `CORS`. Данная функция в качестве первого аргумента принимает источник запроса, в качестве второго - колбек в виде `(error: object, allow: boolean) => void`
 - `methods` - настраивает заголовок <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">`Access-Control-Allow-Methods`</a>. Принимает строку или массив с разрешенными методами
 - `allowedHeaders` - настраивает заголовок <a href="https://developer.mozilla.org/ru/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">`Access-Control-Allow-Headers`</a>. Принимает строку или массив с разрешенными заголовками
 - `exposedHeaders` - настраивает заголовок <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">`Access-Control-Expose-Headers`</a>. Принимает строку или массив с разрешенными кастомными заголовками. По умолчанию данная натройка отключена

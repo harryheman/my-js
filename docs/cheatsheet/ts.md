@@ -1,8 +1,11 @@
 ---
-sidebar_position: 9
+sidebar_position: 17
+title: Шпаргалка по TypeScript
+description: Шпаргалка по TypeScript
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
 ---
 
-# TypeScript Cheatsheet
+# TypeScript
 
 [Источник](https://www.sitepen.com/blog/typescript-cheat-sheet)&nbsp;&nbsp;👀
 
@@ -342,34 +345,34 @@ class Child
 extends Parent
 
 implements Child, OtherChild {
-    prop: Type
-    defaultProp = 'default value'
-    private _privateProp: Type
-    private readonly _privateReadonlyProp: Type
-    static staticProp: Type
+  prop: Type
+  defaultProp = 'default value'
+  private _privateProp: Type
+  private readonly _privateReadonlyProp: Type
+  static staticProp: Type
 
-    static {
-      try {
-        Child.staticProp = computeStaticProp()
-      } catch {
-        Child.staticProp = defaultValue
-      }
+  static {
+    try {
+      Child.staticProp = computeStaticProp()
+    } catch {
+      Child.staticProp = defaultValue
     }
+  }
 
-    constructor(arg: Type) {
-      super(arg)
-    }
+  constructor(arg: Type) {
+    super(arg)
+  }
 
-    private _privateMethod(): Type {}
+  private _privateMethod(): Type {}
 
-    methodProp: (arg: Type) => ReturnType
-    overloadedMethod(arg: Type): ReturnType
-    overloadedMethod(arg: OtherType): ReturnType
-    overloadedMethod(arg: CommonType): CommonReturnType {}
-    static staticMethod(): ReturnType {}
-    subMethod(arg: Type): ReturnType {
-      super.subMethod(arg)
-    }
+  methodProp: (arg: Type) => ReturnType
+  overloadedMethod(arg: Type): ReturnType
+  overloadedMethod(arg: OtherType): ReturnType
+  overloadedMethod(arg: CommonType): CommonReturnType {}
+  static staticMethod(): ReturnType {}
+  subMethod(arg: Type): ReturnType {
+    super.subMethod(arg)
+  }
 }
 ```
 

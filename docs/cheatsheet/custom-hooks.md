@@ -1,13 +1,15 @@
 ---
-sidebar_position: 7
+sidebar_position: 15
+title: Примеры кастомных хуков React
+description: Примеры кастомных хуков React
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom hooks', 'hooks', 'hook', 'cheatsheet', 'шпаргалка', 'кастомные хуки', 'пользовательские хуки', 'хуки', 'хук']
 ---
 
 # React Custom Hooks
 
 ## useBeforeUnload
 
-Данный хук позволяет выполнять колбеки перед закрытием (перезагрузкой
-) страницы:
+Данный хук позволяет выполнять колбеки перед закрытием (перезагрузкой) страницы:
 
 ```js
 import { useEffect, useRef } from 'react'
@@ -215,7 +217,7 @@ export function App() {
 
 ## useFetch
 
-Хук для выполнения кешируемых HTTP-запросов с помощью `Fetch API`:
+Хук для выполнения кешируемых `HTTP-запросов` с помощью `Fetch API`:
 
 ```js
 import { useState, useRef } from 'react'

@@ -1,10 +1,13 @@
 ---
-sidebar_position: 4
+sidebar_position: 12
+title: Шпаргалка по Styled Components
+description: Шпаргалка по Styled Components
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'styled components', 'css-in-js', 'cheatsheet', 'шпаргалка', 'стилизованные компоненты', 'css в js']
 ---
 
 # Styled Components
 
-> [Styled Components](https://styled-components.com/) - одно из самых популярных решений `CSS-in-JS` для `React-приложений`.
+> [Styled Components](https://styled-components.com/) - это одно из самых популярных на сегодняшний день решений `CSS-in-JS` для `React-приложений`. `CSS-in-JS` позволяет писать стили прямо в `JS`, кастомизировать их различными способами и использовать в виде обычных `React-компонентов`.
 
 ## Установка
 
@@ -47,7 +50,7 @@ body {
 `
 ```
 
-### Стилизация компонента
+### Стилизация компонентов
 
 ```js
 const StyledComponent = styled.tagName`
@@ -218,7 +221,7 @@ const FadeButton = styled(Button)`
 
 ### Полный пример
 
-Обратите внимание на атрибут "as" компонента "Button". Он позволяет изменять HTML-тег, сохраняя стилизацию.
+Обратите внимание на атрибут `as` компонента `Button`. Он позволяет изменять `HTML-тег`, сохраняя стилизацию.
 
 ```js
 import styled, { createGlobalStyle, keyframes } from 'styled-components'

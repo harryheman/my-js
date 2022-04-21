@@ -1,12 +1,15 @@
 ---
-sidebar_position: 6
+sidebar_position: 14
+title: Выдержки из определений типов TypeScript для React
+description: Выдержки из определений типов TypeScript для React
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'type definitions', 'types', 'type', 'cheatsheet', 'шпаргалка', 'определения типов', 'типы', 'тип']
 ---
 
-# React Type Definitions
+# React Types
 
 [Источник](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)&nbsp;&nbsp;👀&
 
-## Хуки <a name="hooks"></a>
+## Хуки
 
 ### Общие типы
 
@@ -1279,7 +1282,7 @@ interface VideoHTMLAttributes<T> extends MediaHTMLAttributes<T> {
 }
 ```
 
-`React` также поддерживает все SVG-атрибуты, HTML и SVG-элементы.
+`React` также поддерживает все `SVG-атрибуты`, `HTML` и `SVG-элементы`.
 
 ### PropTypes
 

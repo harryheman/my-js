@@ -1758,7 +1758,7 @@ npx prisma init
 
 Определяем генератор, источник данных и модели в файле `prisma/schema.prisma`:
 
-```javascript
+```js
 // https://pris.ly/d/prisma-schema
 generator client {
   provider      = "prisma-client-js"
@@ -1866,7 +1866,7 @@ npx prisma migrate dev --name init
 
 Создаем файл `prisma/seed.js` с кодом для заполнения БД начальными данными:
 
-```javascript
+```js
 import Prisma from '@prisma/client'
 const { PrismaClient } = Prisma
 
@@ -1966,7 +1966,7 @@ npx prisma studio
 
 Содержание файла `index.js`:
 
-```javascript
+```js
 // импортируем библиотеки и утилиты
 import express from 'express'
 import cors from 'cors'
@@ -2028,7 +2028,7 @@ app.listen(5000, () => {
 
 Начнем с роутера приложения (`routes/index.js`):
 
-```javascript
+```js
 import { Router } from 'express'
 import todoRoutes from './todo.routes.js'
 import settingsRoutes from './settings.routes.js'
@@ -2043,7 +2043,7 @@ export default router
 
 Роутер для настроек (`routes/settings.routes.js`):
 
-```javascript
+```js
 import { Router } from 'express'
 import { prisma } from '../index.js'
 
@@ -2078,7 +2078,7 @@ export default router
 
 Роутер для задач (`routes/todo.routes.js`):
 
-```javascript
+```js
 import { Router } from 'express'
 import { prisma } from '../index.js'
 
@@ -2155,7 +2155,7 @@ export default router
 
 Разметка:
 
-```javascript
+```js
 <template>
   <div id="app">
     <h1>Admin</h1>
@@ -2264,7 +2264,7 @@ button:active {
 
 Скрипт:
 
-```javascript
+```js
 // импортируем компонент для обновления настроек
 import Settings from './Settings'
 
@@ -2312,7 +2312,7 @@ export default {
 
 Разметка:
 
-```javascript
+```js
 <template>
   <!-- Загрузка -->
   <div v-if="loading">Loading...</div>
@@ -2363,7 +2363,7 @@ export default {
 
 Скрипт:
 
-```javascript
+```js
 export default {
   // название компонента
   name: 'Settings',
@@ -2452,7 +2452,7 @@ yarn add zustand
 
 Начнем с API для настроек (`api/settings.api.js`):
 
-```javascript
+```js
 // конечная точка
 const API_URI = 'http://localhost:5000/api/settings'
 
@@ -2474,7 +2474,7 @@ export default settingsApi
 
 API для задач (`api/todo.api.js`):
 
-```javascript
+```js
 // конечная точка
 const API_URI = 'http://localhost:5000/api/todo'
 
@@ -2542,7 +2542,7 @@ export default todoApi
 
 Хранилище состояния в виде пользовательского хука (`hooks/useStore.js`):
 
-```javascript
+```js
 import create from 'zustand'
 // API для настроек
 import settingsApi from '../api/settings.api'
@@ -2643,7 +2643,7 @@ export default useStore
 
 Компонент для создания новой задачи (`components/TodoForm.js`):
 
-```javascript
+```js
 import { useState, useEffect } from 'react'
 import useStore from '../hooks/useStore'
 
@@ -2686,7 +2686,7 @@ export default function TodoForm() {
 
 Компонент для формирования списка задач (`components/TodoList.js`):
 
-```javascript
+```js
 import useStore from '../hooks/useStore'
 
 export default function TodoList() {
@@ -2723,7 +2723,7 @@ export default function TodoList() {
 
 Основной компонент приложения (`App.js`):
 
-```javascript
+```js
 import { useEffect } from 'react'
 import './App.css'
 import useStore from './hooks/useStore'
@@ -3041,7 +3041,7 @@ RUN yarn build
 
 _Обратите внимание_: сборка клиента будет находится в директории `client/build`, а сборка админки - в директории `admin/dist`. В файле `api/index.js` можно найти такие строки:
 
-```javascript
+```js
 if (process.env.ENV === 'production') {
   const clientBuildPath = join(__dirname, 'client', 'build')
   const adminDistPath = join(__dirname, 'admin', 'dist')
