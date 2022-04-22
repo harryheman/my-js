@@ -35,6 +35,9 @@ id: intro-cheatsheet
 - :memo:&nbsp;&nbsp;[Шпаргалка по Cors](./cors)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Helmet](./helmet)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Google Spreadsheet](./google-spreadsheet)
+
+---
+
 - :memo:&nbsp;&nbsp;[Шпаргалка по SQL](./sql)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Webpack](./webpack)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Vite](./vite)

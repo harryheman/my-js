@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: Карманная книга по TypeScript
+description: Карманная книга по TypeScript
+keywords: ['javascript', 'js', 'typescript', 'ts', 'pocket book', 'guide', 'карманная книга', 'руководство']
 ---
 
 # TypeScript

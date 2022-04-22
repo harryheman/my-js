@@ -1,10 +1,13 @@
 ---
-sidebar_position: 14
+sidebar_position: 5
+title: Руководство по Prisma
+description: Руководство по Prisma
+keywords: ['javascript', 'js', 'prisma', 'orm', 'guide', 'руководство']
 ---
 
 # Prisma
 
-> [Prisma](https://www.prisma.io/) - это современное [ORM](https://ru.wikipedia.org/wiki/ORM) для [Node.js](https://nodejs.org/en/) и [TypeScript](https://www.typescriptlang.org/). Проще говоря, `Prisma` - это инструмент, позволяющий работать с реляционными (`PostgreSQL`, `MySQL`, `SQL Server`, `SQLite`) и нереляционной (`MongoDB`) базами данных с помощью `JavaScript` или `TypeScript` без использования [`SQL`](https://ru.wikipedia.org/wiki/SQL) (хотя такая возможность имеется).
+> [Prisma](https://www.prisma.io/) - это современное [ORM](https://ru.wikipedia.org/wiki/ORM) (Object Relational Mapping - объектно-реляционное отображение или связывание) для [Node.js](https://nodejs.org/en/) и [TypeScript](https://www.typescriptlang.org/). Проще говоря, `Prisma` - это инструмент, позволяющий работать с реляционными (`PostgreSQL`, `MySQL`, `SQL Server`, `SQLite`) и нереляционной (`MongoDB`) базами данных с помощью `JavaScript` или `TypeScript` без использования [`SQL`](https://ru.wikipedia.org/wiki/SQL) (хотя такая возможность имеется).
 
 ## Инициализация проекта
 

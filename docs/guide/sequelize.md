@@ -1,10 +1,13 @@
 ---
-sidebar_position: 15
+sidebar_position: 6
+title: Руководство по Sequelize
+description: Руководство по Sequelize
+keywords: ['javascript', 'js', 'sequelize', 'orm', 'guide', 'руководство']
 ---
 
 # Sequelize
 
-> [Sequelize](https://sequelize.org/master/) - это [ORM](https://ru.wikipedia.org/wiki/ORM) для работы с такими реляционными базами данных как `Postgres`, `MySQL`, `MariaDB`, `SQLite` и `MSSQL`. Это одно из самых популярных решений для [Node.js](https://nodejs.org/en/), хотя лично мне больше нравится [Prisma](https://www.prisma.io/).
+> [Sequelize](https://sequelize.org/master/) - это [ORM](https://ru.wikipedia.org/wiki/ORM) для работы с такими реляционными базами данных как `Postgres`, `MySQL`, `MariaDB`, `SQLite` и `MSSQL`. На сегодняшний день это самое популярное решений для [Node.js](https://nodejs.org/en/).
 
 ## Начало работы
 
