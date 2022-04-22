@@ -3,7 +3,7 @@ const config = {
   title: 'MyJavaScript',
   tagline:
     'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://my-js.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

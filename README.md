@@ -1,1 +1,3 @@
-# My JavaScript
+# MyJavaScript
+
+> WIP
