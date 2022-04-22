@@ -289,7 +289,7 @@ server.listen(3000, () => {
 
 ## Пример
 
-- :link:&nbsp;&nbsp;[Код](./todo)&nbsp;&nbsp;👀
+<!-- - :link:&nbsp;&nbsp;[Код](./todo)&nbsp;&nbsp;👀 -->
 - :link:&nbsp;&nbsp;[Песочница](https://codesandbox.io/s/json-server-todo-d5rn3)&nbsp;&nbsp;👀
 
 ### Создание проекта и установка зависимостей

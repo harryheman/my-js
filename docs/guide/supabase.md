@@ -1,20 +1,15 @@
 ---
-sidebar_position: 18
+sidebar_position: 15
+title: Руководство по Supabase
+description: Руководство по Supabase
+keywords: ['javascript', 'js', 'supabase', 'saas', 'baas', 'guide', 'руководство', 'firebase', 'api', 'database', 'file storage', 'realtime', 'программный интерфейс приложения', 'база данных', 'файловое хранилище', 'обработка изменений в режиме реального времени']
 ---
 
 # Supabase
 
-> `Supabase`, как и `Firebase` - это [`SaaS`](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%B0%D0%BA_%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0) или [`BaaS`](https://ru.bmstu.wiki/BaaS_(Backend-as-a-Service)). Что это означает? Это означает, что в случае с fullstack app мы разрабатываем только клиентскую часть, а все остальное предоставляется `Supabase` через пользовательские комплекты для разработки программного обеспечения (SDK) и интерфейсы прикладного программирования (API). Под "всем остальным" подразумевается сервис аутентификации (включая возможность использования сторонних провайдеров), база данных (PostgreSQL), файловое хранилище, realtime (регистрацию модификации данных в реальном времени), и сервер, который все это обслуживает.
+> `Supabase`, как и `Firebase` - это [`SaaS`](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%B0%D0%BA_%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0) или [`BaaS`](https://ru.bmstu.wiki/BaaS_(Backend-as-a-Service)). Что это означает? Это означает, что в случае с фулстек-приложением мы разрабатываем только клиентскую часть, а все остальное предоставляется `Supabase` через пользовательские комплекты для разработки программного обеспечения (`SDK`) и программные интерфейсы приложения (`API`). Под "всем остальным" подразумевается сервис аутентификации (включая возможность использования сторонних провайдеров), база данных (`PostgreSQL`), файловое хранилище, обработку модификации данных в режиме реального времени и сервер, который все это обслуживает.
 
-## Содержание
-
-- [Клиент (Client)](#клиент-client)
-- [Аутентификация (Auth)](#аутентификация-auth)
-- [База данных (Database)](#база-данных-database)
-- [Модификаторы (Modifiers)](#модификаторы-modifiers)
-- [Фильтры (Filters)](#фильтры-filters)
-- [Хранилище (Storage)](#хранилище-storage)
-- [Регистрация модификации данных в режиме реального времени (Realtime)](#регистрация-модификации-данных-в-режиме-реального-времени-realtime)
+[Пример использования `Supabase` для разработки фулстек-приложения для публикации постов](https://github.com/harryheman/supabase-social-app)&nbsp;&nbsp;👀
 
 _Установка_
 
@@ -28,7 +23,9 @@ _Импорт_
 import supabase from '@supabase/supabase-js'
 ```
 
-# Клиент (Client)
+## Теоретические основы
+
+### Клиент (Client)
 
 _Инициализация_
 
@@ -62,7 +59,7 @@ const supabase = createClient('https://my-app.supabase.co', 'public-anon-key', {
 })
 ```
 
-# Аутентификация (Auth)
+### Аутентификация (Auth)
 
 __Регистрация__
 
@@ -660,7 +657,7 @@ const { data, error } = await supabase
  .eq('city_name', 'The Shire')
 ```
 
-# Модификаторы (Modifiers)
+### Модификаторы (Modifiers)
 
 Модификаторы используются в запросах на выборку данных (`select`). Они также могут использоваться совместно с методом `rpc`, когда он возвращает таблицу.
 
@@ -813,7 +810,7 @@ async function getUserById(user_id) {
 
 Существует также модификатор `maybeSingle`, возвращающий хотя бы одну строку.
 
-# Фильтры (Filters)
+### Фильтры (Filters)
 
 Фильтры могут использоваться в запросах `select`, `update` и `delete`, а также в методе `rpc`, когда функция возвращает таблицу.
 
@@ -887,7 +884,7 @@ const { data, error } = await supabase
 
 Также имеется несколько других (более специфичных) фильтров.
 
-# Хранилище (Storage)
+### Хранилище (Storage)
 
 Для _создания_ файлового хранилища используется метод `createBucket`:
 
@@ -1182,7 +1179,7 @@ async function getFileUrl({ bucketName, filePath }) {
 
 Разрешения не требуются.
 
-# Регистрация модификации данных в режиме реального времени (Realtime)
+### Обработка модификации данных в режиме реального времени (Realtime)
 
 __Подписка на изменения__
 
@@ -1287,4 +1284,1831 @@ __Получение списка подписок__
 const allSubscriptions = supabase.getSubscriptions()
 ```
 
-The End.
+## Разработка приложения
+
+### Подготовка и настройка проекта
+
+_Обратите внимание_: для разработки клиента я буду использовать [React](https://ru.reactjs.org/), но вы можете использовать свой любимый `JS-фреймворк` - функционал, связанный с `Supabase`, будет что называется `framework agnostic`. Также _обратите внимание_, что разработанное нами приложение не будет `production ready`, однако, по-возможности, я постараюсь акцентировать ваше внимание на необходимых доработках.
+
+Создаем шаблон проекта с помощью [Vite](https://vitejs.dev/):
+
+```bash
+# supabase-social-app - название приложения
+# --template react - используемый шаблон
+yarn create vite supabase-social-app --template react
+```
+
+Регистрируемся или авторизуемся на [supabase.com](https://supabase.com/) и создаем новый проект:
+
+<img src="https://habrastorage.org/webt/vy/nq/sr/vynqsroie4_pfj5uafccto74u1m.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/j9/n-/sk/j9n-sk5svcil9pydtehwwf83hcu.png" />
+<br />
+
+Копируем ключ и `URL` на главной странице панели управления проектом:
+
+<img src="https://habrastorage.org/webt/ce/e8/ig/cee8ig38ny_za1mfgyedf061apm.png" />
+<br />
+
+Записываем их в переменные среды окружения. Для этого создаем в корневой директории проекта (`supabase-social-app`) файл `.env` следующего содержания:
+
+```bash
+VITE_SUPABASE_URL=https://your-url.supabase.co
+VITE_SUPABASE_KEY=your-key
+```
+
+_Обратите внимание_: префикс `VITE_` в данном случае является обязательным.
+
+На странице `Authentication` панели управления в разделе `Settings` отключаем необходимость подтверждения адреса электронной почты новым пользователем (`Enable email confirmation`):
+
+<img src="https://habrastorage.org/webt/4s/a2/sv/4sa2svpaiz51tai2hkxrucpw9vo.png" />
+<br />
+
+_Обратите внимание_: при разработке нашего приложения мы пропустим шаг подтверждения пользователями своего `email` после регистрации в целях экономии времени. В реальном приложении в объекте `user` будет содержаться поле `isEmailConfirmed`, например - индикатор того, подтвердил ли пользователь свой `email`. Значение данного поля будет определять логику работы приложения в части авторизации.
+
+В базе данных нам потребуется 3 таблицы:
+
+- `users` - пользователи;
+- `posts` - посты пользователей;
+- `comments` - комментарии к постам.
+
+`Supabase` предоставляет графический интерфейс для работы с таблицами на странице `Table Editor`:
+
+<img src="https://habrastorage.org/webt/vt/sv/01/vtsv01him07-j_t8opbcf0uthsy.png" />
+<br />
+
+Но мы воспользуемся редактором [SQL](https://ru.wikipedia.org/wiki/SQL) на странице `SQL Editor` (потому что не ищем легких путей)). Создаем новый запрос (`New query`) и вставляем такой `SQL`:
+
+```sql
+CREATE TABLE users (
+  id text PRIMARY KEY NOT NULL,
+  email text NOT NULL,
+  user_name text NOT NULL,
+  first_name text,
+  last_name text,
+  age int,
+  avatar_url text,
+  created_at timestamp DEFAULT now()
+);
+
+CREATE TABLE posts (
+  id serial PRIMARY KEY,
+  title text NOT NULL,
+  content text NOT NULL,
+  user_id text NOT NULL,
+  created_at timestamp DEFAULT now()
+);
+
+CREATE TABLE comments (
+  id serial PRIMARY KEY,
+  content text NOT NULL,
+  user_id text NOT NULL,
+  post_id int NOT NULL,
+  created_at timestamp DEFAULT now()
+);
+```
+
+_Обратите внимание_: мы не будем использовать внешние ключи (`FOREIGN KEY`) в полях `user_id` и `post_id`, поскольку это усложнит работу с `Supabase` на клиенте и потребует реализации дополнительной логики, связанной с редактированием и удалением связанных таблиц (`ON UPDATE` и `ON DELETE`).
+
+Нажимаем на кнопку `Run`:
+
+<img src="https://habrastorage.org/webt/e1/pr/hg/e1prhg0cepvhxpbzttfqb9nkpd0.png" />
+<br />
+
+Мы можем увидеть созданные нами таблицы на страницах `Table Editor` и `Database` панели управления:
+
+<img src="https://habrastorage.org/webt/hh/lf/az/hhlfaz0juvuueylxwkpw70ldylq.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/pi/7a/ye/pi7ayenyuqulz8jy_hy2lqtado8.png" />
+<br />
+
+_Обратите внимание_ на предупреждение `RLS not enabled` на странице `Table Editor`. Для доступа к таблицам рекомендуется устанавливать политики безопасности на уровне строк/политики защиты строк ([Row Level Security](https://postgrespro.ru/docs/postgresql/14/ddl-rowsecurity)). Для таблиц мы этого делать не будем, но нам придется сделать это для хранилища, в котором будут находиться аватары пользователей.
+
+Создаем новый "бакет" на странице `Storage` панели управления (`Create new bucket`):
+
+<img src="https://habrastorage.org/webt/rb/wx/dh/rbwxdhlc-ne6uycyhm2voc2kfke.png" />
+<br />
+
+Делаем его публичным (`Make public`):
+
+<img src="https://habrastorage.org/webt/fn/sd/rv/fnsdrvpmmmqtrd8uc09ovcwsbgw.png" />
+<br />
+
+В разделе `Policies` создаем новую политику (`New policy`). Выбираем шаблон `Give users access to a folder only to authenticated users` (предоставление доступа к директории только для аутентифицированных пользователей) - `Use this template`:
+
+<img src="https://habrastorage.org/webt/xv/rb/hp/xvrbhpcrhrlysu9rt2kywcpoyr0.png" />
+<br />
+
+Выбираем `SELECT`, `INSERT` и `UPDATE` и немного редактируем определение политики:
+
+<img src="https://habrastorage.org/webt/fp/mc/js/fpmcjsj4bc5tksmnro6zwq31kiw.png" />
+<br />
+
+Нажимаем `Review` и затем `Create policy`.
+
+Последнее, что нам осталось сделать для настройки проекта - включить регистрацию изменений данных для всех таблиц.
+
+По умолчанию `Supabase` создает публикацию (`publication`) `supabase_realtime`. Нам нужно только добавить в нее наши таблицы. Для этого переходим в редактор `SQL` и вставляем такую строку:
+
+```sql
+alter publication supabase_realtime
+add table users, posts, comments;
+```
+
+Нажимаем `RUN`.
+
+Устанавливаем несколько дополнительных зависимостей для клиента:
+
+```bash
+# производственные зависимости
+yarn add @supabase/supabase-js dotenv react-icons react-router-dom zustand
+
+# зависимость для разработки
+yarn add -D sass
+```
+
+- [@supabase/supabase-js](https://www.npmjs.com/package/@supabase/supabase-js) - `SDK` для взаимодействия с `Supabase`;
+- [dotenv](https://www.npmjs.com/package/dotenv) - утилита для доступа к переменным среды окружения;
+- [react-icons](https://react-icons.github.io/react-icons/) - большая коллекция иконок в виде `React-компонентов`;
+- [react-router-dom](https://reactrouter.com/docs/en/v6/getting-started/overview) - библиотека для маршрутизации в `React-приложениях`;
+- [zustand](https://github.com/pmndrs/zustand) - инструмент для управления состоянием `React-приложений`;
+- [sass](https://sass-scss.ru/) - `CSS-препроцессор`.
+
+На этом подготовка и настройка проекта завершены. Переходим к разработке клиента.
+
+### Клиент
+
+Структура директории `src` будет следующей:
+
+```
+- api - `API` для взаимодействия с `Supabase`
+  - comment.js
+  - db.js
+  - post.js
+  - user.js
+- components - компоненты
+  - AvatarUploader.jsx - для загрузки аватара пользователя
+  - CommentList.jsx - список комментариев
+  - Error.jsx - ошибка (не надо так делать в продакшне))
+  - Field.jsx - поле формы
+  - Form.jsx - форма
+  - Layout.jsx - макет страницы
+  - Loader.jsx - индикатор загрузки
+  - Nav.jsx - панель навигации
+  - PostList.jsx - список постов
+  - PostTabs.jsx - вкладки постов
+  - Protected.jsx - защищенная страница
+  - UserUpdater.jsx - для обновления данных пользователя
+- hooks - хуки
+  - useForm.js - для формы
+  - useStore.js - для управления состоянием приложения
+- pages - страницы
+  - About.jsx
+  - Blog.jsx - для всех постов
+  - Home.jsx
+  - Login.jsx - для авторизации
+  - Post.jsx - для одного поста
+  - Profile.jsx - для профиля пользователя
+  - Register.jsx - для регистрации
+- styles - стили
+- supabase
+  - index.js - создание и экспорт клиента `Supabase`
+- utils - утилиты
+  - serializeUser.js
+- App.jsx - основной компонент приложения
+- main.jsx - основной файл клиента
+```
+
+С вашего позволения, я не буду останавливаться на стилях: там нет ничего особенного, просто скопируйте их из репозитория.
+
+Настроим алиасы (alias - синоним) для облегчения импорта компонентов в `vite.config.js`:
+
+```javascript
+import react from '@vitejs/plugin-react'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import { defineConfig } from 'vite'
+
+// абсолютный путь к текущей директории
+const _dirname = dirname(fileURLToPath(import.meta.url))
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': resolve(_dirname, './src'),
+      a: resolve(_dirname, './src/api'),
+      c: resolve(_dirname, './src/components'),
+      h: resolve(_dirname, './src/hooks'),
+      p: resolve(_dirname, './src/pages'),
+      s: resolve(_dirname, './src/supabase'),
+      u: resolve(_dirname, './src/utils')
+    }
+  }
+})
+```
+
+Начнем создание нашего клиента с разработки `API`.
+
+#### API
+
+Для работы `API` нужен клиент для взаимодействия с `Supabase`.
+
+Создаем и экспортируем его в `supabase/index.js`:
+
+```javascript
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  // такой способ доступа к переменным среды окружения является уникальным для `vite`
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
+)
+
+export default supabase
+```
+
+`API` для работы со всеми таблицами базы данных (`api/db.js`):
+
+```javascript
+import supabase from 's'
+
+// метод для получения данных из всех таблиц
+async function fetchAllData() {
+  try {
+    // пользователи
+    const { data: users } = await supabase
+      .from('users')
+      .select('id, email, user_name')
+    // посты
+    const { data: posts } = await supabase
+      .from('posts')
+      .select('id, title, content, user_id, created_at')
+    // комментарии
+    const { data: comments } = await supabase
+      .from('comments')
+      .select('id, content, user_id, post_id, created_at')
+    return { users, posts, comments }
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const dbApi = { fetchAllData }
+
+export default dbApi
+```
+
+Утилита для сериализации объекта пользователя (`utils/serializeUser.js`):
+
+```javascript
+const serializeUser = (user) =>
+  user
+    ? {
+        id: user.id,
+        email: user.email,
+        ...user.user_metadata
+      }
+    : null
+
+export default serializeUser
+```
+
+Все данные пользователей, указываемые при регистрации, кроме `email` и `password`, записываются в поле `user_metadata`, что не очень удобно.
+
+`API` для работы с таблицей `users` - пользователи (`api/user.js`):
+
+```javascript
+import supabase from 's'
+import serializeUser from 'u/serializeUser'
+
+// метод для получения данных пользователя из базы при наличии аутентифицированного пользователя
+// объект, возвращаемый методом `auth.user`, извлекается из локального хранилища
+const get = async () => {
+  const user = supabase.auth.user()
+  if (user) {
+    try {
+      const { data, error } = await supabase
+        .from('users')
+        .select()
+        .match({ id: user.id })
+        .single()
+      if (error) throw error
+      console.log(data)
+      return data
+    } catch (e) {
+      throw e
+    }
+  }
+  return null
+}
+
+// метод для регистрации пользователя
+const register = async (data) => {
+  const { email, password, user_name } = data
+  try {
+    // регистрируем пользователя
+    const { user, error } = await supabase.auth.signUp(
+      // основные/обязательные данные
+      {
+        email,
+        password
+      },
+      // дополнительные/опциональные данные
+      {
+        data: {
+          user_name
+        }
+      }
+    )
+    if (error) throw error
+    // записываем пользователя в базу
+    const { data: _user, error: _error } = await supabase
+      .from('users')
+      // сериализуем объект пользователя
+      .insert([serializeUser(user)])
+      .single()
+    if (_error) throw _error
+    return _user
+  } catch (e) {
+    throw e
+  }
+}
+
+// метод для авторизации пользователя
+const login = async (data) => {
+  try {
+    // авторизуем пользователя
+    const { user, error } = await supabase.auth.signIn(data)
+    if (error) throw error
+    // получаем данные пользователя из базы
+    const { data: _user, error: _error } = await supabase
+      .from('users')
+      .select()
+      .match({ id: user.id })
+      .single()
+    if (_error) throw _error
+    return _user
+  } catch (e) {
+    throw e
+  }
+}
+
+// метод для выхода из системы
+const logout = async () => {
+  try {
+    const { error } = await supabase.auth.signOut()
+    if (error) throw error
+    return null
+  } catch (e) {
+    throw e
+  }
+}
+
+// метод для обновления данных пользователя
+const update = async (data) => {
+  // получаем объект с данными пользователя
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { data: _user, error } = await supabase
+      .from('users')
+      .update(data)
+      .match({ id: user.id })
+      .single()
+    if (error) throw error
+    return _user
+  } catch (e) {
+    throw e
+  }
+}
+
+// метод для сохранения аватара пользователя
+// см. ниже
+
+const userApi = { get, register, login, logout, update, uploadAvatar }
+
+export default userApi
+```
+
+Метод для сохранения аватара пользователя:
+
+```javascript
+// адрес хранилища
+const STORAGE_URL =
+  `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/`
+
+// метод принимает файл - аватар пользователя
+const uploadAvatar = async (file) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  const { id } = user
+  // извлекаем расширение из названия файла
+  // метод `at` появился в `ECMAScript` в этом году
+  // он позволяет простым способом извлекать элементы массива с конца
+  const ext = file.name.split('.').at(-1)
+  // формируем название аватара
+  const name = id + '.' + ext
+  try {
+    // загружаем файл в хранилище
+    const {
+      // возвращаемый объект имеет довольно странную форму
+      data: { Key },
+      error
+    } = await supabase.storage.from('avatars').upload(name, file, {
+      // не кешировать файл - это важно!
+      cacheControl: 'no-cache',
+      // перезаписывать аватар при наличии
+      upsert: true
+    })
+    if (error) throw error
+    // формируем путь к файлу
+    const avatar_url = STORAGE_URL + Key
+    // обновляем данные пользователя -
+    // записываем путь к аватару
+    const { data: _user, error: _error } = await supabase
+      .from('users')
+      .update({ avatar_url })
+      .match({ id })
+      .single()
+    if (_error) throw _error
+    // возвращаем обновленного пользователя
+    return _user
+  } catch (e) {
+    throw e
+  }
+}
+```
+
+`API` для работы с таблицей `posts` - посты (`api/post.js`):
+
+```javascript
+import supabase from 's'
+
+// метод для создания поста
+const create = async (postData) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { data, error } = await supabase
+      .from('posts')
+      .insert([postData])
+      .single()
+    if (error) throw error
+    return data
+  } catch (e) {
+    throw e
+  }
+}
+
+// для обновления поста
+const update = async (data) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { data: _data, error } = await supabase
+      .from('posts')
+      .update({ ...postData })
+      .match({ id: data.id, user_id: user.id })
+    if (error) throw error
+    return _data
+  } catch (e) {
+    throw e
+  }
+}
+
+// для удаления поста
+const remove = async (id) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    // удаляем пост
+    const { error } = await supabase
+      .from('posts')
+      .delete()
+      .match({ id, user_id: user.id })
+    if (error) throw error
+    // удаляем комментарии к этому посту
+    const { error: _error } = await supabase
+      .from('comments')
+      .delete()
+      .match({ post_id: id })
+    if (_error) throw _error
+  } catch (e) {
+    throw e
+  }
+}
+
+const postApi = { create, update, remove }
+
+export default postApi
+```
+
+`API` для работы с таблицей `comments` - комментарии (`api/comment.js`):
+
+```javascript
+import supabase from 's'
+
+// метод для создания комментария
+const create = async (commentData) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { data, error } = await supabase
+      .from('comments')
+      .insert([{ ...commentData, user_id: user.id }])
+      .single()
+    if (error) throw error
+    return data
+  } catch (e) {
+    throw e
+  }
+}
+
+// для обновления комментария
+const update = async (commentData) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { data, error } = await supabase
+      .from('comments')
+      .update({ ...commentData })
+      .match({ id: commentData.id, user_id: user.id })
+    if (error) throw error
+    return data
+  } catch (e) {
+    throw e
+  }
+}
+
+// для удаления комментария
+const remove = async (id) => {
+  const user = supabase.auth.user()
+  if (!user) return
+  try {
+    const { error } = await supabase
+      .from('comments')
+      .delete()
+      .match({ id, user_id: user.id })
+    if (error) throw error
+  } catch (e) {
+    throw e
+  }
+}
+
+const commentApi = { create, update, remove }
+
+export default commentApi
+```
+
+### Хуки
+
+Для управления состоянием нашего приложения мы будем использовать `zustand`, который позволяет создавать хранилище в форме хука.
+
+Создаем хранилище в файле `hooks/useStore.js`:
+
+```javascript
+import create from 'zustand'
+import dbApi from 'a/db'
+import postApi from 'a/post'
+
+const useStore = create((set, get) => ({
+  // состояние загрузки
+  loading: true,
+  // функция для его обновления
+  setLoading: (loading) => set({ loading }),
+  // состояние ошибки
+  error: null,
+  // функция для его обновления
+  setError: (error) => set({ loading: false, error }),
+  // состояние пользователя
+  user: null,
+  // функция для его обновления
+  setUser: (user) => set({ user }),
+
+  // пользователи
+  users: [],
+  // посты
+  posts: [],
+  // комментарии
+  comments: [],
+
+  // мы можем "тасовать" наши данные как угодно,
+  // например, так:
+  // объект постов с доступом по `id` поста
+  postsById: {},
+  // объект постов с доступом по `id` пользователя
+  postsByUser: {},
+  // карта "имя пользователя - `id` поста"
+  userByPost: {},
+  // объект комментариев с доступом по `id` поста
+  commentsByPost: {},
+  // массив всех постов с авторами и количеством комментариев
+  allPostsWithCommentCount: [],
+  // далее важно определить правильный порядок формирования данных
+
+  // формируем объект комментариев с доступом по `id` поста
+  getCommentsByPost() {
+    const { users, posts, comments } = get()
+    const commentsByPost = posts.reduce((obj, post) => {
+      obj[post.id] = comments
+        .filter((comment) => comment.post_id === post.id)
+        .map((comment) => ({
+          ...comment,
+          // добавляем в объект автора
+          author: users.find((user) => user.id === comment.user_id).user_name
+        }))
+      return obj
+    }, {})
+    set({ commentsByPost })
+  },
+  // формируем карту "имя пользователя - `id` поста"
+  getUserByPost() {
+    const { users, posts } = get()
+    const userByPost = posts.reduce((obj, post) => {
+      obj[post.id] = users.find((user) => user.id === post.user_id).user_name
+      return obj
+    }, {})
+    set({ userByPost })
+  },
+  // формируем объект постов с доступом по `id` пользователя
+  getPostsByUser() {
+    // здесь мы используем ранее сформированный объект `commentsByPost`
+    const { users, posts, commentsByPost } = get()
+    const postsByUser = users.reduce((obj, user) => {
+      obj[user.id] = posts
+        .filter((post) => post.user_id === user.id)
+        .map((post) => ({
+          ...post,
+          // пользователь может редактировать и удалять свои посты
+          editable: true,
+          // добавляем в объект количество комментариев
+          commentCount: commentsByPost[post.id].length
+        }))
+      return obj
+    }, {})
+    set({ postsByUser })
+  },
+  // формируем объект постов с доступом по `id` поста
+  getPostsById() {
+    // здесь мы используем ранее сформированные объекты `userByPost` и `commentsByPost`
+    const { posts, user, userByPost, commentsByPost } = get()
+    const postsById = posts.reduce((obj, post) => {
+      obj[post.id] = {
+        ...post,
+        // добавляем в объект комментарии
+        comments: commentsByPost[post.id],
+        // и их количество
+        commentCount: commentsByPost[post.id].length
+      }
+      // обратите внимание на оператор опциональной последовательности (`?.`)
+      // пользователь может отсутствовать (`null`)
+
+      // если пользователь является автором поста
+      if (post.user_id === user?.id) {
+        // значит, он может его редактировать и удалять
+        obj[post.id].editable = true
+      // иначе
+      } else {
+        // добавляем в объект имя автора поста
+        obj[post.id].author = userByPost[post.id]
+      }
+      return obj
+    }, {})
+    set({ postsById })
+  },
+  // формируем массив всех постов с авторами и комментариями
+  getAllPostsWithCommentCount() {
+    // здесь мы используем ранее сформированные объекты `userByPost` и `commentsByPost`
+    const { posts, user, userByPost, commentsByPost } = get()
+    const allPostsWithCommentCount = posts.map((post) => ({
+      ...post,
+      // является ли пост редактируемым
+      editable: user?.id === post.user_id,
+      // добавляем в объект автора
+      author: userByPost[post.id],
+      // и количество комментариев
+      commentCount: commentsByPost[post.id].length
+    }))
+    set({ allPostsWithCommentCount })
+  },
+
+  // метод для получения всех данных и формирования вспомогательных объектов и массива
+  async fetchAllData() {
+    set({ loading: true })
+
+    const {
+      getCommentsByPost,
+      getUserByPost,
+      getPostsByUser,
+      getPostsById,
+      getAllPostsWithCommentCount
+    } = get()
+
+    const { users, posts, comments } = await dbApi.fetchAllData()
+
+    set({ users, posts, comments })
+
+    getCommentsByPost()
+    getPostsByUser()
+    getUserByPost()
+    getPostsById()
+    getAllPostsWithCommentCount()
+
+    set({ loading: false })
+  },
+
+  // метод для удаления поста
+  // данный метод является глобальным, поскольку вызывается на разных уровнях приложения
+  removePost(id) {
+    set({ loading: true })
+    postApi.remove(id).catch((error) => set({ error }))
+  }
+}))
+
+export default useStore
+```
+
+Хук для работы с формами (`hooks/useForm.js`):
+
+```javascript
+import { useState, useEffect } from 'react'
+
+// хук принимает начальное состояние формы
+// чтобы немного облегчить себе жизнь,
+// мы будем исходить из предположения,
+// что все поля формы являются обязательными
+export default function useForm(initialData) {
+  const [data, setData] = useState(initialData)
+  const [disabled, setDisabled] = useState(true)
+
+  useEffect(() => {
+    // если какое-либо из полей является пустым
+    setDisabled(!Object.values(data).every(Boolean))
+  }, [data])
+
+  // метод для изменения полей формы
+  const change = ({ target: { name, value } }) => {
+    setData({ ...data, [name]: value })
+  }
+
+  return { data, change, disabled }
+}
+```
+
+Компонент поля формы выглядит следующим образом (`components/Field.jsx`):
+
+```javascript
+export const Field = ({ label, value, change, id, type, ...rest }) => (
+  <div className='field'>
+    <label htmlFor={id}>{label}</label>
+    <input
+      type={type}
+      id={id}
+      name={id}
+      required
+      value={value}
+      onChange={change}
+      {...rest}
+    />
+  </div>
+)
+```
+
+А компонент формы так (`components/Form.jsx`):
+
+```javascript
+import useForm from 'h/useForm'
+import { Field } from './Field'
+
+// функция принимает массив полей формы, функцию для отправки формы и подпись к кнопке для отправки формы
+export const Form = ({ fields, submit, button }) => {
+  // некоторые поля могут иметь начальные значения,
+  // например, при обновлении данных пользователя
+  const initialData = fields.reduce((o, f) => {
+    o[f.id] = f.value || ''
+    return o
+  }, {})
+  // используем хук
+  const { data, change, disabled } = useForm(initialData)
+
+  // функция для отправки формы
+  const onSubmit = (e) => {
+    if (disabled) return
+    e.preventDefault()
+    submit(data)
+  }
+
+  return (
+    <form onSubmit={onSubmit}>
+      {fields.map((f) => (
+        <Field key={f.id} {...f} value={data[f.id]} change={change} />
+      ))}
+      <button disabled={disabled} className='success'>
+        {button}
+      </button>
+    </form>
+  )
+}
+```
+
+Рассмотрим пример использования хука для работы с хранилищем состояния и компонента формы на странице для регистрации пользователя (`pages/Register.jsx`):
+
+```javascript
+import userApi from 'a/user'
+import { Form } from 'c'
+import useStore from 'h/useStore'
+import { useNavigate } from 'react-router-dom'
+
+// начальное состояние формы
+const fields = [
+  {
+    id: 'user_name',
+    label: 'Username',
+    type: 'text'
+  },
+  {
+    id: 'email',
+    label: 'Email',
+    type: 'email'
+  },
+  {
+    id: 'password',
+    label: 'Password',
+    type: 'password'
+  },
+  {
+    id: 'confirm_password',
+    label: 'Confirm password',
+    type: 'password'
+  }
+]
+
+export const Register = () => {
+  // извлекаем из состояния методы для установки пользователя, загрузки и ошибки
+  const { setUser, setLoading, setError } = useStore(
+    ({ setUser, setLoading, setError }) => ({ setUser, setLoading, setError })
+  )
+  // метод для ручного перенаправления
+  const navigate = useNavigate()
+
+  // метод для регистрации
+  const register = async (data) => {
+    setLoading(true)
+    userApi
+      // данный метод возвращает объект пользователя
+      .register(data)
+      .then((user) => {
+        // устанавливаем пользователя
+        setUser(user)
+        // выполняем перенаправление на главную страницу
+        navigate('/')
+      })
+      // ошибка
+      .catch(setError)
+  }
+
+  return (
+    <div className='page register'>
+      <h1>Register</h1>
+      <Form fields={fields} submit={register} button='Register' />
+    </div>
+  )
+}
+```
+
+Страница для авторизации пользователя выглядит похожим образом (`pages/Login.jsx`):
+
+```javascript
+import userApi from 'a/user'
+import { Form } from 'c'
+import useStore from 'h/useStore'
+import { useNavigate } from 'react-router-dom'
+
+const fields = [
+  {
+    id: 'email',
+    label: 'Email',
+    type: 'email'
+  },
+  {
+    id: 'password',
+    label: 'Password',
+    type: 'password'
+  }
+]
+
+export const Login = () => {
+  const { setUser, setLoading, setError } = useStore(
+    ({ setUser, setLoading, setError }) => ({ setUser, setLoading, setError })
+  )
+  const navigate = useNavigate()
+
+  const register = async (data) => {
+    setLoading(true)
+    userApi
+      .login(data)
+      .then((user) => {
+        setUser(user)
+        navigate('/')
+      })
+      .catch(setError)
+  }
+
+  return (
+    <div className='page login'>
+      <h1>Login</h1>
+      <Form fields={fields} submit={register} button='Login' />
+    </div>
+  )
+}
+```
+
+### Обработка изменения данных в режиме реального времени
+
+Вы могли заметить, что на страницах для регистрации и авторизации пользователя мы обновляем состояние загрузки только один раз (`setLoading(true)`). Разве это не приведет к тому, что все время будет отображаться индикатор загрузки? Именно так. Давайте это исправим.
+
+При регистрации/авторизации, а также при любых операциях чтения/записи в БД мы хотим вызывать метод `fetchAllData` из хранилища (в продакшне так делать не надо).
+
+Для регистрации изменения состояния аутентификации клиент `Supabase` предоставляет метод `auth.onAuthStateChanged`, а для регистрации операций по работе с БД - метод `from(tableNames).on(eventTypes, callback).subscribe`.
+
+Обновляем файл `supabase/index.js`:
+
+```javascript
+import { createClient } from '@supabase/supabase-js'
+import useStore from 'h/useStore'
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY
+)
+
+// регистрация обновления состояния аутентификации
+supabase.auth.onAuthStateChange((event, session) => {
+  console.log(event, session)
+  // одной из прелестей `zustand` является то,
+  // что методы из хранилища могут вызываться где угодно
+  useStore.getState().fetchAllData()
+})
+
+// регистрация обновления данных в базе
+supabase
+  // нас интересуют все таблицы
+  .from('*')
+  // и все операции
+  .on('*', (payload) => {
+    console.log(payload)
+
+    useStore.getState().fetchAllData()
+  })
+  .subscribe()
+
+export default supabase
+```
+
+Как мы помним, на последней строке кода метода `fetchAllData` вызывается `set({ loading: false })`. Таким образом, индикатор загрузки будет отображаться до тех пор, пока приложение не получит все необходимые данные и не сформирует все вспомогательные объекты и массив. В свою очередь, пользователь всегда будет иметь дело с актуальными данными.
+
+_Обратите внимание_ на то, разработанная нами архитектура приложения не подходит для реальных приложений, в которых используется большое количество данных: большое количество данных означает долгое время их получения и обработки. В реальных приложениях вместо прямой записи данных в базу следует применять оптимистические обновления.
+
+### Страницы и компоненты
+
+С вашего позволения, я расскажу только о тех страницах приложения, на которых происходит что-нибудь интересное.
+
+Начнем со страницы профиля пользователя (`pages/Profile.jsx`):
+
+```javascript
+import { Protected, UserUpdater } from 'c'
+import useStore from 'h/useStore'
+
+export const Profile = () => {
+  // извлекаем из хранилища объект пользователя
+  const user = useStore(({ user }) => user)
+  // копируем его
+  const userCopy = { ...user }
+  // и удаляем поле с адресом аватара -
+  // он слишком длинный и ломает разметку
+  delete userCopy.avatar_url
+
+  return (
+    // страница является защищенной
+    <Protected className='page profile'>
+      <h1>Profile</h1>
+      <div className='user-data'>
+        {/* отображаем данные пользователя */}
+        <pre>{JSON.stringify(userCopy, null, 2)}</pre>
+      </div>
+      {/* компонент для обновления данных пользователя */}
+      <UserUpdater />
+    </Protected>
+  )
+}
+```
+
+Компонент `Protected` перенаправляет неавторизованного пользователя на главную страницу после завершения загрузки приложения (`components/Protected.jsx`):
+
+```javascript
+import useStore from 'h/useStore'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export const Protected = ({ children, className }) => {
+  const { user, loading } = useStore(({ user, loading }) => ({ user, loading }))
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/')
+    }
+  }, [user, loading])
+
+  // ничего не рендерим при отсутствии пользователя
+  if (!user) return null
+
+  return <div className={className ? className : ''}>{children}</div>
+}
+```
+
+Компонент для обновления данных пользователя (`components/UserUpdater.jsx`):
+
+```javascript
+import { Form, AvatarUploader } from 'c'
+import useStore from 'h/useStore'
+import userApi from 'a/user'
+
+export const UserUpdater = () => {
+  const { user, setUser, setLoading, setError } = useStore(
+    ({ user, setUser, setLoading, setError }) => ({
+      user,
+      setUser,
+      setLoading,
+      setError
+    })
+  )
+
+  // метод для обновления данных пользователя
+  const updateUser = async (data) => {
+    setLoading(true)
+    userApi.update(data).then(setUser).catch(setError)
+  }
+
+  // начальное состояние
+  // с данными из объекта пользователя
+  const fields = [
+    {
+      id: 'first_name',
+      label: 'First Name',
+      type: 'text',
+      value: user.first_name
+    },
+    {
+      id: 'last_name',
+      label: 'Last Name',
+      type: 'text',
+      value: user.last_name
+    },
+    {
+      id: 'age',
+      label: 'Age',
+      type: 'number',
+      value: user.age
+    }
+  ]
+
+  return (
+    <div className='user-updater'>
+      <h2>Update User</h2>
+      {/* компонент для загрузки аватара */}
+      <AvatarUploader />
+      <h3>User Bio</h3>
+      <Form fields={fields} submit={updateUser} button='Update' />
+    </div>
+  )
+}
+```
+
+Компонент для загрузки аватара (`components/AvatarUploader.jsx`):
+
+```javascript
+import { useState, useEffect } from 'react'
+import userApi from 'a/user'
+import useStore from 'h/useStore'
+
+export const AvatarUploader = () => {
+  const { user, setUser, setLoading, setError } = useStore(
+    ({ user, setUser, setLoading, setError }) => ({
+      user,
+      setUser,
+      setLoading,
+      setError
+    })
+  )
+  // состояние для файла
+  const [file, setFile] = useState('')
+  const [disabled, setDisabled] = useState(true)
+
+  useEffect(() => {
+    setDisabled(!file)
+  }, [file])
+
+  const upload = (e) => {
+    e.preventDefault()
+    if (disabled) return
+    setLoading(true)
+    userApi.uploadAvatar(file).then(setUser).catch(setError)
+  }
+
+  return (
+    <div className='avatar-uploader'>
+      <form className='avatar-uploader' onSubmit={upload}>
+        <label htmlFor='avatar'>Avatar:</label>
+        <input
+          type='file'
+          // инпут принимает только изображения
+          accept='image/*'
+          onChange={(e) => {
+            if (e.target.files) {
+              setFile(e.target.files[0])
+            }
+          }}
+        />
+        <button disabled={disabled}>Upload</button>
+      </form>
+    </div>
+  )
+}
+```
+
+Рассмотрим страницу для постов (`pages/Blog.jsx`):
+
+```javascript
+import postApi from 'a/post'
+import { Form, PostList, PostTabs, Protected } from 'c'
+import useStore from 'h/useStore'
+import { useEffect, useState } from 'react'
+
+// начальное состояние нового поста
+const fields = [
+  {
+    id: 'title',
+    label: 'Title',
+    type: 'text'
+  },
+  {
+    id: 'content',
+    label: 'Content',
+    type: 'text'
+  }
+]
+
+export const Blog = () => {
+  const { user, allPostsWithCommentCount, postsByUser, setLoading, setError } =
+    useStore(
+      ({
+        user,
+        allPostsWithCommentCount,
+        postsByUser,
+        setLoading,
+        setError
+      }) => ({
+        user,
+        allPostsWithCommentCount,
+        postsByUser,
+        setLoading,
+        setError
+      })
+    )
+  // выбранная вкладка
+  const [tab, setTab] = useState('all')
+  // состояние для отфильтрованных на основании выбранной вкладки постов
+  const [_posts, setPosts] = useState([])
+
+  // метод для создания нового поста
+  const create = (data) => {
+    setLoading(true)
+    postApi
+      .create(data)
+      .then(() => {
+        // переключаем вкладку
+        setTab('my')
+      })
+      .catch(setError)
+  }
+
+  useEffect(() => {
+    if (tab === 'new') return
+    // фильтруем посты на основании выбранной вкладки
+    const _posts =
+      tab === 'my' ? postsByUser[user.id] : allPostsWithCommentCount
+    setPosts(_posts)
+  }, [tab, allPostsWithCommentCount])
+
+  // если значением выбранной вкладки является `new`,
+  // возвращаем форму для создания нового поста
+  // данная вкладка является защищенной
+  if (tab === 'new') {
+    return (
+      <Protected className='page new-post'>
+        <h1>Blog</h1>
+        <PostTabs tab={tab} setTab={setTab} />
+        <h2>New post</h2>
+        <Form fields={fields} submit={create} button='Create' />
+      </Protected>
+    )
+  }
+
+  return (
+    <div className='page blog'>
+      <h1>Blog</h1>
+      <PostTabs tab={tab} setTab={setTab} />
+      <h2>{tab === 'my' ? 'My' : 'All'} posts</h2>
+      <PostList posts={_posts} />
+    </div>
+  )
+}
+```
+
+Вкладки постов (`components/PostTabs.jsx`):
+
+```javascript
+import useStore from 'h/useStore'
+
+// вкладки
+// свойство `protected` определяет,
+// какие вкладки доступны пользователю
+const tabs = [
+  {
+    name: 'All'
+  },
+  {
+    name: 'My',
+    protected: true
+  },
+  {
+    name: 'New',
+    protected: true
+  }
+]
+
+export const PostTabs = ({ tab, setTab }) => {
+  const user = useStore(({ user }) => user)
+
+  return (
+    <nav className='post-tabs'>
+      <ul>
+        {tabs.map((t) => {
+          const tabId = t.name.toLowerCase()
+          if (t.protected) {
+            return user ? (
+              <li key={tabId}>
+                <button
+                  className={tab === tabId ? 'active' : ''}
+                  onClick={() => setTab(tabId)}
+                >
+                  {t.name}
+                </button>
+              </li>
+            ) : null
+          }
+          return (
+            <li key={tabId}>
+              <button
+                className={tab === tabId ? 'active' : ''}
+                onClick={() => setTab(tabId)}
+              >
+                {t.name}
+              </button>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  )
+}
+```
+
+Список постов (`components/PostList.jsx`):
+
+```javascript
+import { Link, useNavigate } from 'react-router-dom'
+import useStore from 'h/useStore'
+import { VscComment, VscEdit, VscTrash } from 'react-icons/vsc'
+
+// элемент поста
+const PostItem = ({ post }) => {
+  const removePost = useStore(({ removePost }) => removePost)
+  const navigate = useNavigate()
+
+  // каждый пост - это ссылка на его страницу
+  return (
+    <Link
+      to={`/blog/post/${post.id}`}
+      className='post-item'
+      onClick={(e) => {
+        // отключаем переход на страницу поста
+        // при клике по кнопке или иконке
+        if (e.target.localName === 'button' || e.target.localName === 'svg') {
+          e.preventDefault()
+        }
+      }}
+    >
+      <h3>{post.title}</h3>
+      {/* если пост является редактируемым - принадлежит текущему пользователю */}
+      {post.editable && (
+        <div>
+          <button
+            onClick={() => {
+              // строка запроса `edit=true` определяет,
+              // что пост находится в состоянии редактирования
+              navigate(`/blog/post/${post.id}?edit=true`)
+            }}
+            className='info'
+          >
+            <VscEdit />
+          </button>
+          <button
+            onClick={() => {
+              removePost(post.id)
+            }}
+            className='danger'
+          >
+            <VscTrash />
+          </button>
+        </div>
+      )}
+      <p>Author: {post.author}</p>
+      <p className='date'>{new Date(post.created_at).toLocaleString()}</p>
+      {/* количество комментариев к посту */}
+      {post.commentCount > 0 && (
+        <p>
+          <VscComment />
+          <span className='badge'>
+            <sup>{post.commentCount}</sup>
+          </span>
+        </p>
+      )}
+    </Link>
+  )
+}
+
+// список постов
+export const PostList = ({ posts }) => (
+  <div className='post-list'>
+    {posts.length > 0 ? (
+      posts.map((post) => <PostItem key={post.id} post={post} />)
+    ) : (
+      <h3>No posts</h3>
+    )}
+  </div>
+)
+```
+
+Последняя страница, которую мы рассмотрим - это страница поста (`pages/Post.jsx`):
+
+```javascript
+import postApi from 'a/post'
+import commentApi from 'a/comment'
+import { Form, Protected, CommentList } from 'c'
+import useStore from 'h/useStore'
+import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { VscEdit, VscTrash } from 'react-icons/vsc'
+
+// начальное состояние для нового комментария
+const createCommentFields = [
+  {
+    id: 'content',
+    label: 'Content',
+    type: 'text'
+  }
+]
+
+export const Post = () => {
+  const { user, setLoading, setError, postsById, removePost } = useStore(
+    ({ user, setLoading, setError, postsById, removePost }) => ({
+      user,
+      setLoading,
+      setError,
+      postsById,
+      removePost
+    })
+  )
+  // извлекаем `id` поста из параметров
+  const { id } = useParams()
+  const { search } = useLocation()
+  // извлекаем индикатор редактирования поста из строки запроса
+  const edit = new URLSearchParams(search).get('edit')
+  // извлекаем пост по его `id`
+  const post = postsById[id]
+  const navigate = useNavigate()
+
+  // метод для обновления поста
+  const updatePost = (data) => {
+    setLoading(true)
+    data.id = post.id
+    postApi
+      .update(data)
+      .then(() => {
+        // та же страница, но без строки запроса
+        navigate(`/blog/post/${post.id}`)
+      })
+      .catch(setError)
+  }
+
+  // метод для создания комментария
+  const createComment = (data) => {
+    setLoading(true)
+    data.post_id = post.id
+    commentApi.create(data).catch(setError)
+  }
+
+  // если пост находится в состоянии редактирования
+  if (edit) {
+    const editPostFields = [
+      {
+        id: 'title',
+        label: 'Title',
+        type: 'text',
+        value: post.title
+      },
+      {
+        id: 'content',
+        label: 'Content',
+        type: 'text',
+        value: post.content
+      }
+    ]
+
+    return (
+      <Protected>
+        <h2>Update post</h2>
+        <Form fields={editPostFields} submit={updatePost} button='Update' />
+      </Protected>
+    )
+  }
+
+  return (
+    <div className='page post'>
+      <h1>Post</h1>
+      {post && (
+        <div className='post-item' style={{ width: '512px' }}>
+          <h2>{post.title}</h2>
+          {post.editable ? (
+            <div>
+              <button
+                onClick={() => {
+                  navigate(`/blog/post/${post.id}?edit=true`)
+                }}
+                className='info'
+              >
+                <VscEdit />
+              </button>
+              <button
+                onClick={() => {
+                  removePost(post.id)
+                  navigate('/blog')
+                }}
+                className='danger'
+              >
+                <VscTrash />
+              </button>
+            </div>
+          ) : (
+            <p>Author: {post.author}</p>
+          )}
+          <p className='date'>{new Date(post.created_at).toLocaleString()}</p>
+          <p>{post.content}</p>
+          {user && (
+            <div className='new-comment'>
+              <h3>New comment</h3>
+              <Form
+                fields={createCommentFields}
+                submit={createComment}
+                button='Create'
+              />
+            </div>
+          )}
+          {/* комментарии к посту */}
+          {post.comments.length > 0 && <CommentList comments={post.comments} />}
+        </div>
+      )}
+    </div>
+  )
+}
+```
+
+Компонент для комментариев к посту (`components/CommentList.jsx`):
+
+```javascript
+import { useState } from 'react'
+import useStore from 'h/useStore'
+import commentApi from 'a/comment'
+import { Form, Protected } from 'c'
+import { VscEdit, VscTrash } from 'react-icons/vsc'
+
+export const CommentList = ({ comments }) => {
+  const { user, setLoading, setError } = useStore(
+    ({ user, setLoading, setError }) => ({ user, setLoading, setError })
+  )
+  // индикатор редактирования комментария
+  const [editComment, setEditComment] = useState(null)
+
+  // метод для удаления комментария
+  const remove = (id) => {
+    setLoading(true)
+    commentApi.remove(id).catch(setError)
+  }
+
+  // метод для обновления комментария
+  const update = (data) => {
+    setLoading(true)
+    data.id = editComment.id
+    commentApi.update(data).catch(setError)
+  }
+
+  // если комментарий находится в состоянии редактирования
+  if (editComment) {
+    const fields = [
+      {
+        id: 'content',
+        label: 'Content',
+        type: 'text',
+        value: editComment.content
+      }
+    ]
+
+    return (
+      <Protected>
+        <h3>Update comment</h3>
+        <Form fields={fields} submit={update} button='Update' />
+      </Protected>
+    )
+  }
+
+  return (
+    <div className='comment-list'>
+      <h3>Comments</h3>
+      {comments.map((comment) => (
+        <div className='comment-item' key={comment.id}>
+          <p>{comment.content}</p>
+          {/* является ли комментарий редактируемым - принадлежит ли текущему пользователю? */}
+          {comment.user_id === user?.id ? (
+            <div>
+              <button onClick={() => setEditComment(comment)} className='info'>
+                <VscEdit />
+              </button>
+              <button onClick={() => remove(comment.id)} className='danger'>
+                <VscTrash />
+              </button>
+            </div>
+          ) : (
+            <p className='author'>Author: {comment.author}</p>
+          )}
+          <p className='date'>
+            {new Date(comment.created_at).toLocaleString()}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
+```
+
+И основной компонент приложения (`App.jsx`):
+
+```javascript
+import './styles/app.scss'
+import { Routes, Route } from 'react-router-dom'
+import { Home, About, Register, Login, Profile, Blog, Post } from 'p'
+import { Nav, Layout } from 'c'
+import { useEffect } from 'react'
+import useStore from 'h/useStore'
+import userApi from 'a/user'
+
+function App() {
+  const { user, setUser, setLoading, setError, fetchAllData } = useStore(
+    ({ user, setUser, setLoading, setError, fetchAllData }) => ({
+      user,
+      setUser,
+      setLoading,
+      setError,
+      fetchAllData
+    })
+  )
+
+  useEffect(() => {
+    // запрашиваем данные пользователя при их отсутствии
+    if (!user) {
+      setLoading(true)
+      userApi
+        .get()
+        .then((user) => {
+          // устанавливаем пользователя
+          // `user` может иметь значение `null`
+          setUser(user)
+          // получаем данные из всех таблиц
+          fetchAllData()
+        })
+        .catch(setError)
+    }
+  }, [])
+
+  return (
+    <div className='app'>
+      <header>
+        <Nav />
+      </header>
+      <main>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path='/blog/post/:id' element={<Post />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/profile' element={<Profile />} />
+          </Routes>
+        </Layout>
+      </main>
+      <footer>
+        <p>&copy; 2022. Not all rights reserved</p>
+      </footer>
+    </div>
+  )
+}
+
+export default App
+```
+
+Таким образом, мы рассмотрели все основные страницы и компоненты приложения.
+
+### Проверка работоспособности приложения
+
+Давайте убедимся в том, что приложение работает, как ожидается.
+
+Определим функцию для наполнения базы фиктивными данными. В директории `src` создаем файл `seedDb.js` следующего содержания:
+
+```javascript
+import { createClient } from '@supabase/supabase-js'
+import serializeUser from '../utils/serializeUser.js'
+import { config } from 'dotenv'
+
+// получаем доступ к переменным среды окружения
+config()
+
+// создаем клиента `Supabase`
+const supabase = createClient(
+  process.env.VITE_SUPABASE_URL,
+  process.env.VITE_SUPABASE_KEY
+)
+
+// создаем 2 пользователей, `Alice` и `Bob` с постами и комментариями
+async function seedDb() {
+  try {
+    const { user: aliceAuth } = await supabase.auth.signUp(
+      {
+        email: 'alice@mail.com',
+        password: 'password'
+      },
+      {
+        data: {
+          user_name: 'Alice'
+        }
+      }
+    )
+    const { user: bobAuth } = await supabase.auth.signUp(
+      {
+        email: 'bob@mail.com',
+        password: 'password'
+      },
+      {
+        data: {
+          user_name: 'Bob'
+        }
+      }
+    )
+    const {
+      data: [alice, bob]
+    } = await supabase
+      .from('users')
+      .insert([serializeUser(aliceAuth), serializeUser(bobAuth)])
+
+    const { data: alicePosts } = await supabase.from('posts').insert([
+      {
+        title: `Alice's first post`,
+        content: `This is Alice's first post`,
+        user_id: alice.id
+      },
+      {
+        title: `Alice's second post`,
+        content: `This is Alice's second post`,
+        user_id: alice.id
+      }
+    ])
+    const { data: bobPosts } = await supabase.from('posts').insert([
+      {
+        title: `Bob's's first post`,
+        content: `This is Bob's first post`,
+        user_id: bob.id
+      },
+      {
+        title: `Bob's's second post`,
+        content: `This is Bob's second post`,
+        user_id: bob.id
+      }
+    ])
+    for (const post of alicePosts) {
+      await supabase.from('comments').insert([
+        {
+          user_id: alice.id,
+          post_id: post.id,
+          content: `This is Alice's comment on Alice's post "${post.title}"`
+        },
+        {
+          user_id: bob.id,
+          post_id: post.id,
+          content: `This is Bob's comment on Alice's post "${post.title}"`
+        }
+      ])
+    }
+    for (const post of bobPosts) {
+      await supabase.from('comments').insert([
+        {
+          user_id: alice.id,
+          post_id: post.id,
+          content: `This is Alice's comment on Bob's post "${post.title}"`
+        },
+        {
+          user_id: bob.id,
+          post_id: post.id,
+          content: `This is Bob's comment on Bob's post "${post.title}"`
+        }
+      ])
+    }
+    console.log('Done')
+  } catch (e) {
+    console.error(e)
+  }
+}
+seedDb()
+```
+
+Выполняем этот код с помощью `node src/seed_db.js`. Получаем сообщение об успехе операции (`Done`). В БД появилось 2 пользователя, 4 поста и 8 комментариев.
+
+Находясь в корневой директории проекта (`supabase-social-app`), выполняем команду `yarn dev` для запуска сервера для разработки.
+
+<img src="https://habrastorage.org/webt/rz/gx/se/rzgxsedpo8chvapson3m_aqjhnm.png" />
+<br />
+
+Переходим на страницу регистрации (`Register`) и создаем нового пользователя. _Обратите внимание_: `Supabase` требует, чтобы пароль состоял как минимум из 6 символов.
+
+<img src="https://habrastorage.org/webt/si/9p/hz/si9phzhpguhvkfyl6casfkl8dt0.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/iv/5u/-x/iv5u-xvbr6mpqawnlhfp3s0nupa.png" />
+<br />
+
+На панели навигации появилась кнопка для выхода из системы и ссылка на страницу профиля.
+
+Переходим на страницу профиля (`Profile`), загружаем аватар и обновляем данные.
+
+<img src="https://habrastorage.org/webt/hz/6a/fe/hz6afebw09el8jylqdt0xocjw4s.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/4l/8y/bf/4l8ybf0rh91j9852mbvur-01wb8.png" />
+<br />
+
+Вместо ссылки на страницу профиля у нас теперь имеется аватар пользователя, а в объекте `user` - заполненные поля `first_name`, `last_name` и `age`.
+
+Переходим на страницу блога (`Blog`), "проваливаемся" в какой-нибудь пост и добавляем к нему комментарий.
+
+<img src="https://habrastorage.org/webt/vk/0w/rv/vk0wrvizoh_zypvw05seuqnx9hw.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/h2/tc/2z/h2tc2zwnne6pvnvnu2_awbe1y0e.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/ol/at/bb/olatbbuqjx8oqedcluskylesd8w.png" />
+<br />
+
+Добавленный комментарий можно редактировать и удалять.
+
+Возвращаемся на страницу блога, переключаемся на вкладку для создания нового поста (`New`) и создаем его.
+
+<img src="https://habrastorage.org/webt/em/dm/ku/emdmkufq97axx4klhnrrdhyqdyg.png" />
+<br />
+
+<img src="https://habrastorage.org/webt/oy/pk/ei/oypkeijn4xvinpm9gtbazbuters.png" />
+<br />
+
+На вкладке `My` страницы блога можно увидеть все созданные нами посты.
+
+<img src="https://habrastorage.org/webt/jy/c9/pe/jyc9pewh3hasdn9bpaia4unohj8.png" />
+<br />
+
+Их также можно редактировать и удалять.
+
+Круто! Все работает, как часы.
+
+Таким образом, `Supabase` предоставляет разработчикам интересные возможности по созданию фулстек-приложений, позволяя практически полностью сосредоточиться на клиентской части. So give it a chance!

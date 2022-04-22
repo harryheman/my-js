@@ -7,16 +7,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
 
 const features = [
-  // {
-  //   title: 'Easy to Use',
-  //   imageUrl: 'img/undraw_docusaurus_mountain.svg',
-  //   description: (
-  //     <>
-  //       Docusaurus was designed from the ground up to be easily installed and
-  //       used to get your website up and running quickly.
-  //     </>
-  //   )
-  // }
+  {
+    title: 'JavaScript',
+    imageUrl: 'img/logo.png'
+    // description: (
+    //   <>
+    //     Docusaurus was designed from the ground up to be easily installed and
+    //     used to get your website up and running quickly.
+    //   </>
+    // )
+  },
+  {
+    title: 'React',
+    imageUrl: 'img/react.png'
+  },
+  {
+    title: 'TypeScript',
+    imageUrl: 'img/ts.png'
+  },
+  {
+    title: 'Node.js',
+    imageUrl: 'img/nodejs.png'
+  }
 ]
 
 function Feature({ imageUrl, title, description }) {
@@ -28,8 +40,8 @@ function Feature({ imageUrl, title, description }) {
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <h3 className='text--center'>{title}</h3>
+      {description && <p>{description}</p>}
     </div>
   )
 }
@@ -40,12 +52,18 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'
+      description='Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений'
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
           <h1 className='hero__title'>{siteConfig.title}</h1>
           <p className='hero__subtitle'>{siteConfig.tagline}</p>
+          <p className='hero__subtitle'>
+            Последнее обновление: <br /> 26.03.2022 ✅&nbsp;&nbsp;
+            <a href='docs/guide/docker'>Руководство по Docker</a>
+            . <br /> В разработке: 🔬&nbsp;&nbsp;Руководство по Nest.js
+          </p>
+
           <div className={styles.buttons}>
             <Link
               className={clsx(
@@ -57,6 +75,13 @@ export default function Home() {
               Поехали!
             </Link>
           </div>
+          <p className='hero__subtitle small'>
+            Буду признателен за за любой вклад в развитие проекта 😉
+          </p>
+          <p className='hero__subtitle small'>
+            Материалы находятся в свободном доступе. <br />
+            Ссылки на данное приложение приветствуются 👍
+          </p>
         </div>
       </header>
       <main>

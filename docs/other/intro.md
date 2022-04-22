@@ -11,13 +11,13 @@ id: intro-other
 
 ---
 
-- :memo:&nbsp;&nbsp;[Вопросы по TypeScript](./ts-questions2)
+- :memo:&nbsp;&nbsp;[Вопросы по TypeScript](./ts-questions)
 
 ---
 
 - :memo:&nbsp;&nbsp;[Вопросы по React. Версия 1](./react-questions)
 - :memo:&nbsp;&nbsp;[Вопросы по React. Версия 2](./react-questions2)
-- :memo:&nbsp;&nbsp;[Шпаргалки по React, Jest, Redux и лучшие практики по React](./best-practics)
+- :memo:&nbsp;&nbsp;[Шпаргалки по React, Jest, Redux и лучшие практики по React](./best-practices)
 - :page_facing_up:&nbsp;&nbsp;[Размышления о React](./react-philosophies)
 
 ---

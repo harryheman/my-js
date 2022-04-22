@@ -25,8 +25,8 @@ id: intro-guide
 
 ---
 
-- :page_with_curl:&nbsp;&nbsp;[Руководство по Docker](./guide/docker)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по Docker](./docker)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Supabase](./supabase)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Workbox](./wb)
-- :page_with_curl:&nbsp;&nbsp;[Руководство по Socket.IO](./socket/index)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по Socket.IO](./socket)
 - :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](./webrtc)

@@ -1,5 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
+title: Руководство по Recoil
+description: Руководство по Recoil
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'recoil', 'state manager', 'state management', 'state', 'guide', 'руководство', 'инструмент для управления состоянием', 'управление состоянием', 'состояние']
 ---
 
 # Recoil

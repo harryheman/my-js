@@ -2,12 +2,12 @@
 sidebar_position: 4
 title: Руководство по Mongoose
 description: Руководство по Mongoose
-keywords: ['javascript', 'js', 'mongoose', 'orm', 'guide', 'руководство']
+keywords: ['javascript', 'js', 'mongoose', 'orm', 'mongodb', 'mongo', 'guide', 'руководство']
 ---
 
 # Mongoose
 
-> [Mongoose]() - это [ORM](https://ru.wikipedia.org/wiki/ORM) (Object Relational Mapping - объектно-реляционное отображение или связывание) для `MongoDB`. `Mongoose` предоставляет в распоряжение разработчиков простое основанное на схемах решение для моделирования данных приложения, включающее встроенную проверку типов, валидацию, формирование запросов и хуки, отвечающие за реализацию дополнительной логики обработки запросов.
+> [Mongoose](https://mongoosejs.com/) - это [ORM](https://ru.wikipedia.org/wiki/ORM) (Object Relational Mapping - объектно-реляционное отображение или связывание) для `MongoDB`. `Mongoose` предоставляет в распоряжение разработчиков простое основанное на схемах решение для моделирования данных приложения, включающее встроенную проверку типов, валидацию, формирование запросов и хуки, отвечающие за реализацию дополнительной логики обработки запросов.
 
 ```js
 const mongoose = require('mongoose')

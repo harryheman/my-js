@@ -1,14 +1,15 @@
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MyJavaScript',
-  tagline: 'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений',
+  tagline:
+    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  favicon: 'img/favicon.png',
+  organizationName: 'harryheman', // Usually your GitHub org/user name.
+  projectName: 'my-js', // Usually your repo name.
 
   presets: [
     [
@@ -18,14 +19,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/'
+          editUrl: 'https://github.com/harryheman/my-js'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/'
+          editUrl: 'https://github.com/harryheman/my-js'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -38,10 +37,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My JavaScript',
+        title: 'MyJavaScript',
         logo: {
-          alt: 'My JavaScript Logo',
-          src: 'img/logo.svg'
+          alt: 'MyJavaScript Logo',
+          src: 'img/logo.png'
         },
         items: [
           {
@@ -68,10 +67,10 @@ const config = {
             position: 'left',
             label: 'Cсылки'
           },
-          { to: 'blog', label: 'Блог', position: 'left' },
+          // { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/harryheman/my-js',
             label: 'GitHub',
             position: 'right'
           }
@@ -85,17 +84,13 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus'
+                href: 'https://github.com/harryheman/my-js'
               }
             ]
           }
         ],
-        logo: {
-          alt: 'My JavaScript Logo',
-          src: 'img/oss_logo.png'
-        },
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()} My JavaScript. Built with Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />  Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤 &amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br /> Deploy on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.`
       },
       hideableSidebar: true,
       autoCollapseSidebarCategories: true

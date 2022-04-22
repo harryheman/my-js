@@ -1,4 +1,12 @@
+---
+title: Руководство по Apollo Server
+description: Руководство по Apollo Server
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'apollo server', 'apollo', 'graphql', 'api', 'guide', 'руководство']
+---
+
 # Apollo Server
+
+> [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - открытый соответствующий спецификации `GraphQL-сервер`, совместимый с любым `GraphQL-клиентом`, включая [Apollo Client](./client). Это лучший способ создания готового к продакшну, самодокументируемого `GraphQL API`, который может использовать данные из любого источника.
 
 ## Начало работы
 
