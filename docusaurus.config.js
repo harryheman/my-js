@@ -2,7 +2,7 @@
 const config = {
   title: 'MyJavaScript',
   tagline:
-    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений',
+    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений.',
   url: 'https://my-js.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -19,7 +19,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/harryheman/my-js/tree/master/'
+          editUrl: 'https://github.com/harryheman/my-js/tree/master/',
+          breadcrumbs: false
         },
         blog: {
           showReadingTime: true,
@@ -80,17 +81,34 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'More',
+            title: 'Контакты',
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/harryheman/my-js'
+                href: 'https://github.com/harryheman'
+              },
+              {
+                label: 'Habr',
+                href: 'https://habr.com/ru/users/aio350'
+              },
+              {
+                html: '<p class="footer__link"><img src="img/telegram.png"> @igor_agapov</p>'
+              },
+              {
+                html: '<p class="footer__link"><img src="img/email.png"> aio350@yahoo.com</p>'
+              },
+              {
+                html: '<p class="footer__link"><img src="img/email.png"> aio350@mail.ru</p>'
               }
             ]
           }
         ],
         // Please do not remove the credits, help to publicize Docusaurus :)
-        copyright: `Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />  Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤 &amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br /> Deploy on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.`
+        copyright: `
+          Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />
+          Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
+          Deploy on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
+        `
       },
       hideableSidebar: true,
       autoCollapseSidebarCategories: true

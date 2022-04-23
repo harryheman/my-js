@@ -34,7 +34,7 @@ const features = [
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl)
   return (
-    <div className={clsx('col col--4', styles.feature)}>
+    <div className={clsx('col', styles.feature)}>
       {imgUrl && (
         <div className='text--center'>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -56,13 +56,13 @@ export default function Home() {
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
+          <img
+            src='img/logo.png'
+            alt='MyJavaScript logo'
+            className='hero__logo'
+          />
           <h1 className='hero__title'>{siteConfig.title}</h1>
           <p className='hero__subtitle'>{siteConfig.tagline}</p>
-          <p className='hero__subtitle'>
-            Последнее обновление: <br /> 26.03.2022 ✅&nbsp;&nbsp;
-            <a href='docs/guide/docker'>Руководство по Docker</a>
-            . <br /> В разработке: 🔬&nbsp;&nbsp;Руководство по Nest.js
-          </p>
 
           <div className={styles.buttons}>
             <Link
@@ -75,12 +75,21 @@ export default function Home() {
               Поехали!
             </Link>
           </div>
+
           <p className='hero__subtitle small'>
-            Буду признателен за за любой вклад в развитие проекта 😉
+            Последнее обновление: 20.04.2022&nbsp;
+            <a href='docs/guide/webrtc'>"WebRTC для всех и каждого"</a>.
+          </p>
+
+          <p className='hero__subtitle small'>
+            Буду признателен за любой вклад в развитие проекта: <br />
+            - исправление ошибок и опечаток; <br />
+            - дополнение существующих материалов; <br /> - предложение новых
+            материалов etc.
           </p>
           <p className='hero__subtitle small'>
             Материалы находятся в свободном доступе. <br />
-            Ссылки на данное приложение приветствуются 👍
+            Ссылки на данное приложение приветствуются.
           </p>
         </div>
       </header>
