@@ -2,7 +2,8 @@
 sidebar_position: 13
 title: Сниппеты CSS и SASS
 description: Примеры кода на CSS и SASS
-keywords: ['css', 'sass', 'scss', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
+keywords: ['css', 'sass', 'scss', 'snippets', 'examples', 'сниппеты', 'примеры']
+tags: ['css', 'sass', 'scss', 'snippets', 'examples', 'сниппеты', 'примеры']
 ---
 
 # Сниппеты CSS & SASS

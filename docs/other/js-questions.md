@@ -2,7 +2,8 @@
 sidebar_position: 1
 title: Вопросы по JavaScript. Версия 1
 description: Вопросы по JavaScript для подготовки к собеседованию
-keywords: ['javascript', 'js', 'interview', 'questions', 'question', 'собеседование', 'интервью', 'вопросы', 'вопрос']
+keywords: ['javascript', 'js', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
+tags: ['javascript', 'js', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
 ---
 
 # Вопросы по JavaScript. Версия 1

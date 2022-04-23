@@ -2,7 +2,8 @@
 sidebar_position: 9
 title: Сниппеты JavaScript. Часть 1
 description: Примеры кода на JavaScript
-keywords: ['javascript', 'js', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
+keywords: ['javascript', 'js', 'snippets', 'examples', 'сниппеты', 'примеры']
+tags: ['javascript', 'js', 'snippets', 'examples', 'сниппеты', 'примеры']
 ---
 
 # Сниппеты JavaScript. Часть 1

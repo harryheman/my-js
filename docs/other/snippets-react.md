@@ -2,7 +2,8 @@
 sidebar_position: 11
 title: Сниппеты React
 description: Примеры кода на React
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'snippets', 'examples', 'сниппеты', 'примеры']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'snippets', 'examples', 'сниппеты', 'примеры']
 ---
 
 # Сниппеты React

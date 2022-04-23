@@ -2,7 +2,8 @@
 sidebar_position: 5
 title: Вопросы по React. Версия 1
 description: Вопросы по React для подготовки к собеседованию
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questions', 'question', 'собеседование', 'интервью', 'вопросы', 'вопрос']
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
 ---
 
 # Вопросы по React. Версия 1

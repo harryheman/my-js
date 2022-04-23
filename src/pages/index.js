@@ -28,13 +28,17 @@ const features = [
   {
     title: 'Node.js',
     imageUrl: 'img/nodejs.png'
+  },
+  {
+    title: 'And More',
+    imageUrl: 'img/coding.png'
   }
 ]
 
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl)
   return (
-    <div className={clsx('col', styles.feature)}>
+    <div className={styles.feature}>
       {imgUrl && (
         <div className='text--center'>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -52,7 +56,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description='Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений'
+      description='Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и множеству других технологий, связанных с разработкой веб-приложений'
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
@@ -96,18 +100,14 @@ export default function Home() {
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>
-            <div className='container'>
-              <div className='row'>
-                {features.map(({ title, imageUrl, description }) => (
-                  <Feature
-                    key={title}
-                    title={title}
-                    imageUrl={imageUrl}
-                    description={description}
-                  />
-                ))}
-              </div>
-            </div>
+            {features.map(({ title, imageUrl, description }) => (
+              <Feature
+                key={title}
+                title={title}
+                imageUrl={imageUrl}
+                description={description}
+              />
+            ))}
           </section>
         )}
       </main>

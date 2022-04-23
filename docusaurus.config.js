@@ -2,7 +2,7 @@
 const config = {
   title: 'MyJavaScript',
   tagline:
-    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, Docker и множеству других технологий, связанных с разработкой веб-приложений.',
+    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и множеству других технологий, связанных с разработкой веб-приложений.',
   url: 'https://my-js.netlify.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -88,7 +88,7 @@ const config = {
                 html: '<p class="footer__link"><img src="../../img/github.png"> <a href="https://github.com/harryheman">harryheman</a></p>'
               },
               {
-                html: '<p class="footer__link"><img src="../../img/telegram.png"> @igor_agapov</p>'
+                html: '<p class="footer__link"><img src="../../img/telegram.png"> @igoragapov</p>'
               },
               {
                 html: '<p class="footer__link"><img src="../../img/email.png"> aio350@yahoo.com</p>'

@@ -3,6 +3,7 @@ sidebar_position: 7
 title: Шпаргалки по React, Jest, Redux и лучшие практики по React
 description: Шпаргалки по React, Jest, Redux и лучшие практики по React
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'cheatsheet', 'шпаргалка', 'best practices', 'лучшие практики']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'cheatsheet', 'шпаргалка', 'best practices', 'лучшие практики']
 ---
 
 # Шпаргалки по React, Jest, Redux и лучшие практики по React

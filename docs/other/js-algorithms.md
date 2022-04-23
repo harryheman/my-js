@@ -2,7 +2,8 @@
 sidebar_position: 3
 title: Алгоритмы и структуры данных, реализованные на JavaScript
 description: Алгоритмы и структуры данных, реализованные на JavaScript
-keywords: ['javascript', 'js', 'algorithms', 'algorithm', 'data structures', 'data structure', 'алгоритмы', 'алгоритм', 'структуры данных', 'структура данных']
+keywords: ['javascript', 'js', 'algorithms', 'data structures', 'алгоритмы', 'структуры данных']
+tags: ['javascript', 'js', 'algorithms', 'data structures', 'алгоритмы', 'структуры данных']
 ---
 
 # Алгоритмы и структуры данных, реализованные на JavaScript

@@ -2,7 +2,8 @@
 sidebar_position: 4
 title: Вопросы по TypeScript
 description: Вопросы по TypeScript для подготовки к собеседованию
-keywords: ['typescript', 'ts', 'interview', 'questions', 'question', 'собеседование', 'интервью', 'вопросы', 'вопрос']
+keywords: ['typescript', 'ts', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
+tags: ['typescript', 'ts', 'interview', 'questions', 'собеседование', 'интервью', 'вопросы']
 ---
 
 # Вопросы по TypeScript
