@@ -5,7 +5,7 @@ id: intro-guide
 
 # Содержание
 
-- :page_with_curl:&nbsp;&nbsp;[Руководство по Next.js](./next)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по Next.js](./nextjs)
 - :page_with_curl:&nbsp;&nbsp;[Карманная книга по TypeScript](./ts)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по GraphQL](./graphql)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Mongoose](./mongoose)

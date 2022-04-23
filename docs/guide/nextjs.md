@@ -1,5 +1,6 @@
 ---
 hide_title: true
+title: Руководство по Next.js
 description: Руководство по Next.js
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'next.js', 'nextjs', 'next', 'guide', 'руководство']
 ---
