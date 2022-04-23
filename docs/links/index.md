@@ -1,5 +1,6 @@
 ---
 id: intro-links
+title: Ссылки
 hide_title: true
 ---
 

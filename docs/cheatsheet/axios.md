@@ -14,7 +14,7 @@ keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'axios', 'npm', 'reg
 `Axios` предоставляет следующие возможности:
 
 - отправка [XMLHttpRequest](https://learn.javascript.ru/xmlhttprequest) из браузера
-- отправка `HTTP-запросов` из [Node.js]https://nodejs.org/en/()
+- отправка `HTTP-запросов` из [Node.js](https://nodejs.org/en/)
 - поддержка [Promise API](https://learn.javascript.ru/promise-basics)
 - перехват запросов и ответов
 - преобразование данных запросов и ответов

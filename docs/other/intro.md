@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 id: intro-other
+title: Вопросы, сниппеты и другое
 ---
 
 # Содержание

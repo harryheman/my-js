@@ -85,21 +85,20 @@ const config = {
             title: 'Контакты',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/harryheman'
+                html: '<p class="footer__link"><img src="../../img/github.png"> <a href="https://github.com/harryheman">harryheman</a></p>'
+              },
+              {
+                html: '<p class="footer__link"><img src="../../img/telegram.png"> @igor_agapov</p>'
+              },
+              {
+                html: '<p class="footer__link"><img src="../../img/email.png"> aio350@yahoo.com</p>'
+              },
+              {
+                html: '<p class="footer__link"><img src="../../img/email.png"> aio350@mail.ru</p>'
               },
               {
                 label: 'Habr',
                 href: 'https://habr.com/ru/users/aio350'
-              },
-              {
-                html: '<p class="footer__link"><img src="img/telegram.png"> @igor_agapov</p>'
-              },
-              {
-                html: '<p class="footer__link"><img src="img/email.png"> aio350@yahoo.com</p>'
-              },
-              {
-                html: '<p class="footer__link"><img src="img/email.png"> aio350@mail.ru</p>'
               }
             ]
           }

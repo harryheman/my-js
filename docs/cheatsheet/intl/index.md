@@ -2,7 +2,7 @@
 hide_title: true
 title: Шпаргалка по Internationalization API
 description: Шпаргалка по Internationalization API
-keywords: ['javascript', 'js', 'internationalization api', 'internationalization', 'intl', 'translation', 'cheatsheet', 'шпаргалка', 'интернационализация', 'перевод']
+tags: ['javascript', 'js', 'internationalization api', 'internationalization', 'intl']
 ---
 
 # Internationalization API

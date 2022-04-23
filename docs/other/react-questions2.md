@@ -28,7 +28,7 @@ keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'que
 ### Что такое компонент?
 
 <p align="center">
-  <img src="../assets/img2/component-tree.png" alt="Components Tree" />
+  <img src="./assets/img2/component-tree.png" alt="Components Tree" />
 </p>
 
 Компоненты (components) - это основные строительные блоки любого `React-приложения`. Как правило, приложение на `React` состоит из множества компонентов. Проще говоря, компонент - это `JavaScript-класс` или функция, опционально принимающие так называемые пропы (свойства, properties, props) и возвращающие элемент `React`, описывающий, как должна выглядеть определенная часть `UI`.
@@ -46,7 +46,7 @@ class Welcome extends React.Component {
 ### Назовите преимущества и ограничения `React`
 
 <p align="center">
-  <img src="../assets/img2/react-features.png" alt="React-Features" />
+  <img src="./assets/img2/react-features.png" alt="React-Features" />
 </p>
 
 _Преимущества_
@@ -361,7 +361,7 @@ _Разница между состоянием и пропами_
 ### Как создать компонент высшего порядка?
 
 <p align="center">
-  <img src="../assets/img2/Higher-Order-Components.jpg" alt="Higher Order Components" />
+  <img src="./assets/img2/Higher-Order-Components.jpg" alt="Higher Order Components" />
 </p>
 
 Компонент высшего порядка (Higher Order Component, HOC) - это функция, принимающая компонент и возвращающая новый компонент. Это продвинутая техника, позволяющая повторно использовать логику компонента. `HOC` не являются частью `React API`. `HOC` является паттерном, производным от композиционной природы `React`. Компонент преобразует пропы в `UI`, а `HOC` трансформирует один компонент в другой. Примерами популярных `HOC` являются методы `connect` в `Redux` и `createContainer` в `Relay`.
@@ -529,7 +529,7 @@ _Случаи использования чистых компонентов:_
 ### Почему виртуальный `DOM` является более эффективным, чем "грязная" проверка?
 
 <p align="center">
-  <img src="../assets/img2/virtualdom-vs-realdom.png" alt="Virtual DOM" with="500px" />
+  <img src="./assets/img2/virtualdom-vs-realdom.png" alt="Virtual DOM" with="500px" />
 </p>
 
 _Виртуальный `DOM`_
@@ -856,7 +856,7 @@ export default ReducerExample
 ### Что такое `useContext()`?
 
 <p align="center">
-  <img src="../assets/img2/context-api.jpg" alt="Context API" />
+  <img src="./assets/img2/context-api.jpg" alt="Context API" />
 </p>
 
 `React Context API` позволяет получать данные на разных уровнях дерева компонентов без их передачи через `props`:
@@ -1041,7 +1041,7 @@ _Преимущества виртуального `DOM`_
 - Умный рендеринг: использование эвристических методов сравнения позволяет минимизировать количество операций обновления.
 
 <p align="center">
-  <img src="../assets/img2/dom.png" alt="Real DOM and Virtual DOM" />
+  <img src="./assets/img2/dom.png" alt="Real DOM and Virtual DOM" />
 </p>
 
 ### Когда следует использовать стрелочные функции?
@@ -1141,7 +1141,7 @@ _Обратите внимание:_ появление хуков стерло 
 ### Назовите стадии жизненного цикла компонента
 
 <p align="center">
-  <img src="../assets/img2/react-lifecycle.png" alt="React component lifecycle" />
+  <img src="./assets/img2/react-lifecycle.png" alt="React component lifecycle" />
 </p>
 
 `React` предоставляет несколько методов, уведомляющих нас о происходящих процессах. Эти методы называются методами жизненного цикла (lifecycle methods) компонента. Они вызываются в определенном порядке. Жизненный цикл компонента делится на 4 стадии.
@@ -2011,7 +2011,7 @@ export default page(MyPageComponent)
 При возникновении проблем с производительностью одного из компонентов, следует начать с "профилировщика" инструментов разработчика `React`.
 
 <p align="center">
-  <img src="../assets/img2/react-dev-tools.png"  alt="React DevTools" />
+  <img src="./assets/img2/react-dev-tools.png"  alt="React DevTools" />
 </p>
 
 2. Использование метода `shouldComponentUpdate`.
@@ -2330,7 +2330,7 @@ export default [
 Результат:
 
 <p align="center">
-  <img src='../assets/img2/react-form.png' alt='React Form' />
+  <img src='./assets/img2/react-form.png' alt='React Form' />
 </p>
 
 ### Как изменить состояние дочернего компонента с помощью родительского?
@@ -3012,7 +3012,7 @@ _Согласование_ (reconciliation) - это процесс, в ходе
 Разрабатывая приложение, мы создаем дерево компонентов. `React` берет это дерево, обрабатывает его и создает виртуальный `DOM`, который хранится в памяти. При обновлении приложения (т.е. при изменении `state` или `props`), `React` берет обновленный виртуальный `DOM` и сравнивает его с предыдущим. После этого, `React` определяет, что и каким образом изменилось. Наконец, изменения применяются к браузерному `DOM` в части касающейся. Это процедура повторяется снова и снова.
 
 <p align="center">
-  <img src="../assets/img2/reconciliation.jpg" alt="reconciliation" />
+  <img src="./assets/img2/reconciliation.jpg" alt="reconciliation" />
 </p>
 
 Синхронизация виртуального `DOM` с браузерным обеспечивается библиотекой `ReactDOM`. `React` должен проводить сравнение деревьев очень быстро, поэтому он использует _эвристический алгоритм_ со сложностью _O(n)_. Такая сложность выполнения алгоритма означает, что если у нас имеется `1000` узлов, нам потребуется выполнить всего `1000` сравнений. Данный алгоритм является улучшенной версией алгоритма со сложностью _O(n\^3)_ => для `1000` узлов потребуется `1 млрд.` сравнений.
@@ -3795,7 +3795,7 @@ class MyComponent extends Component {
 ### Чем `React Router` отличается от обычной маршрутизации?
 
 <p align="center">
-  <img src="../assets/img2/react-routing.png" alt="React Router" />
+  <img src="./assets/img2/react-routing.png" alt="React Router" />
 </p>
 
 В `React` существует лишь один `HTML-файл` (`index.html`). Когда пользователь переходит на новую страницу, вместо получения данных от сервера, роутер возвращает тот или иной компонент. У пользователя создается впечатление перемещения между страницами, но, в действительности, компоненты приложения являются не более чем разными представлениями одной страницы.
@@ -4418,7 +4418,7 @@ class Clock extends React.Component {
 - Данные в состоянии обновляют представление.
 
 <p align="center">
-  <img src="../assets/img2/react-twoway-data-binding.png" alt="Two way Data Binding" />
+  <img src="./assets/img2/react-twoway-data-binding.png" alt="Two way Data Binding" />
 </p>
 
 ```jsx
@@ -5993,7 +5993,7 @@ class Button extends React.Component {
 ### В чем разница между `ShadowDOM` и `VirtualDOM`?
 
 <p align="center">
-  <img src="../assets/img2/shadow-dom.png" alt="DOM" />
+  <img src="./assets/img2/shadow-dom.png" alt="DOM" />
 </p>
 
 _Document Object Model (объектная модель документа)_
@@ -6473,7 +6473,7 @@ FancyInput = forwardRef(FancyInput)
 _useLayoutEffect()_
 
 <p align="center">
-  <img src="../assets/img2/useLayoutEffect.png" alt="useLayoutEffect" />
+  <img src="./assets/img2/useLayoutEffect.png" alt="useLayoutEffect" />
 </p>
 
 Хук `useLayoutEffect` запускается после выполнения всех манипуляций с `DOM`, но до его отрисовки браузером. Это может быть полезным для получения дополнительной информации из `DOM` (например, получение величины прокрутки или стилей элемента) и использования этой информации для корректировки `DOM` или запуска повторного рендеринга путем обновления состояния.
@@ -7356,7 +7356,7 @@ _Обратите внимание_: разработчики `Redux` попыт
 ### Назовите ключевые концепции `Redux`
 
 <p align="center">
-  <img src="../assets/img2/redux-components.jpg" alt="Redux Components" />
+  <img src="./assets/img2/redux-components.jpg" alt="Redux Components" />
 </p>
 
 1. Операция (action).
@@ -7479,7 +7479,7 @@ _Единственный источник истины_  (single source of trut
 В `React/Redux-приложениях` единственным способом изменить данные в `UI` является отправка операции в редуктор, обновляющий состояние приложения. Компоненты, подписанные на редукторы, обновляются вслед за ними. Это не относится к локальному состоянию компонентов.
 
 <p align="center">
-  <img src="../assets/img2/redux-state.png" alt="Redux State" />
+  <img src="./assets/img2/redux-state.png" alt="Redux State" />
 </p>
 
 Предположим, что у нас имеется хранилище `Redux`, содержащее элементы для отображения на экране. Для изменения этих элементов необходимо изменить данные в хранилище. После изменения данных, все, что с ними связано, автоматически обновляется.
@@ -7514,7 +7514,7 @@ _Подробности работы `Redux`:_
 - Компоненты, подписанные на хранилище, получают уведомление об изменении состояния и обновляются.
 
 <p align="center">
-  <img src="../assets/img2/redux-workflow.png" alt="Redux Workflow" />
+  <img src="./assets/img2/redux-workflow.png" alt="Redux Workflow" />
 </p>
 
 ### Для чего используется `Redux Thunk`?
@@ -8033,7 +8033,7 @@ export const mapDispatchToProps = (dispatch) => ({
 ### Как выглядит поток данных в `React/Redux-приложении`?
 
 <p align="center">
-  <img src="../assets/img2/redux-data-flow.gif" alt="Redux Data Flow" />
+  <img src="./assets/img2/redux-data-flow.gif" alt="Redux Data Flow" />
 </p>
 
 `Redux` предоставляет способ распределения данных между компонентами с помощью единого состояния в хранилище. Хранилище - это единственный источник истины (single source of truth). Компоненты, которым нужен доступ к состоянию, подписываются на хранилище, и получают состояние при его обновлении.
@@ -8284,7 +8284,7 @@ export connect(mapStateToProps)(ItemList)
 ### В чем разница между `Redux` и `Flux`?
 
 <p align="center">
-  <img src="../assets/img2/flux-structure.png" alt="Flux" />
+  <img src="./assets/img2/flux-structure.png" alt="Flux" />
 </p>
 
 `Flux` - это архитектурный паттерн проектирования, разработанный и используемый `Facebook` для построения пользовательских интерфейсов или клиентских веб-приложений. Во `Flux` используется однонаправленный поток данных (one-directional data flow), что соответствует композиционной природе `React-компонентов`.
@@ -8299,7 +8299,7 @@ _Архитектура Flux_
 - _Dispatcher (диспетчер)_: координирует операции и обновление хранилища.
 
 <p align="center">
-  <img src="../assets/img2/flux-architecture.png" alt="Flux Architecture" />
+  <img src="./assets/img2/flux-architecture.png" alt="Flux Architecture" />
 </p>
 
 Во `Flux`, когда пользователь нажимает на кнопку, например, представление создает операцию. Операция может генерировать новые данные и отправлять их диспетчеру. Диспетчер выполняет операцию и отправляет ее результат в хранилище. Хранилище обновляет состояние и отправляет его представлению.
@@ -8312,7 +8312,7 @@ _Архитектура Redux_
 - _Centralized store (централизованное хранилище)_: содержит объект состояния всего приложения.
 
 <p align="center">
-  <img src="../assets/img2/redux-architecture.png" alt="Redux Architecture" />
+  <img src="./assets/img2/redux-architecture.png" alt="Redux Architecture" />
 </p>
 
 В `Redux` событие является операцией, которая отправляется в редуктор. Редуктор выполняет операцию над текущим состоянием и возвращает новое состояние, которое отправляется в хранилище. Хранилище создает новое состояние и отправляет его представлению. После этого представление перерисовывается в соответствии с новым состоянием.
@@ -8333,7 +8333,7 @@ _Flux против Redux_
 `MVC` расшифровывается как Model-View-Controller (Модель-Представление-Контроллер). Это архитектурный паттерн, который используется для разработки `UI`. Приложение делится на три логических компонента: модель, представление и контроллер, соответственно.
 
 <p align="center">
-  <img src="../assets/img2/mvc.png" alt="MVC" />
+  <img src="./assets/img2/mvc.png" alt="MVC" />
 </p>
 
 - _Model_: отвечает за поведение и данные приложения.
@@ -8357,7 +8357,7 @@ _Flux против Redux_
 - Представления, которые похожи на представления в `MVC`, но в контексте `React`. Также включают в себя контроллеров для регистрации событий и извлечении состояния приложения.
 
 <p align="center">
-  <img src="../assets/img2/flux-2.png" alt="Flux" />
+  <img src="./assets/img2/flux-2.png" alt="Flux" />
 </p>
 
 1. Все данные приложения передаются через центральный "хаб" - диспетчер.
@@ -8696,7 +8696,7 @@ export default (state = [], action) => {
 `Redux Thunk` - это посредник (middleware), позволяющий вызывать создателей операции (action creators), возвращающих функции вместо объектов. Данные функции принимают метод `dispatch`, который используется для отправки обычной синхронной операции в теле функции после завершения асинхронных операций.
 
 <p align="center">
-  <img src="../assets/img2/redux-thunk.jpeg" alt="Redux Thunk" />
+  <img src="./assets/img2/redux-thunk.jpeg" alt="Redux Thunk" />
 </p>
 
 ```bash
@@ -8744,7 +8744,7 @@ export { fetchList }
 `Redux Saga` основан на генераторах, позволяющих писать асинхронный код, который выглядит как синхронный, и хорошо тестируется. В "саге" мы легко может тестировать наши асинхронные потоки данных и, при этом, наши операции остаются "чистыми". Она хорошо организует асинхронные операции, что повышает читаемость кода. Также "сага" имеет множество полезных инструментов для выполнения асинхронных операций.
 
 <p align="center">
-  <img src="../assets/img2/redux-saga.png" alt="Redux Saga" />
+  <img src="./assets/img2/redux-saga.png" alt="Redux Saga" />
 </p>
 
 ```jsx
@@ -8850,7 +8850,7 @@ export default reduxForm({
 ```
 
 <p align="center">
-  <img src="../assets/img2/react-redux-form.png" alt="React Redux Form" />
+  <img src="./assets/img2/react-redux-form.png" alt="React Redux Form" />
 </p>
 
 [Читать подробнее](https://redux-form.com/6.5.0/examples/syncvalidation/)
