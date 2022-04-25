@@ -1,18 +1,21 @@
 ---
 slug: nextjs-redis
-title: [Туториал] Next.js: кеширование страниц с помощью кастомного сервера и Redis
+title: Кеширование страниц с помощью кастомного сервера Next.js и Redis
 description: Туториал по кешированию страниц с помощью кастомного сервера Next.js и Redis
 authors: harryheman
-tags: [javascript, js, 'next.js', 'nextjs', 'next', 'redis', 'cache', 'caching', tutorial, 'туториал', 'кеш', 'кеширование']
+tags: [javascript, js, next.js, 'nextjs', next, redis, cache, caching, tutorial, туториал, кеш, кеширование]
+image: https://habrastorage.org/webt/2s/qg/xv/2sqgxvllqf-p6w-a6axpi4l8qfo.png
 ---
 
-<img src="https://habrastorage.org/webt/2s/qg/xv/2sqgxvllqf-p6w-a6axpi4l8qfo.png" />
+<img src="https://habrastorage.org/webt/2s/qg/xv/2sqgxvllqf-p6w-a6axpi4l8qfo.png" alt="" />
 
 Привет, друзья!
 
 В одной из [предыдущих статей](https://habr.com/ru/company/timeweb/blog/655775/) я рассказывал об оптимизации изображений с помощью [Imgproxy](https://docs.imgproxy.net/GETTING_STARTED) и их кешировании на клиенте с помощью [сервис-воркера](https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API). В этой статье я хочу рассказать вам о кешировании разметки, генерируемой [Next.js](https://nextjs.org/), с помощью [кастомного сервера](https://nextjs.org/docs/advanced-features/custom-server) и [Redis](https://redis.io/), а также показать один простой прием, позволяющий существенно ускорить серверный рендеринг определенных страниц.
 
-[Репозиторий с исходным кодом проекта](https://github.com/harryheman/next-redis).
+[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nextjs-redis).
+
+<!--truncate-->
 
 ## Подготовка и настройка проекта
 

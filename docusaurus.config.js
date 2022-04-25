@@ -3,7 +3,7 @@ const config = {
   title: 'MyJavaScript',
   tagline:
     'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и множеству других технологий, связанных с разработкой веб-приложений.',
-  url: 'https://my-js.netlify.app/',
+  url: 'https://my-js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -23,6 +23,9 @@ const config = {
           breadcrumbs: false
         },
         blog: {
+          blogTitle: 'Блог по веб-разработке',
+          blogDescription:
+            'Блог по разработке приложений на JavaScript, React, TypeScript, Node.js и других технологиях',
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: 'https://github.com/harryheman/my-js/tree/master/'
@@ -69,7 +72,7 @@ const config = {
             position: 'left',
             label: 'Cсылки'
           },
-          // { to: 'blog', label: 'Блог', position: 'left' },
+          { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.
           {
             href: 'https://github.com/harryheman/my-js',

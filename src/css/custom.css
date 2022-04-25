@@ -60,6 +60,9 @@
   .markdown > h2 {
     font-size: 1.6rem;
   }
+  article header h2 {
+    font-size: 1.8rem !important;
+  }
 }
 
 .navbar__link--active {
@@ -92,4 +95,16 @@
 
 .footer__link img {
   width: 32px;
+}
+
+article header h1 {
+  font-size: 2.6rem !important;
+}
+
+article img {
+  border-radius: 6px;
+}
+
+.margin-bottom--xl {
+  margin-bottom: 3rem !important;
 }

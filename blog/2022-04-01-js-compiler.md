@@ -1,12 +1,13 @@
 ---
 slug: js-compiler
-title: [Перевод] JavaScript: разрабатываем простой компилятор кода
+title: Компилятор кода на JavaScript
 description: Туториал по разработке простого компилятора кода на JavaScript
 authors: harryheman
-tags: [javascript, js, 'compiler', tutorial, 'компилятор', 'туториал']
+tags: [javascript, js, compiler, tutorial, компилятор, туториал]
+image: https://habrastorage.org/webt/gp/rx/uj/gprxuj2skxbmhitwrnlg1ibcalm.jpeg
 ---
 
-<img src="https://habrastorage.org/webt/gp/rx/uj/gprxuj2skxbmhitwrnlg1ibcalm.jpeg" />
+<img src="https://habrastorage.org/webt/gp/rx/uj/gprxuj2skxbmhitwrnlg1ibcalm.jpeg" alt="" />
 
 Привет, друзья!
 
@@ -23,6 +24,8 @@ tags: [javascript, js, 'compiler', tutorial, 'компилятор', 'тутор
 2 + (4 - 2) | (add 2 (subtract 4 2)) | add(2, subtract(4, 2))
 
 Разумеется, это далеко не полный синтаксис LIST или C, но нам вполне этого хватит для демонстрации многих основных частей современного компилятора.
+
+<!--truncate-->
 
 ## Введение
 
