@@ -3,6 +3,7 @@ sidebar_position: 11
 title: Шпаргалка по Create React App
 description: Шпаргалка по Create React App
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'create react app', 'cra', 'cli', 'cheatsheet', 'интерфейс командной строки']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'create react app', 'cra', 'cli', 'cheatsheet', 'интерфейс командной строки']
 ---
 
 # Create React App

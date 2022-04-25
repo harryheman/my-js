@@ -2,7 +2,8 @@
 sidebar_position: 5
 title: Руководство по Prisma
 description: Руководство по Prisma
-keywords: ['javascript', 'js', 'typescript', 'ts', 'node.js', 'nodejs', 'node', 'prisma', 'orm', 'guide', 'руководство']
+keywords: ['javascript', 'js', 'typescript', 'ts', 'node.js', 'nodejs', 'node', 'prisma', 'orm', 'sql', 'guide', 'руководство']
+tags: ['javascript', 'js', 'typescript', 'ts', 'node.js', 'nodejs', 'node', 'prisma', 'orm', 'sql', 'guide', 'руководство']
 ---
 
 # Prisma

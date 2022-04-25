@@ -2,8 +2,8 @@
 sidebar_position: 20
 title: Шпаргалка по JSON Server
 description: Шпаргалка по JSON Server
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'json server', 'json-server', 'npm', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'библиотека', 'утилита', 'пакет']
-tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'json server', 'json-server', 'npm', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'библиотека', 'утилита', 'пакет']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'json server', 'json-server', 'npm', 'package', 'cheatsheet', 'шпаргалка', 'библиотека', 'пакет']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'json server', 'json-server', 'npm', 'package', 'cheatsheet', 'шпаргалка', 'библиотека', 'пакет']
 ---
 
 # JSON Server

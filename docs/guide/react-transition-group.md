@@ -3,6 +3,7 @@ sidebar_position: 11
 title: Руководство по React Transition Group
 description: Руководство по React Transition Group
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react transition group', 'react-transition-group', 'transition', 'animation', 'guide', 'руководство', 'переход', 'анимация']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react transition group', 'react-transition-group', 'transition', 'animation', 'guide', 'руководство', 'переход', 'анимация']
 ---
 
 # React Transition Group

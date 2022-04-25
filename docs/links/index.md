@@ -2,6 +2,7 @@
 id: intro-links
 title: Ссылки
 hide_title: true
+description: Полезные и проверенные ссылки на ресурсы по изучению JavaScript, React, TypeScript, Node.js и др.
 ---
 
 # Полезные и проверенные ссылки

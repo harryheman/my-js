@@ -2,7 +2,8 @@
 sidebar_position: 16
 title: Руководство по Socket.IO
 description: Руководство по Socket.IO
-keywords: ['javascript', 'js', 'socket.io', 'socketio', 'socket', 'guide', 'руководство', 'websockets', 'websocket', 'http long polling', 'long polling', 'realtime app', 'realtime', 'веб-сокеты', 'веб-сокет', 'длинные опросы', 'длинный опрос', 'приложение, работающее в режиме реального времени', 'реальное время']
+keywords: ['javascript', 'js', 'socket.io', 'socketio', 'socket', 'guide', 'руководство', 'websocket', 'http long polling', 'realtime', 'веб-сокеты', 'длинный опрос', 'режим реального времени']
+tags: ['javascript', 'js', 'socket.io', 'socketio', 'socket', 'guide', 'руководство', 'websocket', 'http long polling', 'realtime', 'веб-сокеты', 'длинный опрос', 'режим реального времени']
 ---
 
 # Socket.IO

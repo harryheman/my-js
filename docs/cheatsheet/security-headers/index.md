@@ -3,6 +3,7 @@ sidebar_position: 5
 title: Шпаргалка по HTTP-заголовкам, связанным с безопасностью
 description: Шпаргалка по HTTP-заголовкам, связанным с безопасностью
 keywords: ['javascript', 'js', 'http headers', 'security headers', 'cheatsheet', 'шпаргалка', 'http-заголовки', 'заголовки безопасности']
+tags: ['javascript', 'js', 'http headers', 'security headers', 'cheatsheet', 'шпаргалка', 'http-заголовки', 'заголовки безопасности']
 ---
 
 # Security Headers

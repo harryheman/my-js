@@ -2,7 +2,8 @@
 sidebar_position: 25
 title: Шпаргалка по Helmet
 description: Шпаргалка по Helmet
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'helmet', 'http headers', 'security headers', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет', 'http-заголовки', 'заголовки безопасности']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'helmet', 'http headers', 'security headers', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет', 'http-заголовки', 'заголовки безопасности']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'helmet', 'http headers', 'security headers', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет', 'http-заголовки', 'заголовки безопасности']
 ---
 
 # Helmet

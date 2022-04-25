@@ -3,6 +3,7 @@ sidebar_position: 28
 title: Шпаргалка по Webpack
 description: Шпаргалка по Webpack
 keywords: ['javascript', 'js', 'webpack', 'bundler', 'cheatsheet', 'шпаргалка', 'сборщик модулей']
+tags: ['javascript', 'js', 'webpack', 'bundler', 'cheatsheet', 'шпаргалка', 'сборщик модулей']
 ---
 
 # Webpack

@@ -3,6 +3,7 @@ sidebar_position: 4
 title: Руководство по Mongoose
 description: Руководство по Mongoose
 keywords: ['javascript', 'js', 'mongoose', 'orm', 'mongodb', 'mongo', 'guide', 'руководство']
+tags: ['javascript', 'js', 'mongoose', 'orm', 'mongodb', 'mongo', 'guide', 'руководство']
 ---
 
 # Mongoose

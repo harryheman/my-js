@@ -3,6 +3,7 @@ sidebar_position: 31
 title: Шпаргалка по Netlify
 description: Шпаргалка по Netlify
 keywords: ['netlify', 'hosting', 'cheatsheet', 'шпаргалка', 'хостинг']
+tags: ['netlify', 'hosting', 'cheatsheet', 'шпаргалка', 'хостинг']
 ---
 
 # Netlify

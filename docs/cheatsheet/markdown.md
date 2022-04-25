@@ -3,6 +3,7 @@ sidebar_position: 30
 title: Шпаргалка по Markdown
 description: Шпаргалка по Markdown
 keywords: ['markdown', 'md', 'cheatsheet', 'шпаргалка']
+tags: ['markdown', 'md', 'cheatsheet', 'шпаргалка']
 ---
 
 # Markdown

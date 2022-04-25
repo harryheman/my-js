@@ -2,7 +2,8 @@
 sidebar_position: 6
 title: Руководство по Sequelize
 description: Руководство по Sequelize
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'sequelize', 'orm', 'guide', 'руководство']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'sequelize', 'orm', 'sql', 'guide', 'руководство']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'sequelize', 'orm', 'sql', 'guide', 'руководство']
 ---
 
 # Sequelize

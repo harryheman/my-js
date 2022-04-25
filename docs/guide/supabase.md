@@ -2,7 +2,8 @@
 sidebar_position: 15
 title: Руководство по Supabase
 description: Руководство по Supabase
-keywords: ['javascript', 'js', 'supabase', 'saas', 'baas', 'guide', 'руководство', 'firebase', 'api', 'database', 'file storage', 'realtime', 'программный интерфейс приложения', 'база данных', 'файловое хранилище', 'обработка изменений в режиме реального времени']
+keywords: ['javascript', 'js', 'supabase', 'saas', 'baas', 'guide', 'руководство', 'firebase', 'api', 'database', 'file storage', 'realtime', 'база данных', 'файловое хранилище', 'обработка изменений в режиме реального времени']
+tags: ['javascript', 'js', 'supabase', 'saas', 'baas', 'guide', 'руководство', 'firebase', 'api', 'database', 'file storage', 'realtime', 'база данных', 'файловое хранилище', 'обработка изменений в режиме реального времени']
 ---
 
 # Supabase

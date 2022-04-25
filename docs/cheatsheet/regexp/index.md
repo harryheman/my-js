@@ -3,6 +3,7 @@ sidebar_position: 4
 title: Туториал по регулярным выражениям
 description: Туториал по регулярным выражениям
 keywords: ['javascript', 'js', 'regular expressions', 'regexp', 'regex', 'tutorial', 'туториал', 'регулярные выражения', 'регулярки']
+tags: ['javascript', 'js', 'regular expressions', 'regexp', 'regex', 'tutorial', 'туториал', 'регулярные выражения', 'регулярки']
 ---
 
 # RegExp

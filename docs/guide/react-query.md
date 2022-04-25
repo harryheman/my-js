@@ -3,6 +3,7 @@ sidebar_position: 9
 title: Руководство по React Query
 description: Руководство по React Query
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react query', 'state manager', 'state management', 'state', 'guide', 'руководство', 'инструмент для управления состоянием', 'управление состоянием', 'состояние']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react query', 'state manager', 'state management', 'state', 'guide', 'руководство', 'инструмент для управления состоянием', 'управление состоянием', 'состояние']
 ---
 
 # React Query

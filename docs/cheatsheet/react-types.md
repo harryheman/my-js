@@ -2,7 +2,8 @@
 sidebar_position: 14
 title: Выдержки из определений типов TypeScript для React
 description: Выдержки из определений типов TypeScript для React
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'type definitions', 'types', 'type', 'cheatsheet', 'шпаргалка', 'определения типов', 'типы', 'тип']
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'type definitions', 'types', 'cheatsheet', 'шпаргалка', 'определения типов', 'типы']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'type definitions', 'types', 'cheatsheet', 'шпаргалка', 'определения типов', 'типы']
 ---
 
 # React Types

@@ -2,6 +2,7 @@
 title: Руководство по Apollo Client
 description: Руководство по Apollo Client
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'apollo client', 'apollo', 'graphql', 'api', 'guide', 'руководство']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'apollo client', 'apollo', 'graphql', 'api', 'guide', 'руководство']
 ---
 
 # Apollo Client

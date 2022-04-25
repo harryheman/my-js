@@ -3,6 +3,7 @@ sidebar_position: 9
 title: Шпаргалка по Temporal API и Dayjs
 description: Шпаргалка по Temporal API и Dayjs
 keywords: ['javascript', 'js', 'temporal api', 'day.js', 'dayjs', 'date', 'time', 'cheatsheet', 'шпаргалка', 'дата', 'время']
+tags: ['javascript', 'js', 'temporal api', 'day.js', 'dayjs', 'date', 'time', 'cheatsheet', 'шпаргалка', 'дата', 'время']
 ---
 
 # Temporal API & Dayjs

@@ -3,6 +3,7 @@ sidebar_position: 12
 title: Руководство по React Spring
 description: Руководство по React Spring
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react spring', 'react-spring', 'spring', 'animation', 'guide', 'руководство', 'переход', 'анимация', 'пружина']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react spring', 'react-spring', 'spring', 'animation', 'guide', 'руководство', 'переход', 'анимация', 'пружина']
 ---
 
 # React Spring

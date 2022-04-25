@@ -3,6 +3,7 @@ sidebar_position: 14
 title: Руководство по Docker
 description: Руководство по Docker
 keywords: ['docker', 'docker compose', 'docker-compose', 'devops', 'container', 'guide', 'руководство', 'контейнер']
+tags: ['docker', 'docker compose', 'docker-compose', 'devops', 'container', 'guide', 'руководство', 'контейнер']
 ---
 
 # Docker

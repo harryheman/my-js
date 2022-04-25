@@ -2,7 +2,8 @@
 sidebar_position: 19
 title: Шпаргалка по Axios
 description: Шпаргалка по Axios
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'axios', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'axios', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'axios', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет']
 ---
 
 # Axios

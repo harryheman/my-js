@@ -3,6 +3,7 @@ sidebar_position: 7
 title: Руководство по Redux Toolkit
 description: Руководство по Redux Toolkit
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'redux toolkit', 'redux.js', 'redux', 'state manager', 'state management', 'state', 'guide', 'руководство', 'инструмент для управления состоянием', 'управление состоянием', 'состояние']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'redux toolkit', 'redux.js', 'redux', 'state manager', 'state management', 'state', 'guide', 'руководство', 'инструмент для управления состоянием', 'управление состоянием', 'состояние']
 ---
 
 # Redux Toolkit

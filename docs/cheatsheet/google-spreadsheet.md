@@ -2,7 +2,8 @@
 sidebar_position: 26
 title: Шпаргалка по Google Spreadsheet
 description: Шпаргалка по Google Spreadsheet
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'google spreadsheet', 'spreadsheet', 'npm', 'registry', 'package', 'utility', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'утилита', 'пакет', 'гугл-таблицы', 'таблица']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'google spreadsheet', 'spreadsheet', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет', 'гугл-таблицы', 'таблица']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'google spreadsheet', 'spreadsheet', 'npm', 'registry', 'package', 'cheatsheet', 'шпаргалка', 'реестр', 'библиотека', 'пакет', 'гугл-таблицы', 'таблица']
 ---
 
 # Google Spreadsheet

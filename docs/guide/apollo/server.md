@@ -2,6 +2,7 @@
 title: Руководство по Apollo Server
 description: Руководство по Apollo Server
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'apollo server', 'apollo', 'graphql', 'api', 'guide', 'руководство']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'apollo server', 'apollo', 'graphql', 'api', 'guide', 'руководство']
 ---
 
 # Apollo Server

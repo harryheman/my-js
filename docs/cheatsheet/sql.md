@@ -3,6 +3,7 @@ sidebar_position: 27
 title: Шпаргалка по SQL
 description: Шпаргалка по SQL
 keywords: ['sql', 'structured query language', 'cheatsheet', 'шпаргалка', 'язык структурированных запросов']
+tags: ['sql', 'structured query language', 'cheatsheet', 'шпаргалка', 'язык структурированных запросов']
 ---
 
 # SQL

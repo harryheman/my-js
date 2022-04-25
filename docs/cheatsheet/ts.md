@@ -3,6 +3,7 @@ sidebar_position: 17
 title: Шпаргалка по TypeScript
 description: Шпаргалка по TypeScript
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
 ---
 
 # TypeScript

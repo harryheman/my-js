@@ -2,7 +2,8 @@
 hide_title: true
 title: Сниппеты Node.js
 description: Примеры кода на Node.js
-keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'snippets', 'snippet', 'examples', 'example', 'сниппеты', 'сниппет', 'примеры', 'пример']
+keywords: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'snippets', 'examples', 'сниппеты', 'примеры']
+tags: ['javascript', 'js', 'node.js', 'nodejs', 'node', 'snippets', 'examples', 'сниппеты', 'примеры']
 ---
 
 # Сниппеты Node.js

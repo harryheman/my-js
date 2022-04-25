@@ -3,6 +3,7 @@ sidebar_position: 3
 title: Руководство по GraphQL
 description: Руководство по GraphQL
 keywords: ['javascript', 'js', 'graphql', 'api', 'guide', 'руководство']
+tags: ['javascript', 'js', 'graphql', 'api', 'guide', 'руководство']
 ---
 
 # GraphQL

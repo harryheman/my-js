@@ -3,6 +3,7 @@ sidebar_position: 10
 title: Руководство по React Router
 description: Руководство по React Router
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react router', 'react-router-dom', 'router', 'routing', 'route', 'guide', 'руководство', 'маршрутизация', 'роутинг', 'маршрут', 'роут', 'маршрутизатор', 'роутер']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react router', 'react-router-dom', 'router', 'routing', 'route', 'guide', 'руководство', 'маршрутизация', 'роутинг', 'маршрут', 'роут', 'маршрутизатор', 'роутер']
 ---
 
 # React Router

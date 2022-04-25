@@ -2,7 +2,8 @@
 sidebar_position: 16
 title: Примеры кастомных компонентов React
 description: Примеры кастомных компонентов React
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom components', 'components', 'component', 'cheatsheet', 'шпаргалка', 'кастомные компоненты', 'пользовательские компоненты', 'компоненты', 'компонент']
+keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom components', 'components', 'cheatsheet', 'шпаргалка', 'кастомные компоненты', 'пользовательские компоненты', 'компоненты']
+tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom components', 'components', 'cheatsheet', 'шпаргалка', 'кастомные компоненты', 'пользовательские компоненты', 'компоненты']
 ---
 
 # React Custom Components

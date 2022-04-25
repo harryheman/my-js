@@ -2,7 +2,8 @@
 sidebar_position: 3
 title: Шпаргалка по методам JavaScript для работы с DOM
 description: Шпаргалка по методам JavaScript для работы с DOM
-keywords: ['javascript', 'js', 'document object model', 'dom', 'methods', 'method', 'cheatsheet', 'шпаргалка', 'объектная модель документа', 'методы', 'метод']
+keywords: ['javascript', 'js', 'document object model', 'dom', 'methods', 'cheatsheet', 'шпаргалка', 'объектная модель документа', 'методы']
+tags: ['javascript', 'js', 'document object model', 'dom', 'methods', 'cheatsheet', 'шпаргалка', 'объектная модель документа', 'методы']
 ---
 
 # JavaScript DOM

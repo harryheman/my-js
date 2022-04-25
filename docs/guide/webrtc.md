@@ -3,6 +3,7 @@ sidebar_position: 16
 title: WebRTC для всех и каждого
 description: Руководство по WebRTC для начинающих
 keywords: ['javascript', 'js', 'webrtc', 'guide', 'руководство', 'realtime communication', 'коммуникация в реальном времени']
+tags: ['javascript', 'js', 'webrtc', 'guide', 'руководство', 'realtime communication', 'коммуникация в реальном времени']
 ---
 
 # WebRTC
