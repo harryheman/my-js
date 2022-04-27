@@ -93,7 +93,7 @@ export default function Home() {
           </p>
           <p className='hero__subtitle small'>
             Материалы находятся в свободном доступе. <br />
-            Ссылки на данное приложение приветствуются.
+            Ссылки на приложение приветствуются.
           </p>
         </div>
       </header>

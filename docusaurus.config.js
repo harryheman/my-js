@@ -37,6 +37,74 @@ const config = {
     ]
   ],
 
+  plugins: [
+    [
+      require.resolve('docusaurus-lunr-search'),
+      {
+        languages: ['en', 'ru']
+      }
+    ],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString'
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/logo.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json'
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#3c3c3c'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#3c3c3c'
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/logo.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'mask-icon',
+            href: '/img/logo.png',
+            color: '#3c3c3c'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileImage',
+            content: '/img/logo.png'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileColor',
+            content: '#3c3c3c'
+          }
+        ]
+      }
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

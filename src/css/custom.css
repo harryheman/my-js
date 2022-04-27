@@ -70,6 +70,15 @@
   text-decoration: none;
 }
 
+.menu__link--active {
+  color: inherit;
+  background-color: inherit;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: inherit;
+}
+
 [aria-current='page'] {
   color: var(--ifm-navbar-link-hover-color);
 }
