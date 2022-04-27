@@ -75,11 +75,11 @@ _Ожидание ошибки на следующей строке_
 
 ## Операторы
 
-- `??` - оператор проверки на `null`
+- `??` - оператор проверки на `null` или `undefined`
 
 ```ts
 function getValue(n: number): number | 'nill' {
-  // 'nill' возвращается, если `n` - это любое ложное значение (включая `0`)
+  // 'nill' возвращается, если `n` - это любое ложное значение (включая `0` и пустую строку!)
   // return n || 'nill'
 
   // 'nill' возвращается, только если `n` имеет значение `null` или `undefined`
@@ -344,7 +344,6 @@ _Класс_
 ```ts
 class Child
 extends Parent
-
 implements Child, OtherChild {
   prop: Type
   defaultProp = 'default value'
