@@ -444,7 +444,7 @@ __`getStaticPaths`__
 export async function getStaticPaths() {
   return {
     paths: [
-      params: {}
+      { params: {} }
     ],
     fallback: true | false | 'blocking'
   }
