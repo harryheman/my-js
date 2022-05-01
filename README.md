@@ -8,11 +8,15 @@
 
 ## :link:&nbsp;&nbsp;[Сайт и блог в формате прогрессивного веб-приложения](https://my-js.org)
 
+## Новое (20.04.2020)
+
+- :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](./docs/guide/webrtc.md)
+
 ## Блог
 
-- :page_with_curl:&nbsp;&nbsp;[Компилятор кода на JavaScript](./blog/2022-04-01-js-compiler.md)
-- :page_with_curl:&nbsp;&nbsp;[Кеширование страниц с помощью кастомного сервера Next.js и Redis](./blog/2022-04-07-nextjs-redis.md)
 - :page_with_curl:&nbsp;&nbsp;[Компилятор кода на TypeScript для WebAssembly](./blog/2022-04-13-ts-compiler.md)
+- :page_with_curl:&nbsp;&nbsp;[Кеширование страниц с помощью кастомного сервера Next.js и Redis](./blog/2022-04-07-nextjs-redis.md)
+- :page_with_curl:&nbsp;&nbsp;[Компилятор кода на JavaScript](./blog/2022-04-01-js-compiler.md)
 
 ## Руководства
 
@@ -40,7 +44,6 @@
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Supabase](./docs/guide/supabase.md)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Workbox](./docs/guide/wb/index.md)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Socket.IO](./docs/guide/socket/index.md)
-- :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](./docs/guide/webrtc.md)
 
 ## Шпаргалки
 

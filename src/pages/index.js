@@ -81,8 +81,8 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Последнее обновление: 20.04.2022&nbsp;
-            <a href='docs/guide/webrtc'>"WebRTC для всех и каждого"</a>.
+            Обновление от 20.04.2022:&nbsp;
+            <a href='docs/guide/webrtc'>WebRTC для всех и каждого</a>.
           </p>
 
           <p className='hero__subtitle small'>
