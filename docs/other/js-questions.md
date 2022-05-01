@@ -2737,7 +2737,8 @@ const person = {
   getFullName() {
     return `${this.firstName} ${this.lastName}`
   }
-}
+}]
+const member = {}
 
 console.log(person.pet?.name)
 console.log(person.pet?.family?.name)
@@ -2755,7 +2756,7 @@ console.log(member.getLastName?.())
 <div>
 <h4>Правильный ответ: B</h4>
 
-Благодаря оператору опциональной последовательности (`?.`) нам больше не нужно предварительно определять наличие глубоко вложенных свойств. Если мы попытаемся получить доступ к свойству значения `undefined` или `null`, выражение вернет `undefined`. `person.pet?.name`: объект `person` имеет свойство `pet`, `pet` имеет свойство `name` - возвращается `Rex`. `person.pet?.family?.name`: объект `person` имеет свойство `pet`, `pet` не имеет свойства `family` - возвращается `undefined`. `person.getFullName?.()`: объект `person` имеет метод `getFullName` - возвращается `John Smith`. `member.getLastName?.()`: переменная `member` не определена - возвращается `undefined`.
+Благодаря оператору опциональной последовательности (`?.`) нам больше не нужно предварительно определять наличие глубоко вложенных свойств. Если мы попытаемся получить доступ к свойству значения `undefined` или `null`, выражение вернет `undefined`. `person.pet?.name`: объект `person` имеет свойство `pet`, `pet` имеет свойство `name` - возвращается `Rex`. `person.pet?.family?.name`: объект `person` имеет свойство `pet`, `pet` не имеет свойства `family` - возвращается `undefined`. `person.getFullName?.()`: объект `person` имеет метод `getFullName` - возвращается `John Smith`. `member.getLastName?.()`: объект `member` не имеет метода `getLastName`, возвращается `undefined`.
 
 </div>
 </details>
