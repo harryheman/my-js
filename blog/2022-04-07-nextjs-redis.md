@@ -95,7 +95,7 @@ services:
 
 Выполняем команду `docker compose up -d` для запуска сервиса.
 
-<img src="https://habrastorage.org/webt/iq/qz/nd/iqqzndfu5-gdm1xvn6hsyrenfxq.png" />
+<img src="https://habrastorage.org/webt/iq/qz/nd/iqqzndfu5-gdm1xvn6hsyrenfxq.png" alt="" />
 <br />
 
 Получаем сообщение от `redis` о его готовности к работе.
@@ -535,21 +535,21 @@ app.prepare().then(() => {
 
 Запускаем приложение в режиме для разработки с помощью команды `yarn start:dev` или `npm run start:dev` и открываем вкладку браузера по адресу: `http://localhost:5000`.
 
-<img src="https://habrastorage.org/webt/2i/lp/io/2ilpiofzfnki2pyaclmwkjmsths.png" />
+<img src="https://habrastorage.org/webt/2i/lp/io/2ilpiofzfnki2pyaclmwkjmsths.png" alt="" />
 <br />
 
 _Обратите внимание_ на сообщения в терминале: мы видим, что запрос на получение главной страницы (`/`) проходит сначала через посредника для работы с `redis` (`@redis middleware /`), затем через обработчик запроса (`@route handler /`). Также мы получили сообщение от `redis` о записи страницы в кеш (`@to cache`).
 
 Переходим на другую страницу, например, `About`.
 
-<img src="https://habrastorage.org/webt/fi/wu/sj/fiwusj43cgunijmci16lovutki4.png" />
+<img src="https://habrastorage.org/webt/fi/wu/sj/fiwusj43cgunijmci16lovutki4.png" alt="" />
 <br />
 
 Получаем аналогичные сообщения для этой страницы.
 
 Возвращаемся на главную.
 
-<img src="https://habrastorage.org/webt/pe/2r/yx/pe2ryxyuya9f9fddczi7onbkkow.png" />
+<img src="https://habrastorage.org/webt/pe/2r/yx/pe2ryxyuya9f9fddczi7onbkkow.png" alt="" />
 <br />
 
 На этот раз запрос проходит только через посредника (`@redis middleware /`), а страница доставляется из кеша (`@from cache`). Прекрасно, это как раз то, к чему мы стремились.
@@ -723,19 +723,19 @@ docker compose rm
 
 Запускаем сервис с помощью `docker compose up -d`.
 
-<img src="https://habrastorage.org/webt/xg/_z/g2/xg_zg2abwbsxc572yano3tcptuq.png" />
+<img src="https://habrastorage.org/webt/xg/_z/g2/xg_zg2abwbsxc572yano3tcptuq.png" alt="" />
 <br />
 
 Отправляем `GET-запрос` к `http://localhost:5000/clear-cache` с заголовком `x-verification-code: super-secret` для очистки кеша, например, с помощью [Insomnia](https://insomnia.rest/download).
 
-<img src="https://habrastorage.org/webt/5q/7y/sy/5q7ysyja0maxdvep0jbhogkch64.png" />
+<img src="https://habrastorage.org/webt/5q/7y/sy/5q7ysyja0maxdvep0jbhogkch64.png" alt="" />
 <br />
 
 Получаем сообщение об очистке кеша от `redis` (`@clear cache`).
 
 Проверяем работоспособность приложения.
 
-<img src="https://habrastorage.org/webt/pm/xj/zh/pmxjzhzaaelo0_dtym_uo3-fdcs.png" />
+<img src="https://habrastorage.org/webt/pm/xj/zh/pmxjzhzaaelo0_dtym_uo3-fdcs.png" alt="" />
 <br />
 
 Круто! Все работает, как ожидается.

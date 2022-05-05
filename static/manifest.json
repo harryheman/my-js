@@ -5,7 +5,7 @@
   "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "transparent",
+  "background_color": "#3c3c3c",
   "theme_color": "#3c3c3c",
   "description": "Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и множеству других технологий, связанных с разработкой веб-приложений.",
   "icons": [
@@ -22,7 +22,8 @@
     {
       "src": "img/js256.png",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "img/logo.png",

@@ -619,7 +619,7 @@ registerRoute(
 
 ```html
 <link rel="stylesheet" href="https://example.com/path/to/style.css" />
-<img src="https://example.com/path/to/image.png" />
+<img src="https://example.com/path/to/image.png" alt="" />
 ```
 
 В данном случае, для отправки запросов, в ответ на которые возвращаются прозрачные ответы, следует включить режим `CORS` с помощью атрибута <a href="">`crossorigin`</a>:
@@ -630,7 +630,7 @@ registerRoute(
   rel="stylesheet"
   href="https://example.com/path/to/style.css"
 />
-<img crossorigin="anonymous" src="https://example.com/path/to/image.png" />
+<img crossorigin="anonymous" src="https://example.com/path/to/image.png" alt="" />
 ```
 
 ### Опасность кеширования непрозрачных ответов

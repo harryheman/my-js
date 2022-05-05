@@ -640,7 +640,7 @@ io.on("connection", (socket) => {
 
 Жизненный цикл
 
-![lifecycle](./img/client_socket_events.png)
+![img](./img/client_socket_events.png)
 
 #### События
 

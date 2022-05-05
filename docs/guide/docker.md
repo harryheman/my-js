@@ -39,7 +39,7 @@ _Запуск большего количества приложений на о
 
 `Docker` использует клиент-серверную архитектуру. Клиент (`Docker client`) обращается к демону (`Docker daemon`), который поднимает (собирает), запускает и распределяет контейнеры. Клиент и демон могут быть запущены в одной системе или клиент может быть подключен к удаленному демону. Клиент и демон общаются через `REST API` поверх `UNIX-сокетов` или сетевого интерфейса. Другим клиентом является `Docker Compose`, позволяющий работать с приложениями, состоящими из нескольких контейнеров.
 
-<img src="https://habrastorage.org/webt/dr/x3/4f/drx34fhmu1wqwpccdjzxgqufjeg.png" />
+<img src="https://habrastorage.org/webt/dr/x3/4f/drx34fhmu1wqwpccdjzxgqufjeg.png" alt="" />
 <br />
 
 __Демон__
@@ -698,7 +698,7 @@ __Выбор правильного типа монтирования__
 
 Разница между томами, `bind mount` и `tmpfs mount` заключается в том, где хранятся данные на хосте.
 
-<img src="https://habrastorage.org/webt/zw/uh/4h/zwuh4hf842ombg9qhug0rophhyk.png" />
+<img src="https://habrastorage.org/webt/zw/uh/4h/zwuh4hf842ombg9qhug0rophhyk.png" alt="" />
 <br />
 
 - тома хранятся в части файловой системы хоста, управляемой `Docker` (`/var/lib/docker/volumes/` на `Linux`). Процессы, не относящиеся к `Docker`, не должны модифицировать эту часть. Тома - лучший способ хранения данных в `Docker`
@@ -1841,17 +1841,17 @@ sudo kill 103
 
 Убедиться в запуске контейнера можно, выполнив команду `docker ps`:
 
-<img src="https://habrastorage.org/webt/qz/cb/jn/qzcbjnikl7acjtp3u90sd1xcf2o.png" />
+<img src="https://habrastorage.org/webt/qz/cb/jn/qzcbjnikl7acjtp3u90sd1xcf2o.png" alt="" />
 <br />
 
 Или запустив [`Docker Desktop`](https://www.docker.com/products/docker-desktop):
 
-<img src="https://habrastorage.org/webt/xr/zu/n9/xrzun9hxa_zlwwvueumwjzyzq98.png" />
+<img src="https://habrastorage.org/webt/xr/zu/n9/xrzun9hxa_zlwwvueumwjzyzq98.png" alt="" />
 <br />
 
 Или в разделе `Individual Containers` [расширения `Docker` для `VSCode`](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker):
 
-<img src="https://habrastorage.org/webt/1l/e0/96/1le096w7kcbze_0outprie0ua1g.png" />
+<img src="https://habrastorage.org/webt/1l/e0/96/1le096w7kcbze_0outprie0ua1g.png" alt="" />
 <br />
 
 Выполняем миграцию:
@@ -1950,7 +1950,7 @@ npx prisma studio
 
 Это приводит к открытию вкладки браузера по адресу `http://localhost:5555`:
 
-<img src="https://habrastorage.org/webt/6-/ar/y1/6-ary1tso3uyjb0imkqlwg4aw94.png" />
+<img src="https://habrastorage.org/webt/6-/ar/y1/6-ary1tso3uyjb0imkqlwg4aw94.png" alt="" />
 <br />
 
 Приступаем к разработке сервера.
@@ -2945,31 +2945,31 @@ yarn add concurrently
 
 - для клиента по адресу `http://localhost:3000`:
 
-<img src="https://habrastorage.org/webt/ve/jd/5q/vejd5qrgzgbzll2pyb0jxpg0ucw.png" />
+<img src="https://habrastorage.org/webt/ve/jd/5q/vejd5qrgzgbzll2pyb0jxpg0ucw.png" alt="" />
 <br />
 
 - для админки по адресу `http://localhost:4000`":
 
-<img src="https://habrastorage.org/webt/tz/uy/7-/tzuy7-muwq_lxdant4hgpnfemjs.png" />
+<img src="https://habrastorage.org/webt/tz/uy/7-/tzuy7-muwq_lxdant4hgpnfemjs.png" alt="" />
 <br />
 
 - для сервера по адресу `http://localhost:5000`.
 
 Меняем настройки в админке:
 
-<img src="https://habrastorage.org/webt/kp/63/wu/kp63wu9r_cdnd-cyqwc9-p2dle0.png" />
+<img src="https://habrastorage.org/webt/kp/63/wu/kp63wu9r_cdnd-cyqwc9-p2dle0.png" alt="" />
 <br />
 
 Перезагружаем клиента:
 
-<img src="https://habrastorage.org/webt/85/fy/cw/85fycwhapup8y_auvgrldgwke1m.png" />
+<img src="https://habrastorage.org/webt/85/fy/cw/85fycwhapup8y_auvgrldgwke1m.png" alt="" />
 <br />
 
 Видим, что настройки успешно применились.
 
 Работаем с задачами:
 
-<img src="https://habrastorage.org/webt/sw/yr/nc/swyrncbic8rxv1s0rxeczhg1bhk.png" />
+<img src="https://habrastorage.org/webt/sw/yr/nc/swyrncbic8rxv1s0rxeczhg1bhk.png" alt="" />
 <br />
 
 Задачи успешно создаются/обновляются/удаляются и сохраняются в БД.
@@ -3246,9 +3246,9 @@ docker system prune -a
 
 Поднимаем сервис в режиме для разработки с помощью команды `yarn dev:compose:up` или `npm run dev:compose:up`:
 
-<img src="https://habrastorage.org/webt/8v/nn/wd/8vnnwdtoonf8r4shpr79a7zp7iu.png" />
+<img src="https://habrastorage.org/webt/8v/nn/wd/8vnnwdtoonf8r4shpr79a7zp7iu.png" alt="" />
 <br />
-<img src="https://habrastorage.org/webt/nk/le/j2/nklej2vgp4nc9q-bhy5nbhesjli.png" />
+<img src="https://habrastorage.org/webt/nk/le/j2/nklej2vgp4nc9q-bhy5nbhesjli.png" alt="" />
 <br />
 
 После создания контейнеров сервисам потребуется какое-то время на запуск, после чего они будут доступны по следующим адресам:
@@ -3295,7 +3295,7 @@ docker push aio350/docker-test_admin
 
 После этого в своем реестре `dockerhub` мы увидим следующую картину:
 
-<img src="https://habrastorage.org/webt/nk/8k/qw/nk8kqwzyg2atkg7znuf9maep9pe.png" />
+<img src="https://habrastorage.org/webt/nk/8k/qw/nk8kqwzyg2atkg7znuf9maep9pe.png" alt="" />
 <br />
 
 Немного отредактируем файл `api/Dockerfile`:
@@ -3377,16 +3377,16 @@ docker volume rm docker-test_data_postgres
 yarn compose:up
 ```
 
-<img src="https://habrastorage.org/webt/kb/cb/bu/kbcbbu9_p16qtrzv6ejbvlg7jpy.png" />
+<img src="https://habrastorage.org/webt/kb/cb/bu/kbcbbu9_p16qtrzv6ejbvlg7jpy.png" alt="" />
 <br />
 
 Теперь наш сервис состоит всего из 2 контейнеров.
 
 Клиент доступен по адресу: `localhost:5000`, а админка - по адресу `localhost:5000/admin`.
 
-<img src="https://habrastorage.org/webt/v4/_1/71/v4_171hi0yhfqv-jhmhbyjbhqo8.png" />
+<img src="https://habrastorage.org/webt/v4/_1/71/v4_171hi0yhfqv-jhmhbyjbhqo8.png" alt="" />
 <br />
-<img src="https://habrastorage.org/webt/2r/jy/bh/2rjybhdepx7ozyifsuvdyi9-udk.png" />
+<img src="https://habrastorage.org/webt/2r/jy/bh/2rjybhdepx7ozyifsuvdyi9-udk.png" alt="" />
 <br />
 
 Приложение работает, как ожидается.

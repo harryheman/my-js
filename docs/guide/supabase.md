@@ -1301,15 +1301,15 @@ yarn create vite supabase-social-app --template react
 
 Регистрируемся или авторизуемся на [supabase.com](https://supabase.com/) и создаем новый проект:
 
-<img src="https://habrastorage.org/webt/vy/nq/sr/vynqsroie4_pfj5uafccto74u1m.png" />
+<img src="https://habrastorage.org/webt/vy/nq/sr/vynqsroie4_pfj5uafccto74u1m.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/j9/n-/sk/j9n-sk5svcil9pydtehwwf83hcu.png" />
+<img src="https://habrastorage.org/webt/j9/n-/sk/j9n-sk5svcil9pydtehwwf83hcu.png" alt="" />
 <br />
 
 Копируем ключ и `URL` на главной странице панели управления проектом:
 
-<img src="https://habrastorage.org/webt/ce/e8/ig/cee8ig38ny_za1mfgyedf061apm.png" />
+<img src="https://habrastorage.org/webt/ce/e8/ig/cee8ig38ny_za1mfgyedf061apm.png" alt="" />
 <br />
 
 Записываем их в переменные среды окружения. Для этого создаем в корневой директории проекта (`supabase-social-app`) файл `.env` следующего содержания:
@@ -1323,7 +1323,7 @@ _Обратите внимание_: префикс `VITE_` в данном сл
 
 На странице `Authentication` панели управления в разделе `Settings` отключаем необходимость подтверждения адреса электронной почты новым пользователем (`Enable email confirmation`):
 
-<img src="https://habrastorage.org/webt/4s/a2/sv/4sa2svpaiz51tai2hkxrucpw9vo.png" />
+<img src="https://habrastorage.org/webt/4s/a2/sv/4sa2svpaiz51tai2hkxrucpw9vo.png" alt="" />
 <br />
 
 _Обратите внимание_: при разработке нашего приложения мы пропустим шаг подтверждения пользователями своего `email` после регистрации в целях экономии времени. В реальном приложении в объекте `user` будет содержаться поле `isEmailConfirmed`, например - индикатор того, подтвердил ли пользователь свой `email`. Значение данного поля будет определять логику работы приложения в части авторизации.
@@ -1336,7 +1336,7 @@ _Обратите внимание_: при разработке нашего п
 
 `Supabase` предоставляет графический интерфейс для работы с таблицами на странице `Table Editor`:
 
-<img src="https://habrastorage.org/webt/vt/sv/01/vtsv01him07-j_t8opbcf0uthsy.png" />
+<img src="https://habrastorage.org/webt/vt/sv/01/vtsv01him07-j_t8opbcf0uthsy.png" alt="" />
 <br />
 
 Но мы воспользуемся редактором [SQL](https://ru.wikipedia.org/wiki/SQL) на странице `SQL Editor` (потому что не ищем легких путей)). Создаем новый запрос (`New query`) и вставляем такой `SQL`:
@@ -1374,37 +1374,37 @@ _Обратите внимание_: мы не будем использоват
 
 Нажимаем на кнопку `Run`:
 
-<img src="https://habrastorage.org/webt/e1/pr/hg/e1prhg0cepvhxpbzttfqb9nkpd0.png" />
+<img src="https://habrastorage.org/webt/e1/pr/hg/e1prhg0cepvhxpbzttfqb9nkpd0.png" alt="" />
 <br />
 
 Мы можем увидеть созданные нами таблицы на страницах `Table Editor` и `Database` панели управления:
 
-<img src="https://habrastorage.org/webt/hh/lf/az/hhlfaz0juvuueylxwkpw70ldylq.png" />
+<img src="https://habrastorage.org/webt/hh/lf/az/hhlfaz0juvuueylxwkpw70ldylq.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/pi/7a/ye/pi7ayenyuqulz8jy_hy2lqtado8.png" />
+<img src="https://habrastorage.org/webt/pi/7a/ye/pi7ayenyuqulz8jy_hy2lqtado8.png" alt="" />
 <br />
 
 _Обратите внимание_ на предупреждение `RLS not enabled` на странице `Table Editor`. Для доступа к таблицам рекомендуется устанавливать политики безопасности на уровне строк/политики защиты строк ([Row Level Security](https://postgrespro.ru/docs/postgresql/14/ddl-rowsecurity)). Для таблиц мы этого делать не будем, но нам придется сделать это для хранилища, в котором будут находиться аватары пользователей.
 
 Создаем новый "бакет" на странице `Storage` панели управления (`Create new bucket`):
 
-<img src="https://habrastorage.org/webt/rb/wx/dh/rbwxdhlc-ne6uycyhm2voc2kfke.png" />
+<img src="https://habrastorage.org/webt/rb/wx/dh/rbwxdhlc-ne6uycyhm2voc2kfke.png" alt="" />
 <br />
 
 Делаем его публичным (`Make public`):
 
-<img src="https://habrastorage.org/webt/fn/sd/rv/fnsdrvpmmmqtrd8uc09ovcwsbgw.png" />
+<img src="https://habrastorage.org/webt/fn/sd/rv/fnsdrvpmmmqtrd8uc09ovcwsbgw.png" alt="" />
 <br />
 
 В разделе `Policies` создаем новую политику (`New policy`). Выбираем шаблон `Give users access to a folder only to authenticated users` (предоставление доступа к директории только для аутентифицированных пользователей) - `Use this template`:
 
-<img src="https://habrastorage.org/webt/xv/rb/hp/xvrbhpcrhrlysu9rt2kywcpoyr0.png" />
+<img src="https://habrastorage.org/webt/xv/rb/hp/xvrbhpcrhrlysu9rt2kywcpoyr0.png" alt="" />
 <br />
 
 Выбираем `SELECT`, `INSERT` и `UPDATE` и немного редактируем определение политики:
 
-<img src="https://habrastorage.org/webt/fp/mc/js/fpmcjsj4bc5tksmnro6zwq31kiw.png" />
+<img src="https://habrastorage.org/webt/fp/mc/js/fpmcjsj4bc5tksmnro6zwq31kiw.png" alt="" />
 <br />
 
 Нажимаем `Review` и затем `Create policy`.
@@ -3059,53 +3059,53 @@ seedDb()
 
 Находясь в корневой директории проекта (`supabase-social-app`), выполняем команду `yarn dev` для запуска сервера для разработки.
 
-<img src="https://habrastorage.org/webt/rz/gx/se/rzgxsedpo8chvapson3m_aqjhnm.png" />
+<img src="https://habrastorage.org/webt/rz/gx/se/rzgxsedpo8chvapson3m_aqjhnm.png" alt="" />
 <br />
 
 Переходим на страницу регистрации (`Register`) и создаем нового пользователя. _Обратите внимание_: `Supabase` требует, чтобы пароль состоял как минимум из 6 символов.
 
-<img src="https://habrastorage.org/webt/si/9p/hz/si9phzhpguhvkfyl6casfkl8dt0.png" />
+<img src="https://habrastorage.org/webt/si/9p/hz/si9phzhpguhvkfyl6casfkl8dt0.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/iv/5u/-x/iv5u-xvbr6mpqawnlhfp3s0nupa.png" />
+<img src="https://habrastorage.org/webt/iv/5u/-x/iv5u-xvbr6mpqawnlhfp3s0nupa.png" alt="" />
 <br />
 
 На панели навигации появилась кнопка для выхода из системы и ссылка на страницу профиля.
 
 Переходим на страницу профиля (`Profile`), загружаем аватар и обновляем данные.
 
-<img src="https://habrastorage.org/webt/hz/6a/fe/hz6afebw09el8jylqdt0xocjw4s.png" />
+<img src="https://habrastorage.org/webt/hz/6a/fe/hz6afebw09el8jylqdt0xocjw4s.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/4l/8y/bf/4l8ybf0rh91j9852mbvur-01wb8.png" />
+<img src="https://habrastorage.org/webt/4l/8y/bf/4l8ybf0rh91j9852mbvur-01wb8.png" alt="" />
 <br />
 
 Вместо ссылки на страницу профиля у нас теперь имеется аватар пользователя, а в объекте `user` - заполненные поля `first_name`, `last_name` и `age`.
 
 Переходим на страницу блога (`Blog`), "проваливаемся" в какой-нибудь пост и добавляем к нему комментарий.
 
-<img src="https://habrastorage.org/webt/vk/0w/rv/vk0wrvizoh_zypvw05seuqnx9hw.png" />
+<img src="https://habrastorage.org/webt/vk/0w/rv/vk0wrvizoh_zypvw05seuqnx9hw.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/h2/tc/2z/h2tc2zwnne6pvnvnu2_awbe1y0e.png" />
+<img src="https://habrastorage.org/webt/h2/tc/2z/h2tc2zwnne6pvnvnu2_awbe1y0e.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/ol/at/bb/olatbbuqjx8oqedcluskylesd8w.png" />
+<img src="https://habrastorage.org/webt/ol/at/bb/olatbbuqjx8oqedcluskylesd8w.png" alt="" />
 <br />
 
 Добавленный комментарий можно редактировать и удалять.
 
 Возвращаемся на страницу блога, переключаемся на вкладку для создания нового поста (`New`) и создаем его.
 
-<img src="https://habrastorage.org/webt/em/dm/ku/emdmkufq97axx4klhnrrdhyqdyg.png" />
+<img src="https://habrastorage.org/webt/em/dm/ku/emdmkufq97axx4klhnrrdhyqdyg.png" alt="" />
 <br />
 
-<img src="https://habrastorage.org/webt/oy/pk/ei/oypkeijn4xvinpm9gtbazbuters.png" />
+<img src="https://habrastorage.org/webt/oy/pk/ei/oypkeijn4xvinpm9gtbazbuters.png" alt="" />
 <br />
 
 На вкладке `My` страницы блога можно увидеть все созданные нами посты.
 
-<img src="https://habrastorage.org/webt/jy/c9/pe/jyc9pewh3hasdn9bpaia4unohj8.png" />
+<img src="https://habrastorage.org/webt/jy/c9/pe/jyc9pewh3hasdn9bpaia4unohj8.png" alt="" />
 <br />
 
 Их также можно редактировать и удалять.

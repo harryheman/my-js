@@ -2981,7 +2981,7 @@ class ScrollListener extends React.Component {
         style={{ overflow: 'scroll' }}
         onScroll={this.handleScroll}
       >
-        <img src="/my-huge-image.jpg" />
+        <img src="/my-huge-image.jpg" alt="" />
       </div>
     )
   }
@@ -6089,7 +6089,7 @@ export default PlayerDetails
 const Picture = (props) => {
   return (
     <div>
-      <img src={props.src}/>
+      <img src={props.src} alt=""/>
       {props.children}
     </div>
   )
@@ -7691,7 +7691,7 @@ class Collage extends Component {
          <div className="image-list">
             {this.state.images.map((image) => {
               <div className="image">
-                <img src={image.url} />
+                <img src={image.url} alt="" />
               </div>
             })}
          </div>
@@ -7713,14 +7713,14 @@ _Пример_
 // классовый компонент
 class Image extends Component {
    render() {
-      return <img src={this.props.imageUrl} />
+      return <img src={this.props.imageUrl} alt="" />
    }
 }
 export default Image
 
 // функциональный компонент
 const Image = (props) => (
-  <img src={props.imageUrl} />
+  <img src={props.imageUrl} alt="" />
 )
 export default Image
 ```

@@ -36,14 +36,7 @@ const config = {
       })
     ]
   ],
-
   plugins: [
-    [
-      require.resolve('docusaurus-lunr-search'),
-      {
-        languages: ['en', 'ru']
-      }
-    ],
     [
       '@docusaurus/plugin-pwa',
       {

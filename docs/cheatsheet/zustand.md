@@ -928,11 +928,11 @@ export const Boundary = ({ children }) => {
 
 Запускаем сервер с помощью команды `yarn start` или `npm start` и тестируем приложение.
 
-<img src="https://habrastorage.org/webt/lq/74/p-/lq74p-tzitpeycg4wvbpcvnthrc.png" />
+<img src="https://habrastorage.org/webt/lq/74/p-/lq74p-tzitpeycg4wvbpcvnthrc.png" alt="" />
 <br />
-<img src="https://habrastorage.org/webt/hm/hc/id/hmhcid_if6nohrec7zxgtth4ado.png" />
+<img src="https://habrastorage.org/webt/hm/hc/id/hmhcid_if6nohrec7zxgtth4ado.png" alt="" />
 <br />
-<img src="https://habrastorage.org/webt/sr/td/ua/srtduauqsvvdffeumkrdibtv6vq.png" />
+<img src="https://habrastorage.org/webt/sr/td/ua/srtduauqsvvdffeumkrdibtv6vq.png" alt="" />
 <br />
 
 Как видим, все работает, как ожидается.
@@ -1019,14 +1019,14 @@ export const TodoControls = () => {
 
 Нажимаем на кнопку `Create 2500 todos`:
 
-<img src="https://habrastorage.org/webt/yn/zm/sq/ynzmsq_6swwasektg589xldv6yo.png" />
+<img src="https://habrastorage.org/webt/yn/zm/sq/ynzmsq_6swwasektg589xldv6yo.png" alt="" />
 <br />
 
 Время создания `2500` тудушек составляет `6-7 мс`.
 
 Нажимаем `Update all todos`:
 
-<img src="https://habrastorage.org/webt/e8/ti/p6/e8tip651kkazth1gjjmonvipmr4.png" />
+<img src="https://habrastorage.org/webt/e8/ti/p6/e8tip651kkazth1gjjmonvipmr4.png" alt="" />
 <br />
 
 Время обновления `2500` тудушек составляет `1100-1200 мс`.

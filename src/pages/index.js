@@ -9,7 +9,7 @@ import styles from './styles.module.css'
 const features = [
   {
     title: 'JavaScript',
-    imageUrl: 'img/logo.png'
+    imageUrl: 'img/logo.webp'
     // description: (
     //   <>
     //     Docusaurus was designed from the ground up to be easily installed and
@@ -19,19 +19,19 @@ const features = [
   },
   {
     title: 'React',
-    imageUrl: 'img/react.png'
+    imageUrl: 'img/react.webp'
   },
   {
     title: 'TypeScript',
-    imageUrl: 'img/ts.png'
+    imageUrl: 'img/ts.webp'
   },
   {
     title: 'Node.js',
-    imageUrl: 'img/nodejs.png'
+    imageUrl: 'img/nodejs.webp'
   },
   {
     title: 'And More',
-    imageUrl: 'img/coding.png'
+    imageUrl: 'img/coding.webp'
   }
 ]
 
@@ -41,7 +41,13 @@ function Feature({ imageUrl, title, description }) {
     <div className={styles.feature}>
       {imgUrl && (
         <div className='text--center'>
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          <img
+            className={styles.featureImage}
+            src={imgUrl}
+            alt={title}
+            width={120}
+            height={120}
+          />
         </div>
       )}
       <h3 className='text--center'>{title}</h3>
@@ -61,7 +67,7 @@ export default function Home() {
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
           <img
-            src='img/logo.png'
+            src='img/logo.webp'
             alt='MyJavaScript logo'
             className='hero__logo'
           />

@@ -45,7 +45,7 @@ console.log(today) // тоже завтрашняя дата!
 
 ## Temporal
 
-<img src="https://habrastorage.org/webt/qb/zo/mu/qbzomud4-dtkojb1j7fje7qtqpi.png" />
+<img src="https://habrastorage.org/webt/qb/zo/mu/qbzomud4-dtkojb1j7fje7qtqpi.png" alt="" />
 <br />
 
 Вот что можно сделать для того, чтобы поиграть с `Temporal`:
@@ -123,7 +123,7 @@ __"Мгновенные" дата и время__
 
 Объект [`Temporal.Instant`](https://tc39.es/proposal-temporal/#sec-temporal-instant-objects) возвращает объект, представляющий фиксированную позицию во времени с точностью до наносекунд. Позиция (строка) форматируется согласно `ISO 8601` следующим образом:
 
-<img src="https://habrastorage.org/webt/f-/pm/7p/f-pm7p1ixll80mt-nqucx_dpmgg.png" />
+<img src="https://habrastorage.org/webt/f-/pm/7p/f-pm7p1ixll80mt-nqucx_dpmgg.png" alt="" />
 <br />
 
 ```js
