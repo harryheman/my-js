@@ -70,6 +70,8 @@ export default function Home() {
             src='img/logo.webp'
             alt='MyJavaScript logo'
             className='hero__logo'
+            width={120}
+            height={120}
           />
           <h1 className='hero__title'>{siteConfig.title}</h1>
           <p className='hero__subtitle'>{siteConfig.tagline}</p>
