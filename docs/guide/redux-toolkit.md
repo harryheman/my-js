@@ -34,7 +34,7 @@ npx create-react-app app-name --template redux
 ```bash
 yarn create react-app app-name --template redux-typescript
 # или
-npx create-react-app app-name --templae redux-typescript
+npx create-react-app app-name --template redux-typescript
 ```
 
 *Добавление пакета в существующее приложение*
@@ -65,7 +65,7 @@ npm i @reduxjs/toolkit
 
 - Импорт или создание корневого редуктора (root reducer)
 - Настройка `middleware`, как минимум, для работы с асинхронным кодом
-- Настройка инстурментов разработчика `Redux`
+- Настройка инструментов разработчика `Redux`
 - Возможно, программное изменение кода в зависимости от режима разработки
 
 ### Ручная настройка
