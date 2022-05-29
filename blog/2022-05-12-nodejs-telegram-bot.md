@@ -24,6 +24,8 @@ image: https://habrastorage.org/webt/cc/tl/u0/cctlu0pn6hxld1s63lnvgr7a1mq.jpeg
 - [Репозиторий с кодом сервера для бота](https://github.com/harryheman/Blog-Posts/tree/master/telegram-bot-server).
 - Бот - @aio350_reminder_bot.
 
+<!--truncate-->
+
 ## Регистрация и кастомизация бота
 
 Для регистрации бота нужен только Telegram (я буду использовать десктопную версию). Находим в нем _BotFather_ (@BotFather):

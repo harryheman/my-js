@@ -15,6 +15,8 @@ image: https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg
 
 [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nestjs-prisma).
 
+<!--truncate-->
+
 _NestJS_ - это фреймворк для разработки эффективных и масштабируемых серверных приложений на [Node.js](https://nodejs.org/en/). Данный фреймворк использует прогрессивный (что означает текущую версию _ECMAScript_) _JavaScript_ с полной поддержкой _TypeScript_ (использование _TypeScript_ является опциональным) и сочетает в себе элементы объектно-ориентированного, функционального и реактивного функционального программирования.
 
 Под капотом _NestJS_ использует [Express](https://expressjs.com/ru/) (по умолчанию), но также позволяет переключиться на [Fastify](https://www.fastify.io/).
