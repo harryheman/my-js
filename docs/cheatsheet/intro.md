@@ -1,13 +1,14 @@
 ---
 sidebar_position: 1
 id: intro-cheatsheet
-title: Шпаргалки
+title: Содержание
 ---
 
 # Содержание
 
 - :memo:&nbsp;&nbsp;[Шпаргалка по тегам HTML5](./html5)
 - :memo:&nbsp;&nbsp;[Шпаргалка по методам JavaScript для работы с DOM](./js-dom)
+- :memo:&nbsp;&nbsp;[Шпаргалка по работе с медиа в браузере](./web-media)
 - :memo:&nbsp;&nbsp;[Туториал по регулярным выражениям](./regexp)
 - :memo:&nbsp;&nbsp;[Шпаргалка по HTTP-заголовкам, связанным с безопасностью](./security-headers)
 - :memo:&nbsp;&nbsp;[Шпаргалка по доступности веб-приложений](./web-accessibility)

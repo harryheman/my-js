@@ -158,9 +158,6 @@ const config = {
                 html: '<p class="footer__link"><img src="../../img/email.png" alt="" width="32" height="32"> aio350@yahoo.com</p>'
               },
               {
-                html: '<p class="footer__link"><img src="../../img/email.png" alt="" width="32" height="32"> aio350@mail.ru</p>'
-              },
-              {
                 label: 'Habr',
                 href: 'https://habr.com/ru/users/aio350'
               }
