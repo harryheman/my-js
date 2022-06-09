@@ -172,7 +172,13 @@ const config = {
         `
       },
       hideableSidebar: true,
-      autoCollapseSidebarCategories: true
+      autoCollapseSidebarCategories: true,
+      algolia: {
+        appId: 'K9EMNI09N5',
+        apiKey: '415a654b5e8424ce6bb502e4d9689c4a',
+        indexName: 'my-js',
+        contextualSearch: true
+      }
     })
 }
 
