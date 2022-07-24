@@ -1,6 +1,6 @@
 ---
 slug: rest-nestjs-prisma
-title: TypeScript + NestJS + Prisma + AdminJS + Swagger REST API
+title: Разрабатываем TypeScript + NestJS + Prisma + AdminJS + Swagger REST API
 description: Туториал по разработке REST API с помощью TypeScript, NestJS, Prisma, AdminJS и Swagger
 authors: harryheman
 tags: ["node.js", nodejs, rest, api, typescript, ts, "nest.js", nestjs, prisma, "admin.js", adminjs, swagger, tutorial, туториал]

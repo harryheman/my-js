@@ -89,9 +89,9 @@ export default function Home() {
           </div>
 
           <p className="hero__subtitle small">
-            Обновление от 29.05.2022:&nbsp;
-            <a href="docs/cheatsheet/web-media">
-              Шпаргалка по работе с медиа в браузере
+            Обновление от 11.07.2022:&nbsp;
+            <a href="docs/guide/web-streams">
+              Руководство по использованию веб-потоков в Node.js
             </a>
             .
           </p>

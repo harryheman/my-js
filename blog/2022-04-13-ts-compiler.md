@@ -1,6 +1,6 @@
 ---
 slug: ts-compiler
-title: Компилятор кода на TypeScript для WebAssembly
+title: Разрабатываем компилятор кода на TypeScript для WebAssembly
 description: Туториал по разработке простого компилятора кода на TypeScript для WebAssembly
 authors: harryheman
 tags: [javascript, js, typescript, ts, webassembly, wasm, compiler, tutorial, компилятор, туториал]

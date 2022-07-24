@@ -1,6 +1,6 @@
 ---
 slug: ts-package-manager
-title: Пакетный менеджер на TypeScript
+title: Разрабатываем пакетный менеджер на TypeScript
 description: Туториал по разработке простого пакетного менеджера на TypeScript
 authors: harryheman
 tags: ['node.js', nodejs, typescript, ts, package manager, npm, yarn, tutorial, пакетный менеджер, туториал]

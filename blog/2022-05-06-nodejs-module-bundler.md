@@ -1,6 +1,6 @@
 ---
 slug: nodejs-module-bundler
-title: Сборщик модулей на Node.js
+title: Разрабатываем сборщик модулей на Node.js
 description: Туториал по разработке простого сборщика модулей на Node.js
 authors: harryheman
 tags: ['node.js', nodejs, javascript, js, module bundler, bundler, bundle, webpack, tutorial, сборщик модулей, сборщик, сборка, туториал]

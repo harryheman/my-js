@@ -1,6 +1,6 @@
 ---
 slug: js-compiler
-title: Компилятор кода на JavaScript
+title: Разрабатываем компилятор кода на JavaScript
 description: Туториал по разработке простого компилятора кода на JavaScript
 authors: harryheman
 tags: [javascript, js, compiler, tutorial, компилятор, туториал]

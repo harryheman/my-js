@@ -1,6 +1,6 @@
 ---
 slug: nextjs-redis
-title: Кеширование страниц с помощью кастомного сервера Next.js и Redis
+title: Реализуем кеширование страниц с помощью кастомного сервера Next.js и Redis
 description: Туториал по кешированию страниц с помощью кастомного сервера Next.js и Redis
 authors: harryheman
 tags: [javascript, js, next.js, 'nextjs', next, redis, cache, caching, tutorial, туториал, кеш, кеширование]

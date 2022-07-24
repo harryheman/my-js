@@ -31,3 +31,4 @@ title: Содержание
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Workbox](./wb)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Socket.IO](./socket)
 - :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](./webrtc)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по использованию веб-потоков в Node.js](./web-streams)
