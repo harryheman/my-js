@@ -4,25 +4,25 @@ title: Карманная книга по TypeScript
 description: Карманная книга по TypeScript
 keywords:
   [
-    'javascript',
-    'js',
-    'typescript',
-    'ts',
-    'handbook',
-    'guide',
-    'карманная книга',
-    'руководство'
+    "javascript",
+    "js",
+    "typescript",
+    "ts",
+    "handbook",
+    "guide",
+    "карманная книга",
+    "руководство",
   ]
 tags:
   [
-    'javascript',
-    'js',
-    'typescript',
-    'ts',
-    'handbook',
-    'guide',
-    'карманная книга',
-    'руководство'
+    "javascript",
+    "js",
+    "typescript",
+    "ts",
+    "handbook",
+    "guide",
+    "карманная книга",
+    "руководство",
   ]
 ---
 
@@ -35,10 +35,10 @@ tags:
 ```ts
 // Получаем доступ к свойству `toLowerCase`
 // и вызываем его
-message.toLowerCase()
+message.toLowerCase();
 
 // Вызываем `message`
-message()
+message();
 ```
 
 На первой строке мы получаем доступ к свойству `toLowerCase` и вызываем его. На второй строке мы пытаемся вызвать `message`.
@@ -55,7 +55,7 @@ message()
 Допустим, `message` была определена следующим образом:
 
 ```ts
-const message = 'Hello World'
+const message = "Hello World";
 ```
 
 Как вы, наверное, догадались, при запуске `message.toLowerCase()` мы получим ту же строку, только в нижнем регистре.
@@ -75,7 +75,7 @@ TypeError: message is not a function
 
 ```ts
 function fn(x) {
-  return x.flip()
+  return x.flip();
 }
 ```
 
@@ -92,9 +92,9 @@ _Статическая_ система типов позволяет опред
 Было бы здорово иметь инструмент, помогающий нам выявлять баги перед запуском кода. Это как раз то, что делают инструменты проверки статических типов, подобные `TS`. Системы статических типов описывают форму и поведение значений. `TS` использует эту информацию и сообщает нам о том, что, возможно, имеет место несоответствие определенным типам.
 
 ```ts
-const message = 'Hello!'
+const message = "Hello!";
 
-message()
+message();
 // This expression is not callable. Type 'String' has no call signatures.
 // Данное выражение не является вызываемым. Тип 'String' не обладает сигнатурами вызова
 ```
@@ -109,22 +109,22 @@ message()
 
 ```ts
 const user = {
-  name: 'John',
-  age: 30
-}
+  name: "John",
+  age: 30,
+};
 
-user.location // undefined
+user.location; // undefined
 ```
 
 В `TS` это, как и ожидается, приводит к ошибке:
 
 ```ts
 const user = {
-  name: 'John',
-  age: 30
-}
+  name: "John",
+  age: 30,
+};
 
-user.location
+user.location;
 // Property 'location' does not exist on type '{ name: string; age: number; }'.
 // Свойства 'location' не существует в типе...
 ```
@@ -136,14 +136,14 @@ user.location
 - опечатки
 
 ```ts
-const announcement = 'Hello World!'
+const announcement = "Hello World!";
 
 // Как быстро вы заметите опечатку?
-announcement.toLocaleLowercase()
-announcement.toLocalLowerCase()
+announcement.toLocaleLowercase();
+announcement.toLocalLowerCase();
 
 // Вероятно, мы хотели написать это
-announcement.toLocaleLowerCase()
+announcement.toLocaleLowerCase();
 ```
 
 - функции, которые не были вызваны
@@ -151,7 +151,7 @@ announcement.toLocaleLowerCase()
 ```ts
 function flipCoin() {
   // Должно было быть `Math.random()`
-  return Math.random < 0.5
+  return Math.random < 0.5;
   // Operator '<' cannot be applied to types '() => number' and 'number'.
   // Оператор '<' не может быть применен к типам...
 }
@@ -160,10 +160,10 @@ function flipCoin() {
 - или логические ошибки
 
 ```ts
-const value = Math.random() < 0.5 ? 'a' : 'b'
-if (value !== 'a') {
+const value = Math.random() < 0.5 ? "a" : "b";
+if (value !== "a") {
   // ...
-} else if (value === 'b') {
+} else if (value === "b") {
   // This condition will always return 'false' since the types 'a' and 'b' have no overlap.
   // Данное условие будет всегда возвращать 'false', поскольку типы 'a' и 'b' не пересекаются
   // Упс, недостижимый участок кода
@@ -188,7 +188,7 @@ npm i -g tsc
 
 ```ts
 // Приветствуем всех собравшихся
-console.log('Hello World!')
+console.log("Hello World!");
 ```
 
 И скомпилируем (преобразуем) его в `JS`:
@@ -203,10 +203,10 @@ tsc hello.ts
 
 ```ts
 function greet(person, date) {
-  console.log(`Hello, ${person}! Today is ${date}.`)
+  console.log(`Hello, ${person}! Today is ${date}.`);
 }
 
-greet('John')
+greet("John");
 ```
 
 Если мы снова запустим `tsc hello.ts`, то получим ошибку:
@@ -233,7 +233,7 @@ tsc --noEmitOnError hello.ts
 
 ```ts
 function greet(person: string, date: Date) {
-  console.log(`Hello, ${person}! Today is ${date.toDateString()}.`)
+  console.log(`Hello, ${person}! Today is ${date.toDateString()}.`);
 }
 ```
 
@@ -243,10 +243,10 @@ function greet(person: string, date: Date) {
 
 ```ts
 function greet(person: string, date: Date) {
-  console.log(`Hello, ${person}! Today is ${date.toDateString()}.`)
+  console.log(`Hello, ${person}! Today is ${date.toDateString()}.`);
 }
 
-greet('John', Date())
+greet("John", Date());
 // Argument of type 'string' is not assignable to parameter of type 'Date'.
 // Аргумент типа 'string' не может быть присвоен параметру типа 'Date'
 ```
@@ -254,13 +254,13 @@ greet('John', Date())
 Вызов `Date()` возвращает строку. Для того, чтобы получить объект `Date`, следует вызвать `new Date()`:
 
 ```ts
-greet('John', new Date())
+greet("John", new Date());
 ```
 
 Во многих случаях нам не нужно явно аннотировать типы, поскольку `TS` умеет предполагать (infer) тип или делать вывод относительно типа на основе значения:
 
 ```ts
-const msg = 'Hello!'
+const msg = "Hello!";
 // const msg: string
 ```
 
@@ -269,11 +269,11 @@ const msg = 'Hello!'
 Давайте скомпилируем функцию `greet` в `JS` с помощью `tsc`. Вот что мы получаем:
 
 ```ts
-'use strict'
+"use strict";
 function greet(person, date) {
-  console.log('Hello ' + person + '! Today is ' + date.toDateString() + '.')
+  console.log("Hello " + person + "! Today is " + date.toDateString() + ".");
 }
-greet('John', new Date())
+greet("John", new Date());
 ```
 
 :::note Обратите внимание на две вещи
@@ -327,15 +327,15 @@ greet('John', new Date())
 `TS` предоставляет специальный тип `any`, который может использоваться для отключения проверки типов:
 
 ```ts
-let obj: any = { x: 0 }
+let obj: any = { x: 0 };
 // Ни одна из строк ниже не приведет к возникновению ошибки на этапе компиляции
 // Использование `any` отключает проверку типов
 // Использование `any` означает, что вы знакомы со средой выполнения кода лучше, чем `TS`
-obj.foo()
-obj()
-obj.bar = 100
-obj = 'hello'
-const n: number = obj
+obj.foo();
+obj();
+obj.bar = 100;
+obj = "hello";
+const n: number = obj;
 ```
 
 Тип `any` может быть полезен в случае, когда мы не хотим писать длинное определение типов лишь для того, чтобы пройти проверку.
@@ -351,14 +351,14 @@ const n: number = obj
 При объявлении переменной с помощью `const`, `let` или `var` опционально можно определить ее тип:
 
 ```ts
-const myName: string = 'John'
+const myName: string = "John";
 ```
 
 Однако, в большинстве случаев этого делать не требуется, поскольку `TS` пытается автоматически определить тип переменной на основе типа ее инициализатора, т.е. значения:
 
 ```ts
 // В аннотации типа нет необходимости - `myName` будет иметь тип `string`
-const myName = 'John'
+const myName = "John";
 ```
 
 ### Функции
@@ -371,14 +371,14 @@ const myName = 'John'
 
 ```ts
 function greet(name: string) {
-  console.log(`Hello, ${name.toUpperCase()}!`)
+  console.log(`Hello, ${name.toUpperCase()}!`);
 }
 ```
 
 Вот что произойдет при попытке вызвать функцию с неправильным аргументом:
 
 ```ts
-greet(42)
+greet(42);
 // Argument of type 'number' is not assignable to parameter of type 'string'. Аргумент типа 'number' не может быть присвоен параметру типа 'string'
 ```
 
@@ -394,7 +394,7 @@ greet(42)
 
 ```ts
 function getFavouriteNumber(): number {
-  return 26
+  return 26;
 }
 ```
 
@@ -408,19 +408,19 @@ function getFavouriteNumber(): number {
 
 ```ts
 // Аннотации типа отсутствуют, но это не мешает `TS` обнаруживать ошибки
-const names = ['Alice', 'Bob', 'John']
+const names = ["Alice", "Bob", "John"];
 
 // Определение типов на основе контекста вызова функции
 names.forEach(function (s) {
-  console.log(s.toUppercase())
+  console.log(s.toUppercase());
   // Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'? Свойства 'toUppercase' не существует в типе 'string'. Вы имели ввиду 'toUpperCase'?
-})
+});
 
 // Определение типов на основе контекста также работает для стрелочных функций
 names.forEach((s) => {
-  console.log(s.toUppercase())
+  console.log(s.toUppercase());
   // Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'?
-})
+});
 ```
 
 Несмотря на отсутствие аннотации типа для `s`, `TS` использует типы функции `forEach`, а также предполагаемый тип массива для определения типа `s`. Этот процесс называется определением типа на основе контекста (contextual typing).
@@ -431,11 +431,11 @@ names.forEach((s) => {
 
 ```ts
 function printCoords(pt: { x: number; y: number }) {
-  console.log(`Значение координаты 'x': ${pt.x}`)
-  console.log(`Значение координаты 'y': ${pt.y}`)
+  console.log(`Значение координаты 'x': ${pt.x}`);
+  console.log(`Значение координаты 'y': ${pt.y}`);
 }
 
-printCoords({ x: 3, y: 7 })
+printCoords({ x: 3, y: 7 });
 ```
 
 Для разделения свойств можно использовать `,` или `;`. Тип свойства является опциональным. Свойство без явно определенного типа будет иметь тип `any`.
@@ -449,8 +449,8 @@ function printName(obj: { first: string; last?: string }) {
   // ...
 }
 // Обе функции скомпилируются без ошибок
-printName({ first: 'John' })
-printName({ first: 'Jane', last: 'Air' })
+printName({ first: "John" });
+printName({ first: "Jane", last: "Air" });
 ```
 
 В `JS` при доступе к несуществующему свойству возвращается `undefined`. По этой причине, при чтении опционального свойства необходимо выполнять проверку на `undefined`:
@@ -458,15 +458,15 @@ printName({ first: 'Jane', last: 'Air' })
 ```ts
 function printName(obj: { first: string; last?: string }) {
   // Ошибка - приложение может сломаться, если аргумент `last` не будет передан в функцию
-  console.log(obj.last.toUpperCase()) // Object is possibly 'undefined'. Потенциальным значением объекта является 'undefined'
+  console.log(obj.last.toUpperCase()); // Object is possibly 'undefined'. Потенциальным значением объекта является 'undefined'
 
   if (obj.last !== undefined) {
     // Теперь все в порядке
-    console.log(obj.last.toUpperCase())
+    console.log(obj.last.toUpperCase());
   }
 
   // Безопасная альтернатива, использующая современный синтаксис `JS` - оператор опциональной последовательности (`?.`)
-  console.log(obj.last?.toUpperCase())
+  console.log(obj.last?.toUpperCase());
 }
 ```
 
@@ -486,15 +486,15 @@ function printName(obj: { first: string; last?: string }) {
 
 ```ts
 function printId(id: number | string) {
-  console.log(`Ваш ID: ${id}`)
+  console.log(`Ваш ID: ${id}`);
 }
 
 // OK
-printId(101)
+printId(101);
 // OK
-printId('202')
+printId("202");
 // Ошибка
-printId({ myID: 22342 })
+printId({ myID: 22342 });
 // Argument of type '{ myID: number }' is not assignable to parameter of type 'string | number'. Type '{ myID: number }' is not assignable to type 'number'. Аргумент типа '{ myID: number }' не может быть присвоен параметру типа 'string | number'. Тип '{ myID: number }' не может быть присвоен типу 'number'
 ```
 
@@ -504,7 +504,7 @@ printId({ myID: 22342 })
 
 ```ts
 function printId(id: number | string) {
-  console.log(id.toUpperCase())
+  console.log(id.toUpperCase());
   // Property 'toUpperCase' does not exist on type 'string | number'. Property 'toUpperCase' does not exist on type 'number'.
 }
 ```
@@ -513,12 +513,12 @@ function printId(id: number | string) {
 
 ```ts
 function printId(id: number | string) {
-  if (typeof id === 'string') {
+  if (typeof id === "string") {
     // В этой ветке `id` имеет тип 'string'
-    console.log(id.toUpperCase())
+    console.log(id.toUpperCase());
   } else {
     // А здесь `id` имеет тип 'number'
-    console.log(id)
+    console.log(id);
   }
 }
 ```
@@ -529,10 +529,10 @@ function printId(id: number | string) {
 function welcomePeople(x: string[] | string) {
   if (Array.isArray(x)) {
     // Здесь `x` - это 'string[]'
-    console.log('Привет, ' + x.join(' и '))
+    console.log("Привет, " + x.join(" и "));
   } else {
     // Здесь `x` - 'string'
-    console.log('Добро пожаловать, одинокий странник ' + x)
+    console.log("Добро пожаловать, одинокий странник " + x);
   }
 }
 ```
@@ -541,7 +541,7 @@ function welcomePeople(x: string[] | string) {
 
 ```ts
 function getFirstThree(x: number[] | string) {
-  return x.slice(0, 3)
+  return x.slice(0, 3);
 }
 ```
 
@@ -551,23 +551,23 @@ function getFirstThree(x: number[] | string) {
 
 ```ts
 type Point = {
-  x: number
-  y: number
-}
+  x: number;
+  y: number;
+};
 
 // В точности тоже самое, что в приведенном выше примере
 function printCoords(pt: Point) {
-  console.log(`Значение координаты 'x': ${pt.x}`)
-  console.log(`Значение координаты 'y': ${pt.y}`)
+  console.log(`Значение координаты 'x': ${pt.x}`);
+  console.log(`Значение координаты 'y': ${pt.y}`);
 }
 
-printCoords({ x: 3, y: 7 })
+printCoords({ x: 3, y: 7 });
 ```
 
 Синонимы можно использовать не только для объектных типов, но и для любых других типов, например, для объединений:
 
 ```ts
-type ID = number | string
+type ID = number | string;
 ```
 
 :::note Обратите внимание
@@ -577,17 +577,17 @@ type ID = number | string
 :::
 
 ```ts
-type UserInputSanitizedString = string
+type UserInputSanitizedString = string;
 
 function sanitizeInput(str: string): UserInputSanitizedString {
-  return sanitize(str)
+  return sanitize(str);
 }
 
 // Создаем "обезвреженный" инпут
-let userInput = sanitizeInput(getInput())
+let userInput = sanitizeInput(getInput());
 
 // По-прежнему имеем возможность изменять значение переменной
-userInput = 'new input'
+userInput = "new input";
 ```
 
 ### Интерфейсы
@@ -596,16 +596,16 @@ userInput = 'new input'
 
 ```ts
 interface Point {
-  x: number
-  y: number
+  x: number;
+  y: number;
 }
 
 function printCoords(pt: Point) {
-  console.log(`Значение координаты 'x': ${pt.x}`)
-  console.log(`Значение координаты 'y': ${pt.y}`)
+  console.log(`Значение координаты 'x': ${pt.x}`);
+  console.log(`Значение координаты 'y': ${pt.y}`);
 }
 
-printCoords({ x: 3, y: 7 })
+printCoords({ x: 3, y: 7 });
 ```
 
 `TS` иногда называют структурно типизированной системой типов (structurally typed type system) - `TS` заботит лишь соблюдение структуры значения, передаваемого в функцию `printCoords`, т.е. содержит ли данное значение ожидаемые свойства.
@@ -618,16 +618,16 @@ printCoords({ x: 3, y: 7 })
 
 ```ts
 interface Animal {
-  name: string
+  name: string;
 }
 
 interface Bear extends Animal {
-  honey: boolean
+  honey: boolean;
 }
 
-const bear = getBear()
-bear.name
-bear.honey
+const bear = getBear();
+bear.name;
+bear.honey;
 ```
 
 Пример расширения типа с помощью пересечения (intersection):
@@ -650,27 +650,27 @@ bear.honey
 
 ```ts
 interface Window {
-  title: string
+  title: string;
 }
 
 interface Window {
-  ts: TypeScriptAPI
+  ts: TypeScriptAPI;
 }
 
-const src = "const a = 'Hello World'"
-window.ts.transpileModule(src, {})
+const src = "const a = 'Hello World'";
+window.ts.transpileModule(src, {});
 ```
 
 Тип не может быть изменен после создания:
 
 ```ts
 type Window = {
-  title: string
-}
+  title: string;
+};
 
 type Window = {
-  ts: TypeScriptAPI
-}
+  ts: TypeScriptAPI;
+};
 // Ошибка: повторяющийся идентификатор 'Window'.
 ```
 
@@ -683,19 +683,19 @@ _Общее правило_: используйте `interface` до тех по
 Например, когда мы используем `document.getElementById`, `TS` знает лишь то, что данный метод возвращает какой-то `HTMLElement`, но мы знаем, например, что будет возвращен `HTMLCanvasElement`. В этой ситуации мы можем использовать утверждение типа для определения более конкретного типа:
 
 ```ts
-const myCanvas = document.getElementById('main_canvas') as HTMLCanvasElement
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
 ```
 
 Для утверждения типа можно использовать другой синтаксис (не в TSX-файлах):
 
 ```ts
-const myCanvas = <HTMLCanvasElement>document.getElementById('main_canvas')
+const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 ```
 
 `TS` разрешает утверждения более или менее конкретных версий типа. Это означает, что преобразования типов выполнять нельзя:
 
 ```ts
-const x = 'hello' as number
+const x = "hello" as number;
 // Conversion of type 'string' to type 'number' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
 // Преобразование типа 'string' в тип 'number' может быть ошибкой, поскольку эти типы не перекрываются. Если это было сделано намерено, то выражение сначала следует преобразовать в 'unknown'
 ```
@@ -703,7 +703,7 @@ const x = 'hello' as number
 Иногда это правило может быть слишком консервативным и мешать выполнению более сложных валидных преобразований. В этом случае можно использовать двойное утверждение: сначала привести тип к `any` (или `unknown`), затем к нужному типу:
 
 ```ts
-const a = expr as any as T
+const a = expr as any as T;
 ```
 
 ### Литеральные типы (literal types)
@@ -713,39 +713,39 @@ const a = expr as any as T
 Вот как `TS` создает типы для литералов:
 
 ```ts
-let changingString = 'Hello World'
-changingString = 'Olá Mundo'
+let changingString = "Hello World";
+changingString = "Olá Mundo";
 // Поскольку `changingString` может представлять любую строку, вот
 // как TS описывает ее в системе типов
-changingString
+changingString;
 // let changingString: string
 
-const constantString = 'Hello World'
+const constantString = "Hello World";
 // Поскольку `constantString` может представлять только указанную строку, она
 // имеет такое литеральное представление типа
-constantString
+constantString;
 // const constantString: 'Hello World'
 ```
 
 Сами по себе литеральные типы особой ценности не представляют:
 
 ```ts
-let x: 'hello' = 'hello'
+let x: "hello" = "hello";
 // OK
-x = 'hello'
+x = "hello";
 // ...
-x = 'howdy'
+x = "howdy";
 // Type '"howdy"' is not assignable to type '"hello"'.
 ```
 
 Но комбинация литералов с объединениями позволяет создавать более полезные вещи, например, функцию, принимающую только набор известных значений:
 
 ```ts
-function printText(s: string, alignment: 'left' | 'right' | 'center') {
+function printText(s: string, alignment: "left" | "right" | "center") {
   // ...
 }
-printText('Hello World', 'left')
-printText("G'day, mate", 'centre')
+printText("Hello World", "left");
+printText("G'day, mate", "centre");
 // Argument of type '"centre"' is not assignable to parameter of type '"left" | "right" | "center"'.
 ```
 
@@ -753,7 +753,7 @@ printText("G'day, mate", 'centre')
 
 ```ts
 function compare(a: string, b: string): -1 | 0 | 1 {
-  return a === b ? 0 : a > b ? 1 : -1
+  return a === b ? 0 : a > b ? 1 : -1;
 }
 ```
 
@@ -761,14 +761,14 @@ function compare(a: string, b: string): -1 | 0 | 1 {
 
 ```ts
 interface Options {
-  width: number
+  width: number;
 }
-function configure(x: Options | 'auto') {
+function configure(x: Options | "auto") {
   // ...
 }
-configure({ width: 100 })
-configure('auto')
-configure('automatic')
+configure({ width: 100 });
+configure("auto");
+configure("automatic");
 // Argument of type '"automatic"' is not assignable to parameter of type 'Options | "auto"'.
 ```
 
@@ -777,9 +777,9 @@ configure('automatic')
 При инициализации переменной с помощью объекта, `TS` будет исходить из предположения о том, что значения свойств объекта в будущем могут измениться. Например, если мы напишем такой код:
 
 ```ts
-const obj = { counter: 0 }
+const obj = { counter: 0 };
 if (someCondition) {
-  obj.counter = 1
+  obj.counter = 1;
 }
 ```
 
@@ -788,8 +788,8 @@ if (someCondition) {
 Тоже самое справедливо и в отношении строк:
 
 ```ts
-const req = { url: 'https://example.com', method: 'GET' }
-handleRequest(req.url, req.method)
+const req = { url: "https://example.com", method: "GET" };
+handleRequest(req.url, req.method);
 // Argument of type 'string' is not assignable to parameter of type '"GET" | "POST"'.
 ```
 
@@ -801,16 +801,16 @@ handleRequest(req.url, req.method)
 
 ```ts
 // Изменение 1
-const req = { url: 'https://example.com', method: 'GET' as 'GET' }
+const req = { url: "https://example.com", method: "GET" as "GET" };
 // Изменение 2
-handleRequest(req.url, req.method as 'GET')
+handleRequest(req.url, req.method as "GET");
 ```
 
 2. Для преобразования объекта в литерал можно использовать `as const`:
 
 ```ts
-const req = { url: 'https://example.com', method: 'GET' } as const
-handleRequest(req.url, req.method)
+const req = { url: "https://example.com", method: "GET" } as const;
+handleRequest(req.url, req.method);
 ```
 
 ### `null` и `undefined`
@@ -824,7 +824,7 @@ handleRequest(req.url, req.method)
 ```ts
 function liveDangerously(x?: number | undefined) {
   // Ошибки не возникает
-  console.log(x!.toFixed())
+  console.log(x!.toFixed());
 }
 ```
 
@@ -840,10 +840,10 @@ function liveDangerously(x?: number | undefined) {
 
 ```ts
 // Создание `bigint` с помощью функции `BigInt`
-const oneHundred: bigint = BigInt(100)
+const oneHundred: bigint = BigInt(100);
 
 // Создание `bigint` с помощью литерального синтаксиса
-const anotherHundred: bigint = 100n
+const anotherHundred: bigint = 100n;
 ```
 
 Подробнее о `BigInt` можно почитать <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-2.html#bigint">здесь</a>.
@@ -853,8 +853,8 @@ const anotherHundred: bigint = 100n
 Данный примитив используется для создания глобально уникальных ссылок с помощью функции `Symbol()`:
 
 ```ts
-const firstName = Symbol('name')
-const secondName = Symbol('name')
+const firstName = Symbol("name");
+const secondName = Symbol("name");
 
 if (firstName === secondName) {
   // This condition will always return 'false' since the types 'typeof firstName' and 'typeof secondName' have no overlap.
@@ -870,7 +870,7 @@ if (firstName === secondName) {
 
 ```ts
 function padLeft(padding: number | string, input: string): string {
-  throw new Error('Еще не реализовано!')
+  throw new Error("Еще не реализовано!");
 }
 ```
 
@@ -878,7 +878,7 @@ function padLeft(padding: number | string, input: string): string {
 
 ```ts
 function padLeft(padding: number | string, input: string): string {
-  return new Array(padding + 1).join(' ') + input
+  return new Array(padding + 1).join(" ") + input;
   // Operator '+' cannot be applied to types 'string | number' and 'number'.
   // Оператор '+' не может быть применен к типам 'string | number'
 }
@@ -888,10 +888,10 @@ function padLeft(padding: number | string, input: string): string {
 
 ```ts
 function padLeft(padding: number | string, input: string): string {
-  if (typeof padding === 'number') {
-    return new Array(padding + 1).join(' ') + input
+  if (typeof padding === "number") {
+    return new Array(padding + 1).join(" ") + input;
   }
-  return padding + input
+  return padding + input;
 }
 ```
 
@@ -899,11 +899,11 @@ function padLeft(padding: number | string, input: string): string {
 
 ```ts
 function padLeft(padding: number | string, input: string) {
-  if (typeof padding === 'number') {
-    return new Array(padding + 1).join(' ') + input
+  if (typeof padding === "number") {
+    return new Array(padding + 1).join(" ") + input;
     // (parameter) padding: number
   }
-  return padding + input
+  return padding + input;
   // (parameter) padding: string
 }
 ```
@@ -927,14 +927,14 @@ function padLeft(padding: number | string, input: string) {
 
 ```ts
 function printAll(strs: string | string[] | null) {
-  if (typeof strs === 'object') {
+  if (typeof strs === "object") {
     for (const s of strs) {
       // Object is possibly 'null'.
       // Потенциальным значением объекта является 'null'
-      console.log(s)
+      console.log(s);
     }
-  } else if (typeof strs === 'string') {
-    console.log(strs)
+  } else if (typeof strs === "string") {
+    console.log(strs);
   } else {
     // ...
   }
@@ -952,9 +952,9 @@ function printAll(strs: string | string[] | null) {
 ```ts
 function getUsersOnlineMessage(numUsersOnline: number) {
   if (numUsersOnline) {
-    return `В сети находится ${numUsersOnline} человек!`
+    return `В сети находится ${numUsersOnline} человек!`;
   }
-  return 'Здесь никого нет :('
+  return "Здесь никого нет :(";
 }
 ```
 
@@ -971,20 +971,20 @@ function getUsersOnlineMessage(numUsersOnline: number) {
 
 ```ts
 // оба варианта возвращают `true`
-Boolean('hello')
-!!'world'
+Boolean("hello");
+!!"world";
 ```
 
 Данная техника широко применяется для исключения значений `null` и `undefined`. Применим ее к нашей функции `printAll`:
 
 ```ts
 function printAll(strs: string | string[] | null) {
-  if (strs && typeof strs === 'object') {
+  if (strs && typeof strs === "object") {
     for (const s of strs) {
-      console.log(s)
+      console.log(s);
     }
-  } else if (typeof strs === 'string') {
-    console.log(strs)
+  } else if (typeof strs === "string") {
+    console.log(strs);
   }
 }
 ```
@@ -1008,12 +1008,12 @@ function printAll(strs: string | string[] | null) {
   //  НЕ НАДО ТАК ДЕЛАТЬ
   // !!!
   if (strs) {
-    if (typeof strs === 'object') {
+    if (typeof strs === "object") {
       for (const s of strs) {
-        console.log(s)
+        console.log(s);
       }
-    } else if (typeof strs === 'string') {
-      console.log(strs)
+    } else if (typeof strs === "string") {
+      console.log(strs);
     }
   }
 }
@@ -1029,9 +1029,9 @@ function multiplyAll(
   factor: number
 ): number[] | undefined {
   if (!values) {
-    return values
+    return values;
   } else {
-    return values.map((x) => x * factor)
+    return values.map((x) => x * factor);
   }
 }
 ```
@@ -1044,14 +1044,14 @@ function multiplyAll(
 function example(x: string | number, y: string | boolean) {
   if (x === y) {
     // Теперь мы можем вызывать любой строковый метод
-    x.toUpperCase()
+    x.toUpperCase();
     // (method) String.toUpperCase(): string
-    y.toLowerCase()
+    y.toLowerCase();
     // (method) String.toLowerCase(): string
   } else {
-    console.log(x)
+    console.log(x);
     // (parameter) x: string | number
-    console.log(y)
+    console.log(y);
     // (parameter) y: string | boolean
   }
 }
@@ -1064,13 +1064,13 @@ function example(x: string | number, y: string | boolean) {
 ```ts
 function printAll(strs: string | string[] | null) {
   if (strs !== null) {
-    if (typeof strs === 'object') {
+    if (typeof strs === "object") {
       for (const s of strs) {
         // (parameter) strs: string[]
-        console.log(s)
+        console.log(s);
       }
-    } else if (typeof strs === 'string') {
-      console.log(strs)
+    } else if (typeof strs === "string") {
+      console.log(strs);
       // (parameter) strs: string
     }
   }
@@ -1081,17 +1081,17 @@ function printAll(strs: string | string[] | null) {
 
 ```ts
 interface Container {
-  value: number | null | undefined
+  value: number | null | undefined;
 }
 
 function multiplyValue(container: Container, factor: number) {
   // Удаляем 'null' и 'undefined' из типа
   if (container.value != null) {
-    console.log(container.value)
+    console.log(container.value);
     // (property) Container.value: number
 
     // Теперь мы можем безопасно умножать 'container.value'
-    container.value *= factor
+    container.value *= factor;
   }
 }
 ```
@@ -1103,31 +1103,31 @@ function multiplyValue(container: Container, factor: number) {
 Например, в выражении `'value' in x`, где 'value' - строка, а `x` - объединение, истинная ветка сужает типы `x` к типам, которые имеют опциональное или обязательное свойство `value`, а ложная ветка сужает типы к типам, которые имеют опциональное или не имеют названного свойства:
 
 ```ts
-type Fish = { swim: () => void }
-type Bird = { fly: () => void }
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
 
 function move(animal: Fish | Bird) {
-  if ('swim' in animal) {
-    return animal.swim()
+  if ("swim" in animal) {
+    return animal.swim();
   }
 
-  return animal.fly()
+  return animal.fly();
 }
 ```
 
 Наличие опциональных свойств в обоих ветках не является ошибкой, поскольку человек, например, может и плавать (swim), и летать (fly) (при наличии соответствующего снаряжения):
 
 ```ts
-type Fish = { swim: () => void }
-type Bird = { fly: () => void }
-type Human = { swim?: () => void; fly?: () => void }
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+type Human = { swim?: () => void; fly?: () => void };
 
 function move(animal: Fish | Bird | Human) {
-  if ('swim' in animal) {
-    animal
+  if ("swim" in animal) {
+    animal;
     // (parameter) animal: Fish | Human
   } else {
-    animal
+    animal;
     // (parameter) animal: Bird | Human
   }
 }
@@ -1140,10 +1140,10 @@ function move(animal: Fish | Bird | Human) {
 ```ts
 function logValue(x: Date | string) {
   if (x instanceof Date) {
-    console.log(x.toUTCString())
+    console.log(x.toUTCString());
     // (parameter) x: Date
   } else {
-    console.log(x.toUpperCase())
+    console.log(x.toUpperCase());
     // (parameter) x: string
   }
 }
@@ -1154,27 +1154,27 @@ function logValue(x: Date | string) {
 Как упоминалось ранее, когда мы присваиваем значение переменной, `TS` "смотрит" на правую часть выражения и вычисляет тип для левой части:
 
 ```ts
-let x = Math.random() < 0.5 ? 10 : 'hello world!'
+let x = Math.random() < 0.5 ? 10 : "hello world!";
 // let x: string | number
 
-x = 1
+x = 1;
 
-console.log(x)
+console.log(x);
 // let x: number
 
-x = 'goodbye!'
+x = "goodbye!";
 
-console.log(x)
+console.log(x);
 // let x: string
 ```
 
 Данные присвоения являются валидными, поскольку типом, определенным для `x`, является `string | number`. Однако, если мы попытаемся присвоить `x` логическое значение, то получим ошибку:
 
 ```ts
-x = true
+x = true;
 // Type 'boolean' is not assignable to type 'string | number'.
 
-console.log(x)
+console.log(x);
 // let x: string | number
 ```
 
@@ -1184,24 +1184,24 @@ console.log(x)
 
 ```ts
 function example() {
-  let x: string | number | boolean
+  let x: string | number | boolean;
 
-  x = Math.random() < 0.5
+  x = Math.random() < 0.5;
 
-  console.log(x)
+  console.log(x);
   // let x: boolean
 
   if (Math.random() < 0.5) {
-    x = 'hello'
-    console.log(x)
+    x = "hello";
+    console.log(x);
     // let x: string
   } else {
-    x = 100
-    console.log(x)
+    x = 100;
+    console.log(x);
     // let x: number
   }
 
-  return x
+  return x;
   // let x: string | number
 }
 ```
@@ -1212,7 +1212,7 @@ function example() {
 
 ```ts
 function isFish(pet: Fish | Bird): pet is Fish {
-  return (pet as Fish).swim !== undefined
+  return (pet as Fish).swim !== undefined;
 }
 ```
 
@@ -1221,12 +1221,12 @@ function isFish(pet: Fish | Bird): pet is Fish {
 При вызове `isFish` с любой переменной, `TS` "сузит" эту переменную до указанного типа, разумеется, при условии, что оригинальный тип совместим с указанным.
 
 ```ts
-const pet = getSmallPet()
+const pet = getSmallPet();
 
 if (isFish(pet)) {
-  pet.swim()
+  pet.swim();
 } else {
-  pet.fly()
+  pet.fly();
 }
 ```
 
@@ -1239,16 +1239,16 @@ if (isFish(pet)) {
 Мы можем использовать защитника `isFish` для фильтрации массива `Fish | Bird` и получения массива `Fish`:
 
 ```ts
-const zoo: (Fish | Bird)[] = [getSmallPet(), getSmallPet(), getSmallPet()]
-const underWater1: Fish[] = zoo.filter(isFish)
+const zoo: (Fish | Bird)[] = [getSmallPet(), getSmallPet(), getSmallPet()];
+const underWater1: Fish[] = zoo.filter(isFish);
 // или
-const underWater2: Fish[] = zoo.filter(isFish) as Fish[]
+const underWater2: Fish[] = zoo.filter(isFish) as Fish[];
 
 // В более сложных случаях, может потребоваться повторное использование предиката
 const underWater3: Fish[] = zoo.filter((pet): pet is Fish => {
-  if (pet.name === 'sharkey') return false
-  return isFish(pet)
-})
+  if (pet.name === "sharkey") return false;
+  return isFish(pet);
+});
 ```
 
 ### Исключающие объединения (discriminated unions)
@@ -1257,9 +1257,9 @@ const underWater3: Fish[] = zoo.filter((pet): pet is Fish => {
 
 ```ts
 interface Shape {
-  kind: 'circle' | 'square'
-  radius?: number
-  sideLength: number
+  kind: "circle" | "square";
+  radius?: number;
+  sideLength?: number;
 }
 ```
 
@@ -1268,7 +1268,7 @@ interface Shape {
 ```ts
 function handleShape(shape: Shape) {
   // Упс!
-  if (shape.kind === 'rect') {
+  if (shape.kind === "rect") {
     // This condition will always return 'false' since the types '"circle" | "square"' and '"rect"' have no overlap.
     // Данное условие всегда возвращает `false`, поскольку типы '"circle" | "square"' и '"rect"' не пересекаются
     // ...
@@ -1280,7 +1280,7 @@ function handleShape(shape: Shape) {
 
 ```ts
 function getArea(shape: Shape) {
-  return Math.PI * shape.radius ** 2
+  return Math.PI * shape.radius ** 2;
   // Object is possibly 'undefined'.
   // Потенциальным значением объекта является 'undefined'
 }
@@ -1290,8 +1290,8 @@ function getArea(shape: Shape) {
 
 ```ts
 function getArea(shape: Shape) {
-  if (shape.kind === 'circle') {
-    return Math.PI * shape.radius ** 2
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2;
     // Object is possibly 'undefined'.
   }
 }
@@ -1301,8 +1301,8 @@ function getArea(shape: Shape) {
 
 ```ts
 function getArea(shape: Shape) {
-  if (shape.kind === 'circle') {
-    return Math.PI * shape.radius! ** 2
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius! ** 2;
   }
 }
 ```
@@ -1311,16 +1311,16 @@ function getArea(shape: Shape) {
 
 ```ts
 interface Circle {
-  kind: 'circle'
-  radius: number
+  kind: "circle";
+  radius: number;
 }
 
 interface Square {
-  kind: 'square'
-  sideLength: number
+  kind: "square";
+  sideLength: number;
 }
 
-type Shape = Circle | Square
+type Shape = Circle | Square;
 ```
 
 Мы разделили `Shape` на два разных типа с разными значениями свойства `kind`, свойства `radius` и `sideLength` являются обязательными в соответствующих типах.
@@ -1329,7 +1329,7 @@ type Shape = Circle | Square
 
 ```ts
 function getArea(shape: Shape) {
-  return Math.PI * shape.radius ** 2
+  return Math.PI * shape.radius ** 2;
   // Property 'radius' does not exist on type 'Shape'. Property 'radius' does not exist on type 'Square'.
 }
 ```
@@ -1338,8 +1338,8 @@ function getArea(shape: Shape) {
 
 ```ts
 function getArea(shape: Shape) {
-  if (shape.kind === 'circle') {
-    return Math.PI * shape.radius ** 2
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2;
     // (parameter) shape: Circle
   }
 }
@@ -1354,11 +1354,11 @@ function getArea(shape: Shape) {
 ```ts
 function getArea(shape: Shape) {
   switch (shape.kind) {
-    case 'circle':
-      return Math.PI * shape.radius ** 2
+    case "circle":
+      return Math.PI * shape.radius ** 2;
     // (parameter) shape: Circle
-    case 'square':
-      return shape.sideLength ** 2
+    case "square":
+      return shape.sideLength ** 2;
     // (parameter) shape: Square
   }
 }
@@ -1377,13 +1377,13 @@ function getArea(shape: Shape) {
 ```ts
 function getArea(shape: Shape) {
   switch (shape.kind) {
-    case 'circle':
-      return Math.PI * shape.radius ** 2
-    case 'square':
-      return shape.sideLength ** 2
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.sideLength ** 2;
     default:
-      const _exhaustiveCheck: never = shape
-      return _exhaustiveCheck
+      const _exhaustiveCheck: never = shape;
+      return _exhaustiveCheck;
   }
 }
 ```
@@ -1392,22 +1392,22 @@ function getArea(shape: Shape) {
 
 ```ts
 interface Triangle {
-  kind: 'triangle'
-  sideLength: number
+  kind: "triangle";
+  sideLength: number;
 }
 
-type Shape = Circle | Square | Triangle
+type Shape = Circle | Square | Triangle;
 
 function getArea(shape: Shape) {
   switch (shape.kind) {
-    case 'circle':
-      return Math.PI * shape.radius ** 2
-    case 'square':
-      return shape.sideLength ** 2
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.sideLength ** 2;
     default:
-      const _exhaustiveCheck: never = shape
+      const _exhaustiveCheck: never = shape;
       // Type 'Triangle' is not assignable to type 'never'.
-      return _exhaustiveCheck
+      return _exhaustiveCheck;
   }
 }
 ```
@@ -1422,14 +1422,14 @@ function getArea(shape: Shape) {
 
 ```ts
 function greeter(fn: (a: string) => void) {
-  fn('Hello, World')
+  fn("Hello, World");
 }
 
 function printToConsole(s: string) {
-  console.log(s)
+  console.log(s);
 }
 
-greeter(printToConsole)
+greeter(printToConsole);
 ```
 
 Выражение `(a: string) => void` означает "функция с одним параметром `a` типа `string`, которая ничего не возвращает". Как и в случае с определением функции, если тип параметра не указан, он будет иметь значение `any`.
@@ -1443,7 +1443,7 @@ greeter(printToConsole)
 Разумеется, для типа функции можно использовать синоним:
 
 ```ts
-type GreetFn = (a: string) => void
+type GreetFn = (a: string) => void;
 function greeter(fn: GreetFn) {
   // ...
 }
@@ -1455,11 +1455,11 @@ function greeter(fn: GreetFn) {
 
 ```ts
 type DescFn = {
-  description: string
-  (someArg: number): boolean
-}
+  description: string;
+  (someArg: number): boolean;
+};
 function doSomething(fn: DescFn) {
-  console.log(`Значением, возвращаемым ${fn.description} является ${fn(6)}`)
+  console.log(`Значением, возвращаемым ${fn.description} является ${fn(6)}`);
 }
 ```
 
@@ -1475,10 +1475,10 @@ function doSomething(fn: DescFn) {
 
 ```ts
 type SomeConstructor = {
-  new (s: string): SomeObject
-}
+  new (s: string): SomeObject;
+};
 function fn(ctor: SomeConstructor) {
-  return new ctor('Hello!')
+  return new ctor("Hello!");
 }
 ```
 
@@ -1486,8 +1486,8 @@ function fn(ctor: SomeConstructor) {
 
 ```ts
 interface CallOrConstruct {
-  new (s: string): Date
-  (n?: number): number
+  new (s: string): Date;
+  (n?: number): number;
 }
 ```
 
@@ -1497,7 +1497,7 @@ interface CallOrConstruct {
 
 ```ts
 function firstElement(arr: any[]) {
-  return arr[0]
+  return arr[0];
 }
 ```
 
@@ -1507,7 +1507,7 @@ function firstElement(arr: any[]) {
 
 ```ts
 function firstElement<Type>(arr: Type[]): Type {
-  return arr[0]
+  return arr[0];
 }
 ```
 
@@ -1515,9 +1515,9 @@ function firstElement<Type>(arr: Type[]): Type {
 
 ```ts
 // `s` имеет тип `string`
-const s = firstElement(['a', 'b', 'c'])
+const s = firstElement(["a", "b", "c"]);
 // `n` имеет тип `number`
-const n = firstElement([1, 2, 3])
+const n = firstElement([1, 2, 3]);
 ```
 
 ### Предположение типа (inference)
@@ -1529,12 +1529,12 @@ function map<Input, Output>(
   arr: Input[],
   func: (arg: Input) => Output
 ): Output[] {
-  return arr.map(func)
+  return arr.map(func);
 }
 
 // Типом `n` является `string`,
 // а типом `parsed` - `number[]`
-const parsed = map(['1', '2', '3'], (n) => parseInt(n))
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
 ```
 
 :::note Обратите внимание
@@ -1552,18 +1552,18 @@ const parsed = map(['1', '2', '3'], (n) => parseInt(n))
 ```ts
 function longest<Type extends { length: number }>(a: Type, b: Type) {
   if (a.length >= b.length) {
-    return a
+    return a;
   } else {
-    return b
+    return b;
   }
 }
 
 // Типом `longerArr` является `number[]`
-const longerArr = longest([1, 2], [1, 2, 3])
+const longerArr = longest([1, 2], [1, 2, 3]);
 // Типом `longerStr` является `string`
-const longerStr = longest('alice', 'bob')
+const longerStr = longest("alice", "bob");
 // Ошибка! У чисел нет свойства `length`
-const notOK = longest(10, 100)
+const notOK = longest(10, 100);
 // Argument of type 'number' is not assignable to parameter of type '{ length: number }'.
 // Аргумент типа 'number' не может быть присвоен параметру типа '{ length: number; }'
 ```
@@ -1586,9 +1586,9 @@ function minLength<Type extends { length: number }>(
   min: number
 ): Type {
   if (obj.length >= min) {
-    return obj
+    return obj;
   } else {
-    return { length: min }
+    return { length: min };
   }
 }
 // Type '{ length: number; }' is not assignable to type 'Type'. '{ length: number; }' is assignable to the constraint of type 'Type', but 'Type' could be instantiated with a different subtype of constraint '{ length: number; }'.
@@ -1599,10 +1599,10 @@ function minLength<Type extends { length: number }>(
 
 ```ts
 // `arr` получает значение `{ length: 6 }`
-const arr = minLength([1, 2, 3], 6)
+const arr = minLength([1, 2, 3], 6);
 // и ломает приложение, поскольку массивы
 // имеют метод `slice`, но не возвращаемый объект!
-console.log(arr.slice(0))
+console.log(arr.slice(0));
 ```
 
 ### Определение типа аргументов
@@ -1611,21 +1611,21 @@ console.log(arr.slice(0))
 
 ```ts
 function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
-  return arr1.concat(arr2)
+  return arr1.concat(arr2);
 }
 ```
 
 При обычном вызове данной функции с несовпадающими по типу массивами возникает ошибка:
 
 ```ts
-const arr = combine([1, 2, 3], ['привет'])
+const arr = combine([1, 2, 3], ["привет"]);
 // Type 'string' is not assignable to type 'number'.
 ```
 
 Однако, мы можем вручную определить `Type`, и тогда все будет в порядке:
 
 ```ts
-const arr = combine<string | number>([1, 2, 3], ['привет'])
+const arr = combine<string | number>([1, 2, 3], ["привет"]);
 ```
 
 ### Руководство по написанию хороших функций-дженериков
@@ -1636,17 +1636,17 @@ const arr = combine<string | number>([1, 2, 3], ['привет'])
 
 ```ts
 function firstElement1<Type>(arr: Type[]) {
-  return arr[0]
+  return arr[0];
 }
 
 function firstElement2<Type extends any[]>(arr: Type) {
-  return arr[0]
+  return arr[0];
 }
 
 // a: number (хорошо)
-const a = firstElement1([1, 2, 3])
+const a = firstElement1([1, 2, 3]);
 // b: any (плохо)
-const b = firstElement2([1, 2, 3])
+const b = firstElement2([1, 2, 3]);
 ```
 
 Предполагаемым типом значения, возвращаемого функцией `firstElement1` является `Type`, а значения, возвращаемого функцией `firstElement2` - `any`. Это объясняется тем, что `TS` разрешает (resolve) выражение `arr[0]` с помощью ограничения типа вместо того, чтобы ждать разрешения элемента после вызова функции.
@@ -1659,14 +1659,14 @@ _Правило_: по-возможности, используйте парам
 
 ```ts
 function filter1<Type>(arr: Type[], func: (arg: Type) => boolean): Type[] {
-  return arr.filter(func)
+  return arr.filter(func);
 }
 
 function filter2<Type, Func extends (arg: Type) => boolean>(
   arr: Type[],
   func: Func
 ): Type[] {
-  return arr.filter(func)
+  return arr.filter(func);
 }
 ```
 
@@ -1680,17 +1680,17 @@ _Правило_: всегда используйте минимальное к�
 
 ```ts
 function greet<Str extends string>(s: Str) {
-  console.log(`Привет, ${s}!`)
+  console.log(`Привет, ${s}!`);
 }
 
-greet('народ')
+greet("народ");
 ```
 
 Вот упрощенная версия данной функции:
 
 ```ts
 function greet(s: string) {
-  console.log(`Привет, ${s}!`)
+  console.log(`Привет, ${s}!`);
 }
 ```
 
@@ -1704,8 +1704,8 @@ _Правило_: если параметр типа появляется в с�
 
 ```ts
 function fn(n: number) {
-  console.log(n.toFixed()) // 0 аргументов
-  console.log(n.toFixed(3)) // 1 аргумент
+  console.log(n.toFixed()); // 0 аргументов
+  console.log(n.toFixed(3)); // 1 аргумент
 }
 ```
 
@@ -1715,8 +1715,8 @@ function fn(n: number) {
 function f(x?: number) {
   // ...
 }
-f() // OK
-f(10) // OK
+f(); // OK
+f(10); // OK
 ```
 
 Несмотря на то, что тип параметра определен как `number`, параметр `x` на самом деле имеет тип `number | undefined`, поскольку неопределенные параметры в `JS` получают значение `undefined`.
@@ -1732,11 +1732,11 @@ function f(x = 10) {
 Теперь в теле функции `f` параметр `x` будет иметь тип `number`, поскольку любой аргумент со значением `undefined` будет заменен на `10`. _Обратите внимание_: явная передача `undefined` означает "отсутствующий" аргумент.
 
 ```ts
-declare function f(x?: number): void
+declare function f(x?: number): void;
 // OK
-f()
-f(10)
-f(undefined)
+f();
+f(10);
+f(undefined);
 ```
 
 #### Опциональные параметры в функциях обратного вызова
@@ -1746,7 +1746,7 @@ f(undefined)
 ```ts
 function myForEach(arr: any[], callback: (arg: any, index?: number) => void) {
   for (let i = 0; i < arr.length; i++) {
-    callback(arr[i], i)
+    callback(arr[i], i);
   }
 }
 ```
@@ -1754,8 +1754,8 @@ function myForEach(arr: any[], callback: (arg: any, index?: number) => void) {
 Указав `index?`, мы хотим, чтобы оба этих вызова были легальными:
 
 ```ts
-myForEach([1, 2, 3], (a) => console.log(a))
-myForEach([1, 2, 3], (a, i) => console.log(a, i))
+myForEach([1, 2, 3], (a) => console.log(a));
+myForEach([1, 2, 3], (a, i) => console.log(a, i));
 ```
 
 В действительности, это означает, что колбек _может быть вызван с одним аргументом_. Другими словами, определение функции говорит, что ее реализация может выглядеть так:
@@ -1763,7 +1763,7 @@ myForEach([1, 2, 3], (a, i) => console.log(a, i))
 ```ts
 function myForEach(arr: any[], callback: (arg: any, index?: number) => void) {
   for (let i = 0; i < arr.length; i++) {
-    callback(arr[i])
+    callback(arr[i]);
   }
 }
 ```
@@ -1772,10 +1772,10 @@ function myForEach(arr: any[], callback: (arg: any, index?: number) => void) {
 
 ```ts
 myForEach([1, 2, 3], (a, i) => {
-  console.log(i.toFixed())
+  console.log(i.toFixed());
   // Object is possibly 'undefined'.
   // Возможным значением объекта является 'undefined'
-})
+});
 ```
 
 В `JS` при вызове функции с большим (ударение на первый слог) количеством аргументов, чем указано в определении функции, дополнительные параметры просто игнорируются. `TS` ведет себя аналогичным образом. Функции с меньшим количеством параметров (одного типа) могут заменять функции с большим количеством параметров.
@@ -1789,18 +1789,18 @@ _Правило_: при написании типа функции для ко�
 В `TS` такую функцию можно реализовать с помощью сигнатур перегрузки (overload signatures). Для этого перед телом функции указывается несколько ее сигнатур:
 
 ```ts
-function makeDate(timestamp: number): Date
-function makeDate(d: number, m: number, y: number): Date
+function makeDate(timestamp: number): Date;
+function makeDate(d: number, m: number, y: number): Date;
 function makeDate(dOrTimestamp: number, m?: number, y?: number): Date {
   if (m !== undefined && y !== undefined) {
-    return new Date(y, m, dOrTimestamp)
+    return new Date(y, m, dOrTimestamp);
   } else {
-    return new Date(dOrTimestamp)
+    return new Date(dOrTimestamp);
   }
 }
-const d1 = makeDate(12345678)
-const d2 = makeDate(5, 5, 5)
-const d3 = makeDate(1, 3)
+const d1 = makeDate(12345678);
+const d2 = makeDate(5, 5, 5);
+const d3 = makeDate(1, 3);
 // No overload expects 2 arguments, but overloads do exist that expect either 1 or 3 arguments.
 // Нет перегрузки, принимающей 2 аргумента, но существуют перегрузки, ожидающие получения 1 или 3 аргумента
 ```
@@ -1814,12 +1814,12 @@ const d3 = makeDate(1, 3)
 Предположим, что у нас имеется такой код:
 
 ```ts
-function fn(x: string): void
+function fn(x: string): void;
 function fn() {
   // ...
 }
 // Мы ожидаем, что функция может вызываться без аргументов
-fn()
+fn();
 // Expected 1 arguments, but got 0.
 // Ожидалось получение 1 аргумента, а получено 0
 ```
@@ -1829,21 +1829,21 @@ fn()
 Кроме того, сигнатура реализации должна быть совместима с сигнатурами перегрузки. Например, при вызове следующих функций возникают ошибки, поскольку сигнатура реализации не совпадает с сигнатурами перегрузки:
 
 ```ts
-function fn(x: boolean): void
+function fn(x: boolean): void;
 // Неправильный тип аргумента
-function fn(x: string): void
+function fn(x: string): void;
 // This overload signature is not compatible with its implementation signature.
 // Данная сигнатура перегрузки не совместима с сигнатурой ее реализации
-function(x: boolean) {}
+function fn(x: boolean) {}
 ```
 
 ```ts
-function fn(x: string): string
+function fn(x: string): string;
 // Неправильный тип возвращаемого значения
-function(x: number): boolean
+function fn(x: number): boolean;
 // This overload signature is not compatible with its implementation signature.
 function fn(x: string | number) {
-  return 'упс'
+  return "упс";
 }
 ```
 
@@ -1852,19 +1852,19 @@ function fn(x: string | number) {
 Рассмотрим функцию, возвращающую длину строки или массива:
 
 ```ts
-function len(s: string): number
-function len(arr: any[]): number
+function len(s: string): number;
+function len(arr: any[]): number;
 function len(x: any) {
-  return x.length
+  return x.length;
 }
 ```
 
 На первый взгляд кажется, что все в порядке. Мы можем вызывать функцию со строками или массивами. Однако, мы не можем вызывать ее со значением, которое может быть либо строкой, либо массивом, поскольку `TS` ассоциирует вызов функции с одной из ее перегрузок:
 
 ```ts
-len('') // OK
-len([0]) // OK
-len(Math.random() > 0.5 ? 'привет' : [0])
+len(""); // OK
+len([0]); // OK
+len(Math.random() > 0.5 ? "привет" : [0]);
 /*
 No overload matches this call.
   Overload 1 of 2, '(s: string): number', gave the following error.
@@ -1889,7 +1889,7 @@ No overload matches this call.
 
 ```ts
 function len(x: any[] | string) {
-  return x.length
+  return x.length;
 }
 ```
 
@@ -1907,18 +1907,18 @@ const user = {
 
   admin: false,
   becomeAdmin: function () {
-    this.admin = true
-  }
-}
+    this.admin = true;
+  },
+};
 ```
 
 `TS` "понимает", что значением `this` функции `user.becomeAdmin` является внешний объект `user`. В большинстве случаев этого достаточно, но порой нам требуется больше контроля над тем, что представляет собой `this`. Спецификация `JS` определяет, что мы не можем использовать `this` в качестве названия параметра. `TS` использует это синтаксическое пространство (syntax space), позволяя определять тип `this` в теле функции:
 
 ```ts
-const db = getDB()
+const db = getDB();
 const admins = db.filterUsers(function () {
-  return this.admin
-})
+  return this.admin;
+});
 ```
 
 :::note Обратите внимание
@@ -1928,8 +1928,8 @@ const admins = db.filterUsers(function () {
 :::
 
 ```ts
-const db = getDB()
-const admins = db.filterUsers(() => this.admin)
+const db = getDB();
+const admins = db.filterUsers(() => this.admin);
 // The containing arrow function captures the global value of 'this'. Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
 // Стрелочная функция перехватывает глобальное значение 'this'. Неявным типом элемента является 'any', поскольку тип 'typeof globalThis' не имеет сигнатуры индекса
 ```
@@ -1943,7 +1943,7 @@ const admins = db.filterUsers(() => this.admin)
 ```ts
 // Предполагаемым типом является `void`
 function noop() {
-  return
+  return;
 }
 ```
 
@@ -1973,10 +1973,10 @@ _Правило_: `object` - это не `Object`. Всегда использу
 
 ```ts
 function f1(a: any) {
-  a.b() // OK
+  a.b(); // OK
 }
 function f2(a: unknown) {
-  a.b()
+  a.b();
   // Object is of type 'unknown'.
   // Типом объекта является 'unknown'
 }
@@ -1986,10 +1986,10 @@ function f2(a: unknown) {
 
 ```ts
 function safeParse(s: string): unknown {
-  return JSON.parse(s)
+  return JSON.parse(s);
 }
 
-const obj = safeParse(someRandomString)
+const obj = safeParse(someRandomString);
 ```
 
 #### `never`
@@ -1998,7 +1998,7 @@ const obj = safeParse(someRandomString)
 
 ```ts
 function fail(msg: string): never {
-  throw new Error(msg)
+  throw new Error(msg);
 }
 ```
 
@@ -2008,12 +2008,12 @@ function fail(msg: string): never {
 
 ```ts
 function fn(x: string | number) {
-  if (typeof x === 'string') {
+  if (typeof x === "string") {
     // ...
-  } else if (typeof x === 'number') {
+  } else if (typeof x === "number") {
     // ...
   } else {
-    x // типом `x` является `never`!
+    x; // типом `x` является `never`!
   }
 }
 ```
@@ -2024,7 +2024,7 @@ function fn(x: string | number) {
 
 ```ts
 function doSomething(f: Function) {
-  f(1, 2, 3)
+  f(1, 2, 3);
 }
 ```
 
@@ -2042,10 +2042,10 @@ function doSomething(f: Function) {
 
 ```ts
 function multiply(n: number, ...m: number[]) {
-  return m.map((x) => n * x)
+  return m.map((x) => n * x);
 }
 // `a` получает значение [10, 20, 30, 40]
-const a = multiply(10, 1, 2, 3, 4)
+const a = multiply(10, 1, 2, 3, 4);
 ```
 
 В `TS` неявным типом таких параметров является `any[]`, а не `any`. Любая аннотация типа для них должна иметь вид `Array<T>` или `T[]`, или являться кортежем.
@@ -2055,9 +2055,9 @@ const a = multiply(10, 1, 2, 3, 4)
 Синтаксис <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax">распространения (синонимы: расширение, распаковка) (spread syntax)</a> позволяет передавать произвольное количество элементов массива. Например, метод массива `push` принимает любое количество аргументов:
 
 ```ts
-const arr1 = [1, 2, 3]
-const arr2 = [4, 5, 6]
-arr1.push(...arr2)
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.push(...arr2);
 ```
 
 :::note Обратите внимание
@@ -2069,8 +2069,8 @@ arr1.push(...arr2)
 ```ts
 // Предполагаемым типом `args` является `number[]` - массив с 0 или более чисел
 // а не конкретно с 2 числами
-const args = [8, 5]
-const angle = Math.atan2(...args)
+const args = [8, 5];
+const angle = Math.atan2(...args);
 // Expected 2 arguments, but got 0 or more.
 // Ожидалось получение 2 аргументов, а получено 0 или более
 ```
@@ -2079,39 +2079,39 @@ const angle = Math.atan2(...args)
 
 ```ts
 // Предполагаемым типом является кортеж, состоящий из 2 элементов
-const args = [8, 5] as const
+const args = [8, 5] as const;
 // OK
-const angle = Math.atan2(...args)
+const angle = Math.atan2(...args);
 ```
 
 # Деструктуризация параметров (parameter destructuring)
 
-<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment'>
+<a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">
   Деструктуризация параметров
 </a> используется для распаковки объекта, переданного в качестве аргумента, в одну
 или более локальную переменную в теле функции. В `JS` это выглядит так:
 
 ```js
 function sum({ a, b, c }) {
-  console.log(a + b + c)
+  console.log(a + b + c);
 }
-sum({ a: 10, b: 3, c: 9 })
+sum({ a: 10, b: 3, c: 9 });
 ```
 
 Аннотация типа для объекта указывается после деструктуризации:
 
 ```ts
 function sum({ a, b, c }: { a: number; b: number; c: number }) {
-  console.log(a + b + c)
+  console.log(a + b + c);
 }
 ```
 
 Для краткости можно использовать именованный тип:
 
 ```ts
-type ABC = { a: number; b: number; c: number }
+type ABC = { a: number; b: number; c: number };
 function sum({ a, b, c }: ABC) {
-  console.log(a + b + c)
+  console.log(a + b + c);
 }
 ```
 
@@ -2124,36 +2124,36 @@ function sum({ a, b, c }: ABC) {
 Все приведенные ниже реализации типа `() => void` являются валидными:
 
 ```ts
-type voidFn = () => void
+type voidFn = () => void;
 
 const f1: voidFn = () => {
-  return true
-}
+  return true;
+};
 
-const f2: voidFn = () => true
+const f2: voidFn = () => true;
 
 const f3: voidFn = function () {
-  return true
-}
+  return true;
+};
 ```
 
 Когда возвращаемое любой из этих функций значение присваивается переменной, она будет хранить тип `void`:
 
 ```ts
-const v1 = f1()
+const v1 = f1();
 
-const v2 = f2()
+const v2 = f2();
 
-const v3 = f3()
+const v3 = f3();
 ```
 
 Поэтому следующий код является валидным, несмотря на то, что `Array.prototype.push` возвращает число, а `Array.prototype.forEach` ожидает получить функцию с типом возвращаемого значения `void`:
 
 ```ts
-const src = [1, 2, 3]
-const dst = [0]
+const src = [1, 2, 3];
+const dst = [0];
 
-src.forEach((el) => dist.push(el))
+src.forEach((el) => dst.push(el));
 ```
 
 Существует один специальный случай, о котором следует помнить: когда литеральное определение функции имеет тип возвращаемого значения `void`, функция не должна ничего возвращать:
@@ -2161,13 +2161,13 @@ src.forEach((el) => dist.push(el))
 ```ts
 function f2(): void {
   // Ошибка
-  return true
+  return true;
 }
 
 const f3 = function (): void {
   // Ошибка
-  return true
-}
+  return true;
+};
 ```
 
 ## Объектные типы
@@ -2178,7 +2178,7 @@ const f3 = function (): void {
 
 ```ts
 function greet(person: { name: string; age: number }) {
-  return `Привет, ${person.name}!`
+  return `Привет, ${person.name}!`;
 }
 ```
 
@@ -2186,12 +2186,12 @@ function greet(person: { name: string; age: number }) {
 
 ```ts
 interface Person {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 function greet(person: Person) {
-  return `Привет, ${person.name}!`
+  return `Привет, ${person.name}!`;
 }
 ```
 
@@ -2199,12 +2199,12 @@ function greet(person: Person) {
 
 ```ts
 type Person = {
-  name: string
-  age: number
-}
+  name: string;
+  age: number;
+};
 
 function greet(person: Person) {
-  return `Привет, ${person.name}!`
+  return `Привет, ${person.name}!`;
 }
 ```
 
@@ -2220,20 +2220,20 @@ function greet(person: Person) {
 
 ```ts
 interface PaintOptions {
-  shape: Shape
-  xPos?: number
-  yPos?: number
+  shape: Shape;
+  xPos?: number;
+  yPos?: number;
 }
 
 function paintShape(opts: PaintOptions) {
   // ...
 }
 
-const shape = getShape()
-paintShape({ shape })
-paintShape({ shape, xPos: 100 })
-paintShape({ shape, yPos: 100 })
-paintShape({ shape, xPos: 100, yPos: 100 })
+const shape = getShape();
+paintShape({ shape });
+paintShape({ shape, xPos: 100 });
+paintShape({ shape, yPos: 100 });
+paintShape({ shape, xPos: 100, yPos: 100 });
 ```
 
 Все вызовы функции в приведенном примере являются валидными. Опциональность означает, что если свойство установлено, оно должно иметь указанный тип.
@@ -2242,9 +2242,9 @@ paintShape({ shape, xPos: 100, yPos: 100 })
 
 ```ts
 function paintShape(opts: PaintOptions) {
-  let xPos = opts.xPos
+  let xPos = opts.xPos;
   // (property) PaintOptions.xPos?: number | undefined
-  let yPos = opts.yPos
+  let yPos = opts.yPos;
   // (property) PaintOptions.yPos?: number | undefined
   // ...
 }
@@ -2254,9 +2254,9 @@ function paintShape(opts: PaintOptions) {
 
 ```ts
 function paintShape(opts: PaintOptions) {
-  let xPos = opts.xPos === undefined ? 0 : opts.xPos
+  let xPos = opts.xPos === undefined ? 0 : opts.xPos;
   // let xPos: number
-  let yPos = opts.yPos === undefined ? 0 : opts.yPos
+  let yPos = opts.yPos === undefined ? 0 : opts.yPos;
   // let yPos: number
   // ...
 }
@@ -2266,9 +2266,9 @@ function paintShape(opts: PaintOptions) {
 
 ```ts
 function paintShape({ shape, xPos = 0, yPos = 0 }: PaintOptions) {
-  console.log('x coordinate at', xPos)
+  console.log("x coordinate at", xPos);
   // var xPos: number
-  console.log('y coordinate at', yPos)
+  console.log("y coordinate at", yPos);
   // var yPos: number
   // ...
 }
@@ -2284,10 +2284,10 @@ function paintShape({ shape, xPos = 0, yPos = 0 }: PaintOptions) {
 
 ```ts
 function draw({ shape: Shape, xPos: number = 100 /*...*/ }) {
-  render(shape)
+  render(shape);
   // Cannot find name 'shape'. Did you mean 'Shape'?
   // Невозможно найти 'shape'. Возможно, вы имели ввиду 'Shape'
-  render(xPos)
+  render(xPos);
   // Cannot find name 'xPos'.
   // Невозможно найти 'xPos'
 }
@@ -2301,15 +2301,15 @@ function draw({ shape: Shape, xPos: number = 100 /*...*/ }) {
 
 ```ts
 interface SomeType {
-  readonly prop: string
+  readonly prop: string;
 }
 
 function doSomething(obj: SomeType) {
   // Мы может читать (извлекать значения) из 'obj.prop'.
-  console.log(`prop has the value '${obj.prop}'.`)
+  console.log(`prop has the value '${obj.prop}'.`);
 
   // Но не можем изменять значение данного свойства
-  obj.prop = 'hello'
+  obj.prop = "hello";
   // Cannot assign to 'prop' because it is a read-only property.
   // Невозможно присвоить значение 'prop', поскольку оно является доступным только для чтения
 }
@@ -2319,22 +2319,22 @@ function doSomething(obj: SomeType) {
 
 ```ts
 interface Home {
-  readonly resident: { name: string; age: number }
+  readonly resident: { name: string; age: number };
 }
 
 function visitForBirthday(home: Home) {
   // Мы можем читать и обновлять свойства 'home.resident'.
-  console.log(`С Днем рождения, ${home.resident.name}!`)
-  home.resident.age++
+  console.log(`С Днем рождения, ${home.resident.name}!`);
+  home.resident.age++;
 }
 
 function evict(home: Home) {
   // Но мы не можем изменять значение свойства 'resident'
   home.resident = {
     // Cannot assign to 'resident' because it is a read-only property.
-    name: 'Victor the Evictor',
-    age: 42
-  }
+    name: "Victor the Evictor",
+    age: 42,
+  };
 }
 ```
 
@@ -2342,26 +2342,26 @@ function evict(home: Home) {
 
 ```ts
 interface Person {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 interface ReadonlyPerson {
-  readonly name: string
-  readonly age: number
+  readonly name: string;
+  readonly age: number;
 }
 
 let writablePerson: Person = {
-  name: 'John Smith',
-  age: 42
-}
+  name: "John Smith",
+  age: 42,
+};
 
 // работает
-let readonlyPerson: ReadonlyPerson = writablePerson
+let readonlyPerson: ReadonlyPerson = writablePerson;
 
-console.log(readonlyPerson.age) // 42
-writablePerson.age++
-console.log(readonlyPerson.age) // 43
+console.log(readonlyPerson.age); // 42
+writablePerson.age++;
+console.log(readonlyPerson.age); // 43
 ```
 
 #### Сигнатуры индекса (index signatures)
@@ -2372,11 +2372,11 @@ console.log(readonlyPerson.age) // 43
 
 ```ts
 interface StringArray {
-  [index: number]: string
+  [index: number]: string;
 }
 
-const myArray: StringArray = getStringArray()
-const secondItem = myArray[1]
+const myArray: StringArray = getStringArray();
+const secondItem = myArray[1];
 // const secondItem: string
 ```
 
@@ -2388,19 +2388,19 @@ const secondItem = myArray[1]
 
 ```ts
 interface Animal {
-  name: string
+  name: string;
 }
 
 interface Dog extends Animal {
-  breed: string
+  breed: string;
 }
 
 // Ошибка: индексация с помощью числовой строки может привести к созданию другого типа Animal!
 interface NotOkay {
-  [x: number]: Animal
+  [x: number]: Animal;
   // Numeric index type 'Animal' is not assignable to string index type 'Dog'.
   // Числовой индекс типа 'Animal' не может быть присвоен строковому индексу типа 'Dog'
-  [x: string]: Dog
+  [x: string]: Dog;
 }
 ```
 
@@ -2408,10 +2408,10 @@ interface NotOkay {
 
 ```ts
 interface NumberDictionary {
-  [index: string]: number
+  [index: string]: number;
 
-  length: number // ok
-  name: string
+  length: number; // ok
+  name: string;
   // Property 'name' of type 'string' is not assignable to string index type 'number'.
 }
 ```
@@ -2420,9 +2420,9 @@ interface NumberDictionary {
 
 ```ts
 interface NumberOrStringDictionary {
-  [index: string]: number | string
-  length: number // ok, `length` - это число
-  name: string // ok, `name` - это строка
+  [index: string]: number | string;
+  length: number; // ok, `length` - это число
+  name: string; // ok, `name` - это строка
 }
 ```
 
@@ -2430,11 +2430,11 @@ interface NumberOrStringDictionary {
 
 ```ts
 interface ReadonlyStringArray {
-  readonly [index: number]: string
+  readonly [index: number]: string;
 }
 
-let myArray: ReadonlyStringArray = getReadOnlyStringArray()
-myArray[2] = 'John'
+let myArray: ReadonlyStringArray = getReadOnlyStringArray();
+myArray[2] = "John";
 // Index signature in type 'ReadonlyStringArray' only permits reading.
 // Сигнатура индекса в типе 'ReadonlyStringArray' допускает только чтение
 ```
@@ -2445,11 +2445,11 @@ myArray[2] = 'John'
 
 ```ts
 interface BasicAddress {
-  name?: string
-  street: string
-  city: string
-  country: string
-  postalCode: string
+  name?: string;
+  street: string;
+  city: string;
+  country: string;
+  postalCode: string;
 }
 ```
 
@@ -2457,12 +2457,12 @@ interface BasicAddress {
 
 ```ts
 interface AddressWithUnit {
-  name?: string
-  unit: string
-  street: string
-  city: string
-  country: string
-  postalCode: string
+  name?: string;
+  unit: string;
+  street: string;
+  city: string;
+  country: string;
+  postalCode: string;
 }
 ```
 
@@ -2470,15 +2470,15 @@ interface AddressWithUnit {
 
 ```ts
 interface BasicAddress {
-  name?: string
-  street: string
-  city: string
-  country: string
-  postalCode: string
+  name?: string;
+  street: string;
+  city: string;
+  country: string;
+  postalCode: string;
 }
 
 interface AddressWithUnit extends BasicAddress {
-  unit: string
+  unit: string;
 }
 ```
 
@@ -2488,19 +2488,19 @@ interface AddressWithUnit extends BasicAddress {
 
 ```ts
 interface Colorful {
-  color: string
+  color: string;
 }
 
 interface Circle {
-  radius: number
+  radius: number;
 }
 
 interface ColorfulCircle extends Colorful, Circle {}
 
 const cc: ColorfulCircle = {
-  color: 'red',
-  radius: 42
-}
+  color: "red",
+  radius: 42,
+};
 ```
 
 #### Пересечение типов (intersection types)
@@ -2509,29 +2509,29 @@ const cc: ColorfulCircle = {
 
 ```ts
 interface Colorful {
-  color: string
+  color: string;
 }
 
 interface Circle {
-  radius: number
+  radius: number;
 }
 
-type ColorfulCircle = Colorful & Circle
+type ColorfulCircle = Colorful & Circle;
 ```
 
 Пересечение типов `Colorful` и `Circle` приводит к возникновению типа, включающего все поля `Colorful` и `Circle`:
 
 ```ts
 function draw(circle: Colorful & Circle) {
-  console.log(`Цвет круга: ${circle.color}`)
-  console.log(`Радиус круга: ${circle.radius}`)
+  console.log(`Цвет круга: ${circle.color}`);
+  console.log(`Радиус круга: ${circle.radius}`);
 }
 
 // OK
-draw({ color: 'blue', radius: 42 })
+draw({ color: "blue", radius: 42 });
 
 // опечатка
-draw({ color: 'red', raidus: 42 })
+draw({ color: "red", raidus: 42 });
 /*
 Argument of type '{ color: string, raidus: number }' is not assignable to parameter of type 'Colorful & Circle'.
   Object literal may only specify known properties, but 'raidus' does not exist in type 'Colorful & Circle'. Did you mean to write 'radius'?
@@ -2552,7 +2552,7 @@ Argument of type '{ color: string, raidus: number }' is not assignable to parame
 
 ```ts
 interface Box {
-  contents: any
+  contents: any;
 }
 ```
 
@@ -2580,26 +2580,26 @@ console.log((x.contents as string).toLowerCase())
 
 ```ts
 interface NumberBox {
-  contents: number
+  contents: number;
 }
 
 interface StringBox {
-  contents: string
+  contents: string;
 }
 
 interface BooleanBox {
-  contents: boolean
+  contents: boolean;
 }
 ```
 
 Однако, это обуславливает необходимость создания различных функций или перегрузок функции (function overloads) для работы с такими типами:
 
 ```ts
-function setContents(box: StringBox, newContents: string): void
-function setContents(box: NumberBox, newContents: number): void
-function setContents(box: BooleanBox, newContents: boolean): void
+function setContents(box: StringBox, newContents: string): void;
+function setContents(box: NumberBox, newContents: number): void;
+function setContents(box: BooleanBox, newContents: boolean): void;
 function setContents(box: { contents: any }, newContents: any) {
-  box.contents = newContents
+  box.contents = newContents;
 }
 ```
 
@@ -2609,32 +2609,32 @@ function setContents(box: { contents: any }, newContents: any) {
 
 ```ts
 interface Box<Type> {
-  contents: Type
+  contents: Type;
 }
 ```
 
 Затем, при ссылке на `Box`, мы должны определить _аргумент типа (type argument)_ вместо `Type`:
 
 ```ts
-let box: Box<string>
+let box: Box<string>;
 ```
 
 По сути, `Box` - это шаблон для настоящего типа, в котором `Type` будет заменен на конкретный тип. Когда `TS` видит `Box<string>`, он заменяет все вхождения `Type` в `Box<Type>` на `string` и заканчивает свою работу чем-то вроде `{ contents: string }`. Другими словами, `Box<string>` работает также, как рассмотренный ранее `StringBox`.
 
 ```ts
 interface Box<Type> {
-  contents: Type
+  contents: Type;
 }
 interface StringBox {
-  contents: string
+  contents: string;
 }
 
-let boxA: Box<string> = { contents: 'привет' }
-boxA.contents
+let boxA: Box<string> = { contents: "привет" };
+boxA.contents;
 // (property) Box<string>.contents: string
 
-let boxB: StringBox = { contents: 'народ' }
-boxB.contents
+let boxB: StringBox = { contents: "народ" };
+boxB.contents;
 // (property) StringBox.contents: string
 ```
 
@@ -2642,7 +2642,7 @@ boxB.contents
 
 ```ts
 interface Box<Type> {
-  contents: Type
+  contents: Type;
 }
 
 interface Apple {
@@ -2650,14 +2650,14 @@ interface Apple {
 }
 
 // Тоже самое, что '{ contents: Apple }'.
-type AppleBox = Box<Apple>
+type AppleBox = Box<Apple>;
 ```
 
 Это также означает, что нам не нужны перегрузки функции. Вместо них мы можем использовать общую функцию (generic function):
 
 ```ts
 function setContents<Type>(box: Box<Type>, newContents: Type) {
-  box.contents = newContents
+  box.contents = newContents;
 }
 ```
 
@@ -2665,21 +2665,21 @@ function setContents<Type>(box: Box<Type>, newContents: Type) {
 
 ```ts
 type Box<Type> = {
-  contents: Type
-}
+  contents: Type;
+};
 ```
 
 Поскольку синонимы, в отличие от интерфейсов, могут использоваться для описания любых типов, а не только типов объектов, мы можем использовать их следующим образом:
 
 ```ts
-type OrNull<Type> = Type | null
+type OrNull<Type> = Type | null;
 
-type OneOrMany<Type> = Type | Type[]
+type OneOrMany<Type> = Type | Type[];
 
-type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>
+type OneOrManyOrNull<Type> = OrNull<OneOrMany<Type>>;
 // type OneOrManyOrNull<Type> = OneOrMany<Type> | null
 
-type OneOrManyOrNullStrings = OneOrManyOrNull<string>
+type OneOrManyOrNullStrings = OneOrManyOrNull<string>;
 // type OneOrManyOrNullStrings = OneOrMany<string> | null
 ```
 
@@ -2692,11 +2692,11 @@ function doSomething(value: Array<string>) {
   // ...
 }
 
-let myArray: string[] = ['hello', 'world']
+let myArray: string[] = ["hello", "world"];
 
 // оба варианта являются рабочими!
-doSomething(myArray)
-doSomething(new Array('hello', 'world'))
+doSomething(myArray);
+doSomething(new Array("hello", "world"));
 ```
 
 `Array` сам по себе является общим типом:
@@ -2706,17 +2706,17 @@ interface Array<Type> {
   /**
    *  Получает или устанавливает длину массива
    */
-  length: number
+  length: number;
 
   /**
    * Удаляет последний элемент массива и возвращает его
    */
-  pop(): Type | undefined
+  pop(): Type | undefined;
 
   /**
    * Добавляет новые элементы в конец массива и возвращает новую длину массива
    */
-  push(...items: Type[]): number
+  push(...items: Type[]): number;
 
   // ...
 }
@@ -2731,11 +2731,11 @@ interface Array<Type> {
 ```ts
 function doStuff(values: ReadonlyArray<string>) {
   // Мы можем читать из `values`...
-  const copy = values.slice()
-  console.log(`Первым значением является ${values[0]}`)
+  const copy = values.slice();
+  console.log(`Первым значением является ${values[0]}`);
 
   // но не можем их изменять
-  values.push('Привет!')
+  values.push("Привет!");
   // Property 'push' does not exist on type 'readonly string[]'.
   // Свойства с названием 'push' не существует в типе 'readonly string[]'
 }
@@ -2746,7 +2746,7 @@ function doStuff(values: ReadonlyArray<string>) {
 В отличие от `Array`, `ReadonlyArray` не может использоваться как конструктор:
 
 ```ts
-new ReadonlyArray('red', 'green', 'blue')
+new ReadonlyArray("red", "green", "blue");
 // 'ReadonlyArray' only refers to a type, but is being used as a value here.
 // 'ReadonlyArray' всего лишь указывает на тип, поэтому не может использовать в качестве значения
 ```
@@ -2754,7 +2754,7 @@ new ReadonlyArray('red', 'green', 'blue')
 Однако, мы можем присваивать массиву, доступному только для чтения, обычные массивы:
 
 ```ts
-const roArray: ReadonlyArray<string> = ['red', 'green', 'blue']
+const roArray: ReadonlyArray<string> = ["red", "green", "blue"];
 ```
 
 Для определения массива, доступного только для чтения, также существует сокращенный синтаксис, который выглядит как `readonly Type[]`:
@@ -2762,11 +2762,11 @@ const roArray: ReadonlyArray<string> = ['red', 'green', 'blue']
 ```ts
 function doStuff(values: readonly string[]) {
   // Мы можем читать из `values`...
-  const copy = values.slice()
-  console.log(`The first value is ${values[0]}`)
+  const copy = values.slice();
+  console.log(`The first value is ${values[0]}`);
 
   // но не можем их изменять
-  values.push('hello!')
+  values.push("hello!");
   // Property 'push' does not exist on type 'readonly string[]'.
 }
 ```
@@ -2774,11 +2774,11 @@ function doStuff(values: readonly string[]) {
 В отличие от модификатора свойств `readonly`, присваивание между `Array` и `ReadonlyArray` является однонаправленным (т.е. только обычный массив может быть присвоен доступному только для чтения массиву):
 
 ```ts
-let x: readonly string[] = []
-let y: string[] = []
+let x: readonly string[] = [];
+let y: string[] = [];
 
-x = y
-y = x
+x = y;
+y = x;
 // The type 'readonly string[]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
 // Тип 'readonly string[]' является доступным только для чтения и не может быть присвоен изменяемому типу 'string[]'
 ```
@@ -2788,22 +2788,22 @@ y = x
 _Кортеж_ - это еще одна разновидность типа `Array` с фиксированным количеством элементов определенных типов.
 
 ```ts
-type StrNumPair = [string, number]
+type StrNumPair = [string, number];
 ```
 
 `StrNumPair` - это кортеж `string` и `number`. `StrNumPair` описывает массив, первый элемент которого (элемент под индексом `0`) имеет тип `string`, а второй (элемент под индексом `1`) - `number`.
 
 ```ts
 function doSomething(pair: [string, number]) {
-  const a = pair[0]
+  const a = pair[0];
   // const a: string
 
-  const b = pair[1]
+  const b = pair[1];
   // const b: number
   // ...
 }
 
-doSomething(['hello', 42])
+doSomething(["hello", 42]);
 ```
 
 Если мы попытаемся получить элемент по индексу, превосходящему количество элементов, то получим ошибку:
@@ -2812,7 +2812,7 @@ doSomething(['hello', 42])
 function doSomething(pair: [string, number]) {
   // ...
 
-  const c = pair[2]
+  const c = pair[2];
   // Tuple type '[string, number]' of length '2' has no element at index '2'.
   // Кортеж '[string, number]' длиной в 2 элемента не имеет элемента под индексом '2'
 }
@@ -2822,12 +2822,12 @@ function doSomething(pair: [string, number]) {
 
 ```ts
 function doSomething(stringHash: [string, number]) {
-  const [inputString, hash] = stringHash
+  const [inputString, hash] = stringHash;
 
-  console.log(inputString)
+  console.log(inputString);
   // const inputString: string
 
-  console.log(hash)
+  console.log(hash);
   // const hash: number
 }
 ```
@@ -2837,27 +2837,27 @@ function doSomething(stringHash: [string, number]) {
 ```ts
 interface StringNumberPair {
   // Конкретные свойства
-  length: 2
-  0: string
-  1: number
+  length: 2;
+  0: string;
+  1: number;
 
   // Другие поля 'Array<string | number>'
-  slice(start?: number, end?: number): Array<string | number>
+  slice(start?: number, end?: number): Array<string | number>;
 }
 ```
 
 Элементы кортежа могут быть опциональными (`?`). Такие элементы указываются в самом конце и влияют на тип свойства `length`:
 
 ```ts
-type Either2dOr3d = [number, number, number?]
+type Either2dOr3d = [number, number, number?];
 
 function setCoords(coord: Either2dOr3d) {
-  const [x, y, z] = coord
+  const [x, y, z] = coord;
   // const z: number | undefined
 
   console.log(`
     Переданы координаты в ${coord.length} направлениях
-  `)
+  `);
   // (property) length: 2 | 3
 }
 ```
@@ -2865,9 +2865,9 @@ function setCoords(coord: Either2dOr3d) {
 Кортежи также могут содержать оставшиеся элементы (т.е. элементы, оставшиеся не использованными, rest elements), которые должны быть массивом или кортежем:
 
 ```ts
-type StringNumberBooleans = [string, number, ...boolean[]]
-type StringBooleansNumber = [string, ...boolean[], number]
-type BooleansStringNumber = [...boolean[], string, number]
+type StringNumberBooleans = [string, number, ...boolean[]];
+type StringBooleansNumber = [string, ...boolean[], number];
+type BooleansStringNumber = [...boolean[], string, number];
 ```
 
 `...boolean[]` означает любое количество элементов типа `boolean`.
@@ -2875,16 +2875,16 @@ type BooleansStringNumber = [...boolean[], string, number]
 Такие кортежи не имеют определенной длины (`length`) - они имеют лишь набор известных элементов на конкретных позициях:
 
 ```ts
-const a: StringNumberBooleans = ['hello', 1]
-const b: StringNumberBooleans = ['beautiful', 2, true]
-const c: StringNumberBooleans = ['world', 3, true, false, true, false, true]
+const a: StringNumberBooleans = ["hello", 1];
+const b: StringNumberBooleans = ["beautiful", 2, true];
+const c: StringNumberBooleans = ["world", 3, true, false, true, false, true];
 ```
 
 Кортежи сами могут использоваться в качестве оставшихся параметров и аргументов. Например, такой код:
 
 ```ts
 function readButtonInput(...args: [string, number, ...boolean[]]) {
-  const [name, version, ...input] = args
+  const [name, version, ...input] = args;
   // ...
 }
 ```
@@ -2911,7 +2911,7 @@ function doSomething(pair: readonly [string, number]) {
 
 ```ts
 function doSomething(pair: readonly [string, number]) {
-  pair[0] = 'Привет!'
+  pair[0] = "Привет!";
   // Cannot assign to '0' because it is a read-only property.
 }
 ```
@@ -2919,13 +2919,13 @@ function doSomething(pair: readonly [string, number]) {
 Кортежи предназначены для определения типов иммутабельных массивов, так что хорошей практикой считается делать их доступными только для чтения. Следует отметить, что предполагаемым типом массива с утверждением `const` является `readonly` кортеж:
 
 ```ts
-let point = [3, 4] as const
+let point = [3, 4] as const;
 
 function distanceFromOrigin([x, y]: [number, number]) {
-  return Math.sqrt(x ** 2 + y ** 2)
+  return Math.sqrt(x ** 2 + y ** 2);
 }
 
-distanceFromOrigin(point)
+distanceFromOrigin(point);
 /*
 Argument of type 'readonly [3, 4]' is not assignable to parameter of type '[number, number]'.
   The type 'readonly [3, 4]' is 'readonly' and cannot be assigned to the mutable type '[number, number]'.
@@ -2946,7 +2946,7 @@ Argument of type 'readonly [3, 4]' is not assignable to parameter of type '[numb
 
 ```ts
 function identity(arg: number): number {
-  return arg
+  return arg;
 }
 ```
 
@@ -2954,7 +2954,7 @@ function identity(arg: number): number {
 
 ```ts
 function identity(arg: any): any {
-  return arg
+  return arg;
 }
 ```
 
@@ -2964,7 +2964,7 @@ function identity(arg: any): any {
 
 ```ts
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 ```
 
@@ -2975,7 +2975,7 @@ function identity<Type>(arg: Type): Type {
 Мы можем вызывать такие функции двумя способами. Первый способ заключается в передаче всех аргументов, включая аргумент типа:
 
 ```ts
-const output = identity<string>('myStr')
+const output = identity<string>("myStr");
 // let output: string
 ```
 
@@ -2984,7 +2984,7 @@ const output = identity<string>('myStr')
 Второй способ заключается в делегировании типизации компилятору:
 
 ```ts
-const output = identity('myStr')
+const output = identity("myStr");
 // let output: string
 ```
 
@@ -2996,10 +2996,10 @@ const output = identity('myStr')
 
 ```ts
 function loggingIdentity<Type>(arg: Type): Type {
-  console.log(arg.length)
+  console.log(arg.length);
   // Property 'length' does not exist on type 'Type'.
   // Свойства 'length' не существует в типе 'Type'
-  return arg
+  return arg;
 }
 ```
 
@@ -3009,8 +3009,8 @@ function loggingIdentity<Type>(arg: Type): Type {
 
 ```ts
 function loggingIdentity<Type>(arg: Type[]): Type[] {
-  console.log(arg.length)
-  return arg
+  console.log(arg.length);
+  return arg;
 }
 ```
 
@@ -3020,8 +3020,8 @@ function loggingIdentity<Type>(arg: Type[]): Type[] {
 
 ```ts
 function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
-  console.log(arg.length)
-  return arg
+  console.log(arg.length);
+  return arg;
 }
 ```
 
@@ -3031,58 +3031,58 @@ function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
 
 ```ts
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 
-const myIdentity: <Type>(arg: Type) => Type = identity
+const myIdentity: <Type>(arg: Type) => Type = identity;
 ```
 
 Мы можем использовать другое название для параметра общего типа:
 
 ```ts
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 
-const myIdentity: <Input>(arg: Input) => Input = identity
+const myIdentity: <Input>(arg: Input) => Input = identity;
 ```
 
 Мы также можем создавать общие типы в виде сигнатуры вызова типа объектного литерала:
 
 ```ts
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 
-const myIdentity: { <Type>(arg: Type): Type } = identity
+const myIdentity: { <Type>(arg: Type): Type } = identity;
 ```
 
 Это приводит нас к общему интерфейсу:
 
 ```ts
 interface GenericIdentityFn {
-  <Type>(arg: Type): Type
+  <Type>(arg: Type): Type;
 }
 
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 
-const myIdentity: GenericIdentityFn = identity
+const myIdentity: GenericIdentityFn = identity;
 ```
 
 Для того, чтобы сделать общий параметр видимым для всех членов интерфейса, его необходимо указать после названия интерфейса:
 
 ```ts
 interface GenericIdentityFn<Type> {
-  (arg: Type): Type
+  (arg: Type): Type;
 }
 
 function identity<Type>(arg: Type): Type {
-  return arg
+  return arg;
 }
 
-const myIdentity: GenericIdentityFn<number> = identity
+const myIdentity: GenericIdentityFn<number> = identity;
 ```
 
 Кроме общих интерфейсов, мы можем создавать общие классы.
@@ -3099,23 +3099,23 @@ const myIdentity: GenericIdentityFn<number> = identity
 
 ```ts
 class GenericNumber<NumType> {
-  zeroValue: NumType
-  add: (x: NumType, y: NumType) => NumType
+  zeroValue: NumType;
+  add: (x: NumType, y: NumType) => NumType;
 }
 
-const myGenericNum = new GenericNumber<number>()
-myGenericNum.zeroValue = 0
-myGenericNum.add = (x, y) => x + y
+const myGenericNum = new GenericNumber<number>();
+myGenericNum.zeroValue = 0;
+myGenericNum.add = (x, y) => x + y;
 ```
 
 В случае с данным классом мы не ограничены числами. Мы вполне можем использовать строки или сложные объекты:
 
 ```ts
-const stringNumeric = new GenericNumber<string>()
-stringNumeric.zeroValue = ''
-stringNumeric.add = (x, y) => x + y
+const stringNumeric = new GenericNumber<string>();
+stringNumeric.zeroValue = "";
+stringNumeric.add = (x, y) => x + y;
 
-console.log(stringNumeric.add(stringNumeric.zeroValue, 'test'))
+console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
 ```
 
 Класс имеет две стороны с точки зрения типов: статическую сторону и сторону экземпляров. Общие классы являются общими только для экземпляров. Это означает, что статические члены класса не могут использовать тип параметра класса.
@@ -3126,9 +3126,9 @@ console.log(stringNumeric.add(stringNumeric.zeroValue, 'test'))
 
 ```ts
 function loggingIdentity<Type>(arg: Type): Type {
-  console.log(arg.length)
+  console.log(arg.length);
   // Property 'length' does not exist on type 'Type'.
-  return arg
+  return arg;
 }
 ```
 
@@ -3138,20 +3138,20 @@ function loggingIdentity<Type>(arg: Type): Type {
 
 ```ts
 interface Lengthwise {
-  length: number
+  length: number;
 }
 
 function loggingIdentity<Type extends Lengthwise>(arg: Type): Type {
-  console.log(arg.length)
+  console.log(arg.length);
   // Теперь мы можем быть уверены в существовании свойства `length`
-  return arg
+  return arg;
 }
 ```
 
 Поскольку дженерик был ограничен, он больше не может работать с любым типом:
 
 ```ts
-loggingIdentity(3)
+loggingIdentity(3);
 // Argument of type 'number' is not assignable to parameter of type 'Lengthwise'.
 // Аргумент типа 'number' не может быть присвоен параметру типа 'Lengthwise'
 ```
@@ -3159,7 +3159,7 @@ loggingIdentity(3)
 Мы должны передавать ему значения, отвечающие всем установленным требованиям:
 
 ```ts
-loggingIdentity({ length: 10, value: 3 })
+loggingIdentity({ length: 10, value: 3 });
 ```
 
 ### Использование типов параметров в ограничениях дженериков
@@ -3168,13 +3168,13 @@ loggingIdentity({ length: 10, value: 3 })
 
 ```ts
 function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
-  return obj[key]
+  return obj[key];
 }
 
-const x = { a: 1, b: 2, c: 3, d: 4 }
+const x = { a: 1, b: 2, c: 3, d: 4 };
 
-getProperty(x, 'a')
-getProperty(x, 'm')
+getProperty(x, "a");
+getProperty(x, "m");
 // Argument of type '"m"' is not assignable to parameter of type '"a" | "b" | "c" | "d"'.
 ```
 
@@ -3184,7 +3184,7 @@ getProperty(x, 'm')
 
 ```ts
 function create<Type>(c: { new (): Type }): Type {
-  return new c()
+  return new c();
 }
 ```
 
@@ -3192,31 +3192,31 @@ function create<Type>(c: { new (): Type }): Type {
 
 ```ts
 class BeeKeeper {
-  hasMask: boolean
+  hasMask: boolean;
 }
 
 class ZooKeeper {
-  nametag: string
+  nametag: string;
 }
 
 class Animal {
-  numLegs: number
+  numLegs: number;
 }
 
 class Bee extends Animal {
-  keeper: BeeKeeper
+  keeper: BeeKeeper;
 }
 
 class Lion extends Animal {
-  keeper: ZooKeeper
+  keeper: ZooKeeper;
 }
 
 function createInstance<A extends Animal>(c: new () => A): A {
-  return new c()
+  return new c();
 }
 
-createInstance(Lion).keeper.nametag
-createInstance(Bee).keeper.hasMask
+createInstance(Lion).keeper.nametag;
+createInstance(Bee).keeper.hasMask;
 ```
 
 Данный подход часто используется в <a name='https://www.typescriptlang.org/docs/handbook/mixins.html'>миксинах или примесях</a>.
@@ -3226,20 +3226,20 @@ createInstance(Bee).keeper.hasMask
 Оператор `keyof` "берет" объектный тип и возвращает строковое или числовое литеральное объединение его ключей:
 
 ```ts
-type Point = { x: number; y: number }
-type P = keyof Point
+type Point = { x: number; y: number };
+type P = keyof Point;
 // type P = keyof Point
 ```
 
 Если типом сигнатуры индекса (index signature) типа является `string` или `number`, `keyof` возвращает эти типы:
 
 ```ts
-type Arrayish = { [n: number]: unknown }
-type A = keyof Arrayish
+type Arrayish = { [n: number]: unknown };
+type A = keyof Arrayish;
 // type A = number
 
-type Mapish = { [k: string]: boolean }
-type M = keyof Mapish
+type Mapish = { [k: string]: boolean };
+type M = keyof Mapish;
 // type M = string | number
 ```
 
@@ -3256,22 +3256,22 @@ type M = keyof Mapish
 `JS` предоставляет оператор `typeof`, который можно использовать в контексте выражения:
 
 ```ts
-console.log(typeof 'Привет, народ!') // string
+console.log(typeof "Привет, народ!"); // string
 ```
 
 В `TS` оператор `typeof` используется в контексте типа для ссылки на тип переменной или свойства:
 
 ```ts
-const s = 'привет'
-const n: typeof s
+const s = "привет";
+const n: typeof s;
 // const n: string
 ```
 
 В сочетании с другими операторами типа мы можем использовать `typeof` для реализации нескольких паттернов. Например, давайте начнем с рассмотрения предопределенного типа `ReturnType<T>`. Он принимает тип функции и производит тип возвращаемого функцией значения:
 
 ```ts
-type Predicate = (x: unknown) => boolean
-type K = ReturnType<Predicate>
+type Predicate = (x: unknown) => boolean;
+type K = ReturnType<Predicate>;
 // type K = boolean
 ```
 
@@ -3279,9 +3279,9 @@ type K = ReturnType<Predicate>
 
 ```ts
 function f() {
-  return { x: 10, y: 3 }
+  return { x: 10, y: 3 };
 }
-type P = ReturnType<f>
+type P = ReturnType<f>;
 // 'f' refers to a value, but is being used as a type here. Did you mean 'typeof f'?
 // 'f' является ссылкой на значение, но используется как тип. Возможно, вы имели ввиду 'typeof f'
 ```
@@ -3290,9 +3290,9 @@ _Запомните_: значения и типы - это не одно и т�
 
 ```ts
 function f() {
-  return { x: 10, y: 3 }
+  return { x: 10, y: 3 };
 }
-type P = ReturnType<typeof f>
+type P = ReturnType<typeof f>;
 // type P = { x: number, y: number }
 ```
 
@@ -3313,29 +3313,29 @@ const shouldContinue: typeof msgbox('Вы уверены, что хотите п
 Мы можем использовать тип доступа по индексу для определения другого типа:
 
 ```ts
-type Person = { age: number; name: string; alive: boolean }
-type Age = Person['age']
+type Person = { age: number; name: string; alive: boolean };
+type Age = Person["age"];
 // type Age = number
 ```
 
 Индексированный тип - это обычный тип, так что мы можем использовать объединения, `keyof` и другие типы:
 
 ```ts
-type I1 = Person['age' | 'name']
+type I1 = Person["age" | "name"];
 // type I1 = string | number
 
-type I2 = Person[keyof Person]
+type I2 = Person[keyof Person];
 // type I2 = string | number | boolean
 
-type AliveOrName = 'alive' | 'name'
-type I3 = Person[AliveOrName]
+type AliveOrName = "alive" | "name";
+type I3 = Person[AliveOrName];
 // type I3 = string | boolean
 ```
 
 При попытке доступа к несуществующему свойству возникает ошибка:
 
 ```ts
-type I1 = Person['alve']
+type I1 = Person["alve"];
 // Property 'alve' does not exist on type 'Person'.
 ```
 
@@ -3343,24 +3343,24 @@ type I1 = Person['alve']
 
 ```ts
 const MyArray = [
-  { name: 'Alice', age: 15 },
-  { name: 'Bob', age: 23 },
-  { name: 'John', age: 38 }
-]
+  { name: "Alice", age: 15 },
+  { name: "Bob", age: 23 },
+  { name: "John", age: 38 },
+];
 
-type Person = typeof MyArray[number]
+type Person = typeof MyArray[number];
 
 type Person = {
-  name: string
-  age: number
-}
-type Age = typeof MyArray[number]['age']
+  name: string;
+  age: number;
+};
+type Age = typeof MyArray[number]["age"];
 
-type Age = number
+type Age = number;
 // или
-type Age2 = Person['age']
+type Age2 = Person["age"];
 
-type Age2 = number
+type Age2 = number;
 ```
 
 :::note Обратите внимание
@@ -3370,8 +3370,8 @@ type Age2 = number
 :::
 
 ```ts
-const key = 'age'
-type Age = Person[key]
+const key = "age";
+type Age = Person[key];
 /*
   Type 'any' cannot be used as an index type.
   'key' refers to a value, but is being used as a type here. Did you mean 'typeof key'?
@@ -3385,8 +3385,8 @@ type Age = Person[key]
 Однако, в данном случае мы можем использовать синоним типа (type alias):
 
 ```ts
-type key = 'age'
-type Age = Person[key]
+type key = "age";
+type Age = Person[key];
 ```
 
 # Условные типы (conditional types)
@@ -3395,16 +3395,16 @@ type Age = Person[key]
 
 ```ts
 interface Animal {
-  live(): void
+  live(): void;
 }
 interface Dog extends Animal {
-  woof(): void
+  woof(): void;
 }
 
-type Example1 = Dog extends Animal ? number : string
+type Example1 = Dog extends Animal ? number : string;
 // type Example1 = number
 
-type Example2 = RegExp extends Animal ? number : string
+type Example2 = RegExp extends Animal ? number : string;
 // type Example2 = string
 ```
 
@@ -3422,17 +3422,17 @@ SomeType extends OtherType ? TrueType : FalseType
 
 ```ts
 interface IdLabel {
-  id: number /* некоторые поля */
+  id: number /* некоторые поля */;
 }
 interface NameLabel {
-  name: string /* другие поля */
+  name: string /* другие поля */;
 }
 
-function createLabel(id: number): IdLabel
-function createLabel(name: string): NameLabel
-function createLabel(nameOrId: string | number): IdLabel | NameLabel
+function createLabel(id: number): IdLabel;
+function createLabel(name: string): NameLabel;
+function createLabel(nameOrId: string | number): IdLabel | NameLabel;
 function createLabel(nameOrId: string | number): IdLabel | NameLabel {
-  throw 'не реализовано'
+  throw "не реализовано";
 }
 ```
 
@@ -3450,23 +3450,23 @@ function createLabel(nameOrId: string | number): IdLabel | NameLabel {
 ```ts
 type NameOrId<T extends number | string> = T extends number
   ? IdLabel
-  : NameLabel
+  : NameLabel;
 ```
 
 Затем мы можем использовать данный тип для избавления от перегрузок:
 
 ```ts
 function createLabel<T extends number | string>(idOrName: T): NameOrId<T> {
-  throw 'не реализовано'
+  throw "не реализовано";
 }
 
-let a = createLabel('typescript')
+let a = createLabel("typescript");
 // let a: NameLabel
 
-let b = createLabel(2.8)
+let b = createLabel(2.8);
 // let b: IdLabel
 
-let c = createLabel(Math.random() ? 'hello' : 42)
+let c = createLabel(Math.random() ? "hello" : 42);
 // let c: NameLabel | IdLabel
 ```
 
@@ -3477,7 +3477,7 @@ let c = createLabel(Math.random() ? 'hello' : 42)
 Рассмотрим такой пример:
 
 ```ts
-type MessageOf<T> = T['message']
+type MessageOf<T> = T["message"];
 // Type '"message"' cannot be used to index type 'T'.
 // Тип '"message"' не может быть использован для индексации типа 'T'
 ```
@@ -3485,37 +3485,37 @@ type MessageOf<T> = T['message']
 В данном случае возникает ошибка, поскольку `TS` не знает о существовании у `T` свойства `message`. Мы можем ограничить `T`, и тогда `TS` перестанет "жаловаться":
 
 ```ts
-type MessageOf<T extends { message: unknown }> = T['message']
+type MessageOf<T extends { message: unknown }> = T["message"];
 
 interface Email {
-  message: string
+  message: string;
 }
 
 interface Dog {
-  bark(): void
+  bark(): void;
 }
 
-type EmailMessageContents = MessageOf<Email>
+type EmailMessageContents = MessageOf<Email>;
 // type EmailMessageContents = string
 ```
 
 Но что если мы хотим, чтобы `MessageOf` принимал любой тип, а его "дефолтным" значением был тип `never`? Мы можем "вынести" ограничение и использовать условный тип:
 
 ```ts
-type MessageOf<T> = T extends { message: unknown } ? T['message'] : never
+type MessageOf<T> = T extends { message: unknown } ? T["message"] : never;
 
 interface Email {
-  message: string
+  message: string;
 }
 
 interface Dog {
-  bark(): void
+  bark(): void;
 }
 
-type EmailMessageContents = MessageOf<Email>
+type EmailMessageContents = MessageOf<Email>;
 // type EmailMessageContents = string
 
-type DogMessageContents = MessageOf<Dog>
+type DogMessageContents = MessageOf<Dog>;
 // type DogMessageContents = never
 ```
 
@@ -3524,14 +3524,14 @@ type DogMessageContents = MessageOf<Dog>
 В качестве другого примера мы можем создать тип `Flatten`, который распаковывает типы массива на типы составляющих его элементов, но при этом сохраняет их в изоляции:
 
 ```ts
-type Flatten<T> = T extends any[] ? T[number] : T
+type Flatten<T> = T extends any[] ? T[number] : T;
 
 // Извлекаем тип элемента
-type Str = Flatten<string[]>
+type Str = Flatten<string[]>;
 // type Str = string
 
 // Сохраняем тип
-type Num = Flatten<number>
+type Num = Flatten<number>;
 // type Num = number
 ```
 
@@ -3544,7 +3544,7 @@ type Num = Flatten<number>
 Условные типы предоставляют возможность делать предположения на основе сравниваемых в истинной ветке типов с помощью ключевого слова `infer`. Например, мы можем сделать вывод относительно типа элемента во `Flatten` вместо его получения вручную через доступ по индексу:
 
 ```ts
-type Flatten<Type> = Type extends Array<infer Item> ? Item : Type
+type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
 ```
 
 В данном случае мы использовали ключевое слово `infer` для декларативного создания нового дженерика `Item` вместо извлечения типа элемента `T` в истинной ветке. Это избавляет нас от необходимости "копаться" и изучать структуру типов, которые нам необходимы.
@@ -3554,26 +3554,26 @@ type Flatten<Type> = Type extends Array<infer Item> ? Item : Type
 ```ts
 type GetReturnType<Type> = Type extends (...args: never[]) => infer Return
   ? Return
-  : never
+  : never;
 
-type Num = GetReturnType<() => number>
+type Num = GetReturnType<() => number>;
 // type Num = number
 
-type Str = GetReturnType<(x: string) => string>
+type Str = GetReturnType<(x: string) => string>;
 // type Str = string
 
-type Bools = GetReturnType<(a: boolean, b: boolean) => boolean[]>
+type Bools = GetReturnType<(a: boolean, b: boolean) => boolean[]>;
 // type Bools = boolean[]
 ```
 
 При предположении на основе типа с помощью нескольких сигнатур вызова (такого как тип перегруженной функции), предположение выполняется на основе последней сигнатуры. Невозможно произвести разрешение перегрузки на основе списка типов аргументов.
 
 ```ts
-declare function stringOrNum(x: string): number
-declare function stringOrNum(x: number): string
-declare function stringOrNum(x: string | number): string | number
+declare function stringOrNum(x: string): number;
+declare function stringOrNum(x: number): string;
+declare function stringOrNum(x: string | number): string | number;
 
-type T1 = ReturnType<typeof stringOrNum>
+type T1 = ReturnType<typeof stringOrNum>;
 // type T1 = string | number
 ```
 
@@ -3582,22 +3582,22 @@ type T1 = ReturnType<typeof stringOrNum>
 Когда условные типы применяются к дженерикам, они становятся распределенными при получении объединения (union). Рассмотрим следующий пример:
 
 ```ts
-type ToArray<Type> = Type extends any ? Type[] : never
+type ToArray<Type> = Type extends any ? Type[] : never;
 ```
 
 Если мы изолируем объединение в `ToArray`, условный тип будет применяться к каждому члену объединения.
 
 ```ts
-type ToArray<Type> = Type extends any ? Type[] : never
+type ToArray<Type> = Type extends any ? Type[] : never;
 
-type StrArrOrNumArr = ToArray<string | number>
+type StrArrOrNumArr = ToArray<string | number>;
 // type StrArrOrNumArr = string[] | number[]
 ```
 
 Здесь `StrOrNumArray` распределяется на:
 
 ```ts
-string | number
+string | number;
 ```
 
 и применяется к каждому члену объединения:
@@ -3615,10 +3615,10 @@ string[] | number[]
 Обычно, такое поведение является ожидаемым. Для его изменения можно обернуть каждую сторону `extends` в квадратные скобки:
 
 ```ts
-type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never
+type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never;
 
 // 'StrOrNumArr' больше не является объединением
-type StrOrNumArr = ToArrayNonDist<string | number>
+type StrOrNumArr = ToArrayNonDist<string | number>;
 // type StrOrNumArr = (string | number)[]
 ```
 
@@ -3628,32 +3628,32 @@ type StrOrNumArr = ToArrayNonDist<string | number>
 
 ```ts
 type OnlyBoolsAndHorses = {
-  [key: string]: boolean | Horse
-}
+  [key: string]: boolean | Horse;
+};
 
 const conforms: OnlyBoolsAndHorses = {
   del: true,
-  rodney: false
-}
+  rodney: false,
+};
 ```
 
 Связанный тип - это общий тип, использующий объединение, созданное с помощью оператора `keyof`, для перебора ключей одного типа в целях создания другого:
 
 ```ts
 type OptionsFlags<Type> = {
-  [Property in keyof Type]: boolean
-}
+  [Property in keyof Type]: boolean;
+};
 ```
 
 В приведенном примере `OptionsFlag` получит все свойства типа `Type` и изменит их значения на `boolean`.
 
 ```ts
 type FeatureFlags = {
-  darkMode: () => void
-  newUserProfile: () => void
-}
+  darkMode: () => void;
+  newUserProfile: () => void;
+};
 
-type FeatureOptions = OptionsFlags<FeatureFlags>
+type FeatureOptions = OptionsFlags<FeatureFlags>;
 // type FeatureOptions = { darkMode: boolean, newUserProfile: boolean }
 ```
 
@@ -3666,31 +3666,31 @@ type FeatureOptions = OptionsFlags<FeatureFlags>
 ```ts
 // Удаляем атрибуты `readonly` из свойств типа
 type CreateMutable<Type> = {
-  -readonly [Property in keyof Type]: Type[Property]
-}
+  -readonly [Property in keyof Type]: Type[Property];
+};
 
 type LockedAccount = {
-  readonly id: string
-  readonly name: string
-}
+  readonly id: string;
+  readonly name: string;
+};
 
-type UnlockedAccount = CreateMutable<LockedAccount>
+type UnlockedAccount = CreateMutable<LockedAccount>;
 // type UnlockedAccount = { id: string, name: string }
 ```
 
 ```ts
 // Удаляем атрибуты `optional` из свойств типа
 type Concrete<Type> = {
-  [Property in keyof Type]-?: Type[Property]
-}
+  [Property in keyof Type]-?: Type[Property];
+};
 
 type MaybeUser = {
-  id: string
-  name?: string
-  age?: number
-}
+  id: string;
+  name?: string;
+  age?: number;
+};
 
-type User = Concrete<MaybeUser>
+type User = Concrete<MaybeUser>;
 // type User = { id: string, name: string, age: number }
 ```
 
@@ -3700,8 +3700,8 @@ type User = Concrete<MaybeUser>
 
 ```ts
 type MappedTypeWithNewProperties<Type> = {
-  [Properties in keyof Type as NewKeyType]: Type[Properties]
-}
+  [Properties in keyof Type as NewKeyType]: Type[Properties];
+};
 ```
 
 Для создания новых названий свойств на основе предыдущих можно использовать продвинутые возможности, такие как типы шаблонных литералов (см. ниже):
@@ -3710,16 +3710,16 @@ type MappedTypeWithNewProperties<Type> = {
 type Getters<Type> = {
   [Property in keyof Type as `get${Capitalize<
     string & Property
-  >}`]: () => Type[Property]
-}
+  >}`]: () => Type[Property];
+};
 
 interface Person {
-  name: string
-  age: number
-  location: string
+  name: string;
+  age: number;
+  location: string;
 }
 
-type LazyPerson = Getters<Person>
+type LazyPerson = Getters<Person>;
 // type LazyPerson = { getName: () => string, getAge: () => number, getLocation: () => string }
 ```
 
@@ -3728,15 +3728,15 @@ type LazyPerson = Getters<Person>
 ```ts
 // Удаляем свойство `kind`
 type RemoveKindField<Type> = {
-  [Property in keyof Type as Exclude<Property, 'kind'>]: Type[Property]
-}
+  [Property in keyof Type as Exclude<Property, "kind">]: Type[Property];
+};
 
 interface Circle {
-  kind: 'circle'
-  radius: number
+  kind: "circle";
+  radius: number;
 }
 
-type KindlessCircle = RemoveKindField<Circle>
+type KindlessCircle = RemoveKindField<Circle>;
 // type KindlessCircle = { radius: number }
 ```
 
@@ -3744,15 +3744,15 @@ type KindlessCircle = RemoveKindField<Circle>
 
 ```ts
 type ExtractPII<Type> = {
-  [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false
-}
+  [Property in keyof Type]: Type[Property] extends { pii: true } ? true : false;
+};
 
 type DBFields = {
-  id: { format: 'incrementing' }
-  name: { type: string; pii: true }
-}
+  id: { format: "incrementing" };
+  name: { type: string; pii: true };
+};
 
-type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>
+type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>;
 // type ObjectsNeedingGDPRDeletion = { id: false, name: true }
 ```
 
@@ -3763,19 +3763,19 @@ type ObjectsNeedingGDPRDeletion = ExtractPII<DBFields>
 Они имеют такой же синтаксис, что и шаблонные литералы в `JS`, но используются на позициях типа. При использовании с конкретным литеральным типом, шаблонный литерал возвращает новый строковый литерал посредством объединения содержимого:
 
 ```ts
-type World = 'world'
+type World = "world";
 
-type Greeting = `hello ${World}`
+type Greeting = `hello ${World}`;
 // type Greeting = 'hello world'
 ```
 
 Когда тип используется в интерполированной позиции, он является набором каждого возможного строкового литерала, который может быть представлен каждым членом объединения:
 
 ```ts
-type EmailLocaleIDs = 'welcome_email' | 'email_heading'
-type FooterLocaleIDs = 'footer_title' | 'footer_sendoff'
+type EmailLocaleIDs = "welcome_email" | "email_heading";
+type FooterLocaleIDs = "footer_title" | "footer_sendoff";
 
-type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`
+type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`;
 /*
   type AllLocaleIDs = 'welcome_email_id' | 'email_heading_id' | 'footer_title_id' | 'footer_sendoff_id'
 */
@@ -3784,10 +3784,10 @@ type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`
 Для каждой интерполированной позиции в шаблонном литерале объединения являются множественными:
 
 ```ts
-type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`
-type Lang = 'en' | 'ja' | 'pt'
+type AllLocaleIDs = `${EmailLocaleIDs | FooterLocaleIDs}_id`;
+type Lang = "en" | "ja" | "pt";
 
-type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`
+type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`;
 /*
   type LocaleMessageIDs = 'en_welcome_email_id' | 'en_email_heading_id' | 'en_footer_title_id' | 'en_footer_sendoff_id' | 'ja_welcome_email_id' | 'ja_email_heading_id' | 'ja_footer_title_id' | 'ja_footer_sendoff_id' | 'pt_welcome_email_id' | 'pt_email_heading_id' | 'pt_footer_title_id' | 'pt_footer_sendoff_id'
 */
@@ -3803,14 +3803,14 @@ type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`
 
 ```ts
 const person = makeWatchedObject({
-  firstName: 'John',
-  lastName: 'Smith',
-  age: 30
-})
+  firstName: "John",
+  lastName: "Smith",
+  age: 30,
+});
 
-person.on('firstNameChanged', (newValue) => {
-  console.log(`Имя было изменено на ${newValue}!`)
-})
+person.on("firstNameChanged", (newValue) => {
+  console.log(`Имя было изменено на ${newValue}!`);
+});
 ```
 
 :::note Обратите внимание
@@ -3826,32 +3826,32 @@ type PropEventSource<Type> = {
   on(
     eventName: `${string & keyof Type}Changed`,
     callback: (newValue: any) => void
-  ): void
-}
+  ): void;
+};
 
 // Создаем "наблюдаемый объект" с методом `on`,
 // позволяющим следить за изменениями значений свойств
 declare function makeWatchedObject<Type>(
   obj: Type
-): Type & PropEventSource<Type>
+): Type & PropEventSource<Type>;
 ```
 
 При передаче неправильного свойства возникает ошибка:
 
 ```ts
 const person = makeWatchedObject({
-  firstName: 'John',
-  lastName: 'Smith',
-  age: 26
-})
+  firstName: "John",
+  lastName: "Smith",
+  age: 26,
+});
 
-person.on('firstNameChanged', () => {})
+person.on("firstNameChanged", () => {});
 
-person.on('firstName', () => {})
+person.on("firstName", () => {});
 // Argument of type '"firstName"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
 // Параметр типа '"firstName"' не может быть присвоен типу...
 
-person.on('firstNameChanged', () => {})
+person.on("firstNameChanged", () => {});
 // Argument of type '"firstNameChanged"' is not assignable to parameter of type '"firstNameChanged" | "lastNameChanged" | "ageChanged"'.
 ```
 
@@ -3899,40 +3899,40 @@ person.on('ageChanged', newAge => {
 - `Uppercase<StringType>` - переводит каждый символ строки в верхний регистр
 
 ```ts
-type Greeting = 'Hello, world'
-type ShoutyGreeting = Uppercase<Greeting>
+type Greeting = "Hello, world";
+type ShoutyGreeting = Uppercase<Greeting>;
 // type ShoutyGreeting = 'HELLO, WORLD'
 
-type ASCIICacheKey<Str extends string> = `ID-${Uppercase<Str>}`
-type MainID = ASCIICacheKey<'my_app'>
+type ASCIICacheKey<Str extends string> = `ID-${Uppercase<Str>}`;
+type MainID = ASCIICacheKey<"my_app">;
 // type MainID = 'ID-MY_APP'
 ```
 
 - `Lowercase<StringType>` - переводит каждый символ в строке в нижний регистр
 
 ```ts
-type Greeting = 'Hello, world'
-type QuietGreeting = Lowercase<Greeting>
+type Greeting = "Hello, world";
+type QuietGreeting = Lowercase<Greeting>;
 // type QuietGreeting = 'hello, world'
 
-type ASCIICacheKey<Str extends string> = `id-${Lowercase<Str>}`
-type MainID = ASCIICacheKey<'MY_APP'>
+type ASCIICacheKey<Str extends string> = `id-${Lowercase<Str>}`;
+type MainID = ASCIICacheKey<"MY_APP">;
 // type MainID = 'id-my_app'
 ```
 
 - `Capitilize<StringType>` - переводит первый символ строки в верхний регистр
 
 ```ts
-type LowercaseGreeting = 'hello, world'
-type Greeting = Capitalize<LowercaseGreeting>
+type LowercaseGreeting = "hello, world";
+type Greeting = Capitalize<LowercaseGreeting>;
 // type Greeting = 'Hello, world'
 ```
 
 - `Uncapitilize<StringType>` - переводит первый символ строки в нижний регистр
 
 ```ts
-type UppercaseGreeting = 'HELLO WORLD'
-type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>
+type UppercaseGreeting = "HELLO WORLD";
+type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>;
 // type UncomfortableGreeting = 'hELLO WORLD'
 ```
 
@@ -3942,15 +3942,15 @@ type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>
 function applyStringMapping(symbol: Symbol, str: string) {
   switch (intrinsicTypeKinds.get(symbol.escapedName as string)) {
     case IntrinsicTypeKind.Uppercase:
-      return str.toUpperCase()
+      return str.toUpperCase();
     case IntrinsicTypeKind.Lowercase:
-      return str.toLowerCase()
+      return str.toLowerCase();
     case IntrinsicTypeKind.Capitalize:
-      return str.charAt(0).toUpperCase() + str.slice(1)
+      return str.charAt(0).toUpperCase() + str.slice(1);
     case IntrinsicTypeKind.Uncapitalize:
-      return str.charAt(0).toLowerCase() + str.slice(1)
+      return str.charAt(0).toLowerCase() + str.slice(1);
   }
-  return str
+  return str;
 }
 ```
 
@@ -3972,13 +3972,13 @@ class Point {}
 
 ```ts
 class Point {
-  x: number
-  y: number
+  x: number;
+  y: number;
 }
 
-const pt = new Point()
-pt.x = 0
-pt.y = 0
+const pt = new Point();
+pt.x = 0;
+pt.y = 0;
 ```
 
 Аннотация типа является опциональной (необязательной), но неявный тип будет иметь значение `any`.
@@ -3987,20 +3987,20 @@ pt.y = 0
 
 ```ts
 class Point {
-  x = 0
-  y = 0
+  x = 0;
+  y = 0;
 }
 
-const pt = new Point()
+const pt = new Point();
 // Вывод: 0, 0
-console.log(`${pt.x}, ${pt.y}`)
+console.log(`${pt.x}, ${pt.y}`);
 ```
 
 Как и в случае с `const`, `let` и `var`, инициализатор свойства класса используется для предположения типа этого свойства:
 
 ```ts
-const pt = new Point()
-pt.x = '0'
+const pt = new Point();
+pt.x = "0";
 // Type 'string' is not assignable to type 'number'.
 // Тип 'string' не может быть присвоен типу 'number'
 ```
@@ -4011,16 +4011,16 @@ pt.x = '0'
 
 ```ts
 class BadGreeter {
-  name: string
+  name: string;
   // Property 'name' has no initializer and is not definitely assigned in the constructor.
   // Свойство 'name' не имеет инициализатора и ему не присваивается значения в конструкторе
 }
 
 class GoodGreeter {
-  name: string
+  name: string;
 
   constructor() {
-    this.name = 'привет'
+    this.name = "привет";
   }
 }
 ```
@@ -4036,7 +4036,7 @@ class GoodGreeter {
 ```ts
 class OKGreeter {
   // Не инициализируется, но ошибки не возникает
-  name!: string
+  name!: string;
 }
 ```
 
@@ -4046,22 +4046,22 @@ class OKGreeter {
 
 ```ts
 class Greeter {
-  readonly name: string = 'народ'
+  readonly name: string = "народ";
 
   constructor(otherName?: string) {
     if (otherName !== undefined) {
-      this.name = otherName
+      this.name = otherName;
     }
   }
 
   err() {
-    this.name = 'не ok'
+    this.name = "не ok";
     // Cannot assign to 'name' because it is a read-only property.
     // Невозможно присвоить значение свойству 'name', поскольку оно является доступным только для чтения
   }
 }
-const g = new Greeter()
-g.name = 'тоже не ok'
+const g = new Greeter();
+g.name = "тоже не ok";
 // Cannot assign to 'name' because it is a read-only property.
 ```
 
@@ -4071,20 +4071,20 @@ g.name = 'тоже не ok'
 
 ```ts
 class Point {
-  x: number
-  y: number
+  x: number;
+  y: number;
 
   // Обычная сигнатура с "дефолтными" значениями
   constructor(x = 0, y = 0) {
-    this.x = x
-    this.y = y
+    this.x = x;
+    this.y = y;
   }
 }
 
 class Point {
   // Перегрузки
-  constructor(x: number, y: string)
-  constructor(s: string)
+  constructor(x: number, y: string);
+  constructor(s: string);
   constructor(xs: any, y?: any) {
     // ...
   }
@@ -4102,16 +4102,16 @@ class Point {
 
 ```ts
 class Base {
-  k = 4
+  k = 4;
 }
 
 class Derived extends Base {
   constructor() {
     // В ES5 выводится неправильное значение, в ES6 выбрасывается исключение
-    console.log(this.k)
+    console.log(this.k);
     // 'super' must be called before accessing 'this' in the constructor of a derived class.
     // Перед доступом к 'this' в конструкторе или производном классе необходимо вызвать 'super'
-    super()
+    super();
   }
 }
 ```
@@ -4124,12 +4124,12 @@ class Derived extends Base {
 
 ```ts
 class Point {
-  x = 10
-  y = 10
+  x = 10;
+  y = 10;
 
   scale(n: number): void {
-    this.x *= n
-    this.y *= n
+    this.x *= n;
+    this.y *= n;
   }
 }
 ```
@@ -4143,14 +4143,14 @@ class Point {
 :::
 
 ```ts
-let x: number = 0
+let x: number = 0;
 
 class C {
-  x: string = 'привет'
+  x: string = "привет";
 
   m() {
     // Здесь мы пытаемся изменить значение переменной `x`, находящейся на первой строке, а не свойство класса
-    x = 'world'
+    x = "world";
     // Type 'string' is not assignable to type 'number'.
   }
 }
@@ -4162,12 +4162,12 @@ class C {
 
 ```ts
 class C {
-  _length = 0
+  _length = 0;
   get length() {
-    return this._length
+    return this._length;
   }
   set length(value) {
-    this._length = value
+    this._length = value;
   }
 }
 ```
@@ -4187,10 +4187,10 @@ class C {
 
 ```ts
 class MyClass {
-  [s: string]: boolean | ((s: string) => boolean)
+  [s: string]: boolean | ((s: string) => boolean);
 
   check(s: string) {
-    return this[s] as boolean
+    return this[s] as boolean;
   }
 }
 ```
@@ -4207,12 +4207,12 @@ class MyClass {
 
 ```ts
 interface Pingable {
-  ping(): void
+  ping(): void;
 }
 
 class Sonar implements Pingable {
   ping() {
-    console.log('пинг!')
+    console.log("пинг!");
   }
 }
 
@@ -4220,7 +4220,7 @@ class Ball implements Pingable {
   // Class 'Ball' incorrectly implements interface 'Pingable'. Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
   // Класс 'Ball' некорректно реализует интерфейс 'Pingable'. Свойство 'ping' отсутствует в типе 'Ball', но является обязательным в типе 'Pingable'
   pong() {
-    console.log('понг!')
+    console.log("понг!");
   }
 }
 ```
@@ -4233,7 +4233,7 @@ class Ball implements Pingable {
 
 ```ts
 interface Checkable {
-  check(name: string): boolean
+  check(name: string): boolean;
 }
 
 class NameChecker implements Checkable {
@@ -4241,7 +4241,7 @@ class NameChecker implements Checkable {
     // Parameter 's' implicitly has an 'any' type.
     // Неявным типом параметра 's' является 'any'
     // Обратите внимание, что ошибки не возникает
-    return s.toLowercse() === 'ok'
+    return s.toLowercse() === "ok";
     // any
   }
 }
@@ -4253,14 +4253,14 @@ class NameChecker implements Checkable {
 
 ```ts
 interface A {
-  x: number
-  y?: number
+  x: number;
+  y?: number;
 }
 class C implements A {
-  x = 0
+  x = 0;
 }
-const c = new C()
-c.y = 10
+const c = new C();
+c.y = 10;
 // Property 'y' does not exist on type 'C'.
 // Свойства с названием 'y' не существует в типе 'C'
 ```
@@ -4272,23 +4272,23 @@ c.y = 10
 ```ts
 class Animal {
   move() {
-    console.log('Moving along!')
+    console.log("Moving along!");
   }
 }
 
 class Dog extends Animal {
   woof(times: number) {
     for (let i = 0; i < times; i++) {
-      console.log('woof!')
+      console.log("woof!");
     }
   }
 }
 
-const d = new Dog()
+const d = new Dog();
 // Метод базового класса
-d.move()
+d.move();
 // Метод производного класса
-d.woof(3)
+d.woof(3);
 ```
 
 ##### Перезапись методов
@@ -4302,32 +4302,32 @@ d.woof(3)
 ```ts
 class Base {
   greet() {
-    console.log('Привет, народ!')
+    console.log("Привет, народ!");
   }
 }
 
 class Derived extends Base {
   greet(name?: string) {
     if (name === undefined) {
-      super.greet()
+      super.greet();
     } else {
-      console.log(`Привет, ${name.toUpperCase()}`)
+      console.log(`Привет, ${name.toUpperCase()}`);
     }
   }
 }
 
-const d = new Derived()
-d.greet()
-d.greet('читатель!')
+const d = new Derived();
+d.greet();
+d.greet("читатель!");
 ```
 
 Важно, чтобы производный класс следовал контракту базового класса. Помните, что очень часто (и всегда легально) ссылаться на экземпляр производного класса через указатель на базовый класс:
 
 ```ts
 // Создаем синоним для производного экземпляра с помощью ссылки на базовый класс
-const b: Base = d
+const b: Base = d;
 // Все работает
-b.greet()
+b.greet();
 ```
 
 Что если производный класс не будет следовать контракту базового класса?
@@ -4335,7 +4335,7 @@ b.greet()
 ```ts
 class Base {
   greet() {
-    console.log('Привет, народ!')
+    console.log("Привет, народ!");
   }
 }
 
@@ -4344,7 +4344,7 @@ class Derived extends Base {
   greet(name: string) {
     // Property 'greet' in type 'Derived' is not assignable to the same property in base type 'Base'. Type '(name: string) => void' is not assignable to type '() => void'.
     // Свойство 'greet' в типе 'Derived' не может быть присвоено одноименному свойству в базовом типе 'Base'...
-    console.log(`Привет, ${name.toUpperCase()}`)
+    console.log(`Привет, ${name.toUpperCase()}`);
   }
 }
 ```
@@ -4352,9 +4352,9 @@ class Derived extends Base {
 Если мы скомпилируем этот код, несмотря на ошибку, такой "сниппет" провалится:
 
 ```ts
-const b: Base = new Derived()
+const b: Base = new Derived();
 // Не работает, поскольку `name` имеет значение `undefined`
-b.greet()
+b.greet();
 ```
 
 ##### Порядок инициализации
@@ -4363,18 +4363,18 @@ b.greet()
 
 ```ts
 class Base {
-  name = 'базовый'
+  name = "базовый";
   constructor() {
-    console.log('Меня зовут ' + this.name)
+    console.log("Меня зовут " + this.name);
   }
 }
 
 class Derived extends Base {
-  name = 'производный'
+  name = "производный";
 }
 
 // Вывод: 'базовый', а не 'производный'
-const d = new Derived()
+const d = new Derived();
 ```
 
 Что здесь происходит?
@@ -4399,10 +4399,10 @@ const d = new Derived()
 ```ts
 class MsgError extends Error {
   constructor(m: string) {
-    super(m)
+    super(m);
   }
   sayHello() {
-    return 'Привет ' + this.message
+    return "Привет " + this.message;
   }
 }
 ```
@@ -4417,14 +4417,14 @@ class MsgError extends Error {
 ```ts
 class MsgError extends Error {
   constructor(m: string) {
-    super(m)
+    super(m);
 
     // Явно устанавливаем прототип
-    Object.setPrototypeOf(this, MsgError.prototype)
+    Object.setPrototypeOf(this, MsgError.prototype);
   }
 
   sayHello() {
-    return 'Привет ' + this.message
+    return "Привет " + this.message;
   }
 }
 ```
@@ -4442,11 +4442,11 @@ class MsgError extends Error {
 ```ts
 class Greeter {
   public greet() {
-    console.log('Привет!')
+    console.log("Привет!");
   }
 }
-const g = new Greeter()
-g.greet()
+const g = new Greeter();
+g.greet();
 ```
 
 Поскольку `public` является дефолтным значением, специально указывать его не обязательно, но это повышает читаемость и улучшает стиль кода.
@@ -4458,22 +4458,22 @@ g.greet()
 ```ts
 class Greeter {
   public greet() {
-    console.log('Привет, ' + this.getName())
+    console.log("Привет, " + this.getName());
   }
   protected getName() {
-    return 'народ!'
+    return "народ!";
   }
 }
 
 class SpecialGreeter extends Greeter {
   public howdy() {
     // Здесь защищенный член доступен
-    console.log('Здорово, ' + this.getName())
+    console.log("Здорово, " + this.getName());
   }
 }
-const g = new SpecialGreeter()
-g.greet() // OK
-g.getName()
+const g = new SpecialGreeter();
+g.greet(); // OK
+g.getName();
 // Property 'getName' is protected and only accessible within class 'Greeter' and its subclasses.
 // Свойство 'getName' является защищенным и доступно только в классе 'Greeter' и его подклассах
 ```
@@ -4484,14 +4484,14 @@ g.getName()
 
 ```ts
 class Base {
-  protected m = 10
+  protected m = 10;
 }
 class Derived extends Base {
   // Модификатор отсутствует, поэтому значением по умолчанию является `public`
-  m = 15
+  m = 15;
 }
-const d = new Derived()
-console.log(d.m) // OK
+const d = new Derived();
+console.log(d.m); // OK
 ```
 
 :::note Обратите внимание
@@ -4506,17 +4506,17 @@ console.log(d.m) // OK
 
 ```ts
 class Base {
-  protected x: number = 1
+  protected x: number = 1;
 }
 class Derived1 extends Base {
-  protected x: number = 5
+  protected x: number = 5;
 }
 class Derived2 extends Base {
   f1(other: Derived2) {
-    other.x = 10
+    other.x = 10;
   }
   f2(other: Base) {
-    other.x = 10
+    other.x = 10;
     // Property 'x' is protected and only accessible through an instance of class 'Derived2'. This is an instance of class 'Base'.
     // Свойство 'x' является защищенным и доступно только через экземпляр класса 'Derived2'. А это - экземпляр класса 'Base'
   }
@@ -4533,17 +4533,17 @@ class Derived2 extends Base {
 
 ```ts
 class Base {
-  private x = 0
+  private x = 0;
 }
-const b = new Base()
+const b = new Base();
 // Снаружи класса доступ получить нельзя
-console.log(b.x)
+console.log(b.x);
 // Property 'x' is private and only accessible within class 'Base'.
 
 class Derived extends Base {
   showX() {
     // В подклассе доступ получить также нельзя
-    console.log(this.x)
+    console.log(this.x);
     // Property 'x' is private and only accessible within class 'Base'.
   }
 }
@@ -4553,12 +4553,12 @@ class Derived extends Base {
 
 ```ts
 class Base {
-  private x = 0
+  private x = 0;
 }
 class Derived extends Base {
   // Class 'Derived' incorrectly extends base class 'Base'. Property 'x' is private in type 'Base' but not in type 'Derived'.
   // Класс 'Derived' неправильно расширяет базовый класс 'Base'. Свойство 'x' является частным в типе 'Base', но не в типе 'Derived'
-  x = 1
+  x = 1;
 }
 ```
 
@@ -4570,11 +4570,11 @@ class Derived extends Base {
 
 ```ts
 class A {
-  private x = 10
+  private x = 10;
 
   public sameAs(other: A) {
     // Ошибки не возникает
-    return other.x === this.x
+    return other.x === this.x;
   }
 }
 ```
@@ -4585,13 +4585,13 @@ class A {
 
 ```ts
 class MySafe {
-  private secretKey = 12345
+  private secretKey = 12345;
 }
 
 // В JS-файле...
-const s = new MySafe()
+const s = new MySafe();
 // Вывод 12345
-console.log(s.secretKey)
+console.log(s.secretKey);
 ```
 
 Для реализации "настоящих" частных членов можно использовать такие механизмы, как замыкания (closures), слабые карты (weak maps) или синтаксис приватных полей класса (private fields, `#`).
@@ -4602,22 +4602,22 @@ console.log(s.secretKey)
 
 ```ts
 class MyClass {
-  static x = 0
+  static x = 0;
   static printX() {
-    console.log(MyClass.x)
+    console.log(MyClass.x);
   }
 }
-console.log(MyClass.x)
-MyClass.printX()
+console.log(MyClass.x);
+MyClass.printX();
 ```
 
 К статическим членам также могут применяться модификаторы `public`, `protected` и `private`:
 
 ```ts
 class MyClass {
-  private static x = 0
+  private static x = 0;
 }
-console.log(MyClass.x)
+console.log(MyClass.x);
 // Property 'x' is private and only accessible within class 'MyClass'.
 ```
 
@@ -4626,11 +4626,11 @@ console.log(MyClass.x)
 ```ts
 class Base {
   static getGreeting() {
-    return 'Привет, народ!'
+    return "Привет, народ!";
   }
 }
 class Derived extends Base {
-  myGreeting = Derived.getGreeting()
+  myGreeting = Derived.getGreeting();
 }
 ```
 
@@ -4640,7 +4640,7 @@ class Derived extends Base {
 
 ```ts
 class S {
-  static name = 'S!'
+  static name = "S!";
   // Static property 'name' conflicts with built-in property 'Function.name' of constructor function 'S'.
   // Статическое свойство 'name' вступает в конфликт со встроенным свойством 'Function.name' функции-конструктора 'S'
 }
@@ -4665,8 +4665,8 @@ function doSomething() {}
 
 // Альтернатива 2
 const MyHelperObject = {
-  dosomething() {}
-}
+  dosomething() {},
+};
 ```
 
 ### Общие классы (generic classes)
@@ -4675,13 +4675,13 @@ const MyHelperObject = {
 
 ```ts
 class Box<Type> {
-  contents: Type
+  contents: Type;
   constructor(value: Type) {
-    this.contents = value
+    this.contents = value;
   }
 }
 
-const b = new Box('Привет!')
+const b = new Box("Привет!");
 // const b: Box<string>
 ```
 
@@ -4693,7 +4693,7 @@ const b = new Box('Привет!')
 
 ```ts
 class Box<Type> {
-  static defaultValue: Type
+  static defaultValue: Type;
   // Static members cannot reference class type parameters.
   // Статические члены не могут ссылаться на типы параметров класса
 }
@@ -4707,19 +4707,19 @@ class Box<Type> {
 
 ```ts
 class MyClass {
-  name = 'класс'
+  name = "класс";
   getName() {
-    return this.name
+    return this.name;
   }
 }
-const c = new MyClass()
+const c = new MyClass();
 const obj = {
-  name: 'объект',
-  getName: c.getName
-}
+  name: "объект",
+  getName: c.getName,
+};
 
 // Выводится 'объект', а не 'класс'
-console.log(obj.getName())
+console.log(obj.getName());
 ```
 
 Если кратко, то значение `this` внутри функции зависит от того, как эта функция вызывается. В приведенном примере, поскольку функция вызывается через ссылку на `obj`, значением `this` является `obj`, а не экземпляр класса.
@@ -4732,15 +4732,15 @@ console.log(obj.getName())
 
 ```ts
 class MyClass {
-  name = 'класс'
+  name = "класс";
   getName = () => {
-    return this.name
-  }
+    return this.name;
+  };
 }
-const c = new MyClass()
-const g = c.getName
+const c = new MyClass();
+const g = c.getName;
 // Выводится 'класс'
-console.log(g())
+console.log(g());
 ```
 
 Это требует некоторых компромиссов:
@@ -4769,18 +4769,18 @@ function fn(x) {
 
 ```ts
 class MyClass {
-  name = 'класс'
+  name = "класс";
   getName(this: MyClass) {
-    return this.name
+    return this.name;
   }
 }
-const c = new MyClass()
+const c = new MyClass();
 // OK
-c.getName()
+c.getName();
 
 // Ошибка
-const g = c.getName
-console.log(g())
+const g = c.getName;
+console.log(g());
 // The 'this' context of type 'void' is not assignable to method's 'this' of type 'MyClass'.
 // Контекст 'this' типа 'void' не может быть присвоен методу 'this' типа 'MyClass'
 ```
@@ -4797,11 +4797,11 @@ console.log(g())
 
 ```ts
 class Box {
-  contents: string = ''
+  contents: string = "";
   set(value: string) {
     // (method) Box.set(value: string): this
-    this.contents = value
-    return this
+    this.contents = value;
+    return this;
   }
 }
 ```
@@ -4811,12 +4811,12 @@ class Box {
 ```ts
 class ClearableBox extends Box {
   clear() {
-    this.contents = ''
+    this.contents = "";
   }
 }
 
-const a = new ClearableBox()
-const b = a.set('привет')
+const a = new ClearableBox();
+const b = a.set("привет");
 // const b: ClearableBox
 ```
 
@@ -4824,9 +4824,9 @@ const b = a.set('привет')
 
 ```ts
 class Box {
-  content: string = ''
+  content: string = "";
   sameAs(other: this) {
-    return other.content === this.content
+    return other.content === this.content;
   }
 }
 ```
@@ -4835,19 +4835,19 @@ class Box {
 
 ```ts
 class Box {
-  content: string = ''
+  content: string = "";
   sameAs(other: this) {
-    return other.content === this.content
+    return other.content === this.content;
   }
 }
 
 class DerivedBox extends Box {
-  otherContent: string = '?'
+  otherContent: string = "?";
 }
 
-const base = new Box()
-const derived = new DerivedBox()
-derived.sameAs(base)
+const base = new Box();
+const derived = new DerivedBox();
+derived.sameAs(base);
 // Argument of type 'Box' is not assignable to parameter of type 'DerivedBox'. Property 'otherContent' is missing in type 'Box' but required in type 'DerivedBox'.
 ```
 
@@ -4858,41 +4858,41 @@ derived.sameAs(base)
 ```ts
 class FileSystemObject {
   isFile(): this is FileRep {
-    return this instanceof FileRep
+    return this instanceof FileRep;
   }
   isDirectory(): this is Directory {
-    return this instanceof Directory
+    return this instanceof Directory;
   }
   isNetworked(): this is Networked & this {
-    return this.networked
+    return this.networked;
   }
   constructor(public path: string, private networked: boolean) {}
 }
 
 class FileRep extends FileSystemObject {
   constructor(path: string, public content: string) {
-    super(path, false)
+    super(path, false);
   }
 }
 
 class Directory extends FileSystemObject {
-  children: FileSystemObject[]
+  children: FileSystemObject[];
 }
 
 interface Networked {
-  host: string
+  host: string;
 }
 
-const fso: FileSystemObject = new FileRep('foo/bar.txt', 'foo')
+const fso: FileSystemObject = new FileRep("foo/bar.txt", "foo");
 
 if (fso.isFile()) {
-  fso.content
+  fso.content;
   // const fso: FileRep
 } else if (fso.isDirectory()) {
-  fso.children
+  fso.children;
   // const fso: Directory
 } else if (fso.isNetworked()) {
-  fso.host
+  fso.host;
   // const fso: Networked & FileSystemObject
 }
 ```
@@ -4901,21 +4901,21 @@ if (fso.isFile()) {
 
 ```ts
 class Box<T> {
-  value?: T
+  value?: T;
 
   hasValue(): this is { value: T } {
-    return this.value !== undefined
+    return this.value !== undefined;
   }
 }
 
-const box = new Box()
-box.value = 'Gameboy'
+const box = new Box();
+box.value = "Gameboy";
 
-box.value
+box.value;
 // (property) Box<unknown>.value?: unknown
 
 if (box.hasValue()) {
-  box.value
+  box.value;
   // (property) value: unknown
 }
 ```
@@ -4934,10 +4934,10 @@ class Params {
     // ...
   }
 }
-const a = new Params(1, 2, 3)
-console.log(a.x)
+const a = new Params(1, 2, 3);
+console.log(a.x);
 // (property) Params.x: number
-console.log(a.z)
+console.log(a.z);
 // Property 'z' is private and only accessible within class 'Params'.
 ```
 
@@ -4947,13 +4947,13 @@ console.log(a.z)
 
 ```ts
 const someClass = class<Type> {
-  content: Type
+  content: Type;
   constructor(value: Type) {
-    this.content = value
+    this.content = value;
   }
-}
+};
 
-const m = new someClass('Привет, народ!')
+const m = new someClass("Привет, народ!");
 // const m: someClass<string>
 ```
 
@@ -4969,14 +4969,14 @@ const m = new someClass('Привет, народ!')
 
 ```ts
 abstract class Base {
-  abstract getName(): string
+  abstract getName(): string;
 
   printName() {
-    console.log('Привет, ' + this.getName())
+    console.log("Привет, " + this.getName());
   }
 }
 
-const b = new Base()
+const b = new Base();
 // Cannot create an instance of an abstract class.
 // Невозможно создать экземпляр абстрактного класса
 ```
@@ -4986,12 +4986,12 @@ const b = new Base()
 ```ts
 class Derived extends Base {
   getName() {
-    return 'народ!'
+    return "народ!";
   }
 }
 
-const d = new Derived()
-d.printName()
+const d = new Derived();
+d.printName();
 ```
 
 :::note Обратите внимание
@@ -5016,9 +5016,9 @@ class Derived extends Base {
 
 ```ts
 function greet(ctor: typeof Base) {
-  const instance = new ctor()
+  const instance = new ctor();
   // Cannot create an instance of an abstract class.
-  instance.printName()
+  instance.printName();
 }
 ```
 
@@ -5026,18 +5026,18 @@ function greet(ctor: typeof Base) {
 
 ```ts
 // Плохо!
-greet(Base)
+greet(Base);
 ```
 
 Вместо этого, мы можем написать функцию, которая принимает нечто с сигнатурой конструктора:
 
 ```ts
 function greet(ctor: new () => Base) {
-  const instance = new ctor()
-  instance.printName()
+  const instance = new ctor();
+  instance.printName();
 }
-greet(Derived)
-greet(Base)
+greet(Derived);
+greet(Base);
 /*
   Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
     Cannot assign an abstract constructor type to a non-abstract constructor type.
@@ -5058,35 +5058,35 @@ greet(Base)
 
 ```ts
 class Point1 {
-  x = 0
-  y = 0
+  x = 0;
+  y = 0;
 }
 
 class Point2 {
-  x = 0
-  y = 0
+  x = 0;
+  y = 0;
 }
 
 // OK
-const p: Point1 = new Point2()
+const p: Point1 = new Point2();
 ```
 
 Также существуют отношения между подтипами, даже при отсутствии явного наследования:
 
 ```ts
 class Person {
-  name: string
-  age: number
+  name: string;
+  age: number;
 }
 
 class Employee {
-  name: string
-  age: number
-  salary: number
+  name: string;
+  age: number;
+  salary: number;
 }
 
 // OK
-const p: Person = new Employee()
+const p: Person = new Employee();
 ```
 
 Однако, существует одно исключение.
@@ -5101,9 +5101,9 @@ function fn(x: Empty) {
 }
 
 // OK!
-fn(window)
-fn({})
-fn(fn)
+fn(window);
+fn({});
+fn(fn);
 ```
 
 ## Модули
@@ -5125,7 +5125,7 @@ fn(fn)
 Если у нас имеется файл, который не содержит `import` или `export`, но мы хотим, чтобы этот файл считался модулем, просто добавляем в него такую строку:
 
 ```ts
-export {}
+export {};
 ```
 
 ### Модули в `TS`
@@ -5143,40 +5143,40 @@ export {}
 ```ts
 // @filename: hello.ts
 export default function helloWorld() {
-  console.log('Привет, народ!')
+  console.log("Привет, народ!");
 }
 ```
 
 Затем данная функция импортируется следующим образом:
 
 ```ts
-import hello from './hello.js'
-hello()
+import hello from "./hello.js";
+hello();
 ```
 
 В дополнению к экспорту по умолчанию, из файла может экспортироваться несколько переменных и функций с помощью `export` (без `default`):
 
 ```ts
 // @filename: maths.ts
-export var pi = 3.14
-export let squareTwo = 1.41
-export const phi = 1.61
+export var pi = 3.14;
+export let squareTwo = 1.41;
+export const phi = 1.61;
 
 export class RandomNumberGenerator {}
 
 export function absolute(num: number) {
-  if (num < 0) return num * -1
-  return num
+  if (num < 0) return num * -1;
+  return num;
 }
 ```
 
 Указанные сущности импортируются так:
 
 ```ts
-import { pi, phi, absolute } from './maths.js'
+import { pi, phi, absolute } from "./maths.js";
 
-console.log(pi)
-const absPhi = absolute(phi)
+console.log(pi);
+const absPhi = absolute(phi);
 // const absPhi: number
 ```
 
@@ -5185,9 +5185,9 @@ const absPhi = absolute(phi)
 Название импортируемой сущности можно менять с помощью `import { old as new }`:
 
 ```ts
-import { pi as π } from './maths.js'
+import { pi as π } from "./maths.js";
 
-console.log(π)
+console.log(π);
 /*
           (alias) var π: number
           import π
@@ -5198,19 +5198,19 @@ console.log(π)
 
 ```ts
 // @filename: maths.ts
-export const pi = 3.14
+export const pi = 3.14;
 export default class RandomNumberGenerator {}
 
 // @filename: app.ts
-import RNGen, { pi as π } from './maths.js'
+import RNGen, { pi as π } from "./maths.js";
 
-RNGen
+RNGen;
 /*
   (alias) class RNGen
   import RNGen
 */
 
-console.log(π)
+console.log(π);
 /*
   (alias) const π: 3.14
   import π
@@ -5221,10 +5221,10 @@ console.log(π)
 
 ```ts
 // @filename: app.ts
-import * as math from './maths.js'
+import * as math from "./maths.js";
 
-console.log(math.pi)
-const positivePhi = math.absolute(math.phi)
+console.log(math.pi);
+const positivePhi = math.absolute(math.phi);
 // const positivePhi: number
 ```
 
@@ -5232,9 +5232,9 @@ const positivePhi = math.absolute(math.phi)
 
 ```ts
 // @filename: app.ts
-import './maths.js'
+import "./maths.js";
 
-console.log('3.14')
+console.log("3.14");
 ```
 
 В данном случае `import` ничего не делает. Тем не менее, весь код из `maths.ts` вычисляется (оценивается), что может привести к запуску побочных эффектов, влияющих на другие объекты.
@@ -5245,35 +5245,35 @@ console.log('3.14')
 
 ```ts
 // @filename: animal.ts
-export type Cat = { breed: string; yearOfBirth: number }
+export type Cat = { breed: string; yearOfBirth: number };
 
 export interface Dog {
-  breeds: string[]
-  yearOfBirth: number
+  breeds: string[];
+  yearOfBirth: number;
 }
 
 // @filename: app.ts
-import { Cat, Dog } from './animal.js'
-type Animals = Cat | Dog
+import { Cat, Dog } from "./animal.js";
+type Animals = Cat | Dog;
 ```
 
 `TS` расширяет синтаксис `import` с помощью `import type`, что позволяет импортировать только типы.
 
 ```ts
 // @filename: animal.ts
-export type Cat = { breed: string; yearOfBirth: number }
+export type Cat = { breed: string; yearOfBirth: number };
 // 'createCatName' cannot be used as a value because it was imported using 'import type'.
 // 'createCatName' не может использоваться в качестве значения, поскольку импортируется с помощью 'import type'
-export type Dog = { breeds: string[]; yearOfBirth: number }
-export const createCatName = () => 'fluffy'
+export type Dog = { breeds: string[]; yearOfBirth: number };
+export const createCatName = () => "fluffy";
 
 // @filename: valid.ts
-import type { Cat, Dog } from './animal.js'
-export type Animals = Cat | Dog
+import type { Cat, Dog } from "./animal.js";
+export type Animals = Cat | Dog;
 
 // @filename: app.ts
-import type { createCatName } from './animal.js'
-const name = createCatName()
+import type { createCatName } from "./animal.js";
+const name = createCatName();
 ```
 
 Такой импорт сообщает транспиляторам, вроде `Babel`, `swc` или `esbuild`, какой импорт может быть безопасно удален.
@@ -5283,8 +5283,8 @@ const name = createCatName()
 Синтаксис `ES-модулей` в `TS` напрямую согласуется с `CommonJS` и `require` из `AMD`. Импорт с помощью `ES-модулей` в большинстве случаев представляет собой тоже самое, что `require` в указанных окружениях, он позволяет обеспечить полное совпадение `TS-файла` с результатом `CommonJS`:
 
 ```ts
-import fs = require('fs')
-const code = fs.readFileSync('hello.ts', 'utf8')
+import fs = require("fs");
+const code = fs.readFileSync("hello.ts", "utf8");
 ```
 
 ### Синтаксис `CommonJS`
@@ -5297,31 +5297,31 @@ const code = fs.readFileSync('hello.ts', 'utf8')
 
 ```ts
 function absolute(num: number) {
-  if (num < 0) return num * -1
-  return num
+  if (num < 0) return num * -1;
+  return num;
 }
 
 module.exports = {
   pi: 3.14,
   squareTwo: 1.41,
   phi: 1.61,
-  absolute
-}
+  absolute,
+};
 ```
 
 Затем эти файлы импортируются с помощью инструкции `require`:
 
 ```ts
-const maths = require('maths')
-maths.pi
+const maths = require("maths");
+maths.pi;
 // any
 ```
 
 В данном случае импорт можно упростить с помощью деструктуризации:
 
 ```ts
-const { squareTwo } = require('maths')
-squareTwo
+const { squareTwo } = require("maths");
+squareTwo;
 // const squareTwo: any
 ```
 
@@ -5341,9 +5341,9 @@ squareTwo
 
 Имеется две настройки, которые влияют на результирующий `JS-код`:
 
-- <a href='https://www.typescriptlang.org/tsconfig#target'>`target`</a> - определяет
+- <a href="https://www.typescriptlang.org/tsconfig#target">`target`</a> - определяет
   версию `JS`, в которую компилируется `TS-код`
-- <a href='https://www.typescriptlang.org/tsconfig#module'>`module`</a> - определяет,
+- <a href="https://www.typescriptlang.org/tsconfig#module">`module`</a> - определяет,
   какой код используется для взаимодействия модулей между собой
 
 То, какую цель (target) использовать, зависит от того, в какой среде будет выполняться код (какие возможности поддерживаются этой средой). Это может включать в себя поддержку старых браузеров, более низкую версию `Node.js` или специфические ограничения, накладываемые такими средами выполнения, как, например, `Electron`.
@@ -5353,45 +5353,45 @@ squareTwo
 Ниже приведено несколько примеров использования синтаксиса `ES-модулей` с разными настройками `module`:
 
 ```ts
-import { valueOfPi } from './constants.js'
+import { valueOfPi } from "./constants.js";
 
-export const twoPi = valueOfPi * 2
+export const twoPi = valueOfPi * 2;
 ```
 
 #### `ES2020`
 
 ```ts
-import { valueOfPi } from './constants.js'
-export const twoPi = valueOfPi * 2
+import { valueOfPi } from "./constants.js";
+export const twoPi = valueOfPi * 2;
 ```
 
 #### `CommonJS`
 
 ```ts
-'use strict'
-Object.defineProperty(exports, '__esModule', { value: true })
-exports.twoPi = void 0
-const constants_js_1 = require('./constants.js')
-exports.twoPi = constants_js_1.valueOfPi * 2
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.twoPi = void 0;
+const constants_js_1 = require("./constants.js");
+exports.twoPi = constants_js_1.valueOfPi * 2;
 ```
 
 #### `UMD`
 
 ```ts
-;(function (factory) {
-  if (typeof module === 'object' && typeof module.exports === 'object') {
-    var v = factory(require, exports)
-    if (v !== undefined) module.exports = v
-  } else if (typeof define === 'function' && define.amd) {
-    define(['require', 'exports', './constants.js'], factory)
+(function (factory) {
+  if (typeof module === "object" && typeof module.exports === "object") {
+    var v = factory(require, exports);
+    if (v !== undefined) module.exports = v;
+  } else if (typeof define === "function" && define.amd) {
+    define(["require", "exports", "./constants.js"], factory);
   }
 })(function (require, exports) {
-  'use strict'
-  Object.defineProperty(exports, '__esModule', { value: true })
-  exports.twoPi = void 0
-  const constants_js_1 = require('./constants.js')
-  exports.twoPi = constants_js_1.valueOfPi * 2
-})
+  "use strict";
+  Object.defineProperty(exports, "__esModule", { value: true });
+  exports.twoPi = void 0;
+  const constants_js_1 = require("./constants.js");
+  exports.twoPi = constants_js_1.valueOfPi * 2;
+});
 ```
 
 ### Пространства имен (namespaces)
