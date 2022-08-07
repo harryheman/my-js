@@ -52,7 +52,7 @@ __Клиент__
 
 __`Docker Desktop`__
 
-[`Docker Desktop`](https://docs.docker.com/desktop/) - это десктопное приложение для `Mac` и `Windows`, позволяющее создавать и распределять контейнерные приложения и микросервисы. `Docker Desktop` включает в себя демона, клиента, `Docker Compose`, `Docker Content Trust`, `Kubernetes` и `Credential Helper`.
+[`Docker Desktop`](https://docs.docker.com/desktop/) - это десктопное приложение для `Mac`, `Windows` и `Linux`, позволяющее создавать и распределять контейнерные приложения и микросервисы. `Docker Desktop` включает в себя демона, клиента, `Docker Compose`, `Docker Content Trust`, `Kubernetes` и `Credential Helper`.
 
 __Реестр__
 
