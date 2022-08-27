@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const features = [
   {
     title: "JavaScript",
-    imageUrl: "img/logo.webp"
+    imageUrl: "img/logo.webp",
     // description: (
     //   <>
     //     Docusaurus was designed from the ground up to be easily installed and
@@ -19,20 +19,20 @@ const features = [
   },
   {
     title: "React",
-    imageUrl: "img/react.webp"
+    imageUrl: "img/react.webp",
   },
   {
     title: "TypeScript",
-    imageUrl: "img/ts.webp"
+    imageUrl: "img/ts.webp",
   },
   {
     title: "Node.js",
-    imageUrl: "img/nodejs.webp"
+    imageUrl: "img/nodejs.webp",
   },
   {
     title: "And More",
-    imageUrl: "img/coding.webp"
-  }
+    imageUrl: "img/coding.webp",
+  },
 ];
 
 function Feature({ imageUrl, title, description }) {
@@ -74,7 +74,14 @@ export default function Home() {
             height={120}
           />
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle">
+            <a href="docs/guide/intro-guide">Руководства</a>,{" "}
+            <a href="docs/cheatsheet/intro-cheatsheet">шпаргалки</a>,{" "}
+            <a href="docs/other/intro-other">вопросы и другие материалы</a> по
+            JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL,
+            Docker и множеству других технологий, а также{" "}
+            <a href="blog">Блог по веб-разработке</a>.
+          </p>
 
           <div className={styles.buttons}>
             <Link
@@ -89,11 +96,10 @@ export default function Home() {
           </div>
 
           <p className="hero__subtitle small">
-            Обновление от 11.07.2022:&nbsp;
-            <a href="docs/guide/web-streams">
-              Руководство по использованию веб-потоков в Node.js
-            </a>
-            .
+            Обновление от 27.08.2022:
+            <br />
+            <a href="docs/cheatsheet/fs">Шпаргалка по модулю FS (Node.js)</a> и
+            <br /> <a href="docs/guide/nest">Руководство по NestJS</a>.
           </p>
 
           <p className="hero__subtitle small">
