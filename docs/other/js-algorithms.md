@@ -490,157 +490,124 @@ console.log(treeHeight(_root)) // 2
 function bubbleSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        const less = arr[j + 1]
-        arr[j + 1] = arr[j]
-        arr[j] = less
+      if (arr[j + 1] < arr[j]) {
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
       }
     }
   }
-
-  return arr
+  return arr;
 }
-
-const arr = [5, 3, 2, 4, 1]
-console.log(bubbleSort(arr)) // [1, 2, 3, 4, 5]
 ```
 
 #### Вставкой
 
 ```js
-const insertionSort = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < i; j++) {
-      if (arr[i] < arr[j]) arr.splice(j, 0, arr.splice(i, 1)[0])
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = i - 1; j > -1; j--) {
+      if (arr[j + 1] < arr[j]) {
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+      }
     }
   }
-  return arr
-}
 
-console.log(insertionSort(arr))
+  return arr;
+}
 ```
 
 #### Выборкой
 
 ```js
-// 1
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
-    let minIndex = i
+    let minIndex = i;
 
     for (let j = i + 1; j < arr.length; j++)
-      if (arr[j] < arr[minIndex]) minIndex = j
+      if (arr[j] < arr[minIndex]) minIndex = j;
 
     if (minIndex !== i) {
-      const less = arr[minIndex]
-      arr[minIndex] = arr[i]
-      arr[i] = less
+      const min = arr[minIndex];
+      arr[minIndex] = arr[i];
+      arr[i] = min;
     }
   }
 
-  return arr
+  return arr;
 }
-
-console.log(selectionSort(arr))
-
-// 2
-function _selectionSort(arr) {
-  let newArr = []
-
-  while (arr.length !== 0) {
-    const smallest = arr[0]
-
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] < smallest) {
-        smallest = arr[i]
-      }
-    }
-
-    newArr.push(...arr.splice(arr.indexOf(smallest), 1))
-  }
-  return newArr
-}
-
-console.log(_selectionSort(arr))
-```
-
-#### Быстрая
-
-```js
-const quickSort = (arr) => {
-  if (arr.length < 2) return arr
-
-  let n = arr[~~((arr.length - 1) / 2)]
-
-  let less = []
-  let great = []
-
-  for (const i of arr) {
-    if (i < n) {
-      less.push(i)
-    } else if (i > n) {
-      great.push(i)
-    }
-  }
-
-  less = quickSort(less)
-  great = quickSort(great)
-
-  return [...less, n, ...great]
-}
-
-console.log(quickSort(arr))
 ```
 
 #### Слиянием
 
 ```js
 function mergeSort(arr) {
-  if (arr.length === 1) return arr
+  if (arr.length < 2) return arr;
 
-  const center = ~~(arr.length / 2)
-  const left = arr.slice(0, center)
-  const right = arr.slice(center)
+  const middleIndex = ~~(arr.length / 2);
+  const left = arr.slice(0, middleIndex);
+  const right = arr.slice(middleIndex);
 
-  return merge(mergeSort(left), mergeSort(right))
+  return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
-  const res = []
+  const result = [];
 
   while (left.length && right.length) {
-    if (left[0] < right[0]) res.push(left.shift())
-    else res.push(right.shift())
+    if (left[0] < right[0]) result.push(left.shift());
+    else result.push(right.shift());
   }
 
-  return [...res, ...left, ...right]
+  return [...result, ...left, ...right];
 }
+```
 
-console.log(mergeSort(arr))
+#### Быстрая
+
+```js
+function quickSort(arr) {
+  if (arr.length < 2) return arr;
+
+  const middle = arr[~~(arr.length / 2)];
+
+  let left = [];
+  let right = [];
+
+  for (const i of arr) {
+    if (i < middle) {
+      left.push(i);
+    } else if (i > middle) {
+      right.push(i);
+    }
+  }
+
+  left = quickSort(left);
+  right = quickSort(right);
+
+  return [...left, middle, ...right];
+}
 ```
 
 #### Подсчетом
 
 ```js
-const countingSort = (arr, max) => {
-  const counts = new Array(max + 1)
-  counts.fill(0)
-  arr.forEach((v) => counts[v]++)
+function countingSort(arr, max = testArr.length - 1) {
+  const counts = new Array(max + 1).fill(0);
 
-  const res = []
-  let index = 0
+  arr.forEach((v) => counts[v]++);
+
+  const result = [];
+
+  let index = 0;
 
   counts.forEach((c, i) => {
     for (let j = 0; j < c; j++) {
-      res[index] = i
-      index++
+      result[index] = i;
+      index++;
     }
-  })
+  });
 
-  return res
+  return result;
 }
-
-console.log(countingSort(arr, 5))
 ```
 
 ### Поиск (search)
