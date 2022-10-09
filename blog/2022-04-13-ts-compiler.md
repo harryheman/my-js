@@ -630,6 +630,4 @@ endwhile
 <img src="https://habrastorage.org/webt/ay/ir/-i/ayir-it8llmfyfdkx7hzln1eni4.png" alt="" />
 <br />
 
-Надеюсь, вам понравилось наше небольшое путешествие, и вы узнали немного больше о том, как работают `WA` и компиляторы.
-
 Благодарю за внимание и happy coding!

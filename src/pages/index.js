@@ -96,10 +96,9 @@ export default function Home() {
           </div>
 
           <p className="hero__subtitle small">
-            Обновление от 27.08.2022:
+            Обновление от 09.10.2022:
             <br />
-            <a href="docs/cheatsheet/fs">Шпаргалка по модулю FS (Node.js)</a> и
-            <br /> <a href="docs/guide/nest">Руководство по NestJS</a>.
+            <a href="docs/cheatsheet/mastering-ts">TypeScript в деталях</a>.
           </p>
 
           <p className="hero__subtitle small">

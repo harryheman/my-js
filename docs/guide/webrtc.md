@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'webrtc', 'guide', 'руководство', 'realtim
 
 # WebRTC
 
-[Источник](https://webrtcforthecurious.com/)&nbsp;&nbsp;👀
+[Источник](https://webrtcforthecurious.com/).
 
 ## Что такое WebRTC?
 

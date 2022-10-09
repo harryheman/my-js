@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'che
 
 # Шпаргалки по React, Jest, Redux и лучшие практики по React
 
-> [Источник](https://github.com/learning-zone/react-interview-questions)&nbsp;&nbsp;👀
+> [Источник](https://github.com/learning-zone/react-interview-questions).
 
 ## Шпаргалка по React
 

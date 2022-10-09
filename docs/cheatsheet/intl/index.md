@@ -8,8 +8,8 @@ tags: ['javascript', 'js', 'internationalization api', 'internationalization', '
 
 # Internationalization API
 
-- [Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl)&nbsp;&nbsp;👀
-- [Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry)&nbsp;&nbsp;👀
+- [Утилита `easy-intl`, облегчающая использование данного интерфейса](https://www.npmjs.com/package/easy-intl).
+- [Пример использования `easy-intl`](https://codepen.io/harryheman/pen/QWgKGry).
 
 [`Internationalization API`](https://tc39.es/ecma402/) предоставляет следующие возможности:
 

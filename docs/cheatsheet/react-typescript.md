@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', '
 
 # React + Typescript
 
-[Источник](https://github.com/typescript-cheatsheets/react)&nbsp;&nbsp;👀
+[Источник](https://github.com/typescript-cheatsheets/react).
 
 ## Импорт React
 

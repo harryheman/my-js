@@ -13,7 +13,7 @@ image: https://habrastorage.org/webt/um/fe/t_/umfet_kngorlggfmgokzowwtsuu.png
 
 В данной заметке я расскажу вам о некоторых полезных возможностях современного `TypeScript`.
 
-[Источник](https://obaranovskyi.medium.com/10-typescript-features-you-might-not-be-using-yet-or-didnt-understand-d1f28888ea45)&nbsp;&nbsp;👀
+[Источник](https://obaranovskyi.medium.com/10-typescript-features-you-might-not-be-using-yet-or-didnt-understand-d1f28888ea45).
 
 <!--truncate-->
 

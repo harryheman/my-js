@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', '
 
 # React Types
 
-[Источник](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)&nbsp;&nbsp;👀&
+[Источник](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts).&
 
 ## Хуки
 

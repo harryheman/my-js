@@ -1,14 +1,14 @@
 ---
-sidebar_position: 17
+sidebar_position: 17.1
 title: Шпаргалка по TypeScript
 description: Шпаргалка по TypeScript
-keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
-tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
+keywords: ['javascript', 'js', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
+tags: ['javascript', 'js', 'typescript', 'ts', 'cheatsheet', 'шпаргалка']
 ---
 
-# TypeScript
+# Шпаргалка по TypeScript
 
-[Источник](https://www.sitepen.com/blog/typescript-cheat-sheet)&nbsp;&nbsp;👀
+[Источник](https://www.sitepen.com/blog/typescript-cheat-sheet).
 
 ## Использование
 

@@ -8,7 +8,7 @@ tags: ['docker', 'docker compose', 'docker-compose', 'devops', 'container', 'gui
 
 # Docker
 
-[Пример "контейнеризованного" React/Vue/Express/Postgres приложения](https://github.com/harryheman/Blog-Posts/tree/master/docker-react-vue-express-postgres-app)&nbsp;&nbsp;👀
+[Пример "контейнеризованного" React/Vue/Express/Postgres приложения](https://github.com/harryheman/Blog-Posts/tree/master/docker-react-vue-express-postgres-app).
 
 ## Введение, Docker CLI и Dockerfile
 

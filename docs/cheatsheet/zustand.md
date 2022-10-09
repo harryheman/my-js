@@ -10,7 +10,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'state manager', 'sta
 
 > [Zustand](https://github.com/pmndrs/zustand) - современный инструмент для управления состоянием `React-приложений`.
 
-[Пример использования](https://github.com/harryheman/Blog-Posts/tree/master/react-zustand)&nbsp;&nbsp;👀
+[Пример использования](https://github.com/harryheman/Blog-Posts/tree/master/react-zustand).
 
 ## Теория
 

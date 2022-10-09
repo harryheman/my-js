@@ -30,6 +30,7 @@ title: Содержание
 ---
 
 - :memo:&nbsp;&nbsp;[Шпаргалка по TypeScript](./ts)
+- :memo:&nbsp;&nbsp;[TypeScript в деталях](./msatering-ts)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Express API](./express-api)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Axios](./axios)
 - :memo:&nbsp;&nbsp;[Шпаргалка по JSON Server](./json-server)

@@ -13,7 +13,7 @@ tags: ['javascript', 'js', 'socket.io', 'socketio', 'socket', 'guide', 'руко
 - сервера на [Node.js](https://nodejs.org/en/);
 - клиентской библиотеки для браузера (которая также может использоваться на сервере).
 
-[Пример чата на React + Express](https://github.com/harryheman/Blog-Posts/tree/master/react-express-socket.io-chat-app)&nbsp;&nbsp;👀
+[Пример чата на React + Express](https://github.com/harryheman/Blog-Posts/tree/master/react-express-socket.io-chat-app).
 
 ## Введение
 

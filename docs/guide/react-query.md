@@ -10,7 +10,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'react query', 'state
 
 > [React Query](https://react-query.tanstack.com/) - это библиотека для получения, кеширования, синхронизации и обновления состояния `React-приложениях`, хранящегося на сервере.
 
-[Примеры использования](https://react-query.tanstack.com/examples/simple)&nbsp;&nbsp;👀
+[Примеры использования](https://react-query.tanstack.com/examples/simple).
 
 ## Обзор
 

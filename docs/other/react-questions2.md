@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questio
 
 # Вопросы по React. Версия 2
 
-> [Источник](https://github.com/learning-zone/react-interview-questions)&nbsp;&nbsp;👀
+> [Источник](https://github.com/learning-zone/react-interview-questions).
 
 ## `React`, `React Router`, библиотеки для `React-приложений`
 
