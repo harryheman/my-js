@@ -56,7 +56,7 @@ _Настройки `eslint`_
 
 - [Feedback for 'exhaustive-deps' lint rule](https://github.com/facebook/react/issues/14920)
 
-2. Включай [строгий режим](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode). На дворе 2022 год, в конце концов.
+2. Включай [строгий режим](https://reactjs.org/docs/strict-mode.html). На дворе 2022 год, в конце концов.
 
 ```js
 ReactDOM.render(
