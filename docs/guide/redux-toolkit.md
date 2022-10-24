@@ -896,7 +896,7 @@ export const slice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchArticle.fulfilled]: (state, action) => {
-      // Тоже самое для комментариев
+      // То же самое для комментариев
       commentsAdapter.upsertMany(state, action.payload.comments)
     }
   }

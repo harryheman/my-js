@@ -1136,7 +1136,7 @@ export const ChatScreen = () => {
 <img src="https://habrastorage.org/webt/it/cv/ng/itcvngvjcg9pfw0oo7cvszppko4.png" />
 <br />
 
-Делаем тоже самое (только с другим именем, например, `Alice`) в другой вкладке:
+Делаем то же самое (только с другим именем, например, `Alice`) в другой вкладке:
 
 <img src="https://habrastorage.org/webt/f2/mu/pb/f2mupbl50ytfb1qe8a25ye9gryo.png" />
 <br />

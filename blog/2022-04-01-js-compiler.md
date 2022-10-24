@@ -390,7 +390,7 @@ function parse(tokens) {
       }
     }
 
-    // делаем тоже самое для строки
+    // делаем то же самое для строки
     if (token.type === 'string') {
       current++
 
@@ -698,7 +698,7 @@ function transform(ast) {
       }
     },
 
-    // делаем тоже самое для `StringLiteral`
+    // делаем то же самое для `StringLiteral`
     StringLiteral: {
       enter(node, parent) {
         parent._context.push({
