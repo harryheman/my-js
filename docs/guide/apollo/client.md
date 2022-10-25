@@ -498,8 +498,8 @@ const { loading, error, data } = useQuery(GET_DOG_PHOTO, {
 | cache-only        | Ответ на запрос возвращается только из кеша. При отсутствии кеша, выбрасывается исключение                                                                                                                                                                  |
 | cache-and-network | Ответ на запрос возвращается из кеша, после чего отправляется запрос на сервер. Если ответ от сервера отличается от кеша, кеш и результат запроса обновляются. Это позволяет максимально быстро возвращать ответ при сохранении кеша в актуальном состоянии |
 | network-only      | Запрос сразу отправляется на сервер, минуя кеш. При этом, кеш все равно обновляется ответом от сервера                                                                                                                                                                |
-| no-cache          | Тоже самое что `network-only`, но без обновления кеша                                                                                                                                                                                                         |
-| standby           | Тоже самое что `cache-first`, но без обновления кеша. В данном случае кеш может обновляться вручную с помощью `refetch` и `updateQueries`                                                                                                                     |
+| no-cache          | То же самое что `network-only`, но без обновления кеша                                                                                                                                                                                                         |
+| standby           | То же самое что `cache-first`, но без обновления кеша. В данном случае кеш может обновляться вручную с помощью `refetch` и `updateQueries`                                                                                                                     |
 
 **`useQuery API`**
 
@@ -3010,7 +3010,7 @@ const cache = new InMemoryCache({
     Query: {
       fields: {
         feed: {
-          // тоже самое, что `false`
+          // то же самое, что `false`
           keyArgs: [],
           merge(existing, incoming, { args: { offset = 0 } }) {
             // необходимо копировать существующие данные, поскольку они
@@ -3061,7 +3061,7 @@ const cache = new InMemoryCache({
             // на получение его значения к серверу
             return existing && existing.slice(offset, offset + limit)
           },
-          // тоже самое
+          // то же самое
           keyArgs: [],
           merge(existing, incoming, { args: { offset = 0 }}) {
             const merged = existing ? existing.slice(0) : []
