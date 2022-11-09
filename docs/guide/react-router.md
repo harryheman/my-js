@@ -627,10 +627,10 @@ matchPath("/users/2", {
 
 Общий низкоуровневый интерфейс для компонентов роутера. Обычно, используется один из следующих роутеров:
 
-- [&lt;BrowserRouter>](#browser)
-- [&lt;HashRouter>](#hash)
-- [&lt;MemoryRouter>](#memory)
-- [&lt;StaticRouter>](#static)
+- [&lt;BrowserRouter>](#browserrouter)
+- [&lt;HashRouter>](#hashrouter)
+- [&lt;MemoryRouter>](#memoryrouter)
+- [&lt;StaticRouter>](#staticrouter)
 - `<NativeRouter>`
 
 Одним из случаев использования низкоуровневого `<Router>` является синхронизация пользовательской истории с такими библиотеками для управления состоянием приложения, как `Redux` или `MobX`. *Обратите внимание*, что делать этого не рекомендуется.
