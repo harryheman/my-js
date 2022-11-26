@@ -96,9 +96,12 @@ export default function Home() {
           </div>
 
           <p className="hero__subtitle small">
-            Обновление от 09.10.2022:
+            Обновление от 26.11.2022:
             <br />
-            <a href="docs/cheatsheet/mastering-ts">TypeScript в деталях</a>.
+            <a href="docs/cheatsheet/ts-design-patterns">
+              Паттерны проектирования TypeScript
+            </a>
+            .
           </p>
 
           <p className="hero__subtitle small">
