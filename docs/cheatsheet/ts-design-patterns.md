@@ -580,7 +580,7 @@ processData(fileData);
 
 В приведенном примере для парсинга `CSV` используется модуль [d3-dsv](https://www.npmjs.com/package/d3-dsv).
 
-Для обработки `parse-cvs.ts` воспользуемся инструментом командной строки [esno](https://www.npmjs.com/package/esno):
+Для обработки `parse-csv.ts` воспользуемся инструментом командной строки [esno](https://www.npmjs.com/package/esno):
 
 ```
 $ npx esno parse-csv.ts
