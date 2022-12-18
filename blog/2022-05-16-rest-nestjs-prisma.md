@@ -10,7 +10,7 @@ tags: [rest api, typescript, ts, nest.js, nestjs, prisma, admin.js, adminjs, swa
 
 В данном туториале мы разработаем простой сервер на [NestJS](https://nestjs.com/), взаимодействующий с [SQLite](https://www.sqlite.org/index.html) с помощью [Prisma](https://www.prisma.io/), с административной панелью, автоматически генерируемой с помощью [AdminJS](https://docs.adminjs.co/), и описанием интерфейса, автоматически генерируемым с помощью [Swagger](https://swagger.io/). Все это будет приготовлено под соусом [TypeScript](https://www.typescriptlang.org/).
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nestjs-prisma).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nestjs-prisma).
 
 <!--truncate-->
 

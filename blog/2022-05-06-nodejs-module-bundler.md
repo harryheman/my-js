@@ -17,7 +17,7 @@ image: https://habrastorage.org/webt/4-/hn/8w/4-hn8wkkaeafijehpfybkgcounq.png
 
 > [Источник вдохновения](https://github.com/ronami/minipack).
 
-[Репозиторий с кодом](https://github.com/harryheman/Blog-Posts/tree/master/nodejs-bundler).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nodejs-bundler).
 
 <!--truncate-->
 

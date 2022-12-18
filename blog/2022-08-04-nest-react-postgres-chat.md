@@ -27,7 +27,7 @@ tags: [react.js, reactjs, react, nest.js, nestjs, socket.io, postgresql, postgre
 - регистрация подключений и отключений пользователей на сервере и передача этой информации подключенным клиентам;
 - запись, обновление и удаление сообщений из БД в реальном времени на сервере и передача этой информации клиентам.
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-nest-postgres-chat).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-nest-postgres-chat).
 
 <!--truncate-->
 

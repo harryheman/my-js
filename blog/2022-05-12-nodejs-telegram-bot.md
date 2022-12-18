@@ -18,8 +18,7 @@ tags: [node.js, nodejs, telegram bot]
 
 При разработке бота я буду опираться в основном на [официальную документацию](https://core.telegram.org/bots).
 
-- [Репозиторий с кодом сервера для бота](https://github.com/harryheman/Blog-Posts/tree/master/telegram-bot-server).
-- Бот - @aio350_reminder_bot.
+> [Репозиторий с кодом сервера для бота](https://github.com/harryheman/Blog-Posts/tree/master/telegram-bot-server).
 
 <!--truncate-->
 

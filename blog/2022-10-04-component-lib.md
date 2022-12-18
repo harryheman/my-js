@@ -12,9 +12,7 @@ tags: [react.js, reactjs, react, typescript, ts, vite, storybook, component libr
 
 Мы разработаем библиотеку, состоящую из одного простого компонента - кнопки, подготовим библиотеку к публикации в реестре [npm](https://www.npmjs.com/), а также сгенерируем и визуализируем документацию для кнопки.
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-ts-lib).
-
-Если вам это интересно, прошу под кат.
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-ts-lib).
 
 <!--truncate-->
 

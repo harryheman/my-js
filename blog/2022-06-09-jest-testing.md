@@ -22,7 +22,7 @@ tags: [react.js, reactjs, react, jest, testing library]
    3. С помощью кастомных запросов.
 6. Тестирование компонента с помощью снимков `Jest`.
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-testing).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-testing).
 
 <!--truncate-->
 

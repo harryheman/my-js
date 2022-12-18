@@ -14,7 +14,7 @@ tags: [sass, scss, css, design system, css framework]
 
 При разработке дизайн-системы в части терминологии, названий, значений переменных и т.п. я буду ориентироваться, в основном, на [Bootstrap](https://getbootstrap.com/) и немного на [Tailwind](https://tailwindcss.com/).
 
-[Код проекта на GitHub](https://github.com/harryheman/Blog-Posts/tree/master/sass-style).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/sass-style).
 
 <!--truncate-->
 

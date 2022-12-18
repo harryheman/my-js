@@ -10,7 +10,7 @@ tags: [next.js, nextjs, custom server, redis, page caching]
 
 В одной из [предыдущих статей](https://habr.com/ru/company/timeweb/blog/655775/) я рассказывал об оптимизации изображений с помощью [Imgproxy](https://docs.imgproxy.net/GETTING_STARTED) и их кешировании на клиенте с помощью [сервис-воркера](https://developer.mozilla.org/ru/docs/Web/API/Service_Worker_API). В этой статье я хочу рассказать вам о кешировании разметки, генерируемой [Next.js](https://nextjs.org/), с помощью [кастомного сервера](https://nextjs.org/docs/advanced-features/custom-server) и [Redis](https://redis.io/), а также показать один простой прием, позволяющий существенно ускорить серверный рендеринг определенных страниц.
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nextjs-redis).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/nextjs-redis).
 
 <!--truncate-->
 

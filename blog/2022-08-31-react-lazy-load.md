@@ -14,7 +14,7 @@ tags: [react.js, reactjs, react, typescript, ts, custom hook, intersection obser
 
 Назначением хука будет регистрация пересечения (intersection) наблюдаемого (observable) элемента с областью просмотра (или другим элементом). Этот хук предоставляет очень интересные возможности, парочка из которых будет рассмотрена в соответствующем разделе.
 
-[Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-lazy-load)
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-lazy-load).
 
 При разработке инструментов я буду применять систему типов, предоставляемую [TypeScript](https://my-js.org/docs/guide/ts).
 

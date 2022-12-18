@@ -18,7 +18,7 @@ tags: [react.js, reactjs, react, typescript, ts, custom hook, useeffect]
 
 Этого должно быть достаточно для понимания того, о чем мы будем говорить. В дальнейшем будет приведено еще несколько ссылок для более глубокого погружения в тему.
 
-Код проекта, с которым мы будем работать, можно найти [здесь](https://github.com/harryheman/Blog-Posts/tree/master/react-use-deep-effect).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/react-use-deep-effect).
 
 Начнем с примера.
 

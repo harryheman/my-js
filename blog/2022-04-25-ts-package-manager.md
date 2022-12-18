@@ -16,7 +16,7 @@ tags: [node.js, nodejs, typescript, ts, package manager]
 
 > [Источник вдохновения](https://github.com/g-plane/tiny-package-manager).
 
-[Код проекта](https://github.com/harryheman/Blog-Posts/tree/master/ts-package-manager).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/ts-package-manager).
 
 <!--truncate-->
 

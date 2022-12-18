@@ -24,7 +24,7 @@ tags: [javascript, js, motion control, gestures, machine learning]
 
 Для обнаружения и отслеживания руки и жестов будет использоваться [MediaPipe](https://google.github.io/mediapipe/). Для работы с зависимостями - [Yarn](https://yarnpkg.com/).
 
-Код примеров можно найти в [этом репозитории](https://github.com/harryheman/Blog-Posts/tree/master/motion-controls).
+> [Репозиторий с кодом проекта](https://github.com/harryheman/Blog-Posts/tree/master/motion-controls).
 
 <!--truncate-->
 
