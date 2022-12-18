@@ -1,13 +1,10 @@
 ---
 slug: react-use-deep-effect
 title: Разрабатываем кастомный useEffect
-description: Разрабатываем кастомный useEffect
+description: Туториал по разработке кастомного useEffect
 authors: harryheman
-tags: [javascript, js, react.jd, reactjs, react, typescript, ts, hook, "custom hook", хук, "кастомный хук"]
-image: https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png
+tags: [react.js, reactjs, react, typescript, ts, custom hook, useeffect]
 ---
-
-<img src="https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png" />
 
 Привет, друзья!
 

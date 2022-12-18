@@ -3,11 +3,8 @@ slug: ts-package-manager
 title: Разрабатываем пакетный менеджер на TypeScript
 description: Туториал по разработке простого пакетного менеджера на TypeScript
 authors: harryheman
-tags: ['node.js', nodejs, typescript, ts, package manager, npm, yarn, tutorial, пакетный менеджер, туториал]
-image: https://habrastorage.org/webt/4-/hn/8w/4-hn8wkkaeafijehpfybkgcounq.png
+tags: [node.js, nodejs, typescript, ts, package manager]
 ---
-
-<img src="https://habrastorage.org/webt/4-/hn/8w/4-hn8wkkaeafijehpfybkgcounq.png" alt="" />
 
 Привет, друзья!
 
@@ -17,7 +14,7 @@ image: https://habrastorage.org/webt/4-/hn/8w/4-hn8wkkaeafijehpfybkgcounq.png
 
 Наш _CLI_ будет называться _my-yarn_. В качестве [lock-файла](https://habr.com/ru/company/domclick/blog/513130/) (_yarn.lock_, _package-lock.json_) он будет использовать файл _my-yarn.yml_.
 
-[Источник вдохновения](https://github.com/g-plane/tiny-package-manager).
+> [Источник вдохновения](https://github.com/g-plane/tiny-package-manager).
 
 [Код проекта](https://github.com/harryheman/Blog-Posts/tree/master/ts-package-manager).
 

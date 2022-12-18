@@ -1,13 +1,10 @@
 ---
 slug: nextjs-redis
-title: Реализуем кеширование страниц с помощью кастомного сервера Next.js и Redis
-description: Туториал по кешированию страниц с помощью кастомного сервера Next.js и Redis
+title: Кэшируем страницы с помощью кастомного сервера Next.js и Redis
+description: Туториал по кэшированию страниц с помощью кастомного сервера Next.js и Redis
 authors: harryheman
-tags: [javascript, js, next.js, 'nextjs', next, redis, cache, caching, tutorial, туториал, кеш, кеширование]
-image: https://habrastorage.org/webt/2s/qg/xv/2sqgxvllqf-p6w-a6axpi4l8qfo.png
+tags: [next.js, nextjs, custom server, redis, page caching]
 ---
-
-<img src="https://habrastorage.org/webt/2s/qg/xv/2sqgxvllqf-p6w-a6axpi4l8qfo.png" alt="" />
 
 Привет, друзья!
 

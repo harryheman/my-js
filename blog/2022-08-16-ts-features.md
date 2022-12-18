@@ -1,19 +1,16 @@
 ---
 slug: ts-features
-title: Полезные возможности современного TypeScript
+title: Заметка о полезных возможностях современного TypeScript
 description: Заметка о полезных возможностях современного TypeScript
 authors: harryheman
-tags: [typescript, ts, features, types, type, typing, типы, тип, типизация, возможности]
-image: https://habrastorage.org/webt/um/fe/t_/umfet_kngorlggfmgokzowwtsuu.png
+tags: [typescript, ts, modern ts, features]
 ---
-
-<img src="https://habrastorage.org/webt/um/fe/t_/umfet_kngorlggfmgokzowwtsuu.png" />
 
 Привет, друзья!
 
 В данной заметке я расскажу вам о некоторых полезных возможностях современного `TypeScript`.
 
-[Источник](https://obaranovskyi.medium.com/10-typescript-features-you-might-not-be-using-yet-or-didnt-understand-d1f28888ea45).
+> [Источник](https://obaranovskyi.medium.com/10-typescript-features-you-might-not-be-using-yet-or-didnt-understand-d1f28888ea45).
 
 <!--truncate-->
 

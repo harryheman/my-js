@@ -1,13 +1,10 @@
 ---
 slug: css-features
-title: Полезные возможности современного CSS
+title: Заметка о полезных возможностях современного CSS
 description: Заметка о полезных возможностях современного CSS
 authors: harryheman
-tags: [css, modern css, future css, features, styles, style, styling, стили, стиль, стилизация, возможности]
-image: https://habrastorage.org/webt/gi/pt/o1/gipto1m4fdqss_8dtly1lbbodek.jpeg
+tags: [css, modern css, future css, features]
 ---
-
-<img src="https://habrastorage.org/webt/gi/pt/o1/gipto1m4fdqss_8dtly1lbbodek.jpeg" />
 
 Привет, друзья!
 

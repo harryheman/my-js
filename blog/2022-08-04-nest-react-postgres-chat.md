@@ -1,13 +1,10 @@
 ---
 slug: nest-react-postgres-chat
-title: Разрабатываем чат с помощью Nest, React и Postgres
-description: Туториал по разрабатке чата с помощью Nest, React и Postgres
+title: Разрабатываем чат с помощью NestJS, React и Postgres
+description: Туториал по разрабатке простого чата с помощью NestJS, React и Postgres
 authors: harryheman
-tags: [react.js, reactjs, react, nest.js, nestjs, socket.io, socketio, postgresql, postgres, docker-compose, docker, chat, чат]
-image: https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg
+tags: [react.js, reactjs, react, nest.js, nestjs, socket.io, postgresql, postgres, chat app]
 ---
-
-<img src="https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg" />
 
 Привет, друзья!
 

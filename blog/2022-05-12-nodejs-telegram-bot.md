@@ -3,11 +3,8 @@ slug: nodejs-telegram-bot
 title: Разрабатываем бота для Telegram на Node.js
 description: Туториал по разработке простого бота для Telegram на Node.js
 authors: harryheman
-tags: ["node.js", nodejs, telegram, bot, tutorial, бот, туториал]
-image: https://habrastorage.org/webt/cc/tl/u0/cctlu0pn6hxld1s63lnvgr7a1mq.jpeg
+tags: [node.js, nodejs, telegram bot]
 ---
-
-<img src="https://habrastorage.org/webt/cc/tl/u0/cctlu0pn6hxld1s63lnvgr7a1mq.jpeg" />
 
 Привет, друзья!
 

@@ -1,13 +1,10 @@
 ---
 slug: component-lib
 title: Разрабатываем библиотеку компонентов с помощью React и TypeScript
-description: Разрабатываем библиотеку компонентов с помощью React и TypeScript
+description: Туториал по разработке библиотеки компонентов с помощью React и TypeScript
 authors: harryheman
-tags: [javascript, js, react.js, reactjs, react, typescript, ts, vite, storybook, library, lib, component]
-image: https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png
+tags: [react.js, reactjs, react, typescript, ts, vite, storybook, component library, design system]
 ---
-
-<img src="https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg" />
 
 Привет, друзья!
 

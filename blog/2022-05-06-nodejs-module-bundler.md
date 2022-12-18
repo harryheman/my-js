@@ -15,7 +15,7 @@ image: https://habrastorage.org/webt/4-/hn/8w/4-hn8wkkaeafijehpfybkgcounq.png
 
 В данном туториале мы разработаем простой сборщик модулей на [Node.js](https://nodejs.org/en/), который будет компилировать все модули приложения в один минифицированный файл с кодом, соответствующим стандарту _ES5_.
 
-[Источник вдохновения](https://github.com/ronami/minipack).
+> [Источник вдохновения](https://github.com/ronami/minipack).
 
 [Репозиторий с кодом](https://github.com/harryheman/Blog-Posts/tree/master/nodejs-bundler).
 

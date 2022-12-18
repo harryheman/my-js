@@ -3,11 +3,8 @@ slug: preload-scanner
 title: Заметка о сканере предварительной загрузки и пропуске невидимого контента в JavaScript
 description: Заметка о сканере предварительной загрузки и пропуске невидимого контента в JavaScript
 authors: harryheman
-tags: [javascript, js, "preload scanner", "content visibility", "сканер предварительной загрузки", "видимость контента"]
-image: https://habrastorage.org/webt/vn/tg/pz/vntgpzpgemeytutve-gevcpoq0e.jpeg
+tags: [javascript, js, preload scanner, content visibility]
 ---
-
-<img src="https://habrastorage.org/webt/vn/tg/pz/vntgpzpgemeytutve-gevcpoq0e.jpeg" />
 
 Привет, друзья!
 

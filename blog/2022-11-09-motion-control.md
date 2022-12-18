@@ -1,13 +1,10 @@
 ---
 slug: motion-control
 title: Управление содержимым веб-страницы с помощью жестов
-description: Следующий этап развития Веба
+description: Туториал по использованию MediaPipe для управления содержимым веб-страницы с помощью жестов
 authors: harryheman
-tags: [javascript, js, web page, motion control, gestures, machine learning, управление движением, жесты, машинное обучение]
-image: https://habrastorage.org/webt/tb/2u/fx/tb2ufxookpot0mirap8x-dzoedg.jpeg
+tags: [javascript, js, motion control, gestures, machine learning]
 ---
-
-<img src="https://habrastorage.org/webt/tb/2u/fx/tb2ufxookpot0mirap8x-dzoedg.jpeg" />
 
 Привет, друзья!
 

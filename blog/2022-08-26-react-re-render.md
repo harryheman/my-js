@@ -1,13 +1,10 @@
 ---
 slug: react-re-render
-title: Руководство по повторному рендерингу React
-description: Руководство по повторному рендерингу React
+title: Полное руководство по повторному рендерингу React
+description: Полное руководство по повторному рендерингу React
 authors: harryheman
-tags: [javascript, js, react.js, reactjs, react, rendering, render, rerender, рендеринг, повторный рендеринг, ререндеринг]
-image: https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png
+tags: [react.js, reactjs, react, render, rerender]
 ---
-
-<img src="https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png" />
 
 Привет, друзья!
 

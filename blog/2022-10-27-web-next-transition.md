@@ -3,11 +3,8 @@ slug: web-next-transition
 title: Следующий этап развития Веба
 description: Следующий этап развития Веба
 authors: harryheman
-tags: [javascript, js, web, transition, mpa, pempa, spa, pespa, remix, веб, эволюция, развитие, архитектура]
-image: https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg
+tags: [javascript, js, web, mpa, pempa, spa, pespa, remix]
 ---
-
-<img src="https://habrastorage.org/webt/ma/po/lv/mapolvqq4uunxfqoaviv3g9km9y.jpeg" />
 
 Привет, друзья!
 

@@ -1,13 +1,10 @@
 ---
 slug: sass-style
 title: Разрабатываем дизайн-систему с помощью Sass
-description: Туториал по разработке дизайн системы с помощью Sass
+description: Туториал по разработке простой дизайн-системы с помощью Sass
 authors: harryheman
-tags: [sass, scss, css, "design system", "css framework", styles, "дизайн-система", "css-фреймворк", стили]
-image: https://habrastorage.org/webt/wx/8b/pq/wx8bpqxqrxavaxnglljyptwnpme.jpeg
+tags: [sass, scss, css, design system, css framework]
 ---
-
-<img src="https://habrastorage.org/webt/wx/8b/pq/wx8bpqxqrxavaxnglljyptwnpme.jpeg" />
 
 Привет, друзья!
 

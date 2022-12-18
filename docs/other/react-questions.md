@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'interview', 'questio
 
 # Вопросы по React. Версия 1
 
-[Источник](https://github.com/sudheerj/reactjs-interview-questions).
+> [Источник](https://github.com/sudheerj/reactjs-interview-questions).
 
 ## Ключевые концепции `React`
 

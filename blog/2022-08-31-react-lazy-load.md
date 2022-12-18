@@ -1,13 +1,10 @@
 ---
 slug: react-lazy-load
 title: Разрабатываем HOC и хук для наблюдения за элементами
-description: Разрабатываем HOC и хук для наблюдения за элементами
+description: Туториал по разработке HOC и хука для наблюдения за элементами
 authors: harryheman
-tags: [javascript, js, react.jd, reactjs, react, typescript, ts, hook, "custom hook", "intersection observer api", "intersection observer", hoc, "higher order component", хук, "кастомный хук", компонент высшего порядка]
-image: https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png
+tags: [react.js, reactjs, react, typescript, ts, custom hook, intersection observer, hoc]
 ---
-
-<img src="https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png" />
 
 Привет, друзья!
 

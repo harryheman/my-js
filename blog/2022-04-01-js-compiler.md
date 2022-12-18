@@ -3,11 +3,8 @@ slug: js-compiler
 title: Разрабатываем компилятор кода на JavaScript
 description: Туториал по разработке простого компилятора кода на JavaScript
 authors: harryheman
-tags: [javascript, js, compiler, tutorial, компилятор, туториал]
-image: https://habrastorage.org/webt/gp/rx/uj/gprxuj2skxbmhitwrnlg1ibcalm.jpeg
+tags: [javascript, js, code compiler]
 ---
-
-<img src="https://habrastorage.org/webt/gp/rx/uj/gprxuj2skxbmhitwrnlg1ibcalm.jpeg" alt="" />
 
 Привет, друзья!
 

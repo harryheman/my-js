@@ -8,7 +8,7 @@ tags: ["node.js", nodejs, web-streams, stream, веб-потоки, поток]
 
 # Web Streams
 
-[Источник](https://2ality.com/2022/06/web-streams-nodejs.html).
+> [Источник](https://2ality.com/2022/06/web-streams-nodejs.html).
 
 Веб-потоки (web streams) - это стандарт для потоков (streams), который поддерживается всеми основными веб-платформами: веб-браузерами, [Node.js](https://nodejs.org/) и [Deno](https://deno.land/). Потоки - это абстракция для чтения и записи данных последовательно, небольшими частями из любого вида источника - файлов, данных, находящихся на сервере, и т.д.
 

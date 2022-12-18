@@ -1,13 +1,10 @@
 ---
 slug: jest-testing
 title: Тестируем React-компоненты с помощью Jest и Testing Library
-description: Тестируем React-компоненты с помощью Jest и Testing Library
+description: Туториал по тестированию React-компонентов с помощью Jest и Testing Library
 authors: harryheman
-tags: [javascript, js, "react.js", reactjs, react, jest, "testing library", testing, test, тестирование, тест]
-image: https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png
+tags: [react.js, reactjs, react, jest, testing library]
 ---
-
-<img src="https://habrastorage.org/webt/jc/hw/st/jchwst6a3nwlxlscnmuw5tdhmry.png" />
 
 Привет, друзья!
 

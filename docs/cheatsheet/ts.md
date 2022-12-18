@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'typescript', 'ts', 'cheatsheet', 'шпаргалка
 
 # Шпаргалка по TypeScript
 
-[Источник](https://www.sitepen.com/blog/typescript-cheat-sheet).
+> [Источник](https://www.sitepen.com/blog/typescript-cheat-sheet).
 
 ## Использование
 
