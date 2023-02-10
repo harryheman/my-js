@@ -1,5 +1,5 @@
 ---
-hide_title: true
+sidebar_position: 2
 title: Руководство по Next.js
 description: Руководство по Next.js
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'next.js', 'nextjs', 'next', 'guide', 'руководство', 'мета-фреймворк']
