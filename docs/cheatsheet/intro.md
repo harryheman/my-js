@@ -26,6 +26,7 @@ title: Содержание
 - :memo:&nbsp;&nbsp;[Примеры кастомных хуков React](./custom-hooks)
 - :memo:&nbsp;&nbsp;[Примеры кастомных компонентов React](./custom-components)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Zustand](./zustand)
+- :memo:&nbsp;&nbsp;[Туториал по работе с таблицами с помощью React Table](./react-table)
 
 ---
 

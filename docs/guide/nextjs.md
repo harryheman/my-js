@@ -4,9 +4,10 @@ title: Руководство по Next.js
 description: Руководство по Next.js
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'next.js', 'nextjs', 'next', 'guide', 'руководство', 'мета-фреймворк']
 tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'next.js', 'nextjs', 'next', 'guide', 'руководство', 'мета-фреймворк']
+hide_title: true
 ---
 
-# Next.js
+# Руководство по Next.js
 
 > [Next.js](https://nextjs.org/) - это мета-фреймворк для разработки фулстек-приложений, основанный на [React](https://ru.reactjs.org/). Особенностями `Next.js` являются: гибридный статический и серверный рендеринг, встроенная поддержка [TypeScript](https://www.typescriptlang.org/), умная сборка, предварительное разрешение маршрутов и др.
 

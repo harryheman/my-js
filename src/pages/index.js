@@ -9,7 +9,7 @@ import styles from './styles.module.css'
 const features = [
   {
     title: 'JavaScript',
-    imageUrl: 'img/logo.webp'
+    imageUrl: 'img/logo.webp',
     // description: (
     //   <>
     //     Docusaurus was designed from the ground up to be easily installed and
@@ -19,20 +19,20 @@ const features = [
   },
   {
     title: 'React',
-    imageUrl: 'img/react.webp'
+    imageUrl: 'img/react.webp',
   },
   {
     title: 'TypeScript',
-    imageUrl: 'img/ts.webp'
+    imageUrl: 'img/ts.webp',
   },
   {
     title: 'Node.js',
-    imageUrl: 'img/nodejs.webp'
+    imageUrl: 'img/nodejs.webp',
   },
   {
     title: 'And More',
-    imageUrl: 'img/coding.webp'
-  }
+    imageUrl: 'img/coding.webp',
+  },
 ]
 
 function Feature({ imageUrl, title, description }) {
@@ -87,7 +87,7 @@ export default function Home() {
             <Link
               className={clsx(
                 'button button--outline button--secondary button--lg go',
-                styles.getStarted
+                styles.getStarted,
               )}
               to={useBaseUrl('docs/guide/intro-guide')}
             >
@@ -96,13 +96,15 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 10.02.2023:
+            Обновление от 05.03.2023:
             <br />
-            <a
-              href='https://www.npmjs.com/package/@my-js/utils?activeTab=readme'
-              target='_blank'
-            >
-              @my-js/utils
+            <a href='docs/guide/nextjs-tutorial'>
+              Туториал по разработке клиент-серверного приложения с помощью
+              Next.js
+            </a>{' '}
+            и{' '}
+            <a href='docs/cheatsheet/react-table'>
+              Туториал по работе с таблицами с помощью React Table
             </a>
             .
           </p>
