@@ -78,8 +78,8 @@ export default function Home() {
             <a href='docs/guide/intro-guide'>Руководства</a>,{' '}
             <a href='docs/cheatsheet/intro-cheatsheet'>шпаргалки</a>,{' '}
             <a href='docs/other/intro-other'>вопросы и другие материалы</a> по
-            JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL,
-            Docker и другим технологиям, а также{' '}
+            JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma,
+            GraphQL, Docker и другим технологиям, а также{' '}
             <a href='blog'>Блог по веб-разработке</a>.
           </p>
 
