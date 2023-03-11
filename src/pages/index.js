@@ -96,17 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 05.03.2023:
+            Обновление от 11.03.2023:
             <br />
-            <a href='docs/guide/nextjs-tutorial'>
-              Туториал по разработке клиент-серверного приложения с помощью
-              Next.js
-            </a>{' '}
-            и{' '}
-            <a href='docs/cheatsheet/react-table'>
-              Туториал по работе с таблицами с помощью React Table
-            </a>
-            .
+            <a href='docs/guide/remix'>Руководство по Remix</a>
           </p>
 
           <p className='hero__subtitle small'>
