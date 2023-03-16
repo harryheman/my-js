@@ -2885,3 +2885,629 @@ class UserService implements OnApplicationShutdown {
 ```
 
 _Обратите внимание_: вызов _app.close()_ не завершает процесс _Node.js_, а только запускает хуки _OnModuleDestroy_ и _OnApplicationShutdown_, поэтому если у нас имеются счетчики (timers), длительные фоновые задачи и т.п., процесс не будет завершен автоматически.
+
+## База данных / Database
+
+Nest позволяет взаимодействовать с любой базой данных SQL или NoSQL. В данном разделе мы рассмотрим интеграцию с MongoDB с помощью Mongoose и SQLite с помощью Prisma.
+
+### Mongo
+
+Устанавливаем необходимые зависимости:
+
+```bash
+npm i @nestjs/mongoose mongoose
+```
+
+Импортируем MongooseModule в корневой AppModule:
+
+```ts
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+
+@Module({
+  imports: [MongooseModule.forRoot('mongodb://localhost/nest')],
+})
+export class AppModule {}
+```
+
+Метод `forRoot` принимает такой же объект с настройками, что и метод [mongoose.connect](https://mongoosejs.com/docs/connections.html).
+
+__Внедрение модели__
+
+В Mongoose все начинается со [схемы](https://mongoosejs.com/docs/guide.html). Схема соответствует коллекции в Mongo и определяет форму документов коллекции. Схемы используются для определения [моделей](https://mongoosejs.com/docs/models.html). Модели отвечают за создание и чтение документов из БД.
+
+Схемы могут создаваться с помощью декораторов Nest или с помощью Mongoose вручную. Рекомендуется использовать первый способ, поскольку это уменьшает количество шаблонного кода и повышает читаемость кода.
+
+Определяем `CatSchema`:
+
+```ts
+// schemas/cat.schema.ts
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export type CatDocument = HydratedDocument<Cat>;
+
+@Schema()
+export class Cat {
+  @Prop()
+  name: string;
+
+  @Prop()
+  age: number;
+
+  @Prop()
+  breed: string;
+}
+
+export const CatSchema = SchemaFactory.createForClass(Cat);
+```
+
+Декоратор `@Schema` помечает класс как определение схемы. Он связывает класс `Cat` с коллекцией `cats` (_обратите внимание_ на `s` в конце). Этот декоратор принимает опциональный параметр - объект с [настройками схемы](https://mongoosejs.com/docs/guide.html#options).
+
+Декоратор `@Prop` определяет свойство документа. В `CatSchema` определено 3 свойства: `name`, `age` и `breed`. [Типы схемы](https://mongoosejs.com/docs/schematypes.html) для этих свойств автоматически выводятся благодаря метаданным TS и отражению (reflection). В более сложных случаях, когда типы не могут быть выведены автоматически, они должны определяться в явном виде:
+
+```ts
+@Prop([String])
+tags: string[];
+```
+
+`@Prop()` принимает опциональный объект с [настройками свойства](https://mongoosejs.com/docs/schematypes.html#schematype-options). Эти настройки позволяют пометить свойство как обязательное, неизменяемое или определить его дефолтное значение.
+
+`@Prop()` также используется для определения связи (отношения) с другой моделью. Например, если `Cat` имеет `Owner` (владелец), запись о котором хранится в коллекции `owners`, свойство должно иметь тип (type) и ссылку (ref):
+
+```ts
+import * as mongoose from 'mongoose';
+import { Owner } from '../owners/schemas/owner.schema';
+
+// в определении класса
+@Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Owner' })
+owner: Owner;
+```
+
+Для отношения "Один-ко-Многим" настройка свойства должна выглядеть так:
+
+```ts
+@Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Owner' }] })
+owner: Owner[];
+```
+
+Определяем `CatsModule`:
+
+```ts
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { CatsController } from './cats.controller';
+import { CatsService } from './cats.service';
+import { Cat, CatSchema } from './schemas/cat.schema';
+
+@Module({
+  imports: [MongooseModule.forFeature([{ name: Cat.name, schema: CatSchema }])],
+  controllers: [CatsController],
+  providers: [CatsService],
+})
+export class CatsModule {}
+```
+
+`MongooseModule` предоставляет метод `forFeature` для настройки модуля, включая определение моделей, которые должны быть зарегистрированы в текущей области видимости (scope). При необходимости использования моделей в другом модуле `MongooseModule` следует добавить в раздел `exports` и импортировать `CatsModule` в другой модуль.
+
+После регистрации схемы модель `Cat` может быть внедрена в `CatsService` с помощью декоратора `@InjectModel`:
+
+```ts
+import { Model } from 'mongoose';
+import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Cat, CatDocument } from './schemas/cat.schema';
+import { CreateCatDto } from './dto/create-cat.dto';
+
+@Injectable()
+export class CatsService {
+  constructor(@InjectModel(Cat.name) private catModel: Model<CatDocument>) {}
+
+  async create(createCatDto: CreateCatDto): Promise<Cat> {
+    const createdCat = new this.catModel(createCatDto);
+    return createdCat.save();
+  }
+
+  async findAll(): Promise<Cat[]> {
+    return this.catModel.find().exec();
+  }
+}
+```
+
+__Подключение__
+
+Для доступа к нативному объекту [подключения Mongoose](https://mongoosejs.com/docs/api.html#Connection), это подключение необходимо внедрить в сервис с помощью декоратора `@InjectConnection`:
+
+```ts
+import { Injectable } from '@nestjs/common';
+import { InjectConnection } from '@nestjs/mongoose';
+import { Connection } from 'mongoose';
+
+@Injectable()
+export class CatsService {
+  constructor(@InjectConnection() private connection: Connection) {}
+}
+```
+
+__Хуки (посредники)__
+
+Посредники (промежуточное ПО - middleware, предварительные и последующие хуки - pre/post hooks) - это функции, которым передается управление в процессе выполнения асинхронных функций. Посредники определяются на уровне схемы и могут быть полезны для написания плагинов. Вызов `pre()` и `post()` после компиляции модели в Mongoose не работает. Для регистрации хука перед регистрацией модели используется метод `forFeatureAsync` из `MongooseModule` вместе с провайдером фабрики (например, `useFactory()`). Эта техника позволяет получить доступ к объекту схемы и использовать метод `pre` или `post` для регистрации хука на этой схеме:
+
+```ts
+@Module({
+  imports: [
+    MongooseModule.forFeatureAsync([
+      {
+        name: Cat.name,
+        useFactory: () => {
+          const schema = CatsSchema;
+          schema.pre('save', function () {
+            console.log('Hello from pre save');
+          });
+          return schema;
+        },
+      },
+    ]),
+  ],
+})
+export class AppModule {}
+```
+
+Фабричная функция может быть асинхронной и может внедрять зависимости с помощью `inject`:
+
+```ts
+@Module({
+  imports: [
+    MongooseModule.forFeatureAsync([
+      {
+        name: Cat.name,
+        imports: [ConfigModule],
+        useFactory: (configService: ConfigService) => {
+          const schema = CatsSchema;
+          schema.pre('save', function() {
+            console.log(
+              `${configService.get('APP_NAME')}: Hello from pre save`,
+            ),
+          });
+          return schema;
+        },
+        inject: [ConfigService],
+      },
+    ]),
+  ],
+})
+export class AppModule {}
+```
+
+__Плагины__
+
+Для регистрации [плагина](https://mongoosejs.com/docs/plugins.html) также используется метод `forFeatureAsync`:
+
+```ts
+@Module({
+  imports: [
+    MongooseModule.forFeatureAsync([
+      {
+        name: Cat.name,
+        useFactory: () => {
+          const schema = CatsSchema;
+          schema.plugin(require('mongoose-autopopulate'));
+          return schema;
+        },
+      },
+    ]),
+  ],
+})
+export class AppModule {}
+```
+
+Для регистрации плагина для всех схем используется метод `plugin` объекта `Connection`. Для доступа к этому объекту перед созданием моделей используется метод `connectionFactory`:
+
+```ts
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+
+@Module({
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/test', {
+      connectionFactory: (connection) => {
+        connection.plugin(require('mongoose-autopopulate'));
+        return connection;
+      }
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+__Асинхронная настройка__
+
+Для асинхронной (динамической) настройки модуля используется метод `forRootAsync`:
+
+```ts
+MongooseModule.forRootAsync({
+  useFactory: () => ({
+    uri: 'mongodb://localhost/nest',
+  }),
+});
+```
+
+Фабричная функция может быть асинхронной и может внедрять зависимости с помощью `inject`:
+
+```ts
+MongooseModule.forRootAsync({
+  imports: [ConfigModule],
+  useFactory: async (configService: ConfigService) => ({
+    uri: configService.get<string>('MONGODB_URI'),
+  }),
+  inject: [ConfigService],
+});
+```
+
+### Postgres
+
+Устанавливаем Prisma в качестве зависимости для разработки:
+
+```bash
+npm i -D prisma
+```
+
+Инициализируем Prisma:
+
+```bash
+npx prisma init
+```
+
+Это команда создает директорию `prisma` со следующими файлами:
+
+- `schema.prisma` - определяет подключение к БД и схему БД;
+- `.env` - содержит переменную среды окружения `DATABASE_URL`, которая используется для подключения к БД.
+
+Настраиваем подключение к БД в блоке `datasource` файла `schema.prisma`:
+
+```prisma
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+```
+
+Редактируем файл `.env`:
+
+```env
+DATABASE_URL="file:./dev.db"
+```
+
+### Создание таблицы
+
+Для создания таблицы в БД необходимо сделать следующее:
+
+- определить модель в `schema.prisma`;
+- создать и выполнить миграцию с помощью [Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate).
+
+Определяем модели:
+
+```prisma
+model User {
+  id    Int     @default(autoincrement()) @id
+  email String  @unique
+  name  String?
+  posts Post[]
+}
+
+model Post {
+  id        Int      @default(autoincrement()) @id
+  title     String
+  content   String?
+  published Boolean? @default(false)
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId  Int?
+}
+```
+
+Создаем и выполняем миграцию:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+### Установка и генерация Prisma Client
+
+Prisma Client - это типобезопасный (type-safe) клиент БД, генерируемый на основе моделей, позволяющий выполнять операции [CRUD](https://www.prisma.io/docs/concepts/components/prisma-client/crud) для моделей.
+
+Устанавливаем Prisma Client:
+
+```bash
+npm i @prisma/client
+```
+
+В процессе установки автоматически вызывается команда `prisma generate` для генерации клиента в `node_modules/@prisma/client`. В дальнейшем после каждого изменения моделей данная команда должна запускаться вручную для обновления клиента.
+
+### Использование Prisma Client в сервисах Nest
+
+Для абстрагирования инстанцирования `PrismaClient` и подключения к БД имеет смысл создать `PrismaService`. Создаем в директории `src` файл `prisma.service.ts` следующего содержания:
+
+```ts
+import { INestApplication, Injectable, OnModuleInit } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
+
+@Injectable()
+export class PrismaService extends PrismaClient implements OnModuleInit {
+  async onModuleInit() {
+    await this.$connect();
+  }
+
+  async enableShutdownHooks(app: INestApplication) {
+    this.$on('beforeExit', async () => {
+      await app.close();
+    });
+  }
+}
+```
+
+Создаем файл `user.service.ts` следующего содержания:
+
+```ts
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from './prisma.service';
+import { User, Prisma } from '@prisma/client';
+
+@Injectable()
+export class UserService {
+  constructor(private prisma: PrismaService) {}
+
+  async user(
+    userWhereUniqueInput: Prisma.UserWhereUniqueInput,
+  ): Promise<User | null> {
+    return this.prisma.user.findUnique({
+      where: userWhereUniqueInput,
+    });
+  }
+
+  async users(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.UserWhereUniqueInput;
+    where?: Prisma.UserWhereInput;
+    orderBy?: Prisma.UserOrderByWithRelationInput;
+  }): Promise<User[]> {
+    const { skip, take, cursor, where, orderBy } = params;
+    return this.prisma.user.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+      orderBy,
+    });
+  }
+
+  async createUser(data: Prisma.UserCreateInput): Promise<User> {
+    return this.prisma.user.create({
+      data,
+    });
+  }
+
+  async updateUser(params: {
+    where: Prisma.UserWhereUniqueInput;
+    data: Prisma.UserUpdateInput;
+  }): Promise<User> {
+    const { where, data } = params;
+    return this.prisma.user.update({
+      data,
+      where,
+    });
+  }
+
+  async deleteUser(where: Prisma.UserWhereUniqueInput): Promise<User> {
+    return this.prisma.user.delete({
+      where,
+    });
+  }
+}
+```
+
+Создаем файл `post.service.ts` следующего содержания:
+
+```ts
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from './prisma.service';
+import { Post, Prisma } from '@prisma/client';
+
+@Injectable()
+export class PostService {
+  constructor(private prisma: PrismaService) {}
+
+  async post(
+    postWhereUniqueInput: Prisma.PostWhereUniqueInput,
+  ): Promise<Post | null> {
+    return this.prisma.post.findUnique({
+      where: postWhereUniqueInput,
+    });
+  }
+
+  async posts(params: {
+    skip?: number;
+    take?: number;
+    cursor?: Prisma.PostWhereUniqueInput;
+    where?: Prisma.PostWhereInput;
+    orderBy?: Prisma.PostOrderByWithRelationInput;
+  }): Promise<Post[]> {
+    const { skip, take, cursor, where, orderBy } = params;
+    return this.prisma.post.findMany({
+      skip,
+      take,
+      cursor,
+      where,
+      orderBy,
+    });
+  }
+
+  async createPost(data: Prisma.PostCreateInput): Promise<Post> {
+    return this.prisma.post.create({
+      data,
+    });
+  }
+
+  async updatePost(params: {
+    where: Prisma.PostWhereUniqueInput;
+    data: Prisma.PostUpdateInput;
+  }): Promise<Post> {
+    const { data, where } = params;
+    return this.prisma.post.update({
+      data,
+      where,
+    });
+  }
+
+  async deletePost(where: Prisma.PostWhereUniqueInput): Promise<Post> {
+    return this.prisma.post.delete({
+      where,
+    });
+  }
+}
+```
+
+Эти сервисы абстрагируют GRUD-запросы, предоставляемые Prisma, и используются для определения роутов приложения.
+
+Редактируем файл `app.controller.ts`:
+
+```ts
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Body,
+  Put,
+  Delete,
+} from '@nestjs/common';
+import { UserService } from './user.service';
+import { PostService } from './post.service';
+import { User as UserModel, Post as PostModel } from '@prisma/client';
+
+@Controller()
+export class AppController {
+  constructor(
+    private readonly userService: UserService,
+    private readonly postService: PostService,
+  ) {}
+
+  @Get('post/:id')
+  async getPostById(@Param('id') id: string): Promise<PostModel> {
+    return this.postService.post({ id: Number(id) });
+  }
+
+  @Get('feed')
+  async getPublishedPosts(): Promise<PostModel[]> {
+    return this.postService.posts({
+      where: { published: true },
+    });
+  }
+
+  @Get('filtered-posts/:searchString')
+  async getFilteredPosts(
+    @Param('searchString') searchString: string,
+  ): Promise<PostModel[]> {
+    return this.postService.posts({
+      where: {
+        OR: [
+          {
+            title: { contains: searchString },
+          },
+          {
+            content: { contains: searchString },
+          },
+        ],
+      },
+    });
+  }
+
+  @Post('post')
+  async createDraft(
+    @Body() postData: { title: string; content?: string; authorEmail: string },
+  ): Promise<PostModel> {
+    const { title, content, authorEmail } = postData;
+    return this.postService.createPost({
+      title,
+      content,
+      author: {
+        connect: { email: authorEmail },
+      },
+    });
+  }
+
+  @Post('user')
+  async signupUser(
+    @Body() userData: { name?: string; email: string },
+  ): Promise<UserModel> {
+    return this.userService.createUser(userData);
+  }
+
+  @Put('publish/:id')
+  async publishPost(@Param('id') id: string): Promise<PostModel> {
+    return this.postService.updatePost({
+      where: { id: Number(id) },
+      data: { published: true },
+    });
+  }
+
+  @Delete('post/:id')
+  async deletePost(@Param('id') id: string): Promise<PostModel> {
+    return this.postService.deletePost({ id: Number(id) });
+  }
+}
+```
+
+Контроллер реализует следующие роуты:
+
+`GET`:
+
+- `/post/:id` - возвращает один пост по `id`;
+- `/feed` - возвращает все опубликованные посты;
+- `/filter-posts/:searchString` - возвращает посты, отфильтрованные по `title` или `content`.
+
+`POST`:
+
+- `/post` - создает новый пост:
+  - тело запроса (body):
+    - `title: string` (обязательно) - заголовок поста;
+    - `content: string` (опционально) - содержимое поста;
+    - `authorEmail: string` (обязательно) - email пользователя, создающего пост;
+- `/user` - создает нового пользователя:
+  - тело запроса:
+    - `email: string` (обязательно) - email пользователя;
+    - `name: string` (опционально) - имя пользователя.
+
+`PUT`:
+
+- `/publish/:id` - публикует пост с указанным `id`.
+
+`DELETE`:
+
+- `/post/:id` - удаляет пост с указанным `id`.
+
+## Настройка / Configuration
+
+Пакет `@nestjs/config` позволяет динамически загружать переменные среды окружения.
+
+Устанавливаем его:
+
+```bash
+npm i @nestjs/config
+```
+
+Импортируем `ConfigModule` в корневой `AppModule`:
+
+```ts
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+})
+export class AppModule {}
+```

@@ -39,7 +39,6 @@ title: Содержание
 - :memo:&nbsp;&nbsp;[Шпаргалка по JSONWebToken](./jsonwebtoken)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Cors](./cors)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Helmet](./helmet)
-- :memo:&nbsp;&nbsp;[Шпаргалка по Google Spreadsheet](./google-spreadsheet)
 
 ---
 
