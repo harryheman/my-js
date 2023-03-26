@@ -13,84 +13,53 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom hooks', 'hook
 Данный хук позволяет выполнять колбеки перед закрытием (перезагрузкой) страницы:
 
 ```js
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
-export function useBeforeUnload(fn) {
-  const cb = useRef(fn)
-
+export default function useBeforeUnload(cb) {
+  // обратите внимание: функция `cb` должна быть мемоизирована
   useEffect(() => {
-    const onUnload = cb.current
-    window.addEventListener('beforeunload', onUnload)
+    window.addEventListener('beforeunload', cb)
     return () => {
-      window.removeEventListener('beforeunload', onUnload)
+      window.removeEventListener('beforeunload', cb)
     }
   }, [cb])
 }
 ```
 
-Более универсальная версия:
-
-```js
-import { useEffect } from 'react'
-
-export const useBeforeUnload = (value) => {
-  const onUnload = (e) => {
-    let returnValue
-    if (typeof value === 'function') {
-      returnValue = value(e)
-    } else {
-      returnValue = value
-    }
-    if (returnValue) {
-      e.preventDefault()
-      e.returnValue = returnValue
-    }
-    return returnValue
-  }
-
-  useEffect(() => {
-    window.addEventListener('beforeunload', onUnload)
-    return () => window.removeEventListener('beforeunload', onUnload)
-    // eslint-disable-next-line
-  }, [])
-}
-```
-
 ## useClick
 
-Данные хуки позволяют запускать колбеки при клике внутри или снаружи (за пределами) целевого элемента:
+Данные хуки позволяют запускать коллбэки при клике внутри или за пределами целевого элемента:
 
 ```js
 import { useEffect } from 'react'
 
+// обратите внимание: функция `cb` должна быть мемоизирована
 export const useClickInside = (ref, cb) => {
-  const onClick = ({ target }) => {
-    if (ref.current && ref.current.contains(target)) {
-      cb()
-    }
-  }
-
   useEffect(() => {
+    const onClick = ({ target }) => {
+      if (ref.current?.contains(target)) {
+        cb()
+      }
+    }
     document.addEventListener('click', onClick)
     return () => {
       document.removeEventListener('click', onClick)
     }
-  })
+  }, [cb])
 }
 
 export const useClickOutside = (ref, cb) => {
-  const onClick = ({ target }) => {
-    if (ref.current && !ref.current.contains(target)) {
-      cb()
-    }
-  }
-
   useEffect(() => {
+    const onClick = ({ target }) => {
+      if (ref.current && !ref.current.contains(target)) {
+        cb()
+      }
+    }
     document.addEventListener('click', onClick)
     return () => {
       document.removeEventListener('click', onClick)
     }
-  })
+  }, [cb])
 }
 
 // пример использования
@@ -129,13 +98,13 @@ export function App() {
   const [insideCount, setInsideCount] = useState(0)
   const [outsideCount, setOutsideCount] = useState(0)
 
-  const insideCb = () => {
+  const insideCb = useCallback(() => {
     setInsideCount((c) => c + 1)
-  }
+  }, [])
 
-  const outsideCb = () => {
+  const outsideCb = useCallback(() => {
     setOutsideCount((c) => c + 1)
-  }
+  }, [])
 
   useClickInside(insideRef, insideCb)
 
@@ -171,32 +140,23 @@ export function App() {
 Данный хук позволяет регистрировать обработчики событий на целевом элементе:
 
 ```js
-import { useRef, useEffect } from 'react'
+import { useEffect } from 'react'
 
-export function useEventListener(ev, cb, $ = window) {
-  const cbRef = useRef()
-
-  // меняем значение ссылки на колбек при его изменении
+export function useEventListener(ev, cb, el = window) {
+  // обратите внимание: функция `cb` должна быть мемоизирована
   useEffect(() => {
-    cbRef.current = cb
-  }, [cb])
-
-  useEffect(() => {
-    const listener = (ev) => cbRef.current(ev)
-
-    $.addEventListener(ev, listener)
-
+    const handle = (e) => cb(e)
+    el.addEventListener(ev, handle)
     return () => {
-      $.removeEventListener(ev, listener)
+      el.removeEventListener(ev, handle)
     }
-  }, [ev, $])
+  }, [ev, cb, el])
 }
 
 // пример использования
 export function App() {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
 
-  // небольшая оптимизация
   const cb = useCallback(
     ({ clientX, clientY }) => {
       setCoords({ x: clientX, y: clientY })
@@ -230,8 +190,6 @@ export function useFetch(url, options) {
   const cache = useRef({})
 
   useEffect(() => {
-    if (!url) return
-
     async function fetchData() {
       if (cache.current[url]) {
         const data = cache.current[url]
@@ -251,7 +209,7 @@ export function useFetch(url, options) {
     }
 
     fetchData()
-  }, [url])
+  }, [url, options])
 
   return { isLoading, response, error }
 }
@@ -264,35 +222,41 @@ export function useFetch(url, options) {
 ```js
 import { useState, useEffect, useRef } from 'react'
 
-export function useHover() {
-  const [value, setValue] = useState(false)
-
-  const ref = useRef(null)
-
-  const handleMouseOver = () => setValue(true)
-  const handleMouseOut = () => setValue(false)
+export function useHover(target, onEnter, onLeave) {
+  const [isHovered, setHovered] = useState(false)
 
   useEffect(() => {
-    const node = ref.current
-    if (node) {
-      node.addEventListener('mouseover', handleMouseOver)
-      node.addEventListener('mouseout', handleMouseOut)
+    const handleEnter = (e) => {
+      setHovered(true)
+      if (onEnter) {
+        onEnter(e)
+      }
     }
+    const onLeave = (e) => {
+      setHovered(false)
+      if (onLeave) {
+        onLeave(e)
+      }
+    }
+
+    target.addEventListener('pointerenter', handleEnter)
+    target.addEventListener('pointerleave', handleLeave)
 
     return () => {
-      node.removeEventListener('mouseover', handleMouseOver)
-      node.removeEventListener('mouseout', handleMouseOut)
+      target.removeEventListener('pointerenter', handleEnter)
+      target.removeEventListener('pointerleave', handleLeave)
     }
-  }, [ref.current])
+  }, [target, cb])
 
-  return [ref, value]
+  return isHovered
 }
 
 // пример использования
 export function App() {
-  const [hoverRef, isHovered] = useHover()
+  const targetRef = useRef()
+  const isHovered = useHover(targetRef.current)
 
-  return <div ref={hoverRef}>{isHovered ? '😊' : '😢'}</div>
+  return <div ref={targetRef}>{isHovered ? '😊' : '😢'}</div>
 }
 ```
 
@@ -304,32 +268,31 @@ export function App() {
 import { useState, useEffect } from 'react'
 
 export function useKeyPress(target) {
-  const [keyPressed, setKeyPressed] = useState(false)
-
-  const onDown = ({ key }) => {
-    if (key === target) {
-      setKeyPressed(true)
-    }
-  }
-
-  const onUp = ({ key }) => {
-    if (key === target) {
-      setKeyPressed(false)
-    }
-  }
+  const [isPressed, setPressed] = useState(false)
 
   useEffect(() => {
-    window.addEventListener('keydown', onDown)
-    window.addEventListener('keyup', onUp)
+    const handleDown = ({ key }) => {
+      if (key === target) {
+        setPressed(true)
+      }
+    }
+
+    const handleUp = ({ key }) => {
+      if (key === target) {
+        setPressed(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleDown)
+    window.addEventListener('keyup', handleUp)
 
     return () => {
-      window.removeEventListener('keydown', onDown)
-      window.removeEventListener('keyup', onUp)
+      window.removeEventListener('keydown', handleDown)
+      window.removeEventListener('keyup', handleUp)
     }
-  // eslint-disable-next-line
-  }, [])
+  }, [target])
 
-  return keyPressed
+  return isPressed
 }
 
 // пример использования
@@ -394,38 +357,6 @@ export function useDisableScroll() {
 }
 ```
 
-## useOnline
-
-Хук для определения статуса пользователя:
-
-```js
-import { useState, useEffect } from 'react'
-
-const getStatus = () =>
-  typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean'
-    ? navigator.onLine
-    : true
-
-export const useOnline = () => {
-  const [status, setStatus] = useState(getStatus())
-
-  const setOnline = () => setStatus(true)
-  const setOffline = () => setStatus(false)
-
-  useEffect(() => {
-    window.addEventListener('online', setOnline)
-    window.addEventListener('offline', setOffline)
-
-    return () => {
-      window.removeEventListener('online', setOnline)
-      window.removeEventListener('offline', setOffline)
-    }
-  }, [])
-
-  return status
-}
-```
-
 ## useOnScreen
 
 Хук для определения отображения элемента на экране:
@@ -433,23 +364,20 @@ export const useOnline = () => {
 ```js
 import { useEffect } from 'react'
 
-export const useOnScreen = (ref, margin = '0px') => {
+export const useOnScreen = (target, options) => {
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
-    const O = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         setIntersecting(entry.isIntersecting)
       },
-      { margin }
+      options
     )
-    if (ref.current) {
-      O.observe(ref.current)
-    }
-    return () => {
-      O.unobserve(ref.current)
-    }
+    observer.observe(target)
+    return () => observer.unobserve(target)
   }, [])
+
   return isIntersecting
 }
 ```
@@ -485,7 +413,7 @@ export function usePortal(id) {
 
       parent.appendChild(rootRef.current)
 
-      return function removeElement() {
+      return () => {
         rootRef.current.remove()
         if (!parent.childElementCount) {
           parent.remove()
@@ -519,44 +447,6 @@ export const usePrevious = (val) => {
     ref.current = val
   })
   return ref.current
-}
-```
-
-## useRouter
-
-Хук, объединяющий в себе функционал всех хуков `React Router` 5 версии:
-
-```js
-import { useMemo } from 'react'
-import {
-  useHistory,
-  useLocation,
-  useParams,
-  useRouteMatch
-} from 'react-router-dom'
-import queryString from 'query-string'
-
-export const useRouter = () => {
-  const history = useHistory()
-  const location = useLocation()
-  const params = useParams()
-  const match = useRouteMatch()
-
-  return useMemo(
-    () => ({
-      push: history.push,
-      replace: history.replace,
-      pathname: location.pathname,
-      query: {
-        ...queryString.parse(location.search),
-        ...params
-      },
-      history,
-      location,
-      match
-    }),
-    [history, location, match, params]
-  )
 }
 ```
 
@@ -610,22 +500,6 @@ export function App() {
 }
 ```
 
-## useTheme
-
-Хук для установки темы оформления страницы:
-
-```js
-import { useLayoutEffect } from 'react'
-
-export function useTheme(theme) {
-  useLayoutEffect(() => {
-    for (const [prop, val] in theme) {
-      document.documentElement.style.setProperty(`--${prop}`, val)
-    }
-  }, [theme])
-}
-```
-
 ## useTimer
 
 Хуки-обертки для `setTimeout()` и `setInterval()`:
@@ -634,43 +508,17 @@ export function useTheme(theme) {
 import { useEffect, useRef } from 'react'
 
 export function useTimeout(cb, ms) {
-  const cbRef = useRef()
-
   useEffect(() => {
-    cbRef.current = cb
-  }, [cb])
-
-  useEffect(() => {
-    function tick() {
-      cbRef.current()
-    }
-    if (ms > 1) {
-      const id = setTimeout(tick, ms)
-      return () => {
-        clearTimeout(id)
-      }
-    }
-  }, [ms])
+    const id = setTimeout(cb, ms)
+    return () => clearTimeout(id)
+  }, [cb, ms])
 }
 
 export function useInterval(cb, ms) {
-  const cbRef = useRef()
-
   useEffect(() => {
-    cbRef.current = cb
-  }, [cb])
-
-  useEffect(() => {
-    function tick() {
-      cbRef.current()
-    }
-    if (ms > 1) {
-      const id = setInterval(tick, ms)
-      return () => {
-        clearInterval(id)
-      }
-    }
-  }, [ms])
+    const id = setInterval(cb, ms)
+    return () => clearInterval(id)
+  }, [cb, ms])
 }
 ```
 
@@ -681,21 +529,22 @@ export function useInterval(cb, ms) {
 ```js
 import { useState, useEffect } from 'react'
 
-export function useWindowSize() {
-  const [size, setSize] = useState({})
+export default function useWindowSize() {
+  const [size, setSize] = useState({
+    width: 0,
+    height: 0,
+  })
 
   useEffect(() => {
     function onResize() {
       setSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       })
     }
-
-    window.addEventListener('resize', onResize)
-
     onResize()
 
+    window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
@@ -703,7 +552,7 @@ export function useWindowSize() {
 }
 
 // пример использования
-export function App() {
+export default function App() {
   const { width, height } = useWindowSize()
   // другой кастомный хук
   const [color, setColor] = useStyle('color')
@@ -750,13 +599,11 @@ export const useCopyToClipboard = (resetTime) => {
   }
 
   useEffect(() => {
-    let timerId
-    if (resetTime && copied) {
-      timerId = setTimeout(() => {
-        setCopied(false)
-      }, resetTime)
-    }
-    return () => clearTimeout(timerId)
+    if (!(resetTime && copied)) return
+    const id = setTimeout(() => {
+      setCopied(false)
+    }, resetTime)
+    return () => clearTimeout(id)
   }, [])
 
   return [copied, copy]
@@ -806,5 +653,187 @@ export const useMutationObserver = (
       }
     }
   }, [observer, target, options])
+}
+```
+
+## useIntersectionObserver
+
+Расширенная версия хука `useOnScreen`:
+
+```ts
+import { useEffect, useRef, useState } from 'react'
+
+export default function useIntersectionObserver(
+  target: HTMLElement,
+  options?: IntersectionObserverInit,
+) {
+  const [state, setState] = useState({
+    isIntersecting: false,
+    ratio: 0,
+    width: 0,
+    height: 0,
+  })
+
+  const observerRef = useRef<IntersectionObserver>(
+    new IntersectionObserver(([entry]) => {
+      setState((prevState) => ({
+        ...prevState,
+        isIntersecting: entry.isIntersecting,
+        ratio: Math.round(entry.intersectionRatio),
+        width: Math.round(entry.intersectionRect.width),
+        height: Math.round(entry.intersectionRect.height),
+      }))
+    }, options),
+  )
+
+  useEffect(() => {
+    observerRef.current.observe(target)
+    return () => observerRef.current.unobserve(target)
+  }, [])
+
+  const unobserve = () => {
+    observerRef.current.unobserve(target)
+  }
+
+  return [state, unobserve] as const
+}
+```
+
+## useScript
+
+Хук для добавления элемента `script` в тело документа:
+
+```js
+import { useState, useEffect } from 'react'
+
+const useScript = (src) => {
+  const [status, setStatus] = useState(src ? 'loading' : 'idle')
+
+  useEffect(() => {
+    if (!src) {
+      setStatus('idle')
+      return
+    }
+
+    let script = document.querySelector(`script[src="${src}"]`)
+
+    if (!script) {
+      script = document.createElement('script')
+      script.src = src
+      script.async = true
+      script.setAttribute('data-status', 'loading')
+      document.body.appendChild(script)
+
+      const setDataStatus = (event) => {
+        script.setAttribute(
+          'data-status',
+          event.type === 'load' ? 'ready' : 'error'
+        )
+      }
+      script.addEventListener('load', setDataStatus)
+      script.addEventListener('error', setDataStatus)
+    } else {
+      setStatus(script.getAttribute('data-status'))
+    }
+
+    const setStateStatus = (event) => {
+      setStatus(event.type === 'load' ? 'ready' : 'error')
+    }
+
+    script.addEventListener('load', setStateStatus)
+    script.addEventListener('error', setStateStatus)
+
+    return () => {
+      if (script) {
+        script.removeEventListener('load', setStateStatus)
+        script.removeEventListener('error', setStateStatus)
+      }
+    }
+  }, [src])
+
+  return status
+}
+```
+
+## useSSR
+
+Хук для определения среды выполнения кода (клиент или сервер):
+
+```js
+import { useState, useEffect } from 'react'
+
+const isDOMavailable = typeof document !== 'undefined'
+
+const useSSR = () => {
+  const [inBrowser, setInBrowser] = useState(isDOMavailable)
+
+  useEffect(() => {
+    setInBrowser(isDOMavailable)
+    return () => setInBrowser(false)
+  }, [])
+
+  return {
+    isBrowser: inBrowser,
+    isServer: !inBrowser,
+    canUseWorkers: typeof Worker !== 'undefined',
+    canUseEventListeners: inBrowser && Boolean(window.addEventListener),
+    canUseViewport: inBrowser && Boolean(window.screen)
+  }
+}
+```
+
+## useUpdateEffect
+
+Хук, пропускающий выполнение побочного эффекта при первом рендеринге компонента:
+
+```ts
+import { useEffect, useRef } from 'react'
+
+export default function useUpdateEffect(
+  cb: React.EffectCallback,
+  deps: any[] = []
+) {
+  const firstRender = useRef(true)
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    cb()
+  }, deps)
+}
+```
+
+## useDeepEffect
+
+Хук, выполняющий побочный эффект только при изменении зависимостей-объектов и опционально пропускающий выполнение эффекта при первом рендеринге компонента:
+
+```ts
+import { useEffect, useRef } from 'react'
+import usePrevious from './usePrevious'
+import { equal } from '@my-js/utils'
+
+export default function useDeepEffect(
+  cb: React.EffectCallback,
+  deps: any[] = [],
+  runOnFirstRender = true
+) {
+  const prevDeps = usePrevious(deps)
+  const firstRender = useRef(true)
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      if (runOnFirstRender) {
+        cb()
+      }
+      return
+    }
+
+    if (!equal(deps, prevDeps)) {
+      cb()
+    }
+  }, deps)
 }
 ```

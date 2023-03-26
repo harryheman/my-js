@@ -1280,3 +1280,21 @@ const onDrop = (e) => {
   e.currentTarget.append(listItem$)
 }
 ```
+
+## Алгоритм Луна для проверки пластиковой карты
+
+```js
+const luhnCheck = num => {
+  const arr = (num + '')
+    .split('')
+    .reverse()
+    .map(x => parseInt(x))
+  const lastDigit = arr.shift()
+  let sum = arr.reduce(
+    (acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val *= 2) > 9 ? val - 9 : val)),
+    0
+  )
+  sum += lastDigit
+  return sum % 10 === 0
+}
+```
