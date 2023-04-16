@@ -9,6 +9,7 @@ title: Содержание
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Next.js](./nextjs)
 - :page_with_curl:&nbsp;&nbsp;[Туториал по разработке клиент-серверного приложения с помощью Next.js](./nextjs-tutorial)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Remix](./remix)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по tRPC](./trpc)
 - :page_with_curl:&nbsp;&nbsp;[Карманная книга по TypeScript](./ts)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по GraphQL](./graphql)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Mongoose](./mongoose)

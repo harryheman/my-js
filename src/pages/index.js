@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 11.03.2023:
+            Обновление от 16.04.2023:
             <br />
-            <a href='docs/guide/remix'>Руководство по Remix</a>
+            <a href='docs/guide/trpc'>Руководство по tRPC</a>
           </p>
 
           <p className='hero__subtitle small'>
