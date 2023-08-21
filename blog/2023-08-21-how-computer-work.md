@@ -16,8 +16,6 @@ tags: [system administration, sysadmin, syscall, operating system, os, kernel, c
 
 И, как говорится, ты по-настоящему знаешь что-то, только если можешь объяснить это другому.
 
-[Более удобный формат статьи.](https://my-js.org/blog/how-computer-work)
-
 <!--truncate-->
 
 ## 1. Основы
