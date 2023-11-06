@@ -68,3 +68,4 @@ __Вопросы и задачи__
 - :link:&nbsp;&nbsp; [FlatIcon](https://www.flaticon.com/)
 - :link:&nbsp;&nbsp; [Настройки `Prettier`](https://prettier.io/docs/en/options.html)
 - :link:&nbsp;&nbsp; [Список правил `ESLint`](https://eslint.org/docs/rules/)
+- :link:&nbsp;&nbsp; [System Design (на английском)](./assets/system_design.pdf)
