@@ -52,3 +52,4 @@ title: Содержание
 ---
 
 - :memo:&nbsp;&nbsp;[System Design 101](https://my-js.org/docs/cheatsheet/system-design-101)
+- :memo:&nbsp;&nbsp;[Вопросы по DevOps](https://my-js.org/docs/cheatsheet/devops)
