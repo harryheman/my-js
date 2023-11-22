@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 29.10.2023:
+            Обновление от 22.11.2023:
             <br />
-            <a href='docs/cheatsheet/system-design-101'>System Design 101</a>
+            <a href='docs/cheatsheet/devops'>Вопросы по DevOps</a>
           </p>
 
           <p className='hero__subtitle small'>
