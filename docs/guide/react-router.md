@@ -173,9 +173,9 @@ function Topic() {
 
 В `React Router` существует 3 категории компонентов:
 
-- [роутеры (routers)](#routes), например, `<BrowserRouter>` или `<HashRouter>`
-- [маршруты (route matchers)](#matchers), например,  `<Route>` или `<Switch>`
-- и [навигация (navigation)](#navigation), например, `<Link>`, `<NavLink>` или `<Redirect>`
+- роутеры (routers), например, `<BrowserRouter>` или `<HashRouter>`
+- маршруты (route matchers), например,  `<Route>` или `<Switch>`
+- и навигация (navigation), например, `<Link>`, `<NavLink>` или `<Redirect>`
 
 Все компоненты, используемые в веб-приложении, должны быть импортированы из `react-router-dom`.
 
