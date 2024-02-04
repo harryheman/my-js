@@ -14,13 +14,13 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.18",
-    "@docusaurus/plugin-pwa": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "2.0.0-beta.18",
-    "@mdx-js/react": "^1.6.22",
-    "clsx": "^1.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@docusaurus/core": "3.0.0",
+    "@docusaurus/plugin-pwa": "3.0.0",
+    "@docusaurus/preset-classic": "3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "prism-react-renderer": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {},
   "browserslist": {
@@ -34,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }

@@ -300,10 +300,10 @@ console.log(john)
 console.log(jane)
 ```
 
-- A: Person {firstName: "John", lastName: "Smith"} и undefined
-- B: Person {firstName: "John", lastName: "Smith"} и Person {firstName: "Jane", lastName: "Air"}
-- C: Person {firstName: "John", lastName: "Smith"} и {}
-- D: Person {firstName: "Smith", lastName: "Smith"} и ошибка
+- A: `Person {firstName: "John", lastName: "Smith"}` и `undefined`
+- B: `Person {firstName: "John", lastName: "Smith"}` и `Person {firstName: "Jane", lastName: "Air"}`
+- C: `Person {firstName: "John", lastName: "Smith"}` и `{}`
+- D: `Person {firstName: "Smith", lastName: "Smith"}` и ошибка
 
 <details>
 <summary>Ответ</summary>
@@ -564,9 +564,9 @@ const obj = { a: "one", b: "two", a: "three" }
 console.log(obj)
 ```
 
-- A: { a: "one", b: "two" }
-- B: { b: "two", a: "three" }
-- C: { a: "three", b: "two" }
+- A: `{ a: "one", b: "two" }`
+- B: `{ b: "two", a: "three" }`
+- C: `{ a: "three", b: "two" }`
 - D: ошибка
 
 <details>
@@ -981,10 +981,10 @@ person = null
 console.log(members)
 ```
 
-- A: null
-- B: [null]
-- C: [{}]
-- D: [{ name: "John" }]
+- A: `null`
+- B: `[null]`
+- C: `[{}]`
+- D: `[{ name: "John" }]`
 
 <details>
 <summary>Ответ</summary>
@@ -1009,10 +1009,10 @@ for (const item in person) {
 }
 ```
 
-- A: { name: "John" } и { age: 30 }
-- B: name и age
-- C: John и 30
-- D: ["name", "John"] и ["age", 30]
+- A: `{ name: "John" }` и `{ age: 30 }`
+- B: `name` и `age`
+- C: `John` и `30`
+- D: `["name", "John"]` и `["age", 30]`
 
 <details>
 <summary>Ответ</summary>
@@ -1334,10 +1334,10 @@ const admin = { admin: true, ...user }
 console.log(admin)
 ```
 
-- A: { admin: true, user: { name: "John", age: 30 } }
-- B: { admin: true, name: "John", age: 30 }
-- C: { admin: true, user: [John, 30] }
-- D: { admin: true }
+- A: `{ admin: true, user: { name: "John", age: 30 } }`
+- B: `{ admin: true, name: "John", age: 30 }`
+- C: `{ admin: true, user: [John, 30] }`
+- D: `{ admin: true }`
 
 <details>
 <summary>Ответ</summary>
@@ -1360,10 +1360,10 @@ console.log(person)
 console.log(Object.keys(person))
 ```
 
-- A: { name: "John", age: 30 } и ["name", "age"]
-- B: { name: "John", age: 30 } и ["name"]
-- C: { name: "John"} и ["name", "age"]
-- D: { name: "John"} и ["age"]
+- A: `{ name: "John", age: 30 }` и `["name", "age"]`
+- B: `{ name: "John", age: 30 }` и `["name"]`
+- C: `{ name: "John"}` и `["name", "age"]`
+- D: `{ name: "John"}` и `["age"]`
 
 <details>
 <summary>Ответ</summary>
@@ -1388,10 +1388,10 @@ const data = JSON.stringify(settings, ["level", "health"])
 console.log(data)
 ```
 
-- A: {"level": 19, "health": 88}
-- B: {"username": "johnsmith"}
-- C: ["level", "health"]
-- D: {"username": "johnsmith", "level": 19, "health": 88}
+- A: `{"level": 19, "health": 88}`
+- B: `{"username": "johnsmith"}`
+- C: `["level", "health"]`
+- D: `{"username": "johnsmith", "level": 19, "health": 88}`
 
 <details>
 <summary>Ответ</summary>
@@ -1649,9 +1649,9 @@ console.log(data)
 ```
 
 - A: Я сделал это!
-- B: Promise {\<resolved\>: "Я сделал это!"}
-- C: Promise {\<pending\>}
-- D: undefined
+- B: `Promise {\<resolved\>: "Я сделал это!"}`
+- C: `Promise {\<pending\>}`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1702,9 +1702,9 @@ shape.x = 100
 console.log(shape)
 ```
 
-- A: { x: 100, y: 20 }
-- B: { x: 10, y: 20 }
-- C: { x: 100 }
+- A: `{ x: 100, y: 20 }`
+- B: `{ x: 10, y: 20 }`
+- C: `{ x: 100 }`
 - D: ошибка
 
 <details>
@@ -1794,7 +1794,7 @@ for (let item of myLifeSummedUp) {
 - A: 0 1 2 3  "☕" "💻" "🍷" "🍫"
 - B: "☕" "💻" "🍷" "🍫"  "☕" "💻" "🍷" "🍫"
 - C: "☕" "💻" "🍷" "🍫"  0 1 2 3
-- D: 0 1 2 3  { 0: "☕", 1: "💻", 2: "🍷", 3: "🍫" }
+- D: 0 1 2 3  `{ 0: "☕", 1: "💻", 2: "🍷", 3: "🍫" }`
 
 <details>
 <summary>Ответ</summary>
@@ -1903,9 +1903,9 @@ city = "New York"
 console.log(person)
 ```
 
-- A: { name: "John", age: 30 }
-- B: { name: "John", age: 30, city: "New York" }
-- C: { name: "John", age: 30, city: undefined }
+- A: `{ name: "John", age: 30 }`
+- B: `{ name: "John", age: 30, city: "New York" }`
+- C: `{ name: "John", age: 30, city: undefined }`
 - D: New York
 
 <details>
@@ -2030,9 +2030,9 @@ import * as data from "./module"
 console.log(data)
 ```
 
-- A: { default: function default(), name: "John" }
-- B: { default: function default() }
-- C: { default: "Hello World!", name: "John" }
+- A: `{ default: function default(), name: "John" }`
+- B: `{ default: function default() }`
+- C: `{ default: "Hello World!", name: "John" }`
 - D: глобальный объект module.js
 
 <details>
@@ -2109,10 +2109,10 @@ console.log(giveMePizza.prototype)
 console.log(giveMeChocolate.prototype)
 ```
 
-- A: { constructor: ...} { constructor: ...}
-- B: {} { constructor: ...}
-- C: { constructor: ...} {}
-- D: { constructor: ...} undefined
+- A: `{ constructor: ...} { constructor: ...}`
+- B: `{} { constructor: ...}`
+- C: `{ constructor: ...} {}`
+- D: `{ constructor: ...} undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2263,10 +2263,10 @@ console.log(info)
 console.log(Object.keys(info))
 ```
 
-- A: { Symbol('a'): 'b' } и ["{Symbol('a')"]
-- B: {} и []
-- C: { a: 'b' } и ['a']
-- D: { Symbol('a'): 'b' } и []
+- A: `{ Symbol('a'): 'b' }` и `["{Symbol('a')"]`
+- B: `{}` и `[]`
+- C: `{ a: 'b' }` и `['a']`
+- D: `{ Symbol('a'): 'b' }` и `[]`
 
 <details>
 <summary>Ответ</summary>
@@ -2291,10 +2291,10 @@ console.log(getList(list))
 console.log(getUser(user))
 ```
 
-- A: [1, [2, 3, 4]] и undefined
-- B: [1, [2, 3, 4]] и { name: "John", age: 30 }
-- C: [1, 2, 3, 4] и { name: "John", age: 30 }
-- D: null и { name: "John", age: 30 }
+- A: `[1, [2, 3, 4]]` и `undefined`
+- B: `[1, [2, 3, 4]]` и `{ name: "John", age: 30 }`
+- C: `[1, 2, 3, 4]` и `{ name: "John", age: 30 }`
+- D: `null` и `{ name: "John", age: 30 }`
 
 <details>
 <summary>Ответ</summary>
@@ -2629,8 +2629,8 @@ console.log(`${(x => x)('Я люблю')} писать код`)
 ```
 
 - A: Я люблю писать код
-- B: undefined писать код
-- C: ${(x => x)('Я люблю') писать код
+- B: `undefined` писать код
+- C: `${(x => x)('Я люблю')` писать код
 - D: ошибка
 
 <details>
@@ -2663,10 +2663,10 @@ changeAgeAndName()
 console.log(person)
 ```
 
-- A: { name: "Jane", age: 30 }
-- B: { name: "Jane", age: 31 }
-- C: { name: "John", age: 30 }
-- D: { name: "John", age: 31 }
+- A: `{ name: "Jane", age: 30 }`
+- B: `{ name: "Jane", age: 31 }`
+- C: `{ name: "John", age: 30 }`
+- D: `{ name: "John", age: 31 }`
 
 <details>
 <summary>Ответ</summary>
@@ -2801,7 +2801,7 @@ const config = {
 console.log(config.language)
 ```
 
-- A: function language(lang) { this.languages.push(lang }
+- A: `function language(lang) { this.languages.push(lang }`
 - B: 0
 - C: []
 - D: undefined
@@ -2908,10 +2908,10 @@ const myFunc = ({ x, y, z }) => {
 myFunc(1, 2, 3)
 ```
 
-- A: 1 2 3
-- B: { 1: 1 } { 2: 2 } { 3: 3 }
-- C: { 1: undefined } undefined undefined
-- D: undefined undefined undefined
+- A: `1 2 3`
+- B: `{ 1: 1 } { 2: 2 } { 3: 3 }`
+- C: `{ 1: undefined } undefined undefined`
+- D: `undefined undefined undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2932,10 +2932,10 @@ const spookyItems = ['👻', '🎃', '👿']
 console.log(spookyItems)
 ```
 
-- A: ["👻", "🎃", "👿"]
-- B: ["👻", "🎃", "👿", "💀"]
-- C: ["👻", "🎃", "👿", { item: "💀" }]
-- D: ["👻", "🎃", "👿", "[object Object]"]
+- A: `["👻", "🎃", "👿"]`
+- B: `["👻", "🎃", "👿", "💀"]`
+- C: `["👻", "🎃", "👿", { item: "💀" }]`
+- D: `["👻", "🎃", "👿", "[object Object]"]`
 
 <details>
 <summary>Ответ</summary>
@@ -3610,9 +3610,9 @@ animals[cat] = { ...cat, name: "Niko" }
 console.log(animals[dog])
 ```
 
-- A: { emoji: "🐶", name: "Rex" }
-- B: { emoji: "🐈", name: "Niko" }
-- C: undefined
+- A: `{ emoji: "🐶", name: "Rex" }`
+- B: `{ emoji: "🐈", name: "Niko" }`
+- C: `undefined`
 - D: ошибка
 
 <details>
@@ -3733,10 +3733,10 @@ const member = createMember({ email: "my@email.com" })
 console.log(member)
 ```
 
-- A: { email: "my@email.com", address: null }
-- B: { email: "my@email.com" }
-- C: { email: "my@email.com", address: {} }
-- D: { email: "my@email.com", address: undefined }
+- A: `{ email: "my@email.com", address: null }`
+- B: `{ email: "my@email.com" }`
+- C: `{ email: "my@email.com", address: {} }`
+- D: `{ email: "my@email.com", address: undefined }`
 
 <details>
 <summary>Ответ</summary>
@@ -3790,10 +3790,10 @@ function Vehicle(model, color, year, country) {
 }
 ```
 
-- A: undefined
+- A: `undefined`
 - B: ошибка
-- C: null
-- D: { model: "Honda", color: "white", year: "2010", country: "UK" }
+- C: `null`
+- D: `{ model: "Honda", color: "white", year: "2010", country: "UK" }`
 
 <details>
 <summary>Ответ</summary>
@@ -3934,9 +3934,9 @@ return
 console.log(foo())
 ```
 
-- A: Hello World
-- B: Object { message: "Hello World" }
-- C: undefined
+- A: `Hello World`
+- B: `Object { message: "Hello World" }`
+- C: `undefined`
 - D: ошибка
 
 <details>
@@ -3993,10 +3993,10 @@ console.log(obj.prop2())
 console.log(obj.prop3())
 ```
 
-- A: 0 1 2
-- B: 0 { return 1 } 2
-- C: 0 { return 1 } { return 2 }
-- D: 0 1 undefined
+- A: `0 1 2`
+- B: `0 { return 1 } 2`
+- C: `0 { return 1 } { return 2 }`
+- D: `0 1 undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4343,10 +4343,10 @@ async function func() {
 console.log(func())
 ```
 
-- A: Promise {:10}
-- B: 10
+- A: `Promise {:10}`
+- B: `10`
 - C: ошибка
-- D: Promise {:undefined}
+- D: `Promise {:undefined}`
 
 <details>
 <summary>Ответ</summary>
@@ -4370,10 +4370,10 @@ async function func() {
 console.log(func())
 ```
 
-- A: Promise {:10}
-- B: 10
+- A: `Promise {:10}`
+- B: `10`
 - C: ошибка
-- D: Promise {:undefined}
+- D: `Promise {:undefined}`
 
 <details>
 <summary>Ответ</summary>
@@ -4589,10 +4589,10 @@ console.log(JSON.stringify({ myArray: ['one', undefined, function() {}, Symbol('
 console.log(JSON.stringify({ [Symbol.for('one')]: 'one' }, [Symbol.for('one')]))
 ```
 
-- A: { "myArray":['one', undefined, {}, Symbol] } и {}
-- B: { "myArray":['one', null, null, null] } и {}
-- C: { "myArray":['one', null, null, null] } и "{ [Symbol.for('one')]: 'one' }, [Symbol.for('one')]"
-- D: { "myArray":['one', undefined, function(){}, Symbol('')] } и {}
+- A: `{ "myArray":['one', undefined, {}, Symbol] }` и `{}`
+- B: `{ "myArray":['one', null, null, null] }` и `{}`
+- C: `{ "myArray":['one', null, null, null] }` и `"{ [Symbol.for('one')]: 'one' }, [Symbol.for('one')]"`
+- D: `{ "myArray":['one', undefined, function(){}, Symbol('')] }` и `{}`
 
 <details>
 <summary>Ответ</summary>
@@ -4930,10 +4930,10 @@ console.log(myGenObj.next())
 console.log(myGenObj.next())
 ```
 
-- A: { value: 1, done: false }  { value: 2, done: true }  { value: undefined, done: true }
-- B: { value: 1, done: false }  { value: 2, done: false }  { value: undefined, done: true }
-- C: { value: 1, done: false }  { value: 2, done: true }  { value: 3, done: true }
-- D: { value: 1, done: false }  { value: 2, done: false }  { value: 3, done: true }
+- A: `{ value: 1, done: false }  { value: 2, done: true }  { value: undefined, done: true }`
+- B: `{ value: 1, done: false }  { value: 2, done: false }  { value: undefined, done: true }`
+- C: `{ value: 1, done: false }  { value: 2, done: true }  { value: 3, done: true }`
+- D: `{ value: 1, done: false }  { value: 2, done: false }  { value: 3, done: true }`
 
 <details>
 <summary>Ответ</summary>

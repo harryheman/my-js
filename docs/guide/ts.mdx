@@ -2086,9 +2086,7 @@ const angle = Math.atan2(...args)
 
 # Деструктуризация параметров (parameter destructuring)
 
-<a href='https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment'>
-  Деструктуризация параметров
-</a> используется для распаковки объекта, переданного в качестве аргумента, в одну
+[Деструктуризация параметров](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) используется для распаковки объекта, переданного в качестве аргумента, в одну
 или более локальную переменную в теле функции. В `JS` это выглядит так:
 
 ```js
@@ -3348,13 +3346,13 @@ const MyArray = [
   { name: 'John', age: 38 },
 ]
 
-type Person = typeof MyArray[number]
+type Person = (typeof MyArray)[number]
 
 type Person = {
   name: string
   age: number
 }
-type Age = typeof MyArray[number]['age']
+type Age = (typeof MyArray)[number]['age']
 
 type Age = number
 // или

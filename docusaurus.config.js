@@ -20,7 +20,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/harryheman/my-js/tree/master/',
-          breadcrumbs: false
+          breadcrumbs: false,
         },
         blog: {
           blogTitle: 'Блог по веб-разработке',
@@ -28,13 +28,13 @@ const config = {
             'Блог по разработке приложений на JavaScript, React, TypeScript, Node.js и других технологиях',
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/harryheman/my-js/tree/master/'
+          editUrl: 'https://github.com/harryheman/my-js/tree/master/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
-        }
-      })
-    ]
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      }),
+    ],
   ],
   plugins: [
     [
@@ -44,58 +44,58 @@ const config = {
         offlineModeActivationStrategies: [
           'appInstalled',
           'standalone',
-          'queryString'
+          'queryString',
         ],
         pwaHead: [
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/logo.png'
+            href: '/img/logo.png',
           },
           {
             tagName: 'link',
             rel: 'manifest',
-            href: '/manifest.json'
+            href: '/manifest.json',
           },
           {
             tagName: 'meta',
             name: 'theme-color',
-            content: '#3c3c3c'
+            content: '#3c3c3c',
           },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-capable',
-            content: 'yes'
+            content: 'yes',
           },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-status-bar-style',
-            content: '#3c3c3c'
+            content: '#3c3c3c',
           },
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: '/img/logo.png'
+            href: '/img/logo.png',
           },
           {
             tagName: 'link',
             rel: 'mask-icon',
             href: '/img/logo.png',
-            color: '#3c3c3c'
+            color: '#3c3c3c',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: '/img/logo.png'
+            content: '/img/logo.png',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileColor',
-            content: '#3c3c3c'
-          }
-        ]
-      }
-    ]
+            content: '#3c3c3c',
+          },
+        ],
+      },
+    ],
   ],
 
   themeConfig:
@@ -106,41 +106,41 @@ const config = {
         title: 'MyJavaScript',
         logo: {
           alt: 'MyJavaScript Logo',
-          src: 'img/logo.png'
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'guide/intro-guide',
             position: 'left',
-            label: 'Руководства'
+            label: 'Руководства',
           },
           {
             type: 'doc',
             docId: 'cheatsheet/intro-cheatsheet',
             position: 'left',
-            label: 'Шпаргалки'
+            label: 'Шпаргалки',
           },
           {
             type: 'doc',
             docId: 'other/intro-other',
             position: 'left',
-            label: 'Другое'
+            label: 'Другое',
           },
           {
             type: 'doc',
             docId: 'links/intro-links',
             position: 'left',
-            label: 'Cсылки'
+            label: 'Cсылки',
           },
           { to: 'blog', label: 'Блог', position: 'left' },
           // Please keep GitHub link to the right for consistency.
           {
             href: 'https://github.com/harryheman/my-js',
             label: 'GitHub',
-            position: 'right'
-          }
-        ]
+            position: 'right',
+          },
+        ],
       },
       footer: {
         style: 'dark',
@@ -149,37 +149,41 @@ const config = {
             title: 'Контакты',
             items: [
               {
-                html: '<p class="footer__link"><img src="../../img/github.png" alt="" width="32" height="32"> <a href="https://github.com/harryheman" target="_blank">harryheman</a></p>'
+                html: '<p class="footer__link"><img src="../../img/github.png" alt="" width="32" height="32"> <a href="https://github.com/harryheman" target="_blank">harryheman</a></p>',
               },
               {
-                html: '<p class="footer__link"><img src="../../img/telegram.png" alt="" width="32" height="32"> @igoragapov</p>'
+                html: '<p class="footer__link"><img src="../../img/telegram.png" alt="" width="32" height="32"> @igoragapov</p>',
               },
               {
-                html: '<p class="footer__link"><img src="../../img/email.png" alt="" width="32" height="32"><a href="mailto:aio350@yahoo.com">aio350@yahoo.com</a></p>'
+                html: '<p class="footer__link"><img src="../../img/email.png" alt="" width="32" height="32"><a href="mailto:aio350@yahoo.com">aio350@yahoo.com</a></p>',
               },
               {
                 label: 'Habr',
-                href: 'https://habr.com/ru/users/aio350'
-              }
-            ]
-          }
+                href: 'https://habr.com/ru/users/aio350',
+              },
+            ],
+          },
         ],
         // Please do not remove the credits, help to publicize Docusaurus :)
         copyright: `
           Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />
           Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
           Deploys on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
-        `
+        `,
       },
-      hideableSidebar: true,
-      autoCollapseSidebarCategories: true,
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       algolia: {
         appId: 'K9EMNI09N5',
         apiKey: '415a654b5e8424ce6bb502e4d9689c4a',
         indexName: 'my-js',
-        contextualSearch: true
-      }
-    })
+        contextualSearch: true,
+      },
+    }),
 }
 
 module.exports = config
