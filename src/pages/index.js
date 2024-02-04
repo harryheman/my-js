@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 22.11.2023:
+            Обновление от 04.02.2024:
             <br />
-            <a href='docs/cheatsheet/devops'>Вопросы по DevOps</a>
+            <a href='docs/cheatsheet/rust'>Большая шпаргалка по Rust</a>
           </p>
 
           <p className='hero__subtitle small'>
