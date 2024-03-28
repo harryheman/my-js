@@ -36,3 +36,7 @@ title: Содержание
 - :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](https://my-js.org/docs/guide/webrtc)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по веб-потокам (Node.js)](https://my-js.org/docs/guide/web-streams)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по NestJS](https://my-js.org/docs/guide/nest)
+
+---
+
+- :page_with_curl:&nbsp;&nbsp;[Практическое руководство по Rust](/docs/guide/rust)

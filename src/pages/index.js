@@ -79,7 +79,7 @@ export default function Home() {
             <a href='docs/cheatsheet/intro-cheatsheet'>шпаргалки</a>,{' '}
             <a href='docs/other/intro-other'>вопросы и другие материалы</a> по
             JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma,
-            GraphQL, Docker и другим технологиям, а также{' '}
+            GraphQL, Docker, Rust и другим технологиям, а также{' '}
             <a href='blog'>Блог по веб-разработке</a>.
           </p>
 
@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 04.02.2024:
+            Обновление от 28.03.2024:
             <br />
-            <a href='docs/cheatsheet/rust'>Большая шпаргалка по Rust</a>
+            <a href='docs/guide/rust'>Практическое руководство по Rust</a>
           </p>
 
           <p className='hero__subtitle small'>
