@@ -18,7 +18,6 @@ __Паттерны проектирования__
 
 - :link:&nbsp;&nbsp; ["Паттерны проектирования". Refactoring Guru](https://refactoring.guru/ru/design-patterns)
 - :link:&nbsp;&nbsp; ["Learning JavaScript Design Patterns". Addy Osmani](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- :link:&nbsp;&nbsp; ["Паттерны объектно-ориентированного проектирования". Банда четырех](./assets/design_patterns.pdf)
 
 __Алгоритмы и структуры данных__
 
