@@ -12,10 +12,6 @@ title: Содержание
 
 ---
 
-- :memo:&nbsp;&nbsp;[Вопросы по TypeScript](https://my-js.org/docs/other/ts-questions)
-
----
-
 - :memo:&nbsp;&nbsp;[Вопросы по React. Версия 1](https://my-js.org/docs/other/react-questions)
 - :memo:&nbsp;&nbsp;[Вопросы по React. Версия 2](https://my-js.org/docs/other/react-questions2)
 - :memo:&nbsp;&nbsp;[Шпаргалки по React, Jest, Redux и лучшие практики по React](https://my-js.org/docs/other/best-practices)
@@ -25,7 +21,6 @@ title: Содержание
 
 - :bookmark:&nbsp;&nbsp;[Сниппеты JavaScript. Часть 1](https://my-js.org/docs/other/snippets-js)
 - :bookmark:&nbsp;&nbsp;[Сниппеты JavaScript. Часть 2](https://my-js.org/docs/other/snippets-js2)
-- :bookmark:&nbsp;&nbsp;[Сниппеты React](https://my-js.org/docs/other/snippets-react)
 - :bookmark:&nbsp;&nbsp;[Сниппеты Node.js](https://my-js.org/docs/other/snippets-node)
 - :bookmark:&nbsp;&nbsp;[Сниппеты CSS и SASS](https://my-js.org/docs/other/snippets-css)
 
@@ -33,4 +28,3 @@ title: Содержание
 
 - :floppy_disk:&nbsp;&nbsp;[Пример файла `.gitconfig`](https://my-js.org/docs/other/gitconfig)
 - :floppy_disk:&nbsp;&nbsp;[Пример файла `.gitignore`](https://my-js.org/docs/other/gitignore)
-- :floppy_disk:&nbsp;&nbsp;[Пример файла `settings.json` (настройки для `VSCode`)](https://my-js.org/docs/other/settings)
