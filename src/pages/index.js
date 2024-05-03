@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 28.03.2024:
+            Обновление от 03.05.2024:
             <br />
-            <a href='docs/guide/rust'>Практическое руководство по Rust</a>
+            <a href='docs/guide/nextjs'>Новое руководство по Next.js</a>
           </p>
 
           <p className='hero__subtitle small'>
