@@ -39,3 +39,4 @@ title: Содержание
 ---
 
 - :page_with_curl:&nbsp;&nbsp;[Практическое руководство по Rust](/docs/guide/rust)
+- :page_with_curl:&nbsp;&nbsp;[Книга рецептов Rust](/docs/guide/rust-cookbook)
