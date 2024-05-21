@@ -19,6 +19,7 @@ Hello world!
 - [rustlings](https://github.com/rust-lang/rustlings)
 - [Rust на примерах](https://doc.rust-lang.ru/stable/rust-by-example/) (на русском)
 - [Rust by practice](https://practice.rs/why-exercise.html)
+- [Шикарный курс по Rust](https://github.com/matklad/rust-course)
 
 ## Hello, World
 
