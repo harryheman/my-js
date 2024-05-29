@@ -562,16 +562,17 @@ removeItems((s) => s.length > 4, ['Apple', 'Pear', 'Kiwi', 'Banana'])
 ### Перемешивание
 
 ```js
-const shuffle = (arr) => arr.sort(() => 0.5 - Math.random())
+const shuffle = (arr) => arr.toSorted(() => Math.random() - 0.5)
 
 // тасование Фишер-Йетса
-const shuffle = ([...arr]) => {
+const shuffle = (arr) => {
+  const _arr = structuredClone(arr)
   let l = arr.length
   while (l) {
-    const i = ~~(Math.random() * l--)
-    ;[(arr[l], arr[i])] = [arr[i], arr[l]]
+    const i = ~~(Math.random() * l--);
+    [_arr[l], _arr[i]] = [_arr[i], _arr[l]]
   }
-  return arr
+  return _arr
 }
 ```
 

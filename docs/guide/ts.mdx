@@ -3226,7 +3226,7 @@ createInstance(Bee).keeper.hasMask
 ```ts
 type Point = { x: number; y: number }
 type P = keyof Point
-// type P = keyof Point
+// type P = 'x' | 'y'
 ```
 
 Если типом сигнатуры индекса (index signature) типа является `string` или `number`, `keyof` возвращает эти типы:
