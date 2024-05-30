@@ -96,9 +96,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 19.05.2024:
+            Обновление от 30.05.2024:
             <br />
-            <a href='docs/guide/rust-cookbook'>Книга рецептов Rust</a>
+            <a href='docs/guide/tokio'>Туториал по Tokio</a>
           </p>
 
           <p className='hero__subtitle small'>
