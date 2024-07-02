@@ -212,7 +212,7 @@ greetign = {} // опечатка!
 console.log(greetign)
 ```
 
-- A: {}
+- A: ``` {} ```
 - B: ошибка
 - C: undefined
 - D: ""
