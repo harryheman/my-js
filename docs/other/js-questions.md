@@ -2344,7 +2344,7 @@ console.log(one, two, three)
 
 - A: false null []
 - B: null "" true
-- C: {} "" []
+- C: ``` {} ``` "" []
 - D: null null true
 
 <details>
