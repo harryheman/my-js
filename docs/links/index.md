@@ -21,7 +21,8 @@ __Паттерны проектирования__
 
 __Алгоритмы и структуры данных__
 
-- :link:&nbsp;&nbsp; [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) - алгоритмы и структуры данных, реализованные на JavaScript с объяснениями и ссылками для дальнейшего изучения
+- :link:&nbsp;&nbsp; [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms)
+- :link:&nbsp;&nbsp; [The Algorithms - JavaScript](https://github.com/TheAlgorithms/JavaScript)
 - :link:&nbsp;&nbsp; ["Грокаем алгоритмы". Адитья Бхаргава](./assets/grokking_algorithms.pdf)
 
 __Вопросы и задачи__

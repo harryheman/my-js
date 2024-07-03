@@ -212,7 +212,7 @@ greetign = {} // опечатка!
 console.log(greetign)
 ```
 
-- A: ``` {} ```
+- A: `{}`
 - B: ошибка
 - C: undefined
 - D: ""
@@ -1229,8 +1229,8 @@ console.log(set)
 
 - A: [1, 1, 2, 3, 4]
 - B: [1, 2, 3, 4]
-- C: ``` { 1, 1, 2, 3, 4 } ```
-- D: ``` { 1, 2, 3, 4 } ```
+- C: `{ 1, 1, 2, 3, 4 }`
+- D: `{ 1, 2, 3, 4 }`
 
 <details>
 <summary>Ответ</summary>
@@ -2344,7 +2344,7 @@ console.log(one, two, three)
 
 - A: false null []
 - B: null "" true
-- C: ``` {} ``` "" []
+- C: `{}` "" []
 - D: null null true
 
 <details>
