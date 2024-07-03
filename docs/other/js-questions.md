@@ -5245,7 +5245,7 @@ Spread-оператор `...x` позволяет получить параме�
 ```js
 var tip = 100
 
-(function () {
+;(function () {
   console.log("I have $" + husband())
 
   function wife() {
