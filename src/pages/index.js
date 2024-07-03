@@ -96,9 +96,11 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 30.05.2024:
+            Обновление от 03.07.2024:
             <br />
-            <a href='docs/guide/tokio'>Туториал по Tokio</a>
+            <a href='docs/guide/shorelark'>
+              Учимся летать - симуляция эволюции на Rust
+            </a>
           </p>
 
           <p className='hero__subtitle small'>
