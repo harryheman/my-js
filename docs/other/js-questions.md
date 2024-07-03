@@ -2737,7 +2737,7 @@ const person = {
   getFullName() {
     return `${this.firstName} ${this.lastName}`
   }
-}]
+}
 const member = {}
 
 console.log(person.pet?.name)
