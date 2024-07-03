@@ -149,13 +149,13 @@ const config = {
             title: 'Контакты',
             items: [
               {
-                html: '<p class="footer__link"><img src="../../img/github.png" alt="" width="32" height="32"> <a href="https://github.com/harryheman" target="_blank">harryheman</a></p>',
+                html: '<p class="footer__link"><img src="/img/github.png" alt="" width="32" height="32"> <a href="https://github.com/harryheman" target="_blank">harryheman</a></p>',
               },
               {
-                html: '<p class="footer__link"><img src="../../img/telegram.png" alt="" width="32" height="32"> @igoragapov</p>',
+                html: '<p class="footer__link"><img src="/img/telegram.png" alt="" width="32" height="32"> @igoragapov</p>',
               },
               {
-                html: '<p class="footer__link"><img src="../../img/email.png" alt="" width="32" height="32"><a href="mailto:aio350@yahoo.com">aio350@yahoo.com</a></p>',
+                html: '<p class="footer__link"><img src="/img/email.png" alt="" width="32" height="32"><a href="mailto:aio350@yahoo.com">aio350@yahoo.com</a></p>',
               },
               {
                 label: 'Habr',
