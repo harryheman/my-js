@@ -23,10 +23,10 @@ function sayHi() {
 sayHi()
 ```
 
-- A: John и undefined
-- B: John и ошибка
-- C: ошибка
-- D: undefined и ошибка
+- A: `John` и `undefined`
+- B: `John` и `Error`
+- C: `Error`
+- D: `undefined` и `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -50,10 +50,10 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 
-- A: 0 1 2 и 0 1 2
-- B: 0 1 2 и 3 3 3
-- C: 3 3 3 и 0 1 2
-- D: 3 3 3 и 3 3 3
+- A: `0 1 2` и `0 1 2`
+- B: `0 1 2` и `3 3 3`
+- C: `3 3 3` и `0 1 2`
+- D: `3 3 3` и `3 3 3`
 
 <details>
 <summary>Ответ</summary>
@@ -80,10 +80,10 @@ console.log(shape.diameter())
 console.log(shape.perimeter())
 ```
 
-- A: 20 и 62.83185307179586
-- B: 20 и NaN
-- C: 20 и 63
-- D: NaN и 63
+- A: `20` и `62.83185307179586`
+- B: `20` и `NaN`
+- C: `20` и `63`
+- D: `NaN` и `63`
 
 <details>
 <summary>Ответ</summary>
@@ -102,10 +102,10 @@ console.log(+true)
 console.log(!"John")
 ```
 
-- A: 1 и false
-- B: 0 и true
-- C: false и NaN
-- D: false и false
+- A: `1` и `false`
+- B: `0` и `true`
+- C: `false` и `NaN`
+- D: `false` и `false`
 
 <details>
 <summary>Ответ</summary>
@@ -128,10 +128,10 @@ c.greeting = "Hello!"
 console.log(d.greeting)
 ```
 
-- A: Hello!
-- B: Hey!
-- C: undefined
-- D: ошибка
+- A: `Hello!`
+- B: `Hey!`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -155,10 +155,10 @@ console.log(a === b)
 console.log(b === c)
 ```
 
-- A: true false true
-- B: false false true
-- C: true false false
-- D: false true true
+- A: `true false true`
+- B: `false false true`
+- C: `true false false`
+- D: `false true true`
 
 <details>
 <summary>Ответ</summary>
@@ -188,10 +188,10 @@ const freddie = new Chameleon({ newColor: "pink" })
 freddie.colorChange("orange")
 ```
 
-- A: orange
-- B: pink
-- C: green
-- D: ошибка
+- A: `orange`
+- B: `pink`
+- C: `green`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -213,9 +213,9 @@ console.log(greetign)
 ```
 
 - A: `{}`
-- B: ошибка
-- C: undefined
-- D: ""
+- B: `Error`
+- C: `undefined`
+- D: `""`
 
 <details>
 <summary>Ответ</summary>
@@ -239,10 +239,10 @@ bark.animal = "dog"
 console.log(bark.animal)
 ```
 
-- A: dog
-- B: ошибка
-- C: undefined
-- D: ""
+- A: `dog`
+- B: `Error`
+- C: `undefined`
+- D: `""`
 
 <details>
 <summary>Ответ</summary>
@@ -270,10 +270,10 @@ Person.getFullName = function () {
 console.log(person.getFullName())
 ```
 
-- A: ошибка
-- B: ""
-- C: John Smith
-- D: undefined undefined
+- A: `Error`
+- B: `""`
+- C: `John Smith`
+- D: `undefined undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -303,7 +303,7 @@ console.log(jane)
 - A: `Person {firstName: "John", lastName: "Smith"}` и `undefined`
 - B: `Person {firstName: "John", lastName: "Smith"}` и `Person {firstName: "Jane", lastName: "Air"}`
 - C: `Person {firstName: "John", lastName: "Smith"}` и `{}`
-- D: `Person {firstName: "Smith", lastName: "Smith"}` и ошибка
+- D: `Person {firstName: "Smith", lastName: "Smith"}` и `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -325,10 +325,10 @@ function sum(a, b) {
 console.log(sum(1, "2"))
 ```
 
-- A: NaN
-- B: ошибка
-- C: "12"
-- D: 3
+- A: `NaN`
+- B: `Error`
+- C: `"12"`
+- D: `3`
 
 <details>
 <summary>Ответ</summary>
@@ -349,10 +349,10 @@ console.log(++number)
 console.log(number)
 ```
 
-- A: 1 1 2
-- B: 1 2 2
-- C: 0 2 2
-- D: 0 1 2
+- A: `1 1 2`
+- B: `1 2 2`
+- C: `0 2 2`
+- D: `0 1 2`
 
 <details>
 <summary>Ответ</summary>
@@ -385,10 +385,10 @@ const age = 30
 getPersonInfo`${person} is ${age} years old`
 ```
 
-- A: John 30 ["", " is ", " years old"]
-- B: ["", " is ", " years old"] John 30
-- C: John ["", " is ", " years old"] 30
-- D: undefined
+- A: `John 30 ["", " is ", " years old"]`
+- B: `["", " is ", " years old"] John 30`
+- C: `John ["", " is ", " years old"] 30`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -416,10 +416,10 @@ function checkAge(data) {
 checkAge({ age: 18 })
 ```
 
-- A: Ты взрослый!
-- B: Ты по-прежнему взрослый.
-- C: Хм... У тебя что, нет возраста?
-- D: undefined
+- A: `"Ты взрослый!"`
+- B: `"Ты по-прежнему взрослый."`
+- C: `"Хм... У тебя что, нет возраста?"`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -441,10 +441,10 @@ function getAge(...args) {
 getAge(30)
 ```
 
-- A: number
-- B: array
-- C: object
-- D: NaN
+- A: `number`
+- B: `array`
+- C: `object`
+- D: `NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -468,10 +468,10 @@ function getAge() {
 getAge()
 ```
 
-- A: 30
-- B: undefined
-- C: ошибка
-- D: NaN
+- A: `30`
+- B: `undefined`
+- C: `Error`
+- D: `NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -491,10 +491,10 @@ const sum = eval("10*10+5")
 console.log(sum)
 ```
 
-- A: 105
-- B: "105"
-- C: ошибка
-- D: "10*10+5"
+- A: `105`
+- B: `"105"`
+- C: `Error`
+- D: `"10*10+5"`
 
 <details>
 <summary>Ответ</summary>
@@ -515,10 +515,10 @@ var num = 10
 console.log(num)
 ```
 
-- A: 8
-- B: 10
-- C: undefined
-- D: ошибка
+- A: `8`
+- B: `10`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -542,10 +542,10 @@ console.log(set.has("1"))
 console.log(set.has(1))
 ```
 
-- A: false true false true
-- B: false true true true
-- C: true true false true
-- D: true true true true
+- A: `false true false true`
+- B: `false true true true`
+- C: `true true false true`
+- D: `true true true true`
 
 <details>
 <summary>Ответ</summary>
@@ -567,7 +567,7 @@ console.log(obj)
 - A: `{ a: "one", b: "two" }`
 - B: `{ b: "two", a: "three" }`
 - C: `{ a: "three", b: "two" }`
-- D: ошибка
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -588,10 +588,10 @@ for (let i = 1; i < 5; i++) {
 }
 ```
 
-- A: 1 2
-- B: 1 2 3
-- C: 1 2 4
-- D: 1 3 4
+- A: `1 2`
+- B: `1 2 3`
+- C: `1 2 4`
+- D: `1 3 4`
 
 <details>
 <summary>Ответ</summary>
@@ -615,10 +615,10 @@ const name = "John"
 console.log(name.giveMePizza())
 ```
 
-- A: Give me pizza!
-- B: ошибка
-- C: ""
-- D: undefined
+- A: `"Give me pizza!"`
+- B: `Error`
+- C: `""`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -643,10 +643,10 @@ a[c] = 456
 console.log(a[b])
 ```
 
-- A: 123
-- B: 456
-- C: undefined
-- D: ошибка
+- A: `123`
+- B: `456`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -670,10 +670,10 @@ foo()
 baz()
 ```
 
-- A: first second third
-- B: first third second
-- C: second first third
-- D: second third first
+- A: `first second third`
+- B: `first third second`
+- C: `second first third`
+- D: `second third first`
 
 <details>
 <summary>Ответ</summary>
@@ -695,10 +695,10 @@ baz()
 </div>
 ```
 
-- A: p div
-- B: div p
-- C: p
-- D: div
+- A: `p div`
+- B: `div p`
+- C: `p`
+- D: `div`
 
 <details>
 <summary>Ответ</summary>
@@ -723,10 +723,10 @@ sayHi.call(person, 30)
 sayHi.bind(person, 30)
 ```
 
-- A: undefined is 30 и John is 30
-- B: function и function
-- C: John is 30 и John is 30
-- D: John is 30 и function
+- A: `undefined is 30` и `John is 30`
+- B: `function` и `function`
+- C: `John is 30` и `John is 30`
+- D: `John is 30` и `function`
 
 <details>
 <summary>Ответ</summary>
@@ -748,10 +748,10 @@ function sayHi() {
 console.log(typeof sayHi())
 ```
 
-- A: object
-- B: number
-- C: function
-- D: undefined
+- A: `object`
+- B: `number`
+- C: `function`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -769,10 +769,10 @@ console.log(typeof sayHi())
 console.log(typeof typeof 1)
 ```
 
-- A: number
-- B: string
-- C: object
-- D: undefined
+- A: `number`
+- B: `string`
+- C: `object`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -792,17 +792,17 @@ numbers[10] = 11
 console.log(numbers)
 ```
 
-- A: [1, 2, 3, 7 x null, 11]
-- B: [1, 2, 3, 11]
-- C: [1, 2, 3, 7 x empty, 11]
-- D: ошибка
+- A: `[1, 2, 3, 7 x null, 11]`
+- B: `[1, 2, 3, 11]`
+- C: `[1, 2, 3, 7 x empty, 11]`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
 <div>
 <h4>Правильный ответ: C</h4>
 
-Когда в массив добавляется значение, которое выходит за пределы длины массива, `JavaScript` создает "пустые ячейки". На самом деле они имеют значение `undefined`, но в консоль выводятся как `[1, 2, 3, 7 x empty, 11]` (зависит от среды выполнения кода, от браузера).
+Когда в массив добавляется значение, которое выходит за пределы длины массива, `JavaScript` создает "пустые ячейки". На самом деле они имеют значение `undefined`, но в консоль выводятся как `[1, 2, 3, 7 x empty, 11]` (зависит от среды выполнения кода).
 
 </div>
 </details>
@@ -823,10 +823,10 @@ console.log(numbers)
 })()
 ```
 
-- A: 1 undefined 2
-- B: undefined undefined undefined
-- C: 1 1 2
-- D: 1 undefined undefined
+- A: `1 undefined 2`
+- B: `undefined undefined undefined`
+- C: `1 1 2`
+- D: `1 undefined undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -852,10 +852,10 @@ const result =
 console.log(result)
 ```
 
-- A: [0, 1, 2, 3, 1, 2]
-- B: [6, 1, 2]
-- C: [1, 2, 0, 1, 2, 3]
-- D: [1, 2, 6]
+- A: `[0, 1, 2, 3, 1, 2]`
+- B: `[6, 1, 2]`
+- C: `[1, 2, 0, 1, 2, 3]`
+- D: `[1, 2, 6]`
 
 <details>
 <summary>Ответ</summary>
@@ -875,10 +875,10 @@ console.log(!!"")
 console.log(!!1)
 ```
 
-- A: false true false
-- B: false false true
-- C: false true true
-- D: true true false
+- A: `false true false`
+- B: `false false true`
+- C: `false true true`
+- D: `true true false`
 
 <details>
 <summary>Ответ</summary>
@@ -898,10 +898,10 @@ console.log(!!1)
 console.log([..."John"])
 ```
 
-- A: ["J", "o", "h", "n"]
-- B: ["John"]
-- C: [[], "John"]
-- D: [["J", "o", "h", "n"]]
+- A: `["J", "o", "h", "n"]`
+- B: `["John"]`
+- C: `[[], "John"]`
+- D: `[["J", "o", "h", "n"]]`
 
 <details>
 <summary>Ответ</summary>
@@ -927,10 +927,10 @@ console.log(gen.next().value)
 console.log(gen.next().value)
 ```
 
-- A: [0, 10] и [10, 20]
-- B: 20 и 20
-- C: 10 и 20
-- D: 0, 10 и 10, 20
+- A: `[0, 10]` и `[10, 20]`
+- B: `20` и `20`
+- C: `10` и `20`
+- D: `0, 10` и `10, 20`
 
 <details>
 <summary>Ответ</summary>
@@ -956,10 +956,10 @@ const secondPromise = new Promise((res, rej) => {
 Promise.race([firstPromise, secondPromise]).then(res => console.log(res))
 ```
 
-- A: one
-- B: two
-- C: two one
-- D: one two
+- A: `one`
+- B: `two`
+- C: `two one`
+- D: `one two`
 
 <details>
 <summary>Ответ</summary>
@@ -1030,10 +1030,10 @@ for (const item in person) {
 console.log(3 + 4 + "5")
 ```
 
-- A: "345"
-- B: "75"
-- C: 12
-- D: "12"
+- A: `"345"`
+- B: `"75"`
+- C: `12`
+- D: `"12"`
 
 <details>
 <summary>Ответ</summary>
@@ -1053,10 +1053,10 @@ const num = parseInt("7*6", 10)
 console.log(num)
 ```
 
-- A: 42
-- B: "42"
-- C: 7
-- D: NaN
+- A: `42`
+- B: `"42"`
+- C: `7`
+- D: `NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -1080,10 +1080,10 @@ const result =
 console.log(result)
 ```
 
-- A: []
-- B: [null, null, null]
-- C: [undefined, undefined, undefined]
-- D: [ 3 x empty ]
+- A: `[]`
+- B: `[null, null, null]`
+- C: `[undefined, undefined, undefined]`
+- D: `[ 3 x empty ]`
 
 <details>
 <summary>Ответ</summary>
@@ -1114,10 +1114,10 @@ function sayHi() {
 sayHi()
 ```
 
-- A: Работает! Всем привет!
-- B: Ошибка: undefined
-- C: ошибка
-- D: Ошибка: Всем привет!
+- A: `Работает! Всем привет!`
+- B:` Ошибка: undefined`
+- C: `Error`
+- D: `Ошибка: Всем привет!`
 
 <details>
 <summary>Ответ</summary>
@@ -1141,10 +1141,10 @@ const myCar = new Car()
 console.log(myCar.make)
 ```
 
-- A: Lamborghini
-- B: Maserati
-- C: ошибка
-- D: undefined
+- A: `Lamborghini`
+- B: `Maserati`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1167,10 +1167,10 @@ console.log(typeof x)
 console.log(typeof y)
 ```
 
-- A: undefined и number
-- B: number и number
-- C: object и number
-- D: number и undefined
+- A: `undefined` и `number`
+- B: `number` и `number`
+- C: `object` и `number`
+- D: `number` и `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1204,10 +1204,10 @@ delete Dog.prototype.bark
 pet.bark()
 ```
 
-- A: "Woof I am Rex" и ""
-- B: "Woof I am Rex" и "Woof I am Rex"
-- C: "Woof I am Rex" и undefined
-- D: "Woof I am Rex" и ошибка
+- A: `"Woof I am Rex"` и `""`
+- B: `"Woof I am Rex"` и `"Woof I am Rex"`
+- C: `"Woof I am Rex"` и `undefined`
+- D: `"Woof I am Rex"` и `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1227,8 +1227,8 @@ const set = new Set([1, 1, 2, 3, 4])
 console.log(set)
 ```
 
-- A: [1, 1, 2, 3, 4]
-- B: [1, 2, 3, 4]
+- A: `[1, 1, 2, 3, 4]`
+- B: `[1, 2, 3, 4]`
 - C: `{ 1, 1, 2, 3, 4 }`
 - D: `{ 1, 2, 3, 4 }`
 
@@ -1257,10 +1257,10 @@ myCounter += 1
 console.log(myCounter)
 ```
 
-- A: 10
-- B: 11
-- C: ошибка
-- D: NaN
+- A: `10`
+- B: `11`
+- C: `Error`
+- D: `NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -1282,10 +1282,10 @@ console.log(delete name)
 console.log(delete age)
 ```
 
-- A: false и true
-- B: John и 30
-- C: true и true
-- D: undefined и undefined
+- A: `false` и `true`
+- B: `John` и `30`
+- C: `true` и `true`
+- D: `undefined` и `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1306,10 +1306,10 @@ const [y] = numbers
 console.log(y)
 ```
 
-- A: [[1, 2, 3, 4, 5]]
-- B: [1, 2, 3, 4, 5]
-- C: 1
-- D: [1]
+- A: `[[1, 2, 3, 4, 5]]`
+- B: `[1, 2, 3, 4, 5]`
+- C: `1`
+- D: `[1]`
 
 <details>
 <summary>Ответ</summary>
@@ -1418,10 +1418,10 @@ console.log(num1)
 console.log(num2)
 ```
 
-- A: 10 и 10
-- B: 10 и 11
-- C: 11 и 11
-- D: 11 и 12
+- A: `10` и `10`
+- B: `10` и `11`
+- C: `11` и `11`
+- D: `11` и `12`
 
 <details>
 <summary>Ответ</summary>
@@ -1448,10 +1448,10 @@ multiply(value)
 multiply(value)
 ```
 
-- A: 20 40 80 160
-- B: 20 40 20 40
-- C: 20 20 20 40
-- D: NaN NaN 20 40
+- A: `20 40 80 160`
+- B: `20 40 20 40`
+- C: `20 20 20 40`
+- D: `NaN NaN 20 40`
 
 <details>
 <summary>Ответ</summary>
@@ -1469,10 +1469,10 @@ multiply(value)
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y))
 ```
 
-- A: 1 2  3 3  6 4
-- B: 1 2  2 3  3 4
-- C: 1 undefined  2 undefined  3 undefined  4 undefined
-- D: 1 2  undefined 3  undefined 4
+- A: `1 2 3 3 6 4`
+- B: `1 2 2 3 3 4`
+- C: `1 undefined 2 undefined 3 undefined 4 undefined`
+- D: `1 2 undefined 3 undefined 4`
 
 <details>
 <summary>Ответ</summary>
@@ -1497,10 +1497,10 @@ console.log('Выполнение sum.js')
 export const sum = (a, b) => a + b
 ```
 
-- A: Выполнение index.js  Выполнение sum.js  3
-- B: Выполнение sum.js  Выполнение index.js  3
-- C: Выполнение sum.js  3  Выполнение index.js
-- D: Выполнение index.js  undefined  Выполнение sum.js
+- A: `Выполнение index.js Выполнение sum.js 3`
+- B: `Выполнение sum.js Выполнение index.js 3`
+- C: `Выполнение sum.js 3 Выполнение index.js`
+- D: `Выполнение index.js undefined Выполнение sum.js`
 
 <details>
 <summary>Ответ</summary>
@@ -1520,10 +1520,10 @@ console.log(Boolean(false) === Boolean(false))
 console.log(Symbol('foo') === Symbol('foo'))
 ```
 
-- A: true  true  false
-- B: false  true  false
-- C: true  false  true
-- D: true  true  true
+- A: `true true false`
+- B: `false true false`
+- C: `true false true`
+- D: `true true true`
 
 <details>
 <summary>Ответ</summary>
@@ -1544,10 +1544,10 @@ console.log(name.padStart(12))
 console.log(name.padStart(2))
 ```
 
-- A: "John Smith" и "John Smith"
-- B: " John Smith" и " John Smith" ("[12x whitespace]John Smith"  "[2x whitespace]John Smith")
-- C: " John Smith" и "John Smith" ("[2x whitespace]John Smith", "John Smith")
-- D: "John Smith" и "Jo"
+- A: `"John Smith"` и `"John Smith"`
+- B: `" John Smith"` и `" John Smith" ("[12x whitespace]John Smith"  "[2x whitespace]John Smith")`
+- C: `" John Smith"` и `"John Smith" ("[2x whitespace]John Smith", "John Smith")`
+- D: `"John Smith"` и `"Jo"`
 
 <details>
 <summary>Ответ</summary>
@@ -1565,10 +1565,10 @@ console.log(name.padStart(2))
 console.log("📱" + "💻")
 ```
 
-- A: "📱💻"
-- B: 257548
-- C: undefined
-- D: ошибка
+- A: `"📱💻"`
+- B: `257548`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1596,10 +1596,10 @@ console.log(/* 1 */) // Ты любишь JavaScript?
 console.log(/* 2 */) // JavaScript тоже тебя любит ❤️
 ```
 
-- A: game.next("Да").value и game.next().value
-- B: game.next.value("Да") и game.next.value()
-- C: game.next().value и game.next("Да").value
-- D: game.next.value() и game.next.value("Да")
+- A: `game.next("Да").value` и `game.next().value`
+- B: `game.next.value("Да")` и `game.next.value()`
+- C: `game.next().value` и `game.next("Да").value`
+- D: `game.next.value()` и `game.next.value("Да")`
 
 <details>
 <summary>Ответ</summary>
@@ -1617,10 +1617,10 @@ console.log(/* 2 */) // JavaScript тоже тебя любит ❤️
 console.log(String.raw`Hello\nWorld!`)
 ```
 
-- A: Hello World!
-- B: Hello (на следующей строке) World!
-- C: Hello\nWorld!
-- D: Hello\n (на следующей строке) World!
+- A: `Hello World!`
+- B: `Hello (на следующей строке) World!`
+- C: `Hello\nWorld!`
+- D: `Hello\n (на следующей строке) World!`
 
 <details>
 <summary>Ответ</summary>
@@ -1648,7 +1648,7 @@ const data = getData()
 console.log(data)
 ```
 
-- A: Я сделал это!
+- A: `"Я сделал это!"`
 - B: `Promise {\<resolved\>: "Я сделал это!"}`
 - C: `Promise {\<pending\>}`
 - D: `undefined`
@@ -1674,10 +1674,10 @@ const result = addToList("apple", ["banana"])
 console.log(result)
 ```
 
-- A: ['apple', 'banana']
-- B: 2
-- C: true
-- D: undefined
+- A: `['apple', 'banana']`
+- B: `2`
+- C: `true`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1705,7 +1705,7 @@ console.log(shape)
 - A: `{ x: 100, y: 20 }`
 - B: `{ x: 10, y: 20 }`
 - C: `{ x: 100 }`
-- D: ошибка
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1725,10 +1725,10 @@ const { name: myName } = { name: "John" }
 console.log(name)
 ```
 
-- A: John
-- B: myName
-- C: undefined
-- D: ошибка
+- A: `John`
+- B: `myName`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1762,10 +1762,10 @@ console.log(addFunction(10))
 console.log(addFunction(5 * 2))
 ```
 
-- A: Вычислено! 20  Вычислено! 20  Вычислено! 20
-- B: Вычислено! 20  Из кеша! 20  Вычислено! 20
-- C: Вычислено! 20  Из кеша! 20  Из кеша! 20
-- D: Вычислено! 20  Из кеша! 20  ошибка
+- A: `Вычислено! 20 Вычислено! 20 Вычислено! 20`
+- B: `Вычислено! 20 Из кеша! 20 Вычислено! 20`
+- C: `Вычислено! 20 Из кеша! 20 Из кеша! 20`
+- D: `Вычислено! 20 Из кеша! 20 Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1791,10 +1791,10 @@ for (let item of myLifeSummedUp) {
 }
 ```
 
-- A: 0 1 2 3  "☕" "💻" "🍷" "🍫"
-- B: "☕" "💻" "🍷" "🍫"  "☕" "💻" "🍷" "🍫"
-- C: "☕" "💻" "🍷" "🍫"  0 1 2 3
-- D: 0 1 2 3  `{ 0: "☕", 1: "💻", 2: "🍷", 3: "🍫" }`
+- A: `0 1 2 3` и `"☕" "💻" "🍷" "🍫"`
+- B: `"☕" "💻" "🍷" "🍫"` и `"☕" "💻" "🍷" "🍫"`
+- C: `"☕" "💻" "🍷" "🍫"` и `0 1 2 3`
+- D:` 0 1 2 3` и `{ 0: "☕", 1: "💻", 2: "🍷", 3: "🍫" }`
 
 <details>
 <summary>Ответ</summary>
@@ -1814,10 +1814,10 @@ const list = [1 + 2, 1 * 2, 1 / 2]
 console.log(list)
 ```
 
-- A: ["1 + 2", "1 * 2", "1 / 2"]
-- B: ["12", 2, 0.5]
-- C: [3, 2, 0.5]
-- D: [1, 1, 1]
+- A: `["1 + 2", "1 * 2", "1 / 2"]`
+- B: `["12", 2, 0.5]`
+- C: `[3, 2, 0.5]`
+- D: `[1, 1, 1]`
 
 <details>
 <summary>Ответ</summary>
@@ -1839,10 +1839,10 @@ function sayHi(name) {
 console.log(sayHi())
 ```
 
-- A: Hello,
-- B: Hello, undefined
-- C: Hello, null
-- D: ошибка
+- A: `Hello`,
+- B: `Hello, undefined`
+- C: `Hello, null`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -1874,10 +1874,10 @@ setTimeout(() => {
 }, 0)
 ```
 
-- A: "😉"  "😍"
-- B: "😉"  "😎"
-- C: "😍"  "😎"
-- D: "😎"  "😎"
+- A: `"😉"` и `"😍"`
+- B: `"😉"` и `"😎"`
+- C: `"😍"` и `"😎"`
+- D: `"😎"` и `"😎"`
 
 <details>
 <summary>Ответ</summary>
@@ -1906,7 +1906,7 @@ console.log(person)
 - A: `{ name: "John", age: 30 }`
 - B: `{ name: "John", age: 30, city: "New York" }`
 - C: `{ name: "John", age: 30, city: undefined }`
-- D: New York
+- D: `"New York"`
 
 <details>
 <summary>Ответ</summary>
@@ -1933,10 +1933,10 @@ function checkAge(age) {
 console.log(checkAge(30))
 ```
 
-- A: "Ты слишком молод."
-- B: "Ты достаточно взрослый!"
-- C: ошибка
-- D: undefined
+- A: `"Ты слишком молод."`
+- B: `"Ты достаточно взрослый!"`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -1956,10 +1956,10 @@ function getName(name) {
 }
 ```
 
-- A: !!name
-- B: name
-- C: new Boolean(name)
-- D: name.length
+- A: `!!name`
+- B: `name`
+- C: `new Boolean(name)`
+- D: `name.length`
 
 <details>
 <summary>Ответ</summary>
@@ -1977,10 +1977,10 @@ function getName(name) {
 console.log("Я хочу пиццу!"[0])
 ```
 
-- A: ""
-- B: "Я"
-- C: ошибка
-- D: undefined
+- A: `""`
+- B: `"Я"`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2002,10 +2002,10 @@ function sum(num1, num2 = num1) {
 sum(10)
 ```
 
-- A: NaN
-- B: 20
-- C: ошибка
-- D: undefined
+- A: `NaN`
+- B: `20`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2058,10 +2058,10 @@ const member = new Person("John")
 console.log(typeof member)
 ```
 
-- A: class
-- B: function
-- C: object
-- D: string
+- A: `class`
+- B: `function`
+- C: `object`
+- D: `string`
 
 <details>
 <summary>Ответ</summary>
@@ -2081,10 +2081,10 @@ let newList = [1, 2, 3].push(4)
 console.log(newList.push(5))
 ```
 
-- A: [1, 2, 3, 4, 5]
-- B: [1, 2, 3, 5]
-- C: [1, 2, 3, 4]
-- D: ошибка
+- A: `[1, 2, 3, 4, 5]`
+- B: `[1, 2, 3, 5]`
+- C: `[1, 2, 3, 4]`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2137,10 +2137,10 @@ for (const [x, y] of Object.entries(person)) {
 }
 ```
 
-- A: name John и age 30
-- B: ["name", "John"] и ["age", 30]
-- C: ["name", "age"] и undefined
-- D: ошибка
+- A: `name John` и `age 30`
+- B: `["name", "John"]` и `["age", 30]`
+- C: `["name", "age"]` и `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2163,10 +2163,10 @@ function getItems(fruitList, ...args, favoriteFruit) {
 console.log(getItems(["banana", "apple"], "pear", "orange"))
 ```
 
-- A: ["banana", "apple", "pear", "orange"]
-- B: [ ["banana", "apple"], "pear", "orange" ]
-- C: ["banana", "apple", ["pear"], "orange"]
-- D: ошибка
+- A: `["banana", "apple", "pear", "orange"]`
+- B: `[ ["banana", "apple"], "pear", "orange" ]`
+- C: `["banana", "apple", ["pear"], "orange"]`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2202,10 +2202,10 @@ console.log(nums(4, 2))
 console.log(nums(1, 2))
 ```
 
-- A: a больше, 6 и b больше, 3
-- B: a больше, undefined и b больше, undefined
-- C: undefined и undefined
-- D: ошибка
+- A: `a больше, 6` и `b больше, 3`
+- B: `a больше, undefined` и `b больше, undefined`
+- C: `undefined` и `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2237,10 +2237,10 @@ const member = new Person()
 console.log(member.name)
 ```
 
-- A: John
-- B: Jane
-- C: ошибка
-- D: undefined
+- A: `John`
+- B: `Jane`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2317,10 +2317,10 @@ const name = "John"
 console.log(name())
 ```
 
-- A: SyntaxError
-- B: ReferenceError
-- C: TypeError
-- D: undefined
+- A: `SyntaxError`
+- B: `ReferenceError`
+- C: `TypeError`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2342,10 +2342,10 @@ const three = ([] || 0 || true)
 console.log(one, two, three)
 ```
 
-- A: false null []
-- B: null "" true
-- C: `{}` "" []
-- D: null null true
+- A: `false null []`
+- B: `null "" true`
+- C: `{} "" []`
+- D: `null null true`
 
 <details>
 <summary>Ответ</summary>
@@ -2376,10 +2376,10 @@ firstFunction()
 secondFunction()
 ```
 
-- A: I have resolved! first и I have resolved! second
-- B: first I have resolved! и second I have resolved!
-- C: I have resolved! second и first I have resolved!
-- D: first I have resolved! и I have resolved! second
+- A: `I have resolved! first` и `I have resolved! second`
+- B: `first I have resolved!` и `second I have resolved!`
+- C: `I have resolved! second` и `first I have resolved!`
+- D: `first I have resolved!` и `I have resolved! second`
 
 <details>
 <summary>Ответ</summary>
@@ -2405,10 +2405,10 @@ for (let item of set) {
 }
 ```
 
-- A: 3 NaN NaN
-- B: 3 7 NaN
-- C: 3 John2 [object Object]2
-- D: "12" John2 [object Object]2
+- A: `3 NaN NaN`
+- B: `3 7 NaN`
+- C: `3 John2 [object Object]2`
+- D: `"12" John2 [object Object]2`
 
 <details>
 <summary>Ответ</summary>
@@ -2426,10 +2426,10 @@ for (let item of set) {
 console.log(Promise.resolve(5))
 ```
 
-- A: 5
+- A: `5`
 - B: `Promise {<pending>: 5}`
 - C: `Promise {<resolved>: 5}`
-- D: ошибка
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2457,10 +2457,10 @@ const person = { name: "Игорь" }
 compareMembers(person)
 ```
 
-- A: Не одинаковые!
-- B: Одинаковые!
-- C: ошибка
-- D: undefined
+- A: `"Не одинаковые!"`
+- B: `"Одинаковые!"`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2488,10 +2488,10 @@ const colors = ["pink", "red", "blue"]
 console.log(colorConfig.colors[1])
 ```
 
-- A: true
-- B: false
-- C: undefined
-- D: ошибка
+- A: `true`
+- B: `false`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2509,10 +2509,10 @@ console.log(colorConfig.colors[1])
 console.log('❤️' === '❤️')
 ```
 
-- A: true
-- B: false
-- C: undefined
-- D: ошибка
+- A: `true`
+- B: `false`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2535,10 +2535,10 @@ info.favoriteFood = '🍝'
 console.log(food)
 ```
 
-- A: ['🍕', '🍫', '🍳', '🍔']
-- B: ['🍝', '🍫', '🍳', '🍔']
-- C: ['🍝', '🍕', '🍫', '🍳', '🍔']
-- D: undefined
+- A: `['🍕', '🍫', '🍳', '🍔']`
+- B: `['🍝', '🍫', '🍳', '🍔']`
+- C: `['🍝', '🍕', '🍫', '🍳', '🍔']`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2563,10 +2563,10 @@ function getName() {
 getName()
 ```
 
-- A: John
-- B: Jane
-- C: undefined
-- D: ошибка
+- A: `John`
+- B: `Jane`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2596,10 +2596,10 @@ console.log(one.next().value)
 console.log(two.next().value)
 ```
 
-- A: a  a
-- B: a  undefined
-- C: ['a', 'b', 'c']  a
-- D: a  ['a', 'b', 'c']
+- A: `a` и `a`
+- B: `a` и `undefined`
+- C: `['a', 'b', 'c']` и `a`
+- D: `a` и `['a', 'b', 'c']`
 
 <details>
 <summary>Ответ</summary>
@@ -2628,10 +2628,10 @@ console.log(two.next().value) // undefined
 console.log(`${(x => x)('Я люблю')} писать код`)
 ```
 
-- A: Я люблю писать код
-- B: `undefined` писать код
-- C: `${(x => x)('Я люблю')` писать код
-- D: ошибка
+- A: `Я люблю писать код`
+- B: `undefined писать код`
+- C: `${(x => x)('Я люблю') писать код`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2686,10 +2686,10 @@ function sumValues(x, y, z) {
 }
 ```
 
-- A: sumValues([...1, 2, 3])
-- B: sumValues([...[1, 2, 3]])
-- C: sumValues(...[1, 2, 3])
-- D: sumValues([1, 2, 3])
+- A: `sumValues([...1, 2, 3])`
+- B: `sumValues([...[1, 2, 3]])`
+- C: `sumValues(...[1, 2, 3])`
+- D: `sumValues([1, 2, 3])`
 
 <details>
 <summary>Ответ</summary>
@@ -2710,10 +2710,10 @@ const list = ['a', 'b', 'c', 'd']
 console.log(list[(num += 1)])
 ```
 
-- A: b
-- B: c
-- C: ошибка
-- D: undefined
+- A: `b`
+- B: `c`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2746,10 +2746,10 @@ console.log(person.getFullName?.())
 console.log(member.getLastName?.())
 ```
 
-- A: undefined undefined undefined undefined
-- B: Rex undefined John Smith undefined
-- C: Rex null John Smith null
-- D: ошибка
+- A: `undefined undefined undefined undefined`
+- B: `Rex undefined John Smith undefined`
+- C: `Rex null John Smith null`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -2773,10 +2773,10 @@ if (groceries.indexOf('банан')) {
 }
 ```
 
-- A: Нам нужно купить бананы!
-- B: Нам не нужно покупать бананы!
-- C: undefined
-- D: 1
+- A: `"Нам нужно купить бананы!"`
+- B: `"Нам не нужно покупать бананы!"`
+- C: `undefined`
+- D: `1`
 
 <details>
 <summary>Ответ</summary>
@@ -2802,9 +2802,9 @@ console.log(config.language)
 ```
 
 - A: `function language(lang) { this.languages.push(lang }`
-- B: 0
-- C: []
-- D: undefined
+- B: `0`
+- C: `[]`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2825,10 +2825,10 @@ console.log(!typeof name === 'object')
 console.log(!typeof name === 'string')
 ```
 
-- A: false true
-- B: true false
-- C: false false
-- D: true true
+- A: `false true`
+- B: `true false`
+- C: `false false`
+- D: `true true`
 
 <details>
 <summary>Ответ</summary>
@@ -2851,10 +2851,10 @@ const add = x => y => z => {
 add(4)(5)(6)
 ```
 
-- A: 4 5 6
-- B: 6 5 4
-- C: 4 function function
-- D: undefined undefined 6
+- A: `4 5 6`
+- B: `6 5 4`
+- C: `4 function function`
+- D: `undefined undefined 6`
 
 <details>
 <summary>Ответ</summary>
@@ -2885,8 +2885,8 @@ async function* range(start, end) {
 
 - A: `Promise {1} Promise {2} Promise {3}`
 - B: `Promise {<pending>} Promise {<pending>} Promise {<pending>}`
-- C: 1 2 3
-- D: undefined undefined undefined
+- C: `1 2 3`
+- D: `undefined undefined undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -2960,10 +2960,10 @@ console.log(isNaN(name))
 console.log(isNaN(age))
 ```
 
-- A: true false true false
-- B: true false false false
-- C: false false true false
-- D: false true false true
+- A: `true false true false`
+- B: `true false false false`
+- C: `false false true false`
+- D: `false true false true`
 
 <details>
 <summary>Ответ</summary>
@@ -2988,10 +2988,10 @@ function getInfo() {
 getInfo()
 ```
 
-- A: number
-- B: string
-- C: undefined
-- D: ошибка
+- A: `number`
+- B: `string`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3019,10 +3019,10 @@ const myPromise = Promise.resolve('Woah some cool data')
 })()
 ```
 
-- A: Woah some cool data
-- B: Oh finally
-- C: Woah some cool data и Oh finally
-- D: Oops didn't work и Oh finally
+- A: `Woah some cool data`
+- B: `Oh finally`
+- C: `Woah some cool data` и `Oh finally`
+- D: `Oops didn't work` и `Oh finally`
 
 <details>
 <summary>Ответ</summary>
@@ -3042,10 +3042,10 @@ const emojis = ['💫', ['✨', '✨', ['🍕', '🍕']]]
 console.log(emojis.flat(1))
 ```
 
-- A: ['💫', ['✨', '✨', ['🍕', '🍕']]]
-- B: ['💫', '✨', '✨', ['🍕', '🍕']]
-- C: ['💫', ['✨', '✨', '🍕', '🍕']]
-- D: ['💫', '✨', '✨', '🍕', '🍕']
+- A: `['💫', ['✨', '✨', ['🍕', '🍕']]]`
+- B: `['💫', '✨', '✨', ['🍕', '🍕']]`
+- C: `['💫', ['✨', '✨', '🍕', '🍕']]`
+- D: `['💫', '✨', '✨', '🍕', '🍕']`
 
 <details>
 <summary>Ответ</summary>
@@ -3080,10 +3080,10 @@ counterTwo.increment()
 console.log(counterOne.count)
 ```
 
-- A: 0
-- B: 1
-- C: 2
-- D: 3
+- A: `0`
+- B: `1`
+- C: `2`
+- D: `3`
 
 <details>
 <summary>Ответ</summary>
@@ -3119,10 +3119,10 @@ funcOne()
 funcTwo()
 ```
 
-- A: Promise! Last line! Promise! Last line! Last line! Promise!
-- B: Last line! Timeout! Promise! Last line! Timeout! Promise!
-- C: Promise! Last line! Last line! Promise! Timeout! Timeout!
-- D: Last line! Promise! Promise! Last line! Timeout! Timeout!
+- A: `Promise! Last line! Promise! Last line! Last line! Promise!`
+- B: `Last line! Timeout! Promise! Last line! Timeout! Promise!`
+- C: `Promise! Last line! Last line! Promise! Timeout! Timeout!`
+- D: `Last line! Promise! Promise! Last line! Timeout! Timeout!`
 
 <details>
 <summary>Ответ</summary>
@@ -3149,10 +3149,10 @@ import * as sum from './sum'
 /* вызов функции "sum" */
 ```
 
-- A: sum()
-- B: sum.sum()
-- C: sum.default()
-- D: символ * может использоваться только при именованном экспорте
+- A: `sum()`
+- B: `sum.sum()`
+- C: `sum.default()`
+- D: символ `*` может использоваться только при именованном экспорте
 
 <details>
 <summary>Ответ</summary>
@@ -3197,10 +3197,10 @@ person.name = 'John'
 person.name
 ```
 
-- A: Added a new property!
-- B: Accessed a property!
-- C: Added a new property! Accessed a property!
-- D: ошибка
+- A: `Added a new property!`
+- B: `Accessed a property!`
+- C: `Added a new property! Accessed a property!`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3227,10 +3227,10 @@ person.address.street = "101 Main Street"
 console.log(person.address.street)
 ```
 
-- A: false
-- B: 100 Some Street
-- C: 101 Main Street
-- D: ошибка
+- A: `false`
+- B: `100 Some Street`
+- C: `101 Main Street`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3255,10 +3255,10 @@ myFunc()
 myFunc(3)
 ```
 
-- A: 2 4 и 3 6
-- B: 2 NaN и 3 NaN
-- C: 2 undefined и 3 6
-- D: 2 4 и 3 undefined
+- A: `2 4` и `3 6`
+- B: `2 NaN` и `3 NaN`
+- C: `2 undefined` и `3 6`
+- D: `2 4` и `3 undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -3291,10 +3291,10 @@ counter.increment()
 console.log(counter.#number)
 ```
 
-- A: 10
-- B: 11
-- C: undefined
-- D: ошибка
+- A: `10`
+- B: `11`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3331,10 +3331,10 @@ obj.next() // { value: "John", done: false }
 obj.next() // { value: "Jane", done: false }
 ```
 
-- A: yield getMembers(teams[i].members)
-- B: yield* getMembers(teams[i].members)
-- C: return getMembers(teams[i].members)
-- D: return yield getMembers(teams[i].members)
+- A: `yield getMembers(teams[i].members)`
+- B: `yield* getMembers(teams[i].members)`
+- C: `return getMembers(teams[i].members)`
+- D: `return yield getMembers(teams[i].members)`
 
 <details>
 <summary>Ответ</summary>
@@ -3366,10 +3366,10 @@ addHobby('baking', person.hobbies)
 console.log(person.hobbies)
 ```
 
-- A: ["coding"]
-- B: ["coding", "dancing"]
-- C: ["coding", "dancing", "baking"]
-- D: ["coding", "running", "dancing", "baking"]
+- A: `["coding"]`
+- B: `["coding", "dancing"]`
+- C: `["coding", "dancing", "baking"]`
+- D: `["coding", "running", "dancing", "baking"]`
 
 <details>
 <summary>Ответ</summary>
@@ -3400,10 +3400,10 @@ class Flamingo extends Bird {
 const pet = new Flamingo()
 ```
 
-- A: I'm pink. 🌸
-- B: I'm pink. 🌸 и I'm a bird. 🐤
-- C: I'm a bird. 🐤 и I'm pink. 🌸
-- D: undefined
+- A: `I'm pink. 🌸`
+- B: `I'm pink. 🌸` и `I'm a bird. 🐤`
+- C: `I'm a bird. 🐤` и `I'm pink. 🌸`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -3454,10 +3454,10 @@ nums.forEach(num => {
 console.log(count)
 ```
 
-- A: 1
-- B: 2
-- C: 3
-- D: 4
+- A: `1`
+- B: `2`
+- C: `3`
+- D: `4`
 
 <details>
 <summary>Ответ</summary>
@@ -3481,10 +3481,10 @@ getFruit()
 getFruit([['🍍'], ['🍊', '🍌']])
 ```
 
-- A: null undefined 🍌
-- B: [] null 🍌
-- C: [] [] 🍌
-- D: undefined undefined 🍌
+- A: `null undefined 🍌`
+- B: `[] null 🍌`
+- C: `[] [] 🍌`
+- D: `undefined undefined 🍌`
 
 <details>
 <summary>Ответ</summary>
@@ -3515,10 +3515,10 @@ new Calc().increase()
 console.log(calc.count)
 ```
 
-- A: 0
-- B: 1
-- C: undefined
-- D: ошибка
+- A: `0`
+- B: `1`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3555,10 +3555,10 @@ const updatedUser = updateUser({ email: "new@email.com" })
 console.log(updatedUser === user)
 ```
 
-- A: false
-- B: true
-- C: ошибка
-- D: undefined
+- A: `false`
+- B: `true`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -3582,10 +3582,10 @@ fruits.unshift('🍇')
 console.log(fruits)
 ```
 
-- A: ['🍌', '🍊', '🍎']
-- B: ['🍊', '🍎']
-- C: ['🍇', '🍊', '🍎']
-- D: ['🍇', '🍌', '🍊', '🍎']
+- A: `['🍌', '🍊', '🍎']`
+- B: `['🍊', '🍎']`
+- C: `['🍇', '🍊', '🍎']`
+- D: `['🍇', '🍌', '🍊', '🍎']`
 
 <details>
 <summary>Ответ</summary>
@@ -3613,7 +3613,7 @@ console.log(animals[dog])
 - A: `{ emoji: "🐶", name: "Rex" }`
 - B: `{ emoji: "🐈", name: "Niko" }`
 - C: `undefined`
-- D: ошибка
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3639,10 +3639,10 @@ user.updateEmail("new@email.com")
 console.log(user.email)
 ```
 
-- A: my@email.com
-- B: new@email.com
-- C: undefined
-- D: ошибка
+- A: `my@email.com`
+- B: `new@email.com`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3673,10 +3673,10 @@ runPromises()
   .catch(er => console.log(er))
 ```
 
-- A: [['First', 'Second'] и ['Fourth']]
-- B: [['First', 'Second'] и ['Third', 'Fourth']]
-- C: [['First', 'Second']]
-- D: 'Third'
+- A: `[['First', 'Second']]` и `[['Fourth']]`
+- B: `[['First', 'Second']]` и `[['Third', 'Fourth']]`
+- C: `[['First', 'Second']]`
+- D: `'Third'`
 
 <details>
 <summary>Ответ</summary>
@@ -3701,10 +3701,10 @@ Object[method](keys.map((_, i) => {
 })) // { name: "John", age: 30 }
 ```
 
-- A: entries
-- B: values
-- C: fromEntries
-- D: forEach
+- A: `entries`
+- B: `values`
+- C: `fromEntries`
+- D: `forEach`
 
 <details>
 <summary>Ответ</summary>
@@ -3761,10 +3761,10 @@ if (!typeof randomValue === "string") {
 }
 ```
 
-- A: Это не строка!
-- B: Это строка!
-- C: ошибка
-- D: undefined
+- A: `"Это не строка!"`
+- B: `"Это строка!"`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -3791,7 +3791,7 @@ function Vehicle(model, color, year, country) {
 ```
 
 - A: `undefined`
-- B: ошибка
+- B: `Error`
 - C: `null`
 - D: `{ model: "Honda", color: "white", year: "2010", country: "UK" }`
 
@@ -3818,10 +3818,10 @@ function foo() {
 console.log(foo(), typeof x, typeof y)
 ```
 
-- A: 1 undefined undefined
-- B: ошибка
-- C: 1 undefined number
-- D: 1 number number
+- A: `1 undefined undefined`
+- B: `Error`
+- C: `1 undefined number`
+- D: `1 number number`
 
 <details>
 <summary>Ответ</summary>
@@ -3853,10 +3853,10 @@ function main() {
 main()
 ```
 
-- A: A B C
-- B: B A C
-- C: A C
-- D: A C B
+- A: `A B C`
+- B: `B A C`
+- C: `A C`
+- D: `A C B`
 
 <details>
 <summary>Ответ</summary>
@@ -3882,10 +3882,10 @@ main()
 console.log(0.1 + 0.2 === 0.3)
 ```
 
-- A: false
-- B: true
-- C: undefined
-- D: ошибка
+- A: `false`
+- B: `true`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3907,10 +3907,10 @@ if (function f(){}) {
 console.log(y)
 ```
 
-- A: 1function
-- B: 1object
-- C: ошибка
-- D: 1undefined
+- A: `1function`
+- B: `1object`
+- C: `Error`
+- D: `1undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -3937,7 +3937,7 @@ console.log(foo())
 - A: `Hello World`
 - B: `Object { message: "Hello World" }`
 - C: `undefined`
-- D: ошибка
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -3964,10 +3964,10 @@ console.log(myChars[0])
 console.log(myChars.length)
 ```
 
-- A: [empty, 'b', 'c', 'd'] empty 3
-- B: [null, 'b', 'c', 'd'] empty 3
-- C: [empty, 'b', 'c', 'd'] undefined 4
-- D: [null, 'b', 'c', 'd'] undefined 4
+- A: `[empty, 'b', 'c', 'd'] empty 3`
+- B: `[null, 'b', 'c', 'd'] empty 3`
+- C: `[empty, 'b', 'c', 'd'] undefined 4`
+- D: `[null, 'b', 'c', 'd'] undefined 4`
 
 <details>
 <summary>Ответ</summary>
@@ -4015,10 +4015,10 @@ console.log(1 < 2 < 3)
 console.log(3 > 2 > 1)
 ```
 
-- A: true true
-- B: true false
-- C: ошибка
-- D: false false
+- A: `true true`
+- B: `true false`
+- C: `Error`
+- D: `false false`
 
 <details>
 <summary>Ответ</summary>
@@ -4051,10 +4051,10 @@ function printNumbers (first, second, first) {
 printNumbers(1, 2, 3)
 ```
 
-- A: 1 2 3
-- B: 3 2 3
-- C: ошибка
-- D: 1 2 1
+- A: `1 2 3`
+- B: `3 2 3`
+- C: `Error`
+- D: `1 2 1`
 
 <details>
 <summary>Ответ</summary>
@@ -4076,10 +4076,10 @@ const printNumbersArrow = (first, second, first) => {
 printNumbersArrow(1, 2, 3)
 ```
 
-- A: 1 2 3
-- B: 3 2 3
-- C: ошибка
-- D: 1 2 1
+- A: `1 2 3`
+- B: `3 2 3`
+- C: `Error`
+- D: `1 2 1`
 
 <details>
 <summary>Ответ</summary>
@@ -4098,10 +4098,10 @@ const f = () => arguments.length
 console.log(f(1, 2, 3))
 ```
 
-- A: ошибка
-- B: 3
-- C: undefined
-- D: null
+- A: `Error`
+- B: `3`
+- C: `undefined`
+- D: `null`
 
 <details>
 <summary>Ответ</summary>
@@ -4130,10 +4130,10 @@ console.log( String.prototype.trimLeft.name === 'trimLeft' )
 console.log( String.prototype.trimLeft.name === 'trimStart' )
 ```
 
-- A: true false
-- B: false true
-- C: undefined
-- D: null
+- A: `true false`
+- B: `false true`
+- C: `undefined`
+- D: `null`
 
 <details>
 <summary>Ответ</summary>
@@ -4151,10 +4151,10 @@ console.log( String.prototype.trimLeft.name === 'trimStart' )
 console.log(Math.max())
 ```
 
-- A: undefined
-- B: Infinity
-- C: 0
-- D: -Infinity
+- A: `undefined`
+- B: `Infinity`
+- C: `0`
+- D: `-Infinity`
 
 <details>
 <summary>Ответ</summary>
@@ -4173,10 +4173,10 @@ console.log(10 == [10])
 console.log(10 == [[[[[[[10]]]]]]])
 ```
 
-- A: true true
-- B: true false
-- C: false false
-- D: false true
+- A: `true true`
+- B: `true false`
+- C: `false false`
+- D: `false true`
 
 <details>
 <summary>Ответ</summary>
@@ -4199,10 +4199,10 @@ console.log(10 + '10')
 console.log(10 - '10')
 ```
 
-- A: 20 0
-- B: 1010 0
-- C: 1010 10-10
-- D: NaN NaN
+- A: `20 0`
+- B: `1010 0`
+- C: `1010 10-10`
+- D: `NaN NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -4220,10 +4220,10 @@ console.log(10 - '10')
 console.log([1, 2] + [3, 4])
 ```
 
-- A: [1, 2, 3, 4]
-- B: '[1, 2][3, 4]'
-- C: ошибка
-- D: '1,23,4'
+- A: `[1, 2, 3, 4]`
+- B: `'[1, 2][3, 4]'`
+- C: `Error`
+- D: `'1,23,4'`
 
 <details>
 <summary>Ответ</summary>
@@ -4267,9 +4267,9 @@ console.log(NaN === NaN)
 ```
 
 - A: true
-- B: false
-- C: ошибка
-- D: undefined
+- B: `false`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4288,10 +4288,10 @@ const numbers = [1, 2, 3, 4, NaN]
 console.log(numbers.indexOf(NaN))
 ```
 
-- A: 4
-- B: NaN
-- C: ошибка
-- D: -1
+- A: `4`
+- B: `NaN`
+- C: `Error`
+- D: `-1`
 
 <details>
 <summary>Ответ</summary>
@@ -4315,10 +4315,10 @@ const [a, ...b,] = [1, 2, 3, 4, 5]
 console.log(a, b)
 ```
 
-- A: 1 [2, 3, 4, 5]
-- B: 1 {2, 3, 4, 5}
-- C: ошибка
-- D: 1 [2, 3, 4]
+- A: `1 [2, 3, 4, 5]`
+- B: `1 {2, 3, 4, 5}`
+- C: `Error`
+- D: `1 [2, 3, 4]`
 
 <details>
 <summary>Ответ</summary>
@@ -4345,7 +4345,7 @@ console.log(func())
 
 - A: `Promise {:10}`
 - B: `10`
-- C: ошибка
+- C: `Error`
 - D: `Promise {:undefined}`
 
 <details>
@@ -4372,7 +4372,7 @@ console.log(func())
 
 - A: `Promise {:10}`
 - B: `10`
-- C: ошибка
+- C: `Error`
 - D: `Promise {:undefined}`
 
 <details>
@@ -4409,10 +4409,10 @@ async function processArray(array) {
 processArray([1, 2, 3, 4])
 ```
 
-- A: ошибка
-- B: 1, 2, 3, 4
-- C: 4, 4, 4, 4
-- D: 4, 3, 2, 1
+- A: `Error`
+- B: `1, 2, 3, 4`
+- C: `4, 4, 4, 4`
+- D: `4, 3, 2, 1`
 
 <details>
 <summary>Ответ</summary>
@@ -4446,10 +4446,10 @@ async function process(array) {
 process([1, 2, 3, 5])
 ```
 
-- A: 1 2 3 5 и Process completed!
-- B: 5 5 5 5 и Process completed!
-- C: Process completed! и 5 5 5 5
-- D: Process completed! и 1 2 3 5
+- A: `1 2 3 5` и `Process completed!`
+- B: `5 5 5 5` и `Process completed!`
+- C: `Process completed!` и `5 5 5 5`
+- D: `Process completed!` и `1 2 3 5`
 
 <details>
 <summary>Ответ</summary>
@@ -4509,10 +4509,10 @@ const sym4 = Symbol.for('two')
 console.log(sym1 === sym2, sym3 === sym4)
 ```
 
-- A: true true
-- B: true false
-- C: false true
-- D: false false
+- A: `true true`
+- B: `true false`
+- C: `false true`
+- D: `false false`
 
 <details>
 <summary>Ответ</summary>
@@ -4533,10 +4533,10 @@ const sym1 = new Symbol('one')
 console.log(sym1)
 ```
 
-- A: ошибка
-- B: one
-- C: Symbol('one')
-- D: Symbol
+- A: `Error`
+- B: `one`
+- C: `Symbol('one')`
+- D: `Symbol`
 
 <details>
 <summary>Ответ</summary>
@@ -4567,10 +4567,10 @@ if (!typeof myString === "number"){
 }
 ```
 
-- A: ошибка
-- B: It is not a string! и It is not a number!
-- C: It is not a string! и It is a number!
-- D: It is a string! и It is a number!
+- A: `Error`
+- B: `It is not a string!` и `It is not a number!`
+- C: `It is not a string!` и `It is a number!`
+- D: `It is a string!` и `It is a number!`
 
 <details>
 <summary>Ответ</summary>
@@ -4619,10 +4619,10 @@ new A()
 new B()
 ```
 
-- A: A A
-- B: A B
-- C: B B
-- D: ошибка
+- A: `A A`
+- B: `A B`
+- C: `B B`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -4643,10 +4643,10 @@ console.log(x)
 console.log(y)
 ```
 
-- A: 30 20
-- B: 10 20
-- C: 10 undefined
-- D: 30 undefined
+- A: `30 20`
+- B: `10 20`
+- C: `10 undefined`
+- D: `30 undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4670,10 +4670,10 @@ function area({ length = 10, width = 20 }) {
 area()
 ```
 
-- A: 200
-- B: ошибка
-- C: undefined
-- D: 0
+- A: `200`
+- B: `Error`
+- C: `undefined`
+- D: `0`
 
 <details>
 <summary>Ответ</summary>
@@ -4708,10 +4708,10 @@ const [, , { name }] = props
 console.log(name)
 ```
 
-- A: Bob
-- B: ошибка
-- C: undefined
-- D: John
+- A: `Bob`
+- B: `Error`
+- C: `undefined`
+- D: `John`
 
 <details>
 <summary>Ответ</summary>
@@ -4736,10 +4736,10 @@ checkType('')
 checkType(null)
 ```
 
-- A: number undefined string object
-- B: undefined undefined string object
-- C: number number string object
-- D: number number number number
+- A: `number undefined string object`
+- B: `undefined undefined string object`
+- C: `number number string object`
+- D: `number number number number`
 
 <details>
 <summary>Ответ</summary>
@@ -4765,10 +4765,10 @@ console.log(add('Orange'))
 console.log(add('Apple'))
 ```
 
-- A: ['Orange'] и ['Orange', 'Apple']
-- B: ['Orange'] и ['Apple']
-- C: []
-- D: undefined
+- A: `['Orange']` и `['Orange', 'Apple']`
+- B: `['Orange']` и `['Apple']`
+- C: `[]`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4791,10 +4791,10 @@ greet('Hello', 'John')
 greet('Hello', 'John', 'Good morning!')
 ```
 
-- A: ошибка
-- B: ['Hello', 'John', 'Hello John'] и ['Hello', 'John', 'Good morning!']
-- C: ['Hello', 'John', 'Hello John'] и ['Hello', 'John', 'Hello John']
-- D: undefined
+- A: `Error`
+- B: `['Hello', 'John', 'Hello John']` и `['Hello', 'John', 'Good morning!']`
+- C: `['Hello', 'John', 'Hello John']` и `['Hello', 'John', 'Hello John']`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4815,10 +4815,10 @@ function outer(f = inner()) {
 console.log(outer())
 ```
 
-- A: ошибка
-- B: Inner
-- C: Inner Inner
-- D: undefined
+- A: `Error`
+- B: `Inner`
+- C: `Inner Inner`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -4850,10 +4850,10 @@ myFun(1, 2, 3, 4, 5)
 myFun(1, 2)
 ```
 
-- A: [3, 4, 5] и undefined
-- B: ошибка
-- C: [3, 4, 5] и []
-- D: [3, 4, 5] и [undefined]
+- A: `[3, 4, 5]` и `undefined`
+- B: `Error`
+- C: `[3, 4, 5]` и `[]`
+- D: `[3, 4, 5]` и `[undefined]`
 
 <details>
 <summary>Ответ</summary>
@@ -4873,10 +4873,10 @@ const array = [...obj]
 console.log(array)
 ```
 
-- A: ['key', 'value']
-- B: ошибка
-- C: []
-- D: ['key']
+- A: `['key', 'value']`
+- B: `Error`
+- C: `[]`
+- D: `['key']`
 
 <details>
 <summary>Ответ</summary>
@@ -4900,10 +4900,10 @@ var myGenObj = new myGenFunc
 console.log(myGenObj.next().value)
 ```
 
-- A: 1
-- B: undefined
-- C: 2
-- D: ошибка
+- A: `1`
+- B: `undefined`
+- C: `2`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -4964,10 +4964,10 @@ for (const value of myGenerator) {
 }
 ```
 
-- A: 1 2 3 и 1 2 3
-- B: 1 2 3 и 4 5 6
-- C: 1 1
-- D: 1
+- A: `1 2 3` и `1 2 3`
+- B: `1 2 3` и `4 5 6`
+- C: `1 1`
+- D: `1`
 
 <details>
 <summary>Ответ</summary>
@@ -5000,10 +5000,10 @@ class Square {
 }
 ```
 
-- A: 100
-- B: ошибка
-- C: 10
-- D: undefined
+- A: `100`
+- B: `Error`
+- C: `10`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -5036,10 +5036,10 @@ let run = Person.run
 console.log(run())
 ```
 
-- A: undefined undefined
-- B: Person Person
-- C: ошибка
-- D: Window Window
+- A: `undefined undefined`
+- B: `Person Person`
+- C: `Error`
+- D: `Window Window`
 
 <details>
 <summary>Ответ</summary>
@@ -5075,10 +5075,10 @@ const car = new Car('BMW')
 console.log(car.start())
 ```
 
-- A: ошибка
-- B: BMW vehicle started и BMW car started
-- C: BMW car started и BMW vehicle started
-- D: BMW car started и BMW car started
+- A: `Error`
+- B: `BMW vehicle started` и `BMW car started`
+- C: `BMW car started` и `BMW vehicle started`
+- D: `BMW car started` и `BMW car started`
 
 <details>
 <summary>Ответ</summary>
@@ -5098,10 +5098,10 @@ user.age = 25
 console.log(user.age)
 ```
 
-- A: 30
-- B: 25
-- C: ошибка
-- D: undefined
+- A: `30`
+- B: `25`
+- C: `Error`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -5134,10 +5134,10 @@ x()
 x()
 ```
 
-- A: 1 2 3 и 1 2 3
-- B: 3 3 3 и 3 4 5
-- C: 3 3 3 и 1 2 3
-- D: 1 2 3 и 3 3 3
+- A: `1 2 3` и `1 2 3`
+- B: `3 3 3` и `3 4 5`
+- C: `3 3 3` и `1 2 3`
+- D: `1 2 3` и `3 3 3`
 
 <details>
 <summary>Ответ</summary>
@@ -5163,10 +5163,10 @@ const me = Name('John', 'Smith')
 console.log(!(a.length - window.a.length))
 ```
 
-- A: undefined
-- B: NaN
-- C: true
-- D: false
+- A: `undefined`
+- B: `NaN`
+- C: `true`
+- D: `false`
 
 <details>
 <summary>Ответ</summary>
@@ -5192,10 +5192,10 @@ const x = function (...x) {
 console.log(Boolean(x()))
 ```
 
-- A: true
-- B: 1
-- C: -1
-- D: false
+- A: `true`
+- B: `1`
+- C: `-1`
+- D: `false`
 
 <details>
 <summary>Ответ</summary>
@@ -5225,10 +5225,10 @@ Spread-оператор `...x` позволяет получить параме�
 })(3)
 ```
 
-- A: undefined
-- B: 18
-- C: 81
-- D: 12
+- A: `undefined`
+- B: `18`
+- C: `81`
+- D: `12`
 
 <details>
 <summary>Ответ</summary>
@@ -5260,10 +5260,10 @@ var tip = 100
 })()
 ```
 
-- A: I have $10
-- B: I have $100
-- C: I have $50
-- D: I have $NaN
+- A: `I have $10`
+- B: `I have $100`
+- C: `I have $50`
+- D: `I have $NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -5289,10 +5289,10 @@ delete edu.language
 console.log(Object.keys(newbie).length)
 ```
 
-- A: 2
-- B: 3
-- C: 4
-- D: 5
+- A: `2`
+- B: `3`
+- C: `4`
+- D: `5`
 
 <details>
 <summary>Ответ</summary>
@@ -5331,10 +5331,10 @@ class Combine {
 console.log(Combine.count())
 ```
 
-- A: 5
-- B: 6
-- C: 7
-- D: 8
+- A: `5`
+- B: `6`
+- C: `7`
+- D: `8`
 
 <details>
 <summary>Ответ</summary>
@@ -5368,10 +5368,10 @@ var x = 1
 console.log(x)
 ```
 
-- A: 4
-- B: 50
-- C: 2
-- D: 10
+- A: `4`
+- B: `50`
+- C: `2`
+- D: `10`
 
 <details>
 <summary>Ответ</summary>
@@ -5396,10 +5396,10 @@ console.log(x == z)
 console.log(x === z)
 ```
 
-- A: true true true true
-- B: false false false false
-- C: true true false false
-- D: false false true true
+- A: `true true true true`
+- B: `false false false false`
+- C: `true true false false`
+- D: `false false true true`
 
 <details>
 <summary>Ответ</summary>
@@ -5423,17 +5423,17 @@ setTimeout(() => console.log("world"), 0)
 console.log("hi")
 ```
 
-- A: hello hey yo world hi
-- B: hello hi hey yo world
-- C: hello hi world hey yo
-- D: hello hi hey world yo
+- A: `hello hey yo world hi`
+- B: `hello hi hey yo world`
+- C: `hello hi world hey yo`
+- D: `hello hi hey world yo`
 
 <details>
 <summary>Ответ</summary>
 <div>
-<h4>Правильный ответ: D</h4>
+<h4>Правильный ответ: зависит от среды выполнения</h4>
 
-Три функции `setTimeout` помещаются в очередь задач (task queue) перед попаданием в стек вызовов (call stack), поэтому сначала в консоль выводятся `hello` и `hi`. Можно подумать, что три колбека `setTimeout()` будут выполнены в следующем порядке: `world -> hey -> yo` согласно временной задержке в `0 мс -> 1 мс -> 2 мс`, соответственно. Однако, между `0` мс и `1` мс для браузера разницы не существует. Поэтому следующим в консоль выводится `hey`, затем `world` и в конце `yo`.
+Три колбека `setTimeout` помещаются в очередь задач (task queue) перед попаданием в стек вызовов (call stack), поэтому сначала в консоль выводятся `hello` и `hi`. Далее, в браузере в консоль ожидаемо выводится `world -> hey -> yo` согласно временной задержке в `0 мс -> 1 мс -> 2 мс`, соответственно (вариант C), а в Node.js в консоль выводится сначала `hey`, затем `world` и в конце `yo` (вариант D). Раньше для браузера и Node.js не существовало разницы между задержкой в `0` мс и `1` мс в `setTimeout`. Сейчас это актуально только для Node.js.
 
 </div>
 </details>
@@ -5452,10 +5452,10 @@ delete x
 x.name.lengthy()
 ```
 
-- A: John
-- B: hello
-- C: undefined
-- D: ошибка
+- A: `John`
+- B: `hello`
+- C: `undefined`
+- D: `Error`
 
 <details>
 <summary>Ответ</summary>
@@ -5479,10 +5479,10 @@ Object.prototype.hi = ++x.hi
 console.log(x.hi + Object.keys(x).length)
 ```
 
-- A: 10
-- B: 11
-- C: 12
-- D: NaN
+- A: `10`
+- B: `11`
+- C: `12`
+- D: `NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -5526,10 +5526,10 @@ const setPropNull = (obj) => {
 console.log(setPropNull({ 1: 2, 2: 3, 3: 4, 4: 5 }))
 ```
 
-- A: 3 3 3
-- B: 4 4 4
-- C: 4 3 4
-- D: 3 4 3
+- A: `3 3 3`
+- B: `4 4 4`
+- C: `4 3 4`
+- D: `3 4 3`
 
 <details>
 <summary>Ответ</summary>
@@ -5558,10 +5558,10 @@ console.log(c === d)
 console.log(e === f)
 ```
 
-- A: true true true
-- B: false false true
-- C: true true false
-- D: false true false
+- A: `true true true`
+- B: `false false true`
+- C: `true true false`
+- D: `false true false`
 
 <details>
 <summary>Ответ</summary>
@@ -5600,10 +5600,10 @@ let flag = languages.hasOwnProperty(
 })()
 ```
 
-- A: 8
-- B: NaN
-- C: 64
-- D: 12
+- A: `8`
+- B: `NaN`
+- C: `64`
+- D: `12`
 
 <details>
 <summary>Ответ</summary>
@@ -5652,10 +5652,10 @@ const flag = Evaluate.checkFlag(person)
 console.log(flag.length)
 ```
 
-- A: 1
-- B: 2
-- C: 3
-- D: 4
+- A: `1`
+- B: `2`
+- C: `3`
+- D: `4`
 
 <details>
 <summary>Ответ</summary>
@@ -5683,10 +5683,10 @@ const getID = (...id) => {
 getID(id)
 ```
 
-- A: ошибка
-- B: 10
-- C: undefined
-- D: function
+- A: `Error`
+- B: `10`
+- C: `undefined`
+- D: `function`
 
 <details>
 <summary>Ответ</summary>
@@ -5717,10 +5717,10 @@ var bookCollection = Object.create(book1, book2)
 bookCollection.getName()
 ```
 
-- A: Harry Potter
-- B: Name of the rose
-- C: ошибка
-- D: Object object
+- A: `Harry Potter`
+- B: `Name of the rose`
+- C: `Error`
+- D: `Object object`
 
 <details>
 <summary>Ответ</summary>
@@ -5751,10 +5751,10 @@ bookCollection.getName()
 })()
 ```
 
-- A: ошибка
-- B: undefined
-- C: 0
-- D: 6
+- A: `Error`
+- B: `undefined`
+- C: `0`
+- D: `6`
 
 <details>
 <summary>Ответ</summary>
@@ -5785,10 +5785,10 @@ promise
   .then((rs) => console.log(rs === 256 ? rs : rs * rs))
 ```
 
-- A: 3 2 256 256
-- B: 3 2 256 16
-- C: 256 16 3 2
-- D: 16 256 3 2
+- A: `3 2 256 256`
+- B: `3 2 256 16`
+- C: `256 16 3 2`
+- D: `16 256 3 2`
 
 <details>
 <summary>Ответ</summary>
@@ -5818,10 +5818,10 @@ async function f() {
 f(setTimeout(() => console.log("timer"), 0))
 ```
 
-- A: ошибка
-- B: done hello world
-- C: hello done world
-- D: timer done hello world
+- A: `Error`
+- B: `done hello world`
+- C: `hello done world`
+- D: `timer done hello world`
 
 <details>
 <summary>Ответ</summary>
@@ -5857,10 +5857,10 @@ const sortMe = new MySort(object)
 console.log(sortMe.getSort())
 ```
 
-- A: August
-- B: September
-- C: January
-- D: December
+- A: `August`
+- B: `September`
+- C: `January`
+- D: `December`
 
 <details>
 <summary>Ответ</summary>
@@ -5882,10 +5882,10 @@ let f = () => {}
 console.log((typeof f()).length + flag.toString().length)
 ```
 
-- A: NaN
-- B: 12
-- C: 13
-- D: 14
+- A: `NaN`
+- B: `12`
+- C: `13`
+- D: `14`
 
 <details>
 <summary>Ответ</summary>
@@ -5906,10 +5906,10 @@ console.log((typeof f()).length + flag.toString().length)
 })(1, 2, 3)
 ```
 
-- A: 4
-- B: 5
-- C: 6
-- D: 7
+- A: `4`
+- B: `5`
+- C: `6`
+- D: `7`
 
 <details>
 <summary>Ответ</summary>
@@ -5944,10 +5944,10 @@ const me = new Calculator(5, 5)
 console.log(me.getValue())
 ```
 
-- A: NaN
-- B: string
-- C: object
-- D: number
+- A: `NaN`
+- B: `string`
+- C: `object`
+- D: `number`
 
 <details>
 <summary>Ответ</summary>
@@ -5981,10 +5981,10 @@ let result = me() === obj.callMe() ? she() : `${me()} ${she()}`
 console.log(result)
 ```
 
-- A: undefined
-- B: John
-- C: Jane
-- D: John Jane
+- A: `undefined`
+- B: `John`
+- C: `Jane`
+- D: `John Jane`
 
 <details>
 <summary>Ответ</summary>
@@ -6008,10 +6008,10 @@ console.log(result)
 })(new Array(10))
 ```
 
-- A: 5
-- B: 10
-- C: 15
-- D: 20
+- A: `5`
+- B: `10`
+- C: `15`
+- D: `20`
 
 <details>
 <summary>Ответ</summary>
@@ -6037,10 +6037,10 @@ var student = new F("John")
 console.log(student.name)
 ```
 
-- A: John
-- B: undefined
-- C: ошибка
-- D: false
+- A: `John`
+- B: `undefined`
+- C: `Error`
+- D: `false`
 
 <details>
 <summary>Ответ</summary>
@@ -6082,10 +6082,10 @@ const filter = countries.filter((item) => {
 console.log(x.filter().length + filter[0].name.length)
 ```
 
-- A: 11
-- B: 12
-- C: 13
-- D: 14
+- A: `11`
+- B: `12`
+- C: `13`
+- D: `14`
 
 <details>
 <summary>Ответ</summary>
@@ -6123,10 +6123,10 @@ Promise.resolve(4).then(console.log)
 console.log(6)
 ```
 
-- A: 6  8  3  0  4  2  1
-- B: 8  2  3  0  4  6  1
-- C: 6  8  2  0  4  3  1
-- D: 8  6  2  0  4  3  1
+- A: `6  8  3  0  4  2  1`
+- B: `8  2  3  0  4  6  1`
+- C: `6  8  2  0  4  3  1`
+- D: `8  6  2  0  4  3  1`
 
 <details>
 <summary>Ответ</summary>
@@ -6164,10 +6164,10 @@ const username = {
 username.getMe()
 ```
 
-- A: 20
-- B: 21
-- C: 22
-- D: 23
+- A: `20`
+- B: `21`
+- C: `22`
+- D: `23`
 
 <details>
 <summary>Ответ</summary>
@@ -6196,10 +6196,10 @@ let data = userName()
 console.log((typeof data).length + data.next().value.length)
 ```
 
-- A: NaN
-- B: 10
-- C: ошибка
-- D: 15
+- A: `NaN`
+- B: `10`
+- C: `Error`
+- D: `15`
 
 <details>
 <summary>Ответ</summary>
@@ -6227,10 +6227,10 @@ b.length = "one".length
 console.log(b)
 ```
 
-- A: 4
-- B: [1, 2, "one", 3, "two"]
-- C: [1, 2, "one", "two"]
-- D: [1, 2, "one"]
+- A: `4`
+- B: `[1, 2, "one", 3, "two"]`
+- C: `[1, 2, "one", "two"]`
+- D: `[1, 2, "one"]`
 
 <details>
 <summary>Ответ</summary>
@@ -6258,10 +6258,10 @@ const a = [one(123), two(1, 2, 3)]
 console.log(typeof a !== "object" ? a[0] : a[1])
 ```
 
-- A: 1
-- B: 2
-- C: 3
-- D: 123
+- A: `1`
+- B: `2`
+- C: `3`
+- D: `123`
 
 <details>
 <summary>Ответ</summary>
@@ -6301,10 +6301,10 @@ const a = new Coder(16)
 console.log(a.getAge())
 ```
 
-- A: 7
-- B: 8
-- C: 9
-- D: 10
+- A: `7`
+- B: `8`
+- C: `9`
+- D: `10`
 
 <details>
 <summary>Ответ</summary>
@@ -6343,10 +6343,10 @@ const a = new RemoveFalse(theArray)
 console.log(a.length)
 ```
 
-- A: false
-- B: true
-- C: 2
-- D: 3
+- A: `false`
+- B: `true`
+- C: `2`
+- D: `3`
 
 <details>
 <summary>Ответ</summary>
@@ -6371,10 +6371,10 @@ const result = coderfarm.indexOf(converted + true)
 console.log(result)
 ```
 
-- A: []
-- B: {}
-- C: 2
-- D: 4
+- A: `[]`
+- B: `{}`
+- C: `2`
+- D: `4`
 
 <details>
 <summary>Ответ</summary>
@@ -6402,10 +6402,10 @@ const result = typeof converter(content) === content[1]
 console.log(checking ? (result ? (typeof converter).length : false) : false)
 ```
 
-- A: 6
-- B: NaN
-- C: true
-- D: 8
+- A: `6`
+- B: `NaN`
+- C: `true`
+- D: `8`
 
 <details>
 <summary>Ответ</summary>
@@ -6437,10 +6437,10 @@ let result = getJS.next().value
 console.log(result + getJS.next().value)
 ```
 
-- A: 10
-- B: 14
-- C: 15
-- D: 16
+- A: `10`
+- B: `14`
+- C: `15`
+- D: `16`
 
 <details>
 <summary>Ответ</summary>
@@ -6467,10 +6467,10 @@ ages.some(function (currentValue, index, ages) {
 console.log(response)
 ```
 
-- A: [20]
-- B: [20, 25]
-- C: [25, 29]
-- D: [29]
+- A: `[20]`
+- B: `[20, 25]`
+- C: `[25, 29]`
+- D: `[29]`
 
 <details>
 <summary>Ответ</summary>
@@ -6502,10 +6502,10 @@ const getString = (string, method = false) => {
 console.log(getString("hello", true) + getString("hello"))
 ```
 
-- A: 6
-- B: 7
-- C: 8
-- D: 9
+- A: `6`
+- B: `7`
+- C: `8`
+- D: `9`
 
 <details>
 <summary>Ответ</summary>
@@ -6543,10 +6543,10 @@ const a = new UserName()
 console.log(a.split("").length)
 ```
 
-- A: NaN
-- B: true
-- C: 10
-- D: 11
+- A: `NaN`
+- B: `true`
+- C: `10`
+- D: `11`
 
 <details>
 <summary>Ответ</summary>
@@ -6580,10 +6580,10 @@ function javaScript(node) {
 console.log(javaScript("I love you")()())
 ```
 
-- A: 20
-- B: 26
-- C: 23
-- D: 25
+- A: `20`
+- B: `26`
+- C: `23`
+- D: `25`
 
 <details>
 <summary>Ответ</summary>
@@ -6607,10 +6607,10 @@ console.log(javaScript("I love you")()())
 })([])
 ```
 
-- A: "f"
-- B: "t"
-- C: true
-- D: false
+- A: `"f"`
+- B: `"t"`
+- C: `true`
+- D: `false`
 
 <details>
 <summary>Ответ</summary>
@@ -6641,10 +6641,10 @@ console.log(Boolean(Number({})))
 console.log(Boolean(new Boolean(false)))
 ```
 
-- A: true  0  1  false  true  1  1  false  false
-- B: true  0  1  false  false  NaN  1  false  true
-- C: true  0  1  false  false  false  1  false  false
-- D: true  0  1  false  true  NaN  1  false  true
+- A: `true  0  1  false  true  1  1  false  false`
+- B: `true  0  1  false  false  NaN  1  false  true`
+- C: `true  0  1  false  false  false  1  false  false`
+- D: `true  0  1  false  true  NaN  1  false  true`
 
 <details>
 <summary>Ответ</summary>
@@ -6673,10 +6673,10 @@ const myYoutube = {
 console.log(myYoutube.content().name)
 ```
 
-- A: username
-- B: window
-- C: NaN
-- D: undefined
+- A: `username`
+- B: `window`
+- C: `NaN`
+- D: `undefined`
 
 <details>
 <summary>Ответ</summary>
@@ -6714,10 +6714,10 @@ for (let key in myArray) {
 console.log(result.length)
 ```
 
-- A: 10
-- B: NaN
-- C: 9
-- D: 7
+- A: `10`
+- B: `NaN`
+- C: `9`
+- D: `7`
 
 <details>
 <summary>Ответ</summary>
@@ -6749,10 +6749,10 @@ const [top, ...bottom] = (function (a) {
 console.log(top.length + bottom.length)
 ```
 
-- A: 8
-- B: 9
-- C: 10
-- D: 11
+- A: `8`
+- B: `9`
+- C: `10`
+- D: `11`
 
 <details>
 <summary>Ответ</summary>
@@ -6788,10 +6788,10 @@ console.log(getAge(true))
 console.log(age.number)
 ```
 
-- A: 10  10  NaN  NaN
-- B: 10  10  undefined  undefined
-- C: 10  11  undefined  undefined
-- D: 10  11  NaN  NaN
+- A: `10  10  NaN  NaN`
+- B: `10  10  undefined  undefined`
+- C: `10  11  undefined  undefined`
+- D: `10  11  NaN  NaN`
 
 <details>
 <summary>Ответ</summary>
@@ -6831,10 +6831,10 @@ f.call(f);
 obj.m.call(f);
 ```
 
-- A: 3 5 4 undefined 5 5
-- B: 5 5 4 undefined 5 undefined
-- C: 3 3 undefined 4 undefined 4
-- D: 5 5 4 undefined 3 5
+- A: `3 5 4 undefined 5 5`
+- B: `5 5 4 undefined 5 undefined`
+- C: `3 3 undefined 4 undefined 4`
+- D: `5 5 4 undefined 3 5`
 
 <details>
 <summary>Ответ</summary>
