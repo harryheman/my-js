@@ -3423,7 +3423,8 @@ const person = {
   age: 30
 }
 
-[...person] // ["John Smith", 30]
+console.log([...person])
+// ["John Smith", 30] - как получить такой вывод?
 ```
 
 - A: объекты являются итерируемыми по умолчанию
