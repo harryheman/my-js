@@ -95,10 +95,10 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 03.07.2024:
+            Обновление от 19.12.2024:
             <br />
-            <a href='docs/guide/shorelark'>
-              Учимся летать - симуляция эволюции на Rust
+            <a href='docs/other/js-data-structures'>
+              Раздел о структурах данных, реализованных на JS
             </a>
           </p>
 
