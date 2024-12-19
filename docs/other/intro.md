@@ -8,7 +8,7 @@ title: Содержание
 
 - :memo:&nbsp;&nbsp;[Вопросы по JavaScript. Версия 1](./js-questions)
 - :memo:&nbsp;&nbsp;[Вопросы по JavaScript. Версия 2](./js-questions2)
-- :memo:&nbsp;&nbsp;[Алгоритмы и структуры данных, реализованные на JavaScript](./js-algorithms)
+- :memo:&nbsp;&nbsp;[Структуры данных, реализованные на JavaScript](./js-data-structures)
 
 ---
 
