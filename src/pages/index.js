@@ -95,11 +95,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 19.12.2024:
+            Обновление от 28.01.2024:
             <br />
-            <a href='docs/other/js-data-structures'>
-              Раздел о структурах данных, реализованных на JS
-            </a>
+            <a href='docs/guide/convex'>Руководство по Convex</a>
           </p>
 
           <p className='hero__subtitle small'>

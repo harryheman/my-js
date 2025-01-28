@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.3
+sidebar_position: 2.4
 title: Руководство по Remix
 description: Руководство по Remix
 keywords: [javascript, js, react.js, reactjs, react, remix, progressive enhancement single page apps, pespa, guide, руководство, мета-фреймворк]

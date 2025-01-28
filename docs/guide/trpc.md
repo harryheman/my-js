@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.4
+sidebar_position: 2.5
 title: Руководство по tRPC
 description: Руководство по tRPC
 keywords: [javascript, js, typescript, ts, trpc, react.js, reactjs, react, react-query, next.js, nextjs]
