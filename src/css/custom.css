@@ -11,7 +11,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -36,7 +36,7 @@
   color: #fff;
 }
 
-[data-theme="dark"] .hero__subtitle a {
+[data-theme='dark'] .hero__subtitle a {
   color: #000;
 }
 
@@ -44,7 +44,7 @@
   color: #fff !important;
 }
 
-[data-theme="dark"] .go {
+[data-theme='dark'] .go {
   color: #000 !important;
   border-color: #000;
 }
@@ -53,7 +53,7 @@
   color: #000 !important;
 }
 
-[data-theme="dark"] .go:hover {
+[data-theme='dark'] .go:hover {
   color: #fff !important;
   background-color: #333;
 }
@@ -97,7 +97,7 @@
   background-color: inherit;
 }
 
-[aria-current="page"] {
+[aria-current='page'] {
   color: var(--ifm-navbar-link-hover-color);
 }
 
@@ -121,7 +121,8 @@
 }
 
 .footer__link img {
-  width: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 article header h1 {

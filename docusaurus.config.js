@@ -115,6 +115,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'algorithms/intro-algorithms',
+            position: 'left',
+            label: 'Структуры данных и алгоритмы',
+          },
+          {
+            type: 'doc',
             docId: 'other/intro-other',
             position: 'left',
             label: 'Другое',
@@ -140,22 +146,20 @@ const config = {
             title: 'Контакты',
             items: [
               {
-                html: '<p class="footer__link"><img src="/img/github.png" alt="" width="32" height="32"> <a href="https://github.com/harryheman" target="_blank">harryheman</a></p>',
+                html: '<a class="footer__link" href="https://github.com/harryheman" target="_blank"><img src="/img/github.png" alt=""><span>harryheman</span></a>',
               },
               {
-                html: '<p class="footer__link"><img src="/img/telegram.png" alt="" width="32" height="32"> @igoragapov</p>',
+                html: '<a class="footer__link" href="https://habr.com/ru/users/aio350" target="_blank"><img src="/img/habr.webp" alt=""><span>aio350</span></a>',
               },
               {
-                html: '<p class="footer__link"><img src="/img/email.png" alt="" width="32" height="32"><a href="mailto:aio350@yahoo.com">aio350@yahoo.com</a></p>',
+                html: '<a class="footer__link" href="https://t.me/igoragapov" target="_blank"><img src="/img/telegram.png" alt=""><span>igoragapov</span></a>',
               },
               {
-                label: 'Habr',
-                href: 'https://habr.com/ru/users/aio350',
+                html: '<a class="footer__link" href="mailto:aio350@yahoo.com"><img src="/img/email.png" alt=""><span>aio350@yahoo.com</span></a>',
               },
             ],
           },
         ],
-        // Please do not remove the credits, help to publicize Docusaurus :)
         copyright: `
           Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />
           Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
