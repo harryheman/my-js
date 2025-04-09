@@ -161,9 +161,9 @@ const config = {
           },
         ],
         copyright: `
-          Copyright © ${new Date().getFullYear()}. MyJavaScript. <br />
-          Built by <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Igor Agapov</a> with&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
-          Deploys on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
+          © ${new Date().getFullYear()}. MyJavaScript. <br />
+          Разработал <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Игорь Агапов</a> с помощью&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
+          Приложение развернуто на <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
         `,
       },
       docs: {
