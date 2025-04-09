@@ -179,6 +179,11 @@ const config = {
         contextualSearch: true,
       },
     }),
+
+  i18n: {
+    defaultLocale: 'ru',
+    locales: ['ru', 'en'],
+  },
 }
 
 module.exports = config
