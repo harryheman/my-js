@@ -12,6 +12,7 @@ tags: ['javascript', 'js', 'data structures', 'структуры данных']
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D1%8F%D0%B7%D0%BD%D1%8B%D0%B9_%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA)
 - [YouTube](https://www.youtube.com/watch?v=C9FK1pHLnhI&list=PLQOaTSbfxUtAIipl4136nwb4ISyFk8oI4)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/linked-list.js)
 
 Связный (связанный, односвязный, однонаправленный) список (linked list) - это динамическая структура данных, представляющая собой упорядоченную коллекцию узлов (nodes). Каждый узел содержит значение и ссылку (указатель) на следующий узел.
 

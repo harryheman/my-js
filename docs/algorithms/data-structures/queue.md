@@ -12,6 +12,7 @@ __Описание__
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%9E%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
 - [YouTube](https://www.youtube.com/watch?v=fmHyFTji-Lc)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/queue.js)
 
 Очередь (queue) - это динамическая структура данных, в которой элементы хранятся в порядке их добавления. Она является примером линейной структуры или последовательной коллекции. Новые элементы добавляются в конец очереди (enqueue). Удаление элементов выполняется с начала очереди (dequeue). Таким образом, очередь реализует принцип "первым вошел - первым вышел" (first in - first out, FIFO). Кроме enqueue и dequeue, часто также реализуется операция чтения значения головного узла без его удаления (peek).
 

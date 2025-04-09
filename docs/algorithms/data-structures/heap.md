@@ -12,6 +12,7 @@ __Описание__
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D1%87%D0%B0_(%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85))
 - [YouTube](https://www.youtube.com/watch?v=bO6h0NbbUEg)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/heap)
 
 Куча (heap) - это специализированная структура данных типа "дерево" (tree), которая удовлетворяет свойству кучи: если `B` является узлом-потомком узла `A`, то `k(A) >= k(B)`, где `k(X)` - ключ (идентификатор) узла. Из этого следует, что элемент с наибольшим значением ключа всегда является корневым узлом (root node) кучи, поэтому такие кучи называют max-кучами (max heaps):
 

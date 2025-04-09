@@ -12,6 +12,7 @@ __Описание__
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84_(%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0))
 - [YouTube](https://www.youtube.com/watch?v=VehB3eglQMQ)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/graph)
 
 Граф (graph) - это абстрактный тип данных, реализующий математические концепции направленного и ненаправленного (ориентированного и неориентированного) графов (соответствующий раздел математики называется [теорией графов](https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%B2)).
 

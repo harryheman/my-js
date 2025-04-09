@@ -12,6 +12,7 @@ __Описание__
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B_%D0%BA%D1%8D%D1%88%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 - [YouTube](https://www.youtube.com/watch?v=5JjISpzM8uM)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/lru-cache.js)
 
 Кэш актуальных (часто используемых) данных (least recently used (LRU) cache) организует (хранит) элементы таким образом, что мы можем легко определить, какие элементы используются часто, а какие - редко.
 

@@ -12,6 +12,7 @@ __Описание__
 
 - [Википедия](https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0)
 - [YouTube](https://www.youtube.com/watch?v=cWbuK7C13HQ)
+- [GitHub](https://github.com/harryheman/algorithms-data-structures/blob/main/src/data-structures/hash-table.js)
 
 Хэш-таблица (hash table) - это структура данных, которая реализует абстрактный тип данных "ассоциативный массив" и позволяет хранить пары "ключ-значение". Хэш-таблица использует так называемую хэш-функцию (hash function), которая принимает ключ и возвращает индекс массива, по которому будет храниться значение (см. [хорошее видео про хэширование](https://www.youtube.com/watch?v=xV8USnjKGCU)). Пример хэш-таблицы, в которой ключом выступает имя человека, а значением адрес его электронной почты:
 
