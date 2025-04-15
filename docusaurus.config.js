@@ -180,10 +180,10 @@ const config = {
       },
     }),
 
-  i18n: {
-    defaultLocale: 'ru',
-    locales: ['ru', 'en'],
-  },
+  // i18n: {
+  //   defaultLocale: 'ru',
+  //   locales: ['ru', 'en'],
+  // },
 }
 
 module.exports = config
