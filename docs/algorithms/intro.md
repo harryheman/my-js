@@ -24,69 +24,80 @@ title: Содержание
 
 ## Алгоритмы
 
-- :page_with_curl:&nbsp;&nbsp;[Математика](./algorithms/math.md)
+- :page_with_curl:&nbsp;&nbsp;[Математика](./algorithms/math)
 
 ### Множества
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sets/sets.md)
-- :page_with_curl:&nbsp;&nbsp;[Прямое произведение](./algorithms/sets/cartesian-product.md)
-- :page_with_curl:&nbsp;&nbsp;[Тасование Фишера-Йетса](./algorithms/sets/fisher-yates.md)
-- :page_with_curl:&nbsp;&nbsp;[Множество всех подмножеств](./algorithms/sets/power-set.md)
-- :page_with_curl:&nbsp;&nbsp;[Перестановки и комбинации](./algorithms/sets/permutations-combinations.md)
-- :page_with_curl:&nbsp;&nbsp;[Наибольшая общая подпоследовательность](./algorithms/sets/lcs.md)
-- :page_with_curl:&nbsp;&nbsp;[Кратчайшая общая суперпоследовательность](./algorithms/sets/scs.md)
-- :page_with_curl:&nbsp;&nbsp;[Максимальный подмассив](./algorithms/sets/max-subarray.md)
-- :page_with_curl:&nbsp;&nbsp;[Комбинация сумм](./algorithms/sets/combination-sum.md)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sets/sets)
+- :page_with_curl:&nbsp;&nbsp;[Прямое произведение](./algorithms/sets/cartesian-product)
+- :page_with_curl:&nbsp;&nbsp;[Тасование Фишера-Йетса](./algorithms/sets/fisher-yates)
+- :page_with_curl:&nbsp;&nbsp;[Множество всех подмножеств](./algorithms/sets/power-set)
+- :page_with_curl:&nbsp;&nbsp;[Перестановки и комбинации](./algorithms/sets/permutations-combinations)
+- :page_with_curl:&nbsp;&nbsp;[Наибольшая общая подпоследовательность](./algorithms/sets/lcs)
+- :page_with_curl:&nbsp;&nbsp;[Кратчайшая общая суперпоследовательность](./algorithms/sets/scs)
+- :page_with_curl:&nbsp;&nbsp;[Максимальный подмассив](./algorithms/sets/max-subarray)
+- :page_with_curl:&nbsp;&nbsp;[Комбинация сумм](./algorithms/sets/combination-sum)
 
 ### Строки
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/strings/strings.md)
-- :page_with_curl:&nbsp;&nbsp;[Расстояние Хэмминга](./algorithms/strings/hamming-distance.md)
-- :page_with_curl:&nbsp;&nbsp;[Расстояние Левенштейна](./algorithms/strings/levenshtein-distance.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Кнута-Морриса-Пратта](./algorithms/strings/kmp.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Рабина-Карпа](./algorithms/strings/rabin-karp.md)
-- :page_with_curl:&nbsp;&nbsp;[Наибольшая общая подстрока](./algorithms/strings/lcs.md)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/strings/strings)
+- :page_with_curl:&nbsp;&nbsp;[Расстояние Хэмминга](./algorithms/strings/hamming-distance)
+- :page_with_curl:&nbsp;&nbsp;[Расстояние Левенштейна](./algorithms/strings/levenshtein-distance)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Кнута-Морриса-Пратта](./algorithms/strings/kmp)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Рабина-Карпа](./algorithms/strings/rabin-karp)
+- :page_with_curl:&nbsp;&nbsp;[Наибольшая общая подстрока](./algorithms/strings/lcs)
 
 ### Поиск
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/search/search.md)
-- :page_with_curl:&nbsp;&nbsp;[Линейный поиск](./algorithms/search/linear.md)
-- :page_with_curl:&nbsp;&nbsp;[Поиск с переходом](./algorithms/search/jump.md)
-- :page_with_curl:&nbsp;&nbsp;[Двоичный поиск](./algorithms/search/binary.md)
-- :page_with_curl:&nbsp;&nbsp;[Интерполяционный поиск](./algorithms/search/interpolation.md)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/search/search)
+- :page_with_curl:&nbsp;&nbsp;[Линейный поиск](./algorithms/search/linear)
+- :page_with_curl:&nbsp;&nbsp;[Поиск с переходом](./algorithms/search/jump)
+- :page_with_curl:&nbsp;&nbsp;[Двоичный поиск](./algorithms/search/binary)
+- :page_with_curl:&nbsp;&nbsp;[Интерполяционный поиск](./algorithms/search/interpolation)
 
 ### Сортировка
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sort/sort.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка пузырьком](./algorithms/sort/bubble.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка выбором](./algorithms/sort/select.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка вставками](./algorithms/sort/insert.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка кучей](./algorithms/sort/heap.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка слиянием](./algorithms/sort/merge.md)
-- :page_with_curl:&nbsp;&nbsp;[Быстра сортировка](./algorithms/sort/quick.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка Шелла](./algorithms/sort/shell.md)
-- :page_with_curl:&nbsp;&nbsp;[Сортировка подсчетом](./algorithms/sort/count.md)
-- :page_with_curl:&nbsp;&nbsp;[Поразрядная сортировка](./algorithms/sort/radix.md)
-- :page_with_curl:&nbsp;&nbsp;[Блочная сортировка](./algorithms/sort/bucket.md)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sort/sort)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка пузырьком](./algorithms/sort/bubble)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка выбором](./algorithms/sort/select)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка вставками](./algorithms/sort/insert)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка кучей](./algorithms/sort/heap)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка слиянием](./algorithms/sort/merge)
+- :page_with_curl:&nbsp;&nbsp;[Быстра сортировка](./algorithms/sort/quick)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка Шелла](./algorithms/sort/shell)
+- :page_with_curl:&nbsp;&nbsp;[Сортировка подсчетом](./algorithms/sort/count)
+- :page_with_curl:&nbsp;&nbsp;[Поразрядная сортировка](./algorithms/sort/radix)
+- :page_with_curl:&nbsp;&nbsp;[Блочная сортировка](./algorithms/sort/bucket)
 
 ### Связный список и дерево
 
-- :page_with_curl:&nbsp;&nbsp;[Связный список](./algorithms/linked-list.md)
-- :page_with_curl:&nbsp;&nbsp;[Дерево](./algorithms/tree.md)
+- :page_with_curl:&nbsp;&nbsp;[Связный список](./algorithms/linked-list)
+- :page_with_curl:&nbsp;&nbsp;[Дерево](./algorithms/tree)
 
 ### Граф
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/graph/graph.md)
-- :page_with_curl:&nbsp;&nbsp;[Поиск в глубину](./algorithms/graph/dfs.md)
-- :page_with_curl:&nbsp;&nbsp;[Поиск в ширину](./algorithms/graph/bfs.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Краскала](./algorithms/graph/kruskal.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Дейкстры](./algorithms/graph/dijkstra.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Беллмана-Форда](./algorithms/graph/bellman-ford.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Флойда-Уоршелла](./algorithms/graph/floyd-warshall.md)
-- :page_with_curl:&nbsp;&nbsp;[Определение цикла](./algorithms/graph/cycle-detection.md)
-- :page_with_curl:&nbsp;&nbsp;[Алгоритм Прима](./algorithms/graph/prim.md)
-- :page_with_curl:&nbsp;&nbsp;[Топологическая сортировка](./algorithms/graph/topological-sort.md)
-- :page_with_curl:&nbsp;&nbsp;[Точка сочленения](./algorithms/graph/articulation-point.md)
-- :page_with_curl:&nbsp;&nbsp;[Мост](./algorithms/graph/bridge.md)
-- :page_with_curl:&nbsp;&nbsp;[Компонента сильной связности](./algorithms/graph/scc.md)
-- :page_with_curl:&nbsp;&nbsp;[Задача коммивояжера](./algorithms/graph/tsp.md)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/graph/graph)
+- :page_with_curl:&nbsp;&nbsp;[Поиск в глубину](./algorithms/graph/dfs)
+- :page_with_curl:&nbsp;&nbsp;[Поиск в ширину](./algorithms/graph/bfs)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Краскала](./algorithms/graph/kruskal)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Дейкстры](./algorithms/graph/dijkstra)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Беллмана-Форда](./algorithms/graph/bellman-ford)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Флойда-Уоршелла](./algorithms/graph/floyd-warshall)
+- :page_with_curl:&nbsp;&nbsp;[Определение цикла](./algorithms/graph/cycle-detection)
+- :page_with_curl:&nbsp;&nbsp;[Алгоритм Прима](./algorithms/graph/prim)
+- :page_with_curl:&nbsp;&nbsp;[Топологическая сортировка](./algorithms/graph/topological-sort)
+- :page_with_curl:&nbsp;&nbsp;[Точка сочленения](./algorithms/graph/articulation-point)
+- :page_with_curl:&nbsp;&nbsp;[Мост](./algorithms/graph/bridge)
+- :page_with_curl:&nbsp;&nbsp;[Компонента сильной связности](./algorithms/graph/scc)
+- :page_with_curl:&nbsp;&nbsp;[Задача коммивояжера](./algorithms/graph/tsp)
+
+### Машинное обучение
+
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/machine-learning/machine-learning)
+- :page_with_curl:&nbsp;&nbsp;[NanoNeuron](./algorithms/machine-learning/nano-neuron)
+- :page_with_curl:&nbsp;&nbsp;[Метод k ближайших соседей](./algorithms/machine-learning/k-nn)
+- :page_with_curl:&nbsp;&nbsp;[Метод k средних](./algorithms/machine-learning/k-means)
+
+### Статистика
+
+- :page_with_curl:&nbsp;&nbsp;[Взвешенная произвольная выборка](./algorithms/statistics/weighted-random)
