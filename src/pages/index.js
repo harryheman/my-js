@@ -97,7 +97,7 @@ export default function Home() {
           <p className='hero__subtitle small'>
             Обновление от 21.05.2025:
             <br />
-            <a href='docs/algorithms/intro-algorithms'>
+            <a href='docs/algorithms-data-structures/intro-algorithms'>
               Структуры данных и алгоритмы
             </a>
           </p>

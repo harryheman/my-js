@@ -115,7 +115,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'algorithms/intro-algorithms',
+            docId: 'algorithms-data-structures/intro-algorithms',
             position: 'left',
             label: 'Структуры данных и алгоритмы',
           },

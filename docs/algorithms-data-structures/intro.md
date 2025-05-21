@@ -28,7 +28,7 @@ title: Содержание
 
 ### Множества
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sets/sets)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sets/intro)
 - :page_with_curl:&nbsp;&nbsp;[Прямое произведение](./algorithms/sets/cartesian-product)
 - :page_with_curl:&nbsp;&nbsp;[Тасование Фишера-Йетса](./algorithms/sets/fisher-yates)
 - :page_with_curl:&nbsp;&nbsp;[Множество всех подмножеств](./algorithms/sets/power-set)
@@ -40,7 +40,7 @@ title: Содержание
 
 ### Строки
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/strings/strings)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/strings/intro)
 - :page_with_curl:&nbsp;&nbsp;[Расстояние Хэмминга](./algorithms/strings/hamming-distance)
 - :page_with_curl:&nbsp;&nbsp;[Расстояние Левенштейна](./algorithms/strings/levenshtein-distance)
 - :page_with_curl:&nbsp;&nbsp;[Алгоритм Кнута-Морриса-Пратта](./algorithms/strings/kmp)
@@ -49,7 +49,7 @@ title: Содержание
 
 ### Поиск
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/search/search)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/search/intro)
 - :page_with_curl:&nbsp;&nbsp;[Линейный поиск](./algorithms/search/linear)
 - :page_with_curl:&nbsp;&nbsp;[Поиск с переходом](./algorithms/search/jump)
 - :page_with_curl:&nbsp;&nbsp;[Двоичный поиск](./algorithms/search/binary)
@@ -57,7 +57,7 @@ title: Содержание
 
 ### Сортировка
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sort/sort)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/sort/intro)
 - :page_with_curl:&nbsp;&nbsp;[Сортировка пузырьком](./algorithms/sort/bubble)
 - :page_with_curl:&nbsp;&nbsp;[Сортировка выбором](./algorithms/sort/select)
 - :page_with_curl:&nbsp;&nbsp;[Сортировка вставками](./algorithms/sort/insert)
@@ -76,7 +76,7 @@ title: Содержание
 
 ### Граф
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/graph/graph)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/graph/intro)
 - :page_with_curl:&nbsp;&nbsp;[Поиск в глубину](./algorithms/graph/dfs)
 - :page_with_curl:&nbsp;&nbsp;[Поиск в ширину](./algorithms/graph/bfs)
 - :page_with_curl:&nbsp;&nbsp;[Алгоритм Краскала](./algorithms/graph/kruskal)
@@ -93,7 +93,7 @@ title: Содержание
 
 ### Машинное обучение
 
-- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/machine-learning/machine-learning)
+- :page_with_curl:&nbsp;&nbsp;[Содержание](./algorithms/machine-learning/intro)
 - :page_with_curl:&nbsp;&nbsp;[NanoNeuron](./algorithms/machine-learning/nano-neuron)
 - :page_with_curl:&nbsp;&nbsp;[Метод k ближайших соседей](./algorithms/machine-learning/k-nn)
 - :page_with_curl:&nbsp;&nbsp;[Метод k средних](./algorithms/machine-learning/k-means)
