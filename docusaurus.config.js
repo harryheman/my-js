@@ -8,8 +8,9 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'harryheman', // Usually your GitHub org/user name.
-  projectName: 'my-js', // Usually your repo name.
+  organizationName: 'harryheman',
+  projectName: 'my-js',
+  trailingSlash: false,
 
   presets: [
     [
