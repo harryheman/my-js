@@ -95,10 +95,10 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 21.05.2025:
+            Обновление от 13.08.2025:
             <br />
-            <a href='docs/algorithms-data-structures/intro-algorithms'>
-              Структуры данных и алгоритмы
+            <a href='docs/guide/go'>
+              Руководство по Go для JavaScript-разработчиков
             </a>
           </p>
 

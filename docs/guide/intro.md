@@ -43,3 +43,7 @@ title: Содержание
 - :page_with_curl:&nbsp;&nbsp;[Книга рецептов Rust](./rust-cookbook)
 - :page_with_curl:&nbsp;&nbsp;[Туториал по Tokio](./tokio)
 - :page_with_curl:&nbsp;&nbsp;[Учимся летать - симуляция эволюции на Rust](./shorelark)
+
+---
+
+- :page_with_curl:&nbsp;&nbsp;[Руководство по Go для JavaScript-разработчиков](./go)
