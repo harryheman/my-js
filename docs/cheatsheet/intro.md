@@ -33,6 +33,7 @@ title: Содержание
 - :memo:&nbsp;&nbsp;[Шпаргалка по TypeScript](./ts)
 - :memo:&nbsp;&nbsp;[TypeScript в деталях](./mastering-ts)
 - :memo:&nbsp;&nbsp;[Паттерны проектирования TypeScript](./ts-design-patterns)
+- :memo:&nbsp;&nbsp;[Настройка Express 5 для продакшна в 2025 году](./express-2025)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Express API](./express-api)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Axios](./axios)
 - :memo:&nbsp;&nbsp;[Шпаргалка по JSON Server](./json-server)

@@ -95,10 +95,10 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 13.08.2025:
+            Обновление от 16.10.2025:
             <br />
-            <a href='docs/guide/go'>
-              Руководство по Go для JavaScript-разработчиков
+            <a href='docs/cheatsheet/express-2025'>
+              Настройка Express 5 для продакшна в 2025 году
             </a>
           </p>
 
