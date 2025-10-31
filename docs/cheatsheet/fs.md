@@ -8,7 +8,7 @@ tags: ['node.js', 'nodejs', 'node', 'file system', 'fs', 'файловая си�
 
 # File System
 
-> [Источник](https://2ality.com/2022/06/nodejs-file-system.html).
+> [Источник](https://2ality.com/2022/06/nodejs-file-system.html)
 
 ## 1. Концепции, паттерны и соглашения, используемые в ФС
 

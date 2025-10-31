@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'typescript', 'ts', 'internals']
 
 # TypeScript в деталях
 
-> [Источник](https://medium.com/@bytefer/list/mastering-typescript-series-688ee7c12807).
+> [Источник](https://medium.com/@bytefer/list/mastering-typescript-series-688ee7c12807)
 
 Спасибо [Денису Улесову](https://github.com/denis-ttk-1975) за помощь в редактировании материала.
 

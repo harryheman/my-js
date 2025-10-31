@@ -6,9 +6,9 @@ keywords: ['javascript', 'js', 'node.js', 'nodesj', 'node', 'express.js', 'expre
 tags: ['javascript', 'js', 'node.js', 'nodesj', 'node', 'express.js', 'expressjs', 'express', 'tutorial', 'туториал', 'фреймворк для разработки веб-серверов']
 ---
 
-> [Источник](https://www.reactsquad.io/blog/how-to-set-up-express-5-in-2025).
+> [Источник](https://www.reactsquad.io/blog/how-to-set-up-express-5-in-2025)
 
-# Настройка Express 5 для продакшна в 2025 году. Часть 1
+# Настройка Express 5 для продакшна в 2025 году
 
 Эта статья поможет вам создать приложение [Express 5](https://expressjs.com/) с поддержкой [TypeScript](https://www.typescriptlang.org/).
 

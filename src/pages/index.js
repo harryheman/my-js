@@ -95,10 +95,10 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 16.10.2025:
+            Обновление от 31.10.2025:
             <br />
-            <a href='docs/cheatsheet/express-2025'>
-              Настройка Express 5 для продакшна в 2025 году
+            <a href='docs/guide/http-caching'>
+              Полное руководство по HTTP-кэшированию
             </a>
           </p>
 

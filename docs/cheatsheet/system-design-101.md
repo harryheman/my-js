@@ -6,7 +6,7 @@ keywords: [devops, system, design, architecture, система, дизайн, �
 tags: [devops, system, design, architecture, система, дизайн, архитектура]
 ---
 
-> [Источник](https://github.com/ByteByteGoHq/system-design-101).
+> [Источник](https://github.com/ByteByteGoHq/system-design-101)
 
 О сложных системах простыми словами.
 

@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'jest', 'redux', 'che
 
 # Шпаргалки по React, Jest, Redux и лучшие практики по React
 
-> [Источник](https://github.com/learning-zone/react-interview-questions).
+> [Источник](https://github.com/learning-zone/react-interview-questions)
 
 ## Шпаргалка по React
 
@@ -397,24 +397,24 @@ ReactDOM.hydrate(<App />, el)
 import PropTypes from 'prop-types'
 ```
 
-|Свойство             |Описание      |
-|---------------------|--------------|
-|any                  |Что угодно    |
-|string               |Строка        |
-|number               |Число         |
-|func                 |Функция       |
-|bool                 |True или false|
-|oneOf(any)           |Тип Enum      |
-|oneOfType(type array)|Тип Union     |
-|array                |Массив        |
-|arrayOf(…)	          |Массив типов  |
-|object               |Объект        |
-|objectOf(…)          |Объект типов  |
-|instanceOf(…)        |Экземлпяр     |
-|shape(…)             |Форма         |
-|element              |React-элемент |
-|node                 |Узел DOM      |
-|(···).isRequired     |Обязательный  |
+| Свойство              | Описание       |
+|-----------------------|----------------|
+| any                   | Что угодно     |
+| string                | Строка         |
+| number                | Число          |
+| func                  | Функция        |
+| bool                  | True или false |
+| oneOf(any)            | Тип Enum       |
+| oneOfType(type array) | Тип Union      |
+| array                 | Массив         |
+| arrayOf(…)            | Массив типов   |
+| object                | Объект         |
+| objectOf(…)           | Объект типов   |
+| instanceOf(…)         | Экземлпяр      |
+| shape(…)              | Форма          |
+| element               | React-элемент  |
+| node                  | Узел DOM       |
+| (···).isRequired      | Обязательный   |
 
 
 ### Базовые типы

@@ -8,7 +8,7 @@ tags: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'best practices', 're
 
 # Размышления о React
 
-> [Источник](https://github.com/mithi/react-philosophies).
+> [Источник](https://github.com/mithi/react-philosophies)
 
 ## Необходимый минимум
 
