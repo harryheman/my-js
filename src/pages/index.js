@@ -95,10 +95,10 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 31.10.2025:
+            Обновление от 15.12.2025:
             <br />
-            <a href='docs/guide/http-caching'>
-              Полное руководство по HTTP-кэшированию
+            <a href='docs/guide/browser-internals'>
+              Руководство по работе современного браузера
             </a>
           </p>
 

@@ -36,6 +36,7 @@ title: Содержание
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Socket.IO](./socket)
 - :page_with_curl:&nbsp;&nbsp;[WebRTC для всех и каждого](./webrtc)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по веб-потокам (Node.js)](./web-streams)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по работе современного браузера](./browser-internals)
 - :page_with_curl:&nbsp;&nbsp;[Полное руководство по HTTP-кэшированию](./http-caching)
 
 ---

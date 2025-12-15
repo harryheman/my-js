@@ -1,5 +1,5 @@
 ---
-sidebar_position: 17.2
+sidebar_position: 17.3
 title: Полное руководство по HTTP-кэшированию
 description: Полное руководство по HTTP-кэшированию
 keywords: ['guide', 'http', 'cache', 'caching', 'кэш', 'кэширование', 'руководство']
