@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 title: Размышления о React
 description: Мысли о том, как следует писать код на React
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'best practices', 'recommendations', 'лучшие практики', 'рекомендации', 'советы']

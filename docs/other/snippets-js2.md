@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 8
 title: Сниппеты JavaScript. Часть 2
 description: Примеры кода на JavaScript
 keywords: ['javascript', 'js', 'snippets', 'examples', 'сниппеты', 'примеры']

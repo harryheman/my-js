@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 10
 title: Сниппеты CSS и SASS
 description: Примеры кода на CSS и SASS
 keywords: ['css', 'sass', 'scss', 'snippets', 'examples', 'сниппеты', 'примеры']

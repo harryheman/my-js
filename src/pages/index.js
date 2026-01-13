@@ -95,11 +95,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 15.12.2025:
+            Обновление от 13.01.2026:
             <br />
-            <a href='docs/guide/browser-internals'>
-              Руководство по работе современного браузера
-            </a>
+            <a href='docs/other/virtual-memory'>Основы виртуальной памяти</a>
           </p>
 
           <p className='hero__subtitle small'>
