@@ -79,7 +79,7 @@ export default function Home() {
             <a href='docs/cheatsheet/intro-cheatsheet'>шпаргалки</a>,{' '}
             <a href='docs/other/intro-other'>вопросы и другие материалы</a> по
             JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma,
-            GraphQL, Docker, Rust и другим технологиям.
+            GraphQL, Docker, Rust, Go и другим технологиям.
           </p>
 
           <div className={styles.buttons}>

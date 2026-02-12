@@ -4,9 +4,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-### Руководства, шпаргалки, вопросы и другие материалы по JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma, GraphQL, Docker и другим технологиям, связанным с разработкой веб-приложений.
+### Руководства, шпаргалки, вопросы и другие материалы по JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma, GraphQL, Docker, Rust, Go и другим технологиям.
 
-## [Сайт и блог в формате прогрессивного веб-приложения](https://my-js.org)
+## [Сайт в формате прогрессивного веб-приложения](https://my-js.org)
 
 ## [Полезные утилиты](https://www.npmjs.com/package/@my-js/utils)
 
