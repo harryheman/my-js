@@ -95,9 +95,9 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 13.01.2026:
+            Обновление от 13.02.2026:
             <br />
-            <a href='docs/other/virtual-memory'>Основы виртуальной памяти</a>
+            <a href='docs/guide/go-scheduler'>Планировщик Go</a>
           </p>
 
           <p className='hero__subtitle small'>

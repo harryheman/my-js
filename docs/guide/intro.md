@@ -48,4 +48,5 @@ title: Содержание
 
 ---
 
-- :page_with_curl:&nbsp;&nbsp;[Руководство по Go для JavaScript-разработчиков](./go)
+- :page_with_curl:&nbsp;&nbsp;[Руководство по Go для JavaScript-разработчиков](./go-js)
+- :page_with_curl:&nbsp;&nbsp;[Планировщик Go](./go-scheduler)
