@@ -2,8 +2,8 @@
 sidebar_position: 24
 title: Планировщик Go
 description: Планировщик Go
-keywords: [go, golang, scheduler, internals]
-tags: [go, golang, scheduler, internals]
+keywords: [go, golang, scheduler, 'garbage collector']
+tags: [go, golang, scheduler, goroutine, 'garbage collector']
 ---
 
 # Планировщик Go
@@ -11,24 +11,6 @@ tags: [go, golang, scheduler, internals]
 - [Источник](https://nghiant3223.github.io/2025/04/15/go-scheduler.html)
 
 > Эта статья посвящена языку программирования [Go 1.24](https://tip.golang.org/doc/go1.24), работающему на [Linux](https://en.wikipedia.org/wiki/Linux) на архитектуре [ARM](https://en.wikipedia.org/wiki/ARM_architecture_family). Она может не охватывать специфические для других операционных систем (ОС) или аппаратных архитектур детали.
-
-В этой статье подробно рассматриваются следующие вопросы:
-
-- Компиляция и среда выполнения Go
-- Примитивный планировщик
-- Улучшение планировщика
-- Модель GMP
-- Начальная загрузка программы
-- Создание горутины
-- Цикл планирования
-- Поиск готовой к выполнения горутины
-- Вытеснение горутин
-- Обработка системных вызовов
-- Сетевой и файловый ввод-вывод
-- Работа `netpoll`
-- Сборщик мусора
-- Общие функции
-- API среды выполнения Go
 
 ## Введение
 

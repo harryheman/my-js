@@ -60,6 +60,10 @@
 
 .small {
   font-size: 1.3rem;
+
+  & a {
+    display: block;
+  }
 }
 
 @media (max-width: 424px) {

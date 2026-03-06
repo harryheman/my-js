@@ -95,8 +95,8 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Обновление от 13.02.2026:
-            <br />
+            Новинки:
+            <a href='docs/guide/go-memory'>Выделение памяти в Go</a>
             <a href='docs/guide/go-scheduler'>Планировщик Go</a>
           </p>
 
