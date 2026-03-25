@@ -85,4 +85,3 @@ tags: [linux, sysadmin, ssh, bash, terminal, nginx, docker, docker-compose]
 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) —
 можно читать и делиться в неизменённом виде при указании авторства.
 Изменение и коммерческое использование запрещены.
-Подробности — в файле [LICENSE](LICENSE).
