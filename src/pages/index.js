@@ -96,6 +96,10 @@ export default function Home() {
 
           <p className='hero__subtitle small'>
             Новинки:
+            <a href='docs/other/linux'>
+              Основы системного администрирования Linux: от командной строки до
+              веб-сервера
+            </a>
             <a href='docs/guide/go-memory'>Выделение памяти в Go</a>
             <a href='docs/guide/go-scheduler'>Планировщик Go</a>
           </p>
