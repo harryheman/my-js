@@ -15,6 +15,7 @@ title: Содержание
 - :memo:&nbsp;&nbsp;[Туториал по Web Speech API](./web-speech)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Internationalization API](./intl)
 - :memo:&nbsp;&nbsp;[Шпаргалка по Temporal API и Dayjs](./temporal)
+- :memo:&nbsp;&nbsp;[37 советов и приемов по написанию качественных тестов для фронтенда](./testing)
 
 ---
 

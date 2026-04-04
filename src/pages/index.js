@@ -62,7 +62,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description='Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и другим технологиям, связанным с разработкой веб-приложений'
+      description='Руководства, шпаргалки, вопросы и другие материалы по JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma, GraphQL, Docker, Rust, Go и другим технологиям'
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className='container'>
@@ -96,6 +96,10 @@ export default function Home() {
 
           <p className='hero__subtitle small'>
             Новинки:
+            <a href='docs/cheatsheet/testing'>
+              37 советов и приемов по написанию качественных тестов для
+              фронтенда
+            </a>
             <a href='docs/other/linux'>
               Основы системного администрирования Linux: от командной строки до
               веб-сервера

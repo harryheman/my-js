@@ -2,7 +2,7 @@
 const config = {
   title: 'MyJavaScript',
   tagline:
-    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, React, TypeScript, Node.js, Express, Prisma, GraphQL, Docker и множеству других технологий.',
+    'Руководства, шпаргалки, вопросы и другие материалы по JavaScript, TypeScript, React, Next.js, Node.js, Express, Prisma, GraphQL, Docker, Rust, Go и другим технологиям',
   url: 'https://my-js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -164,7 +164,7 @@ const config = {
         copyright: `
           © ${new Date().getFullYear()}. MyJavaScript. <br />
           Разработал <a href="https://github.com/harryheman" target="_blank" rel="noopener noreferrer">Игорь Агапов</a> с помощью&nbsp;🖤&nbsp;&nbsp;&amp; <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. <br />
-          Приложение развернуто на <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
+          Приложение развернуто на <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">Vercel</a>.
         `,
       },
       docs: {
