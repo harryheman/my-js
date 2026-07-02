@@ -8,7 +8,6 @@
 - [Понижение приоритета фоновых сетевых запросов](./deprioritize-background-fetches.md)
 - [Эффективная фоновая работа](./efficient-background-processing.md)
 - [Ускорение переходов отображения SPA с помощью кэширования состояния](./faster-spa-view-transitions.md)
-- [Определение причин плохого INP](./identify-inp-causes.md)
 - [Ускорение загрузки следующей страницы](./improve-next-page-load-performance.md)
 - [Оптимизация взаимодействий в сложных макетах](./interactions-in-complex-layouts.md)
 - [Оптимизация приоритета загрузки изображений](./optimize-image-priority.md)
