@@ -13,11 +13,11 @@ keywords: [javascript, js, html, css]
 
 ## Содержание
 
-- [CSS](./css/index.md)
+- CSS
   - [Руководство по работе с CSS](./css/css.md)
   - [Подсветка диапазона текста](./css/highlight-text-ranges.md)
 - [Макет CSS и отзывчивый дизайн](./css-layout/css-layout.md)
-- [Формы](./forms/index.md)
+- Формы
   - [Руководство по работе с формами](./forms/forms.md)
   - [Анимированный селект](./forms/animated-select-picker.md)
   - [Форма адреса, соответствующая лучшим практикам](./forms/autofill-address-form.md)
@@ -31,7 +31,7 @@ keywords: [javascript, js, html, css]
   - [Обратная связь обязательного поля](./forms/required-field-feedback.md)
   - [Валидация инпута после взаимодействия](./forms/validate-input-after-interaction.md)
 - [Руководство по работе с HTML](./html/html.md)
-- [Производительность](./performance/index.md)
+- Производительность
   - [Руководство по производительности](./performance/performance.md)
   - [Разделение длинных задач](./performance/break-up-long-tasks.md)
   - [Условные асинхронные зависимости](./performance/conditional-async-dependencies.md)
@@ -50,7 +50,7 @@ keywords: [javascript, js, html, css]
   - [Упорядочение распределенных событий](./performance/sequence-distributed-events.md)
 - [Руководство по конфиденциальности](./privacy/privacy.md)
 - [Руководство по безопасности](./security/security.md)
-- [Пользовательский опыт](./user-experience/index.md)
+- Пользовательский опыт
   - [Подчеркивание активной вкладки с помощью якорного позиционирования](./user-experience/anchor-positioning-tab-underline.md)
   - [Анимация добавления и удаления элемента](./user-experience/animate-element-entry-exit.md)
   - [Анимация отображения и скрытия элемента верхнего уровня](./user-experience/animate-to-from-top-layer.md)
