@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 16.2
 title: Шпаргалка по Zustand
 description: Шпаргалка по Zustand
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'state manager', 'state management', 'state', 'zustand', 'cheatsheet', 'шпаргалка', 'инструмент управления состоянием', 'управление состоянием', 'состояние']

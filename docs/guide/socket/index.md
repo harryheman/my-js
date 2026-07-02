@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 16.2
 title: Руководство по Socket.IO
 description: Руководство по Socket.IO
 keywords: ['javascript', 'js', 'socket.io', 'socketio', 'socket', 'guide', 'руководство', 'websocket', 'http long polling', 'realtime', 'веб-сокеты', 'длинный опрос', 'режим реального времени']

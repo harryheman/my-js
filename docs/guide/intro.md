@@ -6,6 +6,10 @@ title: Содержание
 
 # Содержание
 
+- :page_with_curl:&nbsp;&nbsp;[Руководства по современной веб-разработке](./modern-web-guidance)
+
+---
+
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Next.js](./nextjs)
 - :page_with_curl:&nbsp;&nbsp;[Туториал по разработке клиент-серверного приложения с помощью Next.js](./nextjs-tutorial)
 - :page_with_curl:&nbsp;&nbsp;[Руководство по Convex](./convex)

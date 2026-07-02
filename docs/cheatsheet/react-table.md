@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16.2
+sidebar_position: 16.3
 title: Туториал по работе с таблицами с помощью React Table
 description: Туториал по работе с таблицами с помощью React Table
 keywords: [javascript, typescript, react, react-table, tanstack-table, table, таблица]

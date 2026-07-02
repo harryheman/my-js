@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 16.1
 title: Примеры кастомных компонентов React
 description: Примеры кастомных компонентов React
 keywords: ['javascript', 'js', 'react.js', 'reactjs', 'react', 'custom components', 'components', 'cheatsheet', 'шпаргалка', 'кастомные компоненты', 'пользовательские компоненты', 'компоненты']

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 16.1
 title: Руководство по Workbox
 description: Руководство по Workbox
 keywords: ['javascript', 'js', 'workbox', 'service worker api', 'service worker', 'guide', 'руководство', 'progressive web app', 'pwa', 'сервис-воркер', 'прогрессивное веб-приложение']
