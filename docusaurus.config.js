@@ -6,12 +6,15 @@ const config = {
   url: 'https://my-js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'harryheman',
   projectName: 'my-js',
   trailingSlash: false,
-
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   presets: [
     [
       'classic',
