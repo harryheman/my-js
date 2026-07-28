@@ -7,6 +7,7 @@ title: Содержание
 # Содержание
 
 - :page_with_curl:&nbsp;&nbsp;[Руководства по современной веб-разработке](./modern-web-guidance)
+- :page_with_curl:&nbsp;&nbsp;[Книга аутентификации](./auth)
 
 ---
 

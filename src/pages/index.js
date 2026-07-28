@@ -95,11 +95,12 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Дата последнего обновления: 02.07.2026.
+            Дата последнего обновления: 28.07.2026.
           </p>
 
           <p className='hero__subtitle small'>
             Новинки:
+            <a href='docs/guide/auth'>Книга аутентификации</a>
             <a href='docs/guide/modern-web-guidance'>
               Руководства по современной веб-разработке
             </a>

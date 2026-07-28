@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.2
+sidebar_position: 2.3
 title: Руководство по Next.js
 description: Руководство по Next.js
 keywords: [javascript, js, react.js, reactjs, react, next.js, nextjs, next, guide, руководство, мета-фреймворк]
