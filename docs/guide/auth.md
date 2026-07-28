@@ -10,6 +10,14 @@ tags: [auth, authentication, authorization, webauth, passkey, "basic auth", ау
 
 - [Источник истины](https://auth.pilcrowonpaper.com/)
 
+Это моя личная книга по аутентификации. Она представляет собой сборник руководств, рекомендаций и примеров по внедрению аутентификации в веб-приложениях, основанный на моем личном опыте. Книга совершенно бесплатна и не содержит рекламы. Надеюсь, она будет полезна всем, кто хочет узнать больше об аутентификации, безопасности и веб-технологиях в целом.
+
+Как следует из названия, эта книга в значительной степени посвящена системе аутентификации и авторизации для веб-приложений. Более общие вопросы безопасности см. в серии ["Шпаргалки OWASP"](https://cheatsheetseries.owasp.org/index.html) .
+
+Если у вас возникнут какие-либо вопросы, не стесняйтесь задавать их на [сервере Discord](https://discord.gg/zZqCfVUMnX) или в [обсуждениях на GitHub](https://github.com/pilcrowonpaper/auth.pilcrowonpaper.com/discussions).
+
+Разработано и поддерживается [Pilcrow](https://pilcrowonpaper.com/). Исходный код доступен на [GitHub](https://github.com/pilcrowonpaper/auth.pilcrowonpaper.com).
+
 ## Примеры на Go
 
 - [Пример базовой аутентификации](https://basic-example.auth.pilcrowonpaper.com/) - пример аутентификации с помощью пароля с подтверждением email и сбросом пароля ([исходный код](https://github.com/pilcrowonpaper/basic-example.auth.pilcrowonpaper.com))
