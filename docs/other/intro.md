@@ -6,6 +6,10 @@ title: Содержание
 
 # Содержание
 
+- :memo:&nbsp;&nbsp;[Кому выгоден Конфликт](./conflict)
+
+---
+
 - :memo:&nbsp;&nbsp;[Вопросы по JavaScript. Версия 1](./js-questions)
 - :memo:&nbsp;&nbsp;[Вопросы по JavaScript. Версия 2](./js-questions2)
 
