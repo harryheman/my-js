@@ -58,7 +58,7 @@ __Вопросы и задачи__
 
 ## Другое
 
-- :link:&nbsp;&nbsp; [Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap) - "дорожная карта" веб-разработчика
+- :link:&nbsp;&nbsp; [Developer Roadmaps](https://github.com/kamranahmedse/developer-roadmap) - "дорожные карты" разработчиков
 - :link:&nbsp;&nbsp; [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line) - искусство командной строки
 - :link:&nbsp;&nbsp; [Bash Guide](https://github.com/Idnan/bash-guide) - краткое руководство/шпаргалка по `Bash`
 - :link:&nbsp;&nbsp; [Mockaroo](https://www.mockaroo.com/) - сервис для генерации фиктивных данных, в том числе, в формате `SQL`
