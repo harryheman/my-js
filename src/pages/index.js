@@ -100,7 +100,6 @@ export default function Home() {
 
           <p className='hero__subtitle small'>
             Новинки:
-            <a href='docs/other/conflict'>Кому выгоден Конфликт</a>
             <a href='docs/guide/auth'>Книга аутентификации</a>
             <a href='docs/guide/modern-web-guidance'>
               Руководства по современной веб-разработке
