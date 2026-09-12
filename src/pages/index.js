@@ -95,11 +95,29 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Дата последнего обновления: 04.08.2026.
+            Дата последнего обновления: 12.09.2026.
           </p>
 
           <p className='hero__subtitle small'>
             Новинки:
+            <a
+              href='https://habr.com/ru/companies/timeweb/articles/1077690/'
+              target='_blank'
+            >
+              Жизненный цикл токена API: от выпуска до отзыва
+            </a>
+            <a
+              href='https://habr.com/ru/companies/timeweb/articles/1068626/'
+              target='_blank'
+            >
+              Глубокое погружение в React Fiber
+            </a>
+            <a
+              href='https://habr.com/ru/companies/timeweb/articles/1059272/'
+              target='_blank'
+            >
+              Размытая граница между состояниями CSS и событиями JavaScript
+            </a>
             <a href='docs/guide/auth'>Книга аутентификации</a>
             <a href='docs/guide/modern-web-guidance'>
               Руководства по современной веб-разработке
