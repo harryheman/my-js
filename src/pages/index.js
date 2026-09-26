@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import styles from './styles.module.css'
+import { newThings } from './constants'
 
 const features = [
   {
@@ -95,46 +96,16 @@ export default function Home() {
           </div>
 
           <p className='hero__subtitle small'>
-            Дата последнего обновления: 12.09.2026.
+            Дата последнего обновления: 26.09.2026.
           </p>
 
           <p className='hero__subtitle small'>
             Новинки:
-            <a
-              href='https://habr.com/ru/companies/timeweb/articles/1077690/'
-              target='_blank'
-            >
-              Жизненный цикл токена API: от выпуска до отзыва
-            </a>
-            <a
-              href='https://habr.com/ru/companies/timeweb/articles/1068626/'
-              target='_blank'
-            >
-              Глубокое погружение в React Fiber
-            </a>
-            <a
-              href='https://habr.com/ru/companies/timeweb/articles/1059272/'
-              target='_blank'
-            >
-              Размытая граница между состояниями CSS и событиями JavaScript
-            </a>
-            <a href='docs/guide/auth'>Книга аутентификации</a>
-            <a href='docs/guide/modern-web-guidance'>
-              Руководства по современной веб-разработке
-            </a>
-            <a href='https://intl-api-demo.netlify.app/' target='_blank'>
-              Демо использования Intl API
-            </a>
-            <a href='docs/cheatsheet/testing'>
-              37 советов и приемов по написанию качественных тестов для
-              фронтенда
-            </a>
-            <a href='docs/other/linux'>
-              Основы системного администрирования Linux: от командной строки до
-              веб-сервера
-            </a>
-            <a href='docs/guide/go-memory'>Выделение памяти в Go</a>
-            <a href='docs/guide/go-scheduler'>Планировщик Go</a>
+            {newThings.slice(0, 10).map((item, index) => (
+              <a key={index} href={item.href} target={item.target}>
+                {item.title}
+              </a>
+            ))}
           </p>
 
           <p className='hero__subtitle small'>
