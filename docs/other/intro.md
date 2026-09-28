@@ -6,6 +6,7 @@ title: Содержание
 
 # Содержание
 
+- :memo:&nbsp;&nbsp;[Полезные новшества ECMAScript 2026](https://habr.com/ru/companies/timeweb/articles/1081878/)
 - :memo:&nbsp;&nbsp;[Жизненный цикл токена API: от выпуска до отзыва](https://habr.com/ru/companies/timeweb/articles/1077690/)
 - :memo:&nbsp;&nbsp;[Глубокое погружение в React Fiber](https://habr.com/ru/companies/timeweb/articles/1068626/)
 - :memo:&nbsp;&nbsp;[Размытая граница между состояниями CSS и событиями JavaScript](https://habr.com/ru/companies/timeweb/articles/1059272/)
