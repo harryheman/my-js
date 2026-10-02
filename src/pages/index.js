@@ -7,6 +7,12 @@ import styles from './styles.module.css'
 
 const newThings = [
   {
+    title:
+      '10 браузерных API, заменяющих библиотеки, которые я раньше все время устанавливал',
+    href: 'https://habr.com/ru/companies/timeweb/articles/1086082/',
+    target: '_blank',
+  },
+  {
     title: 'Полезные новшества ECMAScript 2026',
     href: 'https://habr.com/ru/companies/timeweb/articles/1081878/',
     target: '_blank',
