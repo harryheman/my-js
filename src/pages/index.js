@@ -7,6 +7,11 @@ import styles from './styles.module.css'
 
 const newThings = [
   {
+    title: 'Жаргон функционального программирования',
+    href: 'https://github.com/harryheman/functional-programming-jargon',
+    target: '_blank',
+  },
+  {
     title:
       '10 браузерных API, заменяющих библиотеки, которые я раньше все время устанавливал',
     href: 'https://habr.com/ru/companies/timeweb/articles/1086082/',
